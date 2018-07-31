@@ -1,0 +1,78 @@
+<div ng-class="{'background': $ctrl.showNavigation}">
+	<div ng-class="{'primary-container': $ctrl.showNavigation}">
+
+		<h2 class="page-title" ng-if="$ctrl.showNavigation">
+			<button ui-sref="app.main.company.overview" class="no-border-button" ng-bind="'company' | translate"></button>
+			<span class="icon-heading icon-icon_forward"></span>
+			<button ui-sref="app.main.company.forms-and-policies" class="no-border-button" ng-bind="'forms-and-policies' | translate"></button>
+			<span class="icon-heading icon-icon_forward"></span>
+			<button class="no-border-button" ng-bind="'benefits-guidebook' | translate"></button>
+		</h2>
+		<tn-card>
+			<tn-card-content>
+				<h4>Benefits Guidebook</h4>
+				<div ng-if="$ctrl.error">
+					{{$ctrl.errorMessage}}
+				</div>
+				<tn-spinner ng-show="$ctrl.showSpinner"></tn-spinner>
+				<div ng-if="!$ctrl.error">
+					<!-- list f plan-->
+					<div ng-show="$ctrl.hidecandian">
+						<p class="no-pad" >{{'my_benefits.policies.trinet_guidbook' | translate}}</p>
+						<ul id="stats" class="medium">
+							<li>{{'my_benefits.policies.eligible_coverage' | translate}}</li>
+							<li>{{'my_benefits.policies.enroll_taxed' | translate}}</li>
+							<li>{{'my_benefits.policies.change_benefits' | translate}}</li>
+							<li>{{'my_benefits.policies.benefits_appeals' | translate}}</li>
+							<li>{{'my_benefits.policies.benefits_information' | translate}}</li>
+							<li>{{'my_benefits.policies.cobra_information' | translate}}</li>
+							<li>{{'my_benefits.policies.fsa_information' | translate}}</li>
+							<li>{{'my_benefits.policies.hipaa_erisa' | translate}}</li>
+							<li>{{'my_benefits.policies.required_notices' | translate}}</li>
+						</ul>
+					</div>
+
+					<div id="collapseOne">
+						<!-- candian user-->
+						<div ng-show="!$ctrl.hidecandian">
+							<p>See the following booklets to learn about your company-sponsored benefits plans.</p>
+							<div class="no-pad benefits-summery-links" ng-repeat="pdfdata in $ctrl.candianPdfData">
+								<span class="tn-icon"><img alt="PDF Icon" ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png"></span>
+								<a  id="canadianBenefitsGuideBook_{{$index}}"
+									ng-href="{{pdfdata.url | contentUrl}}"
+									class="tn-anchor"
+									target="_blank">
+									<span class="benefit-text " id="bgcandiantext{{$index}}">{{::pdfdata.text}}</span>
+								</a>
+								<span ng-if="pdfdata.date != null" id="bgcandiandate{{$index}}">{{::pdfdata.date}}</span>
+							</div>
+							<div ng-if="$ctrl.message && !$ctrl.candianPdfData" class="benefits-forms-item-accordion"> {{$ctrl.message}}</div>
+						</div>
+					</div>
+
+					<no-records></no-records>
+
+					<p>{{::translation.my_benefits.benefitGuideBook.benefitGuidDespt}}</p>
+
+					<div ng-show="$ctrl.hidecandian">
+						<div ng-if="$ctrl.nonCandianPdfData" ng-repeat="pdfdata in $ctrl.nonCandianPdfData" class="benefits-forms-item-accordion">
+							<span class="tn-icon-pdf-img"><img alt="PDF Icon" ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png"></span>
+							<p class="benefit-guide-book">
+								<a  id="benefitGuideBook_{{$index}}"
+									ng-href="{{pdfdata.url | contentUrl}}"
+									class="tn-anchor"
+									target="_blank">
+									<span class="benefit-text" id="bgnoncandiantext{{$index}}">{{::pdfdata.text}}</span>
+								</a>
+								<span class="pdf-dissabled-text inline" id="bgnoncandiandate{{$index}}">{{::pdfdata.date}}</span>
+							</p>
+						</div>
+
+						<div ng-if="$ctrl.message && !$ctrl.nonCandianPdfData" class="benefits-forms-item-accordion"> {{$ctrl.message}}</div>
+					</div>
+				</div>
+			</tn-card-content>
+		</tn-card>
+	</div>
+	<div class="secondary-container" ng-if="$ctrl.showNavigation"></div>
+</div>

@@ -1,0 +1,110 @@
+{
+  "data": {
+	"generalInfo": {
+	  "generalMeta": [
+		{
+		  "id": "1",
+		  "text": "View optional benefits offered through MetLife, such as insurance for your auto, home, pet or critical illness insurance.",
+		  "title": "MetLife Benefits",
+		  "url": null,
+		  "pdfLinks": null
+		},
+		{
+		  "id": "2",
+		  "text": "View optional benefits offered through Aflac, such as voluntary dental or vision insurance, cancer insurance or accident insurance.",
+		  "title": "Aflac Benefits",
+		  "url": null,
+		  "pdfLinks": null
+		}
+	  ]
+	},
+	"productLine": null,
+	"docMeta": [
+	  {
+		"id": "1",
+		"text": "View contact information for our health plan carriers and group numbers for each plan.",
+		"title": "Carrier Contact Information",
+		"url": null,
+		"pdfLinks": [
+		  {
+			"fiscalYear": "(October 01, 2016 - September 30, 2017)",
+			"url": "/v1/extranet/Benefits/Directories/pdf/Benefits_Carrier_Contact_Chart_Q4_2016-2017.pdf",
+			"urlName": "Benefits Carrier Contact Chart "
+		  },
+		  {
+			"fiscalYear": "(October 01, 2015 - September 30, 2016)",
+			"url": "/v1/extranet/Benefits/Directories/pdf/Benefits_Carrier_Contact_Chart_Q4_2015-2016.pdf",
+			"urlName": "Benefits Carrier Contact Chart "
+		  }
+		]
+	  },
+	  {
+		"id": "2",
+		"text": "Use the Ask Benefits tool to see only the coverage information that's important to you, or to compare specific services for multiple plans.",
+		"title": "Customized Comparison and Plan Details",
+		"url": "#/ssowidget/askbenefits",
+		"pdfLinks": null
+	  },
+	  {
+		"id": "3",
+		"text": "Learn important information about TriNet benefits, such as eligibility, enrollment and more.",
+		"title": "Benefits Guidebook",
+		"url": null,
+		"pdfLinks": {
+		  "canadian": false,
+		  "guideBookDesc": [
+			{
+			  "date": "(October   01, 2016 - September 30, 2017)",
+			  "url": "/v1/extranet/Benefits/benefit_guide/TriNet-Benefit-Guidebook_Cur_Q4.pdf",
+			  "text": "TriNet Benefits Guidebook and Summary Plan Description"
+			},
+			{
+			  "date": "(October   01, 2015 - September 30, 2016)",
+			  "url": "/v1/extranet/Benefits/benefit_guide/TriNet-Benefit-Guidebook_Prev_Q4.pdf",
+			  "text": "TriNet Benefits Guidebook and Summary Plan Description"
+			}
+		  ],
+		  "guideBookLinks": null,
+		  "quater": "Q4",
+		  "prevPlanYearStartDate": "October   01, 2015",
+		  "prevPlanYearEndDate": "September 30, 2016",
+		  "thisPlanYearStartDate": "October   01, 2016",
+		  "thisPlanYearEndDate": "September 30, 2017",
+		  "t2_PLAN_DT_START": "1988-10-01 00:00:00.0"
+		}
+	  },
+	  {
+		"id": "4",
+		"text": "See the Summary of Benefits and Coverage for coverage examples and frequently asked questions for a specific plan.",
+		"title": "Medical Plan Coverage Summaries",
+		"url": null,
+		"pdfLinks": null
+	  },
+	  {
+		"id": "5",
+		"text": "See a list of all plans, with plan costs.",
+		"title": "Plan Costs",
+		"url": "/v1/Help/docs/pdf/BenefitPlansbyStateQ4.pdf",
+		"pdfLinks": null
+	  },
+	  {
+		"id": "6",
+		"text": "See the Carrier Certificates for detailed coverage information for a specific plan, such as maximums, copays, and costs for services, like an MRI.",
+		"title": "In-Depth Plan Descriptions",
+		"url": null,
+		"pdfLinks": null
+	  },	  
+	  {
+		"id": "7",
+		"text": "See a high-level view of new, changed or terminated medical plans for the new benefits plan year.",
+		"title": "Summary of Medical Plan Changes",
+		"url": "/v1/extranet/Benefits/Spd/pdf/TriNetWhatsChangingQ4_Client.pdf",
+		"pdfLinks": null
+	  }
+	]
+  },
+  "_requestId": "62ffea51-7cdc-4d05-9cb9-96df440dcb28",
+  "_statusCode": "200",
+  "_statusText": "OK",
+  "_statusMessage": "Success"
+}

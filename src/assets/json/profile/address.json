@@ -1,0 +1,19 @@
+{
+   "data":[
+	   {
+      		"postal_code":"94403",
+	  		"street_number":"Building 4 Suite 200",
+	   		"street":"2655 Campus Drive",
+	   		"city":"San Mateo",
+	   		"state":"California",
+	   		"state_abbr":"CA",
+		    "country":"USA"
+	   }
+   ],
+   "_requestId":"20efce15-203a-4541-978d-c334c8f44671",
+   "_statusCode":"200",
+   "_statusText":"OK",
+   "_statusMessage":"Success"
+}
+
+

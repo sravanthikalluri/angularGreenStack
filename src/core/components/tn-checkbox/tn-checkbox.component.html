@@ -1,0 +1,13 @@
+<div class="tn-checkbox-container">
+	<label class="tn-checkbox">
+		<input class="tn-checkbox"
+			   ng-model="$ctrl.fieldValue"
+			   ng-change="$ctrl.update()"
+			   ng-true-value="{{$ctrl.trueValue}}"
+			   ng-false-value="{{$ctrl.falseValue}}"
+			   aria-label="{{$ctrl.label}}"
+			   type="checkbox">
+		<span class="tn-checkbox-label">{{$ctrl.label}}</span>
+	</label>
+</div>
+

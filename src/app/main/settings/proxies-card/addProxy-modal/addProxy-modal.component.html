@@ -1,0 +1,34 @@
+<div class="add-Proxy">
+	<tn-error-banner ng-if="$ctrl.errorData" error-data="$ctrl.errorData" clicked="$ctrl.closeAlert()"></tn-error-banner>
+	<div ng-if="$ctrl.x=true">
+		<form class="row" name="editCustomIDForm" novalidate>
+			<tn-spinner ng-show="$ctrl.emplListLoading"></tn-spinner>
+			<div ng-show="!$ctrl.emplListLoading">
+				<tn-input-container class="padding-vertical"
+				ng-class="{'is-invalid': editCustomIDForm.customId.$invalid && editCustomIDForm.customId.$touched || editCustomIDForm.$submitted}">
+				<div class="semibold proxyLabel">Employee:</div>
+			</tn-input-container>
+			<div class="ui-widget" id="autocomplete">
+				<input autofocus id="employeeSearch" class="form-control" aria-label="Employee Search" placeholder="Search on First Name, Last Name or Employee ID" type="text" ng-model="$ctrl.data.payload.fullName" typeahead-on-select='$ctrl.onSelect($item)' uib-typeahead="emp.fullName +' '+ emp.employeeId for emp in $ctrl.globalActiveEmp | filter:$viewValue">
+			</div>
+			<div class="datePicker-container padding-vertical">
+				<div class="semibold proxyLabel">
+					Effective Date:
+				</div>
+				<tn-date-selector id="acctEffDate" date="$ctrl.effectiveDate" min-date="$ctrl.minDate" label="proxy-effective-date"></tn-date-selector>
+			</div>
+			<div class="datePicker-container padding-vertical">
+				<div class="semibold proxyLabel">
+					End Date:
+				</div>
+				<tn-date-selector id="acctEndDate" date="$ctrl.endDate"  min-date="$ctrl.minDate" label="proxy-end-date"></tn-date-selector>
+			</div>
+			<br>
+			<div class="pull-left add-proxy-button">
+				<button id="customCancelBtn" tn-button ng-click="$ctrl.onCancel()">{{'security-modal-cancel-label' | translate}}</button>
+				<button id="customSaveBtn" type="submit" class="margin-left" tn-action-button ng-click="$ctrl.onSave(editCustomIDForm)">Add as Proxy</button>
+			</div>
+		</div>
+	</form>
+</div>
+</div>

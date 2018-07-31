@@ -1,0 +1,84 @@
+<div class="tn-table">
+	<h5 role="presentation" class="tn-table-header" ng-style="$ctrl.onUpdateHeadingBg()">
+		<span tabindex="0">{{$ctrl.title | translate}}</span>
+		<span class="tn-tooltip tn-tooltip-top pull-right" tabindex="0" ng-if="$ctrl.enableToolTips === true" role="tooltip">
+			<i class="icon-icon_UA" aria-hidden="true"></i>
+			<div class="tn-tooltip-content">
+				<h4>{{$ctrl.toolTipsHeader | translate}}</h4>
+				<p>{{$ctrl.toolTipsTitle | translate}}</p>
+			</div>
+	</span>
+	</h5>
+	<div class="container-fluid">
+		<span class="sr-only" role="status" id="updateSortableText" aria-live="polite"></span>
+		<table id="{{$ctrl.customId}}DataTable" role="grid" class="table">
+			<thead>
+			<tr role="row" ng-if="$ctrl.colTitles.length > 0">
+
+				<th role="columnheader" ng-if="$ctrl.sortableTitles.length == 0" tabindex="{{$ctrl.isFocus}}"
+					class="h6"
+					ng-repeat="title in $ctrl.colTitles track by $index"
+					ng-click="($ctrl.sortableTitles.indexOf(title) !== -1)
+								? $ctrl.orderBy($index): '';"
+					ng-class="{'selectable-header': $ctrl.sortableTitles.indexOf(title) !== -1}" aria-label="{{title}}">
+					<p>{{title}}
+					<span class="icon-sort icon-icon_triangle"
+						  ng-if="$ctrl.sortType === $ctrl.dataProperties[$index]"
+						  ng-class="{reverse: $ctrl.sortReverse}">
+					</span>
+					</p>
+				</th>
+			</tr>
+
+			<tr role="row" ng-if="$ctrl.sortableTitles.length != 0">
+				<th role="columnheader" class="h6" ng-repeat="title in $ctrl.colTitles track by $index"
+					aria-sort="{{$ctrl.sortOrder[$index]}}"
+					data-sort="{{title}}"
+					id="{{title}}{{$index}}"
+					ng-click="($ctrl.sortableTitles.indexOf(title) !== -1)
+									? $ctrl.orderBy($index): '';"
+					ng-class="{'selectable-header': $ctrl.sortableTitles.indexOf(title) !== -1}">
+					<p>
+						{{title}}
+						<i aria-hidden="true" class="icon-sort icon-icon_triangle triangle-color"
+						   ng-class="{reverse: $ctrl.sortTypeArray[$index], 'triangle-color': !$ctrl.sortTypeArray[$index], 'triangle-color-selected': $ctrl.sortType === $ctrl.dataProperties[$index] }">
+						</i>
+					</p>
+
+				</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr role="row" ng-repeat="item in items=($ctrl.data
+							| filter: $ctrl.filterByDateRange ? $ctrl.dateRangeFilter() : '')
+							| orderBy: $ctrl.sortType:$ctrl.sortReverse
+							| limitTo: ($ctrl.limit ? $ctrl.limitTo : undefined)"
+				ng-click="$ctrl.onRowSelected(item, $index);" tabindex="{{$ctrl.isFocus}}"
+				ng-class="{'tn-table-row_selected': $index === $ctrl.selectedRow}">
+
+				<td role="gridcell" ng-repeat="value in item track by $index">
+					<p  ng-switch="$ctrl.getDataType(value)" ng-class="{'last-item': $last}">
+						<span ng-switch-when="date">{{value | date:"MM/dd/yyyy" }}</span>
+						<tn-bind-html ng-switch-when="html" content="value"></tn-bind-html>
+						<span ng-switch-default>{{value}}</span>
+					</p>
+				</td>
+
+			</tr>
+			<tr class="tn-table-more-less"
+				ng-if="$ctrl.limitTo !== undefined && $ctrl.data !== undefined && $ctrl.allowExpand"
+				ng-click="$ctrl.limit = !$ctrl.limit">
+				<td> {{ $ctrl.limit	 ? ($ctrl.data.length - $ctrl.limitTo) + ' more': 'show less'}}	</td>
+			</tr>
+
+			<tr role="row" ng-if="$ctrl.data === undefined" class="tn-table-empty-data-text">
+				<td colspan="$ctrl.colTitles.length" role="alert" aria-live="assertive">{{ $ctrl.emptyDataText}}</td>
+			</tr>
+			<tr role="row" ng-if="$ctrl.data._error.message" class="tn-table-empty-data-text">
+				<td colspan="$ctrl.colTitles.length" role="alert" aria-live="assertive">{{$ctrl.data._error.message}}
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

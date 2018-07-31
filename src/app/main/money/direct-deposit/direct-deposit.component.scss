@@ -1,0 +1,18 @@
+@import '../../../../styles/main';
+
+.money-container{
+	ng-transclude{
+		min-height: 60px;
+	}
+}
+
+/* no existing account css starts */
+.no-existing-direct-deposite-accounts{
+	.button-group{
+		justify-content: center;
+	}
+	.no-existing-accounts{
+    	color:$font-color-secondary;
+    }
+}
+/* no existing account css ends */

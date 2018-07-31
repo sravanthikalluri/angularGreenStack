@@ -1,0 +1,234 @@
+{
+  "data": {
+	"benefitSupplementList": null,
+	"dentalPlansList": [
+	  {
+		"children": "5.4645",
+		"desc": "Aetna Dental 100 Group",
+		"employee": "1.7635",
+		"family": "9.1695",
+		"spouse": "5.4675"
+	  },
+	  {
+		"children": "27.215",
+		"desc": "Aetna Dental 50 Group",
+		"employee": "10.96",
+		"family": "40.685",
+		"spouse": "24.455"
+	  },
+	  {
+		"children": "56.3",
+		"desc": "BS-CA Value HMO 40 CA South",
+		"employee": "18.3",
+		"family": "92.5",
+		"spouse": "66.2"
+	  },
+	  {
+		"children": "5.7705",
+		"desc": "Delta Dental 100 Group",
+		"employee": "1.8615",
+		"family": "9.6805",
+		"spouse": "5.7705"
+	  },
+	  {
+		"children": "25.155",
+		"desc": "Delta Dental 50 Group",
+		"employee": "10.01",
+		"family": "37.62",
+		"spouse": "22.48"
+	  },
+	  {
+		"children": "3.269",
+		"desc": "Delta Dental DMO Group",
+		"employee": "0.99",
+		"family": "5.349",
+		"spouse": "3.071"
+	  },
+	  {
+		"children": "7.47",
+		"desc": "Guardian Dental 100 Group",
+		"employee": "2.695",
+		"family": "12.24",
+		"spouse": "7.47"
+	  },
+	  {
+		"children": "38.35",
+		"desc": "Kaiser HMO/HDHP 2600 CA South",
+		"employee": "12.45",
+		"family": "63.05",
+		"spouse": "45.15"
+	  },
+	  {
+		"children": "5.542",
+		"desc": "MetLife Dental 100 Group",
+		"employee": "1.788",
+		"family": "9.296",
+		"spouse": "5.542"
+	  }
+	],
+	"employeeHSA": null,
+	"employee1HSA": null,
+	"fundingOption": "PCT",
+	"lifePlan": "fully paid by company",
+	"lifeDescription": "$100,000 Basic Life & AD&D",
+	"medicalPlansList": [
+	  {
+		"children": "6.655",
+		"desc": "Aetna Vision Plus Group",
+		"employee": "3.225",
+		"family": "9.88",
+		"spouse": "6.315"
+	  },
+	  {
+		"children": "61.45",
+		"desc": "BS-CA HDHP 2600 CA South",
+		"employee": "19.95",
+		"family": "100.95",
+		"spouse": "72.25"
+	  },
+	  {
+		"children": "75.2",
+		"desc": "BS-CA HMO 20 CA South",
+		"employee": "24.4",
+		"family": "123.6",
+		"spouse": "88.4"
+	  },
+	  {
+		"children": "67.5",
+		"desc": "BS-CA HMO 30 CA South",
+		"employee": "21.9",
+		"family": "110.8",
+		"spouse": "79.3"
+	  },
+	  {
+		"children": "68",
+		"desc": "BS-CA PPO 1500 CA South",
+		"employee": "22.1",
+		"family": "111.8",
+		"spouse": "80"
+	  },
+	  {
+		"children": "162.7",
+		"desc": "BS-CA PPO 250 CA South",
+		"employee": "64.2",
+		"family": "257",
+		"spouse": "189"
+	  },
+	  {
+		"children": "88.65",
+		"desc": "BS-CA PPO 500 CA South",
+		"employee": "28.75",
+		"family": "145.55",
+		"spouse": "104.15"
+	  },
+	  {
+		"children": "57.1",
+		"desc": "BS-CA PPO 5000 CA South",
+		"employee": "18.5",
+		"family": "93.7",
+		"spouse": "67.1"
+	  },
+	  {
+		"children": "77.1",
+		"desc": "BS-CA PPO 700 CA South",
+		"employee": "25",
+		"family": "126.6",
+		"spouse": "90.6"
+	  },
+	  {
+		"children": "33.9",
+		"desc": "Guardian Dental 50 Group",
+		"employee": "14.085",
+		"family": "50.645",
+		"spouse": "30.825"
+	  },
+	  {
+		"children": "53.6",
+		"desc": "Kaiser HMO 20 CA South",
+		"employee": "17.4",
+		"family": "88.1",
+		"spouse": "63"
+	  },
+	  {
+		"children": "42.35",
+		"desc": "Kaiser HMO 30 Ded CA South",
+		"employee": "13.75",
+		"family": "69.65",
+		"spouse": "49.85"
+	  },
+	  {
+		"children": "51.7",
+		"desc": "Kaiser HMO 30/co-pay CA South",
+		"employee": "16.8",
+		"family": "85",
+		"spouse": "60.8"
+	  }
+	],
+	"medicalWaiverAllowance": "0",
+	"optionalDentalPlansList": [],
+	"otherPlansList": [
+	  {
+		"benefitPlan": "000E2C",
+		"planDescription": "60% STD Company Paid",
+		"planType": "30"
+	  },
+	  {
+		"benefitPlan": "000E2C",
+		"planDescription": "60% STD Company Paid",
+		"planType": "30"
+	  },
+	  {
+		"benefitPlan": "000E2R",
+		"planDescription": "60% LTD Company Paid",
+		"planType": "31"
+	  },
+	  {
+		"benefitPlan": "000E2R",
+		"planDescription": "60% LTD Company Paid",
+		"planType": "31"
+	  }
+	],
+	"optionalSupplementalADD": {
+	  "children": "0.02",
+	  "desc": "Voluntary AD&D (Per $1,000)",
+	  "employee": "0.01",
+	  "family": "0.02",
+	  "spouse": "0.02"
+	},
+	"optionalVisionPlansList": [],
+	"visionPlansList": [
+	  {
+		"children": "3.9175",
+		"desc": "Aetna Dental DMO Group",
+		"employee": "1.1875",
+		"family": "6.4085",
+		"spouse": "3.6815"
+	  },
+	  {
+		"children": "0.627",
+		"desc": "Aetna Vision Group",
+		"employee": "0.21",
+		"family": "1.02",
+		"spouse": "0.585"
+	  },
+	  {
+		"children": "35.715",
+		"desc": "MetLife Dental 50 Group",
+		"employee": "14.92",
+		"family": "53.33",
+		"spouse": "32.545"
+	  },
+	  {
+		"children": "2.8",
+		"desc": "VSP Vision Group",
+		"employee": "1.095",
+		"family": "5.055",
+		"spouse": "2.555"
+	  }
+	]
+  },
+  "_requestId": "638fdf33-e311-40ef-b8a0-64c45d618173",
+  "_statusCode": "200",
+  "_statusText": "OK",
+  "_statusMessage": "Success"
+}

@@ -1,0 +1,17 @@
+<div class="sso-widget">
+	<div data-ng-if="errorResponse">
+		<div tn-banner class="tn-error-banner">
+			<div class="tn-messages-banner">
+				<p ng-if="errorResponse._statusMessage">{{errorResponse._statusMessage}}</p>
+			</div>
+		</div>
+	</div>
+    <div layout="row" layout-xs="column" layout-align="center center" class="strecthToScreenSize">
+        <div ng-class="{'spinner-loader': spinnerClass}"></div>
+        <form method="POST" action="{{postURL}}" id="ssopost" novalidate>
+            <p data-ng-repeat="param in postParams">
+                <input type="hidden" name="{{param.name}}" value="{{param.value}}">
+            </p>
+        </form>
+    </div>
+</div>

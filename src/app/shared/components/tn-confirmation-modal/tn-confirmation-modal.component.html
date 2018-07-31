@@ -1,0 +1,29 @@
+<form name="confirmationForm" class="w4-modal"  no-validate>
+	<div class="w4-modal-header">
+		<i class="icon-close-temp" tabindex="0" role="link" tn-enter="$ctrl.cancel()"
+		   aria-label="Close modal"
+		   ng-click="$ctrl.cancel()"></i>
+	</div>
+
+	<div class="w4-modal-title">{{'w4-legal-modal-title' | translate}}</div>
+
+	<div class="w4-modal-body">
+		{{$ctrl.data.messsage | translate}}
+
+	</div>
+
+	<div class="w4-legal-modal-footer">
+		<button tn-button
+				ng-click="$ctrl.cancel()"
+				type="button">
+			{{$ctrl.data.noButton | translate}}
+		</button>
+		<button tn-action-button
+				class="margin-left"
+				ng-click="$ctrl.ok()"
+				type="button">
+			{{$ctrl.data.yesButton | translate}}
+		</button>
+	</div>
+</form>
+

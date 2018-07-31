@@ -1,0 +1,19 @@
+<span ng-click="$ctrl.closeLoginToBetaModal();" class="login-to-beta-close-icon icon-close-temp"></span>
+
+<div class="login-to-beta-content">
+	<div class="text-center login-to-beta-text">
+		{{ 'login-to-beta-message' | translate }}
+		<p></p>
+		{{ 'login-to-beta-message2' | translate }}
+	</div>
+	<div class="login-to-beta-footer">
+		<div class="login-to-beta-buttons">
+			<button class="login-to-beta-no" tn-button ng-click="$ctrl.setBetaPreference('N');">
+				{{'login-to-beta-no' | translate}}
+			</button>
+			<button tn-action-button class="login-to-beta-yes" ng-click="$ctrl.setBetaPreference('Y')">
+				{{'login-to-beta-yes' | translate}}
+			</button>
+		</div>
+	</div>
+</div>

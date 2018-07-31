@@ -1,0 +1,16 @@
+.time-off-card-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	padding: 48px 0;
+
+	time-off-table {
+		flex: 1;
+	}
+}
+
+.time-off-card-divider {
+	height: 250px;
+	border-left: 1px solid #ddd;
+	margin: 0 35px;
+}

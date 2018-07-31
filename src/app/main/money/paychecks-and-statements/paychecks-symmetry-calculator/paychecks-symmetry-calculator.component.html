@@ -1,0 +1,46 @@
+<div ng-if="$ctrl.payFrame" id="payFrame">
+	<div class="col-md-12 col-sm-12">
+		<button ng-click="$ctrl.hideCalc()" class="back-link hand">
+			<i class="icon-icon_back"></i> {{ 'money.earnings_statements.pay_check' | translate}}
+		</button>
+	</div>
+
+	<div class="primary-container col-md-12 col-sm-12">
+		<div id="symmetry-salary"  ng-class="$ctrl.selectedSymmetryCalc ===  'symmetry-salary' ? 'show':'hide'">
+			<script defer src="https://calculators.symmetry.com/widget/js/salary.js?key=cktNK0JiSWtaVEtRMWowM3JzUTVQdW1UeStUd29KQ2s4azR4VmkvSzBxND0="
+					data-defaults='{{$ctrl.symmetryPaycheckCityInfo}}'>
+			</script>
+			<div ng-init="$ctrl.setResidentValue(0)"></div>
+		</div>
+
+		<div id="symmetry-hourly" ng-class="$ctrl.selectedSymmetryCalc ===  'symmetry-hourly' ? 'show':'hide'">
+			<script defer src="https://calculators.symmetry.com/widget/js/hourly.js?key=cktNK0JiSWtaVEtRMWowM3JzUTVQdW1UeStUd29KQ2s4azR4VmkvSzBxND0="
+					data-defaults='{{$ctrl.symmetryPaycheckCityInfo}}'>
+			</script>
+			<div ng-init="$ctrl.setResidentValue(1)"></div>
+		</div>
+
+		<div id="symmetry-bonus-pay-aggregate" ng-if="$ctrl.isBonusPayAggregate" ng-class="$ctrl.selectedSymmetryCalc ===  'symmetry-bonus-pay-aggregate' ? 'show':'hide'">
+			<script defer src="https://calculators.symmetry.com/widget/js/agbonus.js?key=cktNK0JiSWtaVEtRMWowM3JzUTVQdW1UeStUd29KQ2s4azR4VmkvSzBxND0="
+					data-defaults='{{$ctrl.symmetryPaycheckCityInfo}}'>
+			</script>
+			<div ng-init="$ctrl.setResidentValue(2)"></div>
+		</div>
+
+		<div id="symmetry-bonus-pay-percent" ng-if="!$ctrl.isBonusPayAggregate"ng-class="$ctrl.selectedSymmetryCalc ===  'symmetry-bonus-pay-percent' ? 'show':'hide'">
+			<script defer src="https://calculators.symmetry.com/widget/js/flatbonus.js?key=cktNK0JiSWtaVEtRMWowM3JzUTVQdW1UeStUd29KQ2s4azR4VmkvSzBxND0="
+					data-defaults='{{$ctrl.symmetryPaycheckCityInfo}}'>
+			</script>
+			<div ng-init="$ctrl.setResidentValue(3)"></div>
+		</div>
+
+		<div id="symmetry-gross-up" ng-class="$ctrl.selectedSymmetryCalc ===  'symmetry-gross-up' ? 'show':'hide'">
+			<script defer src="https://calculators.symmetry.com/widget/js/grossup.js?key=cktNK0JiSWtaVEtRMWowM3JzUTVQdW1UeStUd29KQ2s4azR4VmkvSzBxND0="
+					data-defaults='{{$ctrl.symmetryPaycheckCityInfo}}'>
+			</script>
+			<div ng-init="$ctrl.setResidentValue(4)"></div>
+		</div>
+
+	</div>
+
+</div>

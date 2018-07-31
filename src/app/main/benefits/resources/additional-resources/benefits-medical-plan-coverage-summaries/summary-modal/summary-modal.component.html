@@ -1,0 +1,155 @@
+<span ng-click="$ctrl.closeModal();" class="sso-modal-close-icon icon-close-temp hand"></span>
+<div class="modalPad">
+	<h4>{{$ctrl.pane.header}}</h4>
+	<div ng-cloak>
+			<div  id="{{ ::pane.id }}-content" aria-labelledby="{{ ::pane.id }}-content">
+						<div>
+							<table class="table table-striped" ng-if="$ctrl.pane.subpanes">
+								<thead>
+								<tr>
+									<th class="col-md-4 col-sm-4">Plans</th>
+									<th class="col-md-4 col-sm-4" ng-if="$ctrl.planModelValue !== 'sbc'">
+										{{'my_benefits.planCarrier.carrierCertificate' | translate}}
+									</th>
+									<th class="col-md-4 col-sm-4" ng-if="$ctrl.planModelValue !== 'cc'">
+										{{'my_benefits.planCarrier.summary_benfCovg' | translate}}
+									</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr ng-repeat="x in $ctrl.pane.subpanes">
+									<td class="col-md-4 col-sm-4">{{x.plans}}</td>
+									<td class="col-md-4 col-sm-4" ng-if="$ctrl.planModelValue !== 'sbc'">
+                                    <div ng-if="x.CCCurYearUrl && x.CCCurYearUrl !== '' && x.CCCurYearUrl !== 'NA' ">
+                                        <a href="{{x.CCCurYearUrl | contentUrl}}" target="_blank"
+										   id="subplanesLink{{$ctrl.pane.header}}{{$index}}">
+											<span class="tn-icon"><img ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png"></span>
+											<span id="subplanes{{$ctrl.pane.header}}{{$index}}">
+												{{$ctrl.resolve.modalData.summaryPlanPdfData.thisPlanYearStartDate}} -
+												{{$ctrl.resolve.modalData.summaryPlanPdfData.thisPlanYearEndDate}}</span>
+										</a>
+                                    </div>
+										<span class="marg-left-20" ng-if="x.CCCurYearUrl === 'NA'">{{x.CCCurYearUrl}}</span>
+                                    <div ng-if="x.CCPrevYearUrl && x.CCPrevYearUrl !== '' && x.CCPrevYearUrl !== 'NA'">
+                                        <a href="{{x.CCPrevYearUrl | contentUrl}}" target="_blank"
+										   id="subplanesCCYearLink{{$ctrl.pane.header}}{{$index}}">
+											<span class="tn-icon"><img ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png"></span>
+											<span id="subplanesCCYear{{$ctrl.pane.header}}{{$index}}">
+												{{$ctrl.resolve.modalData.summaryPlanPdfData.prevPlanYearStartDate}} -
+												{{$ctrl.resolve.modalData.summaryPlanPdfData.prevPlanYearEndDate}}</span>
+										</a>
+                                    </div>
+									<div ng-if="x.CCCurYearUrl  === 'Pending'">
+										<span> Pending </span>
+									</div>
+                                    <span class="marg-left-20"
+										  ng-if="x.CCPrevYearUrl === 'NA'">{{x.CCPrevYearUrl}}</span>
+									</td>
+									<td class="col-md-4 col-sm-4" ng-if="$ctrl.planModelValue !== 'cc'">
+                                    <div ng-if="x.SBCCurYearUrl && x.SBCCurYearUrl !== '' && x.SBCCurYearUrl !== 'NA' ">
+                                        <a href="{{x.SBCCurYearUrl | contentUrl}}" target="_blank"
+										   id="subplaneYearLink{{$ctrl.pane.header}}{{$index}}">
+											<span class="tn-icon"><img ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png"></span>
+											<span id="subplaneSD{{$ctrl.pane.header}}{{$index}}">
+												{{$ctrl.resolve.modalData.summaryPlanPdfData.thisPlanYearStartDate}} -
+												{{$ctrl.resolve.modalData.summaryPlanPdfData.thisPlanYearEndDate}}</span>
+										</a>
+                                    </div>
+									<div ng-if="x.SBCCurYearUrl  === 'Pending'">
+										<span> Pending </span>
+									</div>
+                                    <span class="marg-left-20"
+										  ng-if="x.SBCCurYearUrl === 'NA'">{{x.SBCCurYearUrl}}</span>
+                                    <div ng-if="x.SBCPrevYearUrl && x.SBCPrevYearUrl !== '' && x.SBCPrevYearUrl !== 'NA' ">
+                                        <a href="{{x.SBCPrevYearUrl | contentUrl}}" target="_blank"
+										   id="subplanePrevLink{{$ctrl.pane.header}}{{$index}}">
+											<span class="tn-icon"><img ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png"></span>
+											<span id="subplanePrevSBC{{$ctrl.pane.header}}{{$index}}">
+												{{$ctrl.resolve.modalData.summaryPlanPdfData.prevPlanYearStartDate}} -
+												{{$ctrl.resolve.modalData.summaryPlanPdfData.prevPlanYearEndDate}}</span>
+										</a>
+                                    </div>
+                                    <span class="marg-left-20"
+										  ng-if="x.SBCPrevYearUrl === 'NA'">{{x.SBCPrevYearUrl}}</span>
+									</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+
+
+						<div id="nestedAccordionB" multiple ng-if="$ctrl.pane.subheader" role="tablist">
+							<div id="{{ ::subpane.id }}" ng-repeat="subpane in $ctrl.pane.subheader track by $index" expanded="$first" class="bp-accord-structure">
+								<a href="" id="{{ ::subpane.id }}ContentId" class="toggle-link " ng-click="$ctrl.paneTwo[$index].isOpen = !$ctrl.paneTwo[$index].isOpen;"
+								   aria-selected="{{$ctrl.paneTwo[$index].isOpen }}" aria-controls="{{ ::subpane.id }}ContentControl" aria-expanded="{{$ctrl.paneTwo[$index].isOpen }}" role="tab"
+								>
+									<h5>{{ subpane.heading }}</h5>
+								</a>
+								<div ng-show="$ctrl.paneTwo[$index].isOpen" id="{{ ::subpane.id }}ContentControl"
+									 aria-labelledby="{{ ::subpane.id }}ContentId" aria-hidden="{{!$ctrl.paneTwo[$index].isOpen}}" role="tabpanel">
+
+									<table class="table">
+										<thead>
+										<tr>
+											<th class="col-md-4 col-sm-4">{{::translation.my_benefits.policies.plans}}</th>
+											<th class="col-md-4 col-sm-4" ng-if="$ctrl.planModelValue !== 'sbc'">
+												{{:'my_benefits.planCarrier.carrierCertificate' | translate}}
+											</th>
+											<th class="col-md-4 col-sm-4" ng-if="$ctrl.planModelValue !== 'cc'">
+												{{'my_benefits.planCarrier.summary_benfCovg' | translate}}
+											</th>
+
+										</tr>
+										</thead>
+										<tbody>
+										<tr ng-repeat="x in subpane.sub">
+											<td class="col-md-4 col-sm-4">{{x.plans}}</td>
+											<td class="col-md-4 col-sm-4" ng-if="$ctrl.planModelValue !== 'sbc'">
+                                            <div ng-if="x.CCCurYearUrl !== '' ">
+                                                <a href="{{x.CCCurYearUrl | contentUrl}}" target="_blank"
+												   id="summNestYearLink{{$index}}">
+													<span class="tn-icon"><img alt="PDF Icon" ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png"></span>
+													<span id="summNestYearLb{{$index}}">
+														{{$ctrl.resolve.modalData.summaryPlanPdfData.thisPlanYearStartDate}} -
+														{{$ctrl.resolve.modalData.summaryPlanPdfData.thisPlanYearEndDate}}</span>
+												</a>
+                                            </div>
+                                            <div ng-if="x.CCPrevYearUrl !== '' ">
+                                                <a href="{{x.CCPrevYearUrl | contentUrl}}" target="_blank"
+												   id="summNestPrevYearLink{{$index}}">
+													<span class="tn-icon"><img alt="PDF Icon" ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png"></span>
+													<span id="summNestPrevYearLb{{$index}}">
+														{{$ctrl.resolve.modalData.summaryPlanPdfData.prevPlanYearStartDate}} -
+														{{$ctrl.resolve.modalData.summaryPlanPdfData.prevPlanYearEndDate}}</span>
+												</a>
+                                            </div>
+											</td>
+											<td class="col-md-4 col-sm-4" ng-if="$ctrl.planModelValue !== 'cc'">
+                                            <div ng-if="x.SBCCurYearUrl !== '' ">
+                                                <a href="{{x.SBCCurYearUrl | contentUrl}}" target="_blank"
+												   id="summNestCCYearLink{{$index}}">
+													<span class="tn-icon"><img alt="PDF Icon" ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png"></span>
+													<span id="summNestCCYearLb{{$index}}">
+														{{$ctrl.resolve.modalData.summaryPlanPdfData.thisPlanYearStartDate}} -
+														{{$ctrl.resolve.modalData.summaryPlanPdfData.thisPlanYearEndDate}}</span>
+												</a>
+                                            </div>
+                                            <div ng-if="x.SBCPrevYearUrl !== '' ">
+                                                <a href="{{x.SBCPrevYearUrl | contentUrl}}" target="_blank"
+												   id="summNestSBCYearLink{{$index}}">
+													<span class="tn-icon"><img alt="PDF Icon" ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png"></span>
+													<span id="summNestSBCYearLb{{$index}}">
+														{{$ctrl.resolve.modalData.summaryPlanPdfData.prevPlanYearStartDate}} -
+														{{$ctrl.resolve.modalData.summaryPlanPdfData.prevPlanYearEndDate}}</span>
+												</a>
+                                            </div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+	</div>
+</div>

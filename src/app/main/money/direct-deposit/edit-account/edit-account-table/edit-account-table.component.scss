@@ -1,0 +1,172 @@
+@import '../../../../main.component';
+
+.in-line-flex {
+  display: inline-flex;
+  align-items: center;
+}
+
+.is-disabled {
+  opacity: 0.5;
+
+}
+
+.cursor-default {
+  cursor: default;
+}
+
+.edit-account-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  white-space: nowrap;
+  height: 45px;
+  .edit-account-account-drag {
+	margin-right: 5px  !important;
+	flex-basis: 7%;
+	display: flex;
+	align-items: center;
+  }
+  .edit-account-account-name {
+	margin-right: 5px  !important;
+	flex-basis: 17%;
+	display: flex;
+	align-items: center;
+  }
+  .edit-account-net-balance {
+	margin-right: 5px  !important;
+	flex-basis: 13%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+  .edit-account-deposit {
+	margin-right: 5px  !important;
+	flex-basis: 35%;
+	display: flex;
+	align-items: center;
+  }
+  .edit-account-estiamted-amount {
+	flex-basis: 27%;
+	display: flex;
+	justify-content: flex-end;
+	.amount {
+	  margin-right: 5px  !important;
+	}
+	.edit-link {
+	  margin-right: 5px  !important;
+	}
+	.tool-tip {
+	  margin-right: 5px  !important;
+	}
+	.delete-link {
+	  margin-right: 5px  !important;
+	}
+  }
+
+}
+
+.edit-account-table-data {
+  .edit-account-drag {
+	margin-right: 15px;
+	margin-left: 10px;
+	color: $silver;
+  }
+
+  .edit-account-number {
+	color: $font-color;
+	font-size: 14px;
+	line-height: 17px;
+  }
+  .edit-account-deposit {
+	&.flex-item-deposit {
+	  padding-left: 25px;
+	}
+	input {
+	  width: 85px;
+	}
+	.percentageInput {
+	  width: 40px;
+	}
+	.radio-section{
+	  display: flex;
+	  align-items: center;
+	}
+  }
+  input[type = 'radio'], input[type="checkbox"]  {
+	position: absolute;
+	left: -9999px;
+	&:focus {
+	  ~ .control__indicator {
+		border: 0.125em solid $azure-blue;
+	  }
+	}
+  }
+  .tn-radio {
+	label {
+	  margin: 0 10px 0 0;
+	}
+  }
+  .control--radio {
+	.control__indicator {
+	  width: 20px;
+	  height: 20px;
+	  border-radius: 100%;
+	  border: 0.125em solid $blue;
+	  position: relative;
+	  &:hover {
+		border-color: $azure-blue;
+	  }
+	}
+	span {
+	  margin: 0 0 0 5px;
+	  font-weight: 900;
+	}
+  }
+  input:checked {
+	~ .control__indicator {
+	  border: 0.125em solid $blue;
+	  &:after {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 10px;
+		height: 10px;
+		background-color: $blue;
+		border-radius: 100%;
+		left: 3px;
+		top: 3px;
+	  }
+	  &:hover {
+		border-color: $azure-blue;
+		&:after {
+		  background-color: $azure-blue;
+		}
+	  }
+	}
+	~ span {
+	  color: $blue;
+	}
+  }
+  .radio-icon {
+	&:before {
+	  font-size: 20px;
+	  font-weight: 600;
+	}
+  }
+  a {
+	&:hover, &:focus, &:active {
+	  text-decoration: none;
+	}
+  }
+  a.remove {
+	color: $red-lighter;
+  }
+  a.edit {
+	color: $blue;
+  }
+}
+
+
+
+
+

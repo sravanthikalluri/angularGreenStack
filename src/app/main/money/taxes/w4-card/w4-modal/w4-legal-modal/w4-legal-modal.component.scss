@@ -1,0 +1,37 @@
+@import "main";
+
+.w4-modal-body{
+  table{
+	font-size:14px;
+	line-height:22px;
+	text-align:justify;
+	padding:10px;
+	tr{
+	  &:first-child{
+		  td{
+			padding-bottom: 5px;
+		  }
+		}
+	  &:nth-child(2) > {
+		td{
+		  border: 2px solid #000;
+		  padding: 3px;
+		  position: relative;
+		.gridder-navigation{
+		  position: absolute;
+		  top: 5px;
+		  right: 10px;
+		}
+		}
+	  }
+
+	}
+  }
+}
+.w4-legal-modal-footer {
+	text-align: right;
+
+	button {
+		width: 180px;
+	}
+}

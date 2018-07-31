@@ -1,0 +1,27 @@
+<div ng-if="$ctrl.data.length >0 " role="grid" id="holidaysSection">
+	<div class="row  row-header  holiday-calendar-table " role="row">
+		<p role="columnheader" ng-repeat="title in ['Holiday Name','Date'] track by $index"
+			ng-class="{'text-right col-sm-6': $last,
+					   'col-sm-6': $first}">
+			{{title}}
+		</p>
+	</div>
+
+	<div id="holidayInfoTable_{{$index}}" role="row" class="row  row-data  holiday-calendar-table" ng-repeat="item in $ctrl.data">
+		<p role="gridcell" class="semibold col-sm-6">
+			{{item.desc}}
+			<span class="holiday-calendar-table-chip">
+				<tn-chip label="{{item.up_coming}}" color="$ctrl.chipStyle"
+						 ng-if="item.up_coming">
+				</tn-chip>
+			</span>
+		</p>
+		<p role="gridcell" class="semibold col-sm-6 text-right" >
+			{{item.date| date:'EEEE, MMM d, yyyy' }}
+		</p>
+	</div>
+</div>
+
+<div ng-if="$ctrl.errorMessage.length" role="alert" aria-live="assertive">
+	<p class="error-message">{{$ctrl.errorMessage}}</p>
+</div>

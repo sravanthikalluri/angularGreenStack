@@ -1,0 +1,25 @@
+<tn-card class="total_compensation">
+	<tn-card-title-group >
+		<tn-card-title>{{'total-compensation-title' | translate}}</tn-card-title>
+		<button  tn-button class="download_button">
+			<i class="icon-icon_download" ></i>
+			<label>{{'total-compensation-download' | translate}}</label>
+		</button>
+	</tn-card-title-group>
+	<tn-card-content>
+		<div class="row total_compensation-content">
+			<div class="col-sm-offset-1 col-sm-3">
+				<tn-donut-chart
+					values="$ctrl.amounts"
+					colors="$ctrl.colors"
+					label="Gross Pay">
+				</tn-donut-chart>
+			</div>
+			<div class="col-sm-offset-1 col-sm-6" >
+				<total-compensation-pay></total-compensation-pay>
+                <total-compensation-benefits></total-compensation-benefits>
+			</div>
+		</div>
+		<total-compensation-footer></total-compensation-footer>
+	</tn-card-content>
+</tn-card>

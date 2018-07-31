@@ -1,0 +1,46 @@
+.modal {
+	text-align: center;
+	padding: 0!important;
+}
+
+.modal:before {
+	content: '';
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+	margin-right: -4px;
+}
+
+.modal-dialog {
+	display: inline-block;
+	text-align: left;
+	vertical-align: middle;
+	width: 750px;
+}
+
+.modal-backdrop {
+	position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #31384A;
+
+    &.in {
+    	opacity: 0.9
+    }
+}
+
+.tooltip.bottom {
+	filter: drop-shadow(0px 9px 34px rgba(55, 57, 62, 0.38));
+
+	.tooltip-inner {
+		background: white;
+		color: black !important;
+	}
+
+	.tooltip-arrow {
+		border-bottom-color: white;
+	}
+}

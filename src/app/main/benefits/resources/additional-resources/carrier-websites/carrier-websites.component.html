@@ -1,0 +1,10 @@
+<div class="row">
+	<div class="col-md-4" ng-repeat="benefitsPoliciesDataObject in $ctrl.data.slice(9, 17)">
+		<a id="$ctrl.carrierFirst{{$index}}" ng-href="{{benefitsPoliciesDataObject.documentUrl}}" target="_blank">
+			<div class="carrier-website-image">
+				<img ng-src="{{benefitsPoliciesDataObject.imgurl}}">
+			</div>
+		</a>
+	</div>
+</div>
+

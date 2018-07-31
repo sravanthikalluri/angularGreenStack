@@ -1,0 +1,18 @@
+<tn-card class="pay-history-card" titles="pay-history-title" loading="$ctrl.loading">
+	<tn-spinner ng-show="$ctrl.showSpinner"  is-show="$ctrl.showSpinner" error-message="$ctrl.errorMessage"></tn-spinner>
+	<tn-card-content class="pay-history-card-content" ng-if="$ctrl.checks.length > 0">
+		<tn-stacked-bar-chart
+			class="pay-history-card-chart"
+			data="$ctrl.checks"
+			ng-hide="$ctrl.showSpinner">
+		</tn-stacked-bar-chart>
+		<pay-history-table
+			class="pay-history-card-table"
+			data="$ctrl.checks"
+			ng-hide="$ctrl.showSpinner">
+		</pay-history-table>
+	</tn-card-content>
+	<tn-card-actions>
+		<button id="viewAllPayChecksBtn" ng-hide="$ctrl.showSpinner" tn-action-button ng-click="$ctrl.viewAllPayChecks()">{{'pay-history-action-button' | translate}}</button>
+	</tn-card-actions>
+</tn-card>

@@ -1,0 +1,33 @@
+.time-off-carousel {
+	.carousel-indicators {
+		display: none;
+	}
+
+	.carousel-control.left {
+		margin: 0;
+	}
+
+	.carousel-control.left,
+	.carousel-control.right {
+		background: none;
+	}
+
+	[uib-slide] {
+		margin: 0 auto;
+		max-height: 190px;
+		vertical-align: middle;
+	}
+
+	.glyphicon {
+		font-family: 'icomoon';
+		color: #ddd;
+	}
+
+	.glyphicon-chevron-left:before {
+		content: "\a113";
+	}
+
+	.glyphicon-chevron-right:before {
+		content: "\a117";
+	}
+}

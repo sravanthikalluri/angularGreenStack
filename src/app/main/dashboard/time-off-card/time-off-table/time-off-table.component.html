@@ -1,0 +1,23 @@
+<div class="time-off-table">
+	<h4 class="semibold text-center">{{'time-off-card-table-title' | translate}}</h4>
+	<div id="timeOffDetails" class="container-fluid">
+		<div class="row row-header">
+			<p ng-if="$ctrl.requests.length !== 0" class="col-sm-4 semibold time-off-table-heading table-data"
+				ng-repeat="title in ['Date', 'Status', 'Type'] track by $index"
+				ng-class="{'text-right': $last}">
+				{{title}}
+			</p>
+		</div>
+		<div tabindex="0" class="row row-data" ng-repeat="request in $ctrl.requests | orderBy: '-requestId' | limitTo:3">
+			<p class="col-sm-4 semibold table-data">{{request.dateRange}}</p>
+			<p class="col-sm-4 semibold table-data"
+				ng-class="request.status === 'Approved' || request.status === 'Paid' ? 'leave-status-approved' : 'leave-status-other'">
+				{{request.status}}
+			</p>
+			<p class="col-sm-4 semibold text-right table-data">{{request.type}}</p>
+		</div>
+		<div ng-if="$ctrl.requests.length === 0" class="tn-table-empty-data-text">
+		 {{'time-off-no-record' | translate}}
+		</div>
+	</div>
+</div>

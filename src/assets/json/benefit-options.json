@@ -1,0 +1,46 @@
+{
+  "data": {
+	"benefitsOverview": {
+	  "basicLifeInsurance": "1X Earnings Basic Life & AD&D",
+	  "basicLifeInsurancePlan": "1XLIFE",
+	  "benefitFundingPayPolicies": {
+		"a1_employeeOnly": 672,
+		"a2_employeeSpouse": 1354,
+		"a3_employeeChildren": 1354,
+		"a4_employeeFamily": 1898
+	  },
+	  "benefitFundingStrategyMethod": "BS",
+	  "benefitPlanEndDate": "2017-09-30",
+	  "benefitPlanStartDate": "2016-10-01",
+	  "benefitsSupplimentAll": 0,
+	  "benefitsSupplimentContribCoverage": "Medical, Dental and Vision",
+	  "companyGroupMedicalInsurance": true,
+	  "companyGroupDentalInsurance": true,
+	  "companyGroupVisionInsurance": true,
+	  "employeeDentalPercent": 0,
+	  "employeeFamilyDentalPercent": 0,
+	  "employeeFamilyMedicalPercent": 0,
+	  "employeeFamilyVisionPercent": 0,
+	  "employeeMedicalPercent": 0,
+	  "employeeVisionPercent": 0,
+	  "enrollmentQuarter": "Q4",
+	  "groupLongTermDisabilityInsurance": "66.67% LTD Company Paid",
+	  "groupLongTermDisabilityInsurancePlan": "000E2Q",
+	  "groupLongTermDisabilityInsuranceWaive": false,
+	  "groupShortTermDisabilityInsurance": "66.67% STD Company Paid",
+	  "groupShortTermDisabilityInsuraceMaxBenefitDays": null,
+	  "groupShortTermDisabilityInsurancePlan": "000E2A",
+	  "groupShortTermDisabilityInsuranceWaive": false,
+	  "healthInsuranceSupplementReturnPolicy": "C",
+	  "healthInsuranceFixedPayPolicy": null,
+	  "hsaContribution": "0",
+	  "healthInsuraceWaiverBenefitAllowance": 250,
+	  "noGroup": false,
+	  "retirementPlan": "Y"
+	}
+  },
+  "_requestId": "4c9b321c-087a-4e72-977d-bb9b51cdbb85",
+  "_statusCode": "200",
+  "_statusText": "OK",
+  "_statusMessage": "Success"
+}

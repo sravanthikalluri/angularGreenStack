@@ -1,0 +1,26 @@
+<tn-card>
+	<tn-card-title class="settings-card-title padding-top padding-bottom">
+		{{$ctrl.title}}
+	</tn-card-title>
+
+	<div class="pending-approvals-content">
+		<div class="team-number-widget">
+			<h1 class="team-number-widget-number">{{$ctrl.tableData.length}}</h1>
+			<h5 class="team-number-widget-text">{{$ctrl.subtitle}}</h5>
+		</div>
+
+		<tn-table
+			class="pending-approvals-table"
+			color="white"
+			col-titles="$ctrl.tableTitles"
+			data="$ctrl.tableData"
+			limit-to="3">
+		</tn-table>
+	</div>
+
+	<tn-card-actions>
+		<button tn-action-button ng-click="$ctrl.btnClick()">
+			{{$ctrl.buttonText}}
+		</button>
+	</tn-card-actions>
+</tn-card>

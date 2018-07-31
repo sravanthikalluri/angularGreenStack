@@ -1,0 +1,26 @@
+@import '../../../../../styles/main';
+
+.last-paycheck{
+	.account-title{
+		margin:0;
+		font-size:15px;
+	}
+	tn-card-title-group{
+		justify-content:center;
+		margin:0;
+	}
+	tn-card-content{
+	h4{
+		color: $font-color;
+		font-weight: 600;
+		margin-top:0;
+	}
+	h5{
+		color: $slate;
+		margin-top:0;
+	}
+	}
+	.last-paycheck-section{
+		border-bottom:1px solid $background-color;
+	}
+}

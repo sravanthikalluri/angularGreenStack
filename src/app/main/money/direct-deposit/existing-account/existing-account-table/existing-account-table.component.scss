@@ -1,0 +1,48 @@
+@import '../../../../main.component';
+
+.existing-account-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: 15px;
+  white-space: nowrap;
+  justify-content: flex-start;
+  .flex-item-order{
+	flex: 1;
+  }
+  .flex-item-name {
+	flex: 2;
+  }
+  .flex-item-net-balance {
+	flex: 2;
+	text-align: center;
+  }
+  .flex-item-amount {
+	flex: 2;
+  }
+  .flex-item-estimated-amount {
+	flex: 2;
+	text-align: right;
+	display: flex;
+	align-items: center;
+  }
+  &.existing-table-data {
+	.flex-item-name {
+	  margin-left: 0;
+	  span {
+		margin-right: 25px;
+	  }
+	}
+  }
+  .existing-account-color-blue {
+	color: $blue;
+	margin-top: 5px;
+  }
+
+  p {
+    margin: 8px 0px 8px 0px !important;
+  }
+}
+
+.existing-table-data:nth-child(2) {
+  margin-top: 10px;
+}

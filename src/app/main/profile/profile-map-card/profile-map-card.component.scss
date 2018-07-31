@@ -1,0 +1,45 @@
+@import 'main';
+
+.profile-map {
+	width: 230px;
+	height: 230px;
+	clip-path: circle(115px at center);
+	z-index: 100;
+	margin: 12px auto;
+
+	ng-map {
+		width: 230px;
+		height: 230px;
+		margin: 0 auto;
+	}
+}
+
+.profile-map-address-container {
+	display: flex;
+	justify-content: center;
+	padding-bottom: 24px;
+}
+
+.profile-map-address {
+	margin: 0 auto;
+	position: relative;
+	padding-left: 36px;
+	font-size: 14px;
+	line-height: 26px;
+
+	i {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+
+.profile-location-label {
+	color: $slate;
+	font-weight: 600;
+	font-size: 14px;
+    margin: 0px;
+    line-height: inherit;
+}
+
+.profile-location-value { font-weight: 400 !important; }

@@ -1,0 +1,69 @@
+<tn-card class="profile" loading="!$ctrl.data">
+	<div class="tn-profile-header">
+		<h3 class="text-center semibold tn-profile-header-title">{{'profile-home-personal-info' | translate}}</h3>
+		<div class="tn-edit-button-wrap">
+			<button id="profilePersonalEdit" aria-label="Profile-personal-edit-button" tn-button class="edit-button" ng-click="$ctrl.edit()">Edit</button>
+		</div>
+	</div>
+	<br>
+	<br>
+
+	<div class="row  public-profile-table">
+		<div class="col-sm-offset-1  col-sm-10  col-sm-offset-1">
+			<div class="row  tn-profile-divider  tn-profile-content">
+				<div class="col-sm-1  tn-align-profile-icon">
+    				<i class="tn-icon icon-icon_dashboard"></i>
+    			</div>
+    			<div class="col-sm-4  titles">
+    				<div class="profile-label">{{'profile-home-address' | translate}}</div>
+    			</div>
+				<div  class="col-sm-7  tn-right-align-grid-text ">
+					<div class="profile-value" ng-bind-html="$ctrl.data.address[0].fullAddressHtml"></div>
+				</div>
+			</div>
+
+			<div class="row  tn-profile-divider  tn-profile-content">
+				<div class="col-sm-1  tn-align-profile-icon">
+    				<i class="tn-icon icon-icon_employment"></i>
+    			</div>
+    			<div class="col-sm-4  titles">
+    				<div class="profile-label">{{'profile-employment-details' | translate}}</div>
+    			</div>
+				<div class="col-sm-7  tn-right-align-grid-text">
+					<div class="profile-value">{{$ctrl.data.compensation.employeeType}}</div>
+					<div class="profile-value">{{$ctrl.data.compensation.regularTemporary}}</div>
+					<div class="profile-value" ng-if="$ctrl.data.compensation.compensationBasis==='Annual'">
+						{{$ctrl.data.compensation.compensationRate | currency:"$":2}}&nbsp;
+						Annual Compensation
+					</div>
+					<div class="profile-value" ng-if="$ctrl.data.compensation.compensationBasis==='Hourly'">
+						{{$ctrl.data.compensation.compensationRate | currency:"$":2}}&nbsp;
+						Hourly Compensation
+					</div>
+					<div class="profile-value">Standard Hours: {{$ctrl.data.compensation.standardHours}}</div>
+					<div class="profile-value">Employee Status: {{$ctrl.data.work.employeeStatus}}</div>
+					<div class="profile-value" ng-if="$ctrl.data.work.terminationDate">Termination Date: {{$ctrl.data.work.terminationDate | date:'MMM dd, yyyy'}}</div>
+				</div>
+			</div>
+
+			<div class="row  tn-profile-content">
+				<div class="col-sm-1  tn-align-profile-icon">
+    				<i class="tn-icon icon-icon_info"></i>
+    			</div>
+    			<div class="col-sm-4  titles">
+    				<div class="profile-label">{{'profile-personal' | translate}}</div>
+    			</div>
+				<div class="col-sm-7  tn-right-align-grid-text">
+					<div class="profile-value">Gender: {{$ctrl.data.personalInfo.gender | gender}}</div>
+					<div class="profile-value">Marital Status: {{$ctrl.data.personalInfo.maritalStatus | maritalStatus}}</div>
+					<div class="profile-value">Military Status: {{$ctrl.data.personalInfo.militaryStatus | militaryStatus }}</div>
+					<div class="profile-value">Birthdate: {{$ctrl.data.personalInfo.birthDate | date:'MMM dd, yyyy'}}</div>
+					<div class="profile-value">Ethnicity: {{$ctrl.data.personalInfo.ethnicity | ethnicity}}</div>
+					<div class="profile-value" ng-if="$ctrl.data.countryName === 'US'">Social Security Number: {{$ctrl.data.personalInfo.ssnId | ssn}}</div>
+					<!-- <div class="profile-value" ng-if="$ctrl.data.countryName === 'CA'">Social Insurance Number: {{$ctrl.data.personalInfo.ssnId | ssn}}</div> -->
+					<div class="profile-value">Citizenship: {{$ctrl.data.personalInfo.citizenshipStatus}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</tn-card>

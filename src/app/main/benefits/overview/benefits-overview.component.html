@@ -1,0 +1,56 @@
+
+<div class="background">
+	<div class="primary-container" id="benefit-cards">
+		<h2 class="page-title tabs-heading" >
+			{{'benefits-title' | translate}}
+			<span class="icon-heading icon-icon_forward"></span>
+			{{'overview-title' | translate}}
+
+			<span class="tabs-label">
+				<ul class="list-inline pull-right">
+					<li ng-click="$ctrl.show= true">
+						<a ng-class="{active: $ctrl.show === true}">{{'currentBenefit-title' | translate}}</a>
+					</li>
+					<li ng-click="$ctrl.show= false" ng-if="$ctrl.enableFutureBenefits && $ctrl.futureBenefits.length > 0">
+						<a ng-class="{active: $ctrl.show === false}">{{'futureBenefit-title' | translate}}</a>
+					<li>
+				</ul> </span>
+		</h2>
+		<tn-spinner ng-show="$ctrl.showSpinner"></tn-spinner>
+		<h4 ng-if="$ctrl.errorStatus">{{$ctrl.errorStatus}}</h4>
+		<div ng-if="$ctrl.show" ng-repeat="benefit in $ctrl.benefits track by $index">
+			<tn-benefit-card benefit="benefit"></tn-benefit-card>
+		</div>
+		<div ng-if="$ctrl.futureBenefits.length > 0 && $ctrl.enableFutureBenefits && !$ctrl.show">
+			<div ng-if="$ctrl.futureBenefitDescriptionText">
+				<p>
+					<i class="icon-icon_info"></i>
+					<span>{{'futureBenefit-description' | translate}}<a class="hand blue ng-scope" ng-click="$ctrl.popUp()">{{'futureBenefits-learMore' |translate}}</a></span>
+				</p>
+			</div>
+			<br/><p><i class="icon-icon_calendar"></i></i>
+			<span>Benefits Plan {{$ctrl.payBeginDt}}</span></p>
+			<div ng-repeat="benefit in $ctrl.futureBenefits track by $index">
+				<tn-benefit-card benefit="benefit"></tn-benefit-card>
+			</div>
+		</div>
+	</div>
+
+	<div class="secondary-container">
+		<!-- <tn-benefits-cards-card data="$ctrl.benefitsCards"
+				ng-if="$ctrl.benefitsCards">
+		</tn-benefits-cards-card> -->
+		<tn-benefits-popup ng-if="$ctrl.showPopup" plan="$ctrl.uhcPopupData['0']"></tn-benefits-popup>
+		<tn-benefits-help-card data="$ctrl.guideBooks"
+				ng-if="$ctrl.guideBooks">
+		</tn-benefits-help-card>
+
+		<tn-benefit-best-doctors data="$ctrl.bestDoctorsInfo"
+				ng-if="$ctrl.bestDoctorsInfo">
+		</tn-benefit-best-doctors>
+
+		<tn-current-beneficiaries-card data="$ctrl.dependents"
+				ng-if="$ctrl.dependents">
+		</tn-current-beneficiaries-card>
+	</div>
+</div>

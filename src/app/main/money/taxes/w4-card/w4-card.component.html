@@ -1,0 +1,36 @@
+<tn-error-banner error-data="$ctrl.errorAlert"></tn-error-banner>
+<tn-card ng-if="$ctrl.taxForm">
+	<tn-card-title-group>
+		<tn-card-title><h3>{{'money.tax_With_Holding.title' | translate}}</h3></tn-card-title>
+		<button id="taxEditBtn" tn-button
+				class="w4-card-edit-button"
+				ng-click="$ctrl.edit()">
+				{{'w4-card-edit-label' | translate}}
+		</button>
+	</tn-card-title-group>
+	<tn-card-content>
+		<!--<w4-date-select items="$ctrl.taxWithholdings"
+						selected-item="$ctrl.selectedTaxWithholding"
+						on-update="$ctrl.getTaxForm(tax)">
+		</w4-date-select>-->
+		<div class="text-right semibold margin-vertical">
+			<a id="irsCalcLink" href="{{$ctrl.irsCalculatorUrl}}"
+			   target="_blank">
+			   {{'w4-card-irs-calculator-label' | translate}}
+			</a>
+		</div>
+
+		<div class="select-style">
+			<select id="taxEffectiveDate" class="pull-left custom-select"
+					ng-model="$ctrl.selectedEffectiveDate"
+					ng-options="date for date in $ctrl.dateMenuObject"
+					aria-label="tax-withholding"
+					ng-change="$ctrl.taxWithHoldingDataDisplay($ctrl.selectedEffectiveDate)">
+			</select>
+		</div>
+
+		<w4-table id="taxDetailsViewTable" tax-form="$ctrl.taxForm"></w4-table>
+	</tn-card-content>
+</tn-card>
+
+

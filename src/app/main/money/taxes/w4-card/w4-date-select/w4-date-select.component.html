@@ -1,0 +1,7 @@
+<tn-input-container class="w4-date-select is-disabled">
+	<select ng-options="$ctrl.format(item.effectiveDate) for item in $ctrl.items track by item.effectiveDate"
+			ng-model="$ctrl.selected.item"
+			ng-change="$ctrl.update($ctrl.selected.item)"
+			ng-disabled="true">
+	</select>
+</tn-input-container>

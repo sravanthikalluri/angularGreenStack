@@ -1,0 +1,34 @@
+<div>
+   <div class="primary-container">
+      <div class="tab">
+         <button class="tablinks" ng-click="$ctrl.openTab('Home')" ng-class="$ctrl.tabState === 'Home'? 'active':'notactive'">{{'fsa-calculator.home.title' | translate}}</button>
+         <button class="tablinks" ng-click="$ctrl.openTab('AboutFSA')" ng-class="$ctrl.tabState === 'AboutFSA'? 'active':'notactive'">{{'fsa-calculator.about.title' | translate}}</button>
+         <button class="tablinks" ng-click="$ctrl.openTab('DCFSA')" ng-class="$ctrl.tabState === 'DCFSA'? 'active':'notactive'">{{'fsa-calculator.dc.title' | translate}}</button>
+         <button class="tablinks" ng-click="$ctrl.openTab('HCFSA')" ng-class="$ctrl.tabState === 'HCFSA'? 'active':'notactive'">{{'fsa-calculator.hc.title' | translate}}</button>
+      </div>
+      <div id="Home" ng-show="$ctrl.tabState == 'Home'" class="tabcontent">
+         <h3>{{'fsa-calculator.home.heading' | translate}}</h3>
+         <p>{{'fsa-calculator.home.para1' | translate}}</p>
+         <ul>
+            <li>{{'fsa-calculator.home.li1' | translate}}</li>
+            <li>{{'fsa-calculator.home.li2' | translate}}</li>
+         </ul>
+         <p>{{'fsa-calculator.home.para2' | translate}}</p>
+      </div>
+      <div id="AboutFSA" ng-show="$ctrl.tabState == 'AboutFSA'" class="tabcontent">
+         <h3>{{'fsa-calculator.about.heading1' | translate}}</h3>
+         <p>{{'fsa-calculator.about.para1' | translate}}</p>
+         <h3>{{'fsa-calculator.about.heading2' | translate}}</h3>
+         <p>{{'fsa-calculator.about.para2' | translate}}</p>
+         <p>{{'fsa-calculator.about.para3' | translate}}</p>
+         <p>{{'fsa-calculator.about.para4' | translate}}</p>
+         <p>{{'fsa-calculator.about.para5' | translate}}</p>
+      </div>
+      <div id="DCFSA" ng-show="$ctrl.tabState == 'DCFSA'" class="tabcontent">
+         <dc-calculator></dc-calculator>
+      </div>
+      <div id="HCFSA" ng-show="$ctrl.tabState == 'HCFSA'" class="tabcontent">
+         <hc-calculator></hc-calculator>
+      </div>
+   </div>
+</div>

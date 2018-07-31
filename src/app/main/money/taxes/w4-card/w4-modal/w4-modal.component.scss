@@ -1,0 +1,177 @@
+@import '../../../../main.component';
+
+
+.w4-modal { padding: 20px 30px; }
+
+.w4-modal-header {
+	text-align: right;
+	color: #BBBCBF;
+}
+
+.w4-modal-title {
+	font-size: 20px;
+	font-weight: 600;
+	text-align: center;
+}
+
+.w4-modal-subtitle {
+	font-size: 14px;
+	text-align: center;
+	color: #C4C8D3;
+}
+
+.w4-modal-body { margin: 40px 0; }
+
+.w4-effective-date-label { color: #C4C8D3; }
+.border-top{
+  border-top: 1px solid $font-color-secondary;
+}
+.w4-modal-footer {
+	display: flex;
+	justify-content: space-between;
+	.actions{
+	  margin: 20px 0;
+		button {
+		 	width: auto;
+		    height: 40px;
+		  }
+	}
+}
+.w4-modal-confirmation{
+  background-color: #F2F6F9;
+  padding:10px;
+  margin-top:10px;
+  border-radius: 3px;
+  }
+.w4-modal-effective-date-picker {
+	display: flex;
+	&.tax-date-picker{
+	display: flex;
+	flex-direction: column;
+
+  .tn-date-selector-popup{
+	position: absolute;
+	top:-350px;
+	.tn-date-selector-menu {
+	  filter: drop-shadow(0px 9px 34px rgba(55, 57, 62, 0.38));
+	  -webkit-filter: drop-shadow(15px 0px 34px rgba(55, 57, 62, 0.38));
+	  .caret{
+	  top: 96%;
+	  border-left-color: transparent;
+	  border-top-color: transparent;
+	  border-bottom-color: #fff;
+	  border-right-color: #fff;
+	}
+  }
+  }
+
+  .w4-modal-effective-date-picker-label {
+	line-height: 25px;
+	margin:0 12px 0 0;
+	color: $slate;
+  }
+  tn-date-selector{
+	margin: 0;
+	.input-box{
+	  height: 35px;
+	  padding-left: 30px;
+	}
+	i{
+	  font-size: 15px;
+	  color:$blue;
+	  margin-top: 6px;
+	  font-weight: bold;
+	  right:auto;
+	  left:5px;
+	}
+  }
+}
+
+}
+.w4-tax-steps{
+	display:flex;
+	justify-content: space-around;
+	align-items:center;
+  	flex-direction: row;
+	h2{
+		font-size:12px;
+		margin-top: 10px;
+		border-bottom:5px solid #59C56F;
+		padding-bottom:5px;
+		flex-basis: 50%;
+        text-align: center;
+		i{
+			margin-right:5px;
+		}
+	 &.completed-state{
+	 	color:#108740;
+		i{
+			margin-right:5px;
+			color:#108740;
+		}
+	 }
+	 &.active-state{
+	   color:$font-color;
+	   i{
+	   visibility: hidden;
+	   }
+	 }
+	 &.pending-state{
+	 	color : $slate;
+	 	border-color : $silver;
+	   i{
+		  visibility: hidden;
+	   }
+	 }
+	}
+}
+.tn-back-button{
+	border-color:$blue;
+	color:$blue;
+	&:active{
+		background-color:$blue;
+		color:#fff;
+	}
+}
+.tn-custom-checkbox{
+	label{
+		display: inline-flex;
+		align-items: center;
+	}
+	input[type=checkbox] {
+		position: absolute;
+  	    left: -9999px;
+		+ label:before {
+			font-family: icomoon;
+			display: inline-block;
+			color:$blue;
+			font-size:30px;
+			content: "\a154";
+			letter-spacing: 10px;
+		}
+		&:checked + label:before {
+			content: "\a152";
+			letter-spacing: 10px;
+		}
+	  &:focus{
+		~ label:before{
+		  outline: 1px solid $blue;
+		}
+	  }
+	}
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+	width: 1px;
+}
+
+label {
+	font-weight: normal !important;
+}

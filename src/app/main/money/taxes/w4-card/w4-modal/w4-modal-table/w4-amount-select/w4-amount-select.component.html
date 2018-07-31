@@ -1,0 +1,9 @@
+<tn-input-container class="w4-amount-select">
+	<select name="{{$ctrl.fieldName}}"
+			aria-label="{{$ctrl.label}}"
+			ng-model="$ctrl.fieldValue"
+			ng-options="n for n in $ctrl.items"
+			ng-disabled="$ctrl.disabled"
+			ng-change="$ctrl.update($ctrl.fieldValue)">
+	</select>
+</tn-input-container>

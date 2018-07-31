@@ -1,0 +1,49 @@
+<div class="edit-profile-section">
+	<div class="edit-profile-section-title">{{'edit-profile-personal-status' | translate}}</div>
+	<br>
+
+	<div class="row">
+		<tn-select class="col-sm-5"
+				   label="{{'edit-profile-marital-status' | translate}}"
+				   placeholder="Select a Marital Status"
+				   form-name="$ctrl.formName"
+				   field-name="maritalStatus"
+				   field-value="$ctrl.data.selected.maritalStatus"
+				   items="$ctrl.data.dropdown.maritalStatuses"
+				   is-required="true"
+				   component-id="'Select'"
+				   on-update="$ctrl.update($ctrl.keys.maritalStatus, data.key)">
+		</tn-select>
+		<tn-select  class="col-sm-5 col-sm-offset-2"
+				   label="{{'edit-profile-military-status' | translate}}"
+				   placeholder="Select One"
+				   form-name="$ctrl.formName"
+				   field-name="militaryStatus"
+				   field-value="$ctrl.data.selected.militaryStatus"
+				   items="$ctrl.data.dropdown.militaryStatuses"
+				   is-required="false"
+				   component-id="'Select'"
+				   on-update="$ctrl.update($ctrl.keys.militaryStatus, data.key)">
+		</tn-select>
+	</div>
+	<br>
+
+	<div class="row">
+		<tn-name-input class="col-sm-5"
+					   label="{{'edit-profile-citizenship' | translate}}"
+					   form-name="$ctrl.formName"
+					   field-name="citizenship"
+					   component-id="'Input'"
+					   field-value="$ctrl.data.personalInfo.citizenshipStatus"
+					   is-disabled="true">
+		</tn-name-input>
+		<!--<tn-name-input class="col-sm-5 col-sm-offset-2"
+					   label="{{'edit-profile-disability-status' | translate}}"
+					   form-name="$ctrl.formName"
+					   component-id="'Input'"
+					   field-name="disabilityStatus"
+					   field-value="$ctrl.disabilityStatus.text"
+					   is-disabled="true">
+		</tn-name-input>-->
+	</div>
+</div>

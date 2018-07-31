@@ -1,0 +1,19 @@
+<div class="existing-account-container row-header"  role="row">
+	<p role="columnheader" class="semibold flex-item-{{title.class}}" ng-repeat="title in $ctrl.titles">
+		{{title.title}}
+		<span class="tn-has-tooltip tool-tip text-left" ng-if="title.tooltip">
+			<tn-tooltip role="tooltip" class="tn-earning-hastooltip" msg="'money.direct_deposit.pay_help_text'"></tn-tooltip>
+     	</span>
+	</p>
+</div>
+
+<div role="row" class="existing-account-container existing-table-data row-data" ng-repeat="item in $ctrl.data">
+	<p role="gridcell" class="semibold flex-item-order"><span>{{$index + 1}}</span></p>
+	<p role="gridcell" class="semibold flex-item-name">{{item.account_number}}</p>
+	<p role="gridcell" class="semibold flex-item-net-balance"><span>{{item.netBalance ? 'Yes' :'--'}}</span></p>
+	<p role="gridcell" class="semibold flex-item-amount tn-has-tooltip">{{item.actualAmount }}
+		<tn-tooltip role="tooltip" class="tn-earning-hastooltip" ng-if="$ctrl.data.length > 1 && item.netBalance"
+					msg="'money.direct_deposit.remaining_amount_help_text'"></tn-tooltip>
+	</p>
+	<p role="gridcell" class="semibold flex-item-estimated-amount">{{item.remAmount | currency}}</p>
+</div>

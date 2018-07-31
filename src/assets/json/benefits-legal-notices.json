@@ -1,0 +1,148 @@
+{
+  "data": {
+	"id": 1,
+	"ambText": null,
+	"benefitAtGlance": null,
+	"benefitAtGlancePrevYear": null,
+	"benefitsCarrier": null,
+	"criticalIllness": null,
+	"dental": null,
+	"disability": null,
+	"employeeAssistancePlan": null,
+	"flexibleSpendingAccounts": null,
+	"legalServices": null,
+	"life": null,
+	"medical": null,
+	"medicarePartDNotices": null,
+	"medicalSummary": null,
+	"planDescList": null,
+	"prevPlanYearStartDate": "October   01, 2014",
+	"prevPlanYearEndDate": "September 30, 2015",
+	"stateFederalNotices": null,
+	"summaryAnnualReports": null,
+	"quater": "Q4",
+	"thisPlanYearStartDate": "October   01, 2015",
+	"thisPlanYearEndDate": "September 30, 2016",
+	"vision": null,
+	"benefitGuideBook": null,
+	"legalNoticesList": [
+	  {
+		"title": "State and Federal Notices",
+		"reportsNotices": [
+		  {
+			"description": "Learn about the Health Insurance Marketplace",
+			"text": "ACA Marketplace Notification",
+			"url": ""
+		  },
+		  {
+			"description": "Learn about Creditable Coverage standards.",
+			"text": "Cigna Massachusetts Creditable Coverage Letter",
+			"url": "/v1/extranet/Benefits/Spd/pdf/Annual_General_Notice/CIGNA-Massachusetts-Creditable-Coverage-Letter.pdf"
+		  },
+		  {
+			"description": "Learn about professional employer organizations and Connecticut statutes.",
+			"text": "Connecticut Insurance Bulletin HC-61 Notice",
+			"url": "/v1/extranet/Benefits/Spd/pdf/Annual_General_Notice/Aetna_Connecticut_letter.pdf"
+		  },
+		  {
+			"description": "Learn about COBRA coverage.",
+			"text": "General Notice of COBRA Continuation Coverage Rights",
+			"url": "/v1/extranet/Benefits/Spd/pdf/Annual_General_Notice/GENERAL_NOTICE_OF_COBRA_CONTINUATION_COVERAGE_RIGHTS.pdf"
+		  },
+		  {
+			"description": "Learn about your rights under GINA.",
+			"text": "Genetic Information Nondiscrimination Act Notice",
+			"url": "/v1/extranet/Benefits/Spd/pdf/Annual_General_Notice/Genetic_Information_NondiscriminationRights_Act.pdf"
+		  },
+		  {
+			"description": "Learn how your medical information is used and disclosed.",
+			"text": "HIPAA Privacy Notice",
+			"url": "/v1/extranet/Benefits/Spd/pdf/Annual_General_Notice/HIPAA_Privacy_Notice.pdf"
+		  },
+		  {
+			"description": "Learn about your rights for dependent child coverage.",
+			"text": "Michelle's Law Enrollment Rights Notice",
+			"url": "/v1/extranet/Benefits/Spd/pdf/Annual_General_Notice/Notification_of_Rights_under_Michelle_s_Law.pdf"
+		  },
+		  {
+			"description": "Learn about protections for mothers and their newborn children.",
+			"text": "Newborn's and Mother's Health Protection Act",
+			"url": "/v1/extranet/Benefits/Spd/pdf/Annual_General_Notice/2008-2009NewbornsAnd MothersHealthProtectionAct.pdf"
+		  },
+		  {
+			"description": "Learn about your rights for coverage.",
+			"text": "Women's Health and Cancer Rights Act",
+			"url": "/v1/extranet/Benefits/Spd/pdf/Annual_General_Notice/2008-2009WomensHealthAndCancerRightsAct.pdf"
+		  }
+		]
+	  },
+	  {
+		"title": "Medicare Prescription Drug Coverage",
+		"reportsNotices": [
+		  {
+			"text": "2015-2016 Medicare Part D Creditable Coverage Notice",
+			"url": "/v1/extranet/Benefits/Spd/pdf/Annual_General_Notice/2016_Passport_CC_Medicare_Part_D_Notice_FINAL.pdf"
+		  },
+		  {
+			"text": "2015-2016 Medicare Part D Non-Creditable Coverage Notice",
+			"url": "/v1/extranet/Benefits/Spd/pdf/Annual_General_Notice/2016_Passport_NON-CC_Medicare_Part_D_Notice_FINAL.pdf"
+		  },
+		  {
+			"text": "2014-2015 Medicare Part D Creditable Coverage Notice",
+			"url": "/v1/extranet/Benefits/Spd/pdf/Annual_General_Notice/2015_Passport_CC_Medicare_Part_D_Notice_FINAL.pdf"
+		  },
+		  {
+			"text": "2014-2015 Medicare Part D Non-Creditable Coverage Notice",
+			"url": "/v1/extranet/Benefits/Spd/pdf/Annual_General_Notice/2015_Passport_NON-CC_Medicare_Part_D_Notice_FINAL.pdf"
+		  },
+		  {
+			"text": "2013-2014 Medicare Part D Creditable Coverage Notice",
+			"url": "/v1/extranet/Benefits/Spd/pdf/Annual_General_Notice/2013-2014MedicarePartDCreditableCoverageNotice.pdf"
+		  },
+		  {
+			"text": "2012-2013 Medicare Part D Creditable Coverage Notice",
+			"url": "/v1/extranet/Benefits/Spd/pdf/Annual_General_Notice/2012-2013MedicarePartDCreditableCoverageNotice.pdf"
+		  },
+		  {
+			"text": "2011-2012 Medicare Part D Creditable Coverage Notice",
+			"url": "/v1/extranet/Benefits/Spd/pdf/Annual_General_Notice/2011-2012MedicarePartDCreditableCoverageNotice.pdf"
+		  }
+		]
+	  },
+	  {
+		"title": "Summary Annual Reports",
+		"reportsNotices": [
+		  {
+			"text": "2013 - 2014 Summary Annual Report",
+			"url": "/v1/extranet/Benefits/Spd/pdf/Annual_General_Notice/2013-2014_Plan_SAR.pdf"
+		  },
+		  {
+			"text": "2012 - 2013 Summary Annual Report",
+			"url": "/v1/extranet/Benefits/Spd/pdf/Annual_General_Notice/2012-2013_Plan_SAR.pdf"
+		  },
+		  {
+			"text": "2011 - 2012 Summary Annual Report",
+			"url": "/v1/extranet/Benefits/Spd/pdf/Annual_General_Notice/2011-2012_Plan_SAR.pdf"
+		  },
+		  {
+			"text": "2010 - 2011 Summary Annual Report",
+			"url": "/v1/extranet/Benefits/Spd/pdf/Annual_General_Notice/2010-2011_Plan_SAR.pdf"
+		  },
+		  {
+			"text": "2010 - 2010 Summary Annual Report",
+			"url": "/v1/extranet/Benefits/Spd/pdf/Annual_General_Notice/2010-2010_Plan_SAR.pdf"
+		  },
+		  {
+			"text": "2009 - 2010 Summary Annual Report",
+			"url": "/v1/extranet/Benefits/Spd/pdf/Annual_General_Notice/2009-2010_Plan_SAR.pdf"
+		  }
+		]
+	  }
+	],
+	"t2_PLAN_DT_START": "1988-10-01 00:00:00.0"
+  },
+  "_requestId": "699b0a52-cf64-4177-9b9e-e2fa10700fbd",
+  "_statusCode": "200",
+  "_statusText": "OK",
+  "_statusMessage": "Success"
+}

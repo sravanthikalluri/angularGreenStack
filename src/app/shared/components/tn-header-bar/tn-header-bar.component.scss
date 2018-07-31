@@ -1,0 +1,168 @@
+@import '../../../../styles/main';
+
+.tn-header-bar-titles {
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 68px;
+	margin: 0 auto;
+}
+
+.tn-header-bar-title {
+	font-weight: 400;
+	padding: 2px 20px 0 0;
+	display: inline-flex;
+}
+
+.head {
+	font-size: 16px;
+	margin: 0px;
+}
+
+.tn-header-bar-subtitle {
+	font-weight: 400;
+	padding: 0 20px;
+
+	.popup-menu{
+		right:0;
+	}
+}
+
+.header-bar{
+	width: calc(100vw - #{$menu-width});
+}
+
+@media only screen and (max-width: 768px) {
+	.tn-currentSiteLinkButton { display: none; }
+	.tn-wingmark { display: none; }
+}
+@media only screen and (max-width: 1308px){
+	.header-bar{
+		right:0;
+	}
+}
+.left{
+/* parent */
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+/* child */
+	order: 1;
+	flex-grow: 1;
+	font-weight: 400;
+}
+
+img.tn-header-image {
+	padding: 0 20px;
+	min-height: 21px;
+	height: auto;
+}
+
+.center{
+	order: 2;
+	flex-grow: 1;
+	font-weight: 400;
+}
+
+.right{
+/* parent */
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+/* child */
+	order: 3;
+	flex-grow: 1;
+	font-weight: 400;
+}
+
+.menu-container, .left, .tn-menu, .menu-logo {
+	transition: all 300ms;
+	-moz-transition: all 300ms;
+	-webkit-transition: all 300ms;
+}
+
+.tn-currentSiteLinkButton {
+	text-transform: none;
+	border-radius: 4px;
+	border: 2px solid $off-white !important;
+	background: none;
+	margin-left: 20px !important;
+	padding-left: 12px !important;
+}
+
+.tn-currentSiteLinkButton:hover {
+	color: $azure-blue;
+
+}
+
+.admin-switch {
+  border: none;
+  background-color: white;
+  margin-left:25px;
+  margin-top: 2px;
+  padding: 9px 20px;
+  text-transform: none;
+  font-weight: 500;
+  font-size: 14px;
+  height: 63px;
+  transition-duration: .2s;
+}
+
+.admin-switch-selected {
+  border-bottom: 3px solid $blue;
+  padding: 3px 20px 0 20px;
+  color: $blue;
+}
+
+.admin-switch-hover {
+  &:hover {
+	background-color:#f8f9fa;
+  }
+	&:focus {
+	  outline: 1px solid $tn-focus-border-color;
+	}
+  }
+.margin-classic {
+  	margin-right: 20px;
+}
+
+.tn-header-bar-vertical-line {
+	height: 68px !important;
+	border-right: 1px solid $cloudy;
+	padding: 0;
+	margin: 0;
+}
+
+.hamburger {
+	cursor: pointer; cursor: hand;
+}
+
+.non-active.flexin-on-these-fools {
+	display: flex;
+	align-items: center;
+}
+
+.toggle-arrow-positioning {
+	font-size: 18px !important;
+	vertical-align: top;
+	padding-left: 3px;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.noselect:focus{
+	border-color: $azure-blue;
+	border-style: solid;
+}
+
+.company-logo{
+	padding: 0 20px;
+}

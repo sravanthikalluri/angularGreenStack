@@ -1,0 +1,27 @@
+<tn-card class="notice-event-base" ng-if="$ctrl.noticeEventData.length > 0">
+	<!--<tn-card-header color="secondary" class="important-notices-header">
+		<i class="icon-icon_company_announcements important-notices-icon"></i>
+		<tn-card-title>Important</tn-card-title>
+	</tn-card-header>-->
+	<tn-card-content>
+		<tn-spinner ng-show="$ctrl.showSpinner"></tn-spinner>
+	</tn-card-content>
+	<div class="notices-card" ng-repeat="event  in $ctrl.noticeEventData" ng-if="$ctrl.noticeEventData.length > 0">
+		<div class="notices-card-content">
+			<h3 class="notices-card-title">{{event.title}}</h3>
+			<p class="notices-card-date" ng-if="$ctrl.showDate && event.endDate"> {{event.effectiveDate | date:'MMM dd, yyyy'}} - {{event.endDate| date:'MMM dd, yyyy'}}</p>
+			<p class="notices-card-desc" ng-bind-html="event.body">
+			</p>
+			<div class="text-center">
+				<a class="tn-action-link" ng-if="!event.isAle" ng-href="{{event.redirectUrl}}" target="_blank">{{event.urlText}}</a>
+				<a class="tn-action-link" ng-if="event.isAle" ui-sref="app.main.benefits.aleSelection">{{event.urlText}}</a>
+			</div>
+		</div>
+	</div>
+
+	<tn-card-content ng-if="!$ctrl.noticeEventData">
+		<div  class="announcements-card">
+			<span class="announcements-card-date">No important notices at this time</span>
+		</div>
+	</tn-card-content>
+</tn-card>

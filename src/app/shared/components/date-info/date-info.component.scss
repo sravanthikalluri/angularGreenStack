@@ -1,0 +1,27 @@
+@import 'main';
+
+$date-info-font-color: #C4C8D3;
+
+.date-info-title {
+	margin: 10px 0;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: inherit;
+	&.secondary {
+		color: $slate;
+	}
+}
+
+.date-info-days-ago,
+.date-info-month {
+	margin: 10px 0;
+	font-size: 14px;
+	font-weight: 600;
+	color: $slate;
+}
+
+.date-info-date {
+	line-height: 72px;
+	font-size: 72px;
+	font-weight: 600;
+}

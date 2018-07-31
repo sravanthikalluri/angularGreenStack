@@ -1,0 +1,15 @@
+{
+	"data":{
+		"customId":null,
+		"password":{
+			"currentPassword":null,
+			"effectiveDate":"2015-11-04",
+			"employeeId":"00001002198",
+			"newPassword":null
+		}
+	},
+	"_requestId":"9a84c21f-8830-4ac4-8aa7-921d1bd0da86",
+	"_statusCode":"200",
+	"_statusText":"OK",
+	"_statusMessage":"Retrieved CustomId Successfully "
+}

@@ -1,0 +1,9 @@
+@import 'main';
+
+.text-pre-wrap{
+    white-space: pre-wrap !important;
+    overflow-wrap: break-word;
+    word-break: break-all;
+    width: 400px;
+    height: 100px;
+}

@@ -1,0 +1,179 @@
+<div class="background background-resource">
+	<div class="primary-container">
+		<h2 class="page-title" ng-show="$ctrl.isActiveEmployee">
+			<tn-title url="'app.main.benefits.overview'" title="'benefits-title'"></tn-title>
+			>
+			<span class="no-border-button">{{ 'benefits-resources.title' | translate }}</span>
+			{{$ctrl.currentResourcesItem}}
+		</h2>
+		<h2 class="page-title" ng-show="!$ctrl.isActiveEmployee">
+			{{ 'benefits-title' | translate }} > {{ 'benefits-resources.title' | translate }}
+		</h2>
+		<p ng-if="!$ctrl.isActiveEmployee">
+			To ensure that we send information to the correct address, verify that we have your current address. Review the
+			information below to learn about your options and COBRA coverage. If you have additional question please contact
+			the Solution Center at 800.638.0461, 5 a.m - 6 p.m, M-F, PT.
+		</p>
+		<div ng-show="$ctrl.isActiveEmployee && !$ctrl.showSpinner" ng-if="!$ctrl.isCanadian" role="tablist">
+			<tn-card ng-show="$ctrl.showIndex === 0 || $ctrl.showAll === true;" ng-if="!$ctrl.isAmbrose">
+				<h4 class="benefits-resources-toggle-header benefits-resources-label">
+					<a id="benefitOptions" href="" class="toggle-link" ng-click="$ctrl.setResourceItem(0);" 
+					   aria-selected="{{$ctrl.resourcesItems[0].isOpen}}" aria-controls="benefit-options" aria-expanded="{{$ctrl.resourcesItems[0].isOpen}}" role="tab"
+					>
+						{{ 'benefits-resources.options' | translate }}
+						<div class="icon-icon_forward pull-right padRight8" ng-class="{ 'toggle-backward': $ctrl.resourcesItems[0].isOpen }">
+						</div>
+					</a>
+				</h4>
+				<benefit-options id="benefit-options" ng-show="$ctrl.resourcesItems[0].isOpen"
+								 aria-labelledby="benefitOptions" aria-hidden="{{!$ctrl.resourcesItems[0].isOpen}}" role="tabpanel">
+				</benefit-options>
+			</tn-card>
+			<tn-card ng-show="$ctrl.showIndex === 1 || $ctrl.showAll === true;" ng-if="!$ctrl.isCanadian && !$ctrl.hideGeneralForm">
+				<h4 class="benefits-resources-toggle-header benefits-resources-label">
+					<a id="generalForms" href class="toggle-link" ng-click="$ctrl.setResourceItem(1);"
+					   aria-selected="{{$ctrl.resourcesItems[1].isOpen}}" aria-controls="general-forms" aria-expanded="{{$ctrl.resourcesItems[1].isOpen}}" role="tab"
+					>
+						{{$ctrl.resourcesItems[1].resourceName}} 
+						<div class="toggle-icon-arrow-border pull-right" ng-class="{
+						'toggle-icon-arrow-border-opened': $ctrl.resourcesItems[1].isOpen,
+						'toggle-icon-arrow-border-closed': !$ctrl.resourcesItems[1].isOpen }">
+						<span class="tn-icon toggle-arrow" ng-class="{
+						'toggle-arrow-is-opened': $ctrl.resourcesItems[1].isOpen}"></span>
+						</div>
+					</a>
+				</h4>
+				<general-forms id="general-forms" ng-show="$ctrl.resourcesItems[1].isOpen"
+					aria-labelledby="generalForms" aria-hidden="{{!$ctrl.resourcesItems[1].isOpen}}" role="tabpanel"
+				></general-forms>
+			</tn-card>
+			<tn-card  ng-repeat="item in $ctrl.resourcesItems"  ng-show="$ctrl.showAll === true;" ng-if="$index >=2 && item.isShow && $ctrl.isActiveEmployee && !$ctrl.isCanadian">
+					<div id="{{item.resourceName |  lowercase}}">
+						<h4 class="benefits-resources-toggle-header benefits-resources-label">
+							<a id="{{item.resourceName}}Id" href class="toggle-link " ng-click="$ctrl.setResourceItem($index);" title="{{item.resourceName}}"
+							   aria-selected="{{$ctrl.resourcesItems[$index].isOpen}}"  aria-expanded="{{$ctrl.resourcesItems[$index].isOpen}}" role="tab"
+							>
+								{{item.resourceName}} <!-- customized comparison and plan details -->
+								<div class="toggle-icon-arrow-border pull-right" ng-class="{
+							'toggle-icon-arrow-border-opened':  $ctrl.resourcesItems[$index].isOpen,
+							'toggle-icon-arrow-border-closed': ! $ctrl.resourcesItems[$index].isOpen }">
+							<span class="tn-icon toggle-arrow" ng-class="{
+							'toggle-arrow-is-opened':  $ctrl.resourcesItems[$index].isOpen}"></span>
+								</div>
+							</a>
+
+						</h4>
+						<additional-resources id="{{item.resourceName}}" ng-show="$ctrl.resourcesItems[$index].isOpen && item.resourceName ==='What’s Changing'" plan-carriers-ctrldoc-meta="$ctrl.resourcesItems[$index].planCarrier"
+											  aria-labelledby="{{item.resourceName}}Id" aria-hidden="{{!$ctrl.resourcesItems[$index].isOpen && item.resourceName === $ctrl.resourcesItems[2].resourceName}}" role="tabpanel"
+						></additional-resources>
+
+						<div  id="{{item.resourceName}}-{{$index}}" ng-if="item.resourceName ==='Customized Comparison and Plan Details'" ng-show="$ctrl.resourcesItems[$index].isOpen"
+							  aria-labelledby="{{item.resourceName}}Id" aria-hidden="{{!$ctrl.resourcesItems[$index].isOpen && item.resourceName === $ctrl.resourcesItems[5].resourceName}}" role="tabpanel"
+						>
+							<a class="hand" href
+							   id="{{item.planCarrier.id}}" ng-click="$ctrl.openWin($ctrl.resourcesItems[$index].planCarrier.url)">
+								{{$ctrl.resourcesItems[$index].planCarrier.text}}
+							</a>
+						</div>
+						
+						<div id="{{item.resourceName}}-{{$index}}" ng-if="item.resourceName ==='Benefits Guidebook'"
+							 aria-labelledby="{{item.resourceName}}Id" aria-hidden="{{!$ctrl.resourcesItems[$index].isOpen && item.resourceName ===$ctrl.resourcesItems[3].resourceName}}" role="tabpanel"
+						>
+							<benefits-guide-book ng-show="  $ctrl.resourcesItems[$index].isOpen" class="benefits-guide-book-override"></benefits-guide-book>
+							<div class="linedWithMargin" ng-show="  $ctrl.resourcesItems[$index].isOpen"></div>
+						</div>
+
+						<div id="{{item.resourceName}}-{{$index}}" ng-if=" item.resourceName ==='Plan Costs'"
+							 aria-labelledby="{{item.resourceName}}Id" aria-hidden="{{!$ctrl.resourcesItems[$index].isOpen && item.resourceName ===$ctrl.resourcesItems[6].resourceName}}" role="tabpanel"
+						>
+							<benefits-summary-view ng-show="  $ctrl.resourcesItems[$index].isOpen"></benefits-summary-view>
+							<div class="linedWithMargin" ng-show="  $ctrl.resourcesItems[$index].isOpen"></div>
+						</div>
+					</div>
+				</tn-card>
+			</div>
+
+		<!--Canadian user-->
+		<div ng-if="$ctrl.isCanadian">
+			<tn-card  ng-repeat="item in $ctrl.resourcesItems" >
+				<div class="benefits-resources-toggle-header benefits-resources-label">
+					<a id="{{ item.resourceName }}Id" href="" class="toggle-link" ng-click="$ctrl.setResourceItem($index ,item.resourceName);"
+					   aria-selected="{{$ctrl.resourcesItems[$index].isOpen}}" aria-controls="{{item.resourceName}}_control" aria-expanded="{{$ctrl.resourcesItems[$index].isOpen}}" role="tab"
+					>
+						{{ item.resourceName }}
+						<div class="toggle-icon-arrow-border pull-right" ng-class="{
+						'toggle-icon-arrow-border-opened': $ctrl.resourcesItems[$index].isOpen,
+						'toggle-icon-arrow-border-closed': !$ctrl.resourcesItems[$index].isOpen }">
+						<span class="tn-icon toggle-arrow" ng-class="{
+						'toggle-arrow-is-opened': $ctrl.resourcesItems[$index].isOpen}"></span>
+						</div>
+					</a>
+				</div>
+				<benefits-guide-book id="{{item.resourceName}}_control" ng-show="$ctrl.resourcesItems[$index].isOpen && $ctrl.lableVaule === 'Benefits Guidebook'" is-checked="$ctrl.isCanadian"  class="benefits-guide-book-override"
+						aria-labelledby="{{item.resourceName}}Id" aria-hidden="{{!$ctrl.resourcesItems[$index].isOpen && $ctrl.lableVaule === $ctrl.resourcesItems[0].resourceName}}" role="tabpanel"
+				></benefits-guide-book>
+				<benefits-summary-view ng-show="$ctrl.resourcesItems[$index].isOpen && $ctrl.lableVaule === 'Benefits Summary'" is-checked="$ctrl.isCanadian"
+						aria-labelledby="{{item.resourceName}}Id" aria-hidden="{{!$ctrl.resourcesItems[$index].isOpen && $ctrl.lableVaule === $ctrl.resourcesItems[1].resourceName}}" role="tabpanel"
+				></benefits-summary-view>
+				<!--Benefits Forms-->
+				<div ng-show="$ctrl.resourcesItems[$index].isOpen && $ctrl.lableVaule === 'Benefits Forms'"
+					 aria-labelledby="{{item.resourceName}}Id" aria-hidden="{{!$ctrl.resourcesItems[$index].isOpen && $ctrl.lableVaule === $ctrl.resourcesItems[2].resourceName}}" role="tabpanel"
+				>
+					<div class="no-pad benefits-summery-links" ng-repeat="pdfdata in $ctrl.benefitForms[0].sub">
+						<span class="tn-icon"><img ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png" alt="PDF icon"></span>
+						<a id="canadianBenefitsGuideBook_{{$index}}"
+						   ng-href="{{pdfdata.url | contentUrl}} "
+						   target="_blank">
+							<span class="benefit-text " id="bgcandiantext{{$index}}">{{::pdfdata.label}}</span>
+						</a>
+					</div>
+				</div>
+			</tn-card>
+		</div>
+		<!--Terminated user-->
+		<div ng-if="!$ctrl.isActiveEmployee">
+			<tn-card  ng-repeat="item in $ctrl.resourcesItems">
+				<div class="benefits-resources-toggle-header benefits-resources-label">
+					<a id="{{item.resourceName}}_tId" href="" class="toggle-link" ng-click="$ctrl.setResourceItem($index ,item.resourceName);"
+					   aria-selected="{{$ctrl.resourcesItems[$index].isOpen}}" aria-controls="{{item.resourceName}}_terminated" aria-expanded="{{$ctrl.resourcesItems[$index].isOpen}}" role="tab"
+					>
+						{{ item.resourceName }}
+						<div class="toggle-icon-arrow-border pull-right" ng-class="{
+						'toggle-icon-arrow-border-opened': $ctrl.resourcesItems[$index].isOpen,
+						'toggle-icon-arrow-border-closed': !$ctrl.resourcesItems[$index].isOpen }">
+						<span class="tn-icon toggle-arrow" ng-class="{
+						'toggle-arrow-is-opened': $ctrl.resourcesItems[$index].isOpen}"></span>
+						</div>
+					</a>
+				</div>
+				<benefits-guide-book id="{{item.resourceName}}_terminated" ng-show="$ctrl.resourcesItems[$index].isOpen && $ctrl.lableVaule === 'Benefits Guidebook' "  class="benefits-guide-book-override"
+						aria-labelledby="{{item.resourceName}}_tId" aria-hidden="{{!$ctrl.resourcesItems[$index].isOpen && $ctrl.lableVaule ===$ctrl.resourcesItems[0].resourceName}}" role="tabpanel"
+				></benefits-guide-book>
+				<life-and-disability-coverage id="{{item.resourceName}}_terminated" ng-show="$ctrl.resourcesItems[$index].isOpen && $ctrl.lableVaule === 'Life and Disability Coverage'" ng-if="$ctrl.benefitResources[5]" benefit-res-pdf-Links="$ctrl.benefitResources[5]"
+						aria-labelledby="{{item.resourceName}}_tId" aria-hidden="{{!$ctrl.resourcesItems[$index].isOpen && $ctrl.lableVaule ===$ctrl.resourcesItems[2].resourceName}}" role="tabpanel"
+				></life-and-disability-coverage>
+				<carrier-contact-info id="{{item.resourceName}}_terminated" ng-show="$ctrl.resourcesItems[$index].isOpen && $ctrl.lableVaule === 'Benefits Carrier Contact Information'"
+									  aria-labelledby="{{item.resourceName}}_tId" aria-hidden="{{!$ctrl.resourcesItems[$index].isOpen && $ctrl.lableVaule ===$ctrl.resourcesItems[1].resourceName}}" role="tabpanel"
+				></carrier-contact-info>
+				<div id="{{item.resourceName}}_terminated" ng-show="$ctrl.resourcesItems[$index].isOpen && $ctrl.lableVaule === 'Flexible Spending Account'" class="benefits-forms-item-accordion"
+					 aria-labelledby="{{item.resourceName}}_tId" aria-hidden="{{!$ctrl.resourcesItems[$index].isOpen && $ctrl.lableVaule ===$ctrl.resourcesItems[3].resourceName}}" role="tabpanel"
+				>
+					<span class="tn-icon-pdf-img"><img ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png" alt="PDF icon"></span>
+					<a ng-href="{{$ctrl.benefitResources[3].url | contentUrl}}" target="_blank"><span>{{$ctrl.benefitResources[3].text}}</span></a>
+
+				</div>
+				<div id="{{item.resourceName}}_terminated" ng-show="$ctrl.resourcesItems[$index].isOpen && $ctrl.lableVaule === 'Life Status Change'" class="benefits-forms-item-accordion"
+					 aria-labelledby="{{item.resourceName}}_tId" aria-hidden="{{!$ctrl.resourcesItems[$index].isOpen && $ctrl.lableVaule ===$ctrl.resourcesItems[4].resourceName}}" role="tabpanel"
+				>
+					<span class="tn-icon-pdf-img"><img ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png" alt="PDF icon"></span>
+					<a ng-href="{{$ctrl.benefitResources[4].url | contentUrl}}" target="_blank"><span>{{$ctrl.benefitResources[4].text}}</span></a>
+
+				</div>
+			</tn-card>
+		</div>
+
+		</div>
+	</div>
+	<div class="secondary-container">
+	</div>
+</div>

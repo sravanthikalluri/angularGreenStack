@@ -1,0 +1,50 @@
+.security-card-button {
+	width: 250px;
+}
+
+.security-modal {
+	padding: 20px 30px;
+}
+
+.security-modal-header {
+	text-align: right;
+	color: #BBBCBF;
+}
+
+.security-modal-footer {
+	text-align: right;
+
+	button {
+		width: 150px;
+	}
+}
+
+.security-card{
+    margin-top: 10px  !important;
+    line-height: 1.1;
+}
+.security-card-desc{
+    font-size: 12px;
+    margin-top: 10px  !important;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.modal-content{
+	tn-full-spinner{
+		.full-spinner{
+			position: fixed;
+		    height: 105vh;
+		    width: 105vw;
+		    top: -130%;
+		    left: -50%;
+		    right: 0%;
+		    bottom: 0%;
+		    background-size: 100%;
+		    z-index: 100000;
+		    background-color: black;
+		    opacity: .5;
+		    padding: 50%;
+	    }
+	}
+}

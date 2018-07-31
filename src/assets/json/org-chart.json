@@ -1,0 +1,714 @@
+{
+	"data": [
+	{
+		"empoyeeId": "00001046646",
+		"colleagues": [{
+			"designation": "Sr Dir., NCD IC Engineering",
+			"employeeDetails": {
+				"address": {
+					"address1": "2315 N 1st Street",
+					"address2": null,
+					"address3": null,
+					"city": "San Jose",
+					"country": "US",
+					"postalCode": "95131",
+					"shortLocationDesc": "SanJoseCA",
+					"state": "CA"
+				},
+				"department": "Hardware",
+				"email": "srihari.gosike@caviumnetworks.com",
+				"phone": " ",
+				"preferredName": null,
+				"seniority": "7 years, 11 months, 15 days"
+			},
+			"employeeId": "00001046646",
+			"employeeName": "Srihari S Gosike",
+			"status": "A",
+			"teamMemberCount": 13
+		}, {
+			"designation": "Sr Manager IC Engineering",
+			"employeeId": "3452415600",
+			"employeeName": "Scott Forstall",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A",
+			"teamMemberCount": 23
+		}, {
+			"designation": "Distinguished Engineer",
+			"employeeId": "00001036121",
+			"employeeName": "Scott Meninger",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A",
+			"teamMemberCount": 18
+		}, {
+			"designation": "Director, IC Engineering",
+			"employeeId": "00001064635",
+			"employeeName": "Prakash Apte",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A",
+			"teamMemberCount": 14
+		}, {
+			"designation": "Principal Technical Writer",
+			"employeeId": "00001057627",
+			"employeeName": "Wendi Missagia",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A",
+			"teamMemberCount": 2
+		}, {
+			"designation": "Director, Engineering",
+			"employeeId": "00001002198",
+			"employeeName": "James Ellis",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A",
+			"teamMemberCount": 27
+		}, {
+			"designation": "Manager, IT Operations",
+			"employeeId": "00001100937",
+			"employeeName": "Mark Ryan",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A",
+			"teamMemberCount": 2
+		}, {
+			"designation": "Director, Customer Engineering",
+			"employeeId": "00001238928",
+			"employeeName": "Thomas Tinory",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A",
+			"teamMemberCount": 9
+		}, {
+			"designation": "Senior Dir., IC Engineering",
+			"employeeId": "00003043013",
+			"employeeName": "Vishnu Yalala",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A",
+			"teamMemberCount": 24
+		}, {
+			"designation": "Fellow",
+			"employeeId": "00003043004",
+			"employeeName": "David Carlson",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A",
+			"teamMemberCount": 0
+		}, {
+			"designation": "Fellow",
+			"employeeId": "00003043015",
+			"employeeName": "Thucydides Xanthopoulos",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A",
+			"teamMemberCount": 2
+		}, {
+			"designation": "Sr. Office Assistant",
+			"employeeId": "00001429644",
+			"employeeName": "Kristina Algieri",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A",
+			"teamMemberCount": 1
+		}],
+		"managers": [{
+			"designation": "VP of NCD IC Engineering ",
+			"employeeId": "00001150878",
+			"employeeName": "Bruce Fishbein",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"relation": "supr",
+			"status": "A"
+		}],
+		"members": [{
+			"designation": "Director IC Engineering",
+			"employeeId": "00001148188",
+			"employeeName": "Chee Hu",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Director, Engineering",
+			"employeeId": "00001359258",
+			"employeeName": "Asadul Khan",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Consulting Engineer",
+			"employeeId": "00001373926",
+			"employeeName": "Susheel Sharma",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Principal Engineer",
+			"employeeId": "00001422699",
+			"employeeName": "Meena Gupta",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Sr. Consulting Engineer",
+			"employeeId": "00001003199",
+			"employeeName": "Brian Hunter",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Sr. Engineering Manager",
+			"employeeId": "00001114558",
+			"employeeName": "Ahmed Shahid",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Consulting Engineer",
+			"employeeId": "00001472536",
+			"employeeName": "Anupam Gangopadhyay",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Principal Engineer",
+			"employeeId": "00001584026",
+			"employeeName": "Tai Chong",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Consulting Engineer",
+			"employeeId": "00001600957",
+			"employeeName": "Dong Wook Kim",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Sr. Consulting Engineer",
+			"employeeId": "00001104392",
+			"employeeName": "Wu Ye",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Consulting Engineer",
+			"employeeId": "00001144200",
+			"employeeName": "Yossef Shanava",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Consulting Engineer",
+			"employeeId": "00001663379",
+			"employeeName": "Sridhar Babu Jasti",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Mgr, Physical Design Eng.",
+			"employeeId": "00001097074",
+			"employeeName": "Mandar Kulkarni",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}]
+	},{
+		"empoyeeId":"00001150878",
+		"colleagues": [{
+			"designation": "VP of NCD IC Engineering ",
+			"employeeDetails": {
+				"address": {
+					"address1": "600 Nickerson Road",
+					"address2": null,
+					"address3": null,
+					"city": "Marlboro",
+					"country": "US",
+					"postalCode": "01752",
+					"shortLocationDesc": "MarlboroMA",
+					"state": "MA"
+				},
+				"department": "Hardware",
+				"email": "bruce.fishbein@caviumnetworks.com",
+				"phone": null,
+				"preferredName": null,
+				"seniority": "6 years, 5 months, 8 days"
+			},
+			"employeeId": "00001150878",
+			"employeeName": "Bruce J Fishbein",
+			"status": "A",
+			"teamMemberCount": 12
+		}, {
+			"designation": "Fellow",
+			"employeeId": "00003043011",
+			"employeeName": "Richard Kessler",
+			"status": "A",
+			"teamMemberCount": 13
+		}],
+		"managers": [{
+			"designation": "Corporate VP IC Engineering",
+			"employeeId": "00003043007",
+			"employeeName": "Anil Jain",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"relation": "supr",
+			"status": "A"
+		}],
+		"members": [{
+			"designation": "Sr Dir., NCD IC Engineering",
+			"employeeId": "00001046646",
+			"employeeName": "Srihari Gosike",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A",
+			"teamMemberCount": 13
+		}, {
+			"designation": "Sr Manager IC Engineering",
+			"employeeId": "3452415600",
+			"employeeName": "Scott Forstall",
+			"employeeDetails":{
+				"department":"Hardware",
+				"imgUrl":"https://pbs.twimg.com/profile_images/1537213505/forstall_400x400.jpg"
+			},
+			"status": "A",
+			"teamMemberCount": 23
+		}, {
+			"designation": "Distinguished Engineer",
+			"employeeId": "00001036121",
+			"employeeName": "Scott Meninger",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Director, IC Engineering",
+			"employeeId": "00001064635",
+			"employeeName": "Prakash Apte",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Principal Technical Writer",
+			"employeeId": "00001057627",
+			"employeeName": "Wendi Missagia",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Director, Engineering",
+			"employeeId": "00001002198",
+			"employeeName": "James Ellis",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Manager, IT Operations",
+			"employeeId": "00001100937",
+			"employeeName": "Mark Ryan",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Director, Customer Engineering",
+			"employeeId": "00001238928",
+			"employeeName": "Thomas Tinory",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Senior Dir., IC Engineering",
+			"employeeId": "00003043013",
+			"employeeName": "Vishnu Yalala",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Fellow",
+			"employeeId": "00003043004",
+			"employeeName": "David Carlson",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Fellow",
+			"employeeId": "00003043015",
+			"employeeName": "Thucydides Xanthopoulos",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Sr. Office Assistant",
+			"employeeId": "00001429644",
+			"employeeName": "Kristina Algieri",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}]
+	}, {
+		"empoyeeId":"3452415600",
+		"colleagues": [{
+			"designation": "Sr Dir., NCD IC Engineering",
+			"employeeId": "00001046646",
+			"employeeName": "Srihari Gosike",
+			"status": "A",
+			"teamMemberCount": 13
+		}, {
+			"designation": "Sr Manager IC Engineering",
+			"employeeId": "3452415600",
+			"employeeName": "Scott Forstall",
+			"employeeDetails":{
+				"department":"Hardware",
+				"imgUrl":"https://pbs.twimg.com/profile_images/1537213505/forstall_400x400.jpg"
+			},
+			"status": "A",
+			"teamMemberCount": 23
+		}, {
+			"designation": "Distinguished Engineer",
+			"employeeId": "00001036121",
+			"employeeName": "Scott Meninger",
+			"status": "A",
+			"teamMemberCount": 18
+		}, {
+			"designation": "Director, IC Engineering",
+			"employeeId": "00001064635",
+			"employeeName": "Prakash Apte",
+			"status": "A",
+			"teamMemberCount": 14
+		}, {
+			"designation": "Principal Technical Writer",
+			"employeeId": "00001057627",
+			"employeeName": "Wendi Missagia",
+			"status": "A",
+			"teamMemberCount": 2
+		}, {
+			"designation": "Director, Engineering",
+			"employeeDetails": {
+				"address": {
+					"address1": "600 Nickerson Road",
+					"address2": null,
+					"address3": null,
+					"city": "Marlboro",
+					"country": "US",
+					"postalCode": "01752",
+					"shortLocationDesc": "MarlboroMA",
+					"state": "MA"
+				},
+				"department": "Hardware",
+				"email": "james@hubbardston.com",
+				"phone": null,
+				"preferredName": null,
+				"seniority": "15 years, 4 months, 21 days"
+			},
+			"employeeId": "00001002198",
+			"employeeName": "James P Ellis",
+			"status": "A",
+			"teamMemberCount": 27
+		}, {
+			"designation": "Manager, IT Operations",
+			"employeeId": "00001100937",
+			"employeeName": "Mark Ryan",
+			"status": "A",
+			"teamMemberCount": 2
+		}, {
+			"designation": "Director, Customer Engineering",
+			"employeeId": "00001238928",
+			"employeeName": "Thomas Tinory",
+			"status": "A",
+			"teamMemberCount": 9
+		}, {
+			"designation": "Senior Dir., IC Engineering",
+			"employeeId": "00003043013",
+			"employeeName": "Vishnu Yalala",
+			"status": "A",
+			"teamMemberCount": 24
+		}, {
+			"designation": "Fellow",
+			"employeeId": "00003043004",
+			"employeeName": "David Carlson",
+			"status": "A",
+			"teamMemberCount": 0
+		}, {
+			"designation": "Fellow",
+			"employeeId": "00003043015",
+			"employeeName": "Thucydides Xanthopoulos",
+			"status": "A",
+			"teamMemberCount": 2
+		}, {
+			"designation": "Sr. Office Assistant",
+			"employeeId": "00001429644",
+			"employeeName": "Kristina Algieri",
+			"status": "A",
+			"teamMemberCount": 1
+		}],
+		"managers": [{
+			"designation": "VP of NCD IC Engineering ",
+			"employeeId": "00001150878",
+			"employeeName": "Bruce Fishbein",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"relation": "supr",
+			"status": "A"
+		}],
+		"members": [{
+			"designation": "Principal Engineer",
+			"employeeId": "00001271085",
+			"employeeName": "James Mumford",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Senior Consulting Engineer",
+			"employeeId": "00001173727",
+			"employeeName": "John Sweeney",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Principal Engineer",
+			"employeeId": "00001246951",
+			"employeeName": "Ethan Robbins",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Principal Engineer",
+			"employeeId": "00001342312",
+			"employeeName": "Mahesh Dorai",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Consulting Engineer",
+			"employeeId": "00001349250",
+			"employeeName": "Eric Aardoom",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Consulting Engineer",
+			"employeeId": "00001373907",
+			"employeeName": "Nagaraj Shirali",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Principal Engineer",
+			"employeeId": "00001383510",
+			"employeeName": "Kenneth Burns",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Principal Engineer",
+			"employeeId": "00001396385",
+			"employeeName": "Mark Westvold",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Consulting Engineer",
+			"employeeId": "00001410071",
+			"employeeName": "Stephen Chinatti",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Principal Engineer",
+			"employeeId": "00001419339",
+			"employeeName": "Erik Lee",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Consulting Engineer",
+			"employeeId": "00001422681",
+			"employeeName": "Victor Hart",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Consulting Engineer",
+			"employeeId": "00001123360",
+			"employeeName": "Christopher Briggs",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Consulting Engineer",
+			"employeeId": "00001142983",
+			"employeeName": "Gregory Richards",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Principal Engineer",
+			"employeeId": "00001577077",
+			"employeeName": "Renee Wong",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Consulting Engineer",
+			"employeeId": "00001578848",
+			"employeeName": "Pamela Cristo",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Consulting Engineer",
+			"employeeId": "00001589130",
+			"employeeName": "Edward Arthur",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Sr. Consulting Engineer",
+			"employeeId": "00001023292",
+			"employeeName": "Joseph Stadolnik",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Sr. Consulting Engineer",
+			"employeeId": "00001009154",
+			"employeeName": "Christopher Mikulis",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Sr. Consulting Engineer",
+			"employeeId": "00001004061",
+			"employeeName": "John Perveiler",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Consulting Engineer",
+			"employeeId": "00001053713",
+			"employeeName": "Joseph D'Errico",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Consulting Engineer",
+			"employeeId": "00001359867",
+			"employeeName": "Gregory Pierce",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Principal Engineer",
+			"employeeId": "00001087853",
+			"employeeName": "Ison Kallukalam",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Consulting Engineer",
+			"employeeId": "00003043016",
+			"employeeName": "Kolar Kodandapani",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Principal Engineer",
+			"employeeId": "00001643137",
+			"employeeName": "Brian Sylvester",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Sr. Consulting Engineer",
+			"employeeId": "00001326385",
+			"employeeName": "Shahid Ikram",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Verification Engi. Intern",
+			"employeeId": "00001826796",
+			"employeeName": "Gulnar Mirza",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}, {
+			"designation": "Engineering Intern",
+			"employeeId": "00001660811",
+			"employeeName": "James Talmage",
+			"employeeDetails":{
+				"department":"Hardware"
+			},
+			"status": "A"
+		}]
+	}
+],
+	"_requestId": "995cc42a-af7f-4370-b361-fb942a12b7bd",
+	"_statusCode": "200",
+	"_statusText": "OK",
+	"_statusMessage": "Success"
+}

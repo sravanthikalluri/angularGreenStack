@@ -1,0 +1,19 @@
+<div class="round-image monogram"
+	 tn-enter="$ctrl.isActive = !$ctrl.isActive"
+	 ng-click="$ctrl.isActive = !$ctrl.isActive"
+	 tn-off-click="$ctrl.clicked()"
+	 aria-expanded="{{$ctrl.isActive}}">
+
+	<img class=""
+		 alt="User image"
+		 ng-class="$ctrl.className ? $ctrl.className : 'img-src'"
+		 ng-src="{{$ctrl.imgUrl}}"
+		 ng-if="$ctrl.imgUrl !== ''" />
+
+	<button ng-if='$ctrl.imgUrl === ""'
+		 class="hand"
+		 ng-class="$ctrl.className ? $ctrl.className : 'alt-text'"
+		 ng-bind-html="$ctrl.monogram"
+		 aria-label="{{$ctrl.fullname}}" tabindex="-1"></button>
+	<ng-transclude></ng-transclude>
+</div>

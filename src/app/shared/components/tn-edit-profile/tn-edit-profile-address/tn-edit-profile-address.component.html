@@ -1,0 +1,21 @@
+<div class="address">
+	<h4 align="center">{{'edit-profile-home-address' | translate}}</h4>
+	<div class="row address-one">
+		<div class="col-sm-5">
+			<h6>{{'edit-profile-address1' | translate}}</h6>
+			<tn-text-box type="text" value=$ctrl.data.homeAddressLine1 style=$ctrl.width></tn-text-box>
+			<h6 class="edit-profile-margin">{{'edit-profile-city' | translate}}</h6>
+			<tn-text-box type="text" value=$ctrl.data.homeCity style=$ctrl.width></tn-text-box>
+			<h6 class="edit-profile-margin">{{'edit-profile-zip' | translate}}</h6>
+			<tn-text-box type="text" value=$ctrl.data.homePostal style=$ctrl.width></tn-text-box>
+		</div>
+		<div class="col-sm-offset-2 col-sm-5">
+			<h6>{{'edit-profile-address2' | translate}}</h6>
+			<tn-text-box type="text" value=$ctrl.data.homeAddressLine2 style=$ctrl.width></tn-text-box>
+			<h6 class="edit-profile-margin">{{'edit-profile-state' | translate}}</h6>
+			<tn-combo-box selected-object="$ctrl.data.states.selectedObject" data=$ctrl.data.states style=$ctrl.width></tn-combo-box>
+			<h6 class="edit-profile-margin">{{'edit-profile-country' | translate}}</h6>
+			<tn-combo-box selected-object="$ctrl.data.countries.selectedObject" data=$ctrl.data.countries style=$ctrl.width></tn-combo-box>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,118 @@
+$blue: 			#0077BC;
+$orange: 		#f47b27;
+$orange-dark:	#F66B37;
+$azure-blue: 	#19a5f0;
+$light-blue: 	#d8eaf5;
+
+$red-darker: 	#e61b36;
+$red: 			#f32b46;
+$red-lighter: 	#ff4f66;
+$yellow-darker: #a16c03;
+$yellow: 		#ae7400;
+$yellow-lighter:#cc9320;
+$green-darker: 	#0b7535;
+$green: 		#1d914b;
+$green-lighter: #23b35d;
+$light-yellow:  #FFFEE9;
+
+
+$ink: 			#242936;
+$slate: 		#444c5c;
+$pewter: 		#6e778a;
+$silver: 		#b3bdc7;
+$cloudy: 		#DDE1E6;
+$misty: 		#eef0f2;
+$misty-dark:	#D6D6D6;
+
+$off-white: 	#f8f9fa;
+$white: 		#ffffff;
+$black:			#000000;
+$tn-blue-alt:   #019fde;
+$deselected-icon-color: #A0A9BA;
+$overlay-color: #1a202d;
+
+$trinet-orange: $orange;
+$trinet-orange-dark:	$orange-dark;
+
+/* Global */
+$font-color: $ink;
+$background-color: $misty;
+$font-color-secondary: $slate;
+
+/* Menu */
+$menu-background: $ink;
+$menu-selected-row: $blue;
+$menu-deselected-icon-color: $deselected-icon-color;
+$menu-selected-icon-color: $white;
+
+/* Secondary Section */
+$secondary-header: $off-white;
+$secondary-divider: $misty;
+$leave-status-other-font-color: $pewter;
+$leave-status-approved-font-color: $green-darker;
+
+/* Top Bar */
+$notification-badge-red: $red;
+$header-border-color: $cloudy;
+
+/* Global */
+$font-color: #30343C;
+$font-color-secondary: #a0a8ba;
+$font-color-tertiary: #A7B3B8;
+$font-color-secondary-hover: #6a7c83;
+
+$background-color: #EEF0F2;
+$trinet-orange: #F17C35;
+$trinet-white: #FFF !default;
+$trinet-blue: #0077bc;
+$trinet-gray-l69: #A2ADBF !default; // Brightness 69
+$trinet-gray-l59: #B5BDD2 !default; // Brightness 59
+$trinet-gray-l24: #31384A !default; // Brightness 24
+
+$line-color: #dae1e6 !default;
+
+$icon-size: 16px;
+
+/* Menu */
+$menu-background: #242936;
+$menu-selected-row: #0077BC;
+$menu-deselected-icon-color: $trinet-gray-l69;
+$menu-selected-icon-color: $trinet-white;
+$menu-secondary-text-color: $trinet-gray-l59;
+$menu-secondary-selected-background: $trinet-gray-l24;
+$menu-toggle-arrow-color: #797C84;
+$menu-toggle-arrow-color-opened: $trinet-white;
+$menu-width: 284px;
+
+/* Secondary Section */
+$secondary-header: #F9FAFB;
+$secondary-divider: #ECEDED;
+$secondary-icon-red-color: #f55a75;
+
+/* Top Bar */
+$notification-badge-red: #F72E50;
+$header-border-color: #DAE0E6;
+
+/* Login */
+$blue-login-color: #0077bc;
+$blue-login-hover-color: #138dd8;
+$white-login-link-color: rgba($trinet-white, 0.85);
+
+/* Company -> Org Chart */
+$divider-gray: #D5DDE5;
+
+$blue: 	#0077bc;
+$gray: 	#a3a5ab;
+$white: #fff;
+$error-pink: #e61b36 ;
+
+$margin: 10px;
+$padding: 10px;
+$no-margin: 0px;
+$no-padding: 0px;
+$tn-blue-alt:   #019fde;
+$tn-focus-border-color: #83bffc;
+$trinet-dark:   #30343C;
+$blue-link: #006AA8;
+
+$tn-border-color : #dde1e6;

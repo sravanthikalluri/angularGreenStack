@@ -1,0 +1,11 @@
+@import '../../../../../../styles/main.scss';
+
+button{
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    outline: none;
+    &:focus{
+        outline: 1px solid $tn-blue-alt;
+    }
+}

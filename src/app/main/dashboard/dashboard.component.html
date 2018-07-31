@@ -1,0 +1,20 @@
+<div class="background">
+	<div class="primary-container">
+		<h2 class="page-title">{{'dashboard-title' | translate}}</h2>
+		<trinet-reports is-show="{{$ctrl.showTrinetReportCard}}" id="trinetReportsCard" ng-if="$ctrl.showTrinetReportCard" ></trinet-reports>
+		<onboarding-card id="onboardingWidget"></onboarding-card>
+		<time-off-card id="timeOffWidget" ng-if="$ctrl.showTimeOff"></time-off-card>
+		<paychecks-card id="payCheckWidget" ng-if="$ctrl.showPayroll"></paychecks-card>
+	    <!--tn-card>
+	        <tn-retirement-card></tn-retirement-card>
+	    </tn-card-->
+	</div>
+	<div class="secondary-container">
+		<notice-event-base id="noticeEventBase"></notice-event-base>
+		<important-notices-card id="impNoticeCard"></important-notices-card>
+		<bi-alerts-card id="alertsCard" ng-if="$ctrl.showAlerts && $ctrl.alerts.length > 0" alerts="$ctrl.alerts"></bi-alerts-card>
+		<work-inbox-card id="workInboxCard" ng-if="$ctrl.showWorkInbox"></work-inbox-card>
+		<company-announcements-card></company-announcements-card>
+		<next-holiday-card id="holidayCard" ng-if="$ctrl.showHoliday"></next-holiday-card>
+	</div>
+</div>

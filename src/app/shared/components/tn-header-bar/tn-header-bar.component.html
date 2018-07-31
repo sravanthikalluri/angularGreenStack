@@ -1,0 +1,75 @@
+<div class="header-bar" role="banner">
+    <div class="tn-header-bar-titles">
+        <div class="left">
+            <div class="{{$ctrl.slideMenu}}  flexin-on-these-fools">
+                <img ng-click="$ctrl.imgClick();" id="toggle" class="hamburger tn-header-image" aria-label="menu-expand"
+                     ng-src="{{$ctrl.hamburger}}" alt=""/>
+                <span id="toggle_vertical_line" class="tn-header-bar-vertical-line"></span>
+                <img id="toggle_wingmark" ng-src="{{$ctrl.wingmark}}" class="tn-header-image  tn-wingmark" alt=""/>
+            </div>
+        </div>
+        <div class="center"></div>
+        <div class="right">
+            <span ng-if="$ctrl.companies.length >= 1">
+                <h1 class="tn-header-bar-title head noselect" role="group"
+                      tn-enter="$ctrl.isMenuActive = !$ctrl.isMenuActive"
+                      id="companiesViewMenu" aria-haspopup="true" aria-expanded="{{$ctrl.isMenuActive}}"
+                      ng-click="$ctrl.isMenuActive = !$ctrl.isMenuActive"
+					  tn-off-click="$ctrl.isMenuActive = false"
+                      is-active="$ctrl.isMenuActive">
+                    {{$ctrl.selectedCompany.companyDesc}}
+
+                    <span class="tn-icon  tn-menu-toggle-arrow  toggle-arrow-positioning"></span>
+                    <span class="company-dropdown head" aria-describedby="companiesViewMenu">
+                        <tn-profile-menu is-active="$ctrl.isMenuActive"
+										 is-menu-active="$ctrl.isMenuActive">
+                            <ng-repeat ng-repeat="c in $ctrl.companies | orderBy: 'companyDesc'">
+                                <button tn-menu-light-button id="{{c.companyDescID}}{{$index}}"
+                                        aria-label="{{c.companyDesc}}- {{c.companyId}}" tn-enter="$ctrl.selectCompany(c)"
+                                        ng-click="$ctrl.selectCompany(c)">{{c.companyDesc}} ({{c.companyId}})</button>
+                            </ng-repeat>
+                        </tn-profile-menu>
+                    </span>
+                </h1>
+            </span>
+            <span ng-if="$ctrl.companies.length === 0">
+                <h1 class="tn-header-bar-title head noselect" tabindex="0">{{$ctrl.selectedCompany.companyDesc}}</h1>
+            </span>
+            <div ng-hide="$ctrl.hideLogo">
+                <img ng-hide="$ctrl.hideLogo" ng-src="{{$ctrl.getCompanyLogo($ctrl.companyLogoUrl)}}"
+                     class="company-logo" alt="Company Logo"/>
+            </div>
+            <span class="tn-header-bar-vertical-line"></span>
+			<button id="switchToAdminMenuItem" class="admin-switch admin-switch-hover"
+					title="Admin View"
+					ng-click="$ctrl.adminView()">
+				<i aria-hidden="true" class="tn-icon icon-icon_admin_manager_nav"></i>
+			</button>
+			<button id="switchToEmployeeMenuItem" aria-current="true"
+					class="admin-switch admin-switch-selected"
+					title="Employee View" >
+				<i aria-hidden="true" class="tn-icon icon-icon_employee_nav"></i>
+			</button>
+
+            <span class="tn-header-bar-subtitle">
+                <tn-profile-icon
+						img-url="{{$ctrl.profilePicture}}"
+						mime-type="{{$ctrl.mimeType}}"
+						id="headerProfileImageIcon"
+						monogram="{{$ctrl.monogram}}"
+						is-active="$ctrl.isActive">
+                </tn-profile-icon>
+                <tn-profile-menu aria-labelledby="headerProfileImageIcon"
+                                 is-active="$ctrl.isActive && $ctrl.menuIsLoaded && !$ctrl.isMenuActive">
+                    <!-- Menu buttons -->
+                    <button id="profileMenuItem" tn-menu-light-button ng-click="$ctrl.profile(2)">Profile</button>
+                    <button id="logOutMenuItem" ng-disabled="$ctrl.logoutClicked" tn-menu-light-button ng-click="$ctrl.signOut()">Log Out</button>
+                    <button tn-menu-light-button  class="tn-currentSiteLinkButton hand" ng-click="$ctrl.goToCurrentHRPSite()">
+                        {{'go-to-previous-site' | translate}}
+                    </button>
+                </tn-profile-menu>
+            </span>
+        </div>
+    </div>
+</div>
+<style>{{$ctrl.menuSlideStyle}}</style>

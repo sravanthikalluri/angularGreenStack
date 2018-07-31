@@ -1,0 +1,148 @@
+	<h2 class="page-title">
+		<button ui-sref="app.main.company.overview" class="no-border-button button-focus">
+			{{'company' | translate}}
+		</button>
+		<span class="icon-heading icon-icon_forward"></span>
+		<button class="no-border-button button-focus" ng-click="$ctrl.showAll = true;$ctrl.showPage  = '';$ctrl.showItem = false" ng-class="{'no-pointer':!$ctrl.showItem}">
+			{{'forms-and-policies' | translate}}
+		</button>
+	</h2>
+
+
+	<tn-card ng-show="$ctrl.showSpinner">
+		<tn-spinner ng-show="$ctrl.showSpinner" is-show="$ctrl.showSpinner" error-message="$ctrl.errorMessage"></tn-spinner>
+	</tn-card>
+
+	<uib-accordion close-others="true" ng-show="$ctrl.showPage === '' && $ctrl.showAll === true;" ng-hide="$ctrl.showSpinner">
+		<div uib-accordion-group class="tn-accordion" ng-init="status.open = false;parentIndex = $index" is-open="status.open" ng-repeat="data in $ctrl.formsObj">
+			<uib-accordion-heading id="companyForms_{{$index}}" class="accordion-heading">
+				<div tabindex="-1" class="tn-accordion-button tn-accordion-heading" name="{{data.urlType}}">
+					<p>{{data.title}}</p>
+					<i class="icon-icon_Disclosure_Expand  disclosure-open" ng-if="!status.open" aria-hidden="true"></i>
+					<i class="icon-icon_Disclosure_Collapse  disclosure-open" ng-if="status.open" aria-hidden="true"></i>
+				</div>
+			</uib-accordion-heading>
+
+			<div class="striped" ng-repeat="item in data.pdfs.sub" ng-if="!item.sub">
+				<div  class="tn-accordion-body">
+					<div class="innerHeading hand"  ng-click="$ctrl.openPdf(item.url)" ng-if="item.label !== 'carrier'">
+						<i id="companyForms_{{parentIndex}}_Pdf_{{$index}}" class="icon-icon_pdf tn-pdf_icon" aria-hidden="true"></i>
+						<div>
+							<a class="tn-anchor">{{item.label}}<span class="sr-only">{{'pdf'| translate}}</span></a>
+							<p ng-if="item.description">{{item.description}}</p>
+							<div ng-if="item.label === 'Employment Application (with Salary History)'">
+								{{'with-salary-history-note' | translate}}
+							</div>
+						</div>
+					</div>
+
+					<div class="display-all-states-container" ng-if="item.label === 'carrier'">
+						<a href="" class="tn-anchor" ng-click="$ctrl.openPdf(item.url)">{{'submission-claims-info-link' | translate}}</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="accordion-heading" ng-if="data.title === 'HR Forms' && $ctrl.countryCode !== 'CA'">
+				<div class="display-all-states-container">
+					<a href="" class="tn-anchor" ng-click="$ctrl.redirectTo(data,'workers')">
+						{{'workers-comp-forms' | translate}}
+						<i id="postWorkersForms" class="pull-right icon-icon_forward" aria-hidden="true"></i>
+					</a>
+				</div>
+			</div>
+
+			<div class="display-all-states-container" ng-if="!data.pdfs.sub">
+				<p>{{'no-company-data' | translate}} {{data.title | lowercase}}</p>
+			</div>
+
+			<div class="accordion-heading" ng-if="$ctrl.countryCode !== 'CA'">
+				<div class="display-all-states-container" ng-if="$index === $ctrl.formsObj.length-1 && data.urlType !== 'stateUnemployment'">
+					<a href="" class="tn-anchor" ng-click="$ctrl.redirectTo(data,'State Specific Forms')">
+						{{'stateSpecificForms' | translate}}
+						<i id="companyStateSpecificForms" class="pull-right icon-icon_forward" aria-hidden="true"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+
+
+		<div uib-accordion-group class="tn-accordion" ng-init="status.open = false; parentPolicyIndex = $index" is-open="status.open" ng-repeat="data in $ctrl.policiesObj">
+			<uib-accordion-heading id="companyPolicies_{{$index}}" class="accordion-heading">
+				<button tabindex="-1" class="tn-accordion-button" name="{{data.urlType}}">
+					<p>{{data.title}}</p>
+					<i class="icon-icon_Disclosure_Expand  disclosure-open" ng-if="!status.open" aria-hidden="true"></i>
+					<i class="icon-icon_Disclosure_Collapse  disclosure-open" ng-if="status.open" aria-hidden="true"></i>
+				</button>
+			</uib-accordion-heading>
+
+			<div class="striped" ng-repeat="item in data.pdfs" ng-if="item.url != ''">
+				<div class="tn-accordion-body"  ng-click="$ctrl.openPdf(item.url)">
+					<i id="companyPolicies_{{parentPolicyIndex}}_Pdf_{{$index}}" class="icon-icon_pdf tn-pdf_icon" aria-hidden="true"></i>
+					<div class="tn-accordion-content">
+						<a class="tn-anchor">{{item.label}}<span class="sr-only">{{'pdf'| translate}}</span></a>
+						<p class="description" ng-if="item.description">{{item.description}}</p>
+					</div>
+				</div>
+			</div>
+
+			<div ng-if="data.pdfs.length==0 && !data.ptolink">
+				<p>{{'no-company-data' | translate}} {{data.title | lowercase}}</p>
+			</div>
+
+			<div class="accordion-heading" ng-if="data.ptolink">
+				<div class="display-all-states-container">
+					<a href="" class="tn-anchor" ng-click="$ctrl.redirect()">{{data.ptolink.label}}</a>
+				</div>
+			</div>
+
+			<div class="accordion-heading">
+				<div class="display-all-states-container alternate-colors hand" ng-repeat="item in data.pdfs" ng-if="item.url ==''">
+					<a href class="tn-anchor" ng-click="$ctrl.redirectTo(item.label)">
+						<span>{{item.label}}</span>
+						<i id="companyTriNetPolicies_{{$index}}" class="pull-right icon-icon_forward" aria-hidden="true"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</uib-accordion>
+<!-- Policy Acknowledgements -->
+ 	<uib-accordion ng-hide="$ctrl.showPage" role="tablist">
+		<div class="header-button-link" role="tab">
+			<h4>
+				<button class="tn-accordion-button" ng-click="$ctrl.goToCompanyAcknowledgements();">
+					<a class="tn-anchor">{{'eformsAcknowledgement.title' | translate}}</a>
+					<i class="pull-right icon-icon_forward" aria-hidden="true"></i>
+				</button>
+			</h4>
+		</div>
+	</uib-accordion>
+
+	<uib-accordion ng-hide="$ctrl.showPage" role="tablist">
+		<div class="header-button-link" role="tab">
+			<h4>
+				<button class="tn-accordion-button" onClick="window.open('http://www.trinet.com/company/terms');">
+					<a class="tn-anchor">{{'privacy-statement' | translate}}</a>
+					<i class="pull-right icon-icon_forward" aria-hidden="true"></i>
+				</button>
+			</h4>
+		</div>
+	</uib-accordion>
+<!--
+
+	<state-specific-forms ng-if="$ctrl.showPage ==='State Specific Forms'" state-specific="$ctrl.stateSpecificData" ng-hide="$ctrl.showSpinner"></state-specific-forms>
+
+	<state-specific-forms ng-if="$ctrl.showPage ==='Workers Compensation Forms and Information'" state-specific="$ctrl.stateSpecificData" ng-hide="$ctrl.showSpinner"></state-specific-forms>
+
+	<benefits-guide-book ng-if="$ctrl.showPage ==='Benefits Guidebook'" ng-hide="$ctrl.showSpinner"></benefits-guide-book>
+
+	<terms-and-conditions ng-if="$ctrl.showPage ==='Terms and Conditions Agreement'" ng-hide="$ctrl.showSpinner" employee-handbook="$ctrl.policiesObj"></terms-and-conditions>
+-->
+
+	<div ng-show="$ctrl.payFrame" id="payFrame">
+		<iframe title="{{'payCheck-frame' | translate}}" id="payCheckFrame" style="overflow:hidden;height:900px;width:100%;border:0px;" border="0"
+				name="payCheckFrame"
+				marginwidth="0"
+				marginheight="0"
+				scrolling="true">
+		</iframe>
+	</div>

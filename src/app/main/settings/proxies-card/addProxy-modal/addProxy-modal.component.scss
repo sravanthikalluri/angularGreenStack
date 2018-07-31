@@ -1,0 +1,56 @@
+@import "main";
+.ui-widget{
+	max-width:310px;
+	.dropdown-menu{
+		max-height:300px;
+		overflow-y:auto;
+		&::-webkit-scrollbar {
+            width: 5px;
+        }
+        &::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        }
+		.active{
+			width:310px !important;
+		}
+	}
+}
+.add-Proxy{
+  margin: 0 16px;
+  .proxyLabel{
+	  margin-bottom:10px;
+	  color:$slate;
+  }
+  .add-proxy-button{
+		button{
+			height: 35px;
+			padding: 0 25px;
+		}
+  }
+
+}
+.datePicker-container{
+	tn-date-selector{
+		height:4vh;
+		display:block;
+		margin:0;
+		.date-select{
+			max-width:260px;
+			position:relative;
+			.tn-date-selector-popup{
+				position:absolute;
+				top:100%;
+			}
+		  .icon-icon_calendar{
+			color: $menu-selected-row;
+			font-weight: 600;
+			font-size: 18px;
+		  }
+			input{
+				height:28px;
+				width:260px;
+				padding:5px 8px;
+			}
+		}
+	}
+}

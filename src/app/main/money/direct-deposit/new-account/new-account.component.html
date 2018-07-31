@@ -1,0 +1,282 @@
+<tn-error-banner error-data="$ctrl.errorAlert"></tn-error-banner>
+<div class="modal-background direct-dposite-add-account-modal">
+	<div class="primary-container">
+		<tn-card class="new-account">
+		  <form name="newAccountForm" novalidate>
+			<tn-card-title-group>
+				<tn-card-title ng-if="$ctrl.canadianUser">{{'money.direct_deposit.dd_lastPaycheck' | translate}}</tn-card-title>
+				<tn-card-title ng-if="!$ctrl.canadianUser">{{'money.direct_deposit.add_account' | translate}}</tn-card-title>
+				<i id="newAcctCreateClose" aria-label="Close" ng-click="$ctrl.closeModal()" role="button" class="icon-close-temp hand"></i>
+			</tn-card-title-group>
+			<tn-card-content>
+				<div class="row new-account-container">
+					<div class="col-sm-5">
+						<label for="chooseAccountType" class="new-account-account-number">
+							<span class="asterisk">*</span>{{'money.direct_deposit.account_type' | translate}}
+						</label>
+						<tn-input-container ng-class="{'is-invalid': newAccountForm.accountType.$invalid && newAccountForm.accountType.$touched}">
+							<div class="select-style">
+								<select id="chooseAccountType"
+										name="accountType"
+										ng-model="$ctrl.addAccount.accountType"
+										ng-options="data as data for data in $ctrl.accountTypes"
+										required>
+									<option value="" selected>{{::'money.direct_deposit.selectAccountType' | translate}}</option>
+								</select>
+							</div>
+
+							<div class="tn-input-error" ng-messages="newAccountForm.accountType.$error"
+								 ng-show="newAccountForm.accountType.$invalid && newAccountForm.accountType.$touched">
+								<div ng-message="required" aria-live="polite">{{'money.direct_deposit.required' | translate}}</div>
+							</div>
+
+						</tn-input-container>
+
+						<div ng-if="!$ctrl.canadianUser">
+							<label for="routingNum" class="new-account-account-number">
+								<span class="asterisk">*</span>{{'money.direct_deposit.routing_number' | translate}}
+							</label>
+
+							<tn-input-container ng-class="{'is-invalid': newAccountForm.routingNumber.$invalid && newAccountForm.routingNumber.$touched}">
+								<input id="routingNum"
+										name="routingNumber"
+										maxlength="9"
+										ng-minlength="9"
+										tn-input-restriction numbers-only="true"
+										value="{{$ctrl.addAccount.routingNumber}}"
+										ng-model="$ctrl.addAccount.routingNumber"
+										validate-routing-number
+										aria-label="routing number"
+										required
+										type="text">
+
+								<div class="tn-input-error" ng-messages="newAccountForm.routingNumber.$error"
+									 ng-show="newAccountForm.routingNumber.$invalid && newAccountForm.routingNumber.$touched">
+									<div ng-message="required" aria-live="polite">{{'money.direct_deposit.required' | translate}}</div>
+									<div ng-message="minlength" aria-live="polite">{{'money.direct_deposit.validations.minRoutingNumber' | translate }}</div>
+									<div ng-message="routingNumber" aria-live="polite">{{'money.direct_deposit.validations.transitRoutingNumber' | translate }}</div>
+								</div>
+
+							</tn-input-container>
+						</div>
+
+						<label for="acctNum" class="new-account-account-number">
+							<span class="asterisk">*</span>{{'money.direct_deposit.account_number' | translate}}
+						</label>
+						<tn-input-container ng-class="{'is-invalid': (newAccountForm.accountNumber.$invalid && newAccountForm.accountNumber.$touched)
+										|| (newAccountForm.accountNumber2.$invalid && newAccountForm.accountNumber2.$touched)}">
+							<input id="acctNum"
+									name="accountNumber"
+									maxlength="17"
+									value="{{$ctrl.addAccount.accountNumber}}"
+									ng-model="$ctrl.addAccount.accountNumber"
+									aria-label="account number"
+									required
+									type="{{$ctrl.showAcct}}"
+									ng-change="newAccountForm.accountNumber2.$validate();">
+
+							<div class="tn-input-error" ng-messages="newAccountForm.accountNumber.$error"
+								 ng-show="newAccountForm.accountNumber.$invalid && newAccountForm.accountNumber.$touched">
+								<div ng-message="required" aria-live="polite">{{'money.direct_deposit.required' | translate}}</div>
+							</div>
+
+						</tn-input-container>
+
+						<tn-checkbox-container>
+							<input ng-model="$ctrl.showAccount"
+									ng-change="$ctrl.showAccountNo($ctrl.showAccount);"
+									ng-true-value="'Y'"
+									ng-false-value="'N'"
+									type="checkbox"
+									id="showAccount"
+									name="showAccount">
+							<tn-checkbox-label>
+								<label for="showAccount">{{'money.direct_deposit.showAcctNo' | translate}}</label>
+							</tn-checkbox-label>
+						</tn-checkbox-container>
+
+						<label for="acctNum2" class="new-account-account-number">
+							<span class="asterisk">*</span>{{'money.direct_deposit.reEnterAcctNo' | translate}}
+						</label>
+						<tn-input-container ng-class="{'is-invalid': (newAccountForm.accountNumber2.$invalid && newAccountForm.accountNumber2.$touched)
+														|| (newAccountForm.accountNumber.$invalid && newAccountForm.accountNumber.$touched)}">
+							<input id="acctNum2"
+									name="accountNumber2"
+									maxlength="17"
+									value="{{$ctrl.addAccount.accountNumber2}}"
+									ng-model="$ctrl.addAccount.accountNumber2"
+									aria-label="account number"
+									ng-cut="$event.preventDefault()"
+									ng-copy="$event.preventDefault()"
+									ng-paste="$event.preventDefault()"
+									required
+									type="{{$ctrl.showAcct}}"
+									validate-entry="$ctrl.addAccount.accountNumber">
+
+							<div class="tn-input-error" ng-messages="newAccountForm.accountNumber2.$error"
+								 ng-show="(newAccountForm.accountNumber2.$invalid && newAccountForm.accountNumber2.$touched) ||
+								 		  (newAccountForm.accountNumber.$invalid && newAccountForm.accountNumber.$touched)">
+								<div ng-message="required" aria-live="polite">{{'money.direct_deposit.required' | translate}}</div>
+								<div ng-message="confirmEntry" aria-live="polite">{{'money.direct_deposit.validations.accountNotMatched' | translate}}</div>
+							</div>
+						</tn-input-container>
+
+						    <div ng-if="$ctrl.canadianUser">
+
+							<label for="branchId" class="new-account-account-number">
+								<span class="asterisk">*</span>{{'money.direct_deposit.transit_number' | translate}}
+							</label>
+							<tn-input-container ng-class="{'is-invalid': newAccountForm.branchId.$invalid && newAccountForm.branchId.$touched}">
+								<input id="branchId"
+										name="branchId"
+										maxlength="5"
+										ng-minlength="5"
+										tn-input-restriction numbers-only="true"
+										value="{{$ctrl.addAccount.branchId}}"
+										ng-model="$ctrl.addAccount.branchId"
+										aria-label="branch"
+										required
+										type="text">
+
+								<div class="tn-input-error" ng-messages="newAccountForm.branchId.$error"
+									 ng-show="newAccountForm.branchId.$invalid && newAccountForm.branchId.$touched">
+									<div ng-message="required" aria-live="polite">{{'money.direct_deposit.required' | translate}}</div>
+									<div ng-message="minlength" aria-live="polite">{{'money.direct_deposit.validations.minTransitNumber' | translate }}</div>
+								</div>
+
+							</tn-input-container>
+
+
+							<label for="bankId" class="new-account-account-number">
+								<span class="asterisk">*</span>{{'money.direct_deposit.institution_number' | translate}}
+							</label>
+							<tn-input-container ng-class="{'is-invalid': newAccountForm.bankId.$invalid && newAccountForm.bankId.$touched}">
+								<input id="bankId"
+									name="bankId"
+									maxlength="3"
+									ng-minlength="3"
+									tn-input-restriction numbers-only="true"
+									value="{{$ctrl.addAccount.bankId}}"
+									ng-model="$ctrl.addAccount.bankId"
+									aria-label="bank"
+									required
+									type="text">
+
+								<div class="tn-input-error" ng-messages="newAccountForm.bankId.$error"
+									 ng-show="newAccountForm.bankId.$invalid && newAccountForm.bankId.$touched">
+									<div ng-message="required" aria-live="polite">{{'money.direct_deposit.required' | translate}}</div>
+									<div ng-message="minlength" aria-live="polite">{{'money.direct_deposit.validations.minInstitutionNumber' | translate }}</div>
+								</div>
+
+							</tn-input-container>
+
+
+						</div>
+
+							<div ng-if="$ctrl.showAmountSection">
+
+							<label class="new-account-account-number"><span class="asterisk">*</span>{{'money.direct_deposit.dd_amount' | translate}}</label>
+							<div class="tn-account-values" role="radiogroup">
+							<span id="dollarAmt" role="radio">
+								<i class="tn-icon icon-icon_radiobutton_select blue semibold" aria-checked="false"
+								   ng-if="$ctrl.selectedAmountType === 'dollar'"></i>
+								<i class="tn-icon icon-icon_radiobutton_empty gray semibold" aria-checked="true"
+								   aria-label="{{'money.direct_deposit.dollar_value' | translate}}"
+								   ng-if="$ctrl.selectedAmountType !== 'dollar'" ng-click="$ctrl.selectedAmountType = 'dollar'"></i>
+								<span>$&nbsp;({{'money.direct_deposit.dollar_value' | translate}})</span>
+							</span>
+							<span id="percentAmt" role="radio">
+								<i class="tn-icon icon-icon_radiobutton_select blue semibold" aria-checked="false"
+								   ng-show="$ctrl.selectedAmountType === 'percentage'"></i>
+								<i class="tn-icon icon-icon_radiobutton_empty semibold gray" aria-checked="true"
+									aria-label="{{'money.direct_deposit.percent_net' | translate}}"
+									ng-show="$ctrl.selectedAmountType !== 'percentage'" ng-click="$ctrl.selectedAmountType = 'percentage'"></i>
+								<span>%&nbsp;({{'money.direct_deposit.percent_net' | translate}})</span>
+								<span class="tn-has-tooltip tool-tip text-left ">
+									<tn-tooltip class="tn-earning-hastooltip" msg="'money.direct_deposit.addNewAccountPercentageText'"></tn-tooltip>
+								</span>
+							</span>
+
+							</div>
+							<tn-input-container class="last-item" ng-if="$ctrl.selectedAmountType === 'dollar'" ng-class="{'is-invalid': newAccountForm.amount.$invalid && newAccountForm.amount.$touched}">
+								<input id="dollarAmtText"
+									   name="amount"
+										tn-input-restriction decimals-only="true" max-length-before-decimal="9" max-length="12"
+										value="{{$ctrl.addAccount.amount}}"
+										ng-model="$ctrl.addAccount.amount"
+										data-remaining-amount="{{$ctrl.remainingAmount}}"
+										aria-label="amount in dollars"
+										validate-dollar-amount
+										required
+										type="text">
+
+								<div class="tn-input-error" ng-messages="newAccountForm.amount.$error" ng-show="newAccountForm.amount.$invalid && newAccountForm.amount.$touched">
+									<div ng-message="required" aria-live="polite">{{'money.direct_deposit.required' | translate}}</div>
+									<div ng-message="dollarZero" aria-live="polite">{{'money.direct_deposit.validations.dollarZeroValue' | translate }}</div>
+
+								</div>
+
+							</tn-input-container>
+
+								<tn-input-container class="last-item" ng-if="$ctrl.selectedAmountType === 'percentage'" ng-class="{'is-invalid': newAccountForm.percentage.$invalid && newAccountForm.percentage.$touched}">
+									<input id="percentAmtText"
+											name="percentage"
+											maxlength="5"
+											tn-input-restriction decimals-only="true"
+											value="{{$ctrl.addAccount.percent}}"
+											ng-model="$ctrl.addAccount.percent"
+											aria-label="amount in percentage"
+											validate-percentage
+											required
+											type="text">
+
+									<div class="tn-input-error" ng-messages="newAccountForm.percentage.$error"
+										 ng-show="newAccountForm.percentage.$invalid && newAccountForm.percentage.$touched">
+										<div ng-message="required" aria-live="polite">{{'money.direct_deposit.required' | translate}}</div>
+										<div ng-message="percentageZero" aria-live="polite">{{'money.direct_deposit.validations.percentageZeroValue' | translate }}</div>
+										<div ng-message="percentage" aria-live="polite">{{'money.direct_deposit.validations.percentageValue' | translate }}</div>
+									</div>
+
+								</tn-input-container>
+							</div>
+
+
+						<!--<div class="col-sm-12 pull-left" ng-if="!$ctrl.showAmountSection">-->
+							<!--<div class="col-sm-6" ng-if="$ctrl.addAccount.comapnyId == '001'">-->
+								<!--<tn-card-subtitle class="new-account-account-number"><span class="asterisk">*</span>AP Expense</tn-card-subtitle>-->
+								<!--<input type="checkbox" id="apAccountChkbox" name="apAccount" ng-model="$ctrl.addAccount.apAccount">-->
+							<!--</div>-->
+							<!--<div class="col-sm-6">-->
+								<!--<tn-card-subtitle class="new-account-account-number"><span class="asterisk">*</span>FSA Account</tn-card-subtitle>-->
+								<!--<input type="checkbox" id="fsaAccountChkbox" name="fasAccount" ng-model="$ctrl.addAccount.fsaAccount">-->
+							<!--</div>-->
+						<!--</div>-->
+					</div>
+
+					<div class="col-sm-7">
+						<div class="dd-check-image">
+							<img src="../../../../../assets/images/Routing-check-with-routing-number-and-account-number.png" alt="Check Details" class="img-responsive" ng-if="!$ctrl.canadianUser">
+							<img src="../../../../../assets/images/canadian_check_example.png" alt="Check Details"  class="img-responsive" ng-if="$ctrl.canadianUser"/>
+						</div>
+					</div>
+				</div>
+			</tn-card-content>
+			<tn-card-footer class="button-group" >
+				<button id="addAcctCloseBtn" tn-button ng-click="$ctrl.closeModal()" class="cancel hand">{{'cancel' | translate}}</button>
+				<button id="addContinueBtn" ng-keydown="$ctrl.setFocus($event);" tn-action-button
+						ng-class="$ctrl.disableSaveButton ? 'disable' : ''"
+						ng-disabled="$ctrl.disableSaveButton"
+						ng-click="$ctrl.addAccountDetails(newAccountForm)" class="button-add-account">
+					{{'money.direct_deposit.continue' | translate}}
+				</button>
+			</tn-card-footer>
+		</form>
+		</tn-card>
+	</div>
+</div>
+
+
+
+
+
+

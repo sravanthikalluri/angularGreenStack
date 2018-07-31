@@ -1,0 +1,34 @@
+@import 'main';
+
+.company-overview{
+	h6 {
+		font-size: 13px;
+	}
+	
+	.company-overview-heading {
+		margin-top: -32px !important;
+
+		.headquarter-information {
+			margin: 63px 0;
+			padding-left: 32px;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.heading { 
+			color: $slate;
+			margin-bottom: 6px;
+			margin-top: 9px;
+		} 			
+	}
+	
+	.company-locations{
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		
+		.address-unavailable{
+			color: $slate;
+		}	
+	}
+}

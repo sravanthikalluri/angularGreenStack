@@ -1,0 +1,68 @@
+<div class="edit-profile-section" id="preferred">
+	<h3 class="edit-profile-section-title">{{'edit-profile-preferred-name' | translate}}</h3>
+	<br>
+	<div class="tn-custom-checkbox">
+		<input type="checkbox" id="isPreferredPrimary" ng-model="$ctrl.data.isPreferredPrimary"
+			   ng-click="$ctrl.getPrimaryInfo($ctrl.data.isPreferredPrimary)">
+		<label for="isPreferredPrimary">Use Primary Name</label>
+	</div>
+
+	<fieldset ng-disabled="$ctrl.data.isPreferredPrimary" ng-class="{'disable' : $ctrl.data.isPreferredPrimary}">
+		<div class="row">
+			<tn-select class="col-sm-5"
+					   label="{{'edit-profile-form-of-address' | translate}}"
+					   placeholder="Select a Form of Address"
+					   form-name="$ctrl.formName"
+					   component-id="'Select'"
+					   field-name="preferredFormOfAddress"
+					   field-value="$ctrl.data.selected.preferredFormOfAddress"
+					   items="$ctrl.data.dropdown.formOfAddresses"
+					   on-update="$ctrl.update($ctrl.keys.formOfAddress, data.key)">
+			</tn-select>
+		</div>
+		<br>
+
+		<div class="row">
+			<tn-name-input class="col-sm-5"
+						   label="{{'edit-profile-first-name' | translate}}"
+						   form-name="$ctrl.formName"
+						   component-id="'Input'"
+						   field-name="preferredFirstName"
+						   is-required="true"
+						   field-value="$ctrl.data.preferred.firstName"
+						   on-update="$ctrl.update($ctrl.keys.firstName, data)">
+			</tn-name-input>
+			<tn-name-input class="col-sm-5 col-sm-offset-2"
+						   label="{{'edit-profile-middle-name' | translate}}"
+						   form-name="$ctrl.formName"
+						   component-id="'Input'"
+						   field-name="preferredMiddleName"
+						   field-value="$ctrl.data.preferred.middleName"
+						   on-update="$ctrl.update($ctrl.keys.middleName, data)">
+			</tn-name-input>
+		</div>
+		<br>
+
+		<div class="row">
+			<tn-name-input class="col-sm-5"
+						   label="{{'edit-profile-last-name' | translate}}"
+						   form-name="$ctrl.formName"
+						   component-id="'Input'"
+						   field-name="preferredLastName"
+						   is-required="true"
+						   field-value="$ctrl.data.preferred.lastName"
+						   on-update="$ctrl.update($ctrl.keys.lastName, data)">
+			</tn-name-input>
+			<tn-select class="col-sm-5 col-sm-offset-2"
+					   label="{{'edit-profile-suffix' | translate}}"
+					   placeholder="Select a Suffix"
+					   form-name="$ctrl.formName"
+					   field-name="preferredSuffix"
+					   component-id="'Select'"
+					   field-value="$ctrl.data.selected.preferredSuffix"
+					   items="$ctrl.data.dropdown.suffixes"
+					   on-update="$ctrl.update($ctrl.keys.suffix, data.key)">
+			</tn-select>
+		</div>
+	</fieldset>
+</div>

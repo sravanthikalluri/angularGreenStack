@@ -1,0 +1,11 @@
+<tn-card class="payroll-schedule-card" loading="$ctrl.showSpinner">
+	<tn-card-content class="padding-vertical">
+		<date-info
+				custom-id="'payrollSchedule'"
+				titles="paychecks-card-next-paycheck-title" date="$ctrl.nextCheckDate"></date-info>
+		<div class="payroll-schedule-card-divider"></div>
+		<tn-datepicker class="hide-payroll-schedule-btn" title="payroll-schedule-title" is-payroll-admin="$ctrl.isPayrollAdmin" payroll-data="$ctrl.payrollMonthData" events="$ctrl.checkDates" event-keys="$ctrl.keys" ng-if="$ctrl.checkDates"></tn-datepicker>
+		<button id="viewPayrollScheduleBtn" ng-disabled="$ctrl.payrollMonthData.length === 0" class="show-payroll-schedule-btn" tn-button ng-click="$ctrl.btnClick()">{{'payroll-schedule-action-button' | translate}}</button>
+		<tn-datepicker-modal  ng-show="$ctrl.showModal" on-show="$ctrl.showModal" is-payroll-admin="$ctrl.isPayrollAdmin" payroll-data="$ctrl.payrollMonthData" events="$ctrl.checkDates" event-keys="$ctrl.keys" ng-if="$ctrl.checkDates"></tn-datepicker-modal>
+	</tn-card-content>
+</tn-card>

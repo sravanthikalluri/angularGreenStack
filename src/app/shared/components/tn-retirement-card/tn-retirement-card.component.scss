@@ -1,0 +1,48 @@
+.retirement-card {
+    .retirement-card-header{
+        p{
+            font-weight: 600;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    }
+    .retirement-card-content {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        .retirement-card-content-currentElection {
+            p:nth-child(1) {
+                text-align: center;
+                font-weight: 600;
+            }
+            p:nth-child(2) {
+                font-size: 50px;
+                text-align: center;
+                margin-top: 70px;
+                margin-bottom: 0px;
+                font-weight: 600;
+            }
+            p:nth-child(2) span {
+                font-size: 30px;
+                font-weight: normal;
+            }
+            p:nth-child(3) {
+                color: #C4C8D3;
+                text-align: center;
+            }
+        }
+        .retirement-card-content-ytdContributions {
+            border-left: 1px solid rgb(235,237,239);
+            border-right: 1px solid rgb(235,237,239);
+            p{
+                text-align: center;
+                font-weight: 600;
+            }
+        }
+        .retirement-card-content-rateOfReturn {
+            p {
+                text-align: center;
+                font-weight: 600;
+            }
+        }
+    }
+}

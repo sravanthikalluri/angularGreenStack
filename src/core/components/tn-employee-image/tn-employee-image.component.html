@@ -1,0 +1,4 @@
+<img class="image" ng-if="$ctrl.imgUrl.length > 0" ng-src="{{$ctrl.imgUrl}}"/>
+<span class="image-placeholder" ng-if="$ctrl.imgUrl.length === 0 || $ctrl.imgUrl === undefined">
+	{{$ctrl.employeeName | initials}}
+</span>

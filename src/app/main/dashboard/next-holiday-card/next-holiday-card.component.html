@@ -1,0 +1,13 @@
+<tn-card loading="$ctrl.showSpinner" ng-if="$ctrl.hasHolidayWidget && !$ctrl.hideHoliday">
+	<tn-card-content class="next-holiday-card-content">
+		<date-info id="nextHolidayDateInfo"
+				   custom-id="'nextHoliday'"
+				   titles="{{'next-holiday-card-title' | translate}}" title-color="primary" date="$ctrl.nextHolidayDt"></date-info>
+	</tn-card-content>
+	<tn-card-actions ng-if="$ctrl.hasHolidayWidget">
+		<button id="viewHolidayCalendarBtn" tn-button ui-sref="app.main.company.holiday-calendar">
+			<i class="icon-icon_calendar"></i>
+			{{'next-holiday-card-action-button' | translate}}
+		</button>
+	</tn-card-actions>
+</tn-card>

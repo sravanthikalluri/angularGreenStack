@@ -1,0 +1,24 @@
+{
+	"data":[
+		{
+			"preferenceType":"GEN_ONLINE",
+			"preferenceValue":"N"
+		},
+		{
+			"preferenceType":"SEND_EMAIL",
+			"preferenceValue":"N"
+		},
+		{
+			"preferenceType":"W2_ONLINE",
+			"preferenceValue":"N"
+		},
+		{
+			"preferenceType":"WF_EMAIL",
+			"preferenceValue":"Y"
+		}
+	],
+	"_requestId":"a1c6edfc-e84d-4048-983e-b2d6c1d7ceca",
+	"_statusCode":"200",
+	"_statusText":"OK",
+	"_statusMessage":"Retrieved Employee options Successfully "
+}

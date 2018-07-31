@@ -1,0 +1,47 @@
+@import 'main';
+
+.public-profile-top-section {
+    padding: 48px 0 12px 0;
+}
+
+.public-profile-table {
+	display: flex;
+	align-items: center;
+	padding-bottom: 24px;
+
+	.titles {
+		white-space: nowrap;
+		padding: 12px 0 12px 10px;
+	}
+
+	.tn-right-align-grid-text { 
+		text-align: right; 
+		padding: 12px 24px 12px 0;
+	}
+
+	.tn-icon { 
+		color: $slate; 
+	}
+
+	.tn-align-profile-icon {
+		line-height: 5em;
+	}
+}
+
+h4.profile-heading { color: $slate !important; }
+
+.profile-label {
+	color: $slate !important;
+	font-weight: 600 !important;
+	margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.1;
+}
+.profile-value {
+    font-weight: 500;
+    line-height: 1.1;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}

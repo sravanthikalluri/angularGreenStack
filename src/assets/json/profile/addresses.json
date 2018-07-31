@@ -1,0 +1,33 @@
+{
+   "data":{
+      "activeAddressList":[
+         {
+            "employeeId":"00001002198",
+            "addressType":"HOME",
+            "address1":"21 Seminole Ave.",
+            "address2":" ",
+            "address3":" ",
+            "address4":" ",
+            "approvalStatus":"F",
+            "city":"Hubbardston",
+            "country":"US",
+            "county":"US",
+            "effectiveDate":"2004-08-21",
+            "postalCode":"01452",
+            "primaryInd":0,
+            "state":"MA",
+            "stateProvince":null,
+            "uniqueId":1,
+            "stateProvinceCodeDesc":null,
+            "oldStateDesc":null
+         }
+      ],
+      "historyAddressList":[
+
+      ]
+   },
+   "_requestId":"1d7f9e5a-806f-415d-b79a-fc91b648e4ac",
+   "_statusCode":"200",
+   "_statusText":"OK",
+   "_statusMessage":"Retrieved Address Successfully "
+}

@@ -1,0 +1,358 @@
+{
+  "data": {
+	"menuItems": [
+	  {
+		"subMenus": [
+		  {
+			"subMenus": [],
+			"menuId": 11,
+			"name": "Pay Day",
+			"theme": "Me",
+			"component": null,
+			"url": "#",
+			"displayOrder": 1,
+			"external": "N",
+			"type": "Widget"
+		  },
+		  {
+			"subMenus": [],
+			"menuId": 12,
+			"name": "Holiday",
+			"theme": "Me",
+			"component": null,
+			"url": "#",
+			"displayOrder": 2,
+			"external": "N",
+			"type": "Widget"
+		  },
+		  {
+			"subMenus": [],
+			"menuId": 13,
+			"name": "Time Off",
+			"theme": "Me",
+			"component": null,
+			"url": "#",
+			"displayOrder": 3,
+			"external": "N",
+			"type": "Widget"
+		  }
+		],
+		"menuId": 1,
+		"name": "Dashboard",
+		"theme": "Me",
+		"component": "dashboard",
+		"url": "app/main/dashboard",
+		"displayOrder": 1,
+		"external": "N",
+		"type": "Menu"
+	  },
+	  {
+		"subMenus": [
+		  {
+			"subMenus": [],
+			"menuId": 57,
+			"name": "Time Off",
+			"theme": "Me",
+			"component": null,
+			"url": "/ui/apps/TimeOff/",
+			"displayOrder": 3,
+			"external": "Y",
+			"type": "Menu"
+		  }
+		],
+		"menuId": 5,
+		"name": "Time Off",
+		"theme": "Me",
+		"component": "time",
+		"url": null,
+		"displayOrder": 5,
+		"external": "N",
+		"type": "Menu"
+	  },
+
+	  {
+		"subMenus": [
+		  {
+			"subMenus": [],
+			"menuId": 92,
+			"name": "Overview",
+			"theme": "Me",
+			"component": null,
+			"url": "app/main/money/overview",
+			"displayOrder": 2,
+			"external": "N",
+			"type": "Menu"
+		  },
+		  {
+			"subMenus": [],
+			"menuId": 31,
+			"name": "Paychecks and Statements",
+			"theme": "Me",
+			"component": null,
+			"url": "app/main/money/paychecks-and-statements",
+			"displayOrder": 2,
+			"external": "N",
+			"type": "Menu"
+		  },
+		  {
+			"subMenus": [],
+			"menuId": 32,
+			"name": "Expenses",
+			"theme": "Me",
+			"component": null,
+			"url": "https://app.trinetexpense.com/users/login",
+			"displayOrder": 3,
+			"external": "Y",
+			"type": "Menu"
+		  },
+		  {
+			"subMenus": [],
+			"menuId": 33,
+			"name": "Retirement Savings",
+			"theme": "Me",
+			"component": null,
+			"url": "#",
+			"displayOrder": 4,
+			"external": "N",
+			"type": "Menu"
+		  },
+		  {
+			"subMenus": [],
+			"menuId": 36,
+			"name": "Direct Deposit",
+			"theme": "Me",
+			"component": null,
+			"url": "app/main/money/directDeposit",
+			"displayOrder": 7,
+			"external": "N",
+			"type": "Menu"
+		  },
+		  {
+			"subMenus": [],
+			"menuId": 37,
+			"name": "Taxes",
+			"theme": "Me",
+			"component": null,
+			"url": "app/main/money/taxes",
+			"displayOrder": 8,
+			"external": "N",
+			"type": "Menu"
+		  },
+		  {
+			"subMenus": [],
+			"menuId": 38,
+			"name": "Employment Verification",
+			"theme": "Me",
+			"component": null,
+			"url": "#/verifyEmp",
+			"displayOrder": 9,
+			"external": "N",
+			"type": "Menu"
+		  },
+		  {
+			"subMenus": [],
+			"menuId": 39,
+			"name": "Money Forms",
+			"theme": "Me",
+			"component": null,
+			"url": "#/moneyforms",
+			"displayOrder": 10,
+			"external": "N",
+			"type": "Menu"
+		  }
+		],
+		"menuId": 3,
+		"name": "Money",
+		"theme": "Me",
+		"component": "money",
+		"url": null,
+		"displayOrder": 3,
+		"external": "N",
+		"type": "Menu"
+	  },
+	  {
+		"subMenus": [
+		  {
+			"subMenus": [],
+			"menuId": 43,
+			"name": "Overview",
+			"theme": "Me",
+			"component": null,
+			"url": "app/main/benefits/overview",
+			"displayOrder": 3,
+			"external": "N",
+			"type": "Menu"
+		  },
+		  {
+			"subMenus": [],
+			"menuId": 46,
+			"name": "Flexible Spending Accounts",
+			"theme": "Me",
+			"component": null,
+			"url": "#/ssowidget/fsa",
+			"displayOrder": 6,
+			"external": "Y",
+			"type": "Menu"
+		  },
+		  {
+			"subMenus": [],
+			"menuId": 47,
+			"name": "Commuter Benefits",
+			"theme": "Me",
+			"component": null,
+			"url": "#/ssowidget/ww",
+			"displayOrder": 7,
+			"external": "Y",
+			"type": "Menu"
+		  },
+		  {
+			"subMenus": [],
+			"menuId": 48,
+			"name": "Health and Counseling",
+			"theme": "Me",
+			"component": null,
+			"url": "#/ssowidget/fei",
+			"displayOrder": 8,
+			"external": "Y",
+			"type": "Menu"
+		  },
+		  {
+			"subMenus": [],
+			"menuId": 44,
+			"name": "My Current Benefits",
+			"theme": "Me",
+			"component": null,
+			"url": "#/currentbenefits",
+			"displayOrder": 4,
+			"external": "N",
+			"type": "Menu"
+		  },
+		  {
+			"subMenus": [],
+			"menuId": 45,
+			"name": "Resources",
+			"theme": "Me",
+			"component": null,
+			"url": "#/plansandcarriers",
+			"displayOrder": 5,
+			"external": "N",
+			"type": "Menu"
+		  },
+		  {
+			"subMenus": [],
+			"menuId": 54,
+			"name": "Legal Notices",
+			"theme": "Me",
+			"component": null,
+			"url": "#/legalnotices",
+			"displayOrder": 14,
+			"external": "N",
+			"type": "Menu"
+		  }
+		],
+		"menuId": 4,
+		"name": "Benefits",
+		"theme": "Me",
+		"component": "benefits",
+		"url": null,
+		"displayOrder": 4,
+		"external": "N",
+		"type": "Menu"
+	  },
+	  {
+		"subMenus": [
+		  {
+			"subMenus": [],
+			"menuId": 64,
+			"name": "Overview",
+			"theme": "Me",
+			"component": null,
+			"url": "app/main/company/overview",
+			"displayOrder": 1,
+			"external": "N",
+			"type": "Menu"
+		  },
+		  {
+			"subMenus": [],
+			"menuId": 65,
+			"name": "Holiday Calendar",
+			"theme": "Me",
+			"component": null,
+			"url": "app/main/company/holidayCalendar",
+			"displayOrder": 5,
+			"external": "N",
+			"type": "Menu"
+		  },
+		  {
+			"subMenus": [],
+			"menuId": 63,
+			"name": "Directory",
+			"theme": "Me",
+			"component": null,
+			"url": "app/main/company/companyDirectory",
+			"displayOrder": 3,
+			"external": "N",
+			"type": "Menu"
+		  },
+		  {
+			"subMenus": [],
+			"menuId": 62,
+			"name": "Organization Chart",
+			"theme": "Me",
+			"component": null,
+			"url": "app/main/company/org-chart",
+			"displayOrder": 2,
+			"external": "N",
+			"type": "Menu"
+		  },
+			{
+			"subMenus": [],
+			"menuId": 66,
+			"name": "Forms and Policies",
+			"theme": "Me",
+			"component": null,
+			"url": "#",
+			"displayOrder": 6,
+			"external": "N",
+			"type": "Menu"
+		  }
+		],
+		"menuId": 6,
+		"name": "Company",
+		"theme": "Me",
+		"component": "directory",
+		"url": null,
+		"displayOrder": 6,
+		"external": "N",
+		"type": "Menu"
+	  },
+
+	  {
+		"subMenus": [],
+		"menuId": 90,
+		"name": "Contact TriNet",
+		"theme": "Me",
+		"component": "email",
+		"url": "app/main/contact",
+		"displayOrder": 2,
+		"external": "N",
+		"type": "Menu"
+	  },
+	  {
+		"subMenus": [],
+		"menuId": 91,
+		"name": "Settings",
+		"theme": "Me",
+		"component": "settings",
+		"url": "app/main/settings",
+		"displayOrder": 2,
+		"external": "N",
+		"type": "Menu"
+	  }
+	]
+  },
+  "_requestId": "af896bb9-5cbd-444c-9efa-f3e35bd58e9c",
+  "_statusCode": "200",
+  "_statusText": "OK",
+  "_statusMessage": "Success"
+}

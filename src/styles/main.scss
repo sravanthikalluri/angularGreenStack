@@ -1,0 +1,67 @@
+@import '_vars';
+@import '_functions';
+@import '_fonts';
+@import '_grid';
+@import '_icons';
+@import '_util';
+@import '_override';
+
+html, body {
+	margin:0;
+	padding:0;
+	color: $font-color;
+	font-family: "Proxima Nova", Arial, sans-serif;
+}
+
+.tn-icon {
+		width: $icon-size;
+		height: $icon-size;
+		font-size: 24px;
+		font-family: 'icomoon';
+}
+
+.icon-heading{
+	color: $pewter;
+	height:5px;
+	width:5px;
+	font-size:18px;
+	padding-right: 1px;
+}
+
+.icon-downward {
+	display: inline-block;
+	transform: rotate(90deg);
+}
+
+.icon-sort {
+	display: inline-block;
+	color: $font-color;
+	padding-left: 6px;
+
+	transform: rotate(90deg) scaleX(0.5);
+}
+
+.icon-sort.reverse {
+	transform: rotate(-90deg) scaleX(0.5);
+}
+
+.icon-back {
+	font-size: 	 14px;
+	font-weight: 900;
+}
+
+.vertical-divider {
+	border-right: 1px solid $trinet-gray-l69;
+	height: auto;
+}
+
+.horizontal-divider {
+	border-bottom: 1px solid $divider-gray;
+	width: auto;
+}
+
+@-moz-document url-prefix() {
+	button:focus{
+	outline: 2px dotted;
+	}
+}

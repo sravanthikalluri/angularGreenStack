@@ -1,0 +1,107 @@
+<span ng-click="$ctrl.closeModal();" class="sso-modal-close-icon icon-close-temp hand"></span>
+<div class="modalPad">
+	<tn-spinner ng-show="!$ctrl.showResults" disable-timeout="true"></tn-spinner>
+	<div id="statePanPage" ng-show="$ctrl.showResults">
+		<div class="btnPrint" ng-hide="$ctrl.cobraBenefitsSummaryData.medicalPlans.length==0 || $ctrl.cobraBenefitsSummaryData=='undefined'">
+			<button id="planCostsPrint" class="tn-button tn-action-button no-margin pull-right "
+					aria-label="Plan costs print button"
+					tn-action-button ng-click="$ctrl.printSection()">
+					<span class="icon-icon_print_circle large icon-print tn-link-button-icon" aria-hidden="true"></span>
+					<span class="tn-link-button-text pull-right">Print</span>
+			</button>
+		</div>
+		<div>
+			<div class="clearfix">&nbsp;</div>
+			<div id="@Model.cobraId">
+				<h2 class="text-center cobra">{{ 'my_benefits.policies.cobra_costs' | translate }} </h2>
+
+				<div id="dateDisplay" class="text-center bold" ng-show="$ctrl.nullbucket"
+					 ng-hide="$ctrl.cobraBenefitsSummaryData.medicalPlans.length==0 || $ctrl.cobraBenefitsSummaryData=='undefined'"><p>
+					{{::headStart}} _ {{::headEnd}}</p></div>
+				<div id="nodata" class="text-center" ng-show="$ctrl.nullbucket"><p>--------------{{'my_benefits.policies.planAvaiable' | translate}}---------------</p></div>
+				<div id="printPage">
+					<table class="table small tablefix"
+						ng-if="$ctrl.cobraBenefitsSummaryData.medicalPlansList.length != 0 || $ctrl.cobraBenefitsSummaryData !='undefined'">
+						<!-- Cobra medical plan data -->
+
+						<thead>
+
+						<tr>
+							<td width="36%" class="medium"><b class="text-capitalize">{{ 'my_benefits.policies.medical' |  translate }}</b></td>
+							<td width="16%"><b>{{ 'my_benefits.policies.employee_only' |  translate }}</b></td>
+							<td width="16%"><b>{{ 'my_benefits.policies.emp_spouse' |  translate }}</b></td>
+							<td width="16%"><b>{{ 'my_benefits.policies.emp_child' |  translate }}</b></td>
+							<td width="16%"><b>{{ 'my_benefits.policies.emp_family' |  translate }}</b></td>
+						</tr>
+
+						</thead>
+						<tbody>
+						<tr ng-repeat="data in $ctrl.cobraBenefitsSummaryData.medicalPlansList">
+							<td width="36%">{{::data.desc}}</td>
+							<td width="16%">{{::data.employee | number: 2 | currency}}</td>
+							<td width="16%">{{::data.spouse | number: 2 | currency}}</td>
+							<td width="16%">{{::data.children | number: 2 | currency}}</td>
+							<td width="16%">{{::data.family | number: 2 | currency}}</td>
+
+						</tr>
+						</tbody>
+					</table>
+					<!-- Cobra dental plan data -->
+					<table class="table small tablefix"
+						ng-if="$ctrl.cobraBenefitsSummaryData.dentalPlansList.length !=0 || $ctrl.cobraBenefitsSummaryData !='undefined'">
+
+						<thead>
+						<tr>
+							<td width="36%" class="medium"><b>{{ 'my_benefits.policies.dental' |  translate }}</b></td>
+							<td width="16%"><b>{{ 'my_benefits.policies.employee_only' |  translate }}</b></td>
+							<td width="16%"><b>{{ 'my_benefits.policies.emp_spouse' |  translate }}</b></td>
+							<td width="16%"><b>{{ 'my_benefits.policies.emp_child' |  translate }}</b></td>
+							<td width="16%"><b>{{ 'my_benefits.policies.emp_family' |  translate }}</b></td>
+						</tr>
+
+						</thead>
+						<tbody>
+						<tr ng-repeat="data in $ctrl.cobraBenefitsSummaryData.dentalPlansList">
+							<td width="36%">{{::data.desc}}</td>
+							<td width="16%">{{::data.employee | number: 2 | currency}}</td>
+							<td width="16%">{{::data.spouse | number: 2 | currency}}</td>
+							<td width="16%">{{::data.children | number: 2 | currency}}</td>
+							<td width="16%">{{::data.family | number: 2 | currency}}</td>
+
+						</tr>
+						</tbody>
+					</table>
+					<!-- Cobra vision plan data -->
+					<table class="table small tablefix"
+						ng-if="$ctrl.cobraBenefitsSummaryData.visionPlansList.length !==0 || $ctrl.cobraBenefitsSummaryData !=='undefined'">
+
+						<thead>
+						<tr>
+							<td width="36%" class="medium"><b>{{ 'my_benefits.policies.vision' |  translate }}</b></td>
+							<td width="16%"><b>{{ 'my_benefits.policies.employee_only' |  translate }}</b></td>
+							<td width="16%"><b>{{ 'my_benefits.policies.emp_spouse' |  translate }}</b></td>
+							<td width="16%"><b>{{ 'my_benefits.policies.emp_child' |  translate }}</b></td>
+							<td width="16%"><b>{{ 'my_benefits.policies.emp_family' |  translate }}</b></td>
+						</tr>
+
+						</thead>
+						<tbody>
+						<tr ng-repeat="data in $ctrl.cobraBenefitsSummaryData.visionPlansList">
+							<td width="36%">{{::data.desc}}</td>
+							<td width="16%">{{::data.employee | number: 2 | currency}}</td>
+							<td width="16%">{{::data.spouse | number: 2 | currency}}</td>
+							<td width="16%">{{::data.children | number: 2 | currency}}</td>
+							<td width="16%">{{::data.family | number: 2 | currency}}</td>
+
+						</tr>
+						</tbody>
+					</table>
+
+
+					<p><b><span>{{ 'my_benefits.policies.disclamer' |  translate }}</span>:</b></p>
+					<p>{{ 'my_benefits.policies.cobra_factors' |  translate }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

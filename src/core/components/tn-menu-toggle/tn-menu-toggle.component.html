@@ -1,0 +1,10 @@
+<div class="tn-menu-toggle">
+	<tn-menu-link  menu="$ctrl.menu" on-select="$ctrl.select($event)" close-slider="$ctrl.closeSlider">
+		<span id="{{$ctrl.menu.menuId}}_toggle_arrow" class="tn-icon tn-menu-toggle-arrow" aria-label="{{$ctrl.menu.isOpen ? 'expanded':'collapsed'}}" ng-class="{'tn-menu-toggle-arrow-is-opened': $ctrl.menu.isOpen }"></span>
+	</tn-menu-link>
+	<div class="tn-menu-toggle-list" ng-show="$ctrl.menu.isOpen">
+		<tn-menu-link menu="menu" ng-repeat="menu in $ctrl.menu.menus"
+			on-select="$ctrl.select($event, isExternal, redirectUrl)" close-slider="$ctrl.closeSlider">
+		</tn-menu-link>
+	</div>
+</div>

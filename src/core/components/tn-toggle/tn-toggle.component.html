@@ -1,0 +1,20 @@
+<div class="tn-toggle-container">
+	<div class="tn-toggle-labels">
+		<span ng-show="$ctrl.isToggled">
+			<p class="semibold">{{$ctrl.trueLabel}}</p>
+			<p>{{$ctrl.trueSublabel}}</p>
+		</span>
+		<span ng-show="!$ctrl.isToggled">
+			<p class="semibold">{{$ctrl.falseLabel}}</p>
+			<p>{{$ctrl.falseSublabel}}</p>
+		</span>
+	</div>
+	<label class="tn-toggle hand" aria-label="{{$ctrl.readerValue}}">
+		<input type="checkbox"
+			   ng-model="$ctrl.isToggled"
+			   ng-change="$ctrl.onToggleChange()">
+		<div class="tn-toggle-track">
+			<div class="tn-toggle-handle"></div>
+		</div>
+	</label>
+</div>

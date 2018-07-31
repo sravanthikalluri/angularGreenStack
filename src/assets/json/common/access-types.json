@@ -1,0 +1,48 @@
+{
+	"data":[
+		{
+			"key":"Campus",
+			"value":"Campus"
+		},
+		{
+			"key":"Dorm",
+			"value":"Dormitory"
+		},
+		{
+			"key":"Emerg",
+			"value":"Emergency"
+		},
+		{
+			"key":"Home",
+			"value":"Home"
+		},
+		{
+			"key":"Other",
+			"value":"Other"
+		},
+		{
+			"key":"Work2",
+			"value":"Second Work"
+		},
+		{
+			"key":"Work",
+			"value":"Work"
+		},
+		{
+			"key":"secure2",
+			"value":"security backup for mfa"
+		},
+		{
+			"key":"secure",
+			"value":"security primary for mfa"
+		}
+	],
+	"_meta":{
+		"lastRefreshTime":"2016-10-16 11:49:49",
+		"fromCache":true
+	},
+	"_requestId":"d3201968-4dac-4357-a46c-3abbe95271e9",
+	"_statusCode":"200",
+	"_statusText":"OK",
+	"_statusMessage":"Success"
+}

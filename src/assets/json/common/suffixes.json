@@ -1,0 +1,28 @@
+{
+	"data":[
+		{
+			"key":"II",
+			"value":"II"
+		},
+		{
+			"key":"Jr",
+			"value":"Junior"
+		},
+		{
+			"key":"III",
+			"value":"III"
+		},
+		{
+			"key":"Sr",
+			"value":"Senior"
+		}
+	],
+	"_meta":{
+		"lastRefreshTime":"2016-10-16 11:49:49",
+		"fromCache":true
+	},
+	"_requestId":"c8cafda1-6983-4d3f-9ba5-5bff1084583e",
+	"_statusCode":"200",
+	"_statusText":"OK",
+	"_statusMessage":"Success"
+}

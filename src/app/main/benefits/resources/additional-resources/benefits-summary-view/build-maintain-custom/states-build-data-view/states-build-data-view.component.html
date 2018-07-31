@@ -1,0 +1,104 @@
+<div id="statePanPage">
+	<div class="clearfix"></div>
+	<div class="statebuilder noborder">
+		<h3 class="headlines-md-BluBerry">
+			<span ng-bind='$ctrl.companyName'></span>{{ 'my_benefits.policies.currentBenefitsSummary' |  translate }}</span></h3>
+		<p class="no-pad-imp">{{ 'my_benefits.policies.benefitSummarRepresent'}}</p>
+		<h3 class="headlines-md-BluBerry">{{::translation.my_benefits.policies.your}}
+			<span ng-if="$ctrl.payFrequencyType === 'B'">{{ 'money.payrollSchedule.biWeek' |  translate }}</span>
+			<span ng-if="$ctrl.payFrequencyType === 'W'">{{ 'money.payrollSchedule.week' |  translate }}</span>
+			<span ng-if="$ctrl.payFrequencyType === 'S'">{{ 'money.payrollSchedule.smMonth' |  translate }}</span>
+			<span ng-if="$ctrl.payFrequencyType === 'M'">{{ 'money.payrollSchedule.mon' |  translate }}</span>
+			Cost</h3>
+		<!-- Medical plans table -->
+		<div id="appLoader" ng-if="$ctrl.loaderSpinner" class="spinning spinner-loader top-post-value"></div>
+		<table class="table small table-striped" ng-if="$ctrl.showFiled === 'medicalPlansList'">
+
+			<thead>
+			<tr ng-if="$ctrl.statesBuildData.medicalPlansList.length > 0">
+				<td width="20%"><strong>{{ 'my_benefits.policies.medical'}}</strong></td>
+				<td width="20%">{{ 'my_benefits.policies.empOnly' |  translate }}</td>
+				<td width="20%">{{ 'my_benefits.policies.empSpouse' |  translate }}</td>
+				<td width="20%">{{ 'my_benefits.policies.empChild' |  translate }}</td>
+				<td width="20%">{{ 'my_benefits.policies.family' |  translate }}</td>
+			</tr>
+
+			</thead>
+			<tbody>
+			<tr ng-repeat="data in $ctrl.statesBuildData.medicalPlansList">
+				<td width="20%"><strong>{{data.desc}}</strong></td>
+				<td width="20%">{{data.employee}}</td>
+				<td width="20%">{{data.spouse}}</td>
+				<td width="20%">{{data.children}}</td>
+				<td width="20%">{{data.family}}</td>
+			</tr>
+			</tbody>
+		</table>
+		<!-- Dental plans table -->
+		<table class="table small .table-striped" ng-if="$ctrl.showFiled === 'dentalPlansList'">
+
+			<thead>
+			<tr ng-if="$ctrl.statesBuildData.dentalPlansList.length > 0">
+				<td width="20%"><strong>{{ 'my_benefits.policies.dental'}}</strong></td>
+				<td width="20%">{{ 'my_benefits.policies.empOnly' |  translate }}</td>
+				<td width="20%">{{ 'my_benefits.policies.empSpouse' |  translate }}</td>
+				<td width="20%">{{ 'my_benefits.policies.empChild' |  translate }}</td>
+				<td width="20%">{{ 'my_benefits.policies.family' |  translate }}</td>
+			</tr>
+
+			</thead>
+			<tbody>
+			<tr ng-repeat="data in $ctrl.statesBuildData.dentalPlansList">
+				<td width="20%"><strong>{{data.desc}}</strong></td>
+				<td width="20%">{{data.employee}}</td>
+				<td width="20%">{{data.spouse}}</td>
+				<td width="20%">{{data.children}}</td>
+				<td width="20%">{{data.family}}</td>
+			</tr>
+			</tbody>
+		</table>
+
+		<!-- Vision plans table -->
+		<table class="table small .table-striped" ng-if="$ctrl.showFiled === 'visionPlansList'">
+
+			<thead>
+			<tr  ng-if="$ctrl.statesBuildData.visionPlanList.length > 0">
+				<td width="20%"><strong>{{ 'my_benefits.policies.vision'}}</strong></td>
+				<td width="20%">{{ 'my_benefits.policies.empOnly' |  translate }}</td>
+				<td width="20%">{{ 'my_benefits.policies.empSpouse' |  translate }}</td>
+				<td width="20%">{{ 'my_benefits.policies.empChild' |  translate }}</td>
+				<td width="20%">{{ 'my_benefits.policies.family' |  translate }}</td>
+			</tr>
+
+			</thead>
+			<tbody>
+			<tr ng-repeat="data in $ctrl.statesBuildData.visionPlanList">
+				<td width="20%"><strong>{{data.desc}}</strong></td>
+				<td width="20%">{{data.employee}}</td>
+				<td width="20%">{{data.spouse}}</td>
+				<td width="20%">{{data.children}}</td>
+				<td width="20%">{{data.family}}</td>
+			</tr>
+			</tbody>
+		</table>
+
+		<table class="table small .table-striped" ng-if="$ctrl.showFiled === 'lifeDescription'">
+
+			<thead>
+			<tr  >
+				<td width="30%"><strong>{{ 'my_benefits.policies.groupTermLife'}}</strong></td>
+				<td width="20%">{{ 'my_benefits.policies.empOnly' |  translate }}</td>
+				<td width="20%">{{ 'my_benefits.policies.empSpouse' |  translate }}</td>
+				<td width="20%">{{ 'my_benefits.policies.empChild' |  translate }}</td>
+				<td width="20%">{{ 'my_benefits.policies.family' |  translate }}</td>
+			</tr>
+
+			</thead>
+
+		</table>
+		<div class="col-md-3 medium"><strong>{{$ctrl.statesBuildData.lifeDescription}}</strong></div>
+		<div class="col-md-9 text-center medium">{{$ctrl.statesBuildData.lifePlan}}</div>
+		<!-- Benefit Supplement plans table -->
+	</div>
+</div>
+

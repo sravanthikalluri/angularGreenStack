@@ -1,0 +1,20 @@
+<div class="reimbursable-direct-deposite-accounts" ng-if="$ctrl.eligibility.fsaeligible || $ctrl.eligibility.apeligible">
+	<div role="row" class="reimbursable-account-container row-header">
+		<p role="columnheader" class="semibold flex-item-{{title.class}}" ng-repeat="title in $ctrl.titles">
+			{{title.title}}
+		</p>
+	</div>
+
+	<div role="row" class="reimbursable-account-container reimbursable-table-data row-data" ng-if="$ctrl.eligibility.fsaeligible">
+		<p role="gridcell" class="semibold flex-item-number">{{$ctrl.fsaSelected}}</p>
+		<p role="gridcell" class="semibold flex-item-type">{{'money.direct_deposit.fsa' | translate}}</p>
+	</div>
+	<div role="row" class="reimbursable-account-container reimbursable-table-data row-data" ng-if="$ctrl.eligibility.apeligible">
+		<p role="gridcell" class="semibold flex-item-number">{{$ctrl.apSelected}}</p>
+		<p role="gridcell" class="semibold flex-item-type">{{'money.direct_deposit.ap' | translate}}</p>
+	</div>
+
+</div>
+
+
+

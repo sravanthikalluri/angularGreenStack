@@ -1,0 +1,25 @@
+<br />
+<div ng-if="$ctrl.data.pdfLinks[0].date">
+	<a href="" class="toggle-link " ng-click="$ctrl.toggleOne.isOpen = !$ctrl.toggleOne.isOpen;" aria-expanded="{{$ctrl.toggleOne.isOpen}}">
+		<b><span id="benefitAtGlanceId">{{$ctrl.data.pdfLinks[0].date}} </span></b>
+		<i class="pull-right glyphicon" ng-class="{'icon-icon_Disclosure_Collapse': $ctrl.toggleOne.isOpen, 'icon-icon_Disclosure_Expand':!$ctrl.toggleOne.isOpen}"></i>
+	</a>
+	<div ng-show="$ctrl.toggleOne.isOpen" ng-repeat="i in $ctrl.getPdfLink($ctrl.data.pdfLinks[0].urlList.length) track by $index" class="benefits-forms-item-accordion">
+		<span class="tn-icon-pdf-img"><img alt="PDF-Icon" ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png"></span>
+		<a ng-href="{{$ctrl.data.pdfLinks[0].urlList[$index] | contentUrl}}"
+		   target="_blank" id="benefitAtGlanceId{{$index}}"> {{$ctrl.data.pdfLinks[0].textList[$index]}}</a>
+	</div>
+</div>
+<div class="linedWithMargin"></div>
+<div ng-if="$ctrl.data.pdfLinks[1].date">
+	<a href="" class="toggle-link " ng-click="$ctrl.toggleTwo.isOpen = !$ctrl.toggleTwo.isOpen;" aria-expanded="{{$ctrl.toggleTwo.isOpen}}">
+		<b><span id="benefitAtGlancePrevYear">{{$ctrl.data.pdfLinks[1].date}}</span></b>
+			<i class="pull-right glyphicon" ng-class="{'icon-icon_Disclosure_Collapse': $ctrl.toggleTwo.isOpen, 'icon-icon_Disclosure_Expand':!$ctrl.toggleTwo.isOpen}"></i>
+	</a>
+	<div ng-show="$ctrl.toggleTwo.isOpen" ng-repeat="i in $ctrl.getPdfLink($ctrl.data.pdfLinks[1].urlList.length) track by $index" class="benefits-forms-item-accordion">
+		<span class="tn-icon-pdf-img"><img alt="PDF-Icon" ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png"></span>
+			<a ng-href="{{$ctrl.data.pdfLinks[1].urlList[$index] | contentUrl}}"
+			   target="_blank"
+			   id="benefitAtGlancePrevYearId{{$index}}">{{$ctrl.data.pdfLinks[1].textList[$index]}}</a>
+	</div>
+</div>

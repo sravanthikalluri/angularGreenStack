@@ -1,0 +1,95 @@
+@import '../../../../styles/main';
+
+/* Messages */
+$alert-red :#9E3039;
+$alert-yellow :#DB9128;
+$alert-green :#428B09;
+[tn-banner].tn-browser-warning{
+	width: 100vw;
+	position: fixed;
+	top: 75px;
+	left: 284px;
+	z-index: 99999999;
+	width: calc(100vw - 284px);
+	.tn-messages-banner {
+	  max-width: 70vw;
+      min-height: 48px;
+	  display:table;
+	  .tn-messages-icon{
+	  	display:table-cell;
+	  	vertical-align:middle;
+	  }
+	  p{
+	  	display:table-cell;
+	  	vertical-align:middle;
+	  	padding:0 15px;
+		word-wrap: break-word;
+	  }
+	  .icon-close {
+		  display:table-cell;
+		  vertical-align:middle;
+		  position:static;
+	  }
+	}
+  }
+
+.tn-messages-banner {
+	color: $white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 58px;
+	max-width: 90vw;
+	margin: 0 auto;
+
+	p {
+		margin: 0;
+		font-size:13px;
+	}
+	.tn-warning-btn{
+		background: transparent;
+         border: 1px solid #fff;
+         margin: 0 10px;
+         width: 50px;
+         font-size: 16px;
+    }
+    .icon-close {
+    	position:absolute;
+    	right:15px;
+    	cursor:pointer;
+			background-color: transparent;
+			border: none;
+    }
+}
+.tn-error-banner {
+	background: #ff4f66;
+}
+.tn-warning-banner {
+	background: $alert-yellow;
+}
+.tn-success-banner {
+	background: $alert-green;
+	.icon-close {
+		&:focus{
+			outline: 3px solid $tn-focus-border-color;
+		}
+	}
+}
+.tn-messages-icon {
+  margin: 10px;
+  width: $icon-size;
+  height: $icon-size;
+  margin: 0 $icon-size $icon-size/2;
+  font-size: 24px;
+  font-family: 'icomoon';
+}
+
+@media screen and (max-width: 1200px) {
+  [tn-banner].tn-browser-warning{
+	width: 100vw;
+	left:0;
+	.tn-messages-banner {
+	  max-width: 90vw;
+	}
+  }
+}

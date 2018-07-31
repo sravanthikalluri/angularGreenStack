@@ -1,0 +1,54 @@
+<div class="background">
+	<tn-error-banner error-data="$ctrl.data" clicked="$ctrl.closeAlert()"></tn-error-banner>
+	<div class="primary-container">
+		<h2 class="page-title">
+			<button ui-sref="app.main.company.overview" class="no-border-button" ng-bind="'company' | translate"></button>
+			<span class="icon-heading icon-icon_forward"></span>
+			<button ui-sref="app.main.company.forms-and-policies" class="no-border-button" ng-bind="'forms-and-policies' | translate"></button>
+			<span class="icon-heading icon-icon_forward"></span>
+			<button class="no-border-button" ng-bind="'eformsAcknowledgement.title' | translate"></button>
+		</h2>
+		<tn-card loading="$ctrl.showSpinner" class="semibold eform-card-padding">
+			<div class="semibold eforms-directive" ng-bind="'eformsAcknowledgement.pleaseRead' | translate"></div>
+			<tn-card-item class="policy-item">
+				<div class="col-sm-11" ng-bind="'eformsAcknowledgement.policyHeader' | translate"></div>
+				<div class="col-sm-1 status-header" ng-bind="'eformsAcknowledgement.statusHeader' | translate"></div>
+			</tn-card-item>
+			<tn-card-item class="policy-item" ng-repeat="eformItem in $ctrl.eformsData track by $index">
+				<div class="col-sm-11">
+					<div class="policy-container">
+						<div>
+							<div class="col-sm-11 policy-listing">
+								<a target="_blank" ng-click="$ctrl.toggleFormView($index);">
+									<span class="tn-icon"><img alt="PDF-Icon" ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png"></span>
+									{{eformItem.formDesc}}
+								</a>
+							</div>
+							<div class="col-sm-1 policy-link">
+								<a href="" ng-click="$ctrl.toggleFormView($index);" ng-bind="eformItem.viewHide"></a>
+							</div>
+						</div>
+						<div class="eform-pdf" ng-show="eformItem.isOpen">
+							<a ng-href="{{eformItem.formPath}}" target="_blank" class="open-in-new-window" ng-bind="'eformsAcknowledgement.openInNewWindow' | translate"></a>
+							<!-- <embed ng-src="{{eformItem.formPath}}" class="form-embed"></embed> -->
+							<div class="browser-message" ng-if="$ctrl.showBrowserMessage">
+								<p ng-bind="'eformsAcknowledgement.browser-message' | translate"></p>
+							</div>
+							<object data="{{eformItem.formPath}}" type="application/pdf" width="100%" height="100%" class="form-embed">
+								<iframe title="{{eformItem.formDesc}}" ng-src="{{eformItem.formPath}}" frameborder="0" scrolling="no">
+									<p>Your web browser doesn't support iframes.</p>
+								</iframe>
+							</object>
+							<div class="confirmation-message" ng-bind="eformItem.confirmationMessage" ng-if="eformItem.formStatus !== 'Complete'"></div>
+							<div class="i-agree" ng-if="eformItem.formStatus !== 'Complete'">
+								<button ng-click="$ctrl.acknowledge($index)" class="tn-action-btn i-agree-button" ng-bind="'eformsAcknowledgement.iAgree' | translate"></button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="status" ng-class="eformItem.formStatus === 'Complete' ? 'status-complete' : 'status-incomplete'" ng-bind="eformItem.displayStatus"></div>
+			</tn-card-item>
+		</tn-card>
+	</div>
+	<div class="secondary-container"></div>
+</div>

@@ -1,0 +1,48 @@
+<tn-card>
+	<tn-card-title class="contact-card-title">{{'contact-coordinator-title' | translate}}</tn-card-title>
+	<tn-card-content>
+		<div class="contact-card-content">
+			{{'contact-coordinator-card-verbiage' | translate}}
+		</div>
+
+		<div class="row  contact-card-table  tn-contact-bottom-border" ng-repeat="contact in $ctrl.contacts">
+			<div class="col-sm-offset-1  col-sm-10  col-sm-offset-1">
+				<tn-card-title class="contact-card-content  extra-padding">
+					{{contact.contactName}}
+					<a class="semibold contact-card-gray-label" ng-if="$ctrl.isAmbrose" ng-href="./trinetGateway/services/v1.0/viewhraprofile" target="_blank">{{'csa-bio' | translate}}</a>
+				</tn-card-title>
+
+				<div class="contact-card-content">
+					{{contact.contactType}}
+				</div>
+
+				<div class="row  tn-profile-divider  tn-contact-content  coordinator" ng-if="contact.phoneNumber">
+					<div class="col-sm-1  tn-align-contact-icon">
+						<i class="icon-icon_phone tn-icon"></i>
+					</div>
+					
+					<div class="col-sm-4  titles">
+						<h5 class="contact-label">{{'phone' | translate}}</h5>
+					</div>
+
+					<div class="col-sm-7  tn-right-align-grid-text">
+						<h5>{{contact.phoneNumber | tel}}</h5>
+					</div>
+				</div>
+				<div class="row  tn-contact-content" ng-if="contact.email">
+					<div class="col-sm-1  tn-align-contact-icon">
+						<i class="icon-icon_email tn-icon"></i>
+					</div>
+
+					<div class="col-sm-4  titles">
+						<h5 class="contact-label">{{'email' | translate}}</h5>
+					</div>
+
+					<div class="col-sm-7  tn-right-align-grid-text">
+						<h5>{{contact.email}}</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</tn-card-content>
+</tn-card>

@@ -1,0 +1,340 @@
+{
+  "data": {
+	"corporateBrand": "TRINET",
+	"manager": false,
+	"forms": [
+	  {
+		"title": "General Forms",
+		"category": null,
+		"desc": null,
+		"body": null,
+		"urlType": "employee",
+		"pdfs": {
+		  "sub": [
+			{
+			  "description": "Specify if your domestic partner or domestic partner child qualifies as a tax dependent.",
+			  "label": "Section 152 Tax Dependent Certification Form",
+			  "type": "pdf",
+			  "url": "/v1/extranet/Includes/Content/forms/PDF/Employee/Section_152_Tax_Dependent_Certification_Form.pdf"
+			}
+		  ],
+		  "urlType": "general",
+		  "text": "General Forms"
+		},
+		"additional-details": null,
+		"docMeta": null
+	  },
+	  {
+		"title": "Benefit Carriers",
+		"category": null,
+		"desc": null,
+		"body": null,
+		"urlType": "benefitcarriers",
+		"pdfs": {
+		  "urlType": "benefitcarriers",
+		  "carrier": [
+			{
+			  "sub": [
+				{
+				  "label": "Aetna Application for LTD Disability Conversion (except Utah)",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/Application_for_LTD_Conversion.pdf"
+				},
+				{
+				  "label": "Aetna Application for LTD Disability Conversion (Utah)",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/Application_for_LTD_Conversion_-UT-67992-1w.pdf"
+				},
+				{
+				  "label": "Aetna Dental PPO Claim Form",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/AetnaDentalPPO.PDF"
+				},
+				{
+				  "label": "Aetna Disabled Dependent Certification",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/Aetna_Disabled_Dependent_form_(DRandEE).pdf"
+				},
+				{
+				  "label": "Aetna HMO Transition of Care form",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/AetnaTOC_HMO.pdf"
+				},				
+				{
+				  "label": "Aetna Medical PPO/POS claim form",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/AetnaMedicalPPO.PDF"
+				},
+				{
+				  "label": "Aetna PPO Transition of Care form",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/AetnaTOC_PPO.pdf"
+				},
+				{
+				  "label": "Aetna RX claim form",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/AetnaRXclaim.pdf"
+				},
+				{
+				  "label": "Aetna RX Home Delivery form",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/AetnaRXHomeDelivery.pdf"
+				},
+				{
+				  "label": "Aetna Transition of Coverage Form",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/Aetna_Transition_of_Coverage_Form.pdf"
+				},
+				{
+				  "label": "Aetna Vision Claim Form",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/Vision_O-O-N_claim_form.pdf"
+				}
+			  ],
+			  "count": "11",
+			  "label": "Aetna"
+			},
+			{
+			  "sub": [
+				{
+				  "label": "Blue Shield of California PPO Attending Physician Declaration of Disability form",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/BSAttendingPhysicianDeclarationDisability.pdf"
+				},
+				{
+				  "label": "Blue Shield of California PPO claim form",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/BlueShieldCaPPO.pdf"
+				},
+				{
+				  "label": "Blue Shield of California PPO Member Declaration of Disability form",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/BS_DeclarationOfDisabilityForOverage Dependent.pdf"
+				},
+				{
+				  "label": "Blue Shield of California PPO Transition of Care form",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/BlueShield_Ca_TOC.pdf"
+				},
+				{
+				  "label": "Blue Shield of California PrimeMail Mail Order Program",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/BSC_PrimeMail_Form.pdf"
+				},
+				{
+				  "label": "Blue Shield of California RX claim form",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/BlueShieldCaRX.pdf"
+				},
+				{
+				  "label": "Blue Shield of California RX Self Injectable Request form",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/BlueShieldHSAI.pdf"
+				},
+				{
+				  "label": "Wells Fargo HSA Contribution",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/Wells_Fargo_HSA_Contribution.pdf"
+				},
+				{
+				  "label": "Wells Fargo HSA Designation/Change of Beneficiary",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/HSA_Designation_and_Change_of_Beneficiary.pdf"
+				},
+				{
+				  "label": "Wells Fargo HSA Distribution Request",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/HSA_Distribution_Request_for_Excess_Contribution.pdf"
+				},
+				{
+				  "label": "Wells Fargo HSA Mistaken Distribution",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/HSA_Distribution_Request.pdf"
+				},
+				{
+				  "label": "Wells Fargo HSA Request for Excess Contribution",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/Wells_Fargo_HSA_Contribution.pdf"
+				},
+				{
+				  "label": "Wells Fargo HSA Rollover/Transfer Request",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/HSA_Rollover_Transfer.pdf"
+				}
+			  ],
+			  "count": "13",
+			  "label": "Blue Cross Blue Shield of California"
+			},
+			{
+			  "sub": [
+				{
+				  "label": "Blue Cross Blue Shield FL Transition of Care form",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/BCBSFL_Transition_of_Coverage_Request_Form_2009.pdf"
+				}
+			  ],
+			  "count": "1",
+			  "label": "Blue Cross Blue Shield of Florida"
+			},
+			{
+			  "sub": [
+				{
+				  "label": "Blue Cross Blue Shield North Carolina PPO/HDHP Claim form",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/FORM_BE236.pdf"
+				},
+				{
+				  "label": "Blue Cross Blue Shield North Carolina Rx Claim form",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/FORM_3272_NC_Rx_Claim_Form_Interactive.pdf"
+				},
+				{
+				  "label": "Wells Fargo HSA Contribution",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/Wells_Fargo_HSA_Contribution.pdf"
+				},
+				{
+				  "label": "Wells Fargo HSA Designation/Change of Beneficiary",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/HSA_Designation_and_Change_of_Beneficiary.pdf"
+				},
+				{
+				  "label": "Wells Fargo HSA Distribution Request",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/HSA_Distribution_Request_for_Excess_Contribution.pdf"
+				},
+				{
+				  "label": "Wells Fargo HSA Mistaken Distribution",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/HSA_Distribution_Request.pdf"
+				},
+				{
+				  "label": "Wells Fargo HSA Request for Excess Contribution",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/Wells_Fargo_HSA_Contribution.pdf"
+				},
+				{
+				  "label": "Wells Fargo HSA Rollover/Transfer Request",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/HSA_Rollover_Transfer.pdf"
+				}
+			  ],
+			  "count": "8",
+			  "label": "Blue Cross Blue Shield of North Carolina"
+			},
+			{
+			  "sub": [
+				{
+				  "label": "Cigna Enrollment form",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/Cigna_EnrollmentForm.pdf"
+				}
+			  ],
+			  "count": "1",
+			  "label": "Cigna"
+			},
+			{
+			  "sub": [
+				{
+				  "label": "Delta Dental PPO Claim Form (Nationwide)",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/Delta_Dental_PPO_claim_form.pdf"
+				}
+			  ],
+			  "count": "1",
+			  "label": "Delta Dental"
+			},
+			{
+			  "sub": [
+				{
+				  "label": "BNY Mellon HSA Account Holder Deposit Slip",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/BNY-MELLON_HSA_generic_dep_slip.pdf"
+				},
+				{
+				  "label": "BNY Mellon HSA Beneficiary Change",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/BNY-MELLON_HSA_Form_Beneficiary_Change.pdf"
+				},
+				{
+				  "label": "BNY Mellon HSA Excess Contribution",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/BNY-MELLON_HSA_Form_Return_Excess_Contributions.pdf"
+				},
+				{
+				  "label": "BNY Mellon HSA IRA Transfer",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/BNY-MELLON_HSA_Form_IRA_Trustee_IN_final.pdf"
+				},
+				{
+				  "label": "BNY Mellon HSA Personal Data Change",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/BNY-MELLON_HSA_Form_Personal_Data.pdf"
+				},
+				{
+				  "label": "BNY Mellon HSA Reopen Account",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/BNY-MELLON_Request_To_Reopen_Closed_Account.pdf"
+				},
+				{
+				  "label": "BNY Mellon HSA Trustee to Trustee Transfer",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/BNY-MELLON_Trustee_to_Trustee.pdf"
+				}
+			  ],
+			  "count": "7",
+			  "label": "Florida Blue"
+			},
+			{
+			  "sub": [
+				{
+				  "label": "Group Health Options HMO RX Mail Order Form",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/GroupHealthOptionsHMO_RXMailOrder.pdf"
+				}
+			  ],
+			  "count": "1",
+			  "label": "Group Health"
+			},
+			{
+			  "sub": [
+				{
+				  "label": "Kaiser Permanente Disabled Dependent Certification (CA)",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/KP_Disabled_Dependent_Enrollment_app.pdf"
+				},
+				{
+				  "label": "Kaiser Permanente HMO RX Claim form (CO)",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/KaiserClaim_CO_SPGS.pdf"
+				},
+				{
+				  "label": "Kaiser Permanente HMO Emergency Claim form (CA)",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/KaiserEmergency_claim.pdf"
+				},
+				{
+				  "label": "Wells Fargo HSA Contribution",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/Wells_Fargo_HSA_Contribution.pdf"
+				},
+				{
+				  "label": "Wells Fargo HSA Designation/Change of Beneficiary",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/HSA_Designation_and_Change_of_Beneficiary.pdf"
+				},
+				{
+				  "label": "Wells Fargo HSA Distribution Request",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/HSA_Distribution_Request_for_Excess_Contribution.pdf"
+				},
+				{
+				  "label": "Wells Fargo HSA Mistaken Distribution",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/HSA_Distribution_Request.pdf"
+				},
+				{
+				  "label": "Wells Fargo HSA Request for Excess Contribution",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/Wells_Fargo_HSA_Contribution.pdf"
+				},
+				{
+				  "label": "Wells Fargo HSA Rollover/Transfer Request",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/HSA_Rollover_Transfer.pdf"
+				}
+			  ],
+			  "count": "9",
+			  "label": "Kaiser Permanente"
+			},
+			{
+			  "sub": [
+				{
+				  "label": "Tufts Health Plan CareMark Mail Order Program",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/TuftsHealthPlanMOP.pdf"
+				}
+			  ],
+			  "count": "1",
+			  "label": "Tufts Health Plan"
+			},
+			{
+			  "sub": [
+				{
+				  "label": "VSP Out-of-Network Claim form",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/Member_OON.pdf"
+				}
+			  ],
+			  "count": "1",
+			  "label": "Vision Service Plan (VSP)"
+			},
+			{
+			  "sub": [
+				{
+				  "label": "Commuter Benefits Bicycle Expense Claim form",
+				  "url": "/v1/extranet/Includes/Content/forms/PDF/Health/WW-BIKE-PMB.pdf"
+				}
+			  ],
+			  "count": "1",
+			  "label": "WageWorks (Commuter Benefits)"
+			}
+		  ],
+		  "text": "Benefit Carriers"
+		},
+		"additional-details": null,
+		"docMeta": null
+	  }
+	]
+  },
+  "_requestId": "6b9c391e-f294-48de-970e-aa5db41f7ac1",
+  "_statusCode": "200",
+  "_statusText": "OK",
+  "_statusMessage": "Success"
+}

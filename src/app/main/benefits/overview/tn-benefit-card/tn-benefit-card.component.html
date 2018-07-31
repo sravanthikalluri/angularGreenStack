@@ -1,0 +1,242 @@
+<tn-card class="tn-benefit-card" loading="$ctrl.showSpinner">
+
+	<tn-card-title-group>
+		<tn-card-title><h3>{{ $ctrl.benefit.planTypeDescr }}</h3></tn-card-title>
+		<tn-provider-plan plan="$ctrl.benefit.planInfo"></tn-provider-plan>
+	</tn-card-title-group>
+	<tn-card-content class="tn-benefit-card-content" ng-hide="$ctrl.showSpinner">
+
+		<!-- medical -->
+		<div ng-if="$ctrl.benefit.planType === '10'">
+			<tn-table
+				color="#ffffff"
+				title="Covered"
+				data="$ctrl.benefit.covered"
+				class="tn-benefit-covered-table"
+				empty-data-text="N/A"
+				custom-id="medicalPlan">
+			</tn-table>
+		</div>
+
+		<!-- dental -->
+		<div ng-if="$ctrl.benefit.planType === '11'">
+			<tn-table
+				color="#ffffff"
+				title="Covered"
+				data="$ctrl.benefit.covered"
+				class="tn-benefit-covered-table"
+				empty-data-text="N/A"
+				custom-id="dentalPlan"
+			>
+			</tn-table>
+		</div>
+
+		<!-- vision -->
+		<div ng-if="$ctrl.benefit.planType === '14'">
+			<tn-table
+				color="#ffffff"
+				title="Covered"
+				data="$ctrl.benefit.covered"
+				class="tn-benefit-covered-table"
+				empty-data-text="N/A"
+				custom-id="visionPlan"
+			>
+			</tn-table>
+		</div>
+
+		<!-- Critical Illness -->
+		<div ng-if="$ctrl.benefit.planType === '1G'">
+			<tn-table
+					color="#ffffff"
+					title="Covered"
+					data="$ctrl.benefit.covered"
+					class="tn-benefit-covered-table"
+					empty-data-text="N/A"
+					custom-id="criticalIllness">
+			</tn-table>
+		</div>
+		<!-- Accident -->
+		<div ng-if="$ctrl.benefit.planType === '1A'">
+			<tn-table
+					color="#ffffff"
+					title="Covered"
+					data="$ctrl.benefit.covered"
+					class="tn-benefit-covered-table"
+					empty-data-text="N/A"
+					custom-id="Accident">
+			</tn-table>
+		</div>
+		<!-- Hospital -->
+		<div ng-if="$ctrl.benefit.planType === '1X'">
+			<tn-table
+					color="#ffffff"
+					title="Covered"
+					data="$ctrl.benefit.covered"
+					class="tn-benefit-covered-table"
+					empty-data-text="N/A"
+					custom-id="Hospital">
+			</tn-table>
+		</div>
+		<!-- life -->
+		<div ng-if="$ctrl.benefit.planType === '20'" class="tn-layout-2-column-container">
+			<tn-benefit-value label="{{$ctrl.benefit.coverage.amount.label}}" value="{{$ctrl.benefit.coverage.amount.value}}" class="tn-layout-no-vertical-divider"></tn-benefit-value>
+			<div>
+				<tn-table
+						color="#ffffff"
+						title="Covered"
+						data="$ctrl.benefit.covered"
+						class="tn-benefit-covered-table"
+						empty-data-text="N/A"
+						custom-id="lifePlan">
+				</tn-table>
+			</div>
+		</div>
+
+
+		<!-- Optional Vision  && Optional Dental Plan -->
+		<div ng-if="$ctrl.benefit.planType === '1V' || $ctrl.benefit.planType === '1D'">
+			<tn-table
+					color="#ffffff"
+					title="Covered"
+					data="$ctrl.benefit.covered"
+					class="tn-benefit-covered-table"
+					empty-data-text="N/A"
+					custom-id="optionalPlan">
+			</tn-table>
+		</div>
+
+		<!-- life -->
+		<div ng-if="$ctrl.benefit.planType === '21'" class="tn-layout-2-column-container">
+			<tn-benefit-value label="{{$ctrl.benefit.coverage.amount.label}}" value="{{$ctrl.benefit.coverage.amount.value}}" class="tn-layout-no-vertical-divider"></tn-benefit-value>
+			<div>
+				<tn-table
+					color="#ffffff"
+					title="Covered"
+					data="$ctrl.benefit.covered"
+					class="tn-benefit-covered-table"
+					empty-data-text="N/A"
+					custom-id="lifeSupPlan">
+				</tn-table>
+			</div>
+		</div>
+
+		<!-- AD & D -->
+		<div ng-if="$ctrl.benefit.planType === '22'" class="tn-layout-2-column-container">
+			<tn-benefit-value label="{{$ctrl.benefit.coverage.amount.label}}" value="{{$ctrl.benefit.coverage.amount.value}}" class="tn-layout-no-vertical-divider"></tn-benefit-value>
+			<div>
+				<tn-table
+						color="#ffffff"
+						title="Covered"
+						data="$ctrl.benefit.covered"
+						class="tn-benefit-covered-table"
+						empty-data-text="N/A"
+						custom-id="addPlan">
+				</tn-table>
+			</div>
+		</div>
+
+
+		<!-- life AD & D -->
+		<div ng-if="$ctrl.benefit.planType === '23'">
+			<div class="tn-layout-2-column-container  text-center">
+				<tn-benefit-value label="{{$ctrl.benefit.coverage.amount.label}}" value="{{$ctrl.benefit.coverage.amount.value}}"></tn-benefit-value>
+				<tn-benefit-value label="{{$ctrl.benefit.coverage.paidBy.label}}" value="{{$ctrl.benefit.coverage.paidBy.value}}"></tn-benefit-value>
+			</div>
+			<div class="tn-layout-2-column-container text-center">
+				<tn-table
+						color="#ffffff"
+						title="Covered"
+						data="$ctrl.benefit.covered"
+						class="tn-benefit-covered-table no-border"
+						empty-data-text="N/A"
+						custom-id="lifeADDPlan">
+				</tn-table>
+			</div>
+		</div>
+
+		<!-- Spouse/Partner -->
+		<div ng-if="$ctrl.benefit.planType === '2Y'" class="tn-layout-2-column-container">
+			<tn-benefit-value label="{{$ctrl.benefit.coverage.amount.label}}" value="{{$ctrl.benefit.coverage.amount.value}}" class="tn-layout-no-vertical-divider"></tn-benefit-value>
+			<div>
+				<tn-table
+						color="#ffffff"
+						title="Covered"
+						data="$ctrl.benefit.covered"
+						class="tn-benefit-covered-table"
+						empty-data-text="N/A"
+						custom-id="spousePlan">
+				</tn-table>
+			</div>
+		</div>
+
+		<!--Dependent Life-->
+		<div ng-if="$ctrl.benefit.planType === '25'" class="tn-layout-2-column-container text-center">
+			<tn-benefit-value label="{{$ctrl.benefit.coverage.amount.label}}" value="{{$ctrl.benefit.coverage.amount.value}}"></tn-benefit-value>
+			<tn-benefit-value label="{{$ctrl.benefit.coverage.paidBy.label}}" value="{{$ctrl.benefit.coverage.paidBy.value}}"></tn-benefit-value>
+		</div>
+
+		<!--Supplemental AD and D-->
+		<div ng-if="$ctrl.benefit.planType === '27'">
+			<div class="tn-layout-2-column-container  text-center">
+				<tn-benefit-value label="{{$ctrl.benefit.coverage.amount.label}}" value="{{$ctrl.benefit.coverage.amount.value}}"></tn-benefit-value>
+				<tn-benefit-value label="{{$ctrl.benefit.coverage.paidBy.label}}" value="{{$ctrl.benefit.coverage.paidBy.value}}"></tn-benefit-value>
+			</div>
+			<div class="tn-layout-2-column-container text-center">
+				<tn-table
+						color="#ffffff"
+						title="Covered"
+						data="$ctrl.benefit.covered"
+						class="tn-benefit-covered-table no-border"
+						empty-data-text="N/A"
+						custom-id="supplementalPlan">
+				</tn-table>
+			</div>
+		</div>
+
+		<!-- short-term -->
+		<div ng-if="$ctrl.benefit.planType === '30'" class="tn-layout-2-column-container text-center">
+			<tn-benefit-value label="{{$ctrl.benefit.coverage.amount.label}}" value="{{$ctrl.benefit.coverage.amount.value}}"></tn-benefit-value>
+			<tn-benefit-value label="{{$ctrl.benefit.coverage.paidBy.label}}" value="{{$ctrl.benefit.coverage.paidBy.value}}"></tn-benefit-value>
+		</div>
+
+		<!-- long-term -->
+		<div ng-if="$ctrl.benefit.planType === '31'" class="tn-layout-2-column-container text-center">
+			<tn-benefit-value label="{{$ctrl.benefit.coverage.amount.label}}" value="{{$ctrl.benefit.coverage.amount.value}}"></tn-benefit-value>
+			<tn-benefit-value label="{{$ctrl.benefit.coverage.paidBy.label}}" value="{{$ctrl.benefit.coverage.paidBy.value}}"></tn-benefit-value>
+		</div>
+
+		<!--Nonelective-->
+		<div ng-if="$ctrl.benefit.planType === '47'" class="tn-layout-2-column-container text-center">
+			<tn-benefit-value label="{{$ctrl.benefit.coverage.amount.label}}" value="{{$ctrl.benefit.coverage.amount.value}}"></tn-benefit-value>
+			<tn-benefit-value label="{{$ctrl.benefit.coverage.paidBy.label}}" value="{{$ctrl.benefit.coverage.paidBy.value}}"></tn-benefit-value>
+		</div>
+
+		<!--Flex Spending-->
+		<div ng-if="$ctrl.benefit.planType === '60'" class="tn-layout-2-column-container text-center">
+			<tn-benefit-value label="{{$ctrl.benefit.coverage.amount.label}}" value="{{$ctrl.benefit.coverage.amount.value}}"></tn-benefit-value>
+			<tn-benefit-value label="{{$ctrl.benefit.coverage.paidBy.label}}" value="{{$ctrl.benefit.coverage.paidBy.value}}"></tn-benefit-value>
+		</div>
+
+		<!--Flex Spending Dependent Day Care-->
+		<div ng-if="$ctrl.benefit.planType === '61'" class="tn-layout-2-column-container text-center">
+			<tn-benefit-value label="{{$ctrl.benefit.coverage.amount.label}}" value="{{$ctrl.benefit.coverage.amount.value}}"></tn-benefit-value>
+			<tn-benefit-value label="{{$ctrl.benefit.coverage.paidBy.label}}" value="{{$ctrl.benefit.coverage.paidBy.value}}"></tn-benefit-value>
+		</div>
+
+		<!--Health Savings-->
+		<div ng-if="$ctrl.benefit.planType === '67'" class="tn-layout-2-column-container text-center">
+			<tn-benefit-value label="{{$ctrl.benefit.coverage.amount.label}}" value="{{$ctrl.benefit.coverage.amount.value}}"></tn-benefit-value>
+			<tn-benefit-value label="{{$ctrl.benefit.coverage.paidBy.label}}" value="{{$ctrl.benefit.coverage.paidBy.value}}"></tn-benefit-value>
+		</div>
+
+	</tn-card-content>
+
+	<tn-card-actions ng-hide="$ctrl.showSpinner">
+		<button
+			ng-repeat="link in $ctrl.benefit.links"
+			tn-link-button>
+				<span class="tn-icon tn-link-button-icon icon-icon_forms"></span>
+				<span class="tn-link-button-text">{{link.text}}</span>
+		</button>
+	</tn-card-actions>
+</tn-card>

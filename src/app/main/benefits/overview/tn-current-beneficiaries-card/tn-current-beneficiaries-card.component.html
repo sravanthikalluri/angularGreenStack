@@ -1,0 +1,17 @@
+<tn-card class="tn-current-beneficiaries-card">
+
+	<tn-card-content class="tn-current-beneficiaries-card-content">
+
+		<tn-card-title class="tn-benefits-help-card-title"><h3>{{ $ctrl.data.beneficiaries.sectionTitle }}</h3></tn-card-title>
+		<tn-spinner ng-show="$ctrl.showSpinner"></tn-spinner>
+		<tn-benefits-users data="$ctrl.data.beneficiaries.beneficiaries" ng-hide="$ctrl.showSpinner"></tn-benefits-users>
+
+		<tn-layout-divider></tn-layout-divider>
+		
+		<tn-card-title class="tn-benefits-help-card-title"><h3>{{ $ctrl.data.dependents.sectionTitle }}</h3></tn-card-title>
+		<tn-spinner ng-show="$ctrl.showSpinner"></tn-spinner>
+		<tn-benefits-users data="$ctrl.data.dependents.dependents" ng-hide="$ctrl.showSpinner"></tn-benefits-users>
+
+	</tn-card-content>
+
+</tn-card>

@@ -1,0 +1,74 @@
+<div class="background">
+	<tn-error-banner error-data="$ctrl.errorAlert"></tn-error-banner>
+	<div class="primary-container">
+		<h2 class="page-title">Money <i class="icon-icon_forward icon-heading"></i>{{'money.direct_deposit.dd_title' |
+			translate}} <i class="icon-icon_forward icon-heading"></i> Edit Accounts</h2>
+		<tn-card class="edit-acount">
+			<tn-card-title-group>
+				<button id="addAccountBtn" tn-button ng-click="$ctrl.addAccount()">
+					<i class="icon-icon_plus button-plus"></i>{{'money.direct_deposit.dd_add_account' | translate}}
+				</button>
+			</tn-card-title-group>
+			<tn-card-content>
+				<div class="w4-modal-effective-date-picker ">
+					<span class="w4-modal-effective-date-picker-label">
+						Effective:
+					</span>
+					<tn-date-selector id="acctEffDate" date="$ctrl.effectiveDate" min-date-msg="$ctrl.minDateMsg"
+									  disable-past-dates="false" min-date="$ctrl.minDate" on-update="$ctrl.onDateChange(data)"
+									  max-date="$ctrl.maxDate" label="effective-direct-deposit-date"></tn-date-selector>
+				</div>
+
+				<!--<tn-card-title class="account-title">{{'money.direct_deposit.dd_pay' | translate}}</tn-card-title>
+				<tn-tooltip msg="'money.direct_deposit.pay_help_text'"></tn-tooltip>-->
+				<div class="clearfix">
+					<h6 class="semibold margin-top" ng-if="$ctrl.data.length > 2">
+						{{'money.direct_deposit.drag_account_depositOrder' | translate}}
+					</h6>
+				</div>
+
+
+				<tn-edit-account-table role="grid" id="editAcctDetailsTable" error="$ctrl.alertError(errorData)"
+									   invalid="$ctrl.invalid" do-any-changes="$ctrl.doAnyChanges" data="$ctrl.data"
+									   last-paycheck-amount="$ctrl.lastPayCheckAmount"
+									   remaining-amount="$ctrl.remainingAmount"></tn-edit-account-table>
+
+				<tn-card-title class="account-title">{{'money.direct_deposit.reimbursements' | translate}}
+				</tn-card-title>
+				<tn-edit-reimbursable-account-table  role="grid" id="editReimburseAcctDetailsTable" data="$ctrl.data"
+													eligibility="$ctrl.eligibility"
+													do-any-changes="$ctrl.doAnyChanges"></tn-edit-reimbursable-account-table>
+			</tn-card-content>
+			<tn-card-footer>
+				<div class="button-group">
+					<button id="editAcctCancelBtn" tn-button ng-click="$ctrl.cancel()" class="cancel">{{'cancel' |
+						translate}}
+					</button>
+					<button id="saveAcctChangesBtn" tn-action-button
+							ng-class="($ctrl.disableSaveButton || $ctrl.invalid) ? 'disable' : ''"
+							ng-click="$ctrl.saveChanges()"
+							ng-disabled="$ctrl.disableSaveButton || $ctrl.invalid"
+							class="button-add-account">Save
+					</button>
+				</div>
+			</tn-card-footer>
+			<tn-full-spinner ng-show="$ctrl.showFullSpinner"></tn-full-spinner>
+		</tn-card>
+
+		<tn-modal on-show="$ctrl.showAddAccountModal" modal-header="false"
+				  ng-if="$ctrl.showAddAccountModal">
+			<tn-new-account show="$ctrl.showAddAccountModal" existing-accounts="$ctrl.data" show-amount-section="true"
+							remaining-amount="$ctrl.remainingAmount">
+			</tn-new-account>
+		</tn-modal>
+	</div>
+	<tn-card class="secondary-container">
+		<last-paycheck ng-if="$ctrl.paychecks" paychecks="$ctrl.paychecks"></last-paycheck>
+	</tn-card>
+</div>
+
+
+
+
+
+

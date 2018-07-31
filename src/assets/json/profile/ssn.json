@@ -1,0 +1,16 @@
+{
+	"data":{
+		"alternateId":null,
+		"employeeId":"00001002198",
+		"employmentStatus":"A",
+		"nationalIds":{
+			"country":"US",
+			"idType":null,
+			"id":"020588399"
+		}
+	},
+	"_requestId":"8d2b51ed-429b-47c9-b68f-7ecff864104d",
+	"_statusCode":"200",
+	"_statusText":"OK",
+	"_statusMessage":"Retrieved Person Identity Successfully "
+}

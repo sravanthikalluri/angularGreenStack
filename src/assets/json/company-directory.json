@@ -1,0 +1,231 @@
+{
+	"data":[
+		{
+			"company_directory_table_columns":[
+				{
+					"name": "Employee Name",
+					"class": "employee",
+					"arrowDown": "true"
+				},
+				{
+					"name": "Position",
+					"class": "position"
+				},
+				{
+					"name": "Status",
+					"class": "status"
+				},
+				{
+					"name": "Department",
+					"class": "department"
+				},
+				{
+					"name": "Location",
+					"class": "location"
+				},
+				{
+					"name": "Service Date",
+					"class": "service"
+				},
+				{
+					"name": "Direct Manager",
+					"class": "manager"
+				}
+			],
+			"company_directory_table_data":[
+				{
+					"first_name": "Blevins",
+					"last_name": "Paul",
+					"full_name":"Blevins Paul",
+					"email": "blevins.paul@hooli.com",
+					"work_phone": "6785136312",
+					"mobile_phone": "9089529856",
+					"initials": "BP",
+					"emp_id": "00020392032",
+					"position": "Senior Manager",
+					"status": "Active",
+					"department": "Client Service",
+					"city": "Tampa",
+					"state": "FL",
+					"service_date": "1288323623006",
+					"direct_manager": "Young Scott J."
+				},
+				{
+					"first_name": "Crisotomo",
+					"last_name": "Ana",
+					"full_name":"Crisotomo Ana",
+					"email": "crisotomo.ana@hooli.com",
+					"work_phone": "7985136312",
+					"mobile_phone": "1239529856",
+					"initials": "CA",
+					"emp_id": "00020392032",
+					"position": "Senior Manager",
+					"status": "Active",
+					"department": "Client Service",
+					"city": "Tampa",
+					"state": "FL",
+					"service_date": "1288323623006",
+					"direct_manager": "Young Scott J."
+				},
+				{
+					"first_name": "Deren",
+					"last_name": "Kimberly",
+					"full_name": "Denren Kimberly",
+					"email": "deren.kimberly@hooli.com",
+					"work_phone": "7565136312",
+					"mobile_phone": "0079529856",
+					"initials": "DK",
+					"emp_id": "00020392032",
+					"position": "Senior Consultant",
+					"status": "Active",
+					"department": "Client Service",
+					"city": "Tampa",
+					"state": "FL",
+					"service_date": "1288323623006",
+					"direct_manager": "Young Scott J."
+				},
+				{
+					"first_name": "Evans",
+					"last_name": "Brooke E.",
+					"full_name": "Evans Brooke E",
+					"email": "evans.brooke@hooli.com",
+					"work_phone": "9965136312",
+					"mobile_phone": "4089529856",
+					"initials": "EB",
+					"emp_id": "00020392032",
+					"position": "Cheif Executive Officer",
+					"status": "Active",
+					"department": "Executive",
+					"city": "Tampa",
+					"state": "FL",
+					"service_date": "1288323623006",
+					"direct_manager": "Young Scott J."
+				},
+				{
+					"first_name": "Frans",
+					"last_name": "Stephanie",
+					"full_name": "Frans Stephanie",
+					"email": "frans.stephanie@hooli.com",
+					"work_phone": "8095136312",
+					"mobile_phone": "6569529856",
+					"initials": "FS",
+					"emp_id": "00020392032",
+					"position": "Engagement Director",
+					"status": "Leave",
+					"department": "Client Service",
+					"city": "Tampa",
+					"state": "FL",
+					"service_date": "1288323623006",
+					"direct_manager": "Young Scott J."
+				},
+				{
+					"first_name": "Kolbicka",
+					"last_name": "Erin",
+					"full_name": "Kolbicka Erin",
+					"email": "kolbicka.erin@hooli.com",
+					"work_phone": "7185136312",
+					"mobile_phone": "5169529856",
+					"initials": "KE",
+					"emp_id": "00020392032",
+					"position": "Senior Consultant",
+					"status": "Active",
+					"department": "Client Service",
+					"city": "Tampa",
+					"state": "FL",
+					"service_date": "1288323623006",
+					"direct_manager": "Young Scott J."
+				},
+				{
+					"first_name": "Loucks",
+					"last_name": "Diana",
+					"full_name": "Loucks Diana",
+					"email": "loucks.diana@hooli.com",
+					"work_phone": "3215136312",
+					"mobile_phone": "1239529856",
+					"initials": "LD",
+					"emp_id": "00020392032",
+					"position": "Manager",
+					"status": "Active",
+					"department": "Client Service",
+					"city": "Tampa",
+					"state": "FL",
+					"service_date": "1288323623006",
+					"direct_manager": "Young Scott J."
+				},
+				{
+					"first_name": "Erike",
+					"last_name": "Lee",
+					"full_name": "Erike Lee",
+					"email": "erike.lee@hooli.com",
+					"work_phone": "3215136312",
+					"mobile_phone": "1239529856",
+					"initials": "EL",
+					"emp_id": "00020392032",
+					"position": "Principle Engineer",
+					"status": "Terminated",
+					"department": "Hardware",
+					"city": "Tampa",
+					"state": "FL",
+					"service_date": "1288323623006",
+					"direct_manager": "Young Scott J."
+				},
+				{
+					"first_name": "Victor",
+					"last_name": "Hart",
+					"full_name": "Victor Hart",
+					"email": "victor.hart@hooli.com",
+					"work_phone": "3215136312",
+					"mobile_phone": "1239529856",
+					"initials": "VH",
+					"emp_id": "00020392032",
+					"position": "Consulting Engineer",
+					"status": "Terminated",
+					"department": "Hardware",
+					"city": "Tampa",
+					"state": "FL",
+					"service_date": "1288323623006",
+					"direct_manager": "Young Scott J."
+				},
+				{
+					"first_name": "Pamela",
+					"last_name": "Cristo",
+					"full_name": "Pamela Cristo",
+					"email": "loucks.diana@hooli.com",
+					"work_phone": "3215136312",
+					"mobile_phone": "1239529856",
+					"initials": "PC",
+					"emp_id": "00020392032",
+					"position": "Manager",
+					"status": "Terminated",
+					"department": "Client Service",
+					"city": "Tampa",
+					"state": "FL",
+					"service_date": "1288323623006",
+					"direct_manager": "Young Scott J."
+				},
+				{
+					"first_name": "Christopher",
+					"last_name": "Mikulis",
+					"full_name": "Christopher Mikulis",
+					"email": "christopher.mikulis@hooli.com",
+					"work_phone": "3215136312",
+					"mobile_phone": "1239529856",
+					"initials": "CM",
+					"emp_id": "00020392032",
+					"position": "Manager",
+					"status": "Terminated",
+					"department": "Client Service",
+					"city": "Tampa",
+					"state": "FL",
+					"service_date": "1288323623006",
+					"direct_manager": "Young Scott J."
+				}
+			]
+		}
+	],
+
+	"_requestId": "1103acc6-9960-431a-b59c-70a1ad7aca94",
+  	"_statusCode": "200",
+  	"_statusText": "OK",
+  	"_statusMessage": "Success"
+}

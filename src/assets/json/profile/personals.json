@@ -1,0 +1,24 @@
+{
+	"data":{
+		"activePersonalDataList":[
+			{
+				"birthDate":"1965-05-21",
+				"country":"US",
+				"effectiveDate":"2001-04-23",
+				"employeeId":"00001002198",
+				"ethnicity":"WHITE",
+				"gender":"M",
+				"militaryStatus":"X",
+				"uniqueId":3,
+				"maritalStatus":"S"
+			}
+		],
+		"historyPersonalDataList":[
+
+		]
+	},
+	"_requestId":"02bcd7bb-84e5-4410-85ec-5d13a3f46e5d",
+	"_statusCode":"200",
+	"_statusText":"OK",
+	"_statusMessage":"Retrieved personal data Successfully "
+}

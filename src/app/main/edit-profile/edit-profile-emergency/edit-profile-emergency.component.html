@@ -1,0 +1,51 @@
+<tn-error-banner error-data="$ctrl.err" ng-if="$ctrl.err"></tn-error-banner>
+<div class="background">
+	<div class="primary-container" ng-if="$ctrl.data">
+		<h2 class="page-title">{{'edit-profile-title' | translate}}</h2>
+		<tn-card>
+			<form class="edit-profile-form" name="emergencyContactForm" ng-submit="$ctrl.save(emergencyContactForm)" no-validate>
+
+				<ng-form name="emergencyContactFormSection">
+					<emergency-contact-section ng-repeat="contact in $ctrl.data.emergencyContacts"
+											   form-name="emergencyContactFormSection"
+											   data="$ctrl.data"
+											   isDisabled="contact.isDisabled"
+											   contact="contact"
+											   on-update="$ctrl.updateContact(contact, prop, value, key)"
+											   on-delete="$ctrl.deleteContact(contact)">
+
+					</emergency-contact-section>
+				</ng-form>
+				<br>
+				<span class="emergency-contact-add-link hand" id="emergencyContactAdd"
+					  ng-if="$ctrl.data.emergencyContacts.length > 0"
+					  ng-click="$ctrl.addContact()">
+					  {{'edit-profile-add-emergency-contact' | translate}}
+				</span>
+				<span class="emergency-contact-add-link hand" id="emergencyContactAddMore"
+					  ng-if="$ctrl.data.emergencyContacts.length == 0"
+					  ng-click="$ctrl.addContact()">
+					  {{'edit-profile-add-emergency-contact' | translate}}
+				</span>
+
+				<tn-card-actions class="margin-top">
+					<button tn-button id="profileEmrgformCancle"
+							class="edit-profile-button"
+							type="button"
+							ng-click="$ctrl.cancel(emergencyContactForm)">
+						{{'edit-profile-cancel' | translate}}
+					</button>
+					<button tn-action-button
+							class="edit-profile-button margin-left"
+							ng-disabled="!$ctrl.data.emergencyContacts.length"
+							focus-invalid-field
+							type="submit" id="profileEmrgformSave">
+						{{'edit-profile-save-changes' | translate}}
+					</button>
+				</tn-card-actions>
+			</form>
+		</tn-card>
+	</div>
+	<div class="secondary-container"></div>
+</div>
+<tn-full-spinner ng-show="$ctrl.showFullSpinner"></tn-full-spinner>

@@ -1,0 +1,16 @@
+
+	<div  >
+		<div class="lined"></div> <!-- summary of medical plan changes -->
+				<div>
+					<div>
+						<div class="tn-icon benefits-forms-pdf"><img alt="PDF-Icon" ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png"></div>
+						<div class="benefits-forms-description">
+							<a id="summaryOfMedicalPlan-{{$ctrl.planCarriersCtrldocMeta.id}}" ng-href="{{$ctrl.planCarriersCtrldocMeta.url | contentUrl}}" target="_blank" id="$sidebar{{$ctrl.planCarriersCtrldocMeta.id}}">
+								{{::$ctrl.planCarriersCtrldocMeta.title}}  
+							</a>
+							<p class="content-text">{{::$ctrl.planCarriersCtrldocMeta.text}}</p>
+						</div>
+					</div>
+				</div>
+	</div>
+

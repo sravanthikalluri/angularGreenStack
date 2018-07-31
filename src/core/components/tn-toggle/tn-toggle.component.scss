@@ -1,0 +1,88 @@
+@import 'main';
+
+.tn-toggle-container {
+	display: flex;
+	align-items: center;
+}
+
+.tn-toggle {
+	position: relative;
+    pointer-events: auto;
+    margin: 0;
+    padding: 5px;
+}
+
+.tn-toggle input {
+		position:absolute;
+    	left:-99999px;
+    	&:focus {
+    	  ~.tn-toggle-track {
+    		 outline: 1px solid #019fde;
+    	   }
+    	}
+}
+
+.tn-toggle input:checked + .tn-toggle-track {
+	border-color: #4cd964;
+    background-color: #4cd964;
+}
+
+.tn-toggle input:checked + .tn-toggle-track .tn-toggle-handle {
+    -webkit-transform: translate3d(20px, 0, 0);
+    transform: translate3d(20px, 0, 0);
+    background-color: #fff;
+}
+
+.tn-toggle-track {
+	-webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: background-color, border;
+    transition-property: background-color, border;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 51px;
+    height: 31px;
+    border: solid 2px #e6e6e6;
+    border-radius: 20px;
+    background-color: #fff;
+    content: ' ';
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.tn-toggle-handle {
+	-webkit-transition: 0.3s cubic-bezier(0, 1.1, 1, 1.1);
+    transition: 0.3s cubic-bezier(0, 1.1, 1, 1.1);
+    -webkit-transition-property: background-color, transform;
+    transition-property: background-color, transform;
+    position: absolute;
+    display: block;
+    width: 27px;
+    height: 27px;
+    border-radius: 27px;
+    background-color: #fff;
+    top: 7px;
+    left: 7px;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.35), 0 1px 1px rgba(0, 0, 0, 0.15);
+
+    &:before {
+    	position: absolute;
+	    top: -4px;
+	    left: -21.5px;
+	    padding: 18.5px 34px;
+	    content: " ";
+    }
+}
+
+.tn-toggle-labels {
+	display: inline-block;
+	font-weight: $font-weight-semibold;
+	margin-right: 15px;
+	text-align: right;
+
+	h5, h6, p {
+		margin: 0;
+	}
+}

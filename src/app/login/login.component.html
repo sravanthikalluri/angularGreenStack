@@ -1,0 +1,56 @@
+<div class="login" ng-style="$ctrl.backgroundStyle">
+	<tn-error-banner ng-show="$ctrl.incorrectCredentials" error-message="'login-error' | translate"></tn-error-banner>
+	<div class="login-container">
+
+		<div class="logo"></div>
+		<span class="text-color-white">{{'login-tagline' | translate}}</span>
+
+		<tn-card class="login-card">
+			<form name="$ctrl.loginForm" ng-submit="$ctrl.onLogin()">
+
+				<tn-tabs slider-width="92" slider-height="3" active-tab-changed="$ctrl.activeTab = $event.activeTab">
+					<tn-tab ng-repeat="login in $ctrl.logins" label="{{login.name | translate}}">
+
+						<ng-form name="$ctrl.loginForm.userFieldForm_{{login.name}}">
+							<div class="login-form">
+								<label>{{login.name | translate}}</label>
+								<input name="input" tabindex="-1" type="{{login.type}}"
+									ng-model="login.input"
+									ng-required="$index == $ctrl.activeTab"
+									tn-input-restriction numbers-only="{{login.digitsOnly}}"
+									max-length="{{login.maxLength}}"/>
+							</div>
+						<ng-form>
+
+					</tn-tab>
+				</tn-tabs>
+
+				<div class="login-submit-container">
+					<label>
+						{{'login-password' | translate}}
+					</label>
+					<input tabindex="1"
+						   type="password"
+						   ng-class="{'login-error': loginForm.$invalid}"
+						   name="password"
+						   ng-model="$ctrl.password"
+						   tn-input-restriction max-length="256"
+						   required/>
+					<button class="login-button text-color-white" type="submit">
+						{{'login-text' | translate}}
+					</button>
+					<a class="forget-text">
+						{{'login-forget' | translate}}
+					</a>
+				</div>
+
+			</form>
+		</tn-card>
+	</div>
+
+	<div class="login-footer">
+		<a class="referral-link">{{'login-referal' | translate}}</a>
+		<a class="help-link">{{'login-help' | translate}}</a>
+	</div>
+
+</div>

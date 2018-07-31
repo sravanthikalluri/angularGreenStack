@@ -1,0 +1,60 @@
+<div class="background">
+	<div class="primary-container">
+		<h2 class="page-title">
+			<button ui-sref="app.main.company.overview" class="no-border-button" ng-bind="'company' | translate"></button>
+			<span class="icon-heading icon-icon_forward"></span>
+			<button ui-sref="app.main.company.forms-and-policies" class="no-border-button" ng-bind="'forms-and-policies' | translate"></button>
+			<span class="icon-heading icon-icon_forward"></span>
+			<button class="no-border-button" ng-bind="'termsAndConditions' | translate"></button>
+		</h2>
+		<div id="trinetTCA" >
+			<!-- us_k1.html start-->
+			<div ng-if="$ctrl.termConditionResponse && $ctrl.ackResponse">
+				<tn-card ng-if="$ctrl.isUSKone">
+						<div  ng-bind-html="$ctrl.termConditionResponse" class="heading-k1 tcamain"></div>
+						<div ng-bind-html="$ctrl.ackResponse"></div>
+				</tn-card>
+			</div>
+			<!-- us_k1.html end-->
+
+			<div ng-if="!$ctrl.isUSKone">
+			<tn-card>
+				<tn-spinner ng-show="$ctrl.showSpinner"></tn-spinner>
+				<tn-card-content ng-show="!$ctrl.showSpinner">
+					<div class="large bold tn-tcaHeader" ng-bind-html="$ctrl.termConditionResponse.heading"> </div>
+					<!--<p class="tca-top-content" ng-bind-html="$ctrl.termConditionResponse.title"></p>-->
+					<p>
+						<b>This TCA contains the following sections:</b>
+					</p>
+				</tn-card-content>
+			</tn-card>
+			<div class="tcamain">
+				<uib-accordion close-others="true">
+					<div uib-accordion-group class="tn-accordion anchor-inline" is-open="status.open" ng-repeat="item in $ctrl.termConditionResponse.sections">
+						<uib-accordion-heading id="{{item.name |  lowercase}}" class="accordion-heading">
+							<button id="{{item.name}}Id"
+									class="tn-accordion-button"
+									ng-click="$ctrl.setAccordion($index);"
+									aria-selected="{{ item.isOpen}}"
+									aria-expanded="{{item.isOpen}}"
+									role="tab"
+									tabindex="-1">
+								<p>{{$index+1}}. <span ng-bind-html="item.title"></span></p>
+								<i class="icon-icon_Disclosure_Expand  disclosure-open" ng-if="!status.open"></i>
+								<i class="icon-icon_Disclosure_Collapse  disclosure-open" ng-if="status.open"></i>
+							</button>
+						</uib-accordion-heading>
+						<div class="standard-padding" ng-bind-html="item.info">
+						</div>
+					</div>
+				</uib-accordion>
+			</div>
+			</div>
+
+			<p ng-if="$ctrl.effectiveDate">Please note that you have already acknowledged these Terms and Conditions (or a version thereof) on {{$ctrl.effectiveDate  | date:'MM/dd/yyyy'}}.</p>
+		</div>
+
+	</div>
+	<div class="secondary-container">
+	</div>
+</div>

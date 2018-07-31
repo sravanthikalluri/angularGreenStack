@@ -1,0 +1,54 @@
+{
+	"data":{
+		"prfNamesActiveList":[
+			{
+				"approvalStatus":"F",
+				"effectiveDate":"2001-04-23",
+				"employeeId":"00001002198",
+				"endDate":"2099-12-31",
+				"firstName":"Jimmy",
+				"formOfAddress":" ",
+				"middleName":"P",
+				"nameFormat":"US",
+				"nameType":"PRF",
+				"personTitle":" ",
+				"reasonChangeCode":null,
+				"uniqueId":1,
+				"lastName":"Ellis",
+				"suffix":" ",
+				"name":null
+			}
+		],
+		"prfNamesCurrentList":[
+
+		],
+		"prfNamesHistoryList":[
+
+		],
+		"priNamesActiveList":[
+			{
+				"approvalStatus":"F",
+				"effectiveDate":"2001-04-23",
+				"employeeId":"00001002198",
+				"endDate":"2099-12-31",
+				"firstName":"James",
+				"formOfAddress":" ",
+				"middleName":"P",
+				"nameFormat":"US",
+				"nameType":"PRI",
+				"personTitle":" ",
+				"reasonChangeCode":null,
+				"uniqueId":1,
+				"lastName":"Ellis",
+				"suffix":" ",
+				"name":null
+			}
+		],
+		"priNamesHistoryList":[
+
+		]
+	},
+	"_requestId":"84af7952-21ae-4b93-84e7-89a195e7f37c",
+	"_statusCode":"200",
+	"_statusText":"OK"
+}

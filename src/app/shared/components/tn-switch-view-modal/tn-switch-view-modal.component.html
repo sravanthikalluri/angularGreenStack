@@ -1,0 +1,33 @@
+<span ng-click="$ctrl.closeSwitchViewModal();" class="switch-view-close-icon icon-close-temp"></span>
+
+<div class="switch-view-content">
+	<div class="text-center switch-view-title">
+		{{ 'switch-view-title' | translate }}
+	</div>
+	<div class="text-center switch-view-buttons border-bottom">
+		<button class="switch-view-employee switch-view-button" tn-button ng-click="$ctrl.setViewAdmin('N');" ng-class="{'switch-view-selected-button' : $ctrl.viewAdminPreference ==='N'}">
+			{{ 'switch-view-employee-button' | translate }}
+		</button>
+		<button tn-button class="switch-view-admin switch-view-button" ng-click="$ctrl.setViewAdmin('Y')" ng-class="{'switch-view-selected-button' : $ctrl.viewAdminPreference ==='Y'}">
+			{{ 'switch-view-admin-button' | translate }}
+		</button>
+	</div>
+	<div class="switch-view-divider"></div>
+	<div>
+		<div class="col-md-9">
+			<div class="tn-custom-checkbox switch-view-gray">
+			<input id="switch-view-save-checkbox" name="switch-view-save-checkbox" type="checkbox" ng-model="$ctrl.saveViewSetting">
+			<label for="switch-view-save-checkbox">
+				<span class="switch-view-radio-text">
+					{{ 'switch-view-instructions' | translate }}
+					<br />
+					{{ 'switch-view-instructions-second-line' | translate}}
+				</span>
+			</label>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<button tn-action-button ng-click="$ctrl.saveViewPreference();">{{ 'switch-view-confirm-button' | translate }}</button>
+		</div>
+	</div>
+</div>

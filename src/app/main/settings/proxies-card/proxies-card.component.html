@@ -1,0 +1,39 @@
+<tn-card>
+	<tn-error-banner  error-data="$ctrl.data" ng-if="$ctrl.data" clicked="$ctrl.closeAlert()"></tn-error-banner>
+	<tn-card-title class="settings-card-title"><h3>Proxies</h3></tn-card-title>
+	<tn-spinner ng-show="$ctrl.showSpinner" is-show="$ctrl.showSpinner" error-message="$ctrl.errorMessage"></tn-spinner>
+	<tn-card-content class="settings-card-body proxy-card-body" data-ng-repeat="data in $ctrl.proxyList">
+
+		<div class="proxyDetailsContent" ng-if="$ctrl.proxyList.length">
+		<div class="proxyDetails col-sm-12">
+			<p class="semibold contactinfo" data-ng-bind="'{{data.firstName }}' + ' {{data.lastName }}'"><small>{{data.positionDesc}}</small></p>
+			<p class="contactDetails">{{data.url}}</p>
+			<p class="contactDetails">{{data.workPhone}}</p>
+			<p class="effectiveDate"><span>EffectiveDate:</span><span>{{data.effectiveDate| date:"MM/dd/yyyy"}}</span><span>&#45;</span><span>{{data.endDate |date:"MM/dd/yyyy"}}</span></p>
+			<p class="semibold"><a class="hand deleteProxy" ng-click="$ctrl.deleteProxy(data)">Delete</a></p>
+		</div>
+		</div>
+		<!--<h6>A Proxy can be used to assign your system rights (except for personal info) to another person. You may assign only one proxy at a time with an end date.</h6>-->
+	</tn-card-content>
+	<div class="proxy_history_section" ng-if="$ctrl.showHistorySection && $ctrl.historyList.length">
+		<tn-card-title class="settings-card-title">Proxy History</tn-card-title>
+		<tn-card-content class="settings-card-body proxy-card-body" data-ng-repeat="data in $ctrl.historyList">
+			<div class="proxyDetailsContent">
+				<div class="proxyDetails col-sm-12">
+					<p class="semibold contactinfo" data-ng-bind="'{{data.firstName }}' + ' {{data.lastName }}'"></p>
+					<p class="semibold positionDesc">{{data.positionDesc}}</p>
+					<p class="contactDetails">{{data.url}}</p>
+					<p class="contactDetails">{{data.workPhone}}</p>
+					<p class="effectiveDate"><span>EffectiveDate:</span><span>{{data.effectiveDate}}</span><span>&#45;</span><span>{{data.endDate}}</span></p>
+				</div>
+			</div>
+		</tn-card-content>
+	</div>
+	<div class="tn-add-proxy-section">
+		<button id="addNewProxy" tn-button class="tn-view-button" ng-if="!$ctrl.addProxy" ng-click="$ctrl.addProxy = true">+ Add a Proxy</button>
+		<button id="hideHistory" tn-button class="tn-view-button" ng-if="$ctrl.historyList.length" ng-click="$ctrl.showHistorySection = !$ctrl.showHistorySection">{{!$ctrl.showHistorySection ? "Show History" : "Hide History"}}</button>
+		<proxies-card-modal ng-if="$ctrl.addProxy" aria-live="polite" on-cancel-proxy="$ctrl.onCancelProxy()"></proxies-card-modal>
+	</div>
+</tn-card>
+
+

@@ -1,0 +1,28 @@
+
+	<div uib-accordion-group class="tn-accordion" ng-init="status.open = false" is-open="status.open">
+		<uib-accordion-heading id="legal{{$ctrl.titleId}}" class="accordion-heading">
+			<button tabindex="-1" class="tn-accordion-button">
+				<h4>{{$ctrl.data.title}}</h4>
+				<i class="icon-icon_Disclosure_Expand  disclosure-open" ng-if="!status.open"></i>
+				<i class="icon-icon_Disclosure_Collapse  disclosure-open" ng-if="status.open"></i>
+			</button>
+		</uib-accordion-heading>
+
+		<div class="striped" ng-repeat="item in $ctrl.data.reportsNotices track by $index">
+			<div class="tn-accordion-body">
+				<div class="innerHeading hand" ng-if="item.text !== 'ACA Marketplace Notification'">
+					<i  class="icon-icon_pdf tn-pdf_icon"></i>
+
+					<a class="tn-anchor" href="{{item.url | contentUrl}}" target="_blank">
+						{{item.text}}
+					</a>
+				</div>
+
+				<div class="innerHeading hand no-icon-case" ng-if="item.text === 'ACA Marketplace Notification'">
+					<a class="tn-anchor" ui-sref="app.main.benefits.aca-marketplace" ng-if="item.text === 'ACA Marketplace Notification'">
+						{{item.text}}
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>

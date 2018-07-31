@@ -1,0 +1,15 @@
+<div class="tn-benefits-users">
+
+	<div class="tn-benefits-users-icon">
+		<span class="tn-icon icon-icon_family"></span>
+	</div>
+
+	<div class="tn-benefits-users-container">
+		<div ng-repeat="user in $ctrl.data track by $index"
+				class="tn-benefits-users-user">
+			<div class="tn-benefits-users-user-name">{{ user.dependentName }}</div>
+			<div class="tn-benefits-users-user-relationship">{{ user.relationship }}</div>
+		</div>
+	</div>
+
+</div>

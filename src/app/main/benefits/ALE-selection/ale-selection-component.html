@@ -1,0 +1,125 @@
+<div class="background">
+	<div class="primary-container">
+		<h2 class="page-title">
+			<tn-title url="'app.main.benefits.overview'" title="'benefits-title'"></tn-title>
+			> {{ 'ale-selection.title' | translate }}
+		</h2>
+		<tn-error-banner error-data="$ctrl.error.data" ng-if="$ctrl.error"
+						 clicked="$ctrl.closeAlert()"></tn-error-banner>
+		<!--<tn-spinner ng-show="$ctrl.showSpinner"></tn-spinner>-->
+		<div ng-show="!$ctrl.showSection && !$ctrl.finalSection" class="tn-ale-section">
+
+		<tn-card >
+			<div class="card-header-section">
+				<h4 class="semibold">
+					{{'ale-selection.status' | translate}}
+				</h4>
+				<h5>
+					{{'ale-selection.statusALE'| translate}}
+				</h5>
+			</div>
+			<tn-card-content>
+				<h4 class="content-heading">
+					{{'ale-selection.isCompanyAle' | translate}}
+				</h4>
+				<p>{{'ale-selection.whatIsALE' | translate}}</p>
+				<div ng-if="$ctrl.showLess && !$ctrl.showMore">
+					<p>{{'ale-selection.aleEmployeeSharedProvisionOfACA' | translate}}</p>
+					<p>{{'ale-selection.aleEmployeeCalenderYear' | translate}}
+						<span>
+							<a href="https://www.trinet.com/resources/affordablecareact/ale_calculator" id="showLearn" target="_blank" class="view-more">
+								{{'futureBenefits-learMore' | translate}}
+							</a>
+						</span>
+					</p>
+				</div>
+				<a class="view-more ale-question semibold"
+				   ng-click="$ctrl.showAnswerHowtoDetermine = !$ctrl.showAnswerHowtoDetermine" href>
+					{{'ale-selection.fullTimeEquivalent' | translate}}
+					<i class="icon-icon_Dropdown_Arrow"
+						ng-class="$ctrl.showAnswerHowtoDetermine ? 'arrow-up': ''"></i>
+					<!--<i class="icon-icon_Dropdown_Arrow arrow-up" ng-show="$ctrl.showAnswerHowtoDetermine"></i>-->
+				</a>
+				<div class="tn-aleselection-question" ng-if="$ctrl.showAnswerHowtoDetermine">
+					<p>
+						{{'ale-selection.fteACAEmployerResponsibility' | translate}}
+					</p>
+					<p>*{{'ale-selection.termFTEEmployees' | translate}}</p>
+					<p>{{'ale-selection.calculateFTECount' | translate }}</p>
+
+				</div>
+				<a class="view-more ale-question semibold"
+				   ng-click="$ctrl.showAnswerHowitEffect = !$ctrl.showAnswerHowitEffect" href>{{'ale-selection.companySubsidiaryEntities' | translate}}
+					<i class="icon-icon_Dropdown_Arrow"
+					   ng-class="$ctrl.showAnswerHowitEffect ? 'arrow-up': ''"></i>
+				</a>
+				<div class="tn-aleselection-question" ng-if="$ctrl.showAnswerHowitEffect">
+					<p>
+						{{'ale-selection.acaEmployerSharedResponsibility' | translate}}
+						<a href="https://www.trinet.com/hr-insights/articles/aca-fact-sheet-controlled-group-overview" target="_blank">click here.</a>
+					</p>
+				</div>
+				<p class="view-more ale-question semibold">{{'ale-selection.isCompanyAnALE' | translate}}	</p>
+				<div class="button-section">
+					<button class="yesButton" ng-class="{'active' : $ctrl.yesActive && $ctrl.active} "
+							ng-click="$ctrl.yesActive = true ; $ctrl.active = true">
+						<h5 class="semibold ale-action" role="presentation">Yes</h5>
+						<h5 role="presentation">{{'ale-selection.companyEmployedFiftyEmployees' | translate}}
+						</h5>
+					</button>
+					<button class="noButton" ng-class="{'active' : !$ctrl.yesActive && $ctrl.active} "
+							ng-click="$ctrl.yesActive = false ; $ctrl.active = true">
+						<h5 class="semibold ale-action" role="presentation">No</h5>
+						<h5 role="presentation">{{'ale-selection.companyEmployedLessFiftyEmployees' | translate}}
+						</h5>
+					</button>
+				</div>
+			</tn-card-content>
+
+		</tn-card>
+			<div class="footer-button-section text-right">
+				<button tn-action-button ng-click="$ctrl.showSection = true" ng-disabled="!$ctrl.active">Continue
+				</button>
+			</div>
+		</div>
+
+		<!-- yes card-->
+		<ale-yes-selection yes-active="$ctrl.yesActive" show-section="$ctrl.showSection"
+						   submit="$ctrl.submit()"></ale-yes-selection>
+
+		<!--No card-->
+		<ale-no-selection yes-active="$ctrl.yesActive" show-section="$ctrl.showSection"
+						  submit="$ctrl.submit()"></ale-no-selection>
+
+		<tn-card ng-if="$ctrl.finalSection && !$ctrl.showSection" class="tn-ale-section final-section">
+			<div class="card-header-section">
+				<h4 class="semibold">
+					{{'ale-selection.submitted'| translate}}
+				</h4>
+			</div>
+			<tn-card-content>
+				<i class="icon-icon_checkmark icon-success"></i>
+				<h4 class="semibold">
+					{{'ale-selection.successfullySubmitted'| translate}}
+				</h4>
+				<p  ng-if="$ctrl.yesActive">
+					{{'ale-selection.successfullySubmittedForALE'| translate }}
+					<p  ng-if="$ctrl.yesActive">
+						{{'ale-selection.termsForALE'| translate }}
+					</p>
+				</p>
+				<p ng-if="!$ctrl.yesActive">
+					{{'ale-selection.successfullySubmittedForNotALE'| translate }}
+				</p>
+				<h5 role="alert" aria-live="assertive" class="semibold main-info">{{'ale-selection.conformationMail'| translate}}</h5>
+			</tn-card-content>
+			<tn-card-footer>
+				<button tn-action-button ui-sref="app.main.dashboard">{{'ethnicity-modal-ok-label' | translate}}
+				</button>
+			</tn-card-footer>
+		</tn-card>
+	</div>
+	<div class="secondary-container">
+
+	</div>
+</div>

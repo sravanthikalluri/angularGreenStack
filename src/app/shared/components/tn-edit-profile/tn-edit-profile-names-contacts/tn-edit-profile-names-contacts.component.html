@@ -1,0 +1,249 @@
+<div class="editProfile">
+	<div class="tn-edit-profile-section">
+		<div class="tn-edit-profile-section-title">{{'edit-profile-primary-name' | translate}}</div>
+	</div>
+	<form class="row" name="nameContactsForm" no-validate>
+		<div class="col-sm-offset-1 col-sm-11">
+			<br>
+			<div class="tn-edit-profile-emergency-section">
+				<div class="row">
+					<tn-input-container class="col-sm-5">
+						<tn-input-label>{{'edit-profile-form-of-address' | translate}}</tn-input-label>
+						<div class="select-style">
+							<select ng-options="formOfAddress as formOfAddress.value for formOfAddress in $ctrl.data.dropdown.formOfAddresses track by formOfAddress.key"
+									ng-model="$ctrl.data.selected.primaryFormOfAddress"
+									ng-change="$ctrl.data.primaryNames.formOfAddress = $ctrl.selected.primaryFormOfAddress.key"
+									name="state"
+									required>
+								<option value="" disabled selected>Select a Form Of Address</option>
+							</select>
+						</div>
+					</tn-input-container>
+				</div>
+				<br/>
+				<div class="row">
+					<tn-input-container class="col-sm-5" ng-class="{'is-invalid': nameContactsForm.primaryFirstName.$invalid && nameContactsForm.primaryFirstName.$touched}">
+						<tn-input-label>{{'edit-profile-first-name' | translate}}</tn-input-label>
+						<input ng-model="$ctrl.data.primaryNames.firstName"
+							   type="text"
+							   name="primaryFirstName"
+							   maxlength="54"
+							   validate-name
+							   required>
+						<div class="tn-input-error" ng-messages="nameContactsForm.primaryFirstName.$error" ng-show="nameContactsForm.primaryFirstName.$invalid && nameContactsForm.primaryFirstName.$touched">
+							<div ng-message="required" aria-live="polite">Required.</div>
+							<div ng-message="name" aria-live="polite">Not a valid name.</div>
+						</div>
+					</tn-input-container>
+					<tn-input-container class="col-sm-offset-1 col-sm-5">
+						<tn-input-label>{{'edit-profile-middle-name' | translate}}</tn-input-label>
+						<input ng-model="$ctrl.data.primaryNames.middleName"
+							   type="text"
+							   name="middleName"
+							   >
+					</tn-input-container>
+				</div>
+				<br/>
+				<div class="row">
+					<tn-input-container class="col-sm-5" ng-class="{'is-invalid': nameContactsForm.primaryLastName.$invalid && nameContactsForm.primaryLastName.$touched}">
+						<tn-input-label>{{'edit-profile-last-name' | translate}}</tn-input-label>
+						<input ng-model="$ctrl.data.primaryNames.lastName"
+							   type="text"
+							   name="primaryLastName"
+							   maxlength="54"
+							   validate-name
+							   required>
+						<div class="tn-input-error" ng-messages="nameContactsForm.primaryLastName.$error" ng-show="nameContactsForm.primaryLastName.$invalid && nameContactsForm.primaryLastName.$touched">
+							<div ng-message="required" aria-live="polite">Required.</div>
+							<div ng-message="name" aria-live="polite">Not a valid name.</div>
+						</div>
+					</tn-input-container>
+					<tn-input-container class="col-sm-offset-1 col-sm-5">
+						<tn-input-label>{{'edit-profile-suffix' | translate}}</tn-input-label>
+						<div class="select-style">
+							<select ng-options="suffix as suffix.value for suffix in $ctrl.data.dropdown.suffixes track by suffix.key"
+									ng-model="$ctrl.data.selected.primarySuffix"
+									ng-change="$ctrl.data.primaryNames.suffix = $ctrl.selected.primarySuffix.key"
+									name="primarySuffix"
+									required>
+								<option value="" disabled selected>Select a Suffix</option>
+							</select>
+						</div>
+					</tn-input-container>
+				</div>
+			</div>
+
+			<hr/>
+			<br>
+
+			<div class="tn-edit-profile-section">
+				<div class="tn-edit-profile-section-title">{{'edit-profile-preferred-name' | translate}}</div>
+				<br>
+				<div class="row">
+					<tn-input-container class="col-sm-5">
+						<tn-input-label>{{'edit-profile-form-of-address' | translate}}</tn-input-label>
+						<div class="select-style">
+							<select ng-options="formOfAddress as formOfAddress.value for formOfAddress in $ctrl.data.dropdown.formOfAddresses track by formOfAddress.key"
+									ng-model="$ctrl.data.selected.preferredFormOfAddress"
+									ng-change="$ctrl.data.preferredNames.formOfAddress = $ctrl.data.selected.preferredFormOfAddress.key"
+									name="state"
+									required>
+								<option value="" disabled selected>Select a Form Of Address</option>
+							</select>
+						</div>
+					</tn-input-container>
+				</div>
+				<br/>
+				<div class="row">
+					<tn-input-container class="col-sm-5" ng-class="{'is-invalid': nameContactsForm.PreferredFirstName.$invalid && nameContactsForm.PreferredFirstName.$touched}">
+						<tn-input-label>{{'edit-profile-first-name' | translate}}</tn-input-label>
+						<input ng-model="$ctrl.data.preferredNames.firstName"
+							   type="text"
+							   name="PreferredFirstName"
+							   maxlength="54"
+							   validate-name
+							   required>
+						<div class="tn-input-error" ng-messages="nameContactsForm.PreferredFirstName.$error" ng-show="nameContactsForm.PreferredFirstName.$invalid && nameContactsForm.PreferredFirstName.$touched">
+							<div ng-message="required" aria-live="polite">Required.</div>
+							<div ng-message="name" aria-live="polite">Not a valid name.</div>
+						</div>
+					</tn-input-container>
+					<tn-input-container class="col-sm-offset-1 col-sm-5">
+						<tn-input-label>{{'edit-profile-middle-name' | translate}}</tn-input-label>
+						<input ng-model="$ctrl.data.preferredNames.middleName"
+							   type="text"
+							   name="middleName"
+								>
+						<div class="tn-input-error" ng-messages="nameContactsForm.middleName.$error" ng-show="nameContactsForm.middleName.$invalid && nameContactsForm.middleName.$touched">
+							<div ng-message="required" aria-live="polite">Required.</div>
+							<div ng-message="name" aria-live="polite">Not a valid name.</div>
+						</div>
+					</tn-input-container>
+				</div>
+				<br/>
+				<div class="row">
+					<tn-input-container class="col-sm-5" ng-class="{'is-invalid': nameContactsForm.preferredLastName.$invalid && nameContactsForm.preferredLastName.$touched}">
+						<tn-input-label>{{'edit-profile-last-name' | translate}}</tn-input-label>
+						<input ng-model="$ctrl.data.preferredNames.lastName"
+							   type="text"
+							   name="preferredLastName"
+							   maxlength="54"
+							   validate-name
+							   required>
+						<div class="tn-input-error" ng-messages="nameContactsForm.preferredLastName.$error" ng-show="nameContactsForm.preferredLastName.$invalid && nameContactsForm.preferredLastName.$touched">
+							<div ng-message="required" aria-live="polite">Required.</div>
+							<div ng-message="name" aria-live="polite">Not a valid name.</div>
+						</div>
+					</tn-input-container>
+					<tn-input-container class="col-sm-offset-1 col-sm-5">
+						<tn-input-label>{{'edit-profile-suffix' | translate}}</tn-input-label>
+						<div class="select-style">
+							<select ng-options="suffix as suffix.value for suffix in $ctrl.data.dropdown.suffixes track by suffix.key"
+									ng-model="$ctrl.data.selected.preferredSuffix"
+									ng-change="$ctrl.data.preferredNames.suffix = $ctrl.selected.preferredSuffix.key"
+									name="preferredSuffix"
+									required>
+								<option value="" disabled selected>Select a Suffix</option>
+							</select>
+						</div>
+					</tn-input-container>
+				</div>
+
+			</div>
+
+			<hr/>
+			<br>
+
+			<div class="tn-edit-profile-section">
+				<div class="tn-edit-profile-section-title">{{'profile-title-contact-section' | translate}}</div>
+				<br>
+				<div class="row tn-profile-contact-section" ng-repeat="contact in $ctrl.data.contacts">
+					<tn-input-container class="col-sm-5" ng-if="contact.media == 'Email'">
+						<tn-input-label>{{'edit-profile-email-type' | translate}}</tn-input-label>
+						<div class="select-style">
+							<select ng-options="accessType as accessType.value for accessType in $ctrl.data.dropdown.accessTypes track by accessType.key"
+									ng-model="contact.accessTypeObj"
+									ng-change="contact.accessType = contact.accessTypeObj.key"
+									name="accessType_{{$index}}"
+									required>
+								<option value="" disabled selected>Select Access Type</option>
+							</select>
+						</div>
+					</tn-input-container>
+					<tn-input-container class="col-sm-offset-1 col-sm-5" ng-if="contact.media == 'Email'" ng-class="{'is-invalid': nameContactsForm['emailAddress_' + $index].$invalid && nameContactsForm['emailAddress_' + $index].$touched}">
+						<tn-input-label>{{'edit-profile-email-address' | translate}}</tn-input-label>
+						<input ng-model="contact.url"
+							   type="text"
+							   name="emailAddress_{{$index}}"
+							   validate-email
+							   required>
+						<div class="tn-input-error" ng-messages="nameContactsForm['emailAddress_' + $index].$error" ng-show="nameContactsForm['emailAddress_' + $index].$invalid && nameContactsForm['emailAddress_' + $index].$touched">
+							<div ng-message="required" aria-live="polite">Required.</div>
+							<div ng-message="email" aria-live="polite">Not a valid Email.</div>
+						</div>
+					</tn-input-container>
+					<div class="col-sm-1" ng-if="contact.media == 'Email'" ng-init="isFirstEmailField = $ctrl.setvalue('Email', 1)"> <span ng-click="$ctrl.removeContact($index)" ng-if="isFirstEmailField" class="icon-icon_close_mobile close-icon"></span> </div>
+				</div>
+				<br/>
+				<div class="row">
+					<div class="col-sm-12">
+						<h5 class="blue">
+							<span class="icon-icon_plus icon-add"></span><a href ng-click="$ctrl.addNewEmailField()">Add Another Email Address</a>
+						</h5>
+					</div>
+				</div>
+				<br/><br/>
+
+				<div class="row tn-profile-contact-section"  ng-class="nameContactsForm['telephoneNumber_' + $index].$invalid && nameContactsForm['telephoneNumber_' + $index].$touched ? 'has-error' : ''" ng-repeat="contact in $ctrl.data.contacts">
+					<tn-input-container class="col-sm-5" ng-if="contact.media == 'Phone'" >
+						<tn-input-label>{{'edit-profile-phone-type' | translate}}</tn-input-label>
+						<div class="select-style">
+							<select ng-options="accessType as accessType.value for accessType in $ctrl.data.dropdown.accessTypes track by accessType.key"
+									ng-model="contact.accessTypeObj"
+									ng-change="contact.accessType = contact.accessTypeObj.key"
+									name="accessType_{{$index}}"
+									required>
+								<option value="" disabled selected>Select Access Type</option>
+							</select>
+						</div>
+					</tn-input-container>
+					<tn-input-container class="col-sm-offset-1 col-sm-5" ng-if="contact.media == 'Phone'" ng-class="{'is-invalid': nameContactsForm['telephoneNumber_' + $index].$invalid && nameContactsForm['telephoneNumber_' + $index].$touched}">
+						<tn-input-label>{{'edit-profile-phone-address' | translate}}</tn-input-label>
+						<input ng-model="contact.telephoneNumber"
+							   type="text"
+							   name="telephoneNumber_{{$index}}"
+							   inputmode="numeric"
+							   placeholder="(999) 999-9999"
+							   mask="(999) 999-9999"
+							   restrict="reject"
+							   clean="true"
+							   validate-phone
+							   required
+							   >
+
+						<div class="tn-input-error" ng-messages="nameContactsForm['telephoneNumber_' + $index].$error" ng-show="nameContactsForm['telephoneNumber_' + $index].$invalid && nameContactsForm['telephoneNumber_' + $index].$touched">
+							<div ng-message="required" aria-live="polite">Required.</div>
+							<div ng-message="phone" aria-live="polite">Numbers only.</div>
+							<div ng-message="phoneLength" aria-live="polite">Must be 10 digits.</div>
+						</div>
+					</tn-input-container>
+					<div class="col-sm-1" ng-if="contact.media == 'Phone'" ng-init="isFirstPhoneField = $ctrl.setvalue('Phone', 1)"> <span ng-click="$ctrl.removeContact($index)" ng-if="isFirstPhoneField" class="icon-icon_close_mobile close-icon"></span> </div>
+				</div>
+				<br/>
+				<div class="row">
+					<div class="col-sm-12">
+						<h5 class="blue">
+						<span class="icon-icon_plus icon-add"></span><a href ng-click="$ctrl.addNewPhoneField()">Add Another Phone Number</a>
+						</h5>
+					</div>
+				</div>
+			</div>
+			<div class="button-group">
+				<button tn-button ui-sref="app.main.profile">{{'edit-profile-cancel' | translate}}</button>
+				<button tn-action-button ng-click="$ctrl.saveNameContactSection(nameContactsForm)">
+					{{'edit-profile-save-changes' | translate}}
+				</button>
+			</div>
+		</div>
+	</form>
+</div>

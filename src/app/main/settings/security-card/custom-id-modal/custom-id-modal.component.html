@@ -1,0 +1,32 @@
+<div class="security-modal" id="custIDPwd">
+
+	<div class="security-modal-header">
+		<i id="customClose" class="icon-close-temp hand" ng-click="$ctrl.onCancel();"></i>
+	</div>
+	<br>
+	<form class="row" name="editCustomIDForm" novalidate>
+	<tn-input-container class="padding-vertical"
+						ng-class="{'is-invalid': editCustomIDForm.customId.$invalid && editCustomIDForm.customId.$touched || editCustomIDForm.$submitted}">
+		<!--<tn-input-label class="semibold">{{'custom-id-modal-input-label' | translate}}</tn-input-label>-->
+		<div class="semibold">{{'custom-id-modal-input-label' | translate}}</div>
+		<input id="customIdText" class="margin-top"
+			   type="text" name="customId"
+			   ng-model="$ctrl.data.payload.customId"
+			   aria-label="custom id"
+			   validate-custom ng-focus="$ctrl.showErrorFlyout($ctrl.data.payload.customId)"
+			   required>
+		<div class="tn-input-error" ng-messages="editCustomIDForm.customId.$error"
+			 ng-show="editCustomIDForm.customId.$invalid && editCustomIDForm.customId.$touched || editCustomIDForm.$submitted">
+			<div ng-message="required" aria-live="polite">{{'required' | translate}}</div>
+			<div ng-message="customID" aria-live="polite">{{'custom-id-modal-not-a-valid-label' | translate}}</div>
+		</div>
+	</tn-input-container>
+	<br>
+	<div class="security-modal-footer">
+		<button  id="customCancelBtn" tn-button ng-click="$ctrl.onCancel()">{{'security-modal-cancel-label' | translate}}</button>
+		<button id="customSaveBtn" type="submit" class="margin-left" tn-action-button ng-click="$ctrl.onSave(editCustomIDForm)">{{'security-modal-save-label' | translate}}</button>
+	</div>
+	</form>
+</div>
+
+<tn-full-spinner ng-show="$ctrl.showFullSpinner"></tn-spinner>

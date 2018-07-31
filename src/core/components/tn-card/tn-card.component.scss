@@ -1,0 +1,125 @@
+@import 'main';
+
+$tn-card-border-radius: 4px;
+$tn-card-box-shadow: 0px 1px 3px rgba(49, 51, 58, 0.2);
+$tn-card-padding: 32px 32px;
+$tn-card-bg-color: white;
+
+$tn-card-subtitle-color: #C4C8D3;
+
+.tn-card {
+	display: block;
+  	position: relative;
+	border-radius: $tn-card-border-radius;
+	box-shadow: $tn-card-box-shadow;
+	padding: $tn-card-padding;
+	background-color: $tn-card-bg-color;
+	margin-bottom: 16px;
+	max-width: 100%;
+}
+
+/* Sections */
+%tn-card-section-base {
+	display: block;
+}
+
+tn-card-title {
+	@extend %tn-card-section-base;
+
+	font-weight: 600;
+	font-size: 18px;
+	h3{
+		font-weight: inherit;
+		font-size: inherit;
+		line-height: inherit;
+		padding: 0px;
+		margin: 0px;
+	}
+}
+tn-roles-card-content{
+	@extend %tn-card-section-base;
+}
+tn-card-subtitle {
+
+	@extend %tn-card-section-base;
+
+	font-size: 14px;
+	color: $tn-card-subtitle-color;
+}
+
+tn-card-content {
+	@extend %tn-card-section-base;
+}
+
+tn-card-actions {
+	@extend %tn-card-section-base;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 24px 0;
+}
+
+/* Layout (Headers) */
+%tn-card-header-base {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+  	margin: -32px -32px 0px -32px;
+  	border-top-left-radius: 4px;
+  	border-top-right-radius: 4px;
+	padding: 16px 32px;
+	background-color: white;
+
+	&[color="secondary"] {
+		background-color: #F9FAFB;
+		border-bottom: 1px solid #ECEDED;
+	}
+}
+
+tn-card-header {
+	@extend %tn-card-header-base;
+	justify-content: center;
+
+	i {
+		font-size: 24px;
+		margin-right: 16px;
+		display: flex;
+		align-items: center;
+	}
+}
+
+tn-card-footer{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+  	border-top-left-radius: 4px;
+  	border-top-right-radius: 4px;
+	padding: 16px 32px;
+	background-color: white;
+
+	&[color="secondary"] {
+		background-color: #F9FAFB;
+		border-bottom: 1px solid #ECEDED;
+	}
+	margin: -16px -32px -16px -32px;
+	border-radius: 0 0 4px 4px;
+}
+
+tn-card-title-group {
+	@extend %tn-card-header-base;
+
+	justify-content: space-between;
+}
+
+tn-card-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 16px;
+	border-bottom: 1px solid #ddd;
+
+	&:last-child {
+		border: 0;
+	}
+}

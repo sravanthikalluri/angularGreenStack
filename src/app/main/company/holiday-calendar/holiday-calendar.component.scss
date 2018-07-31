@@ -1,0 +1,15 @@
+@import '../../../../styles/main';
+
+.holiday-calendar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 22px 15px;
+}
+
+i.anchor-blue-icon {
+	color: $blue;
+	padding-right: 5px;
+	font-size: 23px;
+	vertical-align: -20%;
+}

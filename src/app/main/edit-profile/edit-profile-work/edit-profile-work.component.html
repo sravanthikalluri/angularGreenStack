@@ -1,0 +1,60 @@
+<tn-error-banner error-data="$ctrl.err"></tn-error-banner>
+<div class="background">
+	<div class="primary-container" ng-if="$ctrl.data">
+		<h2 class="page-title">{{'edit-profile-title' | translate}}</h2>
+		<tn-card class="edit-profile-work-card">
+			<!--<div class="edit-profile-avatar">{{$ctrl.data.initials}}</div>-->
+
+			<tn-profile-icon class-name="tn-profile-avatar" is-active="$ctrl.isActive"
+							 mime-type="{{$ctrl.mimeType}}" img-url="{{$ctrl.profilePicture}}"
+							 id="editProfileImageIcon"
+							 monogram="{{$ctrl.data.initials}}"
+							 fullname="{{$ctrl.data.primary.firstName}}-{{$ctrl.data.primary.lastName}}">
+			</tn-profile-icon>
+			<form class="edit-profile-form" name="editProfileWorkForm" ng-submit="$ctrl.save(editProfileWorkForm)" no-validate>
+				<ng-form name="primaryNameSectionForm">
+					<primary-name-section form-name="primaryNameSectionForm"
+										  data="$ctrl.data"
+										  primarychanged="$ctrl.primarychanged"
+										  on-update="$ctrl.updatePrimaryName(prop, value)">
+					</primary-name-section>
+				</ng-form>
+				<br>
+				<hr>
+				<ng-form name="preferredNameSectionForm">
+					<preferred-name-section form-name="preferredNameSectionForm"
+											data="$ctrl.data"
+											primarychanged="$ctrl.primarychanged"
+											on-update="$ctrl.updatePreferredName(prop, value)">
+					</preferred-name-section>
+				</ng-form>
+				<br>
+				<hr>
+
+				<ng-form name="contactSectionForm">
+					<contact-section form-name="contactSectionForm"
+									 data="$ctrl.data"
+									 on-add="$ctrl.addContact(type)"
+									 on-update="$ctrl.updateContact(contact, prop, value, type)"
+									 on-delete="$ctrl.deleteContact(contact, formName)">
+					</contact-section>
+				</ng-form>
+				<tn-card-actions class="margin-top">
+					<button tn-button type="button" id="profileWorkformCancel"
+							class="edit-profile-button"
+							ng-click="$ctrl.cancelPopup(editProfileWorkForm,$event)">
+							{{'edit-profile-cancel' | translate}}
+					</button>
+					<button tn-action-button id="profileWorkformSave"
+							class="edit-profile-button margin-left"
+							focus-invalid-field
+							type="submit">
+							{{'edit-profile-save-changes' | translate}}
+					</button>
+				</tn-card-actions>
+			</form>
+		</tn-card>
+	</div>
+	<div class="secondary-container"></div>
+</div>
+<tn-full-spinner ng-show="$ctrl.showFullSpinner"></tn-full-spinner>

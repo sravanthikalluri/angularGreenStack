@@ -1,0 +1,486 @@
+<div class="background">
+	<div class="primary-container">
+		<div class="btnPrint">
+			<button id="acaPagePrint" class="tn-button tn-action-button no-margin pull-right "
+					aria-label="ACA marketplace print button"
+				tn-action-button ng-click="$ctrl.printSection()">
+				<span class="icon-icon_print_circle large icon-print tn-link-button-icon" aria-hidden="true"></span>
+					<span class="tn-link-button-text pull-right">Print</span>
+			</button>
+		</div>
+		<tn-card id="acaMarketPlace" >
+
+			<div class="text-right">
+				<div class="pull-right col-md-3">
+					<!--<button id="benefitPagePrint"
+							tn-link-button tn-print print-element-id="accMerket">
+						<span class="tn-icon tn-link-button-icon icon-icon_print pull-left"></span>
+						<span class="tn-link-button-text pull-left">Print</span>
+					</button>-->
+					<table class="general-info-table">
+						<tbody>
+						<tr>
+							<td >
+								<span >{{'my_benefits.policies.form_approved'| translate}}</span>
+								<br>
+								<span>{{'my_benefits.policies.omb' | translate}}</span>
+								<br>
+								<span>{{'my_benefits.policies.expireson' | translate}}</span>
+							</td>
+
+						</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div id="accMerket">
+				<p class="content-main">
+				<h2>{{'my_benefits.policies.health_coverage' | translate}}</h2>
+
+
+				<div class="policies-headline marg-top-15">
+					<strong class="text-center medium"><span >{{'my_benefits.policies.part_a'| translate }}</span>:
+						<span >{{'my_benefits.policies.gen_info' | translate}}</span></strong>
+
+					<p >{{'my_benefits.policies.gen_info_data' | translate}}</p>
+					<p><b ng-bind="'my_benefits.policies.health_insurance' | translate"></b></p>
+					<p ng-bind="'my_benefits.policies.health_data'| translate"></p>
+					<p><b ng-bind="'my_benefits.policies.save_money' | translate"></b></p>
+					<p ng-bind="'my_benefits.policies.money_data'| translate"></p>
+					<p><b ng-bind="'my_benefits.policies.cover_elgible' | translate"></b></p>
+					<p ng-bind="'my_benefits.policies.elgible_data' | translate"></p>
+					<p><span ng-bind="'my_benefits.policies.eligible_note'| translate"></span>:<span
+							ng-bind="'my_benefits.policies.eligible_ndata'| translate"></span></p>
+					<p><b ng-bind="'my_benefits.policies.get_info'| translate"></b></p>
+					<div ng-if="$ctrl.companyId !=='001' && $ctrl.companyId !=='002'">
+						<div ng-if="$ctrl.acaMarketPlace.productLine !=='NOMD' && $ctrl.acaMarketPlace.productLine !=='NOHW'">
+							<p ng-if="$ctrl.acaMarketPlace.corporateBrand === 'TRINET'" ng-bind="'my_benefits.policies.info_data'| translate"></p>
+							<p ng-if="$ctrl.acaMarketPlace.corporateBrand === 'AMBROSE'">For more information about your coverage offered by your employer, please refer to the TriNet Guidebook and Summary Plan Description, available on TriNet.com, or contact the  TriNet HR Service Team at  646-356-8607</p>
+						</div>
+					</div>
+					<p ng-if="$ctrl.companyId ==='001' || $ctrl.companyId ==='002'">For more information about your coverage offered by your employer, please refer to the TriNet Guidebook and Summary Plan Description, available on <a href="http://www.trinet.com" target="_blank">TriNet.com</a> (TriNet Passport&#174;) or contact <a href="mailto:MYHR@trinet.com">MYHR@trinet.com</a>.</p>
+
+					<p><span ng-bind="'my_benefits.policies.info_place'| translate"></span><a href="https://www.healthcare.gov/"
+																							   target="_blank"
+																							   class="inline"><span
+					>Health Care</span></span></a><span ng-bind="'my_benefits.policies.more_info'| translate"></span></p>
+					<div>
+						<p ng-bind="'my_benefits.policies.emp_spon'| translate"></p>
+					</div>
+					<strong class="text-center medium"><span ng-bind="'my_benefits.policies.part_b'| translate"></span>:<span
+							ng-bind="'my_benefits.policies.b_data'| translate"></span></strong>
+
+					<div ng-if="$ctrl.companyId !=='001' && $ctrl.companyId !=='002'">
+						<div ng-if="$ctrl.acaMarketPlace.productLine !=='NOMD' && $ctrl.acaMarketPlace.productLine !=='NOHW'">
+							<p ng-bind="'my_benefits.policies.tri_custmr'| translate"></p>
+							<p class="yellow-background" ng-bind="'my_benefits.policies.sec_info'| translate"></p>
+						</div>
+						<div ng-if="$ctrl.acaMarketPlace.productLine ==='NOMD' || $ctrl.acaMarketPlace.productLine ==='NOHW'">
+							<p>Your company is a TriNet customer.  TriNet is a licensed professional employer organization headquartered in San Leandro, California.  Your company has entered into a customer service agreement with TriNet to share certain employer responsibilities as co-employers.  TriNet is your employer of record for administrative purposes and will process payroll and provide certain human resource services, but your company does not participate in benefits program sponsored and administered by TriNet.  Therefore, you are not eligible for health insurance coverage through TriNet.</p>
+							<p class="yellow-background" ng-bind="'my_benefits.policies.sec_info'| translate"></p>
+							<p>
+								The company, at which you work, your worksite employer, is listed below.
+							</p>
+						</div>
+						<p ng-if="$ctrl.acaMarketPlace.productLine ==='NOMD' || $ctrl.acaMarketPlace.productLine ==='NOHW'" class="yellow-background" ng-bind="'my_benefits.policies.sec_info'| translate"></p>
+					</div>
+
+					<table border="1" cellpadding="10" cellspacing="0" width="100%" class="general-info-table">
+						<tbody>
+						<tr>
+							<td colspan="2" class="pad-5">
+								<span ng-bind="'my_benefits.policies.wrksite'| translate"></span>
+								<br>
+								<span ng-if="$ctrl.companyId =='001' || $ctrl.companyId =='002'">
+									TriNet Group Inc.
+								</span>
+								<span  ng-if="$ctrl.companyId !=='001' && $ctrl.companyId !=='002'">
+									{{$ctrl.acaMarketPlace.companyName}}
+								</span>
+							</td>
+							<td colspan="1" class="pad-5">
+								<span ng-bind="'my_benefits.policies.fedral'| translate"></span>
+								<br>
+								<span ng-if="$ctrl.companyId =='001' || $ctrl.companyId =='002'">
+									95-3359658
+								</span>
+								<span  ng-if="$ctrl.companyId !=='001' && $ctrl.companyId !=='002'">
+									{{$ctrl.acaMarketPlace.federalIdentificationNumber}}
+								</span>
+
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="pad-5">
+								<span ng-bind="'my_benefits.policies.adrs'| translate"></span>
+								<br>
+								<span ng-if="$ctrl.companyId =='001' || $ctrl.companyId =='002'">
+									1100 San Leandro Blvd Suite 400
+								</span>
+								<span  ng-if="$ctrl.companyId !=='001' && $ctrl.companyId !=='002'">
+									{{$ctrl.acaMarketPlace.address1}} {{$ctrl.acaMarketPlace.address2}} {{$ctrl.acaMarketPlace.address3}}
+								</span>
+
+							</td>
+							<td colspan="1" class="pad-5">
+								<span ng-bind="'my_benefits.policies.phno'| translate"></span>
+								<br>
+								<span ng-if="$ctrl.companyId =='001' || $ctrl.companyId =='002'">
+									(941)741-4612
+								</span>
+								<span  ng-if="$ctrl.companyId !=='001' && $ctrl.companyId !=='002'">
+									{{$ctrl.acaMarketPlace.phoneNumber}}
+								</span>
+
+
+							</td>
+						</tr>
+						<tr>
+							<td colspan="1" class="pad-5">
+								<span ng-bind="'my_benefits.policies.city'| translate"></span>
+								<br>
+								{{$ctrl.acaMarketPlace.city}}
+							</td>
+							<td colspan="1" class="pad-5">
+								<span ng-bind="'my_benefits.policies.state'| translate"></span>
+								<br>
+								{{$ctrl.acaMarketPlace.stateProvince}}
+							</td>
+							<td colspan="1" class="pad-5">
+								<span ng-bind="'my_benefits.policies.zip'| translate"></span>
+								<br>
+								{{$ctrl.acaMarketPlace.postalCode}}
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3" class="pad-5">
+								<span ng-bind="'my_benefits.policies.cjob'| translate"></span>
+								<br>
+
+								<span ng-if="$ctrl.acaMarketPlace.productLine !== 'NOMD' && $ctrl.acaMarketPlace.productLine !== 'NOHW'" ng-bind="'my_benefits.policies.tri_inc'| translate"></span>
+								<span ng-if="$ctrl.acaMarketPlace.productLine ==='NOMD' || $ctrl.acaMarketPlace.productLine ==='NOHW'">{{$ctrl.acaMarketPlace.CDM_name}}</span>
+							</td>
+						</tr>
+
+						<tr>
+							<td colspan="1" class="pad-5">
+
+								<span ng-bind="'my_benefits.policies.phno2'| translate"></span>
+								<br>
+
+								<span ng-if="$ctrl.acaMarketPlace.productLine !=='NOMD' && $ctrl.acaMarketPlace.productLine !== 'NOHW'" >
+									<span ng-if="$ctrl.companyId !== '001' && $ctrl.companyId !== '002'">
+										(800)638-0461
+									</span>
+									<span ng-if="$ctrl.companyId === '001' || $ctrl.companyId === '002'">
+										{{$ctrl.acaMarketPlace.phoneNumber}}
+									</span>
+								</span>
+								<span ng-if="$ctrl.acaMarketPlace.productLine === 'NOMD' || $ctrl.acaMarketPlace.productLine ==='NOHW'" >
+									{{$ctrl.acaMarketPlace.phoneNumber}}
+								</span>
+
+
+							</td>
+							<td colspan="2" class="pad-5">
+								<span ng-bind="'my_benefits.policies.e_adrs'| translate"></span>
+								<br>
+								<span ng-if="$ctrl.acaMarketPlace.productLine !='NOMD' && $ctrl.acaMarketPlace.productLine !='NOHW'" >
+									<span ng-if="$ctrl.companyId !=='001' && $ctrl.companyId !=='002'">
+										employees@trinet.com
+									</span>
+									<span ng-if="$ctrl.companyId ==='001' || $ctrl.companyId ==='002'">
+										MYHR@trinet.com
+									</span>
+								</span>
+								<span ng-if="$ctrl.acaMarketPlace.productLine ==='NOMD' || $ctrl.acaMarketPlace.productLine ==='NOHW'" >
+									{{$ctrl.acaMarketPlace.CDM_email}}
+								</span>
+							</td>
+						</tr>
+
+						<!--
+						<tr  ng-if="$ctrl.acaMarketPlace.productLine !='NOMD' && $ctrl.acaMarketPlace.productLine !='NOHW' && $ctrl.acaMarketPlace.countryCode !='001' && $ctrl.acaMarketPlace.countryCode !='002'">
+							<td colspan="3" class="pad-5">
+								&nbsp;
+								<br>
+							</td>
+						</tr>-->
+						<tr  ng-if="$ctrl.acaMarketPlace.productLine !=='NOMD' && $ctrl.acaMarketPlace.productLine !=='NOHW' && $ctrl.companyId !=='001' && $ctrl.companyId !=='002'">
+							<td colspan="2" class="pad-5">
+								<span ng-bind="'my_benefits.policies.spon_name'| translate"></span>
+								<br> TriNet Group, Inc.
+							</td>
+							<td colspan="1" class="pad-5">
+								<span ng-bind="'my_benefits.policies.plan_fein'| translate"></span>
+								<br>95-3359658
+							</td>
+						</tr>
+						<tr  ng-if="$ctrl.acaMarketPlace.productLine !=='NOMD' && $ctrl.acaMarketPlace.productLine !=='NOHW' && $ctrl.companyId !=='001' && $ctrl.companyId !=='002'">
+							<td colspan="2" class="pad-5">
+								<span ng-bind="'my_benefits.policies.spon_addr'| translate"></span>
+								<br>1100 San Leandro Blvd., Suite 400
+							</td>
+							<td colspan="1" class="pad-5">
+								<span ng-bind="'my_benefits.policies.spon_phno'| translate"></span>
+								<br>(800) 638-0461
+							</td>
+						</tr>
+						<tr  ng-if="$ctrl.acaMarketPlace.productLine !=='NOMD' && $ctrl.acaMarketPlace.productLine !=='NOHW' && $ctrl.companyId !=='001' && $ctrl.companyId !=='002'">
+							<td colspan="1" class="pad-5">
+								<span ng-bind="'my_benefits.policies.spon_city'| translate"></span>
+								<br>San Leandro
+							</td>
+							<td colspan="1" class="pad-5">
+								<span ng-bind="'my_benefits.policies.stat'| translate"></span>
+								<br>CA
+							</td>
+							<td colspan="1" class="pad-5">
+								<span ng-bind="'my_benefits.policies.s_zip'| translate"></span>
+								<br>94577
+							</td>
+						</tr>
+						</tbody>
+					</table>
+
+
+					<div ng-if="$ctrl.acaMarketPlace.productLine ==='NOMD' || $ctrl.acaMarketPlace.productLine ==='NOHW'">
+					<p>If you are eligible for health insurance coverage through the company listed above, you should receive a separate notice from your company that includes basic information about your health coverage. For more information, please contact your company directly.</p>
+					<p>If you are not eligible for health insurance coverage through your company, you and your family may be able to obtain health coverage through the Marketplace, with a new kind of tax credit that lowers your monthly premiums and with assistance for out-of-pocket costs.</p>
+					</div>
+
+
+					<div ng-if="$ctrl.acaMarketPlace.productLine !=='NOMD' && $ctrl.acaMarketPlace.productLine !=='NOHW'">
+						<p>
+						<span class="yellow-background" ng-bind="'my_benefits.policies.below_info'| translate">
+
+						<sup>1</sup>
+						</span>
+					</p>
+					<p ng-bind="'my_benefits.policies.trinet_offr'| translate">:</p>
+
+					<p class="checkbox-section">
+						<input type="checkbox" disabled name="all" id="all" class="pull-left">
+						<label for="all" class="margin-left font-normal" ng-bind="'my_benefits.policies.all_emp'| translate" ></label></p>
+					<div class="clearfix"></div>
+					<p class="checkbox-section" >
+						<input type="checkbox" checked disabled id="some" name="some" class="pull-left" >
+						<label for="some" class="margin-left font-normal">
+							<span ng-bind="'my_benefits.policies.som_emp'| translate" ></span>:
+						</label>
+					</p>
+					<div class="clearfix"></div>
+					<ol type="a" >
+						<li><span ng-bind="'my_benefits.policies.reg_sched'| translate"></span>;</li>
+						<li ng-bind="'my_benefits.policies.primary_res'| translate"></li>
+						<li ng-bind="'my_benefits.policies.waitin_period'| translate"></li>
+						<li ng-bind="'my_benefits.policies.coll_bargain'| translate"></li>
+					</ol>
+					<div class="pg-break"></div>
+					<p><span ng-bind="'my_benefits.policies.not_elgible'| translate"></span>:</p>
+					<ol type="a" >
+						<li ng-bind="'my_benefits.policies.ind_cont'| translate"></li>
+						<li ng-bind="'my_benefits.policies.temp_wrk'| translate"></li>
+						<li ng-bind="'my_benefits.policies.com_wrk'| translate"></li>
+					</ol>
+					<p>
+						<sup></sup>
+						<span ng-bind="'my_benefits.policies.insurance'| translate"></span>
+					</p>
+					<br>
+					<p><span ng-bind="'my_benefits.policies.dep_wrt'| translate"></span>:</p>
+
+					<p class="checkbox-section"> <input type="checkbox" disabled checked id="coverage_offered" name="coverage_offered" class="pull-left">
+						<label for="coverage_offered" class="margin-left font-normal">
+							<span  ng-bind="'my_benefits.policies.offerCoverageEligible'| translate" ></span>:
+						</label>
+					</p>
+
+
+					<div class="clearfix"></div>
+					<ol type="a" >
+						<li ng-bind="'my_benefits.policies.spouse'| translate"></li>
+						<li ng-bind="'my_benefits.policies.dom_partner'| translate"></li>
+						<li>
+							<span ng-bind="'my_benefits.policies.guard'| translate"></span>
+							<div class="clearfix"></div>
+							<ol type="i" >
+								<li ng-bind="'my_benefits.policies.less_age'| translate"></li>
+								<li ng-bind="'my_benefits.policies.disable_child'| translate"></li>
+								<li ng-bind="'my_benefits.policies.child_dep'| translate"></li>
+								<li ng-bind="'my_benefits.policies.med_suprt'| translate"></li>
+							</ol>
+						</li>
+					</ol>
+
+					<p class="checkbox-section">
+						<input id="no_offer" type="checkbox" ng-model="no_offer" disabled name="no_offer" class="pull-left">
+						<label for="no_offer" class="margin-left font-normal" ng-bind="'my_benefits.policies.doNotOfferCoverage'| translate"></label>
+					</p>
+					<div class="clearfix"></div>
+
+					<p class="checkbox-section">
+						<input type="checkbox" disabled checked id="meets_minimum" name="meets_minimum" class="pull-left" >
+						<label for="meets_minimum" class="margin-left font-normal" ng-bind="'my_benefits.policies.coverageMeetsStandard' | translate"></label>
+					</p>
+
+
+					<br>
+					<p ng-bind="'my_benefits.policies.afford'| translate"></p>
+					<p ng-bind="'my_benefits.policies.decide_shop'| translate"></p>
+					<br>
+					<div class="pg-break"></div>
+					<p align="center">
+						<span ng-bind="'my_benefits.policies.aca_emplyr'| translate"></span>
+						<br>
+						<span ng-bind="'my_benefits.policies.optionalq'| translate"></span>
+					</p>
+					<p ng-bind="'my_benefits.policies.marketplace'| translate"></p>
+					<table cellspacing="0" cellpadding="10" border="1" class="general-info-table">
+						<tbody>
+						<tr>
+							<td class="pad-5">
+								<p ng-bind="'my_benefits.policies.3_months'| translate"></p>
+								<div class="checkbox-section">
+									<input type="checkbox" id="continue" name="continue" class="pull-left" ng-model="continue">
+									<label for="continue" class="margin-left" ng-bind="'my_benefits.policies.yes_continue'| translate" ></label>
+								</div>
+								<p ng-bind="'my_benefits.policies.prob_period'| translate"></p>
+								<div class="checkbox-section">
+									<input type="checkbox" name="donot_continue" class="pull-left" id="donot_continue" ng-model="donot_continue">
+									<label for="donot_continue" class="margin-left"  ng-bind="'money.tax_With_Holding.no' | translate"></label>
+								</div>
+
+								<!--<label ><input type="checkbox" name="continue"
+															class="pull-left ng-pristine ng-valid ng-touched"
+															ng-model="continue"
+															ng-checked="continue" aria-label="{{'my_benefits.policies.yes_continue' | translate}}" role="checkbox" aria-checked="continue">
+				<span class="margin-left" ng-bind="'my_benefits.policies.yes_continue'| translate" >
+
+				</span></label>-->
+
+								<!--<div class="clearfix"></div>-->
+
+
+								<!--<label ><input type="checkbox" name="donot_continue"
+															class="pull-left ng-pristine ng-valid ng-touched"
+															ng-model="donot_continue" ng-checked="donot_continue" aria-label="{{'money.tax_With_Holding.no' | translate}}" role="checkbox" aria-checked="donot_continue" ><span
+										class="margin-left">No</span></label>-->
+							</td>
+						</tr>
+						</tbody>
+					</table>
+					<ol type="1" start="14" class="margin-top">
+						<li>
+							<p ng-bind="'my_benefits.policies.emp_std'| translate"></p>
+							<div class="checkbox-section">
+								<input id="minYes" type="checkbox" name="minimum_yes" ng-model="minimum_yes">
+								<label for="minYes" class="margin-left"  ng-bind="'my_benefits.policies.yes_go'| translate" ></label>
+							</div>
+							<div class="checkbox-section">
+								<input id="minNo" type="checkbox" name="minimum_no" ng-model="minimum_no">
+								<label for="minNo" class="margin-left"  ng-bind="'my_benefits.policies.no_go'| translate" ></label>
+							</div>
+
+						</li>
+						<li>
+							<p ng-bind="'my_benefits.policies.min_value'| translate"></p>
+							<ol type="a">
+								<li><span ng-bind="'my_benefits.policies.prem_plan'| translate"></span>$_____________</li>
+								<li>
+									<span ng-bind="'my_benefits.policies.how_often'| translate"></span>
+									<span class="in-line-flex">
+										<input id="howOften" class="no-margin" type="checkbox" name="frequencyWeekly" ng-model="frequencyWeekly">
+										<label for="howOften" class="font-normal no-margin" ng-bind="'my_benefits.policies.weekly'| translate"></label>
+									</span>
+									<span class="in-line-flex" >
+										<input id="weekly" class="no-margin" type="checkbox" name="frequencyEvryWeek" ng-model="frequencyEvryWeek">
+										<label for="weekly"  class="font-normal no-margin" ng-bind="'my_benefits.policies.evry_week'| translate"></label>
+									</span>
+									<span class="in-line-flex">
+										<input id="twiceMonth" class="no-margin" type="checkbox" name="frequencyTwiceMonth" ng-model="frequencyTwiceMonth">
+										<label for="twiceMonth" class="font-normal no-margin" ng-bind="'my_benefits.policies.twice_month'| translate"></label>
+									</span>
+									<span class="in-line-flex">
+										<input id="monthly" class="no-margin" type="checkbox" name="frequencyMonthly" ng-model="frequencyMonthly">
+										<label for="monthly"  class="font-normal no-margin" ng-bind="'my_benefits.policies.monthly'| translate"></label>
+									</span>
+									<span class="in-line-flex">
+										<input id="quartely" class="no-margin" type="checkbox" name="frequencyQuarterly" ng-model="frequencyQuarterly">
+										<label for="quartely"  class="font-normal no-margin" ng-bind="'my_benefits.policies.quarterly'| translate"></label>
+									</span>
+									<span class="in-line-flex">
+										<input id="yearly" class="no-margin" type="checkbox" name="frequencyyearly" ng-model="frequencyyearly">
+										<label for="yearly" class="font-normal no-margin" ng-bind="'my_benefits.policies.yearly'| translate"></label>
+									</span>
+
+								</li>
+							</ol>
+						</li>
+					</ol>
+					<p ng-bind="'my_benefits.policies.plan_change'| translate"></p>
+					<ol type="1" start="16" class="margin-top">
+						<li>
+							<span ng-bind="'my_benefits.policies.new_plan'| translate"></span>
+							<br>
+							<div class="checkbox-section">
+								<input id="wontOffer" type="checkbox" name="wontOfferchange" ng-model="wontOfferchange">
+								<label for="wontOffer" class="margin-left"  ng-bind="'my_benefits.policies.wont_offer'| translate"></label>
+							</div>
+							<div class="checkbox-section">
+								<input id="lowPlan" type="checkbox" name="lowPlanchange" ng-model="lowPlanchange">
+								<label for="lowPlan" class="margin-left"  ng-bind="'my_benefits.policies.low_plan'| translate" ></label>
+							</div>
+							<!--<input id="wontOffer" type="checkbox" name="change" ng-model="wontOfferchange"
+								   ng-checked="wontOfferchange" aria-label="{{'my_benefits.policies.wont_offer'| translate}}"  role="checkbox" aria-checked="wontOfferchange">
+							<span ng-bind="'my_benefits.policies.wont_offer'| translate"></span>-->
+
+							<!--<input id="lowPlan" type="checkbox" name="change" ng-model="lowPlanchange"
+								   ng-checked="lowPlanchange" aria-label="{{'my_benefits.policies.low_plan'| translate}}" role="checkbox" aria-checked="lowPlanchange">
+							<span ng-bind="'my_benefits.policies.low_plan'| translate"></span>-->
+							<br>
+							<br>
+							a. <span ng-bind="'my_benefits.policies.pay_premium'| translate"></span> $_____________
+							<br>
+							b. <span ng-bind="'my_benefits.policies.how_often'| translate"></span>
+							<span class="in-line-flex">
+								<input id="weekly2" class="no-margin" type="checkbox" name="premiumWeekly" ng-model="premiumWeekly">
+								<label for="weekly2" class="font-normal no-margin" ng-bind="'my_benefits.policies.weekly'| translate"></label>
+							</span>
+							<span class="in-line-flex">
+								<input id="everWeek2" class="no-margin" type="checkbox" name="premiumEvryWeek" ng-model="premiumEvryWeek">
+								<label for="everWeek2" class="font-normal no-margin" ng-bind="'my_benefits.policies.evry_week'| translate"></label>
+							</span>
+							<span class="in-line-flex">
+								<input id="twiceMonth2" class="no-margin"  type="checkbox" name="premiumTwiceMonth" ng-model="premiumTwiceMonth">
+								<label for="twiceMonth2" class="font-normal no-margin" ng-bind="'my_benefits.policies.twice_month'| translate"></label>
+							</span>
+							<span class="in-line-flex">
+								<input id="monthly2" class="no-margin" type="checkbox" name="premiumMonthly" ng-model="premiumMonthly">
+								<label for="monthly2" class="font-normal no-margin" ng-bind="'my_benefits.policies.monthly'| translate"></label>
+							</span>
+							<span class="in-line-flex">
+								<input id="quartely2" class="no-margin" type="checkbox" name="premiumQuarterly" ng-model="premiumQuarterly">
+								<label for="quartely2" class="font-normal no-margin" ng-bind="'my_benefits.policies.quarterly'| translate"></label>
+							</span>
+							<span class="in-line-flex">
+								<input id="yearly2" class="no-margin" type="checkbox" name="premiumYearly" ng-model="premiumYearly">
+								<label for="yearly2" class="font-normal no-margin" ng-bind="'my_benefits.policies.yearly'| translate"></label>
+							</span>
+
+						</li>
+					</ol>
+					<br>
+					<span class="medium" ng-bind="'my_benefits.policies.mdy'| translate"></span>:__________________________________
+					<br>
+					<p ng-bind="'my_benefits.policies.emp_spons'| translate"></p>
+
+				</div>
+				</div>
+
+				</p>
+			</div>
+		</tn-card>
+	</div>
+	<div class="secondary-container"></div>
+</div>

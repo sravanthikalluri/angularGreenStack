@@ -1,0 +1,201 @@
+@import 'main';
+.app-store-link-container{
+	margin-top:27px;
+}
+common-onboarding-content hr{
+	margin: 10px 0px;
+}
+
+.canada-text-wrapper{
+    background: $secondary-header;
+	border-radius: 4px;
+	padding: 20px;
+}
+
+.error{
+	color: $red-darker;
+	font-weight:900;
+}
+
+label#applestore{
+	background-image: url(/assets/images/apple_app-store-download.png);
+    background-size: 130px 40px;
+	background-repeat: no-repeat;
+	cursor:pointer;
+	height: 40px;
+	outline:none;
+    width: 150px;
+}
+label#googleplay{
+	background-image: url(/assets/images/googleplay.png);
+    background-repeat: no-repeat;
+	background-size: 150px 60px;
+	cursor:pointer;
+	height: 50px;
+	margin-left:-10px;
+	outline:none;
+    width: 170px;
+}
+
+.loading-content {
+	float: right;
+	padding-top: 9px !important;
+}
+.onboarding-all-task-complete{
+	margin: 40px auto 20px auto;
+	text-align: center;
+	width: 420px;
+}
+
+.onboarding-all-task-complete button{
+	margin-top: 30px;
+}
+.onboarding-all-task-complete .icon-icon_Check{
+	border: 2px solid green;
+    border-radius: 50%;
+	color: green;
+	font-size: 18px;
+	padding: 1px 4px;
+}
+
+.onboarding-all-task-complete p{
+	color: #444c5c;
+}
+
+.onboarding-approved-icon {
+	color:green;
+	margin-left: 45px;
+	margin-right: 5px;
+}
+
+.onboarding-border {
+	border: 1px solid #C4C8D3;;
+}
+
+.onboarding-btn {
+	margin-left: 15px;
+	width: 150px;
+	z-index: 0;
+}
+
+.onboarding-btn-wrapper {
+	display:inline-flex;
+}
+.onboarding-btn-wrapper{ 
+	right: 53px;
+}
+
+.onboarding-card-title {
+	margin-bottom: 48px;
+}
+.onboarding-card-content {
+	align-items: center;
+	display: inline-flex;
+	padding: 20px 0;
+	width: 100%;
+}
+
+.onboarding-complete-text{
+	font-size: 17px;
+}
+
+.onboarding-content-info {
+	margin: 0px;
+	width: 70%;
+}
+
+.onboarding-content-info, .onboarding-status-info, .onboarding-task-info{
+	font-size: 16px;
+}
+
+.onboarding-content-wrapper {
+	align-items: center;
+	padding-top: 20px;
+}
+
+.onboarding-direction, .onboarding-direction.normal {
+	font-size: 16px;
+	font-weight: 100;
+	
+}
+.onboarding-direction.bold {
+	font-weight: 600;
+	
+}
+.onboarding-due-date{
+	float: right;
+	font-size: 18px;
+    position: relative;
+    top: -25px;
+}
+
+.onboarding-due-later {
+	color: $gray;
+	font-weight:bold;
+}
+.onboarding-due-now {
+	color: $red-darker;
+	font-weight:bold;	
+}
+
+.onboarding-icon {
+	font-size:25px;
+	color:#C4C8D3;
+	margin-right:10px;
+	position: relative;
+	top:-2px;
+
+}
+
+.onboarding-loading-wrapper {
+	display:inline-flex;
+	position: relative;
+	right: -7px;
+	width: 220px;
+}
+
+.onboarding-loading-wrapper .spinner {
+	height: 40px!important;
+	left: 0px!important;
+	margin-left: 0px !important;
+	top: -10px!important;
+	width: 60px!important;
+}
+
+.onboarding-status-info {
+	float: right;
+	margin: 0px 45px 0px 0px;
+}
+
+.onboarding-status-info.pending {
+	margin-left:7%;
+}
+
+.onboarding-status-wrapper {
+	float: right;
+	width: 30%
+}
+
+.onboarding-task-info {
+	margin: 48px 0px 20px 0px;
+}
+
+.paychecks-card-divider {
+	height: 150px;
+	border-left: 1px solid #ddd;
+}
+
+.sso-modal-content {
+    padding: 20px;
+    height: 185px;
+}
+
+.text-center.sso-text {
+	text-align: left;
+}
+
+@media only screen and (max-width: 767px) {
+	.modal-content {
+		height: 330px!important;
+	}
+}

@@ -1,0 +1,36 @@
+<div class="background">
+	<tn-error-banner error-data="$ctrl.errorAlert"></tn-error-banner>
+	<div class="primary-container">
+		<h2 class="page-title">
+			<tn-title url="'app.main.money.overview'" title="'money-title'"></tn-title>
+			<i class="icon-icon_forward icon-heading"></i> {{'money.direct_deposit.priority' | translate}}
+		</h2>
+	<tn-card loading="$ctrl.showSpinner">
+		<div ng-hide="$ctrl.showSpinner" ng-if="$ctrl.havingAccounts">
+			<tn-existing-account paychecks="$ctrl.paychecks" total-accounts="$ctrl.totalAccounts" eligibility="$ctrl.eligibility"></tn-existing-account>
+		</div>
+		<div class="no-existing-direct-deposite-accounts"  ng-if="!$ctrl.havingAccounts || $ctrl.noPreviousPaychecks">
+			<tn-card-title-group >
+				<tn-card-title class="account-title" ng-if="!$ctrl.noPreviousPaychecks">{{'money.direct_deposit.dd_account' | translate}}</tn-card-title>
+			</tn-card-title-group>
+			<tn-card-content>
+				<h5 class="no-existing-accounts text-center" ng-if="!$ctrl.havingAccounts">{{'money.direct_deposit.set_up_account' | translate}}</h5>
+			</tn-card-content>
+			<tn-card-footer class="button-group" ng-if="!$ctrl.havingAccounts">
+				<button id="createDDAccountBtn" tn-action-button class="button-add-account" ng-click="$ctrl.addAccount()">
+					<i class="icon-icon_plus button-plus"></i> {{'money.direct_deposit.get_started' | translate}}
+				</button>
+			</tn-card-footer>
+		</div>
+
+		<tn-modal on-show="$ctrl.showAddAccountModal" modal-header="false" ng-if="$ctrl.showAddAccountModal">
+			<tn-new-account data= "$ctrl.eligibility" show="$ctrl.showAddAccountModal" show-amount-section="false"></tn-new-account>
+		</tn-modal>
+	</tn-card>
+
+	</div>
+
+	<tn-card class="secondary-container" ng-if="!$ctrl.noPreviousPaychecks" loading="$ctrl.showSpinner">
+		<last-paycheck ng-if="$ctrl.paychecks" paychecks="$ctrl.paychecks"></last-paycheck>
+	</tn-card>
+</div>

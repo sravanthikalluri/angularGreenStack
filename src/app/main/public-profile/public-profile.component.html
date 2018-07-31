@@ -1,0 +1,118 @@
+<div class="background">
+	<div class="primary-container">
+		<h2 class="page-title">
+			<button ui-sref="app.main.company.overview" class="no-border-button">
+				Company
+			</button>
+			<i class="icon-icon_forward icon-heading"></i>
+			<button ui-sref="app.main.company.company-directory" class="no-border-button">
+				Company Directory
+			</button>
+			<i class="icon-icon_forward icon-heading"></i>
+			<span>
+				Employee Profile
+			</span>
+		</h2>
+
+		<!-- <tn-spinner ng-show="$ctrl.locationsFinished" is-show="$ctrl.showSpinner" error-message="$ctrl.locationsError"></tn-spinner> -->
+
+		<tn-card class="profile public-profile">
+			<div class="public-profile-top-section">
+				<div class="text-center">
+					<!-- TODO: Refactor styling into generic styling/directive -->
+					<div class="tn-profile-avatar">{{$ctrl.modalData.initials}}</div>
+					<h3 ng-if="$ctrl.modalData.employeeDetails.preferredName==null">{{$ctrl.modalData.employeeName}}</h3>
+					<h3 ng-if="!($ctrl.modalData.employeeDetails.preferredName==null)">{{$ctrl.modalData.employeeDetails.preferredName}}</h3>
+				</div>
+
+				 <div class="text-center">
+					<h4 class="profile-heading  inline-block">{{$ctrl.modalData.employeeDetails.department}}</h4>
+					<h4 class="profile-heading  inline-block" ng-if="$ctrl.modalData.employeeDetails.department && $ctrl.modalData.designation">&nbsp;&nbsp;|&nbsp;&nbsp;</h4>
+					<h4 class="profile-heading  inline-block">{{$ctrl.modalData.designation}}</h4>
+				</div>
+			</div>
+
+			<div class="row  public-profile-table">
+				<div class="col-sm-offset-1  col-sm-10  col-sm-offset-1" >
+					<div class="row  tn-profile-divider  tn-profile-content">
+						<div class="col-sm-1  tn-align-profile-icon">
+							<i class="tn-icon  icon-icon_email"></i>
+						</div>
+						<div class="col-sm-4  titles">
+							<div class="profile-label">{{'profile-work-email' | translate}}</div>
+						</div>
+						<div class="col-sm-7  tn-right-align-grid-text">
+							<div class="profile-value">{{$ctrl.modalData.employeeDetails.email ? $ctrl.modalData.employeeDetails.email : '-'}}</div>
+						</div>
+					</div>
+					 <div class="row  tn-profile-divider  tn-profile-content" ng-if="$ctrl.modalData.employeeDetails.phone || $ctrl.modalData.employeeDetails.mobile">
+						<div class="col-sm-1  tn-align-profile-icon">
+							<i class="tn-icon  icon-icon_phone"></i>
+						</div>
+
+						<div class="col-sm-4  titles">
+							<div class="profile-label" ng-if="$ctrl.modalData.employeeDetails.phone">{{'profile-work-phone' | translate}}</div>
+							<div class="profile-label" ng-if="$ctrl.modalData.employeeDetails.mobile">{{'profile-mobile-phone' | translate}}</div>
+						</div>
+
+						<div class="col-sm-7  tn-right-align-grid-text">
+							<div class="profile-value">{{$ctrl.modalData.employeeDetails.phone}}</div>
+							<div class="profile-value">{{$ctrl.modalData.employeeDetails.mobile}}</div>
+						</div>
+					</div>
+
+					<div class="row  tn-profile-divider  tn-profile-content" ng-if="$ctrl.modalData.managerName">
+						<div class="col-sm-1  tn-align-profile-icon">
+							<i class="tn-icon  icon-icon_profile"></i>
+						</div>
+
+						<div class="col-sm-4  titles">
+							<div class="profile-label">{{'profile-reports-to' | translate}}</div>
+						</div>
+
+						<div class="col-sm-7  tn-right-align-grid-text">
+							<div class="profile-value"><a class="tn-anchor" href=""  ng-click="$ctrl.openManagerProfile()">{{$ctrl.modalData.managerName}}</a></div>
+						</div>
+					</div>
+
+					<div class="row  service-date  tn-profile-content">
+						<div class="col-sm-1  tn-align-profile-icon">
+							<i class="tn-icon  icon-icon_employee"></i>
+						</div>
+
+						<div class="col-sm-4  titles">
+							<div class="profile-label">{{'profile-service-date' | translate}}</div>
+						</div>
+						<div class="col-sm-7  tn-right-align-grid-text">
+							<div class="profile-value">{{$ctrl.modalData.serviceDate ? ($ctrl.modalData.serviceDate | serviceDate) : '-'}}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</tn-card>
+	</div>
+
+
+	<div class="secondary-container">
+		<tn-card class="profile-map-card" ng-if="$ctrl.officeAddress">
+			<div class="profile-map">
+				<ng-map center="{{$ctrl.officeAddress}}"
+						zoom="12"
+						default-style="false"
+						disable-default-u-i="true"
+						zoom-control="false"
+						draggable ="false">
+					<marker position="{{$ctrl.officeAddress}}"></marker>
+				</ng-map>
+			</div>
+			<br>
+			<div class="profile-map-address-container" ng-hide="$ctrl.showSpinner">
+				<div class="profile-map-address">
+					<i class="tn-icon icon-icon_location"></i>
+					<div class="profile-location-label">{{'profile-location' | translate}}</div>
+					<div class="profile-location-value" ng-bind-html="$ctrl.getFullAddressHtml($ctrl.modalData.employeeDetails.address)"></div>
+				</div>
+			</div>
+		</tn-card>
+	</div>
+</div>

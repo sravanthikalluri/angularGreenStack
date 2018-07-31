@@ -1,0 +1,25 @@
+<div class="existing-direct-deposite-accounts">
+	<tn-card-title-group>
+		<button id="editAcctBtn" tn-button ng-click="$ctrl.editAccount($ctrl.selectedEffectiveDate)"> {{'money.direct_deposit.dd_editCounts' | translate}}</button>
+	</tn-card-title-group>
+	<tn-card-content class="account-table">
+		<div class="select-style">
+			<select id="accountsEffectiveDate" class="pull-left custom-select"
+					ng-model="$ctrl.selectedEffectiveDate"
+					ng-options="k as k for (k, v) in $ctrl.totalAccounts"
+					aria-label="direct deposit effective date"
+					ng-change="$ctrl.populateData($ctrl.selectedEffectiveDate)">
+			</select>
+		</div>
+		<tn-existing-account-table role="grid" id="viewAcctDetailsTable" data="$ctrl.data" ng-hide="$ctrl.showSpinner"></tn-existing-account-table>
+		<tn-spinner ng-show="$ctrl.showSpinner"></tn-spinner>
+	</tn-card-content>
+
+	<tn-card-title ng-if="$ctrl.eligibility.fsaeligible || $ctrl.eligibility.apeligible" class="account-title">{{'money.direct_deposit.reimbursements' | translate}}</tn-card-title>
+	<tn-card-content class="reimbursable-account-table" ng-hide="$ctrl.showSpinner">
+	    <tn-existing-reimbursable-account role="grid" id="viewReimburseAcctDetailsTable" data="$ctrl.data" eligibility ="$ctrl.eligibility"></tn-existing-reimbursable-account>
+	</tn-card-content>
+</div>
+
+
+

@@ -1,0 +1,21 @@
+<tn-spinner ng-show="$ctrl.showSpinner"  is-show="$ctrl.showSpinner" error-message="$ctrl.errorMessage"></tn-spinner>
+<tn-card-content ng-class="$ctrl.small ? 'tn-paycheck-card-content-small' : 'tn-paycheck-card-content'" ng-if="$ctrl.paycheckDetails.summary">
+	<div class="center-chart">
+		<tn-donut-chart
+			values="$ctrl.amounts"
+			colors="$ctrl.colors"
+			label="Gross Pay"
+			ng-hide="$ctrl.showSpinner">
+		</tn-donut-chart>
+	</div>
+	<tn-donut-chart-legend
+		data="$ctrl.paycheckDetails.summary"
+		colors="$ctrl.colors"
+		ng-hide="$ctrl.showSpinner">
+	</tn-donut-chart-legend>
+</tn-card-content>
+<tn-card-actions ng-hide="$ctrl.showSpinner">
+	<button id="viewCheckDetailsBtn" tn-action-button ng-click="$ctrl.btnClick()" >{{'paycheck-action-button' | translate}}</button>
+</tn-card-actions>
+
+<tn-earnings-statement-modal ng-if="$ctrl.showModal" on-show="$ctrl.showModal" data="$ctrl.paycheckDetails"></tn-earnings-statement-modal>

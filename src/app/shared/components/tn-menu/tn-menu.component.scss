@@ -1,0 +1,58 @@
+@import 'main';
+
+.tn-menu-container{
+    width: 284px;
+    height: 90vh;
+    overflow: hidden;
+}
+.tn-menu-header{
+  background-color: #242937;
+  display: flex;
+  width: 244px;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+	button{
+      background: transparent;
+      font-family: Proxima Nova,Arial,sans-serif;
+      border: none;
+      font-size: 16px;
+      padding: 15px 0;
+      flex-basis: 50%;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      border-bottom: 3px solid transparent;
+      outline: none;
+      color: #a3a5ab;
+    &.active-view{
+          border-bottom: 3px solid #f37c28;
+          color: #fff;
+    }
+	}
+}
+.vericle-divider{
+  width: 244px;
+  height: 1px;
+  background-color: #404758;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+.tn-menu {
+	color: #fff;
+    position: relative;
+    white-space: nowrap;
+    height: 90vh;
+    width: 107%;
+    overflow-y: scroll;
+    padding-bottom: 5vh;
+    /* Fix for iPhone 5s not scrolling in Safari Mobile */
+    -webkit-transform: translateZ(0px);
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-perspective: 1000;
+    -webkit-overflow-scrolling: touch;
+}
+
+.company-dropdown-container {
+  max-height: 300px;
+  overflow: auto;
+}

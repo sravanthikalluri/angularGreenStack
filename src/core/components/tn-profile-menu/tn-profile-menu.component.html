@@ -1,0 +1,11 @@
+<span ng-show="($ctrl.isActive && !$ctrl.isMenuActive) || $ctrl.isMenuActive">
+	<div class="popup-menu">
+		<div class="menu" ng-class="{'multi-company-menu': $ctrl.isMenuActive}">
+			<div class="caret"></div>
+			<div ng-class="{'company-dropdown-container': $ctrl.isMenuActive, green:$ctrl.isMenuActive}">
+				<ng-transclude></ng-transclude>
+			</div>
+		</div>
+	</div>
+</span>
+

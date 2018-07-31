@@ -1,0 +1,67 @@
+@import 'main';
+
+$line-color: #E9EBED;
+$slider-color: #F37C28;
+$tab-label-padding: 10px;
+
+.tabs-container {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+
+	input[type="radio"][name="tabs"] { display: none; }
+}
+
+.tabs-label-content {
+	display: inline-flex;
+	width: 100%;
+
+	.selected {
+		font-weight: 600;
+		color: 	$font-color;
+	}
+}
+
+.slider {
+	position: absolute;
+	background-color: $slider-color;
+	transition:  left 0.3s ease-out;
+	will-change: left;
+}
+
+.tab-label {
+	display:     	 flex;
+	align-items: 	 center;
+	justify-content: center;
+	margin:  0;
+	padding: $tab-label-padding;
+	border-bottom: 1px solid $line-color;
+	color: $font-color-secondary;
+	font-weight: 400;
+	cursor: pointer;
+
+}
+
+.tab-content-container {
+	position: relative;
+
+	tn-tab {
+		display: block;
+		position: absolute;
+		width: 100%;
+
+		div { transition: transform 0.3s ease-out; }
+	}
+}
+
+.active-tab { z-index: 1; }
+
+.tab-left {	transform: translateX(-100%); }
+
+.tab-right { transform: translateX(100%); }
+
+.tab-active { transform: translateX(0); }
+
+.tab-hidden { visibility: hidden; }

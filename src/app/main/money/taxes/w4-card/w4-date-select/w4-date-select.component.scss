@@ -1,0 +1,9 @@
+.w4-date-select {
+	select {
+		width: 150px;
+	}
+
+	&.is-disabled {
+		color: #ddd;
+	}
+}

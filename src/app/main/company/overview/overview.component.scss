@@ -1,0 +1,103 @@
+@import 'main';
+
+.company-overview {	
+	h1 {
+		font-weight: 600;
+		margin: 0;
+	}
+
+	h3,h4 { font-weight: 600; }
+
+	h5 { 
+		font-weight: 400; 
+		color: $slate;
+	}
+
+	.business-name {
+		margin: 0 auto;
+		padding: 0;
+		line-height: 248px;
+		text-align: center;
+	}
+
+	.company-overview-heading {
+		padding: 0px;
+		overflow: hidden;
+		border-bottom: 1px solid $cloudy;
+		
+		.company-title {
+			margin: 0;
+			width: 352px;
+		}
+	}
+	
+	.overview-map {
+		height: 248px;
+		width: 458px;
+		position: relative;
+	}
+
+	.employee-location {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		height: 124px;
+
+		.overview {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+  			justify-content: center;
+			width: 100%;
+		}
+
+		.overview-vertical-line {
+			border-right: 1px solid $cloudy;
+		}
+
+		.overview-arrow-icon {
+			font-size: 11px;
+			font-weight: 800;
+		}
+	}
+
+	.overview-horizontal-line { border-bottom: 1px solid $cloudy; }
+
+	.total-count,.number-of-locations{
+		font-weight: 600;
+		font-size: 36px;
+		line-height: 1.1;
+	}
+}
+
+.company-open-days {
+	margin-bottom: 0px;
+}
+
+.company-timings {
+	margin-top: 5px;
+}
+.company-closed-days {
+	margin-top: 25px;
+	margin-bottom: 0px;
+}
+
+#google-map-container {
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+
+#google-map-shade {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 248px;
+	width: 360px;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,1)), color-stop(50%,rgba(255,255,255,0)));
+  	background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%);
+  	background:    -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 50%);
+  	background:      -o-linear-gradient(left, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%);
+  	background:     -ms-linear-gradient(left, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%);
+  	background:         linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 60%);
+}

@@ -1,0 +1,130 @@
+<tn-card>
+	<tn-card-title class="settings-card-title"><h3>{{'roles' | translate}}</h3></tn-card-title>
+	<tn-card-content class="settings-card-body roles-card-body" ng-if="$ctrl.noRolesAssigned"  ng-hide="$ctrl.showSpinner">
+		<h6>{{'noRoles' | translate}}</h6>
+	</tn-card-content>
+
+	<tn-roles-card-content>
+		<tn-spinner ng-show="$ctrl.showSpinner" is-show="$ctrl.showSpinner" error-message="$ctrl.errorMessage"></tn-spinner>
+		<!--view if user does not have any predefined values -->
+		<div ng-show="$ctrl.showAssign && $ctrl.allRolesData.length>0">
+		<div class="tn-roles-card-content" ng-repeat="roles in $ctrl.allRolesData |groupBy: 'category'">
+			<h4>{{roles[0].category}}</h4>
+			<hr>
+			<div class="tn-roles-content" ng-repeat="subCat in roles">
+				<div class="roles-checkbox">
+					<tn-checkbox-container>
+						<input ng-model="subCat.isChecked"
+							   type="checkbox"
+							   name="employeeAddress">
+					</tn-checkbox-container>
+				</div>
+				<h5>{{subCat.roleDesc}}</h5>
+				<div class="roles-content">
+					{{subCat.longDesc}}
+					<div ng-if="subCat.isChecked">
+						<div class="col-md-12 text-left" ng-if="subCat.role === 'EPTAG' || subCat.role === 'EPHRS'||subCat.role === 'EPHNA'">
+							<div class="col-md-6" >
+								<div class="radio"ng-init="subCat.selectRole = true">
+									<input id="Department1{{$index}}" type="radio" ng-model="subCat.selectRole" name="role{{$index}}"  ng-value="true"  >
+									<label for="Department1{{$index}}">{{'department' | translate}}</label>
+									<input id="Location1{{$index}}" type="radio" name="role{{$index}}" ng-model="subCat.selectRole" ng-value="false" >
+									<label for="Location1{{$index}}">{{'location' | translate}}</label>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<tn-input-container>
+									<div class="select-style"  ng-if="subCat.selectRole">
+										<select name="subCat.deptId" id="subCat.deptId1" ng-model="subCat.deptId" ng-disabled="!subCat.isChecked">
+											<option ng-selected="{{department.deptName===$ctrl.filterDept(roles.deptId)}}"
+													ng-repeat='department in $ctrl.departments' ng-value='department.deptId'>
+												{{department.deptName}}
+											</option>
+										</select>
+									</div>
+								</tn-input-container>
+							</div>
+							<div class="col-md-6" >
+								<tn-input-container>
+									<div class="select-style" ng-if="!subCat.selectRole">
+										<select name="subCat.location" id="subCat.location1" ng-disabled="!subCat.isChecked" ng-model="subCat.location">
+											<option ng-selected="{{location.locationName== $ctrl.filterLocation(subCat.location)}}"
+													ng-repeat='location in $ctrl.locations' ng-value='location.location'>
+												{{location.locationName}}
+											</option>
+										</select>
+									</div>
+								</tn-input-container>
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+
+
+
+			</div>
+		</div>
+		<div class="col-sm-12">
+			<div class="pull-right">
+				<button tn-button="" ng-click="$ctrl.showAssignRoles()" class="ng-binding">{{'cancel' | translate}}</button>
+				<button class="margin-left ng-binding" tn-action-button="" ng-click="$ctrl.onSave()">{{'save' | translate}}</button>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		</div>
+
+		<!--view if user has some defined roles -->
+		<div ng-if="$ctrl.IsVisible1">
+		<div class="tn-roles-card-content tn-roles-View-section" ng-repeat="roles in $ctrl.empRolesData | checkedUnCheckedItems:{checked:true} |groupBy: 'category'">
+			<h4 class="tn-roles-heading semibold">{{roles[0].category}}</h4>
+			<div class="tn-roles-content" ng-repeat="subCat in roles">
+				<div role="presentation" aria-labelledby="{{subCat.Id}}" tabindex="0">
+					<i aria-hidden="true" class="icon-icon_checkmarkwithbox custom-checkbox"></i>
+				</div>
+				<div class="roles-content" id="{{subCat.Id}}">
+					<h5 class="semibold" >{{subCat.roleDesc}}</h5>
+					<span class="roles-content-details" ng-if="subCat.deptId !== '***' && subCat.deptId != undefined">{{'department' | translate}}{{$ctrl.filterDept(subCat.deptId)}}</span>
+					<span class="roles-content-details" ng-if="subCat.locationId !== '***' && subCat.locationId != undefined">{{'location' | translate}}{{$ctrl.filterLocation(subCat.locationId)}}</span>
+					<span class="roles-content-details" ng-if="subCat.payrollGroupId !== '***' && subCat.payrollGroupId != undefined">{{'payGroups' | translate}} {{$ctrl.filterPayGroup(subCat.payrollGroupId)}}</span>
+
+					<p>{{subCat.longDesc}}</p>
+				</div>
+			</div>
+		</div>
+		</div>
+
+		<!--view if user click on  edit  defined roles -->
+		<div ng-show="$ctrl.IsVisible">
+		<div class="tn-roles-card-content" ng-repeat="roles in $ctrl.allRolesData |groupBy: 'category'">
+			<h4>{{roles[0].category}}</h4>
+			<div class="tn-roles-content" ng-repeat="subCat in roles">
+				<div class="roles-checkbox">
+					<tn-checkbox-container>
+						<input ng-model="subCat.isChecked"
+							   type="checkbox"
+							   name="employeeAddress" checked>
+					</tn-checkbox-container>
+				</div>
+				<h5>{{subCat.roleDesc}}</h5>
+				<div class="roles-content">
+					<div>
+						{{subCat.longDesc}}
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="col-sm-12">
+		<div class="pull-right">
+			<button tn-button="" ng-click="$ctrl.showHide()" class="ng-binding">{{'cancel' | translate}}</button>
+			<button class="margin-left ng-binding" tn-action-button="" ng-click="$ctrl.onSave()">{{'save' | translate}}</button>
+		</div>
+		</div>
+		<div class="clearfix"></div>
+		</div>
+
+	</tn-roles-card-content>
+
+</tn-card>

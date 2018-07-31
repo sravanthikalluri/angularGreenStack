@@ -1,0 +1,65 @@
+{
+  "data": {
+	"suspended": false,
+	"currentlyEffective": {
+	  "04/13/2016": [
+		{
+		  "employeeId": "00001791642",
+		  "effectiveDate": "2016-04-13",
+		  "accountName": "Account Name",
+		  "accountType": "Checking",
+		  "routingNumber": "053201607",
+		  "bankId": null,
+		  "branchId": null,
+		  "accountNumber": "5122386564",
+		  "priority": 700,
+		  "netBalance": true,
+		  "fsaAccount": false,
+		  "apAccount": false,
+		  "amount": null,
+		  "percent": null,
+		  "uniqueId": 1
+		},
+		{
+		  "employeeId": "00001791642",
+		  "effectiveDate": "2016-04-13",
+		  "accountName": "Account Name",
+		  "accountType": "Checking",
+		  "routingNumber": "053906041",
+		  "bankId": null,
+		  "branchId": null,
+		  "accountNumber": "720126103409",
+		  "priority": 675,
+		  "netBalance": false,
+		  "fsaAccount": false,
+		  "apAccount": false,
+		  "amount": 375,
+		  "percent": null,
+		  "uniqueId": 2
+		},
+		{
+		  "employeeId": "00001791642",
+		  "effectiveDate": "2016-04-13",
+		  "accountName": "Account Name",
+		  "accountType": "Savings",
+		  "routingNumber": "053201607",
+		  "bankId": null,
+		  "branchId": null,
+		  "accountNumber": "5424278655",
+		  "priority": 650,
+		  "netBalance": false,
+		  "fsaAccount": false,
+		  "apAccount": false,
+		  "amount": 25,
+		  "percent": null,
+		  "uniqueId": 3
+		}
+	  ]
+	},
+	"futureEffective": {}
+  },
+  "_requestId": "551b7c6e-2eac-4d53-a92b-32df8f1a197d",
+  "_statusCode": "200",
+  "_statusText": "OK",
+  "_statusMessage": "Success"
+}

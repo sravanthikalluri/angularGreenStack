@@ -1,0 +1,18 @@
+<div tabindex="0" role="dialog" aria-label="Earning statement for the date of {{$ctrl.data.header.checkDt}}"
+	 id="open-earnings-modal" ng-class="{'modal-window': !$ctrl.onShow, 'modal-window target': $ctrl.onShow}">
+    <div class="content">
+		<section ng-show=$ctrl.header >
+			<div class="modal-header">
+				<div class="filename"><h6>Earnings_Statement_{{$ctrl.data.header.checkDt}}.pdf</h6></div>
+				<a id='earningStatemetnDownload' download="{{$ctrl.data.header.checkDt}}.pdf" style="display:none;" />
+				<button class="earning-statement-download" id="download-print-pdf" aria-label="Download-and-Print-Earnings-Statement-{{$ctrl.data.header.checkDt}}.pdf" tn-action-button ng-click="$ctrl.onClick($event)">Download and Print PDF</button>
+
+				<!-- <span class="modal-close tn-icon icon-icon_email circle"></span>-->
+				<div class="vr"></div>
+				<button aria-label="Close" ng-click="$ctrl.onClose()" class="modal-close tn-icon icon-close-temp"></button>
+			</div>
+		</section>
+		<tn-earnings-statement data="$ctrl.data" show-spinner="$ctrl.showSpinner"></tn-earnings-statement>
+		<a aria-hidden="true" tabindex="0" ng-focus="$ctrl.moveFocusToClose()" class="sr-only">move</a>
+    </div>
+</div>

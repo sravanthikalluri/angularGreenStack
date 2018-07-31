@@ -1,0 +1,57 @@
+@import 'main';
+.edit-profile-section{
+.home-address-select{
+		margin-top: 20px;
+		select{
+			width:100%;
+			padding: 5px 8px;
+			margin: 0;
+			border: 1px solid #D4DBE5;
+			height: 28px;
+			max-width: 250px;
+			border-radius: 4px;
+			overflow: hidden;
+			background-color: #fff;
+			font-size: 12px;
+			font-weight: 600;
+			color: #30343C;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			background: #fff url(assets/images/arrowDown.svg) no-repeat 98% 50%;
+			&::-ms-expand {
+				display: none;
+			}
+		}
+	}
+	.delete-home-address{
+		background: #fff;
+		border: 2px solid rgb(255,81,105);
+		color: rgb(255,81,105);
+		text-align: center;
+		margin-top: 10px;
+		padding: 5px 15px;
+		border-radius: 3px;
+	}
+	.home-address-datepicker{
+		display:flex;
+		flex-direction: column;
+		margin: 15px 0 25px 0px;
+		.date-select{
+			max-width:250px;
+		}
+		.home-address-lable{
+				display: block;
+				font-size: 12px;
+				margin-bottom: 5px;
+				color: #858a9b;
+		}
+		tn-date-selector{
+			display:block;
+			margin:0;
+		}
+	}
+	.effective-date-chip {
+		margin-top: 20px;
+	}
+}

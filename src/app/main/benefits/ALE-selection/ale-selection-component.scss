@@ -1,0 +1,213 @@
+@import "../../main.component";
+.icon-success{
+  color: $green-darker !important;
+  font-size: 30px;
+  font-weight: 600 !important;
+}
+.list-type-decimal{
+  li{
+	list-style-type: decimal;
+  }
+}
+.tn-checkbox-section {
+  margin-left: 10px;
+  label {
+	display: unset;
+	color: #494949 !important;
+	font-size: 14px !important;
+	position: relative;
+	padding-left: 20px;
+  }
+  input[type=checkbox ] {
+	position: absolute;
+	left: -99999px;
+	& + label:before {
+	  content: '';
+	  position: absolute;
+	  top: 3px;
+	  left: 0;
+	  height: 1.5rem;
+	  width: 1.5rem;
+	  border: 2px solid $blue;
+	  background-color: transparent;
+	  border-radius: 0.25rem;
+	}
+	&:checked + label:before {
+	  content: '';
+	  position: absolute;
+	  top: 3px;
+	  left: 0;
+	  height: 1.5rem;
+	  width: 1.5rem;
+	  background: url("../../../../assets/images/input-checked-small.svg") $blue no-repeat -2px -2px ;
+	}
+	&:focus{
+	  & + label:before{
+		outline: 0 none;
+		border-color: $azure-blue;
+	  }
+	}
+	&[disabled]{
+	  & + label:before {
+		opacity: 0.5;
+		cursor: not-allowed;
+	  }
+
+	}
+  }
+  &.tn-checkbox-large{
+	label {
+	  padding-left: 40px;
+	  line-height: 30px;
+	}
+	input[type=checkbox ] {
+	  & + label:before {
+		top: 0;
+		height: 3rem;
+		width: 3rem;
+	  }
+	  &:checked + label:before {
+		top: 0;
+		height: 3rem;
+		width: 3rem;
+		background: url('../../../../assets/images/input-checked.svg') $blue no-repeat -3px -5px;
+		background-size: 35px;
+	  }
+	}
+  }
+
+}
+.tn-ale-section {
+  .tn-card {
+	padding: 0;
+	.card-header-section {
+	  padding: 16px 32px;
+	  background-color: #f9fafb;
+	  border-bottom: 1px solid #eceded;
+	  border-radius: 4px 4px 0 0;
+	}
+	.content-heading{
+	  margin-bottom: 25px;
+	  font-weight: 900;
+	}
+	tn-card-content {
+	  padding: 16px 32px;
+	  p {
+		font-size: 14px;
+		color: #444c5c;
+		line-height: 20px;
+		.view-more {
+		  line-height: 10px;
+		  margin-bottom: 0;
+		  margin-top: 0;
+		  color: $tn-blue-alt;
+		}
+	  }
+	}
+	tn-card-footer{
+	  margin: 0;
+	}
+  }
+  .footer-button-section{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 16px 32px;
+	margin: 0;
+	justify-content: flex-end;
+  }
+  .ale-question{
+	display: block;
+	margin-bottom: 10px;
+	position: relative;
+	text-decoration: none;
+	color: $tn-blue-alt;
+	.icon-icon_Dropdown_Arrow{
+	  font-size: 20px;
+	  position: absolute;
+	  font-weight: 600;
+	  color: #444c5c;
+	  &.arrow-up{
+		&:before{
+		  position: absolute;
+		  transform: rotate(180deg);
+		}
+	  }
+	}
+  }
+  .tn-aleselection-question {
+	max-height: 400px;
+	border: 1px solid $tn-border-color;
+	padding: 20px;
+	border-radius: 3px;
+	margin-bottom: 20px;
+
+	&::-webkit-scrollbar {
+	  width: 5px;
+	}
+	&::-webkit-scrollbar-thumb {
+	  background-color: $cloudy;
+	}
+  }
+  .button-section {
+	display: flex;
+	width: 100%;
+	align-items: flex-start;
+	margin: 15px 0;
+	button {
+	  flex: 1;
+	  padding: 20px;
+	  border-radius: 5px;
+	  min-height: 80px;
+	  color: $pewter;
+	  font-size: 16px;
+	  border: 1px solid $tn-border-color;
+	  text-align: left;
+	  outline: 0;
+	  &:hover , &:focus{
+		border: 1px solid $tn-blue-alt;
+	  }
+	  .ale-action{
+		font-size: 16px;
+		color: #444C5C;
+	  }
+	  &.yesButton {
+		margin-right: 5px;
+	  }
+	  &.active{
+		background-color: $tn-blue-alt;
+		border: 1px solid $tn-blue-alt;
+		color: $white !important;
+		.ale-action{
+		  color: $white !important;
+		}
+	  }
+	}
+  }
+}
+.yes-section, .no-section{
+  .footer-button-section{
+	justify-content: space-between !important;
+	.tn-view-button{
+	  width: auto !important;
+	  &.hover,&:focus {
+		color: $azure-blue;
+		background: transparent;
+	  }
+	  &:active{
+		color: $blue-login-hover-color;
+		background: $light-blue;
+	  }
+	}
+  }
+}
+.final-section{
+  tn-card-content{
+	text-align: center;
+	width: 80%;
+	margin: 20px auto;
+  }
+  tn-card-footer{
+	justify-content: center !important;
+  }
+}

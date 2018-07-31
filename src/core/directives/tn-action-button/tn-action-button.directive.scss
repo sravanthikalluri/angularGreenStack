@@ -1,0 +1,34 @@
+@import 'main';
+
+button.disable{
+  color: #fff!important;
+  background: #c6cddc;
+  cursor: not-allowed;
+}
+[tn-action-button] {
+  background: linear-gradient( 45deg, #f6594c, #f17c35 );
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 0 44px;
+  height: 50px;
+  color: white;
+  outline: 0;
+  border: 0;
+  &:hover,&:focus {
+    background: linear-gradient( 45deg, #F76F54, #F38A40 );
+  }
+  &:focus{
+  	outline: 3px solid $tn-focus-border-color;
+  }
+  &:active {
+    background: linear-gradient(45deg, #DF4D3D, #DB642E );
+  }
+}
+button[disabled]{
+  color: #fff!important;
+  background: #c6cddc;
+  cursor: not-allowed;
+  &:hover,&:focus {
+	background: #c6cddc;
+  }
+}

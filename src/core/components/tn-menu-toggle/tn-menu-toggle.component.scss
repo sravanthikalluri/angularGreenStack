@@ -1,0 +1,49 @@
+@import 'main';
+
+.tn-menu-toggle-list {
+	margin: 0 0 12px 0;
+	max-height: 1300px;
+	overflow: hidden;
+
+	transition: 0.35s cubic-bezier(0.15, 0, 0.05, 1);
+	transition-property: max-height;
+
+	.tn-menu-link {
+		height: 44px;
+		padding-left: 66px;
+
+		color: $menu-secondary-text-color;
+		font-weight: 600;
+	}
+
+	.tn-menu-link-is-active {
+		background: $menu-secondary-selected-background;
+		color: $white;
+	}
+
+	&.ng-hide {
+		max-height: 0;
+	}
+}
+
+.tn-menu-toggle-arrow {
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+
+	&:before {
+		content: "\A149";
+	}
+
+	color: $menu-toggle-arrow-color;
+
+	transform: rotate(0deg);
+	transform-origin: 50% 68%;
+	transition: transform 0.3s ease-in-out;
+	transition-property: transform;
+}
+
+.tn-menu-toggle-arrow-is-opened {
+	transform: rotate(-180deg);
+	color: $menu-toggle-arrow-color-opened;
+}

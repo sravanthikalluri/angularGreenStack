@@ -1,0 +1,102 @@
+<span ng-if="$ctrl.resolve.modalData.isLoadedFromModal === true" ng-click="$ctrl.closeModal();" class="sso-modal-close-icon icon-close-temp hand"></span>
+<div class="modalPad">
+	<div>
+		<alert-view></alert-view>
+		<!--First Panel-->
+		<div class="clearfix"></div>
+		<h2 ng-if="metlifeLoc=='metLifeBenefits'">{{'my_benefits.metLifeBenefits.heading' | translate}}</h2>
+		<div>
+			<div ng-if="$ctrl.isAmbrose != true">
+				<p><b>{{'my_benefits.metLifeBenefits.trinetMetlife' | translate}}</b></p>
+			</div>
+			<div ng-if="$ctrl.isAmbrose == true">
+				<p><b>{{'my_benefits.metLifeBenefits.trinetMetlifeAmbrose' | translate}}</b></p>
+			</div>
+			<div ng-if="$ctrl.showVoluntaryLinks != true && $ctrl.isAmbrose != true">
+				<table class="table table-striped">
+					<tr>
+						<td width="25%">
+							<strong>{{'my_benefits.policies.auto_insurance' | translate}}</strong>
+						</td>
+						<td width="*%">{{'my_benefits.policies.auto_idata' | translate}}</td>
+					</tr>
+					<tr>
+						<td width="25%">
+							<strong>{{'my_benefits.policies.ill_insurance' | translate}}</strong>
+						</td>
+						<td width="*%">{{'my_benefits.metLifeBenefits.metLifeCriticalInsu' | translate}}
+						</td>
+					</tr>
+					<tr>
+						<td width="25%">
+							<strong>{{'my_benefits.policies.home_insure' | translate}}</strong>
+						</td>
+						<td width="*%">{{'my_benefits.policies.home_idata' | translate}}</td>
+					</tr>
+					<tr ng-hide="$ctrl.isSOI">
+						<td width="25%">
+							<strong>{{'my_benefits.policies.legal_serv' | translate}}</strong>
+						</td>
+						<td width="*%">{{'my_benefits.metLifeBenefits.metlifeGroupLegal' | translate}}
+						</td>
+					</tr>
+					<tr>
+						<td width="25%">
+							<strong>{{'my_benefits.policies.universe_life' | translate}}</strong>
+						</td>
+						<td width="*%">{{'my_benefits.policies.universe_ldata' | translate}}</td>
+					</tr>
+					<tr>
+						<td width="25%">
+							<strong>{{'my_benefits.policies.life_income' | translate}}</strong>
+						</td>
+						<td width="*%">{{'my_benefits.policies.life_idta' | translate}}</td>
+					</tr>
+					<tr>
+						<td width="25%">
+							<strong>{{'my_benefits.policies.pet_insure' | translate}}</strong>
+						</td>
+						<td width="*%">{{'my_benefits.policies.pet_idata' | translate}}</td>
+					</tr>
+				</table>
+			</div>
+			<div ng-if="$ctrl.isAmbrose == true">
+				<table class="table table-striped">
+					<tr>
+						<td width="25%">
+							<strong>{{'my_benefits.policies.dental' | translate}}</strong>
+						</td>
+						<td width="*%">{{'my_benefits.policies.dental_idata' | translate}}</td>
+					</tr>
+					<tr>
+						<td width="25%">
+							<strong>{{'my_benefits.policies.critical_illness_insurance' | translate}}</strong>
+						</td>
+						<td width="*%">{{'my_benefits.policies.critical_illness_insurance_idata' | translate}}</td>
+					</tr>
+					<tr>
+						<td width="25%">
+							<strong>{{'my_benefits.policies.home_auto_insure' | translate}}</strong>
+						</td>
+						<td width="*%">{{'my_benefits.policies.home_auto_insure_data' | translate}}</td>
+					</tr>
+				</table>
+			</div>
+			<div ng-if="$ctrl.showVoluntaryLinks">
+				<div ng-repeat="pdf in $ctrl.voluntaryLinks">
+					<a ng-href="{{pdf.url | contentUrl}}" target="_blank">{{pdf.text}}</a>
+				</div>
+				<br>
+			</div>
+			<div class="clearfix">
+				<p ng-if="$ctrl.showVoluntaryLinks != true && $ctrl.isAmbrose != true"><b>{{'my_benefits.metLifeBenefits.enorllMetLife' | translate}}</b></p>
+				<p ng-if="$ctrl.isAmbrose || $ctrl.isPassport || $ctrl.isAlpha || $ctrl.isAccord || $ctrl.isSOI">
+					<b> {{'my_benefits.metLifeBenefits.metlifeinfoRegard' | translate }}
+						<a id="metLifeAcctLink-{{$ctrl.indexId}}" href="#/ssowidget/metlife"
+					   	   target="_blank" class="aflacDis">{{'my_benefits.metLifeBenefits.metlifeLink' | translate}}</a>
+					</b>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>

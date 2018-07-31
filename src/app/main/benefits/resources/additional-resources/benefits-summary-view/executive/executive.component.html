@@ -1,0 +1,262 @@
+<span ng-click="$ctrl.closeModal();" class="sso-modal-close-icon icon-close-temp hand"></span>
+<div class="modalPad">
+	<tn-spinner ng-show="!$ctrl.showResults" disable-timeout="true"></tn-spinner>
+	<div ng-show="$ctrl.showResults">
+		<div class="btnPrint">
+			<button id="planCostsPrint" class="tn-button tn-action-button no-margin pull-right "
+					aria-label="Plan costs print button"
+					tn-action-button ng-click="$ctrl.printSection()">
+					<span class="icon-icon_print_circle large icon-print tn-link-button-icon" aria-hidden="true"></span>
+					<span class="tn-link-button-text pull-right">Print</span>
+			</button>
+		</div>
+		<div id="$ctrl.executiveData.idAttribute">
+			<h3 class="data-tables-headding">{{::companyName}}</h3>
+			<h3 class="data-tables-headding">{{ 'my_benefits.policies.current_summary' | translate }}</h3>
+			<div class="clearfix">&nbsp;</div>
+			<p>{{ 'my_benefits.policies.summary_represents' | translate }}</p>
+			<table class="table small table-striped"
+				ng-if="$ctrl.executiveData.employeeHSA != null && $ctrl.executiveData.employee1HSA != null">
+				<thead>
+				<tr>
+					<td width="30%"><b>{{ 'my_benefits.policies.compHealthSavingHSA' | translate }}</b></td>
+					<td width="16%">{{ 'my_benefits.policies.employee_only' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.empOneOrMore' | translate }}</td>
+					<td width="30%"></td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td></td>
+					<td width="36%" class="bold">{{$ctrl.executiveData.employeeHSA | currency}}</td>
+					<td width="16%">{{$ctrl.executiveData.employee1HSA | currency}}</td>
+					<td></td>
+				</tr>
+				</tbody>
+			</table>
+			<h3 class="headlines-md-BluBerry">{{'my_benefits.policies.your' | translate}}
+				<span ng-if="$ctrl.planKey === 'B'">{{ 'money.payrollSchedule.biWeek' | translate}}</span>
+				<span ng-if="$ctrl.planKey === 'W'">{{ 'money.payrollSchedule.week' | translate}}</span>
+				<span ng-if="$ctrl.planKey === 'S'">{{ 'money.payrollSchedule.smMonth' | translate}}</span>
+				<span ng-if="$ctrl.planKey === 'M'">{{ 'money.payrollSchedule.mon' | translate}}</span>
+				Cost</h3>
+			<!-- Medical plans table -->
+			<table class="table small table-striped"
+				ng-hide="$ctrl.executiveData.medicalPlansList === null || $ctrl.executiveData.medicalPlansList.length === 0">
+				<thead>
+				<tr>
+					<td width="36%"><b class="text-capitalize">{{ 'my_benefits.policies.medical' | translate }}</b></td>
+					<td width="16%">{{ 'my_benefits.policies.employee_only' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.emp_spouse' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.emp_child' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.family' | translate }}</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr ng-repeat="data in $ctrl.executiveData.medicalPlansList">
+					<td width="36%" class="bold">{{::data.desc}}</td>
+					<td width="16%">{{::data.employee | number: 2 | currency}}</td>
+					<td width="16%">{{::data.spouse | number: 2 | currency}}</td>
+					<td width="16%">{{::data.children | number: 2 | currency}}</td>
+					<td width="16%">{{::data.family | number: 2 | currency}}</td>
+				</tr>
+				</tbody>
+			</table>
+			<!-- Dental plans table -->
+			<table class="table small table-striped"
+				ng-hide="$ctrl.executiveData.dentalPlansList === null || $ctrl.executiveData.dentalPlansList.length === 0">
+				<thead>
+				<tr>
+					<td width="36%"><b>{{ 'my_benefits.policies.dental' | translate }}</b></td>
+					<td width="16%">{{ 'my_benefits.policies.employee_only' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.emp_spouse' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.emp_child' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.family' | translate }}</td>
+				</tr>
+
+				</thead>
+				<tbody>
+				<tr ng-repeat="data in $ctrl.executiveData.dentalPlansList">
+					<td width="36%" class="bold">{{::data.desc}}</td>
+					<td width="16%">{{::data.employee | number: 2 | currency}}</td>
+					<td width="16%">{{::data.spouse | number: 2 | currency}}</td>
+					<td width="16%">{{::data.children | number: 2 | currency}}</td>
+					<td width="16%">{{::data.family | number: 2 | currency}}</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<!-- Vision plans table -->
+			<table class="table small table-striped"
+				ng-hide="$ctrl.executiveData.visionPlansList === null || executiveData.visionPlansList.length === 0">
+
+				<thead>
+				<tr>
+					<td width="36%"><b>{{ 'my_benefits.policies.vision' | translate }}</b></td>
+					<td width="16%">{{ 'my_benefits.policies.employee_only' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.emp_spouse' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.emp_child' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.family' | translate }}</td>
+				</tr>
+
+				</thead>
+				<tbody>
+				<tr ng-repeat="data in $ctrl.executiveData.visionPlansList">
+					<td width="36%" class="bold">{{::data.desc}}</td>
+					<td width="16%">{{::data.employee | number: 2 | currency}}</td>
+					<td width="16%">{{::data.spouse | number: 2 | currency}}</td>
+					<td width="16%">{{::data.children | number: 2 | currency}}</td>
+					<td width="16%">{{::data.family | number: 2 | currency}}</td>
+				</tr>
+				</tbody>
+			</table>
+			<!-- Benefit Group Term Life Plans table -->
+			<table class="table small table-striped"
+				ng-hide="$ctrl.executiveData.lifeDescription.length === 0 || $ctrl.executiveData.lifePlan.length === 0">
+				<thead>
+				<tr>
+					<td width="36%"><b>{{ 'my_benefits.policies.grouptermLife' | translate }}</b></td>
+					<td width="16%">{{ 'my_benefits.policies.employee_only' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.emp_spouse' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.emp_child' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.family' | translate }}</td>
+				</tr>
+
+				</thead>
+				<tbody>
+				<tr >
+					<td width="36%" class="bold">{{$ctrl.executiveData.lifeDescription}}</td>
+					<td width="16%" ></td>
+					<td >{{$ctrl.executiveData.lifePlan}}</td>
+					<td></td>
+					<td></td>
+				</tr>
+				</tbody>
+			</table>
+			<!-- Benefit optional Dental Plans table -->
+			<table class="table small table-striped"
+				ng-hide="$ctrl.executiveData.optionalDentalPlansList === null || $ctrl.executiveData.optionalDentalPlansList.length === 0">
+
+				<thead>
+				<tr>
+					<td width="36%"><b>{{ 'my_benefits.policies.optionalDental' | translate }}</b></td>
+					<td width="16%">{{ 'my_benefits.policies.employee_only' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.emp_spouse' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.emp_child' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.family' | translate }}</td>
+				</tr>
+
+				</thead>
+				<tbody>
+				<tr ng-repeat="data in $ctrl.executiveData.optionalDentalPlansList">
+					<td width="36%" class="bold">{{::data.desc}}</td>
+					<td width="16%">{{::data.employee | number: 2 | currency}}</td>
+					<td width="16%">{{::data.spouse | number: 2 | currency}}</td>
+					<td width="16%">{{::data.children | number: 2 | currency}}</td>
+					<td width="16%">{{::data.family | number: 2 | currency}}</td>
+				</tr>
+				</tbody>
+			</table>
+			<!-- Benefit optional Vision Plans table -->
+			<table class="table small table-striped"
+				ng-hide="$ctrl.executiveData.optionalVisionPlansList === null || $ctrl.executiveData.optionalVisionPlansList.length === 0">
+
+				<thead>
+				<tr>
+					<td width="36%"><b>{{ 'my_benefits.policies.optionalVision' | translate }}</b></td>
+					<td width="16%">{{ 'my_benefits.policies.employee_only' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.emp_spouse' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.emp_child' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.family' | translate }}</td>
+				</tr>
+
+				</thead>
+				<tbody>
+				<tr ng-repeat="data in $ctrl.executiveData.optionalVisionPlansList">
+					<td width="36%" class="bold">{{::data.desc}}</td>
+					<td width="16%">{{::data.employee | number: 2 | currency}}</td>
+					<td width="16%">{{::data.spouse | number: 2 | currency}}</td>
+					<td width="16%">{{::data.children | number: 2 | currency}}</td>
+					<td width="16%">{{::data.family | number: 2 | currency}}</td>
+				</tr>
+				</tbody>
+			</table>
+			<!-- Benefit optional Vision Plans table -->
+			<table class="table small table-striped"
+				ng-hide="$ctrl.executiveData.otherPlansList === null || $ctrl.executiveData.otherPlansList.length === 0">
+
+				<thead>
+				<tr>
+					<td width="36%"><b>{{ 'my_benefits.policies.optionalOther' | translate }}</b></td>
+					<td width="16%">{{ 'my_benefits.policies.employee_only' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.emp_spouse' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.emp_child' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.family' | translate }}</td>
+				</tr>
+
+				</thead>
+				<tbody>
+				<tr ng-repeat="data in $ctrl.executiveData.otherPlansList">
+					<td width="36%" class="bold">{{::data.planDescription}}</td>
+					<td>{{translation.my_benefits.policies.employeePaid}}</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				</tbody>
+			</table>
+
+			<!-- Benefit Supplement plans table -->
+			<table class="table small table-striped"
+				ng-hide="$ctrl.executiveData.benefitSupplementList === null || $ctrl.executiveData.benefitSupplementList.length === 0">
+
+				<thead>
+				<tr>
+					<td width="36%"><b>{{ 'my_benefits.policies.supplement' | translate }}</b></td>
+					<td width="16%">{{ 'my_benefits.policies.employee_only' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.emp_spouse' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.emp_child' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.family' | translate }}</td>
+				</tr>
+
+				</thead>
+				<tbody>
+				<tr ng-repeat="data in $ctrl.executiveData.benefitSupplementList">
+					<td width="36%" class="bold">{{::data.desc}}</td>
+					<td width="16%">{{::data.employee | number: 2 | currency}}</td>
+					<td width="16%">{{::data.spouse | number: 2 | currency}}</td>
+					<td width="16%">{{::data.children | number: 2 | currency}}</td>
+					<td width="16%">{{::data.family | number: 2 | currency}}</td>
+				</tr>
+				</tbody>
+			</table>
+
+
+			<!-- Benefit Supplement plans DD table -->
+			<table class="table small table-striped"
+				ng-hide="$ctrl.executiveData.optionalSupplementalADD === null || $ctrl.executiveData.optionalSupplementalADD.length === 0">
+
+				<thead>
+				<tr>
+					<td width="36%"><b>{{ 'my_benefits.policies.optionalSupplementalADD' | translate }}</b></td>
+					<td width="16%">{{ 'my_benefits.policies.employee_only' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.emp_spouse' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.emp_child' | translate }}</td>
+					<td width="16%">{{ 'my_benefits.policies.family' | translate }}</td>
+				</tr>
+
+				</thead>
+				<tbody>
+				<tr >
+
+					<td width="36%" class="bold">{{$ctrl.executiveData.optionalSupplementalADD.desc}}</td>
+					<td width="16%">{{$ctrl.executiveData.optionalSupplementalADD.employee | number: 2 | currency}}</td>
+					<td width="16%">{{$ctrl.executiveData.optionalSupplementalADD.spouse | number: 2 | currency}}</td>
+					<td width="16%">{{$ctrl.executiveData.optionalSupplementalADD.children | number: 2 | currency}}</td>
+					<td width="16%">{{$ctrl.executiveData.optionalSupplementalADD.family | number: 2 | currency}}</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,63 @@
+<div class="edit-profile-section">
+	<section>
+		<h3 class="edit-profile-section-title">{{'edit-profile-primary-name' | translate}}</h3>
+	</section>
+	<br>
+
+	<div class="row">
+		<tn-select class="col-sm-5"
+				   label="{{'edit-profile-form-of-address' | translate}}"
+				   placeholder="Select a Form of Address"
+				   form-name="$ctrl.formName"
+				   field-name="primaryFormOfAddress"
+				   component-id="'Select'"
+				   field-value="$ctrl.data.selected.primaryFormOfAddress"
+				   items="$ctrl.data.dropdown.formOfAddresses"
+				   on-update="$ctrl.update($ctrl.keys.formOfAddress, data.key)">
+		</tn-select>
+	</div>
+	<br>
+
+	<div class="row">
+		<tn-name-input class="col-sm-5"
+					   label="{{'edit-profile-first-name' | translate}}"
+					   form-name="$ctrl.formName"
+					   component-id="'Input'"
+					   field-name="primaryFirstName"
+					   field-value="$ctrl.data.primary.firstName"
+					   is-required="true"
+					   on-update="$ctrl.update($ctrl.keys.firstName, data)">
+		</tn-name-input>
+		<tn-name-input class="col-sm-5 col-sm-offset-2"
+					   label="{{'edit-profile-middle-name' | translate}}"
+					   form-name="$ctrl.formName"
+					   component-id="'Input'"
+					   field-name="primaryMiddleName"
+					   field-value="$ctrl.data.primary.middleName"
+					   on-update="$ctrl.update($ctrl.keys.middleName, data)">
+		</tn-name-input>
+	</div>
+	<br>
+
+	<div class="row">
+		<tn-name-input class="col-sm-5"
+					   label="{{'edit-profile-last-name' | translate}}"
+					   form-name="$ctrl.formName"
+					   field-name="primaryLastName"
+					   field-value="$ctrl.data.primary.lastName"
+					   is-required="true"
+					   component-id="'Input'"
+					   on-update="$ctrl.update($ctrl.keys.lastName, data)">
+		</tn-name-input>
+		<tn-select class="col-sm-5 col-sm-offset-2"
+				   label="{{'edit-profile-suffix' | translate}}"
+				   placeholder="Select a Suffix"
+				   form-name="$ctrl.formName"
+				   component-id="'Select'"
+				   field-name="primarySuffix"
+				   field-value="$ctrl.data.selected.primarySuffix"
+				   items="$ctrl.data.dropdown.suffixes"
+				   on-update="$ctrl.update($ctrl.keys.suffix, data.key)">
+		</tn-select>
+	</div>
+</div>

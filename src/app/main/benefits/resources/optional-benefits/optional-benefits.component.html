@@ -1,0 +1,56 @@
+<tn-card>
+	<div class="benefits-resources-toggle-header benefits-resources-label">
+		<a id="optionalMetLifeLink" href="" ng-click="$ctrl.metLifeToggle.isOpen = !$ctrl.metLifeToggle.isOpen;" aria-controls="optionalMetLifeLink"
+		 aria-expanded="$ctrl.metLifeToggle.isOpen">
+			{{ 'benefits-resources.metlife-benefits' | translate }}
+			<div class="toggle-icon-arrow-border pull-right" ng-class="{
+				'toggle-icon-arrow-border-opened': $ctrl.metLifeToggle.isOpen,
+				'toggle-icon-arrow-border-closed': !$ctrl.metLifeToggle.isOpen}">
+				<span class="tn-icon toggle-arrow" ng-class="{
+				'toggle-arrow-is-opened': $ctrl.metLifeToggle.isOpen}"></span>
+			</div>
+		</a>
+	</div>
+	<benefits-met-life ng-show="$ctrl.metLifeToggle.isOpen"></benefits-met-life>
+</tn-card>
+
+<tn-card ng-hide="$ctrl.hideAflac">
+	<div class="benefits-resources-toggle-header benefits-resources-label">
+		<a id="optionalAflacLink" href="" ng-click="$ctrl.aflacToggle.isOpen = !$ctrl.aflacToggle.isOpen;" aria-controls="optionalAflacLink"
+		 aria-expanded="$ctrl.aflacToggle.isOpen">
+			{{ 'benefits-resources.aflac-benefits' | translate }}
+			<div class="toggle-icon-arrow-border pull-right" ng-class="{
+				'toggle-icon-arrow-border-opened': $ctrl.aflacToggle.isOpen,
+				'toggle-icon-arrow-border-closed': !$ctrl.aflacToggle.isOpen}">
+				<span class="tn-icon toggle-arrow" ng-class="{
+					'toggle-arrow-is-opened': $ctrl.aflacToggle.isOpen}"></span>
+			</div>
+		</a>
+	</div>
+	<benefits-aflac ng-show="$ctrl.aflacToggle.isOpen"></benefits-aflac>
+</tn-card>
+
+<tn-card>
+	<div class="benefits-resources-toggle-header benefits-resources-label">
+		<a id="optionalStdSecurityLink" href="" ng-click="$ctrl.stdStandardToggle.isOpen = !$ctrl.stdStandardToggle.isOpen;" aria-controls="optionalStdSecurityLink"
+		 aria-expanded="$ctrl.stdStandardToggle.isOpen">
+			{{ 'benefits-resources.std-security-benefits' | translate }}
+		</a>
+		<span class="pull-right">
+			<a href="https://www.sslicny.com/" id="optionalStdSecurityLink" target="_blank">
+				<img class="carriers-logo ng-scope" alt="optionalStdSecurityLink" ng-src="./assets/images/benefits/standardSecurity.png"
+				 src="./assets/images/benefits/standardSecurity.png">
+			</a>
+			<a id="optionalStdSecurityLink" href="" ng-click="$ctrl.stdStandardToggle.isOpen = !$ctrl.stdStandardToggle.isOpen;" aria-controls="optionalStdSecurityLink"
+			 aria-expanded="$ctrl.stdStandardToggle.isOpen">
+				<div class="toggle-icon-arrow-border pull-right" ng-class="{
+						'toggle-icon-arrow-border-opened': $ctrl.resourcesItems[$index].isOpen,
+						'toggle-icon-arrow-border-closed': !$ctrl.resourcesItems[$index].isOpen }">
+					<span class="tn-icon toggle-arrow" ng-class="{
+						'toggle-arrow-is-opened': $ctrl.resourcesItems[$index].isOpen}"></span>
+				</div>
+			</a>
+		</span>
+	</div>
+	<benefits-std-security ng-show="$ctrl.stdStandardToggle.isOpen"></benefits-std-security>
+</tn-card>

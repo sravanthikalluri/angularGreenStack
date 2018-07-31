@@ -1,0 +1,17 @@
+<div class="background">
+	<div class="primary-container">
+		<h2 class="page-title">
+			<tn-title url="'app.main.benefits.overview'" title="'benefits-title'"></tn-title>
+			> {{ 'benefits-carriers-title' | translate }}
+		</h2>
+		<benefits-carriers></benefits-carriers>
+		<optional-benefits></optional-benefits>
+	</div>
+	<div class="secondary-container" ng-hide="$ctrl.hideCarrier">
+		<tn-card class="tn-benefits-cards-card" titles="{{ 'carrier-contact-title' | translate }}" loading="$ctrl.showSpinner">
+			<tn-card-actions class="tn-benefits-help-card-actions">
+				<carrier-contact-info show-card="true"></carrier-contact-info>
+			</tn-card-actions>
+		</tn-card>
+	</div>
+</div>

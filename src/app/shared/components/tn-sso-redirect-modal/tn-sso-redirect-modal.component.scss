@@ -1,0 +1,38 @@
+@import 'main';
+
+.sso-modal-close-icon{
+  margin:20px;
+  float: right;
+  color: $gray;
+}
+.sso-modal-content{
+  padding:20px;
+  height:150px;
+  .sso-text{
+	margin-bottom:40px;
+  }
+  .sso-modal-checkbox{
+	float: left;
+	margin-left: 20px;
+	width: 25px;
+	margin-top: 9px;
+	margin-right: 0px;
+  }
+  .sso-modal-toggle-text label{
+	margin-top:10px;
+	font-weight: 100 !important;
+  }
+}
+
+.sso-modal-footer{
+  margin-top:20px;
+  .sso-modal-buttons{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+
+	.sso-modal-continue{
+	  margin-left: 15px;
+	}
+  }
+}

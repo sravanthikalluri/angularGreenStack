@@ -1,0 +1,9 @@
+<tn-card ng-class="$ctrl.small ? 'tn-paycheck-card-small' : 'tn-paycheck-card'" titles="last-paycheck-title" loading="$ctrl.showSpinner">
+	<tn-card-title-group  ng-class="$ctrl.small ? 'tn-paycheck-title-small' : ''">
+		<tn-pay-period ng-if="$ctrl.paycheckDetails.summary" dates="$ctrl.paycheckDetails.payPeriod"></tn-pay-period>
+	</tn-card-title-group>
+	<tn-paycheck-details-card
+		error-message = "$ctrl.errorMessage"
+		paycheck-details = "$ctrl.paycheckDetails">
+	</tn-paycheck-details-card>
+</tn-card>

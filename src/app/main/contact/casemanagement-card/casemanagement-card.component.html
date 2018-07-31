@@ -1,0 +1,20 @@
+<tn-card ng-if="$ctrl.caseManagement">
+	<h3 class="case-mgmt-h4">{{'contact-casemanagement-title' | translate}}</h3>
+	<tn-card-content>
+		<div class="case-mgmt-row" ng-if="$ctrl.addCase">
+			<a class="tn-anchor" href="{{$ctrl.ssoURL}}" ng-click="$ctrl.getUrl('addcase')" target="_blank">{{'addcase' | translate}}</a>
+		</div>
+
+		<div class="case-mgmt-row" ng-if="$ctrl.managecases">
+			<a class="tn-anchor" href="{{$ctrl.ssoURL}}" ng-click="$ctrl.getUrl('managecases')" target="_blank">{{'managecases' | translate}}</a>
+		</div>
+
+		<div class="case-mgmt-row" ng-if="$ctrl.mystats">
+			<a class="tn-anchor" href="{{$ctrl.ssoURL}}" ng-click="$ctrl.getUrl('mystats')" target="_blank">{{'viewcasestatistics' | translate}}</a>
+		</div>
+
+		<div class="case-mgmt-row" ng-if="$ctrl.companystats">
+			<a class="tn-anchor" href="{{$ctrl.ssoURL}}" ng-click="$ctrl.getUrl('companystats')" target="_blank">{{'viewcompanystatistics' | translate}}</a>
+		</div>
+	</tn-card-content>
+</tn-card>

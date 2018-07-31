@@ -1,0 +1,24 @@
+<tn-input-container ng-class="{'is-invalid'  : $ctrl.input.$invalid && ($ctrl.input.$touched || $ctrl.formName.$submitted), 'is-disabled' : $ctrl.isDisabled }">
+	<tn-input-label>
+		<label for="{{$ctrl.componentId}}">{{$ctrl.label}}</label>
+	</tn-input-label>
+	<input ng-model="$ctrl.fieldValueCopy"
+		   ng-change="$ctrl.update($ctrl.fieldValueCopy)"
+	       name="{{$ctrl.fieldName}}"
+	       type="text"
+	       placeholder="XXX-XX-1234"
+	       mask="xxx-xx-9999"
+	       clean="true"
+		   id="{{$ctrl.componentId}}"
+		   restrict="reject"
+		   ng-required="$ctrl.isRequired"
+	       ng-disabled="$ctrl.isDisabled"
+		   aria-label="{{$ctrl.label}}">
+	<div class="tn-input-error"
+		 ng-messages="$ctrl.input.$error"
+		 ng-show="$ctrl.input.$invalid && ($ctrl.input.$touched || $ctrl.formName.$submitted)">
+		<div ng-message="required" aria-live="polite">Required.</div>
+		<div ng-message="ssn" aria-live="polite">Numbers only.</div>
+		<div ng-message="mask" aria-live="polite">Must be 9 digits.</div>
+	</div>
+</tn-input-container>

@@ -1,0 +1,9 @@
+<form name="confirmationForm" class="w4-modal"  no-validate>
+	<div class="w4-modal-header">
+		<i class="icon-close-temp" ng-click="$ctrl.cancel()"></i>
+	</div>
+	<div class="w4-modal-body">
+		<h5 class="date-info-title ng-binding" ng-if="$ctrl.data.headerName">{{$ctrl.data.headerName | translate}}</h5>
+       <span>{{$ctrl.data.messsage | translate}}</span>
+	</div>
+</form>

@@ -1,0 +1,22 @@
+<tn-card class="profile-map-card">
+	<div class="profile-map">
+		<ng-map center="{{$ctrl.officeAddress}}"
+				zoom="12"
+				title="Office location"
+				default-style="false"
+				disable-default-u-i="true"
+				zoom-control="false"
+				draggable ="false">
+				<marker position="{{$ctrl.officeAddress}}"></marker>
+		</ng-map>
+	</div>
+	<br>
+	<tn-spinner ng-show="$ctrl.showSpinner"></tn-spinner>
+	<div class="profile-map-address-container" ng-hide="$ctrl.showSpinner">
+		<div class="profile-map-address">
+			<i class="tn-icon icon-icon_location"></i>
+			<h4 class="profile-location-label">{{'profile-location' | translate}}</h4>
+			<div class="profile-location-value" ng-bind-html="$ctrl.getFullAddressHtml($ctrl.data)"></div>
+		</div>
+	</div>
+</tn-card>

@@ -1,0 +1,128 @@
+@import 'main';
+
+.important-notices-card{
+	.important-notices-header{
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		.important-notices-icon {
+			color: $notification-badge-red;
+		}
+	}
+	.important-notices-item{
+		.important-notices-item-date {
+			color: $leave-status-other-font-color;
+			margin-top: 25px;
+		}
+		.important-notices-item-description{
+			margin-bottom:0px;
+		}
+		.imporatnt-notices-link{
+			display: flex;
+			justify-content: center;
+			.icon-more{
+				font-size:12px;
+			}
+		}
+	}
+	.important-notices-view-all{
+		&:focus{
+			outline: 3px solid $tn-focus-border-color;
+		}
+	}
+	.notices-card{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		.notices-card-date {
+		  color: $slate;
+		  margin-top: 25px;
+		  font-size: 14px;
+		  font-weight: 500;
+		  line-height: 1.1;
+		}
+	  	.notices-card-title{
+		  color: $font-color;
+		  font-size: 18px;
+		  word-wrap: break-word;
+		  word-break: keep-all;
+		  text-align: justify;
+		  font-weight: 600;
+		}
+		.notices-card-desc {
+		  color: $font-color;
+		  word-wrap: break-word;
+		  word-break:keep-all;
+		  text-align: justify;
+		}
+	}
+}
+.view-notice{
+	.modal-dialog{
+		width:500px;
+	}
+	.view-notice-modal{
+		padding: 25px;
+		.modal-header{
+			text-align: right;
+			color: $slate;
+			padding:0;
+			border:none;
+		}
+		.important-notices-item-date{
+			color: $slate;
+			span{
+				margin-right:15px;
+				display:inline-block;
+			}
+		}
+		.important-notices-item-title{
+			color: $font-color;
+			font-weight: 600;
+			font-size: 18px;
+		}
+		.important-notices-item-body{
+			color: $font-color;
+			margin-bottom: 0;
+		    word-wrap: break-word;
+		    word-break: keep-all;
+			text-align: justify;
+		}
+		.notice-filter {
+			.help-text{
+				color: $slate;
+				font-size: 12px;
+			}
+			.filter-value {
+				color: $slate;
+				background: #b3bdc7;
+				padding: 5px;
+				border-radius: 4px;
+				margin: 5px 0;
+                display: inline-block;
+			}
+		.shared-section{
+			i {
+				display: inline-block;
+				margin: 0 10px;
+				color: #6e778a;
+			}
+			> span:last-child i {
+				display: none;
+			}
+		}
+
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+<div class="tn-search-box-container">
+	<span class="tn-search-box-search-icon icon-icon_unified_search"></span>
+	<input id="searchText" 
+		   type="text"
+		   class="tn-search-box"
+		   placeholder="{{$ctrl.placeholder || 'Search...'}}" 
+		   ng-model="$ctrl.search.value" 
+		   aria-label="{{$ctrl.placeholder || 'Search...'}}"
+		   ng-change="$ctrl.change()">
+</div>

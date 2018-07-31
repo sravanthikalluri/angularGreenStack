@@ -1,0 +1,16 @@
+.secondary-container-content {
+	margin:30px 20px;
+	.icon-more{
+		position: absolute;
+		top: 119px;
+		left: 178px;
+	}
+	/* landscape iPad */
+	@media only screen and (min-width: 1024px) and (max-width: 1307px) {
+		.icon-more {
+			position: absolute;
+			top: 139px;
+			left: 158px;
+		}
+	}
+}

@@ -1,0 +1,86 @@
+
+<div ng-if="$ctrl.error">{{$ctrl.errorMessage}}</div>
+<div ng-if="!$ctrl.error" role="tablist" multiselectable="true">
+	<tn-card ng-repeat="benefitFormItem in $ctrl.benefitFormData[1].pdfs.carrier" ng-if="$ctrl.benefitFormData[1].title ==='Benefit Carriers'">
+		<tn-benefits-forms-item benefit-form-item="benefitFormItem" index="$index"></tn-benefits-forms-item>
+	</tn-card>
+
+	<tn-card ng-if="$ctrl.summaryPlanPdfData.employeeAssistancePlan.length > 0">
+		<div id="assistancePlan" >
+			<div class="benefits-resources-toggle-header benefits-resources-label">
+
+				<a id="assistancePlanLink" href="" class="toggle-link hand" ng-click="$ctrl.assistancePlanToggle.isOpen = !$ctrl.assistancePlanToggle.isOpen;"
+				   aria-selected="{{$ctrl.assistancePlanToggle.isOpen }}" aria-controls="assistancePlan-body" aria-expanded="{{$ctrl.assistancePlanToggle.isOpen }}" role="tab"
+				>
+					<span>{{'my_benefits.policies.emp_assistance' | translate}}</span>
+					<div class="toggle-icon-arrow-border pull-right hand" ng-class="{
+							'toggle-icon-arrow-border-opened': $ctrl.assistancePlanToggle.isOpen,
+							'toggle-icon-arrow-border-closed': !$ctrl.assistancePlanToggle.isOpen }">
+							<span class="tn-icon toggle-arrow" ng-class="{
+							'toggle-arrow-is-opened': $ctrl.assistancePlanToggle.isOpen}"></span>
+					</div>
+				</a>
+			</div>
+
+			<div ng-show="$ctrl.assistancePlanToggle.isOpen" id="assistancePlan-body"
+				 aria-labelledby="assistancePlanLink" aria-hidden="{{!$ctrl.assistancePlanToggle.isOpen}}" role="tabpanel"
+			>
+				<!--<div class="no-enrolment">
+					<h3>
+						{{'my_benefits.planCarrier.noData_available' | translate}}
+					</h3>
+				</div>-->
+				<table class="table emp-assign-pln-pdf-adj"  ng-if="$ctrl.summaryPlanPdfData.employeeAssistancePlan.length > 0">
+					<thead>
+					<tr class="employee-assistanceplan">
+						<th class="col-md-4">
+							{{'my_benefits.policies.empAssistancePlan' | translate}}
+						</th>
+						<th class="col-md-4">
+							{{ 'my_benefits.policies.carrierCertificate' | translate}}
+						</th>
+						<th class="col-md-4">{{'my_benefits.policies.sbc' | translate}}</th>
+
+					</tr>
+					</thead>
+					<tbody class="employee-assistanceplan">
+					<tr ng-repeat="x in $ctrl.employeeAssistancePlan">
+						<td class="col-md-4">{{x.plans}}</td>
+						<td class="col-md-4">
+							<a href="{{x.CCCurYearUrl | contentUrl}}" target="_blank" id="$ctrl.CCPlanYearStartDateId{{$index}}">
+						<span ng-if="x.CCCurYearUrl !== '' " id="$ctrl.thisPlanYearStartDateYearsId{{$index}}">
+							<span class="tn-icon"><img alt="PDF-Icon" ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png"></span>
+							{{$ctrl.summaryPlanPdfData.thisPlanYearStartDate}} - {{$ctrl.summaryPlanPdfData.thisPlanYearEndDate}}
+						</span>
+							</a>
+							<div ng-if="x.CCCurYearUrl !== '' "></div>
+							<a href="{{x.CCPrevYearUrl | contentUrl}}" target="_blank" id="$ctrl.prevPlanYearStartDateId{{$index}}">
+						<span ng-if="x.CCPrevYearUrl !== '' " id="$ctrl.prevPlanYearStartDateYearsId{{$index}}">
+							<span class="tn-icon"><img alt="PDF-Icon" ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png"></span>
+								{{$ctrl.summaryPlanPdfData.prevPlanYearStartDate}} - {{$ctrl.summaryPlanPdfData.prevPlanYearEndDate}}
+						</span>
+							</a>
+						</td>
+						<td class="col-md-4">
+							<a href="{{x.SBCCurYearUrl | contentUrl}}" target="_blank" id="SBCPlanYearStartDateId{{$index}}">
+							<span ng-if="x.SBCCurYearUrl !== '' " id="SBChisPlanYearStartDateId{{$index}}">
+								<span class="tn-icon"><img alt="PDF-Icon" ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png"></span>
+								{{$ctrlsummaryPlanPdfData.thisPlanYearStartDate}} - {{$ctrl.summaryPlanPdfData.thisPlanYearEndDate}}
+							</span>
+							</a>
+							<div ng-if="x.SBCCurYearUrl !== ''"></div>
+							<a href="{{x.SBCPrevYearUrl | contentUrl}}" target="_blank" id="SBCPrevPlanYearStartDateId{{$index}}">
+								<span ng-if="x.SBCPrevYearUrl !== '' " id="SBChisprevPlanYearStartDateId{{$index}}">
+								<span class="tn-icon"><img alt="PDF-Icon" ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png"></span>
+								{{$ctrl.summaryPlanPdfData.prevPlanYearStartDate}} - {{$ctrl.summaryPlanPdfData.prevPlanYearEndDate}}</span>
+								<span ng-if="x.SBCPrevYearUrl === '' "></span>
+							</a>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</tn-card>
+
+</div>

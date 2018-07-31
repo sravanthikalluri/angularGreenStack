@@ -1,0 +1,33 @@
+<tn-card>
+	<tn-card-content>
+		<div id="trinetCorp">TRINET HR CORPORATION</div>
+		<span class="large bold">TERMS AND CONDITIONS AGREEMENT (TCA)</span>
+		<br/>
+		<p class="tca-top-content">PLEASE READ THIS TCA CAREFULLY. IT CONTAINS IMPORTANT INFORMATION REGARDING YOUR USE OF TRINET'S SECURED ONLINE PORTAL, TriNet PASSPORT&#174; AND ONLINE SERVICES, AND RELATED MATTERS. YOUR ACKNOWLEDGEMENT AND ACCEPTANCE OF THIS TCA IS A CONDITION OF YOUR USE OF TRINET'S TriNet PASSPORT&#174; AND ONLINE SERVICES. IF YOU FAIL TO ACKNOWLEDGE THIS TCA, YOU WILL NOT HAVE ACCESS TO TRINET'S TriNet PASSPORT&#174; AND ONLINE SERVICES.</p>
+	</tn-card-content>
+</tn-card>
+
+<div class="tca-acc-trinet" role="tablist">
+	<tn-card  ng-repeat="item in $ctrl.accordionList">
+		<div id="{{item.name |  lowercase}}" >
+			<div class="benefits-resources-toggle-header benefits-resources-label">
+				<a id="{{item.name}}Id" href class="toggle-link " ng-click="$ctrl.accoridon({index:$index,accordion:$ctrl.accordionList});" title="{{item.name}}"
+				   aria-selected="{{ item.isOpen}}" aria-controls="{{item.name}}" aria-expanded="{{item.isOpen}}" role="tab"
+				>
+					{{$index+1}}. <span ng-bind-html="item.name"></span>
+					<div class="toggle-icon-arrow-border pull-right" ng-class="{
+							'toggle-icon-arrow-border-opened': item.isOpen,
+							'toggle-icon-arrow-border-closed': ! item.isOpen }">
+							<span class="tn-icon toggle-arrow" ng-class="{
+							'toggle-arrow-is-opened':  item.isOpen}"></span>
+					</div>
+				</a>
+			</div>
+			<div class="terms-acc-body" ng-if=" item.name === 'Privacy, Accuracy, Use, And Exchange Of Information' && item.isOpen">
+				<p>The personal information you provide online through TriNet's TriNet Passport&#174; is used to facilitate your online HR transactions. You agree not to share with or disclose to anyone else your TriNet ID or password for TriNet Passport&#174;. TriNet, in turn, agrees to use your information only as stated in <a href="http://www.trinet.com/company/terms.htm" target="_blank">TriNet's Terms of Use and Privacy Policy</a> for websites. TriNet will not provide your individually identifiable information to third-party providers or other commercial parties for commercial use except as permitted by you or as required by law.</p>
+				<p>You agree that all information submitted by you to TriNet is and will be true and correct.   Moreover, you agree to provide to TriNet a functioning email address for you, and to review and accept notices and forms sent to that email address as well as to review and accept notices and forms posted on TriNet Passport&#174;. With respect to notices and forms for which consent to electronic delivery is required by law, you hereby agree and consent to electronic delivery by email, by posting on TriNet Passport&#174;, or via such other method as permitted by law.</p>
+
+			</div>
+		</div>
+	</tn-card>
+</div>

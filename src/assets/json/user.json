@@ -1,0 +1,9 @@
+[
+   {
+		"id": "0",
+		"employee_id": "123",
+		"ssn": "000000000",
+		"custom_id": "email@add.com",
+		"password": "456"
+   }
+]

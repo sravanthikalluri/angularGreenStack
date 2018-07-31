@@ -1,0 +1,12 @@
+<tn-error-banner error-data="$ctrl.success" clicked="$ctrl.closeAlert()"></tn-error-banner>
+<div class="background">
+	<div class="primary-container">
+		<h2 class="page-title">{{'profile-title' | translate}}</h2>
+		<tn-profile></tn-profile>
+	</div>
+	<div class="secondary-container">
+		<profile-map-card data="$ctrl.data" ng-if="$ctrl.officeAddress" office-address="$ctrl.officeAddress"></profile-map-card>
+	</div>
+</div>
+
+

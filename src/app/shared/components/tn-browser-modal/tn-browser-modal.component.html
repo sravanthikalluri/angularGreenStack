@@ -1,0 +1,17 @@
+<div class="view-notice-modal">
+	<div class="modal-header">
+		<i role="link" tabindex="0" tn-enter="$ctrl.cancel()" aria-label="Close modal"
+		   id="taxConfirmClose" class="icon-close-temp hand" ng-click="$ctrl.cancel()"></i>
+	</div>
+	<div class="view-notice-body" ng-repeat="event in $ctrl.data">
+		<h5 class="important-notices-item-title">{{event.title}}</h5>
+		<!--<h6 class="important-notices-item-date"><span>
+			{{event.effectiveDate| date:'MMMM - dd, yyyy'}}</span></h6>-->
+		<p class="important-notices-item-body " ng-bind-html="event.body"></p>
+			<div class="text-center">
+				<a class="tn-action-link" ng-if="!event.isAle " ng-click="$ctrl.popUpDataCtrl(event)" role="button"  ng-href="{{event.redirectUrl}}" target="_blank"> {{event.urlText}} </a>
+				<a class="tn-action-link" ng-if="event.isAle" ng-click="$ctrl.cancel()" role="button"  ui-sref="app.main.benefits.aleSelection"> {{event.urlText}} </a>
+			</div>
+
+	</div>
+</div>

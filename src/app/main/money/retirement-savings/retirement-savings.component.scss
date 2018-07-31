@@ -1,0 +1,74 @@
+@import '../../../../styles/main';
+
+.tn-retirements-hastooltip{
+  .tn-tooltip-top {
+	.tn-tooltip-content {
+	  bottom: 25px;
+	  left: auto;
+	  right: -80px;
+	  &:after {
+		bottom: -11px;
+		left: 98px;
+	  }
+	  &:before {
+		bottom: -10px;
+		left: 100px;
+	  }
+	}
+  }
+}
+
+.retirement-savings{
+	.heading{
+		margin-top: 30px;
+		font-weight: 600;
+	}
+	.retirement-savings-margin{
+		margin-bottom: 20px;
+	}
+	.retirement-savings-button{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		margin-top: 40px;
+		margin-bottom: 40px;
+	  	a{
+		  display: flex;
+		  align-items: center;
+		  &:hover, &:active{
+			color: #fff;
+			text-decoration: none;
+		  }
+		}
+	}
+	.retirement-savings-table{
+		display: flex;
+		flex-direction: row;
+		.flex-item-date{
+			flex: 3;
+		}
+		.flex-item-plan{
+			flex: 3;
+		}
+		.flex-item-election{
+			flex: 3;
+		}
+		.flex-item-payroll{
+			flex: 6;
+		}
+		.flex-item-amount-allowed{
+			flex: 6;
+		}
+	}
+  [role="columnheader"],[role="gridcell"]{
+	margin: 10px 0;
+	font-size: 12px;
+	  p{
+		margin: 0;
+	  }
+  }
+}
+
+
+
+

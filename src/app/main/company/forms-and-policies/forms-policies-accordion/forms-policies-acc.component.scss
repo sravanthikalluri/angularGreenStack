@@ -1,0 +1,251 @@
+@import 'main';
+
+$trinet-black:#000;
+
+.button-focus:focus{
+    outline: 3px solid $tn-focus-border-color;
+}
+
+.blue{
+ color:$trinet-blue;
+
+ &:hover {
+	text-decoration: underline;
+	color: $trinet-blue;
+}
+ }
+.hand{
+	cursor: pointer;
+	font-weight: $font-weight-semibold;
+}
+.no-pointer{
+  cursor: auto!important;
+}
+
+.state-specific-detail-forms{
+	font-size: 14px;
+	line-height: 1.1;
+	margin-bottom: 0px;
+}
+.alternate-colors{
+		&:nth-child(odd){
+		background:#fff;
+		}
+		&:nth-child(even){
+		background: $off-white;
+		}
+}
+uib-accordion{
+	.panel-group{
+		margin-bottom:5px;
+	}
+}
+.acc-tile{
+	margin-bottom: 0;
+	border-radius: 4px;
+	display: block;
+	position: relative;
+	border-radius: 4px;
+	box-shadow: 0px 1px 3px rgba(49, 51, 58, 0.2);
+	padding: 10px 15px;
+	margin: 0;
+	background-color: white;
+	a{
+	  color:$trinet-black;
+	  &:hover,&:active,&:focus{
+		text-decoration:none;
+		color:$trinet-black;
+       }
+	}
+}
+.tn-accordion{
+    display: block;
+    position: relative;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(49, 51, 58, 0.2);
+    padding:0;
+    margin:0;
+    background-color: white;
+    margin-bottom: 16px;
+    	a{
+    	 &:hover, &:active{
+    		display:block;
+    		text-decoration:none;
+    		color:$trinet-black;
+    	}
+    }
+	 .tn-inner-accordion{
+	 	padding:5px 20px;
+	 	font-size:16px;
+		@extend .alternate-colors;
+
+	  }
+	 .panel-title{
+	 	a{
+	 	   	 cursor:default;
+	 		text-decoration:none;
+	 	&:hover,&:active{
+	 		cursor:default;
+	 		text-decoration:none;
+	 	}
+		&:focus {
+		  outline: 5px auto -webkit-focus-ring-color !important;
+		  outline-offset: -2px !important;
+		  display: block;
+		  cursor:default;
+		  text-decoration:none;
+		}
+	 	}
+	 }
+    .tn-accordion-body{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		padding: 5px;
+		justify-content: flex-start;
+		.tn-pdf_icon{
+		    margin: 0 15px;
+            font-size: 25px;
+            color: red;
+            display: inline-block;
+            padding-right: 20px;
+		}
+		.accordion-heading{
+			.tn-accordion-content{
+				padding-left:25px;
+				@extend .alternate-colors;
+			}
+
+		}
+		h5{
+		margin:0;
+		}
+		h6{
+			margin-top:5px;
+			color: $slate;
+		}
+		.tn-accordion-item{
+			width:100%;
+			display:block;
+		}
+		.innerHeading{
+			display:flex;
+			width:100%;
+			align-items: center;
+			justify-content:flex-start;
+		}
+    }
+   	 .stripped{
+   	 	padding:5px 0;
+		@extend .alternate-colors;
+	  }
+
+	  .panel-body{
+	 	 padding:0;
+	  }
+	  .toggle-arrow{
+      	margin-top: 0;
+      }
+      .toggle-arrow-is-opened{
+      		&:before {
+      		margin-top: 0;
+      		margin-left: -9px;
+      	}
+      }
+     .disputeAccordion{
+     	margin:20px;
+     }
+}
+
+.description{
+				color: $slate;
+				font-size: 12px;
+				line-height: 1.1;
+				margin-bottom: 10px;
+				}
+.tn-accordion-inner{
+	padding:0;
+}
+.states-specific-accordion{
+	.accordion-body{
+		padding:8px 20px;
+		@extend .alternate-colors;
+		a{
+		display:block;
+		}
+		.accordion-content{
+		    border: 1px solid #ddd;
+            padding: 10px;
+            background: #fff;
+            }
+	}
+}
+.benefits-guide-book{
+	display:block;
+	background:#fff;
+	padding:15px;
+	box-shadow: 0px 1px 3px rgba(49, 51, 58, 0.2);
+		.panel-body-background{
+			div{
+			padding:10px 0;
+			@extend .alternate-colors;
+				a{
+					display:block;
+					.benefit-text{
+						color: $blue;
+					}
+				}
+				.pdf-dissabled-text{
+					color:$font-color-secondary;
+				}
+			}
+		}
+}
+
+.additional-policies{
+  a {
+	display: inline;
+	&:hover, &:active, &:focus {
+	  display: inline !important;
+	}
+  }
+}
+.accordion-toggle
+{
+	&:focus
+	{
+		border: 2px solid $tn-focus-border-color;
+	}
+}
+
+.header-button-link {
+	border-radius: 4px;
+	position: relative;
+	box-shadow: 0px 1px 3px rgba(49, 51, 58, 0.2);
+	padding: 13px 19px;
+	background: white;
+	margin-bottom: 16px;
+
+	button{
+		padding: 22px;
+		margin:0;
+	}
+	h4{
+		margin:0;
+	}
+	a {
+		font-size: 16px !important;
+		font-weight: 600 !important;
+	}
+}
+
+.terms-acc-body {
+	.panel p {
+	  padding:15px !important;
+	}
+}
+.list-style-none{
+  li{
+	list-style: none;
+  }
+}

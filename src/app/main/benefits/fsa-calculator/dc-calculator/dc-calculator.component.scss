@@ -1,0 +1,28 @@
+@import 'main';
+
+#dcForm {
+
+  table {
+      width: 100%;
+  }
+
+  table td {
+      width: 60%;
+      height: 30px;
+  }
+
+  input {
+      width: 180px;
+  }
+
+  #calculateSavings {
+    background-color: #e04e0f;
+    color: white;
+    border: none;
+    width: 180px;
+  }
+
+  #Reset {
+    width: 60px;
+  }
+}

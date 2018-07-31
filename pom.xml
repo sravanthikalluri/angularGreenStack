@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.trinet</groupId>
+    <artifactId>greenstack-portal</artifactId>
+    <packaging>war</packaging>
+    <version>20180203.1</version>
+    <name>greenstack-portal</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <build>
+        <finalName>greenstack-portal</finalName>
+
+        <resources>
+             <resource>
+               <directory>dist</directory>
+           </resource>
+       </resources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <warSourceDirectory>dist</warSourceDirectory>
+                    <failOnMissingWebXml>true</failOnMissingWebXml>
+                    <webXml>WEB-INF\web.xml</webXml>
+                </configuration>
+            </plugin>
+        </plugins>
+
+    </build>
+
+</project>

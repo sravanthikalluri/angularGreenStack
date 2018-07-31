@@ -1,0 +1,15 @@
+<div class="security-modal">
+	<div class="security-modal-header">
+		<i class="icon-close-temp hand" ng-click="$ctrl.onCancel();" aria-label="close modal"></i>
+	</div>
+	<div class="padding-vertical">
+		<div class="semibold text-center">{{'ethnicity-modal-title' | translate}}</div>
+	</div>
+	<br>
+	<div>{{'ethnicity-modal-legal-text' | translate}}</div>
+	<br>
+	<div class="security-modal-footer">
+		<button tn-button ng-click="$ctrl.onCancel()">{{'ethnicity-modal-cancel-label' | translate}}</button>
+		<button class="margin-left" tn-action-button ng-click="$ctrl.onSave()">{{'ethnicity-modal-ok-label' | translate}}</button>
+	</div>
+</div>

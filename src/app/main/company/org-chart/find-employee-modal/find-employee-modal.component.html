@@ -1,0 +1,88 @@
+<div class="find-employee-modal">
+	<tn-card class="find-employee-card">
+		<!--ng-click="$ctrl.focus(); $ctrl.showModal = false;$ctrl.clear();"-->
+		<button id="btnCloseModal" aria-label="Close modal"
+			ng-click = "$ctrl.onCancel();"
+			aria-pressed = "{{$ctrl.closebuttonPressed}}"
+			class = "icon-close-temp tn-modal-close">
+		</button>
+
+		<tn-card-header>
+			<h1 class="find-employee-title">
+				{{'find-employee-card-title' | translate}}
+			</h1>
+		</tn-card-header>
+
+		<div>
+			<div class="find-employee-search-container">
+				<div class="tn-radio-inline" role="radiogroup" aria-label="find employees">
+					<label class="control control--radio">
+						Person
+						<input type="radio" name="orgChartFind" ng-click="$ctrl.shiftDeptEmployee('person')" checked>
+						<div class="control__indicator"></div>
+					</label>
+					<label class="control control--radio">
+						Department
+						<input type="radio" name="orgChartFind" ng-click="$ctrl.shiftDeptEmployee('department')">
+						<div class="control__indicator"></div>
+					</label>
+				</div>
+				<div class="find-employee-search">
+					<tn-input-container>
+						<input id="personOrDeptSearchText" class="find-employee-search-box" type="search" ng-change="$ctrl.clearSearch()" ng-model-options="{debounce:1000}" ng-model="$ctrl.searchText" aria-label="{{$ctrl.selected}}">
+					</tn-input-container>
+					<button tn-action-button ng-click="$ctrl.onSearchClicked()" class="find-employee-search-button">
+						Search
+					</button>
+				</div>
+			</div>
+			<div class="find-employee-divider horizontal-divider"></div>
+			<tn-spinner ng-show="$ctrl.showSpinner" is-show="$ctrl.showSpinner" error-message="$ctrl.onError"></tn-spinner>
+			<tn-table color="white" ng-if="$ctrl.selected !== 'department' && $ctrl.displayData.length>0" ng-show="!$ctrl.errorData"
+					  col-titles="$ctrl.titles" class="person-data"
+					  data="$ctrl.displayData" from="orgChart"
+					  allow-expand="false"></tn-table>
+			<div ng-if="$ctrl.selected !== 'department'" ng-show="$ctrl.errorData"
+				 role="alert" aria-live="assertive" class="tn-table-empty-data-text">
+				{{$ctrl.displayData}}
+			</div>
+			<div class="tn-table-empty-data-text" ng-if="$ctrl.displayData.length==0 && $ctrl.searchText!=''">
+				<p role="alert" aria-live="assertive">No matching people</p>
+			</div>
+			<div class="tn-dept-table">
+			<div ng-if="$ctrl.selected === 'department' && $ctrl.deptData.length>0">
+				<table class="table">
+					<thead>
+						<tr>
+							<th ng-repeat="title in $ctrl.deptHeading track by $index">
+								<p tabindex="0" ng-if="title !== ''" >{{title}}</p>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="value in $ctrl.deptData track by $index " ng-if="!$ctrl.errorMessage">
+							<td colspan="{{$ctrl.deptHeading.length}}">
+								<p>
+									<a href id="orgChartDept_{{$index}}" aria-label="Deparment name {{value.name}} and department code is {{value.id }}"
+									   class="find-employee-modal-employee-link" ng-click="$ctrl.onClick(value.id)">{{value.name}}</a>
+									<span aria-hidden="true">({{value.id }})</span>
+								</p>
+							</td>
+						</tr>
+						<tr ng-if="$ctrl.errorMessage">
+							<td colspan="{{$ctrl.deptHeading.length}}">
+								<div ng-if="$ctrl.errorMessage" class="tn-table-empty-data-text" role="alert" aria-live="assertive">
+									{{$ctrl.errorMessage}}
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+				<div class="tn-table-empty-data-text" ng-if="$ctrl.deptData.length==0 && $ctrl.searchText!=''">
+					<p role="alert" aria-live="assertive">No matching departments</p>
+				</div>
+			</div>
+		</div>
+	</tn-card>
+</div>

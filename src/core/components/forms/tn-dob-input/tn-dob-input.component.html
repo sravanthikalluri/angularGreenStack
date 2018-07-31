@@ -1,0 +1,28 @@
+<tn-input-container ng-class="{'is-invalid': $ctrl.input.$invalid && ($ctrl.input.$touched || $ctrl.formName.$submitted), 'is-disabled' : $ctrl.isDisabled }">
+	<tn-input-label>
+		<label for="{{$ctrl.componentId}}">{{$ctrl.label}}</label>
+	</tn-input-label>
+	<input ng-model="$ctrl.fieldValueCopy"
+		   ng-change="$ctrl.update($ctrl.fieldValueCopy)"
+		   type="text"
+		   name="{{$ctrl.fieldName}}"
+		   mask="99/99/9999"
+		   restrict="reject"
+		   ng-value="{{$ctrl.fieldValueCopy | date: 'MM/dd/yyyy'}}"
+		   placeholder="MM/DD/YYYY"
+		   inputmode="text"
+		   id="{{$ctrl.componentId}}"
+		   ng-required="$ctrl.isRequired"
+		   ng-disabled="$ctrl.isDisabled"
+		   aria-label="{{$ctrl.label}}"
+		   validate-dob>
+	<div class="tn-input-error"
+	     ng-messages="$ctrl.input.$error"
+	     ng-show="$ctrl.input.$invalid && ($ctrl.input.$touched || $ctrl.formName.$submitted)">
+		<div ng-message="required" aria-live="polite">Required.</div>
+		<div ng-message="dob" aria-live="polite">Numbers only.</div>
+		<div ng-message="mask" aria-live="polite">Must in in MM/DD/YYYY format.</div>
+		<div ng-message="dobDate" aria-live="polite">Invalid Date.</div>
+		<div ng-message="dobRange" aria-live="polite">Age should be greater than 14, and less than 110</div>
+	</div>
+</tn-input-container>

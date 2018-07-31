@@ -1,0 +1,13 @@
+<span ng-click="$ctrl.closeModal();" class="missing-email-modal-close-icon icon-close-temp"></span>
+
+<div class="missing-email-modal-content">
+	<h4 ng-bind="'proxy-missing-email-title' | translate"></h4>
+	<div class="missing-email-modal-message">
+		<p>
+      {{$ctrl.empName}} {{'proxy-missing-email-popup-message' | translate}}
+		</p>
+  </div>
+	<div class="missing-email-modal-footer">
+			<button type="submit" class="margin-left btn-ok" tn-action-button ng-click="$ctrl.closeModal();" ng-bind="'proxy-missing-modal-ok' | translate"></button>
+	</div>
+</div>

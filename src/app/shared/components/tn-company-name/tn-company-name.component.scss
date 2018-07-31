@@ -1,0 +1,29 @@
+.tn-company-logo {
+	width: auto;
+
+	&.bs-ca {
+		height: 18px;
+	}
+
+	&.aetna {
+		height: 20px;
+	}
+
+	&.guardian {
+		height: 36px;
+	}
+
+	&.vsp {
+		height: 40px;
+	}
+
+	&.metlife {
+		height: 19px;
+	}
+
+	&.fl {
+		height: 36px;
+		margin-right: -8px;
+		margin-bottom: -10px;
+	}
+}

@@ -1,0 +1,214 @@
+{
+	"data":[
+		{
+			"id": "1",
+			"type": "link",
+			"isActive": true,
+			"url": "app.main.dashboard",
+			"target": "",
+			"icon": "tn-icon tn-menu-link-icon icon-icon_dashboard",
+			"text": "Dashboard"
+		},
+		{
+			"id": "2",
+			"type": "link",
+			"url": "#",
+			"target": "",
+			"icon": "tn-icon tn-menu-link-icon icon-icon_time",
+			"text": "Time Off"
+		},
+		{
+			"id": "3",
+			"type": "toggle",
+			"url": "app.main.money",
+			"target": "",
+			"icon": "tn-icon tn-menu-link-icon icon-icon_money",
+			"text": "Money",
+			"menus": [
+				{
+					"id": "4",
+					"url": "app.main.money.overview",
+					"target": "",
+					"icon": null,
+					"text": "Overview"
+				},
+				{
+					"id": "5",
+					"url": "app.main.money.paychecks-and-statements",
+					"target": "",
+					"icon": null,
+					"text": "Paychecks and Statements"
+				},
+				{
+					"id": "6",
+					"url": "https://app.trinetexpense.com/users/login",
+					"target": "_blank",
+					"icon": null,
+					"text": "Expenses"
+				},
+				{
+					"id": "7",
+					"url": "#",
+					"target": "",
+					"icon": null,
+					"text": "Retirement Savings"
+				},
+				{
+					"id": "9",
+					"url": "app.main.money.direct-deposit",
+					"target": "",
+					"icon": null,
+					"text": "Direct Deposit"
+				},
+				{
+					"id": "10",
+					"url": "app.main.money.taxes",
+					"target": "",
+					"icon": null,
+					"text": "Taxes"
+				},
+				{
+					"id": "11",
+					"url": "app.main.money.employment-verification",
+					"target": "",
+					"icon": null,
+					"text": "Employment Verification"
+				},
+				{
+					"id": "12",
+					"url": "#",
+					"target": "",
+					"icon": null,
+					"text": "Money Forms"
+				}
+			]
+		},
+		{
+			"id": "13",
+			"type": "toggle",
+			"url": "app.main.benefits",
+			"target": "",
+			"icon": "tn-icon tn-menu-link-icon icon-icon_benefits",
+			"text": "Benefits",
+			"menus": [
+				{
+					"id": "17",
+					"url": "app.main.benefits.overview",
+					"target": "",
+					"icon": null,
+					"text": "Overview"
+				},
+			  	{
+					"id": "18",
+					"url": "app.main.benefits.resources",
+					"target": "",
+					"icon": null,
+					"text": "Resources"			  	
+				},
+				{
+					"id": "19",
+					"url": "app.main.benefits.legal-notice",
+					"target": "",
+					"icon": null,
+					"text": "Legal Notice"
+				}
+			]
+		},
+		{
+			"id": "14",
+			"type": "toggle",
+			"url": "app.main.company",
+			"target": "",
+			"icon": "tn-icon tn-menu-link-icon icon-icon_directory",
+			"text": "Company",
+			"menus":[
+				{
+					"id": "22",
+					"url": "app.main.company.overview",
+					"target": "",
+					"icon": null,
+					"text": "Overview"
+				},
+				{
+					"id": "23",
+					"url": "app.main.company.holiday-calendar",
+					"target": "",
+					"icon": null,
+					"text": "Holiday Calendar"
+				},
+				{
+					"id": "24",
+					"url": "app.main.company.company-directory",
+					"target": "",
+					"icon": null,
+					"text": "Company Directory"
+				},
+				{
+					"id": "25",
+					"url": "app.main.company.org-chart",
+					"target": "",
+					"icon": null,
+					"text": "Org Chart"
+				}
+			]
+		},
+		{
+			"id": "29",
+			"type": "link",
+			"url": "app.main.contact",
+			"target": "",
+			"icon": "tn-icon tn-menu-link-icon icon-icon_email",
+			"text": "Contact TriNet"
+		},
+		{
+			"id": "30",
+			"type": "link",
+			"url": "app.main.settings",
+			"target": "",
+			"icon": "tn-icon tn-menu-link-icon icon-icon_settings",
+			"text": "Settings"
+		},
+		{
+			"id": "31",
+			"type": "toggle",
+			"url": "app.main.team",
+			"target": "",
+			"icon": "tn-icon tn-menu-link-icon icon-icon_work_inbox",
+			"text": "Team",
+			"menus":[
+				{
+					"id": "32",
+					"url": "app.main.team.overview",
+					"target": "",
+					"icon": null,
+					"text": "Overview"
+				},
+				{
+					"id": "33",
+					"url": "app.main.team.leave-calendar",
+					"target": "",
+					"icon": null,
+					"text": "Leave Calendar"
+				},
+				{
+					"id": "34",
+					"url": "app.main.team.leave-approvals",
+					"target": "",
+					"icon": null,
+					"text": "Leave Approvals"
+				},
+				{
+					"id": "35",
+					"url": "app.main.team.expense-approvals",
+					"target": "",
+					"icon": null,
+					"text": "Expenses Approvals"
+				}
+			]
+		}
+	],
+	"_requestId": "20efce15-203a-4541-978d-c334c8f44671",
+	"_statusCode": "200",
+	"_statusText": "OK",
+	"_statusMessage": "Success"
+}

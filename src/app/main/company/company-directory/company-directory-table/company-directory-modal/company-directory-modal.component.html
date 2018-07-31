@@ -1,0 +1,34 @@
+<div class="modal-background">
+	<div class="primary-container company-modal">
+		<tn-card>
+			<tn-chip label={{$ctrl.modalData.emplymntStatus}} style="$ctrl.chipStyle"></tn-chip>
+			<span id="directoryDetailClose" ng-click="$ctrl.closeModal()" class="company-modal-close-icon icon-close-temp hand"></span>
+			<tn-card-content>
+				<div class="row company-directory-modal-row">
+					<div class="col-sm-4 company-directory-modal-column">
+						<span class="image-placeholder">{{$ctrl.modalData.initials}}</span>
+						<span class="employee-name semibold" ng-if="$ctrl.modalData.employeeDetails.preferredName==null">
+							{{$ctrl.modalData.employeeName}}
+						</span>
+						<span class="employee-name semibold" ng-if="!($ctrl.modalData.employeeDetails.preferredName==null)">
+							{{$ctrl.modalData.employeeDetails.preferredName}}
+						</span>
+						<span class="position-department">{{$ctrl.modalData.designation}}</span>
+						<span class="position-department">
+							{{$ctrl.modalData.employeeDetails.department}}
+						</span>
+						<h5 class="semibold">
+							<i class="tn-icon icon-icon_location"></i> {{$ctrl.modalData.employeeDetails.address.city}},{{$ctrl.modalData.employeeDetails.address.state}},{{$ctrl.modalData.employeeDetails.address.country}}
+						</h5>
+						<button id="directoryDetailViewProfileBtn" tn-button ng-click="$ctrl.profile()" disabled="true">View Full Profile</button>
+					</div>
+					<div class="col-sm-offset-1 col-sm-6">
+						<tn-company-directory-modal-table data="$ctrl.modalData"></tn-company-directory-modal-table>
+					</div>
+				</div>
+			</tn-card-content>
+		</tn-card>
+	</div>
+</div>
+
+

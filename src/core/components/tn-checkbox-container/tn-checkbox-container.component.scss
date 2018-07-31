@@ -1,0 +1,20 @@
+@import 'main';
+
+tn-checkbox-container {
+  input[type="checkbox"]
+  {
+	width: auto;
+	margin:0;
+  }
+  tn-checkbox-label
+  {
+	display: inline-block;
+	vertical-align: top;
+	line-height: 17px;
+	margin-left: 15px;
+    font-size: 12px;
+    label{
+		font-weight: normal;
+	}
+  }
+}

@@ -1,0 +1,22 @@
+<div class="background">
+	<div class="primary-container">
+		<h2 class="page-title">{{'team-title' | translate}}</h2>
+		<team-calendar-card></team-calendar-card>
+		<pending-approvals-card
+			title="'team-leave-title' | translate"
+			subtitle="'team-leave-subtitle' | translate"
+			button-text="'team-leave-button-text' | translate"
+			table-titles="$ctrl.leaveTableTitles"
+			table-data="$ctrl.leaveTableData">
+		</pending-approvals-card>
+		<pending-approvals-card
+			title="'team-expense-title' | translate"
+			subtitle="'team-expense-subtitle' | translate"
+			button-text="'team-expense-button-text' | translate"
+			table-titles="$ctrl.expenseTableTitles"
+			table-data="$ctrl.expenseTableData">
+
+			</pending-approvals-card>
+	</div>
+	<div class="secondary-container"></div>
+</div>

@@ -1,0 +1,77 @@
+@import 'main';
+
+.notice-event-base{
+	.important-notices-header{
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		.important-notices-icon {
+			color: $notification-badge-red;
+		}
+	}
+	.important-notices-item{
+		.important-notices-item-date {
+			color: $leave-status-other-font-color;
+			margin-top: 25px;
+		}
+		.important-notices-item-description{
+			margin-bottom:0px;
+		}
+		.imporatnt-notices-link{
+			display: flex;
+			justify-content: center;
+			.icon-more{
+				font-size:12px;
+			}
+		}
+	}
+	.notices-card{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	  	.notices-card-content{
+		  clear:both;
+		  display: block;
+		}
+		.notices-card-date {
+		  color: $slate;
+		}
+	  	.notices-card-title{
+		  color: $font-color;
+		  font-size: 18px;
+		  word-wrap: break-word;
+		  word-break: keep-all;
+		  text-align: justify;
+		  font-weight: 600;
+		}
+		.notices-card-desc {
+		  color: $font-color;
+		  word-wrap: break-word;
+		  word-break:keep-all;
+		  text-align: justify;
+		}
+	}
+}
+.tn-action-link{
+  text-decoration: none;
+  color: $white;
+  background: linear-gradient(45deg,#f6594c,#f17c35);
+  border-radius: 4px;
+  padding: 10px 15px;
+  margin: 10px 0;
+  display: inline-block;
+  &:hover,&:active,&:focus {
+	background: linear-gradient(45deg,#f76f54,#f38a40);
+	text-decoration: none;
+	color: $white;
+  }
+}
+
+
+
+
+
+
+
+
+

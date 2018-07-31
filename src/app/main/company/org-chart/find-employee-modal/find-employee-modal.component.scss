@@ -1,0 +1,251 @@
+@import '../../../../../styles/main';
+
+.find-employee-modal {
+  margin: 0 auto;
+  min-height: 50vh;
+  tn-card-header{
+	.find-employee-title{
+	  font-size: 150%;
+	}
+    }
+  .tn-dept-table{
+	width: 715px;
+	margin: 0;
+  }
+	.person-data {
+	  .tn-table-row {
+		.tn-table-row-data {
+		  .tn-table-row-data-header {
+			max-width: 250px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		  }
+		}
+	  }
+	}
+  }
+  .tn-btn-close{
+  	background: transparent;
+  	border: 0;
+  }
+  .tn-modal-close{
+  	background: transparent;
+  	border: 0;
+  	font-size: 18px;
+  	position: absolute;
+  	right: 10px;
+    top:10px;
+    &:focus{
+      outline: 3px solid $tn-focus-border-color;
+    }
+  	i{
+  		margin:0;
+  	}
+}
+.tn-radio-inline{
+  display: flex;
+  justify-content: space-around;
+}
+.find-employee-modal {
+	tn-bind-html{
+	  display: flex;
+	  align-items: center;
+	}
+	  .tn-table {
+		box-shadow: none;
+		margin: 10px 0 0 -12px;
+		width: auto;
+		max-height: 400px;
+		overflow-y: auto;
+		td {
+		  width: 33.33%;
+		}
+	  }
+	  .table{
+		tbody{
+		  td{
+			vertical-align: middle;
+			border: none;
+			P{
+			  white-space: normal;
+			}
+		  }
+		  tr {
+			&:last-child {
+			  p {
+				color: $font-color;
+				font-weight: 500 !important;
+			  }
+			  background: none !important;
+			}
+		  }
+		}
+	}
+  .tn-radio-inline{
+	flex: 1;
+  }
+  tn-spinner{
+	.spinner{
+	  position: absolute;
+	}
+  }
+	.tn-table-header { display: none; }
+	.tn-table-row-data-header { line-height: 40px; }
+  .tn-table-row-data {
+    .row-head { font-size: 12px !important};
+    .table-row-data { font-size: 14px !important};
+  }
+	.tn-table-row-data h6, p { font-size: 14px !important};
+
+  a {
+		color: $trinet-blue;
+		text-decoration: none;
+		margin-left: 10px;
+  }
+  .dept-row-data {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  .dept-row-head{
+      font-size: 12px !important;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      line-height: 1.1;
+  }
+}
+
+.find-employee-search-container {
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 10px;
+}
+
+.find-employee-modal .radio-button { display: inherit; }
+
+.find-employee-modal .radio-button-icon {
+	display: inline;
+	font-size: 34px;
+	margin-right: 5px;
+}
+
+.find-employee-modal .radio-button-blue { color: $trinet-blue; }
+.find-employee-modal .radio-button-gray { color: $gray; }
+.find-employee-modal .radio-button-label { line-height: 40px; }
+
+.find-employee-search-box, .find-employee-search-button {
+	height: 40px;
+	margin-left: 10px;
+}
+
+.find-employee-search-button {
+	width: 86px;
+	padding: 0;
+}
+
+.find-employee-divider {
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+.find-employee-modal .image-placeholder {
+	text-align: center;
+	margin: 0;
+	font-size: 14px;
+	line-height: 40px;
+	height: 36px;
+	width:  36px;
+	display: inline-block;
+}
+
+.find-employee-modal-employee-link { cursor: pointer; }
+
+.find-employee-search { display: inherit; }
+
+.find-employee-search-container {
+.control {
+  display: block;
+  position: relative;
+  margin-bottom: 15px;
+  cursor: pointer;
+  min-height: 30px;
+  box-sizing: content-box;
+  padding-top: 12px;
+  color: #444c5c;
+  font-family: Proxima Nova;
+
+  & > * {
+    box-sizing: content-box;
+  }
+
+  input {
+    position: absolute;
+    left: -9999px;
+       &:focus{
+   		~.control__indicator{
+   			outline: 3px solid $tn-focus-border-color;
+   		}
+       }
+  }
+
+  &:after,&:before {
+    box-sizing: content-box;
+  }
+
+}
+label {
+	font-weight: normal;
+}
+
+.control--radio {
+  padding-top: 4px;
+  padding-left: 53px;
+
+  .control__indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.75em;
+    width: 1.75em;
+    border: 0.125em solid $blue;
+    border-radius: 100%;
+    &:hover {
+      border-color: $azure-blue;
+    }
+
+  }
+
+
+  input:checked ~ .control__indicator {
+    border: 0.125em solid $blue;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 1.15em;
+      height: 1.15em;
+      background-color: $blue;
+      border-radius: 100%;
+      left: 0.30em;
+      top: 0.30em;
+    }
+    &:hover {
+      border-color: $azure-blue;
+      &:after {
+        background-color: $azure-blue;
+      }
+    }
+  }
+  input:disabled ~ .control__indicator {
+    pointer-events: none;
+    border: 0.125em solid #dde1e6;
+    background-color: #f8f9fa;
+    &:after {
+      background-color: #dde1e6;
+    }
+  }
+
+}
+
+}
+

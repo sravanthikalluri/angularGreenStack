@@ -1,0 +1,123 @@
+@import 'main';
+
+$tn-input-container-tn-input-label-font-size: 12px;
+$tn-input-container-input-font-size: 16px;
+$tn-input-container-select-arrow-size: 7px;
+$tn-input-container-focused-color: #2373ba;
+
+tn-input-container {
+	tn-input-label {
+		display: block;
+		font-size: $tn-input-container-tn-input-label-font-size;
+		margin-bottom: 5px;
+    	color: $slate;
+    	label{
+    		font-weight: normal;
+    	}
+	}
+
+	input,
+	select {
+		padding: 5px 8px;
+	    margin: 0;
+	    border: 1px solid #D4DBE5;
+	    height: 28px;
+	    width: 250px;
+	    border-radius: 4px;
+	    overflow: hidden;
+	    background-color: #fff;
+	    font-size: 12px;
+	    font-weight: 600;
+	    color: #30343C;
+	}
+
+	textarea {
+		width: 350px;
+		resize: none;
+		padding: 5px 8px;
+	    margin: 0;
+	    border: 1px solid #D4DBE5;
+	    border-radius: 4px;
+	    overflow: hidden;
+	    background-color: #fff;
+	    font-size: 12px;
+	    font-weight: 600;
+	    color: #30343C;
+	}
+
+	select {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+    	appearance: none;
+    	background: #fff url(assets/images/arrowDown.svg) no-repeat 98% 50%;
+		&::-ms-expand {
+			display: none;
+		}
+	}
+}
+
+tn-input-container.is-disabled {
+	input,
+	textarea,
+	select {
+		color: #6e778a;
+	}
+}
+
+tn-input-container.is-required {
+	tn-input-label:before {
+		content: '*';
+	}
+}
+
+tn-input-container.is-focused {
+	input,
+	textarea,
+	select {
+		border: 1px solid $tn-input-container-focused-color;
+	}
+
+	tn-input-label {
+		color: $tn-input-container-focused-color;
+	}
+}
+
+tn-input-container.is-invalid {
+	input,
+	textarea,
+	select {
+		border: 1px solid red;
+	}
+  .select-style {
+	select{
+	  border: none;
+	}
+	border: 1px solid red;
+  }
+	tn-input-label {
+		color: $red-darker;
+	}
+}
+
+tn-input-container-select {
+	position: relative;
+
+	&:after {
+		position: absolute;
+		top: 48px;
+		right: 16px;
+		margin-top: -2px;
+		width: 0;
+		height: 0;
+		border-top: $tn-input-container-select-arrow-size solid;
+		border-right: $tn-input-container-select-arrow-size solid transparent;
+		border-left: $tn-input-container-select-arrow-size solid transparent;
+		pointer-events: none;
+		content: '';
+	}
+}
+
+.tn-input-error {
+	font-size: $tn-input-container-tn-input-label-font-size;
+	color: $red-darker;
+}

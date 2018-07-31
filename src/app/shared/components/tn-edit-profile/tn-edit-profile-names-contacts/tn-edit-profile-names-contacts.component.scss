@@ -1,0 +1,18 @@
+@import 'main';
+
+.tn-profile-contact-section{
+  &.has-error{
+	align-items: center;
+  }
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  	.close-icon{
+	  color: #EB4141;
+	  cursor: pointer;
+	}
+  .icon-add{
+	margin-right: 5px;
+  }
+}

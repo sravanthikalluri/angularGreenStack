@@ -1,0 +1,12 @@
+<div class="tn-search-header-bar">
+	<h2>
+		<button ui-sref={{$ctrl.state}} class="no-border-button">
+			{{$ctrl.title}}
+		</button>
+		<i class="icon-icon_forward icon-heading" ng-if=$ctrl.subTitle></i>
+		<span>
+			{{$ctrl.subTitle}}
+		</span>
+	</h2>
+	<tn-search-box placeholder="{{$ctrl.placeholder}}" search="$ctrl.search" action="$ctrl.action()"></tn-search-box>
+</div>

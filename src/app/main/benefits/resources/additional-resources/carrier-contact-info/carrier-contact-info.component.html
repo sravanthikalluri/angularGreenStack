@@ -1,0 +1,20 @@
+<div ng-if="$ctrl.error">{{$ctrl.errorMessage}}</div>
+<div ng-if="!$ctrl.error">
+	<p>
+		{{ 'my_benefits.policies.benefits_carrier_stmt' | translate }}
+	</p>
+	<a id="guideBook_{{$index}}" ng-if="$ctrl.showCard" ng-repeat="data in $ctrl.benefitsCarrierData track by $index"
+	   ng-href="{{data.url | contentUrl}}" target="_blank"
+	   tn-link-button
+	   class="tn-benefits-help-card-actions-item">
+		<span class="tn-icon tn-link-button-icon icon-icon_forms pull-left"></span>
+		<span class="tn-link-button-text semibold pull-left">{{data.fiscalYear}}</span>
+	</a>
+	<div ng-if="!$ctrl.showCard">
+		<div ng-repeat="data in $ctrl.benefitsCarrierData"  class="benefits-carrier-contact-pdf-link " >
+			<span class="tn-icon"><img alt="PDF-Icon" ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png"></span>
+			<a id="$ctrl.currBook{{$index}}" ng-href="{{data.url | contentUrl}}" target="_blank">{{data.urlName}}{{data.fiscalYear}}
+			</a>
+		</div>
+	</div>
+</div>

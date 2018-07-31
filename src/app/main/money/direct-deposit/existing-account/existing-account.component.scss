@@ -1,0 +1,83 @@
+@import '../../../../../styles/main';
+
+.button-group {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  .button-add-account {
+	margin-left: 20px;
+  }
+  .button-plus {
+	font-size: 12px;
+	font-weight: 600;
+  }
+}
+
+.tn-has-tooltip {
+  display: flex;
+  align-items: center;
+  .tn-earning-hastooltip {
+	.tn-tooltip {
+	  right: -5px;
+	  i {
+		font-size: 13px;
+	  }
+	}
+	.tn-tooltip-content {
+	  p {
+		line-height: 20px;
+		margin: 10px 0 0 0;
+		letter-spacing: 0.45px;
+		white-space: normal;
+		font-size: 12px;
+	  }
+	  bottom: 25px;
+	  left: -45px;
+	  right: 0;
+	  width: 200px;
+	  &:after {
+		bottom: -12px;
+		left: 43px;
+		right: auto;
+	  }
+	  &:before {
+		bottom: -10px;
+		left: 45px;
+		right: auto;
+
+	  }
+	}
+  }
+}
+
+.account-title {
+  margin: 10px 5px;
+}
+
+/* existing account css starts */
+.existing-direct-deposite-accounts {
+  font-family: "Proxima Nova", Arial, sans-serif;
+  letter-sapcing: 0.2px;
+  .account-table {
+	margin-bottom: 30px;
+	.select-style {
+	  margin-bottom: 20px;
+	}
+  }
+  tn-card-title-group {
+	align-items: center;
+  }
+  .button-group {
+	justify-content: flex-end;
+  }
+  p[role="columnheader"],p[role="gridcell"]{
+	margin: 10px 0;
+	font-size: 12px;
+	line-height: 1.1;
+  }
+}
+
+/* existing account css ends */
+
+
+
+

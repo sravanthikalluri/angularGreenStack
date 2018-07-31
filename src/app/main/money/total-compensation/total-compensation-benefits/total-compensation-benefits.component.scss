@@ -1,0 +1,20 @@
+@import 'main';
+
+.benefits{
+	background-color: rgb(245,247,248);
+	border-radius: 4px;
+	margin-top: 10px;
+	margin-bottom: 60px;
+	.benefits-content{
+		margin-top: 30px;
+		span{
+			font-size: 16px;
+			padding-left: 10px;
+			color: $leave-status-other-font-color
+		}
+		label{
+			font-size: 18px;
+			font-weight: 600;
+		}
+	}
+}

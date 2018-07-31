@@ -1,0 +1,45 @@
+@import '../../../../styles/main';
+
+.tn-view-button {
+  border-color: $blue;
+  color: $blue;
+  width: 100%;
+  font-weight: 600;
+
+  &:active, &:hover {
+	border-color: $blue;
+	color: $blue;
+  }
+}
+
+.notifications-footer {
+  margin-top: 25px;
+  .tn-view-button {
+	padding: 0 20px;
+  }
+}
+
+.workInbox-heading {
+  color: $font-color;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #b3bdc7;
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+.workinbox-taskname {
+  color: $slate;
+  margin-top: 25px;
+  font-size: 16px;
+}
+
+.workInbox-unassigned-card, .workInbox-assigned-card {
+  .announcements-card-desc {
+	margin-top: 20px;
+	margin-bottom: 10px;
+  }
+}
+
+.workInbox-unassigned-card {
+  padding-top: 20px;
+}

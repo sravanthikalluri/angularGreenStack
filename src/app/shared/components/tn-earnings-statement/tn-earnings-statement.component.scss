@@ -1,0 +1,432 @@
+@import '../../../../styles/main';
+
+.border-right {
+  border-right: 1px solid $header-border-color;
+}
+
+.check-details-content {
+  .tn-table {
+	box-shadow: none;
+  }
+  font-family: Proxima Nova, Arial, sans-serif;
+  margin-top: 70px !important;
+  width: 70vw;
+  min-width: 800px;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(49, 51, 58, 0.2);
+  padding: 16px 32px;
+  background-color: white;
+  flex-direction: column;
+  margin-bottom: 30vh;
+  a, b {
+	font-size: 12px;
+  }
+  .tn-table {
+	h5 {
+	  padding: 10px !important;
+	  font-weight: 600;
+	  letter-spacing: 0.9px;
+	  font-size: 16px !important;
+	  height: 44px;
+	}
+	h5, h6, p {
+	  width: auto;
+	  white-space: normal;
+	  flex: 1;
+	}
+	/*		.tn-table-row-data:nth-last-child(1) p, .tn-table-row-header p:nth-last-child(1){
+                text-align: right !important;
+                width: 100% !important;
+            }
+            .tn-table-row-data:nth-last-child(1) p, .tn-table-row-header p:nth-last-child(1){
+                text-align: right !important;
+                width: 100% !important;
+            }*/
+  }
+  .container-fluid {
+	padding: 0;
+	border: 1px solid #eaecf0;
+	border-top-width: 0;
+	.tn-table-row-data {
+	  h6, h5, p {
+		font-size: 14px;
+		letter-spacing: 0.35px;
+	  }
+	}
+  }
+
+}
+
+.headerInfo {
+  display: inline-flex;
+  order: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: $header-border-color;
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+  h3 {
+	flex-grow: 5;
+	color: $font-color;
+	font-weight: 600;
+  }
+  tn-toggle {
+	flex-grow: 1;
+	border-right: 1px solid #ddd;
+  }
+  > span {
+	flex-grow: 1;
+	text-align: right;
+	font-size: 18px;
+	line-height: 1.33;
+	letter-spacing: 0.4px;
+	color: #30343c;
+  }
+}
+
+.company-details {
+  &.peo-details {
+	order: 2;
+  }
+  order: 3;
+  flex-direction: row;
+  display: flex;
+  border-bottom: #DAE0E6;
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+  padding: 10px 0;
+  align-items: center;
+  div {
+	min-width: 16vw;
+	vertical-align: middle;
+	margin: auto 0vw;
+	flex-wrap: wrap;
+	flex: 1;
+  }
+  .company-address {
+	border-right: $header-border-color;
+	border-right-style: solid;
+	border-right-width: thin;
+	.employer-details {
+	  color: $font-color;
+	  line-height: 1.1;
+	  margin: 10px 0px 10px 0px;
+	  span {
+		color: $slate;
+	  }
+	}
+  }
+  .peo-address {
+	.address-abbr-name, .peo-descr2 {
+	  font-size: 18px;
+	  color: $font-color;
+	  font-weight: 600;
+	  line-height: 1.1;
+	  margin: 10px 0px 10px 0px;
+	}
+	.address-details, .peo-descr1 {
+	  color: $font-color;
+	  line-height: 1.1;
+	  margin: 10px 0px 10px 0px;
+	  span {
+		color: $slate;
+	  }
+	}
+  }
+  .check-info {
+	flex: 1;
+	h5, p {
+	  display: flex;
+	  align-items: center;
+	  margin: 0;
+	  span {
+		padding: 5px 10px;
+		color: $slate;
+		line-height: 20px;
+		word-break: break-word;
+		font-size: 13px;
+		&:first-child {
+		  color: $font-color;
+		  font-weight: 600;
+		  min-width: 100px;
+		}
+	  }
+	}
+	&.check-info-payGroup {
+	  flex: 2;
+	  h5, p {
+		span {
+		  &:first-child {
+			min-width: 135px;
+		  }
+		}
+	  }
+	}
+  }
+}
+
+.employee-address {
+  order: 4;
+  .employee-address-name {
+	color: $font-color;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 1.1;
+	margin: 20px 0px 10px 0px;
+  }
+  p {
+	color: $slate;
+	font-size: 14px;
+	line-height: 1.1;
+	margin: 10px 0px 10px 0px;
+  }
+}
+
+.employee-details {
+  order: 5;
+  background: $background-color;
+  border: $header-border-color;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 10px 0;
+  h5, p {
+	margin: 0;
+	line-height: 1.1;
+  }
+  span {
+	padding: 10px 0;
+	display: inline-block;
+	color: $slate;
+	&:first-child {
+	  color: $font-color;
+	  font-weight: 600;
+	  width: 115px;
+
+	}
+  }
+  .col {
+	display: flex;
+	flex-direction: row;
+	width: 50%;
+	padding-left: 16px;
+  }
+
+  .tax-allowances {
+	div {
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+	  padding: 10px 0;
+	  h5, p {
+		flex: 1;
+		color: $slate;
+		font-size: 14px;
+		letter-spacing: 0.3px;
+	  }
+	  .heading {
+		color: $font-color;
+		font-weight: 600;
+	  }
+	  &:first-child {
+		h5, p {
+		  color: $font-color;
+		  font-weight: 600;
+		}
+	  }
+	}
+
+  }
+}
+
+.net-pay {
+  order: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  .net-pay-amount {
+	color: $font-color;
+	font-weight: 600;
+	font-size: 48px !important;
+	margin: 0 !important;
+  }
+  .tn-btn-nonNegotiable {
+	background: $slate;
+	color: $menu-selected-icon-color;
+	border-radius: 12.5px;
+	margin: 20px 0 10px 0;
+	padding: 3px 20px;
+	font-size: 14px;
+	cursor: auto;
+  }
+  h5, p {
+	margin: 0;
+	color: $slate;
+	font-size: 16px !important;
+	line-height: 1.1;
+  }
+
+}
+
+.net {
+  order: 6;
+}
+
+.has-totals {
+  .tn-table-row:last-child {
+	background-color: $white;
+	border-top: 1px solid #dfe1e2;
+	div {
+	  h6, p {
+		font-weight: 700 !important;
+		font-size: 14px;
+		color: black;
+	  }
+	}
+  }
+}
+
+.check-details-tables {
+  order: 7;
+  display: flex;
+  flex-wrap: wrap;
+  .group {
+	display: flex;
+	flex-grow: 1;
+	flex-wrap: wrap;
+	tn-table, tn-hours-earnings-table, tn-taxes-deductions-table {
+	  flex-grow: 1;
+	  padding: 1vw;
+	  &:first-child {
+		padding: 1vw 1vw 1vw 0;
+	  }
+	  &:last-child {
+		padding-right: 1vw 0 1vw 1vw;
+	  }
+	  h6, p {
+		padding: 0 15px 0 15px;
+	  }
+	}
+
+  }
+  .single {
+	display: flex;
+	flex-grow: 1;
+	flex-wrap: wrap;
+	width: 100%;
+	tn-hours-earnings-table, tn-taxes-deductions-table, .tn-tax-table, .tn-total-YTD, .tn-directDepositTable {
+	  flex-grow: 1;
+	  padding: 1vw 0;
+	  h6, p {
+		padding: 0 15px 0 15px;
+	  }
+	}
+  }
+}
+
+.tn-total-YTD {
+  .tn-table-header {
+	display: none;
+  }
+  table.table {
+	thead {
+	  tr {
+		background-color: rgb(36, 41, 54) !important;
+		p, th {
+		  border: none;
+		  color: $white;
+		  font-size: 12px;
+		  font-weight: 600;
+		  line-height: 2;
+		  letter-spacing: 0.2px;
+		}
+	  }
+	}
+	tbody{
+	  tr {
+		&:last-child {
+		  p {
+			color: $font-color;
+			font-weight: 500 !important;
+		  }
+		  background: none !important;
+		}
+	  }
+	}
+  }
+}
+
+.tn-directDepositTable {
+  .tn-table-row:last-child {
+	.tn-table-row-data {
+	  &:first-child {
+		flex: 2;
+	  }
+	}
+  }
+}
+
+
+.tn-paycheck-hastoltip {
+  .tn-tooltip {
+	top: -5px;
+	right: -5px;
+	i {
+	  font-size: 25px;
+	}
+  }
+  .tn-tooltip-content {
+	h4 {
+	  margin: 5px 0;
+	  font-weight: bold;
+	  border-bottom: 1px solid #ddd;
+	}
+	p {
+	  line-height: 20px;
+	  margin: 10px 0 0 0;
+	  font-size: 11px;
+	  letter-spacing: 0.5px;
+	}
+	bottom: 25px;
+	left: -270px;
+	right: 0;
+	width: 300px;
+	&:after {
+	  bottom: -12px;
+	  left: auto;
+	  right: 5px;
+	}
+	&:before {
+	  bottom: -10px;
+	  left: auto;
+	  right: 8px;
+
+	}
+  }
+}
+.tn-next-pay-table, .tn-directDepositTable{
+  table{
+	thead tr th:last-child{
+	  text-align: right;
+	}
+	tbody tr td:last-child{
+	  text-align: right;
+	}
+  }
+}
+.container-fluid {
+  padding: 0;
+}
+
+.peo-logo {
+  width: 154px;
+  height: 58px;
+  margin-left: 40px;
+}

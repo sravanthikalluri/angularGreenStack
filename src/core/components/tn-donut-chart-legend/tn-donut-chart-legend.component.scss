@@ -1,0 +1,32 @@
+@import 'main';
+
+.tn-donut-chart-legend {
+	font-weight: 600;
+
+	.legend-item {
+		display: block;
+		padding: 10px 10px 10px 50px;
+		position: relative;
+	}
+
+	.legend-item-icon-container {
+		height: 100%;
+		position: absolute;
+		display: flex;
+		align-items: center;
+		left: 11px;
+		top: 0px;
+	}
+
+	.legend-item-icon {
+		height: 20px;
+		width: 20px;
+	}
+
+	.legend-item-label {
+		margin: 0px;
+		font-size: 14px;
+		font-weight: 600;
+		color: $slate;
+	}
+}

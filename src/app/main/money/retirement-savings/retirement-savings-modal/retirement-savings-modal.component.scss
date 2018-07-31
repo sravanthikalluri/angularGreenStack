@@ -1,0 +1,52 @@
+@import 'main';
+.savings-modal-background{
+  margin-top:0;
+  .primary-container{
+	margin: 0 auto;
+  }
+.savings-modal{
+	.savings-modal-heading{
+		margin-top: 40px;
+	}
+	.savings-modal-sub-heading{
+		margin-top: 20px;
+	}
+	.savings-modal-span{
+		margin-right: 10px;
+	}
+	.savings-modal-border{
+		border-bottom: 1px solid #ECEDED;
+	}
+	.savings-modal-gray{
+		color: $leave-status-other-font-color;
+	}
+	.savings-modal-content{
+		display: flex;
+		flex-direction: row;
+		margin-top: 20px;
+		.savings-modal-icon{
+			margin-top: 15px;
+			.savings-modal-blue{
+				color: $blue;
+			}
+		}
+		.savings-modal-amount{
+			flex: 6;
+			margin-left: 15px;
+		}
+	}
+	.savings-modal-button-group{
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		margin-top: 10px;
+		.button-save{
+			margin-left: 20px;
+		}
+	}
+
+}
+
+}
+
+

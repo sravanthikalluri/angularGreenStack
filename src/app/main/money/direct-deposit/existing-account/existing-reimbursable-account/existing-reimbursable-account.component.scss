@@ -1,0 +1,35 @@
+@import 'main';
+
+.reimbursable-account-container{
+	display: flex;
+	flex-direction: row;
+	margin-left:15px;
+	white-space:nowrap;
+	justify-content: space-around;
+	  .flex-item-number{
+			flex:3;
+			margin-left:35px !important;
+		}
+		.flex-item-type{
+			flex:4;
+		}
+	.existing-account-color-blue{
+		color: $blue;
+		margin-top: 5px !important;
+	}
+
+	p {
+		margin: 8px 0px 8px 0px !important;
+	}
+}
+
+.reimbursable-table-data:nth-child(2){
+	margin-top: 10px !important;
+}
+
+.reimbursable-table-data {
+
+}
+
+
+

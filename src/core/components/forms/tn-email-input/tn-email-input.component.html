@@ -1,0 +1,19 @@
+<tn-input-container ng-class="{'is-invalid': $ctrl.input.$invalid && ($ctrl.input.$touched || $ctrl.formName.$submitted), 'is-disabled': $ctrl.isDisabled}">
+	<tn-input-label>
+		<label for="userEmail_{{$ctrl.componentId}}">{{$ctrl.label}}</label>
+	</tn-input-label>
+	<input ng-model="$ctrl.fieldValueCopy"
+		   ng-change="$ctrl.update($ctrl.fieldValueCopy)"
+		   name="{{$ctrl.fieldName}}"
+		   id="userEmail_{{$ctrl.componentId}}"
+		   ng-required="$ctrl.isRequired"
+		   ng-disabled="$ctrl.isDisabled"
+		   aria-label="{{$ctrl.label}}"
+	       validate-email>
+	<div class="tn-input-error"
+		 ng-messages="$ctrl.input.$error"
+		 ng-show="$ctrl.input.$invalid && ($ctrl.input.$touched || $ctrl.formName.$submitted)">
+		<div ng-message="required" aria-live="polite">Required.</div>
+		<div ng-message="email" aria-live="polite">Not a valid e-mail.</div>
+	</div>
+</tn-input-container>

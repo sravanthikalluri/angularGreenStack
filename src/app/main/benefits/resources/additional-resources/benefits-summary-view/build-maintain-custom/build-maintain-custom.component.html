@@ -1,0 +1,267 @@
+<span ng-click="$ctrl.closeModal();" class="sso-modal-close-icon icon-close-temp hand"></span>
+<div class="modalPad">
+	<div ng-if="!$ctrl.showResults && !$ctrl.gettingResults">
+		<div class="clearfix">&nbsp;</div>
+		<h4>{{'my_benefits.policies.chart_builder' | translate}} for {{ $ctrl.description }}</h4>
+		<p>{{'my_benefits.policies.trinet_offers' | translate}}</p>
+		<p>{{'my_benefits.policies.select_build' | translate}}</p>
+		<div class="row">
+			<div ng-repeat="state in $ctrl.states" class="col-md-3 state-input">
+				<input
+						type="checkbox"
+						name="{{state.id}}"
+						id="{{state.id}}"
+						value="{{state.value}}"
+						ng-checked="$ctrl.isChecked(state)"
+						ng-click="$ctrl.addRemoveStates(state.value);">
+				<label for="{{state.id}}" class="benefit-custom-checkbox-label">
+					 {{ 'my_benefits.policies.' + state.name | translate }}
+				</label>
+			</div>
+		</div>
+		<div class="clearfix">&nbsp;</div>
+		<div>
+			<button tn-action-button ng-click="$ctrl.submitForm()">
+				Build and Save semi-monthly Rate Chart
+			</button>
+		</div>
+	</div>
+
+
+	<tn-spinner ng-show="$ctrl.gettingResults" disable-timeout="true"></tn-spinner>
+
+	<div ng-if="$ctrl.showResults">
+		<div class="btnPrint">
+			<button id="planCostsPrint" class="tn-button tn-action-button no-margin pull-right "
+					aria-label="Plan costs print button"
+					tn-action-button ng-click="$ctrl.printSection()">
+					<span class="icon-icon_print_circle large icon-print tn-link-button-icon" aria-hidden="true"></span>
+					<span class="tn-link-button-text pull-right">Print</span>
+			</button>
+		</div>
+		<div id="$ctrl.statesBuildData.idAttribute">
+			<h4 class="data-tables-headding">{{$ctrl.companyName}}</h4>
+			<h4 class="data-tables-headding">{{'my_benefits.policies.current_summary' | translate }} for {{ $ctrl.description }}</h4>
+			<div class="clearfix">&nbsp;</div>
+			<p>{{'my_benefits.policies.summary_represents' | translate }}</p>
+			<table class="table small table-striped" ng-if="$ctrl.statesBuildData.employeeHSA != null && $ctrl.statesBuildData.employee1HSA != null">
+				<thead>
+				<tr>
+					<td width="30%"><b>{{'my_benefits.policies.compHealthSavingHSA' | translate}}</b></td>
+					<td width="16%">{{'my_benefits.policies.employee_only' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.empOneOrMore' | translate}}</td>
+					<td width="30%"></td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td></td>
+					<td width="36%" class="bold">{{$ctrl.statesBuildData.employeeHSA | currency}}</td>
+					<td width="16%">{{$ctrl.statesBuildData.employee1HSA | currency}}</td>
+					<td></td>
+				</tr>
+				</tbody>
+			</table>
+			<h4 class="headlines-md-BluBerry">{{'my_benefits.policies.your' | translate}}
+				<span ng-if="$ctrl.payFrequencyType === 'B'">{{'money.payrollSchedule.biWeek' | translate}}</span>
+				<span ng-if="$ctrl.payFrequencyType === 'W'">{{'money.payrollSchedule.week' | translate}}</span>
+				<span ng-if="$ctrl.payFrequencyType === 'S'">{{'money.payrollSchedule.smMonth' | translate}}</span>
+				<span ng-if="$ctrl.payFrequencyType === 'M'">{{'money.payrollSchedule.mon' | translate}}</span>
+				Cost
+			</h4>
+			<!-- Medical plans table -->
+			<table class="table small table-striped" ng-hide="$ctrl.statesBuildData.medicalPlansList===null || $ctrl.statesBuildData.medicalPlansList.length===0">
+				<thead>
+				<tr>
+					<td width="36%"><b class="text-capitalize">{{'my_benefits.policies.medical' | translate}}</b></td>
+					<td width="16%">{{'my_benefits.policies.employee_only' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.emp_spouse' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.emp_ren' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.family' | translate}}</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr ng-repeat="data in $ctrl.statesBuildData.medicalPlansList">
+					<td width="36%" class="bold">{{::data.desc}}</td>
+					<td width="16%">{{::data.employee | number: 2}}</td>
+					<td width="16%">{{::data.spouse | number: 2}}</td>
+					<td width="16%">{{::data.children | number: 2}}</td>
+					<td width="16%">{{::data.family | number: 2}}</td>
+				</tr>
+				</tbody>
+			</table>
+			<!-- Dental plans table -->
+			<table class="table small table-striped" ng-hide="$ctrl.statesBuildData.dentalPlansList===null || $ctrl.statesBuildData.dentalPlansList.length===0">
+				<thead>
+				<tr>
+					<td width="36%"><b>{{'my_benefits.policies.dental' | translate}}</b></td>
+					<td width="16%">{{'my_benefits.policies.employee_only' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.emp_spouse' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.emp_ren' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.family' | translate}}</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr ng-repeat="data in $ctrl.statesBuildData.dentalPlansList">
+					<td width="36%" class="bold">{{::data.desc}}</td>
+					<td width="16%">{{::data.employee | number: 2}}</td>
+					<td width="16%">{{::data.spouse | number: 2}}</td>
+					<td width="16%">{{::data.children | number: 2}}</td>
+					<td width="16%">{{::data.family | number: 2}}</td>
+				</tr>
+				</tbody>
+			</table>
+			<!-- Vision plans table -->
+			<table class="table small table-striped" ng-hide="$ctrl.statesBuildData.visionPlansList===null || $ctrl.statesBuildData.visionPlansList.length===0">
+				<thead>
+				<tr>
+					<td width="36%"><b>{{'my_benefits.policies.vision' | translate}}</b></td>
+					<td width="16%">{{'my_benefits.policies.employee_only' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.emp_spouse' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.emp_ren' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.family' | translate}}</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr ng-repeat="data in $ctrl.statesBuildData.visionPlansList">
+					<td width="36%" class="bold">{{::data.desc}}</td>
+					<td width="16%">{{::data.employee | number: 2}}</td>
+					<td width="16%">{{::data.spouse | number: 2}}</td>
+					<td width="16%">{{::data.children | number: 2}}</td>
+					<td width="16%">{{::data.family | number: 2}}</td>
+				</tr>
+				</tbody>
+			</table>
+			<!-- Benefit Group Term Life Plans table -->
+			<table class="table small table-striped"
+				   ng-hide="$ctrl.statesBuildData.lifeDescription == null || $ctrl.statesBuildData.lifePlan == null">
+				<thead>
+				<tr>
+					<td width="36%"><b>{{'my_benefits.policies.grouptermLife' | translate}}</b></td>
+					<td width="16%">{{'my_benefits.policies.employee_only' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.emp_spouse' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.emp_ren' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.family' | translate}}</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr >
+					<td width="36%" class="bold">{{$ctrl.statesBuildData.lifeDescription}}</td>
+					<td width="16%" ></td>
+					<td >{{$ctrl.statesBuildData.lifePlan}}</td>
+					<td></td>
+					<td></td>
+				</tr>
+				</tbody>
+			</table>
+			<!-- Benefit optional Dental Plans table -->
+			<table class="table small table-striped"
+				   ng-hide="$ctrl.statesBuildData.optionalDentalPlansList===null || $ctrl.statesBuildData.optionalDentalPlansList.length===0">
+				<thead>
+				<tr>
+					<td width="36%"><b>{{'my_benefits.policies.optionalDental' | translate}}</b></td>
+					<td width="16%">{{'my_benefits.policies.employee_only' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.emp_spouse' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.emp_ren' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.family' | translate}}</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr ng-repeat="data in $ctrl.statesBuildData.optionalDentalPlansList">
+					<td width="36%" class="bold">{{::data.desc}}</td>
+					<td width="16%">{{::data.employee | number: 2}}</td>
+					<td width="16%">{{::data.spouse | number: 2}}</td>
+					<td width="16%">{{::data.children | number: 2}}</td>
+					<td width="16%">{{::data.family | number: 2}}</td>
+				</tr>
+				</tbody>
+			</table>
+			<!-- Benefit optional Vision Plans table -->
+			<table class="table small table-striped"
+				   ng-hide="$ctrl.statesBuildData.optionalVisionPlansList===null || $ctrl.statesBuildData.optionalVisionPlansList.length===0">
+				<thead>
+				<tr>
+					<td width="36%"><b>{{'my_benefits.policies.optionalVision' | translate}}</b></td>
+					<td width="16%">{{'my_benefits.policies.employee_only' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.emp_spouse' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.emp_ren' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.family' | translate}}</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr ng-repeat="data in $ctrl.statesBuildData.optionalVisionPlansList">
+					<td width="36%" class="bold">{{::data.desc}}</td>
+					<td width="16%">{{::data.employee | number: 2}}</td>
+					<td width="16%">{{::data.spouse | number: 2}}</td>
+					<td width="16%">{{::data.children | number: 2}}</td>
+					<td width="16%">{{::data.family | number: 2}}</td>
+				</tr>
+				</tbody>
+			</table>
+			<!-- Benefit optional Vision Plans table -->
+			<table class="table small table-striped" ng-hide="$ctrl.statesBuildData.otherPlansList===null || $ctrl.statesBuildData.otherPlansList.length===0">
+				<thead>
+				<tr>
+					<td width="36%"><b>{{'my_benefits.policies.optionalOther' | translate}}</b></td>
+					<td width="16%">{{'my_benefits.policies.employee_only' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.emp_spouse' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.emp_ren' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.family' | translate}}</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr ng-repeat="data in $ctrl.statesBuildData.otherPlansList">
+					<td width="36%" class="bold">{{::data.planDescription}}</td>
+					<td>{{translation.my_benefits.policies.employeePaid}}</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				</tbody>
+			</table>
+			<!-- Benefit Supplement plans table -->
+			<table class="table small table-striped"
+				   ng-hide="$ctrl.statesBuildData.benefitSupplementList===null || $ctrl.statesBuildData.benefitSupplementList.length===0">
+				<thead>
+				<tr>
+					<td width="36%"><b>{{'my_benefits.policies.supplement' | translate}}</b></td>
+					<td width="16%">{{'my_benefits.policies.employee_only' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.emp_spouse' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.emp_ren' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.family' | translate}}</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr ng-repeat="data in $ctrl.statesBuildData.benefitSupplementList">
+					<td width="36%" class="bold">{{::data.desc}}</td>
+					<td width="16%">{{::data.employee | number: 2}}</td>
+					<td width="16%">{{::data.spouse | number: 2}}</td>
+					<td width="16%">{{::data.children | number: 2}}</td>
+					<td width="16%">{{::data.family | number: 2}}</td>
+				</tr>
+				</tbody>
+			</table>
+			<!-- Benefit Supplement plans DD table -->
+			<table class="table small table-striped" >
+				<thead>
+				<tr>
+					<td width="36%"><b>{{'my_benefits.policies.optionalSupplementalADD' | translate}}</b></td>
+					<td width="16%">{{'my_benefits.policies.employee_only' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.emp_spouse' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.emp_ren' | translate}}</td>
+					<td width="16%">{{'my_benefits.policies.family' | translate}}</td>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td width="36%" class="bold">{{$ctrl.statesBuildData.optionalSupplementalADD.desc}}</td>
+					<td width="16%">{{$ctrl.statesBuildData.optionalSupplementalADD.employee | number: 2}}</td>
+					<td width="16%">{{$ctrl.statesBuildData.optionalSupplementalADD.spouse | number: 2}}</td>
+					<td width="16%">{{$ctrl.statesBuildData.optionalSupplementalADD.children | number: 2}}</td>
+					<td width="16%">{{$ctrl.statesBuildData.optionalSupplementalADD.family | number: 2}}</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,42 @@
+@import 'main';
+
+
+#payFrame{
+  background:#fff;
+}
+
+a {
+  &.back-link {
+	background-color: transparent;
+	-webkit-text-decoration-skip: objects;
+	color: $blue;
+	text-decoration: none;
+	outline: 0;
+	margin-top: 10px;
+	display: inline-block;
+  }
+}
+
+button {
+  &.back-link {
+	background-color: transparent;
+	-webkit-text-decoration-skip: objects;
+	color: $blue;
+	text-decoration: none;
+	outline: 0;
+	margin-top: 10px;
+	display: inline-block;
+  }
+}
+
+.pcc-widget {
+  .powered {
+	display: none !important;
+  }
+  .btn-danger {
+	right: 20px !important;
+	top: 4px !important;
+	left: 690px !important;
+	position: relative !important;
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "data": {
+	"benefitProgramList": [
+	  {
+		"benefitProgram": "TNB",
+		"defaultProgram": "Y",
+		"description": "Staff"
+	  }
+	],
+	"currentPlanStartDate": "2016-10-01",
+	"currentPlanEndDate": "2017-09-30",
+	"customIndicator": true,
+	"employeeBenefitProgram": "TNB",
+	"employeePayFrequency": "S",
+	"groupDesc": "Group By Benefit Class",
+	"isAdmin": true,
+	"oeDisplay": null,
+	"payFrequencyList": [
+	  "B",
+	  "S"
+	],
+	"pdfUrl": null,
+	"planStartDate": null,
+	"planEndDate": null,
+	"showText": null,
+	"stateCode": null,
+	"bPsBenSumNext": null
+  },
+  "_requestId": "1c9c4219-7181-418c-a158-ab48ad76bd1e",
+  "_statusCode": "200",
+  "_statusText": "OK",
+  "_statusMessage": "Success"
+}

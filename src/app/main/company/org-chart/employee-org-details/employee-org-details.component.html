@@ -1,0 +1,35 @@
+<div class="employee-org-details-container">
+
+	<div class="managers-block">
+		<div class="manager-details"
+			 ng-if="$ctrl.managers.length > 0"
+			 ng-repeat="manager in $ctrl.managers | filter: {status:'!T'}">
+			<div class="manager-text-blue" aria-label="{{manager.employeeName}}-{{'org-chart-direct-manager' | translate: {name: $ctrl.employee.employeeName} }}"
+				 id="direct-manager-name"
+				 tn-enter="$ctrl.managerClick(); $ctrl.managerClicked({$event: {employeeId: manager.employeeId}});"
+				 ng-click="$ctrl.managerClick(); $ctrl.managerClicked({$event: {employeeId: manager.employeeId}});">
+				<span id="orgManagerLink" class="icon-back icon-icon_back" title="back icon"></span>
+				{{manager.employeeName}}
+			</div>
+			<div class="manager-role-text"
+				 ng-if="$ctrl.employee.employeeName.length > 0 && $index === 0">
+				{{'org-chart-direct-manager' | translate: {name: $ctrl.employee.employeeName} }}
+			</div>
+			<div class="manager-role-text"
+				 ng-if="$ctrl.employee.employeeName.length > 0 && $index === 1">
+				{{'org-chart-direct-approver' | translate: {name: $ctrl.employee.employeeName} }}
+			</div>
+		</div>
+	</div>
+
+	<tn-small-employee-card class="hand" show-direct-reports="false" employee-info="$ctrl.employee" ng-click="$ctrl.profileView({id: $ctrl.employee.employeeId})"></tn-small-employee-card>
+
+	<div class="report-details">
+		<div class="reports-text-number">
+		{{$ctrl.employee.teamMemberCount}}
+		</div>
+		 <p class="direct-reports semibold">
+			{{'org-chart-direct-reports' | translate}}
+		</p>
+	</div>
+</div>

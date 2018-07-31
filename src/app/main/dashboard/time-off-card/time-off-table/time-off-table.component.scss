@@ -1,0 +1,23 @@
+@import 'main';
+
+.time-off-table {
+	.leave-status-other {
+		color: $slate;
+	}
+
+	.leave-status-approved {
+		color: $leave-status-approved-font-color;
+	}
+
+	.time-off-table-heading {
+		color: $slate;
+	}
+
+	.table-data{
+		font-size: 12px;
+		font-weight: 600;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		line-height: 1.1;
+	}
+}

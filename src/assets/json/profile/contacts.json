@@ -1,0 +1,37 @@
+{  
+	"data":[  
+		{  
+			"accessType":"Home",
+			"effectiveDate":"2016-09-09",
+			"employeeId":"00001002198",
+			"media":"Cellular",
+			"notes":null,
+			"telephoneNumber":"111-110-1668",
+			"uniqueId":26,
+			"url":null
+		},
+		{  
+			"accessType":"Work",
+			"effectiveDate":"2016-09-09",
+			"employeeId":"00001002198",
+			"media":"Email",
+			"notes":null,
+			"telephoneNumber":null,
+			"uniqueId":7,
+			"url":"james@hubbardston.com"
+		},
+		{  
+			"accessType":"Work",
+			"effectiveDate":"2016-09-09",
+			"employeeId":"00001002198",
+			"media":"Phone",
+			"notes":null,
+			"telephoneNumber":"123-456-7890",
+			"uniqueId":26,
+			"url":null
+		}
+	],
+	"_requestId":"2e97fbb7-fe86-4687-9db3-3286fe92f0ae",
+	"_statusCode":"200",
+	"_statusText":"OK"
+}

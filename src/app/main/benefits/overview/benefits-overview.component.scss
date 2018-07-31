@@ -1,0 +1,34 @@
+@import 'main';
+#benefit-cards{
+	.tn-table-row{
+		&:nth-child(odd) {
+			background: transparent;
+ 		}
+	 }
+ }
+.tabs-heading{
+  display:block;
+  border-bottom:1px solid #CCC;
+  margin-right: -42%;
+  a{
+	color:black;
+  }
+  .active{
+	color:$blue-link ;
+	padding-bottom:15px;
+	cursor: pointer;
+	border-bottom: 4px solid  $blue-link ;
+  }
+  ul>li:hover {
+	padding-bottom:15px;
+	cursor: pointer;
+	border-bottom: 4px solid  $blue-link ;
+	color: $blue-link;
+
+  }
+}
+
+.tabs-label{
+  float:right;font-size:14px;font-weight:100
+}
+

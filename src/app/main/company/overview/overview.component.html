@@ -1,0 +1,84 @@
+<div class="background">
+	<div class="primary-container">
+		<h2 class="page-title">
+			{{'company' | translate}}
+			<i class="icon-icon_forward  icon-heading"></i>
+			{{'company-overview' | translate}}
+		</h2>
+
+		<tn-card class="company-overview">
+			<tn-card-header class="company-overview-heading">
+				<div class="row  grad">
+					<div class="col-sm-6  company-title">
+						<h4 class="business-name  text-no-wrap" id="companyName">
+							{{$ctrl.companyName}}
+						</h4>
+					</div>
+					<div class="col-sm-6">
+						<a href="https://www.google.com/maps/place/{{$ctrl.headquarteraddress}}" target="_blank" tabindex="-1">
+							<div class="col-sm-6" id="google-map-container" ng-if="$ctrl.headquarteraddress">
+								<ng-map id="companyHqAddressMap"
+										center="{{$ctrl.headquarteraddress}}"
+										zoom="10"
+										default-style="false"
+										disable-default-u-i="true"
+										zoom-control="false"
+										draggable ="false"
+										class="overview-map">
+									<marker position="{{$ctrl.headquarteraddress}}"></marker>
+								</ng-map>
+								<div id="google-map-shade"></div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</tn-card-header>
+
+			<div class="employee-location">
+				<tn-spinner class="employee"
+							ng-show="$ctrl.employeesFinished"
+							is-show="$ctrl.employeesFinished"
+							error-message="$ctrl.errorMessage"></tn-spinner>
+
+				<div class="overview  overview-vertical-line" ng-if="$ctrl.totalCount">
+					<span class="total-count">{{$ctrl.totalCount}}</span>
+					<button id="companyEmpBtn"
+							class="no-border-button"
+							ng-disabled="{{$ctrl.status || $ctrl.disableEmployee}}"
+							ui-sref="app.main.company.company-directory">
+						{{'company-employees' | translate}}
+						<i class="icon-icon_forward  overview-arrow-icon"></i>
+					</button>
+				</div>
+
+				<tn-spinner class="location"
+							ng-show="$ctrl.locationsFinished"
+							is-show="$ctrl.showSpinner"
+							error-message="$ctrl.locationsError"></tn-spinner>
+
+				<div class="overview" ng-if="$ctrl.locations">
+					<span class="number-of-locations">{{$ctrl.numberOfLocations}}</span>
+					<button id="companyLocBtn"
+							class="no-border-button"
+							ng-disabled="{{$ctrl.status}}"
+							ui-sref="app.main.company.locations">
+						{{'company-locations' | translate}}
+						<i class="icon-icon_forward overview-arrow-icon"></i>
+					</button>
+				</div>
+			</div>
+
+			<tn-card-header class="overview-horizontal-line"></tn-card-header>
+
+			<tn-spinner ng-show="$ctrl.locationsFinished" is-show="$ctrl.showSpinner" error-message="$ctrl.locationsError"></tn-spinner>
+
+			<tn-company-overview-table headquarter="$ctrl.headquarter" ng-if="$ctrl.headquarter">
+
+			</tn-company-overview-table>
+		</tn-card>
+	</div>
+
+	<div class="secondary-container">
+		<next-holiday-card></next-holiday-card>
+	</div>
+</div>

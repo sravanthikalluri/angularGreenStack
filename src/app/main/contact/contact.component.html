@@ -1,0 +1,10 @@
+<div class="background">
+	<div class="primary-container">
+		<h2 class="page-title">{{'contact-trinet' | translate}}</h2>
+		<employee-card data="$ctrl.contactInfo.supportContact" ng-if="$ctrl.contactInfo.supportContact" status="$ctrl.companyStatus"></employee-card>
+		<!--<coordinator-card ng-hide="true" contacts="$ctrl.contactInfo.businessContacts" is-ambrose= "$ctrl.isAmbrose" ng-if="$ctrl.contactInfo.businessContacts.length > 0"></coordinator-card>-->
+	</div>
+	<div class="secondary-container">
+		<casemanagement-card data="$ctrl.contactInfo.managementContact"></casemanagement-card>
+	</div>
+</div>

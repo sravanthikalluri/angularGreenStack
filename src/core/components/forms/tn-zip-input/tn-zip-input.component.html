@@ -1,0 +1,25 @@
+<tn-input-container ng-class="{'is-invalid': $ctrl.input.$invalid && ($ctrl.input.$touched || $ctrl.formName.$submitted), 'is-disabled' : $ctrl.isDisabled }">
+	<tn-input-label>
+		<label for="{{$ctrl.componentId}}">{{$ctrl.label}}</label>
+	</tn-input-label>
+	<input ng-model="$ctrl.fieldValue"
+		   ng-change="$ctrl.update($ctrl.fieldValue)"
+		   type="text"
+           name="{{$ctrl.fieldName}}"
+           inputmode="numeric"
+           maxlength="10"
+           maxlength="5"
+		   id="{{$ctrl.componentId}}"
+           ng-required="$ctrl.isRequired"
+           ng-disabled="$ctrl.isDisabled"
+		   aria-label="{{$ctrl.label}}"
+		   validate-zip
+           >
+    <div class="tn-input-error"
+    	 ng-messages="$ctrl.input.$error"
+    	 ng-show="$ctrl.input.$invalid && ($ctrl.input.$touched || $ctrl.formName.$submitted)">
+		<div ng-message="required" aria-live="polite">Required.</div>
+		<div ng-message="zip" aria-live="polite">Numbers only.</div>
+		<div ng-message="zipLength" aria-live="polite">Must be 5 or 9 digits.</div>
+	</div>
+</tn-input-container>

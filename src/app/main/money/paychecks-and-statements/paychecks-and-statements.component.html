@@ -1,0 +1,109 @@
+<div class="background">
+	<div class="primary-container" ng-if="!$ctrl.payFrame">
+		<h2 class="page-title">
+			<tn-title url="'app.main.money.overview'" title="'money-title'"></tn-title>
+			<span class="icon-heading icon-icon_forward"></span>
+			 {{'paychecks-and-statements-title' | translate}}
+		</h2>
+
+		<tn-card loading="$ctrl.loading">
+			<tn-card-content>
+				<div class="paychecks-history-header">
+					<div class="pay-period-change-section">
+						<div>
+							<tn-input-container class="paychecks-history-options">
+								<div class="select-style">
+									<select id="durationList" ng-model="$ctrl.selectedHistory"
+											ng-change="$ctrl.onRangeChange();$ctrl.isDurationChagned = true" aria-label="Duration-List">
+										<option ng-repeat="(key, value) in $ctrl.historyOptions" value="{{value}}">
+											{{key | translate}}
+										</option>
+									</select>
+								</div>
+							</tn-input-container>
+							<div class="date-range" ng-if="$ctrl.selectedHistory === 'dateRange'" >
+								<tn-date-selector
+										label="from-selected-date"
+										date="$ctrl.filter.startDate" disable-future-dates="true" on-update="$ctrl.onDateChange(data,'START')" ></tn-date-selector>
+								To
+								<tn-date-selector
+										label="to-end-date"
+										date="$ctrl.filter.endDate" disable-future-dates="true" on-update="$ctrl.onDateChange(data,'END')" ></tn-date-selector>
+								<div id="date-error-message" ng-if="$ctrl.dateErrorMessage" role="alert" aria-live="{{$ctrl.dateErrorMessage}}">{{$ctrl.dateErrorMessage}}</div>
+							</div>
+							<span class="sr-only" ng-if="$ctrl.isDurationChagned"
+								  role="status" id="sortable" aria-live="polite">
+							</span>
+						</div>
+
+						<div class="paychecks-history-link">
+						<span ng-if="$ctrl.isShowPayrollEstimate" id="estimatePayTools" class="link compensation-statements-link" tn-off-click="$ctrl.clicked()" ng-click="$ctrl.isCompStatemnetsActive=false;$ctrl.isEstPayActive = !$ctrl.isEstPayActive">
+							{{'paychecks-estimate-pay' | translate}}
+							<span class="arrow-icon icon-icon_Dropdown_Arrow"></span>
+							<tn-profile-menu is-active="$ctrl.isEstPayActive" class="estimatePayFlyout">
+							  <button tn-menu-light-button ng-repeat="item in $ctrl.symmetryCalculators" ng-click="$ctrl.toggleSymmetryVisibility(item.name)">{{item.title | translate}}</button>
+							</tn-profile-menu>
+						</span>
+							<span class="link compensation-statements-link" ng-if="$ctrl.isShowW2Form">
+								<a id="viewW2StmtLink" class="no-pad-imp no-bg-all" ng-href="{{$ctrl.w2Url}}" target="_blank">
+								{{$ctrl.w2LableName | translate}}
+							</a>
+							</span>
+							<span class="link compensation-statements-link" tn-off-click="$ctrl.clicked()" aria-expanded="{{$ctrl.isCompStatemnetsActive}}"
+								  ng-click="$ctrl.isEstPayActive =false;$ctrl.isCompStatemnetsActive = !$ctrl.isCompStatemnetsActive">
+							{{'paychecks-total-compenstation-statement' | translate}}
+							<span class="arrow-icon icon-icon_Dropdown_Arrow"></span>
+							<tn-profile-menu is-active="$ctrl.isCompStatemnetsActive" class="estimatePayFlyout">
+								<a class="tn-select-link" id="{{csd.label}}" ng-repeat="csd in $ctrl.compensationStatementsData" href="{{csd.url | contentUrl}}" id="tcs1_{{$index}}" target="_blank">
+									{{csd.label}}
+								</a>
+								<a href class="tn-select-link" id="totalCompStmtCustomLink"  ng-click="$ctrl.goToCustomTCSReport()">
+									Custom Statement
+								</a>
+							</tn-profile-menu>
+						</span>
+						</div>
+					</div>
+
+					<div class="text-center" ng-if="$ctrl.dataMessage">
+						<p role="alert" aria-live="assertive" >{{ $ctrl.dataMessage }}</p>
+					</div>
+				</div>
+
+
+
+
+				<paycheck-history-table id="earningDetailsTable"
+										ng-class="{'date-range-selected': ($ctrl.selectedHistory === 'dateRange')}"
+					ng-if="$ctrl.paychecks.checkSummaries.length > 0"
+					check-summaries="$ctrl.paychecks.checkSummaries"
+					selected-check-index="$ctrl.onSelectedCheckChange($event.checkIndex)"
+					view-details-clicked="$ctrl.onSelectedCheckChange($event.checkIndex);
+										  $ctrl.showModal = true;"
+					selected-index="$ctrl.selectedIndex"
+					filter="$ctrl.filter"
+					use-date-range="$ctrl.showDateRange"
+					ng-hide = "$ctrl.showSpinner">
+				</paycheck-history-table>
+				<tn-spinner ng-show="$ctrl.showSpinner" is-show="$ctrl.showSpinner" error-message="$ctrl.errorMessage"></tn-spinner>
+			</tn-card-content>
+		</tn-card>
+
+
+		<tn-earnings-statement-modal ng-if="$ctrl.showModal" on-show="$ctrl.showModal" selected-index="$ctrl.selectedIndex" data="$ctrl.details" show-spinner="$ctrl.updateSpinner"></tn-earnings-statement-modal>
+	</div>
+	<div class="secondary-container" ng-if="!$ctrl.payFrame">
+		<tn-card ng-if="!$ctrl.errorMessage" class="tn-paycheck-card-small" titles="paychecks-history-date-range" loading="$ctrl.loading || $ctrl.updateSpinner">
+			<tn-card-title-group  class="tn-paycheck-title-small">
+				<tn-pay-period ng-if="$ctrl.details.summary" dates="$ctrl.details.payPeriod"></tn-pay-period>
+			</tn-card-title-group>
+			<tn-paycheck-details-card id="payCheckDetailsCard"
+				small="true"
+				paycheck-details="$ctrl.details"
+				ng-hide="$ctrl.showSpinner || $ctrl.updateSpinner">
+			</tn-paycheck-details-card>
+		</tn-card>
+	</div>
+
+	<paychecks-symmetry-calculator  is-bonus-pay-aggregate="$ctrl.isBonusPayAggregate" pay-frame="$ctrl.payFrame" selected-symmetry-calc="$ctrl.selectedSymmetryCalc" symmetry-paycheck-city-info="$ctrl.symmetryPaycheckCityInfo"></paychecks-symmetry-calculator>
+</div>

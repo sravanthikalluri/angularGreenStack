@@ -1,0 +1,33 @@
+<tn-card class="important-notices-card">
+	<tn-card-header color="secondary" class="important-notices-header">
+		<i class="icon-icon_company_announcements important-notices-icon"></i>
+		<tn-card-title><h3>Notices</h3></tn-card-title>
+	</tn-card-header>
+	<tn-card-content>
+		<tn-spinner ng-show="$ctrl.showSpinner"></tn-spinner>
+	</tn-card-content>
+	<div class="notices-card" ng-hide="$ctrl.showSpinner" ng-repeat="notices in $ctrl.setFullnotices | orderBy : ['priority','-effectiveDate'] |  limitTo : 3 : 0">
+		<div class="notices-card-content">
+		<!--	<p class="notices-card-date">
+				<span ng-repeat="(key,value) in $ctrl.prorityType" ng-if="$ctrl.getPriority(key,notices)">{{value}} Priority </span>
+			</p>-->
+			<h4 class="h6 notices-card-title">{{notices.title}}</h4>
+			<p class="notices-card-desc" >
+				<span ng-bind-html="$ctrl.getBodyParseValue(notices.body)"></span>
+				<a href="" class="hand blue" ng-click="$ctrl.more(notices, $index)"> more...</a>
+				<!--<a class="hand blue" ng-click="$ctrl.less(notices, $index)" ng-if="notices.isShowLess"> less</a>--></p>
+		</div>
+		<div class="notices-card-image">
+			<!--<i class="icon-icon_company_announcements important-notices-icon"></i>-->
+		</div>
+	</div>
+	<div class="notifications-footer" ng-hide="$ctrl.showSpinner" ng-if="$ctrl.noticesLength > 3">
+		<div class="announcements-cards-length text-center">Showing {{$ctrl.currentNoticesLength}} of {{$ctrl.noticesLength}}</div>
+		<button class="tn-view-button important-notices-view-all" tn-button ng-click="$ctrl.showNotices()">View All Notices</button>
+	</div>
+	<tn-card-content ng-if="$ctrl.noticesLength == 0">
+		<div  class="announcements-card">
+			<span class="announcements-card-date">No notices at this time</span>
+		</div>
+	</tn-card-content>
+</tn-card>

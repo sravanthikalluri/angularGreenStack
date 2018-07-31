@@ -1,0 +1,16 @@
+<tn-card-content id="i9-container" class="onboarding-content-wrapper" ng-if="$ctrl.data">
+	<tn-card-title>{{"onboarding-i9-title" | translate}}</tn-card-title>
+	<div class="onboarding-card-content">
+		<span class="icon-icon_employee2 onboarding-icon onboarding-border"></span>
+		<p class="onboarding-content-info">{{"onboarding-i9-message" | translate}}</p>
+		<div class="onboarding-btn-wrapper" ng-if="$ctrl.data.completionDate === null">
+			<button tn-action-button class="onboarding-btn" ng-click="$ctrl.verifyClick('#/ssowidget/i9employee')">{{"onboarding-action-i9" | translate}}</button>
+		</div>
+		<div class="onboarding-status-wrapper" ng-if="$ctrl.data['completionDate'] !== null">
+			<span class="icon-icon_approved onboarding-approved-icon" ng-if="$ctrl.data.completionDate == 'Complete'"></span>
+			<p class="onboarding-status-info pending" ng-if="$ctrl.data.completionDate == 'Pending'">{{"onboarding-pending" | translate}}</p>
+			<p class="onboarding-status-info" ng-if="$ctrl.data.completionDate == 'Complete'">{{"onboarding-complete" | translate}}</p>
+		</div>
+	</div>
+	<hr>
+</tn-card-content>

@@ -1,0 +1,40 @@
+<tn-error-banner error-data="$ctrl.err" clicked="$ctrl.closeAlert()"></tn-error-banner>
+<div class="background">
+	<div class="primary-container" ng-if="$ctrl.data">
+		<h2 class="page-title">{{'edit-profile-title' | translate}}</h2>
+		<tn-card>
+			<form class="edit-profile-form" name="editProfilePersonalForm" ng-submit="$ctrl.save(editProfilePersonalForm)">
+				<ng-form name="homeAddressSectionForm">
+					<home-address-section data="$ctrl.data" form-name="homeAddressSectionForm" on-update="$ctrl.updateAddress(prop, value)" on-delete="$ctrl.delete(editProfilePersonalForm)"></home-address-section>
+				</ng-form>
+				<hr>
+
+				<ng-form name="personalIdSectionForm">
+					<personal-id-section data="$ctrl.data" form-name="personalIdSectionForm" on-update="$ctrl.updatePersonalId(prop, value)"></personal-id-section>
+				</ng-form>
+				<hr>
+
+				<ng-form name="personalstatusSectionForm">
+					<personal-status-section data="$ctrl.data" form-name="personalstatusSectionForm" on-update="$ctrl.updatePersonalStatus(prop, value)"></personal-status-section>
+				</ng-form>
+
+				<tn-card-actions class="margin-top">
+					<button tn-button id="profilePersonalformCancel"
+						    class="edit-profile-button"
+							type="button"
+							ng-click="$ctrl.cancel(editProfilePersonalForm)">
+						{{'edit-profile-cancel' | translate}}
+					</button>
+					<button tn-action-button id="profilePersonalformSave"
+							focus-invalid-field
+							type="submit"
+							class="edit-profile-button margin-left">
+						{{'edit-profile-save-changes' | translate}}
+					</button>
+				</tn-card-actions>
+			</form>
+		</tn-card>
+	</div>
+	<div class="secondary-container"></div>
+</div>
+<tn-full-spinner ng-show="$ctrl.showFullSpinner"></tn-full-spinner>

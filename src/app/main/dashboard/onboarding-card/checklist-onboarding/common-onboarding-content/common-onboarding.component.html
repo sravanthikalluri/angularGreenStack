@@ -1,0 +1,21 @@
+<div class="onboarding-card-content" id="{{$ctrl.taskName}}-task">
+	<span class="{{$ctrl.icon}} onboarding-icon"></span>
+	<p class="onboarding-content-info">{{::$ctrl.message}}</p>
+	<div class="onboarding-btn-wrapper"  ng-if="$ctrl.data['completionDate'] === null && $ctrl.showButtons && !$ctrl.showSpinner" >
+		<button tn-button class="onboarding-btn" ng-click="$ctrl.skip()" ng-if="$ctrl.btnSkipText && !$ctrl.showSpinner">{{::$ctrl.btnSkipText}}</button>
+		<button tn-action-button class="onboarding-btn" ng-click="$ctrl.redirectPage()" ng-if="!$ctrl.showSpinner">{{::$ctrl.btnActionText}}</button>
+	</div>
+	<div class="onboarding-loading-wrapper" ng-if="$ctrl.showSpinner">
+			<tn-spinner ng-show="$ctrl.showSpinner" error-message="$ctrl.errorMessage"></tn-spinner>
+			<p class="onboarding-content-info loading-content" ng-if="$ctrl.showSpinner">{{'onboarding-waiting' |translate}}</p>
+	</div>
+	<div class="onboarding-btn-wrapper" ng-if="!$ctrl.showSpinner && $ctrl.showView" >		
+		<button class="tn-btn onboarding-btn" ng-click="$ctrl.redirectPage()">{{::$ctrl.btnActionText}}</button>
+	</div>
+	<div class="onboarding-status-wrapper" ng-if="$ctrl.data['completionDate']">
+		<span class="icon-icon_approved onboarding-approved-icon" ng-if="$ctrl.data['completionDate'] !== null && $ctrl.data['completionDate'] !== ' ' && !$ctrl.showView"></span>
+		<p class="onboarding-status-info" ng-if="$ctrl.data['completionDate'] !== null && $ctrl.data['completionDate'] !== ' '">{{::$ctrl.btnCompleteText}}</p>
+		<p class="onboarding-status-info error" ng-if="$ctrl.data['completionDate'] === ' '">{{'onboarding-error' |translate}}</p>
+	</div>
+</div>
+<hr>

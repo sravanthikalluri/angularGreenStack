@@ -1,0 +1,309 @@
+{
+	"data":{
+		"header":{
+			"peoDesc":"For payroll inquiries contact the TriNet Solution Center at (800)638-0461",
+			"companyObj":"TriNet, 1100 San Leandro Blvd., Suite 300, San Leandro, CA 94577",
+			"companyId":"3NQ",
+			"payGroup":"SM-Cavium, Inc. SM",
+			"earnsBegDt":"2016-07-01",
+			"earnsEndDt":"2016-07-15",
+			"payEndDt":"2016-07-15",
+			"checkDt":"2016-07-15",
+			"checkNumber":"20333336",
+			"employerName":"Cavium, Inc.",
+			"employerAddress1":"2315 N 1st Street",
+			"employerAddress2":"San Jose, CA  95131",
+			"employerAddress3":" ",
+			"employerCountry":"USA",
+			"payCurrencyCd":"USD",
+			"employerPhone":"4089437100",
+			"name":"James Ellis ",
+			"address1":"21 Seminole Ave.",
+			"address2":"Hubbardston , MA  01452-",
+			"address3":" ",
+			"employeeId":"00001002198",
+			"ssn":" ",
+			"department":"30432211",
+			"location":"Cavium, Inc.-MarlboroMA",
+			"businessTitle":"Director, Engineering",
+			"payRate":"211500.00",
+			"payRateDesc":"Annual",
+			"netPay":"5275.06"
+		},
+		"detail":{
+			"key":{
+				"payGroup":"SM",
+				"payPeriodEndDate":null,
+				"payEndDt":"2016-07-15",
+				"pageNo":"21",
+				"lineNo":"2",
+				"sepChk":"0",
+				"offCycle":"N",
+				"effDt":"2015-10-01"
+			},
+			"taxData":[
+				{
+					"taxWithHolding":"Federal",
+					"maritalStatus":"Single",
+					"allowances":0,
+					"addlPct":0.00,
+					"addlAmt":0.00,
+					"netClaimAmt":null,
+					"splLetters":null
+				},
+				{
+					"taxWithHolding":"MA State",
+					"maritalStatus":"Single",
+					"allowances":0,
+					"addlPct":0.00,
+					"addlAmt":0.00,
+					"netClaimAmt":null,
+					"splLetters":null
+				}
+			],
+			"earns":[
+				{
+					"curEarnsDesc":"Regular",
+					"curEarnsRate":"0.000",
+					"curEarnsHours":"0.00",
+					"curEarnsEarn":"3118.27",
+					"ytdEarnsHours":"1038.00",
+					"ytdEarnsEarn":"105411.06",
+					"earnsBegDt":null,
+					"earnsEndDt":null
+				},
+				{
+					"curEarnsDesc":"Holiday",
+					"curEarnsRate":"101.682",
+					"curEarnsHours":"16.00",
+					"curEarnsEarn":"1626.92",
+					"ytdEarnsHours":"40.00",
+					"ytdEarnsEarn":"4067.30",
+					"earnsBegDt":null,
+					"earnsEndDt":null
+				},
+				{
+					"curEarnsDesc":"Vacation",
+					"curEarnsRate":"101.682",
+					"curEarnsHours":"40.00",
+					"curEarnsEarn":"4067.31",
+					"ytdEarnsHours":"50.00",
+					"ytdEarnsEarn":"5084.14",
+					"earnsBegDt":null,
+					"earnsEndDt":null
+				},
+				{
+					"curEarnsDesc":"Benefit Supplement",
+					"curEarnsRate":"0.000",
+					"curEarnsHours":"0.00",
+					"curEarnsEarn":"450.50",
+					"ytdEarnsHours":"0.00",
+					"ytdEarnsEarn":"5856.50",
+					"earnsBegDt":null,
+					"earnsEndDt":null
+				},
+				{
+					"curEarnsDesc":"Nondiscretionary Patent Award",
+					"curEarnsRate":"0.000",
+					"curEarnsHours":"0.00",
+					"curEarnsEarn":"0.00",
+					"ytdEarnsHours":"0.00",
+					"ytdEarnsEarn":"500.00",
+					"earnsBegDt":null,
+					"earnsEndDt":null
+				},
+				{
+					"curEarnsDesc":"Restricted Stock Units",
+					"curEarnsRate":"0.000",
+					"curEarnsHours":"0.00",
+					"curEarnsEarn":"0.00",
+					"ytdEarnsHours":"0.00",
+					"ytdEarnsEarn":"66878.50",
+					"earnsBegDt":null,
+					"earnsEndDt":null
+				}
+			],
+			"taxWithholdings":[
+				{
+					"taxDesc":"Fed Withholdng",
+					"curTaxes":"1826.50",
+					"ytdTaxes":"40439.03"
+				},
+				{
+					"taxDesc":"Fed MED/EE",
+					"curTaxes":"123.75",
+					"ytdTaxes":"2585.73"
+				},
+				{
+					"taxDesc":"Fed OASDI/EE",
+					"curTaxes":"0.00",
+					"ytdTaxes":"7347.00"
+				},
+				{
+					"taxDesc":"MA Withholdng",
+					"curTaxes":"386.06",
+					"ytdTaxes":"8427.25"
+				}
+			],
+			"preTaxDedns":[
+				{
+					"desc":"Delta Dental",
+					"curDedns":"54.86",
+					"ytdDedns":"713.18",
+					"pytdDedns":"0.00"
+				},
+				{
+					"desc":"401k/Roth Combination",
+					"curDedns":"881.25",
+					"ytdDedns":"12001.80",
+					"pytdDedns":"0.00"
+				},
+				{
+					"desc":"Tufts",
+					"curDedns":"673.00",
+					"ytdDedns":"8749.00",
+					"pytdDedns":"0.00"
+				},
+				{
+					"desc":"VSP Vision",
+					"curDedns":"9.18",
+					"ytdDedns":"119.34",
+					"pytdDedns":"0.00"
+				},
+				{
+					"desc":"General Use FSA without HSA",
+					"curDedns":"33.34",
+					"ytdDedns":"433.35",
+					"pytdDedns":"633.33"
+				}
+			],
+			"postTaxDedns":[
+				{
+					"desc":"Stock Option",
+					"curDedns":"1000.00",
+					"ytdDedns":"42664.41"
+				}
+			],
+			"employerBenefits":[
+				{
+					"desc":"Life & AD/D multiple o",
+					"curEmpBenf":"19.74",
+					"ytdEmpBenf":"256.62"
+				},
+				{
+					"desc":"Short Term Disability",
+					"curEmpBenf":"19.05",
+					"ytdEmpBenf":"247.65"
+				},
+				{
+					"desc":"401k/Roth Combination",
+					"curEmpBenf":"59.37",
+					"ytdEmpBenf":"1500.00"
+				},
+				{
+					"desc":"*Life & AD/D multiple ",
+					"curEmpBenf":"41.79",
+					"ytdEmpBenf":"543.27"
+				},
+				{
+					"desc":"Long-Term Disability",
+					"curEmpBenf":"19.50",
+					"ytdEmpBenf":"253.50"
+				}
+			],
+			"employerBenefitsTaxable":[
+				{
+					"desc":"Life & AD/D multiple ",
+					"curEmpBenf":"41.79",
+					"ytdEmpBenf":"543.27"
+				}
+			],
+			"employerBenefitsNonTaxable":[
+				{
+					"desc":"Life & AD/D multiple o",
+					"curEmpBenf":"19.74",
+					"ytdEmpBenf":"256.62"
+				},
+				{
+					"desc":"Short Term Disability",
+					"curEmpBenf":"19.05",
+					"ytdEmpBenf":"247.65"
+				},
+				{
+					"desc":"401k/Roth Combination",
+					"curEmpBenf":"59.37",
+					"ytdEmpBenf":"1500.00"
+				},
+				{
+					"desc":"Long-Term Disability",
+					"curEmpBenf":"19.50",
+					"ytdEmpBenf":"253.50"
+				}
+			],
+			"totals":{
+				"curHour":56.00,
+				"curGross":"9263.00",
+				"ytdHrsEarn":"1128.00",
+				"ytdGross":"187797.50",
+				"curTaxes":"2336.31",
+				"ytdTaxes":"58799.01",
+				"curPreDedn":"1651.63",
+				"ytdPreDedn":"22016.67",
+				"ytdPreDDedn":"633.33",
+				"curPostDedn":"0.00",
+				"ytdPostDedn":"42664.41",
+				"ytdTotalDedn":"64681.08",
+				"curTotalDedn":"1651.63",
+				"curEmpBenf":"159.45",
+				"ytdEmpBenf":"2801.04",
+				"curFedTaxableGross":"7653.16",
+				"ytdFedTaxableGross":"166324.10",
+				"curNetPay":"5275.06",
+				"ytdNetPay":"64317.41",
+				"curNonTaxableTot":"117.66",
+				"ytdNonTaxableTot":"2257.77",
+				"curTaxableTot":"41.79",
+				"ytdTaxableTot":"543.27",
+				"totalBenefitsCurrent":"159.45",
+				"totalBenefitsYtd":"2801.04",
+				"totDirectDeposit":"5275.06"
+			},
+			"ptos":[
+				{
+					"desc":"SICK",
+					"begBal":0.00,
+					"earned":40.00,
+					"taken":0.00,
+					"adjust":0.00,
+					"endBal":40.00
+				},
+				{
+					"desc":"VAC/PTO",
+					"begBal":144.00,
+					"earned":65.08,
+					"taken":50.00,
+					"adjust":0.00,
+					"endBal":159.08
+				}
+			],
+			"netPayDistributions":[
+				{
+					"desc":"Advice",
+					"refNum":"20333336",
+					"depositAmt":5275.06
+				}
+			],
+			"directDepositDistributions":[
+				{
+					"acctType":"Checking",
+					"acctNum":"6057",
+					"depositAmount":5275.06
+				}
+			]
+		}
+	},
+	"_requestId":"749fafca-fd3b-4bab-8648-528fdbd71130",
+	"_statusCode":"200",
+	"_statusText":"OK",
+	"_statusMessage":"Success"
+}

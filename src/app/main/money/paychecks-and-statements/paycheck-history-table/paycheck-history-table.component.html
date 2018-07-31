@@ -1,0 +1,11 @@
+<tn-table
+	class="paycheck-history-table"
+	color="white"
+	col-titles="$ctrl.titles"
+	sortable-titles="$ctrl.sortableTitles"
+	data="$ctrl.data"
+	can-select-row="true"
+	filter="$ctrl.filter"
+	filter-by-date-range="$ctrl.useDateRange"
+	selected-row-change="$ctrl.selectedCheckIndex({$event:{checkIndex: $event.selectedRow}})">
+</tn-table>

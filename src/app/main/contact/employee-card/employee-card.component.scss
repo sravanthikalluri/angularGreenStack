@@ -1,0 +1,51 @@
+@import 'main';
+
+.tn-contact-content {
+	padding-left:10px;
+}
+
+.company-information {
+	margin-top: 40px;
+}
+.tn-azure-blue{
+  color: $azure-blue !important;
+}
+.contact-card-table {
+	display: flex;
+	align-items: center;
+	padding-bottom: 48px;
+
+	.titles {
+		white-space: nowrap;
+		padding: 10px 0 10px 10px;
+	}
+
+	.tn-right-align-grid-text {
+		text-align: right;
+		padding: 10px 24px 10px 0;
+	}
+
+	.tn-icon {
+		color: $slate;
+	}
+
+	.tn-align-contact-icon {
+		line-height: 4.8em;
+		height: 30px;
+	}
+}
+
+p.contact-label{
+  font-weight: 600!important;
+  margin-top: 7px;
+}
+.contact-card-table.tn-contact-bottom-border {
+	border-bottom: 1px solid $cloudy;
+	padding-bottom: 24px;
+
+	&:last-child { border: 0; }
+}
+
+.contact-card-content.extra-padding {
+	padding-top: 36px;
+}

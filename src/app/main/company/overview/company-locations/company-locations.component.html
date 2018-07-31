@@ -1,0 +1,101 @@
+<div class="background">
+	<div class="primary-container company-overview">
+		<h2 class="page-title">
+			<button ui-sref="app.main.company.overview" class="no-border-button">
+				{{'company' | translate}}
+			</button>
+			<i class="icon-icon_forward icon-heading"></i>
+			<button ui-sref="app.main.company.overview" class="no-border-button">
+				{{'company-overview' | translate}}
+			</button>
+			<i class="icon-icon_forward icon-heading"></i>
+			{{'company-locations' | translate}}
+		</h2>
+
+		<tn-card ng-if="$ctrl.headquarteraddress">
+			<tn-card-header class="company-overview-heading">
+				<div class="row  grad">
+					<div class="col-sm-6">
+						<div class="headquarter-information">
+							<span class="heading">
+								{{'company-headquarters' | translate}}
+							</span>
+
+							<h4 class="semibold">
+								{{$ctrl.headquarter.address.city}}
+							</h4>
+
+							<h6>
+								{{$ctrl.headquarter.address.address1}}&nbsp;
+								{{$ctrl.headquarter.address.address2}}
+								<br />
+								{{$ctrl.headquarter.address.city}},&nbsp;
+								{{$ctrl.headquarter.address.state}}&nbsp;
+								{{$ctrl.headquarter.address.postalCode}}
+							</h6>
+						</div>
+					</div>
+
+					<div class="col-sm-6" id="google-map-container">
+						<ng-map id="locationsHqAddressMap" center="{{$ctrl.headquarteraddress}}"
+								zoom="10"
+								default-style="false"
+								disable-default-u-i="true"
+								zoom-control="false"
+    							draggable ="false"
+								class="overview-map">
+							<marker position="{{$ctrl.headquarteraddress}}"></marker>
+						</ng-map>
+						<div id="google-map-shade"></div>
+					</div>
+				</div>
+			</tn-card-header>
+			
+			<tn-spinner ng-show="$ctrl.locationsFinished" is-show="$ctrl.employeesFinished" error-message="$ctrl.errorMessage"></tn-spinner>
+
+			<tn-company-locations-table headquarter="$ctrl.headquarter" ng-if="$ctrl.headquarter"></tn-company-locations-table>
+		</tn-card>
+		<tn-card ng-repeat="company in $ctrl.locations track by $index">
+			<h3 class="semibold">{{company.fullStateName}}</h3>
+			<div class="row company-locations">
+				<div class="col-sm-offset-2 col-sm-4"
+					 ng-repeat="location in company[company.fullStateName]
+								track by $index">
+					<h4 class="semibold text-no-wrap" ng-if="location.address.city">
+						{{location.address.city}}
+					</h4>
+					<h4 class="semibold text-no-wrap" ng-if="!location.address.city">
+						{{location.shortDesc}}
+					</h4>
+					<div ng-if="location.address.address1
+								&& location.address.address1.length !==0">
+						<div>{{location.address.address1}}</div>
+						<div>{{location.address.address2}}</div>
+						<div>{{location.address.address3}}</div>
+						<div>{{location.address.address4}}</div>
+					</div>
+					<div ng-if="!location.address.address1  ||
+								location.address.address1.length === 0">
+						<span class="address-unavailable">
+							{{'address-unavailable' | translate}}
+						</span>
+					</div>
+					<div  ng-if="location.address.city  &&
+						location.address.city.length !== 0">
+						{{location.address.city}},&nbsp;
+						{{location.address.state}}&nbsp;{{location.address.postalCode}}
+					</div>
+					<div class="company-phone" ng-if="location.phone">
+						{{location.phone | tel}}
+					</div>
+					<div ng-if="location.officeHours
+								&& location.officeHours.length !== 0">
+						<div class="company-open-days">Monday - Friday</div>
+						<div class="company-timings">{{location.officeHours}}</div>
+					</div>
+				</div>
+			</div>
+		</tn-card>
+	</div>
+	<div class="secondary-container"></div>
+</div>

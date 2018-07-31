@@ -1,0 +1,89 @@
+<div class="benefits-forms-item">
+	<div class="hiddenOverflow" id="{{$ctrl.benefitFormItem.label |  lowercase}}other1"
+		ng-click="selectTab($event,'{{$ctrl.benefitFormData.id}}');$ctrl.benefitFormItem.isOpen = !$ctrl.benefitFormItem.isOpen;">
+		<h4 class="medium pull-left" id="{{$ctrl.benefitFormItem.label}}">
+			<span ng-if="$ctrl.bindImgUrl($ctrl.benefitFormItem.label) !== undefined">{{$ctrl.benefitFormItem.label}}</span>
+			<span ng-if="$ctrl.bindImgUrl($ctrl.benefitFormItem.label) === undefined">{{$ctrl.benefitFormItem.label}}</span>
+			({{$ctrl.benefitFormItem.count}})
+		</h4>
+		<span class="pull-right">
+			<a href="{{$ctrl.bindUrl($ctrl.benefitFormItem.label)}}" id="{{$ctrl.benefitFormItem.label}}Id" target="_blank">
+				<img class="carriers-logo" alt="{{$ctrl.benefitFormItem.label}}" ng-if="$ctrl.bindImgUrl($ctrl.benefitFormItem.label) !== undefined" ng-src="{{$ctrl.bindImgUrl($ctrl.benefitFormItem.label)}}">
+			</a>
+
+    	<a href="" id="{{$ctrl.benefitFormItem.label}}Logo" class="toggle-link" 
+			   aria-selected="{{$ctrl.benefitFormItem.isOpen}}" aria-controls="panel{{$ctrl.indexId}}"
+			   aria-expanded="{{$ctrl.benefitFormItem.isOpen}}" role="tab"
+				 aria-label="{{$ctrl.benefitFormItem.label}}Logo"
+				 ng-click="$ctrl.benefitFormItem.isOpen = $ctrl.benefitFormItem.isOpen;$ctrl.showFormSection='';"
+				>
+          <span ng-if="$ctrl.benefitFormItem.icon" class="{{$ctrl.menu.icon}}"></span>
+					<div class="toggle-icon-arrow-border pull-right hand" ng-class="{
+								'toggle-icon-arrow-border-opened': $ctrl.benefitFormItem.isOpen,
+								'toggle-icon-arrow-border-closed': !$ctrl.benefitFormItem.isOpen }">
+								<span class="tn-icon toggle-arrow" ng-class="{
+								'toggle-arrow-is-opened': $ctrl.benefitFormItem.isOpen}"></span>
+					</div>
+				</a>
+		</span>
+	</div>
+<div id="panel{{$ctrl.indexId}}">
+	<tn-card ng-repeat="list in $ctrl.carrierlist" ng-show="$ctrl.benefitFormItem.isOpen"
+			 aria-labelledby="{{$ctrl.benefitFormItem.label}}Logo" aria-hidden="{{!$ctrl.benefitFormItem.isOpen}}"
+			 role="tabpanel"
+			 ng-if="($ctrl.benefitFormItem.sub.length > 0 && list.resourceName === 'Forms') ||
+			(list.resourceName === 'Plan Coverage Summaries' && $ctrl.summaryPlanData.benefitsSummaryPlan.medical !== null) ||
+			(list.resourceName === 'In-Depth Plan Description')">
+
+			<a href=""  id="panel{{$ctrl.indexId}}_{{list.resourceName}}_{{$index}}"
+					ng-click ="$ctrl.toggleCarriersList($index);"
+			   aria-selected="{{$ctrl.carrierlist[$index].isOpen}}" aria-controls="resourceNameList{{$index}}"
+			   aria-expanded="{{$ctrl.formsItem.isOpen}}" role="tab">
+				{{list.resourceName}}
+				<div class="toggle-icon-arrow-border pull-right" ng-class="{
+						'toggle-icon-arrow-border-opened': $ctrl.carrierlist[$index].isOpen,
+						'toggle-icon-arrow-border-closed': !$ctrl.carrierlist[$index].isOpen }">
+						<span class="tn-icon toggle-arrow" ng-class="{
+						'toggle-arrow-is-opened': $ctrl.carrierlist[$index].isOpen}"></span>
+				</div>
+			</a>
+
+		<benefits-medical-plan-coverage-summaries select-item="$ctrl.benefitFormItem.label" index="$index"
+			resource-name="$ctrl.benefitFormItem.label" response="$ctrl.summaryPlanData"
+			ng-if="$ctrl.carrierlist[$index].isOpen && list.resourceName === 'Plan Coverage Summaries'"
+                id="resourceNameList_{{$index}}"
+              aria-labelledby="{{list.resourceName}}{{$index}}"
+              aria-hidden="{{!$ctrl.carrierlist[$index].isOpen && list.resourceName === $ctrl.carrierlist[0].resourceName}}"
+              role="tabpanel"
+		>
+		</benefits-medical-plan-coverage-summaries>
+		<benefits-in-depth-plan-description select-item="$ctrl.benefitFormItem.label" index="$ctrl.index"
+			resource-name="$ctrl.benefitFormItem.label" response="$ctrl.summaryPlanData"
+			ng-if="$ctrl.carrierlist[$index].isOpen && list.resourceName === 'In-Depth Plan Description'" type="$ctrl.benefitFormItem.label"
+            id="{{list.resourceName}}"
+            aria-labelledby="{{list.resourceName}}_{{$index}}"
+            aria-hidden="{{!$ctrl.carrierlist[$index].isOpen && list.resourceName === $ctrl.carrierlist[1].resourceName}}"
+            role="tabpanel"
+		>
+		</benefits-in-depth-plan-description>
+		<div class="toggle-list benefits-resources-toggle-header"  ng-if="$ctrl.carrierlist[$index].isOpen && list.resourceName === 'Forms'"
+			 id="{{list.resourceName}}"
+			 aria-labelledby="{{list.resourceName}}_{{$index}}"
+			 aria-hidden="{{!$ctrl.carrierlist[$index].isOpen && list.resourceName === $ctrl.carrierlist[2].resourceName}}" role="tabpanel"
+		>
+			<div ng-if="$ctrl.benefitFormItem.sub.length > 0" ng-repeat="acc in $ctrl.benefitFormItem.sub track by $index" class="row row-data benefits-form-item">
+				<div id="{{acc.label |  lowercase}}other"
+					 ng-click="selectTab($event,'{{inner}}{{$index}}')">
+					<div class="title-block" id="sidebar{{acc}}{{$index}}other">
+						<a ng-href="{{acc.url | contentUrl}}" target="_blank">
+							<span class="tn-icon"><img  alt="PDF Icon" ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png"></span>
+							{{::acc.label}}
+							<p class="content-text">{{::acc.description}}</p>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div ng-if="$ctrl.benefitFormItem.sub.length === 0"> No Forms Available </div>
+		</div>
+	</tn-card>
+</div>

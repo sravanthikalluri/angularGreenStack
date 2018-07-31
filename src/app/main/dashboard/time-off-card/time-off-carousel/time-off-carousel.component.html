@@ -1,0 +1,11 @@
+<div id="timeOffCarousel" uib-carousel class="time-off-carousel" active="$ctrl.active" interval="$ctrl.interval">
+	<div uib-slide ng-repeat="accrual in $ctrl.accruals track by $index" index="$index">
+		<h4 id='{{accrual.leaveTypeDesc.toLowerCase()}}Label' class="semibold">{{accrual.leaveTypeDesc}}</h4>
+		<tn-radial-progress-chart
+			curr-value="$ctrl.leaveHours(accrual.hrsLeft)"
+			max-value="accrual.accrualCap"
+			label="Hours Left",
+			id-type="{{accrual.leaveTypeDesc.toLowerCase()}}Val">
+    	</tn-radial-progress-chart>
+	</div>
+</div>

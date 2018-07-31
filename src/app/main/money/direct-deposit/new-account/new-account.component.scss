@@ -1,0 +1,68 @@
+@import '../../../main.component';
+
+.direct-dposite-add-account-modal {
+  .primary-container {
+	margin: 0 auto;
+  }
+
+  .new-account {
+	.new-account-label {
+	  color: $leave-status-other-font-color;
+	  font-weight: normal;
+	}
+	.new-account-container {
+	  border-bottom: 1px solid $leave-status-other-font-color;
+	  margin-left: 0;
+	  .new-account-account-number {
+		margin-top: 20px;
+		color: $slate !important;
+		font-weight: normal;
+		margin-bottom: 0;
+		font-size: 14px;
+	  }
+	  .last-item {
+		margin-bottom: 40px;
+		display: block;
+	  }
+	}
+	.tn-account-values {
+	  margin-bottom: 10px;
+	  span {
+		display: inline-block;
+		.tn-icon {
+		  float: left;
+		  margin-right: 10px;
+		}
+		span {
+		  display: inline-block;
+		  margin: 1px 0 0 0;
+		}
+		.tn-has-tooltip ,.tn-tooltip{
+		  margin: 0 !important;
+		}
+	  }
+
+	}
+	tn-card-footer {
+	  justify-content: flex-end;
+	  button[tn-button] {
+		background: $background-color;
+	  }
+	}
+  }
+  .dd-check-image {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 350px;
+	img{
+	  width:100%
+	}
+  }
+
+  .asterisk {
+	color: $font-color-secondary;
+	postion: relative;
+	top: -1px;
+  }
+}

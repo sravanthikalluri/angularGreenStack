@@ -1,0 +1,52 @@
+<div class="row tn-profile-divider tn-profile-content">
+	<div class="col-sm-1">
+		<i class="tn-icon icon-icon_email"></i>
+	</div>
+	<div class="col-sm-4 tn-profile-titles tn-profile-modal">
+		<h5 class="tn-profile-h5">{{'profile-email' | translate}}</h5>
+	</div>
+	<div class="col-sm-7 tn-profile-text">
+		<h5>{{$ctrl.data.employeeDetails.email}}</h5>
+	</div>
+</div>
+
+<div class="row tn-profile-divider tn-profile-content">
+	<div class="col-sm-1">
+		<i class="tn-icon icon-icon_phone"></i>
+	</div>
+	<div class="col-sm-4 tn-profile-titles tn-profile-modal">
+		<h5 class="tn-profile-h5">{{'profile-work-phone' | translate}}</h5>
+		<h5 class="tn-profile-h5">{{'profile-mobile-phone' | translate}}</h5>
+	</div>
+	<div class="col-sm-7 tn-profile-text">
+		<h5>{{$ctrl.data.employeeDetails.phone | tel}}</h5>
+		<h5>{{$ctrl.data.homePhone | tel}}</h5>
+	</div>
+</div>
+
+<div class="row tn-profile-divider tn-profile-content">
+	<div class="col-sm-1">
+		<i class="tn-icon icon-icon_profile"></i>
+	</div>
+	<div class="col-sm-4 tn-profile-titles tn-profile-modal">
+		<h5 class="tn-profile-h5">{{'profile-reports-to' | translate}}</h5>
+	</div>
+	<div class="col-sm-7 tn-profile-text">
+		<h5 class="tn-profile-color-blue">{{$ctrl.data.managerName}}</h5>
+	</div>
+</div>
+
+<div class="row service-date tn-profile-content">
+	<div class="col-sm-1">
+		<i class="tn-icon icon-icon_employee"></i>
+	</div>
+	<div class="col-sm-4 tn-profile-titles tn-profile-modal">
+		<h5 class="tn-profile-h5">{{'profile-service-date' | translate}}</h5>
+	</div>
+	<div class="col-sm-7 tn-profile-text">
+		<h5>{{$ctrl.data.serviceDate |date:'MMMM dd, yyyy'}}</h5>
+	</div>
+</div>
+
+
+

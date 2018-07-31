@@ -1,0 +1,56 @@
+<div>
+	<tn-card>
+		<h4 class="semibold text-center">{{'money.direct_deposit.dd_editCounts' | translate}}</h4>
+
+		<form name="editAccountModalPopup">
+			<tn-input-container ng-class="{'is-invalid': !$ctrl.modalData.accountType}">
+				<label for="edit-account-modal" class="tn-input-label">{{'money.direct_deposit.account_type' | translate}}</label>
+				<select	id="edit-account-modal"
+						name="editAccount"
+						ng-model="$ctrl.modalData.accountType"
+						ng-options="data as data for data in $ctrl.accountTypes"
+						is-required="true"
+				>
+				</select>
+				<div class="tn-input-error" role="alert">
+					<div ng-if="!$ctrl.modalData.accountType">{{'money.direct_deposit.required' | translate}}</div>
+				</div>
+			</tn-input-container>
+
+			<tn-input-container ng-class="{'is-invalid': !$ctrl.modalData.routingNumber}">
+				<tn-input-label>{{'money.direct_deposit.routing_no' | translate}}</tn-input-label>
+				<input name="routingNumber"
+					   maxlength="9"
+					   ng-minlength="9"
+					   tn-input-restriction numbers-only="true"
+					   value="{{$ctrl.modalData.routingNumber}}"
+					   ng-model="$ctrl.modalData.routingNumber"
+					   validate-routing-number
+					   aria-label="routing number"
+					   required
+					   type="text"
+					  >
+				<div class="tn-input-error" role="alert" ng-messages="editAccountModalPopup.routingNumber.$error"
+					 ng-show="editAccountModalPopup.routingNumber.$invalid && editAccountModalPopup.routingNumber.$touched">
+					<div ng-message="!$ctrl.modalData.routingNumber">{{'money.direct_deposit.required' | translate}}</div>
+					<div ng-message="minlength">{{'money.direct_deposit.validations.minRoutingNumber' | translate }}</div>
+					<div ng-message="routingNumber">{{'money.direct_deposit.validations.transitRoutingNumber' | translate }}</div>
+				</div>
+			</tn-input-container>
+
+			<tn-input-container ng-class="{'is-invalid': !$ctrl.modalData.accountNumber}">
+				<tn-input-label>{{'money.direct_deposit.acc_no' | translate}}</tn-input-label>
+				<input type="text" name="accountNumber"placeholder="Account Number" maxlength="17" ng-model="$ctrl.modalData.accountNumber" is-required="true">
+				<div class="tn-input-error" role="alert">
+					<div ng-if="!$ctrl.modalData.accountNumber">{{'money.direct_deposit.required' | translate}}</div>
+				</div>
+			</tn-input-container>
+			<tn-card-footer>
+				<button tn-button class="margin-right" ng-click="$ctrl.cancel()"> {{'cancel' | translate}} </button>
+				<button tn-action-button ng-click="$ctrl.saveEditAccount()" ng-disabled="!$ctrl.disableSaveBtn()">
+					{{'save' | translate}}
+				</button>
+			</tn-card-footer>
+		</form>
+	</tn-card>
+</div>

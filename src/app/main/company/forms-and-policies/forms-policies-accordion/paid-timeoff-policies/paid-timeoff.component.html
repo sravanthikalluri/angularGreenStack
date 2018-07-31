@@ -1,0 +1,140 @@
+<div class="background">
+	<div class="primary-container">
+		<h2 class="page-title">
+			<button class="no-border-button" ui-sref="app.main.company.overview">Company</button>
+			<i class="icon-icon_forward icon-heading" aria-hidden="true"></i>&nbsp;
+			<button class="no-border-button" ui-sref="app.main.company.forms-and-policies">Forms and Policies</button>
+			<i class="icon-icon_forward icon-heading" aria-hidden="true"></i>&nbsp;
+			<!-- <button class="no-border-button">{{'paidTimeOffPolicies.titleNav' | translate}}</button>
+			<i class="icon-icon_forward icon-heading" aria-hidden="true"></i>&nbsp; -->
+			{{'paidTimeOffPolicies.titleNavHeading' | translate}}
+		</h2>
+
+		<tn-card>
+			<tn-card-content class="paid-time-off-policies">
+				<div class="roles">
+					<h4 class="role_heading" ng-bind-html="$ctrl.companyHolidaysHeading">:</h4>
+					<p class="role_info" ng-if="$ctrl.benefitsPaidTimeOff.numberOfCompanyHolidays>0">{{$ctrl.companyName}}
+						{{'paidTimeOffPolicies.offers' | translate}} <span>{{$ctrl.noDays}}</span>
+						company holiday(s).</p>
+					<p ng-if="$ctrl.benefitsPaidTimeOff.numberOfCompanyHolidays<=0">{{'paidTimeOffPolicies.numberHolidays' | translate}}
+						<span>{{$ctrl.companyName}}</span></p>
+					<button tn-action-button ng-if="$ctrl.benefitsPaidTimeOff.numberOfCompanyHolidays>0"
+							ui-sref="app.main.company.holiday-calendar">{{'paidTimeOffPolicies.HolidayCalendar' | translate}}
+					</button>
+				</div>
+
+				<div class="roles">
+					<h4 class="role_heading" ng-bind-html="$ctrl.otherPaidTimeOffHeading">:</h4>
+				</div>
+				<div class="roles" ng-if="$ctrl.VacationPTOList.length>0">
+					<p class="role_info" ng-bind-html="$ctrl.ptoVacationSection1"></p>
+					<div class="roles" ng-if="$ctrl.CompanyOffersPaidTimeOffOrVacation">
+						<h4 class="role_heading" ng-bind-html="$ctrl.paidTimeOff"></h4>
+						<table class="tn-table">
+							<thead>
+							<tr class="tn-table-row-header">
+								<th>Months of Service</th>
+								<th>
+									Hours Accrued per 12 months of work
+									<br />
+									assuming Full Time Employement
+								</th>
+								<th>Max Hours</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr class="tn-table-row" ng-repeat="vacation in $ctrl.VacationPTOList[0].accruals">
+								<td>{{vacation.monthsOfService}}</td>
+								<td>{{vacation.hoursAccrued}}</td>
+								<td>{{vacation.maxHours}}</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<p class="role_info" ng-bind-html="$ctrl.ptoVacationSection2">
+					</p>
+					<p class="role_info">
+						<span ng-bind-html="$ctrl.ptoVacationSection3"></span>
+						<span ng-bind-html="$ctrl.ptoVacationCoverage"></span>
+					</p>
+					<p class="role_info" ng-bind-html="$ctrl.ptoWaitingPeriod">
+					</p>
+					<p class="role_info" ng-bind-html="$ctrl.ptoVacationApprovalPaymentTerms">
+					</p>
+					<p class="role_info" ng-bind-html="$ctrl.sickLeaveDetails">
+					</p>
+					<p class="role_info" ng-bind-html="$ctrl.sickLeaveWaitingPeriod">
+					</p>
+					<p class="role_info" ng-bind-html="$ctrl.sickLeaveCarryForward">
+					</p>
+					<p class="role_info" ng-if="$ctrl.companyOffersAnyPaidTimeOff">Your accrued balance of  time {{$ctrl.balanceInfo}}(current as of your most recently completed pay period) can be viewed under Time > Time Off.
+					</p>
+
+				</div>
+
+				<div class="roles" ng-if="$ctrl.personalList.length>0">
+					<h4 class="role_heading" ng-bind-html="$ctrl.personaltable">:</h4>
+
+					<p class="role_info" ng-bind-html="$ctrl.personalLeaveSection1"></p>
+					<div class="roles">
+						<h4 class="role_heading" class="role_heading" ng-bind-html="$ctrl.paidTimeOff"></h4>
+						<table class="tn-table">
+							<thead>
+							<tr class="tn-table-row-header">
+								<th>Months of Service</th>
+								<th>
+									Hours Accrued per 12 months
+									<br />
+									of work assuming Full Time Employement
+								</th>
+								<th>Max Hours</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr class="tn-table-row" ng-repeat="personal in $ctrl.personalList[0].accruals">
+								<td>{{personal.monthsOfService}}</td>
+								<td>{{personal.hoursAccrued}}</td>
+								<td>{{personal.maxHours}}</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<p class="role_info" ng-bind-html="$ctrl.ptoVacationSection2">
+					</p>
+					<p class="role_info" ng-bind-html="$ctrl.personalLeaveSection3">
+					</p>
+					<p class="role_info" ng-bind-html="$ctrl.personalLeaveSection4">
+					</p>
+					<p class="role_info" ng-bind-html="$ctrl.personalLeaveSection5">
+					</p>
+					<p class="role_info" ng-if="$ctrl.companyOffersAnyPaidTimeOff">Your accrued balance of  time {{$ctrl.balanceInfo}}(current as of your most recently completed pay period) can be viewed under Time > Time Off.
+					</p>
+				</div>
+
+				<div class="roles" ng-if="$ctrl.benefitsPaidTimeOff.additionPaidLeave.numberOfJuryDuties ||$ctrl.benefitsPaidTimeOff.additionPaidLeave.numberOfBereavements">
+					<strong ng-bind-html="$ctrl.addionalPaidLeaveHeading">:</strong>
+					<p class="role_info" ng-bind-html="$ctrl.addionalPaidLeave"></p>
+				</div>
+
+				<div class="roles" ng-if="$ctrl.benefitsPaidTimeOff.additionPaidLeave.numberOfBereavements">
+					<strong  ng-bind-html="$ctrl.bereavementPaidTimeOffHeading"></strong>
+					<p class="role_info" ng-bind-html="$ctrl.bereavementPaidTimeOff">
+					</p>
+				</div>
+
+				<div class="roles" ng-if="$ctrl.benefitsPaidTimeOff.additionPaidLeave.numberOfJuryDuties">
+					<strong ng-bind-html="$ctrl.juryDutyPaidTimeOffHeading"></strong>
+					<p class="role_info" ng-bind-html="$ctrl.JuryDutyPaidTimeOff">
+					</p>
+				</div>
+
+				<div class="roles">
+					<p class="role_info">{{'paidTimeOffPolicies.OtherPaidLeaveOrTimeOff' | translate}}</p>
+				</div>
+			</tn-card-content>
+		</tn-card>
+	</div>
+
+	<div class="secondary-container"></div>
+</div>

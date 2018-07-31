@@ -1,0 +1,47 @@
+<h4 align="center" class="semibold  company-information">
+	{{'office-information' | translate}}
+</h4>
+<div class="row overview-table">
+	<div class="col-sm-offset-1  col-sm-10  col-sm-offset-1">
+		<div class="row  tn-profile-divider  tn-profile-content">
+			<div class="col-sm-1  tn-align-overview-icon">
+				<i class="tn-icon  icon-icon_phone"></i>
+			</div>
+			<div class="col-sm-4 titles">
+				<div class="location-label">{{'Phone' | translate}}</div>
+			</div>
+			<div class="col-sm-7 tn-right-align-grid-text">
+				<div class="location-value">{{$ctrl.headquarter.phone | tel}}</div>
+			</div>
+		</div>
+
+		<div class="row  tn-profile-divider  tn-profile-content" ng-if="$ctrl.headquarter.companyEmail">
+			<div class="col-sm-1  tn-align-overview-icon">
+				<i class="tn-icon  icon-icon_email"></i>
+			</div>
+			<div class="col-sm-4 titles">
+				<div class="location-label">{{'profile-email' | translate}}</div>
+			</div>
+			<div class="col-sm-7 tn-right-align-grid-text">
+				<div class="location-value">{{$ctrl.headquarter.companyEmail}}</div>
+			</div>
+		</div>
+
+		<div class="row tn-profile-content">
+			<div class="col-sm-1  tn-align-overview-icon">
+				<i class="tn-icon  icon-icon_time"></i>
+			</div>
+			<div class="col-sm-4 titles">
+				<div class="location-label">{{'hours-of-operation' | translate}}</div>
+			</div>
+			<div class="col-sm-7  tn-right-align-grid-text"
+				 ng-if="$ctrl.headquarter.officeHours
+						&& $ctrl.headquarter.officeHours.length !== 0">
+				<div class="location-open-days">{{'monday-thru-friday' | translate}}</div>
+				<div class="location-timings">{{$ctrl.headquarter.officeHours}}</div><br/>
+				<div class="location-closed-days">{{'saturday-thru-sunday' | translate}}</div>
+				<div class="location-timings">{{'closed' | translate}}</div>
+			</div>
+		</div>
+	</div>
+</div>

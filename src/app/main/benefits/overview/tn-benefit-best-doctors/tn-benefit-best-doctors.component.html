@@ -1,0 +1,10 @@
+<tn-card class="tn-benefit-best-doctors"  titles="{{ $ctrl.data.text }}" loading="$ctrl.showSpinner">
+	<tn-card-actions class="tn-benefit-best-doctors-actions" ng-hide="$ctrl.showSpinner">
+		<button ng-click="$ctrl.openPdf($ctrl.data.url)" 
+				tn-link-button
+				class="tn-benefits-best-doctors-actions-item">
+			<span class="tn-icon tn-link-button-icon icon-icon_forms pull-left"></span>
+			<span class="tn-link-button-text semibold pull-left">{{$ctrl.data.text}}</span>
+		</button>		
+	</tn-card-actions>
+</tn-card>

@@ -1,0 +1,28 @@
+<tn-card ng-if="$ctrl.isVisibleSecurity">
+	<tn-error-banner error-data="$ctrl.data" clicked="$ctrl.closeAlert()"></tn-error-banner>
+	<tn-card-title class="settings-card-title"><h3>{{'security-card-title' | translate}}</h3></tn-card-title>
+	<tn-card-content>
+	<tn-spinner ng-show="$ctrl.showSpinner" is-show="$ctrl.showSpinner" error-message="$ctrl.errorMessage"></tn-spinner>
+		<tn-card-item ng-repeat="item in $ctrl.items" ng-hide="$ctrl.showSpinner">
+			<div>
+				<p class="semibold security-card">{{item.label | translate}}</p>
+				<p class="security-card-desc">{{item.sublabel | translate}}</p>
+				<p class="security-card-desc" ng-if="item.sublabel2" >{{item.sublabel2 | translate}}</p>
+			</div>
+			<button id='{{item.buttonId | translate}}'  tn-button
+			        class="settings-card-button security-card-button"
+					ng-class="item.className ? item.className : ''"
+			        ng-click="$ctrl.onButtonTap(item)"
+			        ng-if="item.buttonLabel && item.buttonId != 'secMfa'">
+			        {{item.buttonLabel | translate}}
+			</button>
+				<button id='{{item.buttonId | translate}}'  tn-button
+			        class="settings-card-button security-card-button"
+					ng-class="item.className ? item.className : ''"
+			        ng-click="$ctrl.onOpenMfa(item)"
+			        ng-if="item.buttonLabel && item.buttonId == 'secMfa'">
+			        {{item.buttonLabel | translate}}
+			</button>
+		</tn-card-item>
+	</tn-card-content>
+</tn-card>

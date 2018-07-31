@@ -1,0 +1,28 @@
+<div class="lined"></div>
+<div ng-if="$ctrl.error">
+	{{$ctrl.errorMessage}}
+</div>
+<div id="loadtabs_{{$index}}" ng-repeat="form in $ctrl.benefitFormData track by $index" ng-if="!$ctrl.error">
+	<div id="policiesIdforms_{{$index}}">
+		<div ng-repeat="benefitsPoliciesDataObject in form.pdfs.sub"> 
+			<div id="{{benefitsPoliciesDataObject.label |  lowercase}}">
+				<div ng-if="benefitsPoliciesDataObject.label !== 'Massachusetts Health Insurance Responsibility Disclosure (HIRD) form'" class="row">
+					<div class="tn-icon col-md-3 benefits-forms-pdf"><img alt="PDF-Icon" ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png"></div>
+					<div id="{{benefitsPoliciesDataObject.id}}" class="benefits-forms-description col-md-12">
+						<a href="{{benefitsPoliciesDataObject.url | contentUrl}}" target="_blank">
+							{{::benefitsPoliciesDataObject.label}}
+						</a>
+						<p>{{::benefitsPoliciesDataObject.description}}</p>
+					</div>
+					<div ng-if="benefitsPoliciesDataObject.label === 'Massachusetts Health Insurance Responsibility Disclosure (HIRD) form'">
+						<a href="{{benefitsPoliciesDataObject.url | contentUrl}}" target="_blank">
+							<span class="tn-icon"><img alt="PDF-Icon" ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png"></span>{{::benefitsPoliciesDataObject.label}}
+						</a>
+						<p>{{::benefitsPoliciesDataObject.description}}</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>

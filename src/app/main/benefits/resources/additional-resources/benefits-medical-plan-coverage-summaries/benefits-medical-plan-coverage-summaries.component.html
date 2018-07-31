@@ -1,0 +1,141 @@
+<div class="margin-top"></div>
+<div ng-if="$ctrl.error">{{$ctrl.errorMessage}}</div>
+<div ng-if="!$ctrl.error" class="padding-top" role="tablist">
+	<div id="carrierCertificates" ng-if="$ctrl.summaryPlanPdfData.type !== 'Ambrose'">
+		<a id="summary_benfCovg" href="" class="toggle-link" ng-click="$ctrl.summaryToggle.isOpen = !$ctrl.summaryToggle.isOpen;"
+		   aria-selected="{{$ctrl.summaryToggle.isOpen }}" aria-controls="summary-benefit-coverage"
+		   aria-expanded="{{$ctrl.summaryToggle.isOpen }}" role="tab">
+			<span>{{'my_benefits.planCarrier.summary_benfCovg' | translate}}</span>
+			<i class="pull-right glyphicon" aria-hidden="true"
+				ng-class="{'icon-icon_Disclosure_Collapse': $ctrl.summaryToggle.isOpen, 'icon-icon_Disclosure_Expand':!$ctrl.summaryToggle.isOpen}"></i>
+		</a>
+		<div id="summary-benefit-coverage" ng-show="$ctrl.summaryToggle.isOpen"
+			 aria-labelledby="summary_benfCovg"
+			 aria-hidden="{{!$ctrl.summaryToggle.isOpen}}"
+			 role="tabpanel"
+		>
+			<span>{{'my_benefits.policies.sbc_explanation' | translate}}</span>
+
+			</p>
+			<div class="no-pad benefits-summery-links adj-benfitGuideBook" ng-if="$ctrl.summaryPlanPdfData.benefitsCarrier">
+				<span class="tn-icon"><img alt="PDF-Icon" ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png"></span>
+				<a href="{{$ctrl.summaryPlanPdfData.benefitsCarrier[0].url | contentUrl}}" target="_blank"
+				   id="benefitsCarrierId{{$index}}">
+					{{$ctrl.summaryPlanPdfData.benefitsCarrier[0].text}}
+				</a>
+			</div>
+		</div>
+		<div class="linedWithMargin"></div>
+	</div>
+
+	<div id="medicalPopup" ng-if="$ctrl.medicalDataForModal.planData">
+		<a href="" class="toggle-link" ng-click="$ctrl.medicalToggle.isOpen = !$ctrl.medicalToggle.isOpen;$ctrl.atenaPopUp($ctrl.index,'medical','sbc')">
+			<span class="text-capitalize">
+						{{ 'my_benefits.policies.medical' | translate}}
+			</span>
+			<i class="pull-right glyphicon " ng-class="{'icon-icon_Disclosure_Collapse': $ctrl.medicalToggle.isOpen, 'icon-icon_Disclosure_Expand':!$ctrl.medicalToggle.isOpen}"></i>
+		</a>
+		<div ng-show="$ctrl.medicalToggle.isOpen" class="benefit-plan-description">
+			<a href="" ng-repeat="pane in $ctrl.medicalDataForModal.planData.sub track by $index" ng-click="$ctrl.openModal(pane,$ctrl.medicalDataForModal)">{{pane.header}}</a>
+		</div>
+		<div class="linedWithMargin"></div>
+	</div>
+	<!-- Dental Toggle -->
+	<div id="dentalPopup" ng-if="$ctrl.dentalDataForModal.planData">
+		<a href="" class="toggle-link" ng-click="$ctrl.dentalToggle.isOpen = !$ctrl.dentalToggle.isOpen;$ctrl.atenaPopUp($ctrl.index,'dental','sbc')">
+				<span class="text-capitalize">
+							{{ 'my_benefits.policies.dental' | translate}}
+				</span>
+				<i class="pull-right glyphicon " ng-class="{'icon-icon_Disclosure_Collapse': $ctrl.dentalToggle.isOpen, 'icon-icon_Disclosure_Expand':!$ctrl.dentalToggle.isOpen}"></i>
+			</a>
+		<div ng-show="$ctrl.dentalToggle.isOpen" class="benefit-plan-description">
+			<a href="" ng-repeat="pane in $ctrl.dentalDataForModal.planData.sub track by $index" ng-click="$ctrl.openModal(pane,$ctrl.dentalDataForModal)">{{pane.header}}</a>
+		</div>
+		<div class="linedWithMargin"></div>
+	</div>
+
+	<!-- Vision Toggle -->
+	<div id="visionPopup" ng-if="$ctrl.visionDataForModal.planData">
+		<a href="" class="toggle-link" ng-click="$ctrl.visionToggle.isOpen = !$ctrl.visionToggle.isOpen;$ctrl.atenaPopUp($ctrl.index,'vision','sbc')">
+				<span class="text-capitalize">
+							{{ 'my_benefits.policies.vision' | translate}}
+				</span>
+				<i class="pull-right glyphicon " ng-class="{'icon-icon_Disclosure_Collapse': $ctrl.visionToggle.isOpen, 'icon-icon_Disclosure_Expand':!$ctrl.visionToggle.isOpen}"></i>
+			</a>
+		<div ng-show="$ctrl.visionToggle.isOpen" class="benefit-plan-description">
+			<a href="" ng-repeat="pane in $ctrl.visionDataForModal.planData.sub track by $index" ng-click="$ctrl.openModal(pane,$ctrl.visionDataForModal)">{{pane.header}}</a>
+		</div>
+		<div class="linedWithMargin"></div>
+	</div>
+
+	<!-- Life Insurance Toggle -->
+	<div id="lifePopup" ng-if="$ctrl.lifeDataForModal.planData">
+		<a href="" class="toggle-link" ng-click="$ctrl.lifeToggle.isOpen = !$ctrl.lifeToggle.isOpen;$ctrl.atenaPopUp($ctrl.index,'life','sbc')">
+					<span class="text-capitalize">
+								{{ 'my_benefits.policies.life' | translate}}
+					</span>
+					<i class="pull-right glyphicon " ng-class="{'icon-icon_Disclosure_Collapse': $ctrl.lifeToggle.isOpen, 'icon-icon_Disclosure_Expand':!$ctrl.lifeToggle.isOpen}"></i>
+				</a>
+		<div ng-show="$ctrl.lifeToggle.isOpen" class="benefit-plan-description">
+			<a href="" ng-repeat="pane in $ctrl.lifeDataForModal.planData.sub track by $index" ng-click="$ctrl.openModal(pane,$ctrl.lifeDataForModal)">{{pane.header}}</a>
+		</div>
+		<div class="linedWithMargin"></div>
+	</div>
+
+	<!-- Disability Toggle -->
+	<div id="disabilityPopup" ng-if="$ctrl.disabilityDataForModal.planData">
+		<a href="" class="toggle-link" ng-click="$ctrl.disabilityToggle.isOpen = !$ctrl.disabilityToggle.isOpen;$ctrl.atenaPopUp($ctrl.index,'disability','sbc')">
+					<span class="text-capitalize">
+								{{ 'my_benefits.policies.disability' | translate}}
+					</span>
+					<i class="pull-right glyphicon " ng-class="{'icon-icon_Disclosure_Collapse': $ctrl.disabilityToggle.isOpen, 'icon-icon_Disclosure_Expand':!$ctrl.disabilityToggle.isOpen}"></i>
+				</a>
+		<div ng-show="$ctrl.disabilityToggle.isOpen" class="benefit-plan-description">
+			<a href="" ng-repeat="pane in $ctrl.disabilityDataForModal.planData.sub track by $index" ng-click="$ctrl.openModal(pane,$ctrl.disabilityDataForModal)">{{pane.header}}</a>
+		</div>
+		<div class="linedWithMargin"></div>
+	</div>
+
+	<!-- FSA Toggle -->
+	<div id="fsaPopup" ng-if="$ctrl.fsaDataForModal.planData">
+		<a href="" class="toggle-link" ng-click="$ctrl.fsaToggle.isOpen = !$ctrl.fsaToggle.isOpen;$ctrl.atenaPopUp($ctrl.index,'flexibleSpendingAccounts','sbc')">
+						<span class="text-capitalize">
+									{{ 'my_benefits.policies.fsa' | translate}}
+						</span>
+						<i class="pull-right glyphicon " ng-class="{'icon-icon_Disclosure_Collapse': $ctrl.fsaToggle.isOpen, 'icon-icon_Disclosure_Expand':!$ctrl.fsaToggle.isOpen}"></i>
+					</a>
+		<div ng-show="$ctrl.fsaToggle.isOpen" class="benefit-plan-description">
+			<a href="" ng-repeat="pane in $ctrl.fsaDataForModal.planData.sub track by $index" ng-click="$ctrl.openModal(pane,$ctrl.fsaDataForModal)">{{pane.header}}</a>
+		</div>
+		<div class="linedWithMargin"></div>
+	</div>
+
+	<!-- Legal Toggle -->
+	<div id="legalPopup" ng-if="$ctrl.legalDataForModal.planData">
+		<a href="" class="toggle-link" ng-click="$ctrl.legalToggle.isOpen = !$ctrl.legalToggle.isOpen;$ctrl.atenaPopUp($ctrl.index,'legalServices','sbc')">
+							<span class="text-capitalize">
+										{{ 'my_benefits.policies.legalServices' | translate}}
+							</span>
+							<i class="pull-right glyphicon " ng-class="{'icon-icon_Disclosure_Collapse': $ctrl.legalToggle.isOpen, 'icon-icon_Disclosure_Expand':!$ctrl.legalToggle.isOpen}"></i>
+						</a>
+		<div ng-show="$ctrl.legalToggle.isOpen" class="benefit-plan-description">
+			<a href="" ng-repeat="pane in $ctrl.legalDataForModal.planData.sub track by $index" ng-click="$ctrl.openModal(pane,$ctrl.legalDataForModal)">{{pane.header}}</a>
+		</div>
+		<div class="linedWithMargin"></div>
+	</div>
+
+	<!-- Critical Illness Toggle -->
+	<div id="criticalPopup" ng-if="$ctrl.criticalIllnessDataForModal.planData">
+		<a href="" class="toggle-link" ng-click="$ctrl.criticalToggle.isOpen = !$ctrl.criticalToggle.isOpen;$ctrl.atenaPopUp($ctrl.index,'criticalIllness','sbc')">
+								<span class="text-capitalize">
+											{{ 'my_benefits.policies.critical' | translate}}
+								</span>
+								<i class="pull-right glyphicon " ng-class="{'icon-icon_Disclosure_Collapse': $ctrl.criticalToggle.isOpen, 'icon-icon_Disclosure_Expand':!$ctrl.criticalToggle.isOpen}"></i>
+							</a>
+		<div ng-show="$ctrl.criticalToggle.isOpen" class="benefit-plan-description">
+			<a href="" ng-repeat="pane in $ctrl.criticalIllnessDataForModal.planData.sub track by $index" ng-click="$ctrl.openModal(pane,$ctrl.criticalIllnessDataForModal)">{{pane.header}}</a>
+		</div>
+		<div class="linedWithMargin"></div>
+	</div>
+
+</div>

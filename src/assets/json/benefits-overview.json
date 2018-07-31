@@ -1,0 +1,209 @@
+{
+	"data": {
+		"benefits": {
+			"id": "1",
+			"title": "Benefits",
+			"overview": {
+				"id": "1",
+				"title": "Overview",
+				"plans": [
+					{
+						"planTypeName": "medical",
+						"title": "Medical",
+						"displayOrder": "1",
+						"planName": "BS-CA",
+						"providerName": "Blue Shield of California",
+						"providerLogoUrl": "/assets/images/logo/blue-cross-of-california.png",
+						"providerPlanName": "PPO 1500 North CA",
+						"covered": [
+							{
+								"relationship": "Spouse",
+								"name": "Joyce Byers"
+							},
+							{
+								"relationship": "Son",
+								"name": "William Byers"
+							},
+							{
+								"relationship": "Son",
+								"name": "Jonathan Byers"
+							}
+						],
+						"links": [
+							{
+								"type": "document",
+								"text": "Plan Document",
+								"url": "#"
+							},
+							{
+								"type": "document",
+								"text": "Carrier Certificate",
+								"url": "#doc-viewer?id=CarrierCertificate"
+							}
+						]
+					},
+					{
+						"planTypeName": "dental",
+						"title": "Dental",
+						"displayOrder": "2",
+						"planName": "Aetna",
+						"providerName": "vsp",
+						"providerLogoUrl": "/assets/images/logo/aetna.png",
+						"providerPlanName": "Dental 100 Low Plan",
+						"covered": [],
+						"links": [
+							{
+								"type": "document",
+								"text": "Plan Document",
+								"url": "#"
+							},
+							{
+								"type": "document",
+								"text": "Carrier Certificate",
+								"url": "#doc-viewer?id=CarrierCertificate"
+							}
+						]
+					},
+					{
+						"planTypeName": "vision",
+						"title": "Vision",
+						"displayOrder": "3",
+						"planName": "VSP V",
+						"providerName": "vsp",
+						"providerLogoUrl": "/assets/images/logo/vsp.png",
+						"providerPlanName": "PPO 1500 North CA",
+						"covered": [
+							{
+								"relationship": "Spouse",
+								"name": "Joyce Byers"
+							},
+							{
+								"relationship": "Son",
+								"name": "William Byers"
+							},
+							{
+								"relationship": "Son",
+								"name": "Jonathan Byers"
+							}
+						],
+						"links": [
+							{
+								"type": "document",
+								"text": "Plan Document",
+								"url": "#"
+							},
+							{
+								"type": "document",
+								"text": "Carrier Certificate",
+								"url": "#doc-viewer?id=CarrierCertificate"
+							}
+						]
+					},
+					{
+						"planTypeName": "life",
+						"title": "Life and AD&D",
+						"displayOrder": "4",
+						"planName": "VSP V",
+						"providerName": "MetLife",
+						"providerLogoUrl": "/assets/images/logo/metlife.png",
+						"covered": [
+							{
+								"relationship": "Spouse",
+								"name": "Joyce Byers"
+							},
+							{
+								"relationship": "Son",
+								"name": "William Byers"
+							},
+							{
+								"relationship": "Son",
+								"name": "Jonathan Byers"
+							}
+						],
+						"coverageAmountValue": "$100,000.00",
+						"coverageAmountLabel": "Coverage Amount",
+						"companyPaidValue": "60% STD",
+						"companyPaidLabel": "Company Paid"
+					},
+					{
+						"planTypeName": "short-term",
+						"title": "Short Term Disability",
+						"displayOrder": "5",
+						"planName": "MetLife",
+						"providerName": "MetLife",
+						"providerLogoUrl": "/assets/images/logo/metlife.png",
+						"coverageAmountValue": "$100,000.00",
+						"coverageAmountLabel": "Coverage Amount",
+						"companyPaidValue": "60% STD",
+						"companyPaidLabel": "Company Paid"
+					},
+					{
+						"planTypeName": "long-term",
+						"title": "Long Term Disability",
+						"displayOrder": "6",
+						"planName": "MetLife",
+						"providerName": "MetLife",
+						"providerLogoUrl": "/assets/images/logo/metlife.png",
+						"coverageAmountValue": "$100,000.00",
+						"coverageAmountLabel": "Coverage Amount",
+						"companyPaidValue": "60% LTD",
+						"companyPaidLabel": "Company Paid"
+					}
+				],
+				"ui": {
+					"cId": "benefits-overview",
+					"tId": "master-2-column"
+				},
+				"benefitsCards": {
+					"title": "Benefits Card",
+					"links": [
+						{
+							"type": "print",
+							"text": "Print",
+							"url": "#"
+						}
+					]
+				},
+				"benefitsHelp": {
+					"title": "Benefits Card",
+					"links": [
+						{
+							"type": "document",
+							"text": "2016 Benefits Guide Book",
+							"url": "#"
+						},
+						{
+							"type": "document",
+							"text": "2015 Benefits Guide Book",
+							"url": "#"
+						}
+					]
+				},
+				"currentBeneficiaries": {
+					"beneficiariesTitle": "Current Beneficiaries",
+					"beneficiaries": [
+						{
+							"name": "Joyce Byers",
+							"relationship": "Spouse"
+						},
+						{
+							"name": "William Byers",
+							"relationship": "Spouse"
+						}
+					],
+					"dependentsTitle": "Current Dependents",
+					"dependents": [
+						{
+							"name": "Joyce Byers",
+							"relationship": "Spouse"
+						}
+					]
+				}
+			}
+		}
+	},
+	"_requestId": "20efce15-203a-4541-978d-c334c8f44671",
+	"_statusCode": "200",
+	"_statusText": "OK",
+	"_statusMessage": "Success"
+}

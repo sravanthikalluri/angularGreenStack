@@ -1,0 +1,166 @@
+@import '../../../../styles/main';
+
+.link, a.link {
+  font-family: "Proxima Nova", Arial, sans-serif;
+  a {
+	color: $blue !important;
+  }
+  color: $blue !important;
+}
+
+.paychecks-history-options {
+  display: inline-block;
+
+  .tn-input-container {
+	display: inline-block;
+
+	.select-style {
+	  height: 35px;
+	  margin-left: 24px;
+	  display: inline-block;
+	  select {
+		padding-top: 8px;
+	  }
+	}
+  }
+}
+
+.paychecks-history-header {
+  display: flex;
+  flex-direction: column;
+  .pay-period-change-section {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	.date-range {
+	  position: absolute;
+	  top: 100%;
+	}
+  }
+  .select-style {
+	width: 100%;
+  }
+}
+paycheck-history-table{
+  display: block;
+  &.date-range-selected{
+	margin-top: 40px;
+
+  }
+}
+
+.paychecks-history-link {
+  /* margin: 10px 24px 0 0;
+   float: right;*/
+  color: $azure-blue;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/*.paychecks-history-link-dateRange {
+  margin-top: -60px;
+}*/
+
+.estimatePayFlyout {
+  .popup-menu {
+	top: 40px;
+	right: 0;
+	z-index: 999;
+	.menu {
+	  width: 225px;
+	  margin: 0;
+	  a.tn-select-link {
+		display: block;
+		text-decoration: none;
+		padding: 10px 0;
+		color: $trinet-dark !important;
+	  }
+	}
+  }
+}
+
+.paychecks-history-link .link {
+  padding: 0 25px;
+  border-right: 1px solid $trinet-gray-l69;
+  position: relative;
+  .arrow-icon {
+	font-size: 20px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+  }
+}
+
+.paychecks-history-link .link:last-child {
+  border-right: 0;
+}
+
+#payFrame {
+  background: #fff;
+}
+
+a {
+  &.back-link {
+	background-color: transparent;
+	-webkit-text-decoration-skip: objects;
+	color: $blue;
+	text-decoration: none;
+	outline: 0;
+	margin-top: 10px;
+	display: inline-block;
+  }
+}
+
+.date-range {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1vw;
+  margin-top: 1vh;
+  .tn-date-selector-popup {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	left: 0;
+  }
+}
+
+tn-date-selector {
+  margin: 0 1vw;
+}
+
+#date-error-message {
+  height: 0;
+  color: $red-darker;
+  margin: 0;
+}
+
+.paycheck-history-table {
+  table.table {
+	tbody tr{
+	  &.tn-table-row_selected {
+		background: $light-yellow !important;
+	  }
+	  &:last-child {
+		p {
+		  font-weight: 500 !important;
+		  color: $font-color;
+		}
+	  }
+	}
+  }
+}
+
+.compensation-statements-link {
+  /*  display: flex;
+    align-items: center;*/
+  /*	a{
+          color: $font-color;
+          display: block;
+          height: 35px;
+          text-decoration: none !important;
+      }*/
+}

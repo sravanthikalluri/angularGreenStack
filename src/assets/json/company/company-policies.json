@@ -1,0 +1,60 @@
+{
+  "data": {
+	"corporateBrand": "AMBROSE",
+	"manager": false,
+	"activeStatus": false,
+	"forms": [
+	  {
+		"title": "Company Policies",
+		"category": null,
+		"desc": null,
+		"body": null,
+		"urlType": null,
+		"pdfs": [
+		  {
+			"desc": null,
+			"label": "Custom Employee Handbook",
+			"url": "/v1/CustomFolders/Objects/Company/FZ4/ADDL_POLC/policy/pdf_doc/DBI Construction Constultants LLC_FZ4_Custom.pdf"
+		  }
+		],
+		"additional-details": null,
+		"docMeta": null
+	  },
+	  {
+		"title": "TriNet Policies",
+		"category": null,
+		"desc": null,
+		"body": null,
+		"urlType": null,
+		"pdfs": [
+		  {
+			"desc": "Information you need to explore all of your benefit options",
+			"label": "Benefits Guidebook",
+			"url": ""
+		  },
+		  {
+			"desc": "Here is the latest version of your company's Employee Handbook.",
+			"label": "Employee Handbook",
+			"url": "/v1/CustomFolders/Objects/Company/DEFAULT/EMPE_HNDBK/empguidebook.pdf"
+		  },
+		  {
+			"desc": "New Hire Orientation Guide.",
+			"label": "New Hire Orientation Guide",
+			"url": "/trinetGateway/AmbroseDocGen/services/v1.0/AmbroseDoc"
+		  },
+		  {
+			"desc": null,
+			"label": "Terms and Conditions Agreement",
+			"url": ""
+		  }
+		],
+		"additional-details": null,
+		"docMeta": null
+	  }
+	]
+  },
+  "_requestId": "94d608dc-76db-43cf-9e6b-97466ef526c9",
+  "_statusCode": "200",
+  "_statusText": "OK",
+  "_statusMessage": "Success"
+}

@@ -1,0 +1,38 @@
+<div  ng-if="!$ctrl.yesActive && $ctrl.showSection"  class="tn-ale-section no-section">
+	<tn-card>
+		<div class="card-header-section">
+			<h4 class="semibold">
+				{{'ale-selection.notAleAttestation' | translate}}
+			</h4>
+			<h5>
+				{{'ale-selection.notConsideredAsALE' | translate}}
+			</h5>
+		</div>
+		<tn-card-content>
+			<h4 class="content-heading">
+				{{'ale-selection.certificationAsNotALE' | translate}}
+			</h4>
+			<p>
+				{{'ale-selection.successfullySubmittedForNotALE' | translate}}
+			</p>
+		<!--	<h5 class="semibold main-info">{{'ale-selection.ReadTermsAndCondition' | translate}}</h5>-->
+			<div class="tn-aleselection-question">
+				{{'ale-selection.termsForALE'| translate }}
+			</div>
+			<div class="tn-checkbox-section tn-checkbox-large">
+				<input type="checkbox" id="termsAndConditions" ng-model="$ctrl.termsAndConditions">
+				<label for="termsAndConditions">
+					{{'ale-selection.checkBoxMessage' | translate}}
+				</label>
+			</div>
+		</tn-card-content>
+	</tn-card>
+		<div class="footer-button-section">
+			<button tn-button class="tn-view-button" ng-click="$ctrl.showSection = false">
+				{{'ale-selection.previous' | translate}}
+			</button>
+			<button tn-action-button ng-click="$ctrl.submit()"
+					ng-disabled="!$ctrl.termsAndConditions">{{'ale-selection.submit' | translate}}
+			</button>
+		</div>
+	</div>

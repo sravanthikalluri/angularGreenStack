@@ -1,0 +1,25 @@
+<div class="view-notice-modal">
+	<div class="modal-header">
+		<i role="link" tabindex="0" aria-label="Close modal" tn-enter="$ctrl.cancel()" id="taxConfirmClose" class="icon-close-temp hand"
+		   ng-click="$ctrl.cancel()"></i>
+	</div>
+	<div class="view-notice-body">
+	<!--	<h4 class="important-notices-item-date">
+			<span ng-repeat="(key,value) in $ctrl.prorityType" ng-if="$ctrl.getPriority(key,$ctrl.data)">{{value}} Priority</span>
+		</h4>-->
+		<span class="important-notices-item-title">{{$ctrl.data.title}}</span>
+		<p class="important-notices-item-body " ng-bind-html="$ctrl.getBodyParseValue($ctrl.data.body)"></p>
+		<p class="important-notices-item-date">Publish date: {{$ctrl.data.effectiveDate | date:'MMMM dd, yyyy'}}</p>
+		<!--<div class="notice-filter" >
+			<p class="help-text no-marg">Shared with:</p>
+			<div class="shared-section" ng-if="$ctrl.data.filters.length  === 0"><span class="filter-value"> All Active Employees </span></div>
+			<div class="shared-section" ng-if="$ctrl.data.filters.length  > 0">
+				<span ng-repeat="disp in $ctrl.data.filters"><span class="filter-value">{{disp.filterValueDesc}}</span><i class="icon-icon_plus"></i></span>
+			</div>
+		</div>-->
+
+
+	</div>
+</div>
+
+

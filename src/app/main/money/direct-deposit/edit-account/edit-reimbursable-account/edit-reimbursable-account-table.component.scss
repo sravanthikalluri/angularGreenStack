@@ -1,0 +1,41 @@
+@import 'main';
+
+.edit-reimbursable-container{
+	display: flex;
+	flex-direction: row;
+	margin-left:15px;
+	white-space:nowrap;
+	justify-content: space-around;
+	align-items: center;
+	  .flex-item-number{
+			flex: 2;
+            margin-left: 45px !important;
+			.select-style{
+				width:170px;
+			}
+		}
+		.flex-item-type{
+			flex:4;
+		}
+	&.edit-reimbursable-table-data{
+		border: 2px solid $background-color;
+	}
+}
+.edit-reimbursable-table-data {
+  .select-style {
+	width: 150px;
+	select {
+	  width: 100%;
+	}
+  }
+}
+.edit-reimbursable-table-data:nth-child(2){
+	margin-top: 10px;
+
+}
+
+
+
+
+
+

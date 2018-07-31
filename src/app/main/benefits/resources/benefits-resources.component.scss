@@ -1,0 +1,207 @@
+@import 'main';
+
+.background-resource{
+  justify-content: inherit !important;
+  margin: 0 !important;
+}
+
+.toggle-link, .toggle-is-active{
+  color:black;
+}
+.toggle-arrow {
+  margin-top: -5px;
+  -webkit-transform-origin: 50% 70%;
+  transform-origin: 50% 70%;
+}
+
+.toggle-icon-arrow-border {
+  margin-left: auto;
+  border: 2px solid $blue;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+}
+
+.toggle-backward {
+    transform: rotate(180deg);
+
+    &:before {
+      content: "\A149";
+      color:#000000;
+    }
+}
+
+.toggle-icon-arrow-border-closed { background: white; }
+
+.toggle-icon-arrow-border-opened { background: $blue; }
+
+.toggle-arrow-is-opened{
+    transform: rotate(180deg);
+
+    &:before {
+        content: "\A149";
+        display:block;
+        margin-top:-9px;
+        color:#ffffff;
+        margin-left:-7px;
+    }
+}
+
+.toggle-table-row{
+  width: 100%;
+  h6{
+	padding-left: 6vw;
+  }
+}
+
+.toggle-arrow {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+
+
+    &:before {
+        content: "\A149";
+    }
+
+    color: $menu-toggle-arrow-color;
+
+    /*transform: rotate(0deg);
+    transform-origin: 50% 60%;
+    transition: transform 0.3s ease-in-out;*/
+    transition-property: transform;
+}
+
+.padRight8{
+	padding-right:8px;
+}
+
+.benefits-resources-toggle-header{
+  padding-top:10px;
+  padding-bottom:15px;
+}
+
+.benefits-resources-label{
+  font-size: 16px;
+  font-weight: 600;
+  line-height: inherit;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.alternateRowGrey{
+  background-color: #F4F6F7;
+  margin-left: -32px;
+  padding-left: 33px;
+  width: 808px;
+  padding-right: 32px;
+}
+
+.carrier-website-image {
+  display: block;
+  border: 1px solid #F4F6F7;
+  text-align: center;
+  padding: 7px;
+  margin:5px;
+  height: 50px;
+  position: relative;
+  width:190px;
+  line-height: 35px;
+  box-shadow: 0px 1px 3px rgb(218, 225, 230);
+}
+carrier-contact-info{
+	width:100%;
+	display: block;
+}
+.benefits-form-item{
+  padding-top:15px;
+  padding-bottom:10px;
+  padding-left:20px;
+}
+
+.benefits-forms-item{
+  margin-top:10px;
+  flex-direction: column;
+  height: auto;
+  padding: 0px !important;
+}
+
+.linedWithMargin{
+  border-bottom: solid 1px #EAECF0;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+.lined{
+  border-bottom: solid 1px #EAECF0;
+  height:1px;
+  margin-left: -32px;
+  padding-left: 33px;
+  width: 808px;
+  padding-right: 32px;
+}
+
+.modalPad {
+  padding:25px;
+}
+
+.benefits-modal-dialog .modal-dialog{
+  width:1000px; height: 500px;
+  position: absolute;
+  top:0; bottom: 0; left: 0; right: 0;
+  margin-top:30px;
+}
+
+.benefits-custom-modal-dialog .modal-dialog{
+  width: 1000px;
+  position: absolute;
+  top:0; bottom: 0; left: 0; right: 0;
+  margin-top:30px;
+}
+
+.benefits-custom-modal-dialog .state-input{
+  min-width:150px;
+  white-space: nowrap;
+}
+
+.benefits-custom-modal-dialog input[type="checkbox"]{
+  width:30px;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.benefits-plan-costs {
+  .tn-tooltip-content{
+	width:600px;
+	bottom: 25px;
+	left: auto;
+	right: -200px;
+	&:after{
+	  bottom: -11px;
+	  left: 98px;
+	}
+	&:before{
+	  bottom: -10px;
+	  left: 100px;
+	}
+  }
+}
+
+.benefits-forms-description{
+  margin-left:40px;
+  display:block;
+}
+
+.benefits-forms-pdf{
+  padding-top: 20px;
+}
+
+.embolden{
+  font-weight: 600;
+}
+
+.benefit-custom-checkbox-label{
+  font-weight: 100;
+}

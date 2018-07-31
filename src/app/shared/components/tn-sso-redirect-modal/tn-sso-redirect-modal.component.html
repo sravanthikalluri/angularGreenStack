@@ -1,0 +1,28 @@
+
+<span ng-click="$ctrl.closeSsoModal();" class="sso-modal-close-icon icon-close-temp" aria-label="close"></span>
+
+<div class="sso-modal-content">
+	<div class="text-center sso-text">
+		{{$ctrl.message}}
+	</div>
+	<div class="row sso-modal-footer">
+		<div class="col-md-4">
+			<div class="row">
+				<div class="sso-modal-checkbox">
+					<input type="checkbox" id="ssoDoNotShow" aria-label="{{'do-not-show-this-again' | translate}}" ng-model='$ctrl.checkStatus' ng-click="$ctrl.suppressModal();">
+				</div>
+				<div class="sso-modal-toggle-text">
+					<label for="ssoDoNotShow">{{'do-not-show-this-again' | translate}}</label>
+				</div>
+			</div>
+		</div>
+		<div class="sso-modal-buttons col-md-8">
+			<button class="sso-modal-cancel" tn-button ng-click="$ctrl.closeSsoModal();">
+				Cancel
+			</button>
+			<button tn-action-button class="sso-modal-continue" ng-click="$ctrl.redirect()">
+				Continue
+			</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,226 @@
+@import 'main';
+$default-border-radius: 15px !default;
+@mixin linear-gradient($a,$b,$c) {
+  background: -webkit-linear-gradient($a,$b,$c); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($a,$b,$c); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($a,$b,$c); /* For Firefox 3.6 to 15 */
+  background: linear-gradient($a,$b,$c); /* Standard syntax (must be last) */
+}
+@mixin repeating-linear-gradient($a,$b,$c,$d,$e) {
+  background: -moz-repeating-linear-gradient($a,$b,$c,$d,$e);
+  background: -webkit-repeating-linear-gradient($a,$b,$c,$d,$e);
+  background: -o-repeating-linear-gradient($a,$b,$c,$d,$e);
+  background: -ms-repeating-linear-gradient($a,$b,$c,$d,$e);
+  background: repeating-linear-gradient($a,$b,$c,$d,$e);
+}
+@mixin border-top-right-radius($radius: $default-border-radius) {
+  -webkit-border-top-right-radius: $radius;
+     -moz-border-top-right-radius: $radius;
+      -ms-border-top-right-radius: $radius;
+          border-top-right-radius: $radius;
+}
+@mixin border-bottom-right-radius($radius: $default-border-radius) {
+  -webkit-border-bottom-right-radius: $radius;
+     -moz-border-bottom-right-radius: $radius;
+      -ms-border-bottom-right-radius: $radius;
+          border-bottom-right-radius: $radius;
+}
+@mixin border-top-left-radius($radius: $default-border-radius) {
+  -webkit-border-top-left-radius: $radius;
+     -moz-border-top-left-radius: $radius;
+      -ms-border-top-left-radius: $radius;
+          border-top-left-radius: $radius;
+}
+@mixin border-bottom-left-radius($radius: $default-border-radius) {
+  -webkit-border-bottom-left-radius: $radius;
+     -moz-border-bottom-left-radius: $radius;
+      -ms-border-bottom-left-radius: $radius;
+          border-bottom-left-radius: $radius;
+}
+@mixin flexbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.btnBeforeAfter{
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 30px;
+    border: 2px solid #000080;
+    position: absolute;
+}
+.is-pay-date {
+  border-radius: 50%;
+  background-color: #108740;
+  color: white;
+}
+
+.is-pay-end-date {
+  border-radius: 50%;
+  background-color: #65BDEF;
+  color: white;
+}
+.due-date-pay-period-end-date {
+  @include linear-gradient(90deg, rgb(238, 174, 64) 50%, rgb(62,158,222) 50%);
+  border-radius: 50% !important;
+  background-color: #3E9EDE; /* For browsers that do not support gradients */
+  border: 1px solid grey !important;
+}
+.pay-date-pay-period-end-date {
+	border-radius: 50% !important; /* For browsers that do not support gradients */
+	background-color: rgb(45, 105, 151);
+	border: 1px solid rgb(45, 105, 151) !important;
+	color: #fff;
+
+}
+.pay-period-end-date{
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50% !important;
+  border-collapse: separate;
+  border: 1px solid #004f7d !important;
+  background: #004f7d !important;
+  color: #fff;
+}
+.no-benefit-deductions {
+  border-radius: 50% !important;
+  border: 1px solid #32d3d4;
+  background-color: #32d3d4;
+  color:#fff;
+}
+.pay-end-date-payroll-due-date-no-benefit-deductions {
+    border-radius: 50% !important; /* For browsers that do not support gradients */
+  	background-color: rgb(160,139,187);
+  	border: 1px solid rgb(160,139,187);
+  	color:#fff;
+}
+.is-due-date {
+  background-color: rgb(238, 174, 64) !important;
+  border-radius: 50%;
+  color:#fff;
+}
+.tn-datepicker {
+	height: auto;
+}
+
+.tn-datepicker-row {
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 2px;
+    width: 100%;
+}
+
+.tn-datepicker-col {
+	-webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: block;
+    padding: 2px;
+    width: 100%;
+    position:relative;
+}
+
+.tn-datepicker-title {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.tn-datepicker-month-label {
+	font-weight: 600;
+	font-size: 14px;
+	text-align: center;
+	width: 150px;
+}
+
+.tn-datepicker-nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	padding: 0 15px;
+	margin-bottom: 5px;
+
+	font-weight: 600;
+	font-size: 20px;
+
+}
+
+.tn-datepicker-nav-button {
+	border-radius: 50%;
+	border: 2px solid #A9B2C1;
+	width: 30px;
+	height: 30px;
+	background-color: transparent;
+
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.tn-datepicker-day-label {
+	color: $slate;
+	text-align: center;
+}
+
+.tn-datepicker-day {
+	text-align: center;
+	height: 30px;
+	width: 30px;
+	line-height: 30px;
+	margin-left: 5px;
+
+	// Grey out days that do not belong in current month
+	&.is-not-in-month {
+		color: #A9B2C1;
+	}
+
+	&.is-overlapping-date {
+		border-radius: 50%;
+		background-color: #65BDEF;
+		color: white;
+		background-image: linear-gradient(90deg, #1178BA 50%, transparent 50%);
+	}
+  }
+
+.tn-datepicker-footer{
+  @include flexbox;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top:10px;
+  span{
+	&.pay-end-date-payroll-due-date-no-benefit-deductions{
+	  position: relative;
+	}
+	&:first-child
+	{
+	  height: 30px;
+	  width: 30px;
+	  margin-right: 10px;
+	}
+	&:last-child
+	{
+	  width: calc(100% - 30px);
+	}
+  }
+
+}
+.visuallyhidden { 
+  border: 0; 
+  clip: rect(0 0 0 0); 
+  height: 1px; 
+  margin: -1px; 
+  overflow: hidden; 
+  padding: 0; 
+  position: absolute; 
+	width: 1px; 
+}

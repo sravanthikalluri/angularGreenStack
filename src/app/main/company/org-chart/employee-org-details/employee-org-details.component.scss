@@ -1,0 +1,49 @@
+@import 'main';
+
+.employee-org-details-container {
+	display: flex;
+	justify-content: center;
+	font-size:   15px;
+	font-weight: 600;
+
+	.tn-small-employee-card { margin: 30px 25px 25px; }
+
+	.report-details {
+		width:  240px;
+		height: 240px;
+		margin: 30px 25px 25px;
+		line-height: 26px;
+		display:         flex;
+		flex-direction:  column;
+		align-items:     center;
+		justify-content: center;
+	}
+
+	.report-details .reports-text-number { font-size: 36px;	}
+
+	.manager-details {
+		padding:      25px;
+		margin-right: 50px;
+
+		&:nth-child(2) { border-top: 1px solid $divider-gray; }
+	}
+
+	.manager-details .manager-text-blue {
+		font-size: 18px;
+		color: #006BA8;
+		cursor: pointer;
+		text-align: center;
+	}
+
+	.managers-block {
+		display: 		flex;
+		flex-direction: column;
+		align-items: 	center;
+		justify-content: center;
+	}
+
+	.direct-reports {
+		font-size: 15px;
+	  	margin-top: 10px;
+	}
+}

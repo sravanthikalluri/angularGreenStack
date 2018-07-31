@@ -1,0 +1,11 @@
+<tn-card class="w2-card">
+	<tn-card-title>{{ 'money.tax_With_Holding.tax-statements' | translate}}</tn-card-title>
+
+	<tn-card-content class="w2-card-body text-center">
+		<div class="semibold">{{$ctrl.w2Year}} Form W-2</div>
+		<button id="w2FormBtn" tn-button class="margin-top w2-card-button" ng-click="$ctrl.download($ctrl.w2FormUrl)">
+			<i class="icon-icon_download"></i>
+			<span class="margin-left">Download</span>
+		</button>
+	</tn-card-content>
+</tn-card>

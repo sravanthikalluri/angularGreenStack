@@ -1,0 +1,22 @@
+/* button */
+[tn-menu-link-light-button] {
+	text-align: left;
+	width:180px;
+	height: 50px;
+	border: 0px solid #CAD3DB;
+	border-radius: 4px;
+	color: #30343C;
+	font-size: 14px;
+	background: white;
+	z-index: 100;
+	outline: 0;
+	transition: all 0.3s ease 0s;
+
+	&:hover {
+		//border: 2px solid #92A0AC;
+	}
+
+	&:active {
+		background: #EEEEEE;
+	}
+}

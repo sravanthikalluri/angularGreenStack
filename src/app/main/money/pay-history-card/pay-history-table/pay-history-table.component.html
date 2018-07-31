@@ -1,0 +1,15 @@
+<div class="pay-history-table">
+	<div class="container-fluid">
+		<div class="row row-header">
+			<span class="semibold table-data"
+				ng-repeat="title in ['Date', 'Amount'] track by $index"
+				ng-class="$last ? 'col-sm-8 text-right' : 'col-sm-4'">
+				{{title}}
+		</span>
+		</div>
+		<div class="row row-data" ng-repeat="item in $ctrl.data track by $index">
+			<span class="col-sm-4 semibold table-data">{{item.date | date: 'MMM d'}}</span>
+			<span class="col-sm-8 semibold text-right table-data">{{item.netPay | currency:'$':2}}</span>
+		</div>
+	</div>
+</div>

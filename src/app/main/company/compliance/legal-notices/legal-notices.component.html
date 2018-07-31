@@ -1,0 +1,124 @@
+<div class="background">
+	<div class="primary-container">
+		<h2 class="page-title">
+			<button ui-sref="app.main.company.overview" class="no-border-button">
+				{{'company' | translate}}
+			</button>
+			<span class="icon-heading icon-icon_forward"></span>
+			<button class="no-border-button">
+				{{'legal-notices-developments' | translate}}
+			</button>
+		</h2>
+
+		<tn-spinner ng-show="$ctrl.showSpinner" is-show="$ctrl.showSpinner" error-message="$ctrl.errorMessage"></tn-spinner>
+
+		<uib-accordion close-others="true" ng-hide="$ctrl.showSpinner">
+			<div uib-accordion-group class="tn-accordion" ng-init="status.open = false" is-open="status.open" ng-repeat="data in $ctrl.legalNotices">
+				<uib-accordion-heading id="legalNotices_{{$index}}" class="accordion-heading">
+					<button tabindex="-1" class="tn-accordion-button" name="{{data.urlType}}">
+						<p> {{data.header}}</p>
+						<i class="icon-icon_Disclosure_Expand  disclosure-open" ng-if="!status.open"></i>
+						<i class="icon-icon_Disclosure_Collapse  disclosure-open" ng-if="status.open"></i>
+					</button>
+				</uib-accordion-heading>
+
+				<div class="striped" ng-repeat="item in data.urls" ng-if="data.header !== 'State Developments'">
+					<div  class="tn-accordion-body">
+						<div class="innerHeading hand"  ng-click="$ctrl.openPdf(item.url)">
+							<i id="{{item.text.trim()}}" class="icon-icon_pdf tn-pdf_icon"></i>
+
+							<div>
+								<a href class="tn-anchor">{{item.text}}</a>
+								<span class="sr-only">{{'pdf'| translate}}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="legal-state" ng-if="data.header === 'State Developments'">
+					<uib-accordion close-others="true">
+						<div uib-accordion-group class="tn-accordion stripped" ng-init="subLegal.open = false" is-open="subLegal.open" ng-repeat="item in data.subHeader" >
+							<uib-accordion-heading class="accordion-heading">
+								<a class="tn-anchor">
+									{{item.text}}
+									<i class="pull-right" ng-class=" subLegal.open ? 'icon-icon_back':'icon-icon_forward'"></i>
+								</a>
+							</uib-accordion-heading>
+
+							<div class="inner-accordion  state-developments-accordion">
+								<uib-accordion close-others="true"  ng-if="item.subHeaders.length > 0">
+									<div uib-accordion-group ng-repeat="sub in item.subHeaders" class="tn-accordion stripped" ng-init="subLegalCal.open = false" is-open="subLegalCal.open">
+										<uib-accordion-heading class="accordion-heading" >
+											<div>
+												<a class="tn-anchor">
+													{{sub.text}}
+													<i class="pull-right" ng-class=" subLegalCal.open ? 'icon-icon_back':'icon-icon_forward'"></i>
+												</a>
+											</div>
+										</uib-accordion-heading>
+										<div class="inner-accordion stripped" ng-repeat="california in sub.content" ng-if="sub.content.length > 0">
+											<div class="tn-accordion-body">
+												<div class="innerHeading">
+													<div class="tn-accordion-content">
+														<h5 ng-bind-html="california.heading"></h5>
+														<span ng-if="california.textAmbrose">
+															<span class="content-text" ng-bind-html="california.textAmbrose"></span>
+														</span>
+
+														<span  ng-if="california.textAccord">
+															<span class="content-text" ng-bind-html="california.textAccord"></span>
+														</span>
+
+														<div  ng-repeat="suburl in california.subUrls" ng-if="california.subUrls.length > 0">
+															<div class="innerHeading hand" ng-click="$ctrl.openPdf(suburl.url)">
+																<span><i class="icon-icon_pdf tn-pdf_icon"></i></span>
+																<div class="tn-accordion-content">
+																	<a href class="pdf-text hand"><strong>{{suburl.text}}</strong></a>
+																	<span class="sr-only">{{'pdf'| translate}}</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="inner-accordion stripped hand" ng-repeat="lang in sub.language" ng-if="sub.language.length > 0" >
+											<div class="tn-accordion-body" ng-if="lang.url !== ''">
+												<div class="innerHeading hand">
+													<span><i class="icon-icon_pdf tn-pdf_icon"></i></span>
+													<div class="tn-accordion-content">
+														<div>
+															<a href class="tn-anchor" ng-click="$ctrl.openPdf(lang.url)">{{lang.label}}</a>
+															<span class="sr-only">{{'pdf'| translate}}</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</uib-accordion>
+							</div>
+
+							<div class="inner-accordion stripped hand" ng-repeat="pdf in item.url" ng-if="item.url.length > 0">
+								<div class="tn-accordion-body">
+									<div class="innerHeading hand">
+										<i class="icon-icon_pdf tn-pdf_icon"></i>
+										<div class="tn-accordion-content">
+											<a class="tn-anchor" ng-href="{{pdf.url | contentUrl}}" target="_blank">
+												{{pdf.text}}
+											</a>
+											<span class="sr-only">{{'pdf'| translate}}</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</uib-accordion>
+				</div>
+			</div>
+		</uib-accordion>
+	</div>
+
+	<div class="secondary-container"></div>
+</div>

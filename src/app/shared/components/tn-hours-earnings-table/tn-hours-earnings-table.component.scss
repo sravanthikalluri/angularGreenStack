@@ -1,0 +1,41 @@
+@import '../../../../styles/main';
+
+tn-hours-earnings-table {
+  .tn-table {
+	box-shadow: none;
+  }
+
+  table {
+	&.table {
+	  tr {
+		p {
+		  margin: 7px;
+		  padding: 0 !important;
+		  font-weight: 500;
+		  letter-spacing: 0.3px;
+		  color: $font-color;
+		}
+		td:nth-child(2) {
+		  border-left: 1px solid #dfe1e2;
+		}
+		td:nth-child(6) {
+		  border-left: 1px solid #dfe1e2;
+		  h6, p {
+			text-align: right !important;
+		  }
+		}
+		&:last-child {
+		  p {
+			color: black !important;
+			font-weight: 700 !important;
+		  }
+		  background: none !important;
+		}
+	  }
+	  tbody tr:nth-child(odd) {
+		background: $off-white;
+	  }
+	}
+  }
+}
+

@@ -1,0 +1,36 @@
+<div class="pusher-container" ng-if="!$ctrl.empDetailsIsLoaded && $ctrl.isFirstLogin">
+	<img class="menu-logo pusher-menu-logo" src="assets/images/trinet_logo-blue.svg">
+	<div class="pusher-text">	{{'dashboard-loader.loading-text' | translate}} </div>
+	<div class="pusher"></div>
+	<div class="pusher-sub-text">
+		<span class="pusher-tip">{{'dashboard-loader.tip' | translate}}</span>
+		{{'dashboard-loader.help-text' | translate }}
+		<a href="http://www.trinet.com/hrpmobileapp" target="_blank"> {{'dashboard-loader.learn-more' | translate}}</a>
+	</div>
+</div>
+
+<div class="spinner-container" ng-show="!$ctrl.empDetailsIsLoaded && !$ctrl.isFirstLogin">
+	<tn-spinner ></tn-spinner>
+</div>
+
+<div ng-if="$ctrl.empDetailsIsLoaded">
+	<div class="menu-container {{$ctrl.showMenu}}" ng-swipe-left="$ctrl.showMenu = 'non-active'" ng-if="!$ctrl.hideHeader">
+		<div class="menu-logo-container {{$ctrl.showMenu}}">
+			<img class="menu-logo" alt="TriNet Logo" src="assets/images/trinet_logo.svg">
+		</div>
+	</div>
+	<tn-header-bar companies-list="$ctrl.companiesList" mime-type="{{$ctrl.mimeType}}"
+				   profile-picture="{{$ctrl.profilePicture}}" slide-menu="$ctrl.showMenu"
+				   monogram="{{$ctrl.monogram}}" ng-if="!$ctrl.hideHeader"></tn-header-bar>
+	<div class="main-content-{{$ctrl.showMenu}}">
+		<div class="menu-container adjust-position {{$ctrl.showMenu}}" ng-if="!$ctrl.hideHeader">
+			<div ui-view class="menu-text-component " ng-swipe-left="$ctrl.showMenu = 'non-active'">
+				<tn-menu on-select="$ctrl.showMenu"></tn-menu>
+			</div>
+		</div>
+		<tn-error-banner ng-if="$ctrl.browserIE" error-data="$ctrl.browseError"></tn-error-banner>
+		<tn-error-banner id="alertLoader" error-data="$ctrl.alertError"></tn-error-banner>
+		<div ui-view="mainContent" ng-disable-scroll="$ctrl.showMenu == 'active'"></div>
+	</div>
+	<div class="overlay{{$ctrl.showMenu}}" ng-click="$ctrl.showMenu = 'non-active'" role="presentation" tabindex="-1"></div>
+</div>

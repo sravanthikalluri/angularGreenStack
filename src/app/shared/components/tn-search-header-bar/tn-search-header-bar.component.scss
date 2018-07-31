@@ -1,0 +1,15 @@
+@import 'main';
+$search-header-bar-margin: 20px;
+
+.tn-search-header-bar {
+	width: 100%;
+	padding: $search-header-bar-margin;
+	border-bottom: 1px solid $divider-gray;
+}
+
+.tn-search-header-bar h2 { display: inline; }
+
+.tn-search-header-bar tn-search-box {
+	width: 270px;
+	float: right;
+}

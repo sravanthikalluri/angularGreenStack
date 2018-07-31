@@ -1,0 +1,14 @@
+<div class="tn-provider-plan">
+
+	<tn-company-name ng-if="$ctrl.plan.providerName"
+		logo-url="{{$ctrl.plan.providerLogo}}"
+		company-name="{{$ctrl.plan.providerName}}"
+		provider-name="{{$ctrl.plan.providerName}}"
+		class="tn-provider-plan-provider">
+	</tn-company-name>
+
+	<div class="tn-provider-plan-name">
+		{{$ctrl.plan.planDesc}}
+	</div>
+	<span class="pull-right" ng-if="$ctrl.plan.groupNbr && $ctrl.plan.groupNbr !=' '">Group #: {{$ctrl.plan.groupNbr}}</span>
+</div>

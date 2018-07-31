@@ -1,0 +1,63 @@
+@import 'main';
+
+.tn-browser-model{
+  .modal-dialog{
+	width:500px;
+  }
+  .view-notice-modal{
+	padding: 25px;
+	.modal-header{
+	  text-align: right;
+	  color: #BBBCBF;
+	  padding:0;
+	  border:none;
+	}
+	.view-center-btn{
+	  margin-top: 10px;
+	  text-align: center !important;
+	}
+	.important-notices-item-date{
+	  color: $font-color-secondary;
+	  span{
+		margin-right:15px;
+		display:inline-block;
+	  }
+	}
+	.important-notices-item-title{
+	  color: $font-color;
+	  font-weight: 600;
+	  font-size: 18px;
+	}
+	.important-notices-item-body{
+	  color: $font-color;
+	  margin-bottom: 0;
+	  word-wrap: break-word;
+	  word-break: keep-all;
+	  text-align: justify;
+	}
+	.notice-filter {
+	  .help-text{
+		color: $font-color-secondary;
+	  }
+	  .filter-value {
+		color: $font-color-secondary-hover;
+		background: #b3bdc7;
+		padding: 5px;
+		border-radius: 4px;
+		margin: 5px 0;
+		display: inline-block;
+	  }
+	  .shared-section{
+		i {
+		  display: inline-block;
+		  margin: 0 10px;
+		  color: #6e778a;
+		}
+		> span:last-child i {
+		  display: none;
+		}
+	  }
+
+	}
+  }
+}

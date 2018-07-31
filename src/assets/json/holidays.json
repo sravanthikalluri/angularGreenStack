@@ -1,0 +1,95 @@
+{
+  "data": {
+	"companyHolidayDetails": [
+	  {
+		"id": "1",
+		"schedule": "TRI",
+		"date": "2016-01-01",
+		"desc": "New Years Day",
+		"hours": 8,
+		"up_coming": false
+	  },
+	  {
+		"id": "2",
+		"schedule": "TRI",
+		"date": "2016-01-18",
+		"desc": "Martin Luther King, Jr. Day",
+		"hours": 8,
+		"up_coming": false
+	  },
+	  {
+		"id": "3",
+		"schedule": "TRI",
+		"date": "2016-02-15",
+		"desc": "Presidents Day",
+		"hours": 8,
+		"up_coming": false
+	  },
+	  {
+		"id": "4",
+		"schedule": "TRI",
+		"date": "2016-05-30",
+		"desc": "Memorial Day",
+		"hours": 8,
+		"up_coming": false
+	  },
+	  {
+		"id": "5",
+		"schedule": "TRI",
+		"date": "2016-07-04",
+		"desc": "Independence Day",
+		"hours": 8,
+		"up_coming": false
+	  },
+	  {
+		"id": "6",
+		"schedule": "TRI",
+		"date": "2016-09-05",
+		"desc": "Labor Day",
+		"hours": 8,
+		"up_coming":false
+	  },
+	  {
+		"id": "8",
+		"schedule": "TRI",
+		"date": "2016-11-11",
+		"desc": "Veterans Day",
+		"hours": 8,
+		 "up_coming": "Upcoming-52 days"
+	  },
+	  {
+		"id": "9",
+		"schedule": "TRI",
+		"date": "2016-11-24",
+		"desc": "Thanksgiving Day",
+		"hours": 8,
+		"up_coming": false
+	  },
+	  {
+		"id": "10",
+		"schedule": "TRI",
+		"date": "2016-11-25",
+		"desc": "Day After Thanksgiving Day",
+		"hours": 8,
+		"up_coming": false
+	  },
+	  {
+		"id": "11",
+		"schedule": "TRI",
+		"date": "2016-12-26",
+		"desc": "Christmas Day Observed",
+		"hours": 8,
+		"up_coming": false
+	  }
+	]
+  },
+  "_requestId": "1103acc6-9960-431a-b59c-70a1ad7aca94",
+  "_statusCode": "200",
+  "_statusText": "OK",
+  "_statusMessage": "Success"
+}
+
+
+
+
+

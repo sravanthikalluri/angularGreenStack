@@ -1,0 +1,15 @@
+<div id="open-earnings-modal" ng-class="{'modal-window': !$ctrl.onShow, 'modal-window target': $ctrl.onShow}">
+	<section ng-show=$ctrl.header >
+		<div class="modal-header">
+			<div class="filename"><h6>Payroll Schedule</h6></div>
+			<button ng-click="$ctrl.onClose()" id="datepicker-modal-close" class="modal-close tn-icon icon-close-temp" aria-label="close-payroll-schedule-modal"></button>
+		</div>
+	</section>
+    <div class="content">
+			<tn-datepicker class="popup-dateSchedule" title="payroll-schedule-title"
+						   modal-id="'tnModalDatePicker'"
+						   is-payroll-admin="$ctrl.isPayrollAdmin" payroll-data="$ctrl.payrollData"
+						   events="$ctrl.events" event-keys="$ctrl.eventKeys"></tn-datepicker>
+			<a aria-hidden="true" tabindex="0" ng-focus="$ctrl.moveFocusToClose()" class="sr-only">move</a>
+    </div>
+</div>

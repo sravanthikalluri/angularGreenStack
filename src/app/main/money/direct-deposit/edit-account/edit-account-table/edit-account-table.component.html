@@ -1,0 +1,102 @@
+<div class="edit-account-container row-header" role="row">
+	<p role="columnheader" class="flex-item-{{title.class}} edit-account-{{title.class}}" ng-repeat="title in $ctrl.titles">
+		{{title.title}}
+		<span class="tn-has-tooltip tool-tip text-left" ng-if="title.tooltip">
+				<tn-tooltip class="tn-earning-hastooltip" msg="title.toolMessage"></tn-tooltip>
+		</span>
+	</p>
+</div>
+<form name="editAccountForm" novalidate>
+	<div class="edit-account-container edit-account-table-data row-data" role="row"
+		 ng-repeat="item in $ctrl.data"
+		 ng-drop="(!item.netBalance)"
+		 ng-drag="(!item.netBalance)"
+		 ng-drag-data="item"
+		 ng-drop-success="$ctrl.onDropComplete($index, $data)">
+		<div role="gridcell" class="edit-account-account-drag">
+			<span class="edit-account-drag"><i class="tn-icon icon-icon_drag hand" aria-hidden="true"></i></span>
+		</div>
+		<div role="gridcell" class="edit-account-account-name">
+			<span class="edit-account-number semibold">{{item.account_number}}</span>
+		</div>
+		<div role="gridcell" class="edit-account-net-balance">
+			<div class="tn-radio text-center">
+				<label class="control control--radio" for="netBal_{{$index}}">
+					<input id="netBal_{{$index}}" name="netBal" ng-model="item.netBalance"
+						   aria-label="net-balance"
+						   ng-disabled="$ctrl.data.length === 1"
+						   ng-change="$ctrl.onNetBalanceChange($index,item.netBalance)"
+						   type="checkbox">
+					<div class="control__indicator"></div>
+				</label>
+			</div>
+		</div>
+		<div role="gridcell" class="edit-account-deposit">
+			<div class="margin-right radio-section"  aria-hidden="{{item.netBalance ? true : false}}"  ng-class="{'is-disabled':item.netBalance}">
+				<span id="dollarAmt_{{$index}}" class="radio-icon icon-icon_radiobutton_select blue" ng-if="item.amountType === 'dollar'" aria-label="dollar-amount-type-selected"></span>
+				<span id="dollarAmt_{{$index}}" tabindex="{{item.netBalance ? -1 : 0}}"
+					  class="radio-icon icon-icon_radiobutton_empty blue" ng-if="item.amountType !== 'dollar'" ng-class="{'cursor-default':item.netBalance}" ng-click="item.netBalance ? $event.stopPropagation(): $ctrl.changeAmountType($index,'dollar')" aria-label="dollar-amount-type-selected"></span>
+				<span class="margin-right" ng-class="{'blue semibold':item.amountType === 'dollar'}">$</span>
+				<span id="percentageAmt_{{$index}}" class="radio-icon icon-icon_radiobutton_select blue" ng-if="item.amountType === 'percentage'" aria-label="percentage-amount-type-selected"></span>
+				<span id="percentageAmt_{{$index}}" tabindex="{{item.netBalance ? -1 : 0}}"
+					  class="radio-icon icon-icon_radiobutton_empty blue" ng-if="item.amountType !== 'percentage'" ng-class="{'cursor-default':item.netBalance}" ng-click="item.netBalance ? $event.stopPropagation(): $ctrl.changeAmountType($index,'percentage')" aria-label="percentage-amount-type-selected"></span>
+				<span ng-class="{'blue semibold':item.amountType === 'percentage'}">%</span>
+			</div>
+			<tn-input-container ng-if="item.amountType === 'dollar'"
+								ng-class="!item.amount || item.amount <= 0 ? 'is-invalid' : ''">
+				<input ng-cancel-drag id="dollarAmtText_{{$index}}"
+					   type="text"
+					   name="amount_{{$index}}"
+					   tn-input-restriction decimals-only="true" max-length-before-decimal="9" max-length="12"
+					   ng-change="$ctrl.onChange($index,'dollar',item.amount)"
+					   aria-label="deposit in dollars"
+					   required
+					   ng-model="item.amount"/>
+				<div class="clearfix"></div>
+				<div class="tn-input-error" role="alert">
+					<div ng-if="!item.amount" aria-live="polite">{{'money.direct_deposit.required' | translate}}</div>
+					<div ng-if="item.amount && item.amount <= 0" aria-live="polite">
+						{{'money.direct_deposit.validations.dollarZeroValue' | translate}}
+					</div>
+				</div>
+			</tn-input-container>
+			<tn-input-container ng-if="item.amountType === 'percentage'"
+								ng-class="!item.percent || item.percent <= 0 || item.percent > 100 ? 'is-invalid' : ''">
+				<input ng-cancel-drag id="percentageAmtText_{{$index}}"
+					   type="text"
+					   class="percentageInput"
+					   name="percentage_{{$index}}"
+					   ng-change="$ctrl.onChange($index,'percentage',item.percent)"
+					   maxlength="5"
+					   tn-input-restriction decimals-only="true"
+					   aria-label="deposit in percentage"
+					   ng-model="item.percent"/>
+				<label for="percentageAmtText_{{$index}}">% of {{item.percAmout | currency}}</label>
+				<div class="clearfix"></div>
+
+				<div  role="gridcell" class="tn-input-error" role="alert">
+					<div ng-if="!item.percent">{{'money.direct_deposit.required' | translate}}</div>
+					<div ng-if="item.percent && item.percent <= 0">
+						{{'money.direct_deposit.validations.percentageZeroValue' | translate}}
+					</div>
+					<div ng-if="item.percent > 100">{{'money.direct_deposit.validations.percentageValue' | translate}}
+					</div>
+				</div>
+
+			</tn-input-container>
+		</div>
+		<div role="gridcell" class="edit-account-estiamted-amount">
+			<span class="semibold amount">{{item.remAmount | currency }}</span>
+			<span class="semibold edit-link">
+				<a href aria-label="edit account" aria-haspopup="true"  class="edit tn-icon icon-icon_Edit"
+				   ng-click="$ctrl.editModalPopup(item,$index)">
+				</a>
+			</span>
+			<span class="semibold delete-link">
+				<a href aria-label="remove account" aria-haspopup="true"  ng-click="$ctrl.deleteAccount($index)" id="deleteAcct_{{$index}}"
+				   class="remove tn-icon icon-close-temp"></a>
+			</span>
+		</div>
+	</div>
+
+</form>

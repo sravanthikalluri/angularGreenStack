@@ -1,0 +1,32 @@
+@import 'main';
+
+.login-to-beta-close-icon{
+  margin:20px;
+  float: right;
+  color: $gray;
+}
+.login-to-beta-content{
+  padding:40px;
+  height:200px;
+  .login-to-beta-text{
+	margin-bottom:30px;
+  }
+
+  .login-to-beta-toggle-text label{
+	margin-top:10px;
+	font-weight: 100 !important;
+  }
+}
+
+.login-to-beta-footer{
+  margin-top:20px;
+  .login-to-beta-buttons{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+	.login-to-beta-yes{
+	  margin-left: 15px;
+	}
+  }
+}

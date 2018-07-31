@@ -1,0 +1,39 @@
+{
+   "data":[
+      {
+         "benefitPlan":"001QGM",
+         "coverageBeginDate":"2016-03-01",
+         "coverageElect":"E",
+         "coverageElectDate":"2016-03-14",
+         "effectiveDate":"2016-03-01",
+         "goalAmount":16300,
+         "priorContributions":0,
+         "employeeId":"00001790047",
+         "company":"LYC",
+         "calendarYear":"2016",
+         "limitType":"402",
+         "totalYtd":"3850",
+         "currentYear":" January 1 ,2016- December 31 ,2016",
+         "PreTax":{
+            "flatDeductionAmnt":0,
+            "pctGross":6,
+            "planType":"401(k)",
+            "limitExtType":"B",
+            "lastPayDeduction401k":400,
+            "federalAmount":18001,
+            "extAmount":1
+         },
+         "Roth":{
+            "flatDeductionAmntAtax":0,
+            "pctGrossAtax":0,
+            "planTypeRoth":"Roth",
+            "lastPayDeductionRoth":0
+         }
+      }
+   ],
+   "_requestId":"b654e32f-53b1-4190-ad23-04a103906528",
+   "_statusCode":"200",
+   "_statusText":"OK",
+   "_statusMessage":"Success"
+}
+

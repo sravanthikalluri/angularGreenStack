@@ -1,0 +1,12 @@
+<div class="preferences-modal">
+	<div class="preferences-modal-header">
+		<i aria-label="close modal" id="noticeClose" class="icon-close-temp hand" ng-click="$ctrl.onCancel();"></i>
+	</div>
+	<br>
+	<div class="padding-vertical" ng-bind-html="$ctrl.html"></div>
+	<br>
+	<div class="preferences-modal-footer">
+		<button id="noticeCancelBtn" tn-button ng-click="$ctrl.onCancel()">Cancel</button>
+		<button id="noticeContinueBtn" class="margin-left" tn-action-button ng-click="$ctrl.onContinue()">Continue</button>
+	</div>
+</div>

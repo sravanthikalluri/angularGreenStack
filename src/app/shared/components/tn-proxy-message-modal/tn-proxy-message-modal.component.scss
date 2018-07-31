@@ -1,0 +1,22 @@
+@import 'main';
+
+.missing-email-modal-close-icon{
+  margin:20px;
+  float: right;
+  color: $gray;
+}
+.missing-email-modal-content{
+  padding: 20px 50px 20px 50px;
+  height:250px;
+}
+
+.missing-email-modal-message{
+  padding-bottom: 20px;
+  padding-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.missing-email-modal-footer{
+  float: right;
+}

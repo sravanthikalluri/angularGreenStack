@@ -1,0 +1,25 @@
+<div class="tabs-container">
+
+	<input 	type="radio"
+			id="{{tab.label}}"
+			name="tabs"
+			ng-repeat="tab in $ctrl.tabs"
+			ng-click="$ctrl.setActiveTab($index)">
+
+	<div class="tabs-label-content">
+
+		<label
+			ng-repeat="tab in $ctrl.tabs"
+			class="tab-label"
+			for="{{tab.label}}"
+			ng-class="{selected: tab.isActive()}">
+			{{tab.label}}
+		</label>
+
+		<div class="slider"></div>
+
+	</div>
+
+	<div class="tab-content-container" ng-transclude></div>
+
+</div>

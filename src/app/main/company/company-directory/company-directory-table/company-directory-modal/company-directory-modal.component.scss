@@ -1,0 +1,44 @@
+@import 'main';
+
+.company-modal{
+&.primary-container{
+margin: 10% auto;
+}
+}
+.company-modal-close-icon{
+	float: right;
+	color: $leave-status-other-font-color;
+}
+
+.company-directory-modal-row{
+	margin-top: 30px;
+	margin-bottom: 20px;
+	.company-directory-modal-column{
+		margin-left: 20px;
+		text-align: center;
+		.image-placeholder{
+			height: 75px;
+			width:  75px;
+			border-radius: 50%;
+			margin: 25px auto 0;
+			background-color: #DCE1E6;
+			color: #8295A8;
+			line-height: 78px;
+			font-size:   33px;
+			font-weight: 100;
+		}
+		span{
+			display: block;
+		}
+		.employee-name{
+			font-size: 16px;
+			margin-top: 15px;
+			margin-bottom: 5px;
+		}
+		.position-department{
+			color: $leave-status-other-font-color;
+		}
+	}
+}
+
+

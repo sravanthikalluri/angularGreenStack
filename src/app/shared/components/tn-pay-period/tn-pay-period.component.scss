@@ -1,0 +1,17 @@
+@import 'main';
+
+.tn-pay-period {
+	display: flex;
+	align-items: center;
+	color: $slate;
+	font-weight: 600;
+}
+
+.tn-pay-period-icon {
+	font-size: 18px;
+	margin-right: 10px;
+}
+
+.tn-pay-period-dates {
+	font-size: 12px;
+}

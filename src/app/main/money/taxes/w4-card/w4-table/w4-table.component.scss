@@ -1,0 +1,62 @@
+.w4-modal-table-inner{
+	width:auto;
+ }
+.w4-modal-table {
+  overflow-x: auto;
+  overflow-y: auto;
+
+  [class^="col"] {
+	padding: 0;
+  }
+}
+.w4-table {
+	margin: 16px 0;
+	.no-pad{
+    	padding:0px;
+    }
+}
+
+.w4-table-header{
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+  .w4-table-item{
+    display : block;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+
+.w4-table-chip {
+	margin-top: -3px;
+  	display: inline-block;
+}
+.w4-pdf-links{
+  display: inline-block;
+}
+.text-adj{
+  margin-left: -42px;
+}
+.w4-table-link {
+	font-size: 12px;
+	font-weight: 600;
+	text-align: center;
+  	display: block;
+  	margin: 3px 0;
+
+	&.is-disabled {
+		visibility: hidden;
+		pointer-events: none;
+   		cursor: default;
+	}
+}
+.row-data{
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+}
+

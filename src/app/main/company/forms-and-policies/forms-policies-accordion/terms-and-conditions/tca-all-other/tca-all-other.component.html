@@ -1,0 +1,84 @@
+<tn-card>
+	<tn-card-content>
+		<div id="trinetCorp">TRINET HR CORPORATION</div>
+		<p class="large bold">TERMS AND CONDITIONS AGREEMENT (TCA)</p>
+		<br/>
+		<p class="tca-top-content">Please read this TCA carefully. It contains important information regarding your use of TriNet's secured online portal, TriNet Passport&#174; and online services, and related matters. Your acknowledgement and acceptance of this tca is a condition of your use of TriNet's TriNet Passport&#174; and online services. If you fail to acknowledge this TCA, you will not have access to TriNet's TriNet Passport&#174; And online services.</p>
+		<br />
+		<p>
+			<b>This TCA contains the following sections:</b>
+		</p>
+	</tn-card-content>
+</tn-card>
+
+<div class="tca-acc-trinet" role="tablist">
+	<uib-accordion close-others="true">
+		<div uib-accordion-group class="tn-accordion" is-open="status.open" ng-repeat="item in $ctrl.accordionList">
+			<uib-accordion-heading id="{{item.name |  lowercase}}" class="accordion-heading">
+				<button id="{{item.name}}Id"
+						class="tn-accordion-button"
+						ng-click="$ctrl.accoridon({index:$index,accordion:$ctrl.accordionList});"
+						title="{{item.name}}"
+						aria-selected="{{ item.isOpen}}"
+						aria-expanded="{{item.isOpen}}"
+						role="tab">
+					<h4>{{$index+1}}. <span ng-bind-html="item.name"></span></h4>
+					<i class="icon-icon_Disclosure_Expand  disclosure-open" ng-if="!status.open"></i>
+					<i class="icon-icon_Disclosure_Collapse  disclosure-open" ng-if="status.open"></i>
+				</button>
+			</uib-accordion-heading>
+			<div class="standard-padding" ng-if=" item.id === 1 && item.isOpen">
+				<p class="standard-padding">The personal information you provide online through TriNet's TriNet Passport&#174; is used to facilitate your online HR transactions. You agree not to share with or disclose to anyone else your TriNet ID or password for TriNet Passport&#174;. TriNet, in turn, agrees to use your information only as stated in <a href="http://www.trinet.com/company/terms.htm" class="tn-anchor inline" target="_blank">TriNet's Terms of Use and Privacy Policy</a> for websites. TriNet will not provide your individually identifiable information to third-party providers or other commercial parties for commercial use except as permitted by you or as required by law.</p>
+				<p>You agree that all information submitted by you to TriNet is and will be true and correct.   Moreover, you agree to provide to TriNet a functioning email address for you, and to review and accept notices and forms sent to that email address as well as to review and accept notices and forms posted on TriNet Passport&#174;. With respect to notices and forms for which consent to electronic delivery is required by law, you hereby agree and consent to electronic delivery by email, by posting on TriNet Passport&#174;, or via such other method as permitted by law.</p>
+
+			</div>
+			<div class="standard-padding" ng-if=" item.id === 2 && item.isOpen">
+				<p>TriNet Passport&#174; is licensed to you subject to the terms and conditions in this TCA. You agree that TriNet Passport&#174; constitutes confidential, proprietary, intellectual property of TriNet, that this license is revocable by TriNet at any time, and that you will not modify, reverse engineer, decompile or disassemble, or otherwise tamper with TriNet Passport&#174; or create any derivative works or otherwise incorporate TriNet Passport&#174; in other programs, without TriNet's prior written consent. Any feedback you provide will become TriNet information and TriNet will have the royalty-free right to share the feedback and to create and use derivative works based on the feedback.</p>
+				<p>If you fail to protect the confidentiality of your password or if you submit inaccurate information to TriNet, you agree to indemnify and hold TriNet, its parents, subsidiaries, affiliates, officers and employees harmless from any claim, demand, penalty, or damage, including reasonable attorneys' fees and costs, asserted by any third party due to or arising out of your use of TriNet Passport&#174; or TriNet's online services. TriNet will notify you within a reasonable period of time of any claim for which TriNet seeks indemnification and will afford you the opportunity to participate in the defense of any such claim, provided that your participation does not prejudice TriNet's interests, as determined by TriNet.</p>
+				<p>Your licensed usage of TriNet Passport&#174; is on an &quot;As Is&quot; basis and TriNet disclaims any and all warranties, express or implied, to the full extent permitted by law.  For example, TriNet does not warrant that its online services or content will be uninterrupted or error-free, available at all times or in any and all geographic areas, or will meet any particular criteria of performance or quality. If you are dissatisfied with any portion of TriNet's TriNet Passport&#174; or online services, or with any of these terms and conditions, your sole and exclusive remedy is to not use TriNet's TriNet Passport&#174; or online services. In no event can TriNet be held liable for any indirect, punitive, incidental, consequential, or other special damages arising out of your use of TriNet Passport&#174; or TriNet's online services.</p>
+			</div>
+			<div class="standard-padding" ng-if=" item.id === 3 && item.isOpen">
+				<p class="header-fontsize">a. How The DRP Applies</p>
+				<p>
+					This DRP covers any dispute arising out of or relating to your relationship with TriNet, including, without limitation, this TCA and your use of TriNet Passport&#174; and TriNet's online services. The Federal Arbitration Act applies to this DRP. Also, existing internal procedures for resolving disputes, as well as the option of mediation, will continue to apply with the goal being to resolve disputes before they are arbitrated. This DRP will survive termination of the relationship. <b>With only the exceptions described below, arbitration will replace going before a government agency or a court for a judge or jury trial.</b>
+				</p>
+				<br />
+
+				<p class="header-fontsize">b. Limitations On How The DRP Applies</p>
+				<p>Claims may be brought before an administrative agency if applicable law allows such claims even when there is an arbitration agreement. This DRP does not, however, excuse a requirement that a party exhaust administrative remedies before making a claim in arbitration. This DRP does not prevent a party from bringing complaints, claims or charges before the Equal Employment Opportunity Commission, the U.S. Department of Labor, the National Labor Relations Board, or the Office of Federal Contract Compliance Program and does not prevent a party from bringing claims in any forum as provided in Public Laws 111-203, 111-118 & 112-10. Nor does this DRP apply to any disputes that are, at the time of your acknowledgement of the DRP, already the subject of an existing lawsuit or agency proceeding.</p>
+				<br />
+
+				<p class="header-fontsize">c. Starting Arbitration</p>
+				<p>Before commencement of arbitration, the parties may, upon written agreement of the parties, submit the dispute to mediation. This DRP does not require mediation before commencing arbitration.</p>
+				<p class="inline">
+					Arbitration begins by bringing a claim under the applicable arbitration rules and procedures of either the American Arbitration Association (&quot;AAA&quot;) or the Judicial Arbitration and Mediation Services, Inc. (&quot;JAMS&quot;), as then in effect and as modified by any superseding provisions in this DRP.  The party bringing the claim may choose to bring the claim before either AAA or JAMS. The applicable Arbitration Rules may be found on the internet at <a href="http://www.adr.org" class="tn-anchor  inline" target="_blank">www.adr.org</a> and <a href="http://www.jamsadr.com" class="tn-anchor  inline" target="_blank">www.jamsadr.com</a> or by using an internet search engine to locate the &quot;AAA Arbitration Rules&quot; and &quot;JAMS Arbitration Rules.&quot;  All claims in arbitration must be raised within the same time limits (statutes of limitation) that would apply in court. The arbitrator will be selected by mutual agreement of the parties and will be an experienced attorney licensed in the state where the arbitration will be held or retired judicial officer who served in that state as a judge. If the parties cannot agree on an arbitrator, the applicable AAA or JAMS rules will apply to appoint an arbitrator. The arbitration will be conducted in the city of TriNet's office closest to you.
+				</p>
+				<br />
+
+				<p class="header-fontsize">d. How Arbitration Proceedings Are Conducted</p>
+				<p>In arbitration, the parties will have the right to conduct adequate civil discovery, bring dispositive motions, and present witnesses and evidence as needed to present their cases and defenses. The specific provisions of this DRP and the applicable rules of AAA or JAMS will direct the arbitrator in decisions regarding the enforceability of this DRP and in conducting the arbitration.</p>
+				<p>
+					<b>
+						There will be no right or authority for any dispute to be brought, heard or arbitrated as a class, collective, representative or private attorney general action, or as a member in any purported class, collective, representative or private attorney general proceeding, including, without limitation, uncertified class actions (&quot;Class Action Waiver&quot;); provided, however, that you may opt out of the Class Action Waiver by clicking this box
+						<input type="checkbox" disabled ng-model="$ctrl.data.clientActWaiver" aria-label="Class Action Waiver"  ng-true-value="'Y'" ng-false-value="'N'"/>
+						before you click below to acknowledge this TCA.
+					</b> Disputes regarding the validity and enforceability of the Class Action Waiver may be resolved only by a civil court of competent jurisdiction and not by an arbitrator. In any case in which (1) the dispute is filed as a class, collective, representative or private attorney general action and (2) a civil court of competent jurisdiction finds all or part of the Class Action Waiver unenforceable, the class, collective, representative and/or private attorney general action must be litigated in a civil court of competent jurisdiction, but the portion of the Class Action Waiver that is enforceable shall be enforced in arbitration. No employee will be retaliated against, disciplined or threatened with discipline for exercising his or her rights under Section 7 of the National Labor Relations Act (NLRA) by the filing of or participation in a class, collective or representative action, but TriNet (and, if applicable, any TriNet customer interested in enforcing this DRP for its own benefit) retains the right to enforce this DRP and the Class Action Waiver under the Federal Arbitration Act and to seek dismissal of class, collective or representative actions.
+				</p>
+				<p>During the arbitration each party will pay his, her or its own attorneys' fees, subject to any remedies to which that party may later be entitled under applicable law. In all cases where the law requires it, TriNet (and, if applicable, any TriNet customer interested in enforcing this DRP for its own benefit) will pay the arbitrator's and arbitration fees. In cases in which apportionment of the arbitrator's and arbitration fees is permitted by applicable law, these fees will be divided between the parties as is required by law and determined by the arbitrator.</p>
+				<br />
+
+				<p class="header-fontsize">e. The Arbitration Hearing And Award</p>
+				<p>Within 30 days after the end of the arbitration hearing, any party may file a written brief by providing copies to the arbitrator and the other parties. The arbitrator may award any remedy warranted under applicable law and will include a written opinion providing reasoned explanations for the decision. Neither a party nor the arbitrator will disclose the existence, content, or results of the arbitration without the prior written consent of all parties or in accordance with the arbitrator's decision that disclosure is permitted by law. A court of competent jurisdiction will have the authority to enter a judgment upon the arbitration award. To the extent, if at all, allowed by applicable law, the award may be vacated or corrected on appeal to a court of competent jurisdiction.</p>
+				<br />
+
+				<p class="header-fontsize">f. Enforcement Of The DRP</p>
+				<p>
+					This DRP is the full and complete agreement relating to arbitration as the means to resolve covered disputes. If any portion of this DRP is determined to be unenforceable, the remainder of this DRP still will be enforceable, subject to the specific exception in section d, above. <b>With respect to covered disputes, each party waives any rights under the law for a jury trial and agrees to arbitration in accordance with the terms of this DRP.</b>
+				</p>
+			</div>
+			<div class="standard-padding" ng-if=" item.id === 4 && item.isOpen">
+				<p>By clicking below, I am acknowledging that I have read and understand the contents of this Terms and Conditions Agreement (including, but not limited to, the DRP).  Further, I understand and agree that TriNet may change this TCA, as well as its policies and procedures, at any time in its sole discretion, that any updated versions of the same will be available on TriNet Passport&#174; and will be binding on me and that my continued use of TriNet Passport&#174; and TriNet's online services constitutes acceptance of any revised documents.</p>
+			</div>
+		</div>
+	</uib-accordion>
+</div>

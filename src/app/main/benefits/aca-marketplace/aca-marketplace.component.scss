@@ -1,0 +1,27 @@
+@import "../../../../styles/main";
+
+.font-normal{
+  font-weight: normal !important;
+}
+.pad-5{
+padding: 5px;
+}
+
+.btnPrint{
+  height: 80px;
+  background-color: white;
+  padding-top: 20px;
+  padding-right: 20px;
+}
+#acaMarketPlace{
+	.checkbox-section{
+	  display: flex;
+	}
+	p,span{
+	  color: $slate;
+	}
+}
+
+.large{
+  font-size:20px;
+}

@@ -1,0 +1,151 @@
+<h3>{{'fsa-calculator.hc.heading1' | translate}}</h3>
+<p>{{'fsa-calculator.hc.para1' | translate}}</p>
+<p>{{'fsa-calculator.hc.para2' | translate}}</p>
+<p>{{'fsa-calculator.hc.para3' | translate}}</p>
+<p>{{'fsa-calculator.hc.para4' | translate}}</p>
+<p>{{'fsa-calculator.hc.para5' | translate}}</p>
+<p>{{'fsa-calculator.hc.para6' | translate}}</p>
+<form name="hcForm" id="hcForm" method="post" action="">
+   <h3>{{'fsa-calculator.hc.heading2' | translate}}</h3>
+   <table>
+      <tr>
+         <td>Filing Status<br></td>
+         <td>&nbsp;&nbsp;
+            <select name="filingStatus" ng-options="item as item.label for item in $ctrl.listFilingStatus"
+               ng-model="$ctrl.selectedFilingStatus">
+            </select>
+         </td>
+      </tr>
+      <tr>
+         <td>{{'fsa-calculator.hc.label_anual_income' | translate}}</td>
+         <td> $
+            <input type="text" tn-input-restriction decimals-only="true"
+               name="annualIncome"
+               value="{{$ctrl.annualIncome}}"
+               ng-model="$ctrl.annualIncome" >
+         </td>
+      </tr>
+      <tr>
+         <td>
+           {{'fsa-calculator.hc.label_num_of_dependents' | translate}}<br>
+           {{'fsa-calculator.hc.label_num_of_dependents2' | translate}}
+         </td>
+         <td>&nbsp;&nbsp;
+            <input type="text" tn-input-restriction numbers-only="true"
+               name="numDependents"
+               value="{{$ctrl.numDependents}}"
+               ng-model="$ctrl.numDependents" >
+         </td>
+      </tr>
+   </table>
+   <br>
+   <h3>{{'fsa-calculator.hc.heading3' | translate}}</h3>
+   <table>
+      <tr>
+         <td>{{'fsa-calculator.hc.label_medical_expenses' | translate}}</td>
+         <td> $
+            <input type="text" tn-input-restriction decimals-only="true"
+               name="medicalExpenses"
+               value="{{$ctrl.medicalExpenses}}"
+               ng-model="$ctrl.medicalExpenses" >
+         </td>
+      </tr>
+      <tr>
+         <td>{{'fsa-calculator.hc.label_vision_expenses' | translate}}</td>
+         <td> $
+            <input type="text" tn-input-restriction decimals-only="true"
+               name="visionExpenses"
+               value="{{$ctrl.visionExpenses}}"
+               ng-model="$ctrl.visionExpenses">
+         </td>
+      </tr>
+      <tr>
+         <td>{{'fsa-calculator.hc.label_dental_expenses' | translate}}</td>
+         <td> $
+            <input type="text" tn-input-restriction decimals-only="true"
+               name="dentalExpenses"
+               value="{{$ctrl.dentalExpenses}}"
+               ng-model="$ctrl.dentalExpenses">
+         </td>
+      </tr>
+      <tr>
+         <td>{{'fsa-calculator.hc.label_other_expenses' | translate}}</td>
+         <td> $
+            <input type="text" tn-input-restriction decimals-only="true"
+               name="otherExpenses"
+               value="{{$ctrl.otherExpenses}}"
+               ng-model="$ctrl.otherExpenses">
+         </td>
+      </tr>
+      <tr>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td></td>
+         <td>&nbsp;&nbsp;
+            <input type="button" name="calculateSavings" id="calculateSavings"
+               ng-click="$ctrl.calculateSavings()"
+               value="Calculate Potential Savings">
+         </td>
+      </tr>
+   </table>
+   <br>
+   <table>
+      <tr>
+         <td><b>{{'fsa-calculator.hc.label_expected_savings' | translate}}</b></td>
+         <td></td>
+      </tr>
+      <tr>
+         <td>{{'fsa-calculator.hc.label_estimated_expenses' | translate}}</td>
+         <td> $
+            <input type="text" ng-readonly="true"
+               name="totalExpenses"
+               value="{{$ctrl.totalExpenses}}"
+               ng-model="$ctrl.totalExpenses" >
+         </td>
+      </tr>
+      <tr>
+         <td>{{$ctrl.contributionText}}*</td>
+         <td> $
+            <input type="text" ng-readonly="true"
+               name="suggestedContribution"
+               value="{{$ctrl.suggestedContribution}}"
+               ng-model="$ctrl.suggestedContribution">
+         </td>
+      </tr>
+      <tr>
+         <td>{{'fsa-calculator.hc.label_fed_savings' | translate}}</td>
+         <td> $
+            <input type="text" ng-readonly="true"
+               name="federalTaxSavings"
+               value="{{$ctrl.federalTaxSavings}}"
+               ng-model="$ctrl.federalTaxSavings">
+         </td>
+      </tr>
+      <tr>
+         <td>{{'fsa-calculator.hc.label_fica_savings' | translate}}</td>
+         <td> $
+            <input type="text" ng-readonly="true"
+               name="ficaSavings"
+               value="{{$ctrl.ficaSavings}}"
+               ng-model="$ctrl.ficaSavings">
+         </td>
+      </tr>
+      <tr>
+         <td><b>{{'fsa-calculator.hc.label_total_savings' | translate}}<b></td>
+         <td> $
+            <input type="text" ng-readonly="true"
+               name="totalSavings"
+               value="{{$ctrl.totalSavings}}"
+               ng-model="$ctrl.totalSavings">
+         </td>
+      </tr>
+   </table>
+   <br>
+   <p>
+      <input type="button" name="Reset" id="Reset" value="Reset" ng-click="$ctrl.resetValues()">
+      {{'fsa-calculator.hc.para7' | translate}}
+   </p>
+   <p><i>{{'fsa-calculator.hc.para8' | translate}}</i></p>
+</form>

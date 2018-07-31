@@ -1,0 +1,72 @@
+{
+	"data":[
+		{
+			"name":{
+				"firstName":"Betty Sharp",
+				"fullName":"Sharp,Betty Ann",
+				"middleName":null,
+				"lastName":"Betty Sharp"
+			},
+			"address":{
+				"address1":"21 Seminole Ave.",
+				"address2":" ",
+				"address3":null,
+				"address4":null,
+				"city":"Hubbardston",
+				"country":"US",
+				"county":"US",
+				"state":"CA",
+				"postalCode":"01452"
+			},
+			"telephoneNumbers":{
+				"telephoneNumber1":"1234567890",
+				"telephoneNumber2":null,
+				"telephoneNumber3":null,
+				"telephoneNumber4":null
+			},
+			"contactRelationship":"FR",
+			"employeeId":"00001002198",
+			"primaryContactFlag":"Y",
+			"sameAddressPerson":"N",
+			"samePhonePerson":"N",
+			"notes":" ",
+			"uniqueId":5
+		},
+		{
+			"name":{
+				"firstName":"JOHN",
+				"fullName":"DOE, JOHN",
+				"middleName":null,
+				"lastName":"DOE"
+			},
+			"address":{
+				"address1":"123123",
+				"address2":null,
+				"address3":null,
+				"address4":null,
+				"city":"ajdfhad",
+				"country":"US",
+				"county":null,
+				"state":"AL",
+				"postalCode":"12313"
+			},
+			"telephoneNumbers":{
+				"telephoneNumber1":"1231231231",
+				"telephoneNumber2":null,
+				"telephoneNumber3":null,
+				"telephoneNumber4":null
+			},
+			"contactRelationship":"C",
+			"employeeId":"00001002198",
+			"primaryContactFlag":"N",
+			"sameAddressPerson":"N",
+			"samePhonePerson":"N",
+			"uniqueId":1,
+			"notes":" "
+		}
+	],
+	"_requestId":"80dc20a2-1a37-4223-82c4-d8f2107aa0ea",
+	"_statusCode":"200",
+	"_statusText":"OK",
+	"_statusMessage":"Retrieved Emergency contacts Successfully "
+}

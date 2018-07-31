@@ -1,0 +1,33 @@
+<div class="background">
+	<div class="primary-container" ng-if="$ctrl.ambroseUser">
+		<h2 class="page-title">
+			<tn-title url="'app.main.money.overview'" title="'money-title'"></tn-title>
+			<i class="icon-icon_forward icon-heading"></i> {{'employment-verification' | translate}}
+		</h2>
+		<tn-card>
+			<tn-card-content>
+				TriNet uses <b>The Work Number</b>, a service of TALX Corporation, to provide automated employment and
+				income verifications. Your verifiers will benefit by receiving immediate access to information that is
+				convenient, accurate and secure. <b>The Work Number</b> information you need to get started is listed
+				below.
+				<br/><br/>
+				<span id="empVerification">
+					For information on employment or income verification services please <span class="sr-only">Click Here</span></span>
+
+				<a id="incomeVerifyLink" class="hand"
+				   ng-href="{{$ctrl.verification.employeeVerification.url | contentUrl}}"
+				   aria-labelledby="empVerification"
+				   target="_blank">Click Here</a>
+				<br/><br/>
+				<span id="instructionsForIncome">To obtain instructions for the entity requesting verification of your income or employment please
+				<span class="sr-only">Click Here</span></span>
+				<a id="entityReqLink" class="hand" ng-href="{{$ctrl.verification.entityVerification.url | contentUrl}}"
+				   aria-labelledby="instructionsForIncome"
+				   target="_blank">Click Here</a>
+			</tn-card-content>
+		</tn-card>
+	</div>
+	<div class="secondary-container">
+	</div>
+
+</div>

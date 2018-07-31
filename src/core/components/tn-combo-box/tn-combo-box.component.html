@@ -1,0 +1,5 @@
+<div class="select-style" ng-style="$ctrl.selectStyle">
+  	<select id="selectList" aria-label="{{$ctrl.selectLabel}}" ng-model="$ctrl.selectedObject" ng-change="$ctrl.changeYear()" ng-options="data.value for data in $ctrl.data track by data.key">
+
+	</select>
+</div>

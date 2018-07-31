@@ -1,0 +1,138 @@
+<div class="edit-profile-section">
+	<div class="edit-profile-section-title">{{'edit-profile-home-address' | translate}}</div>
+	<div class="row">
+		<div class="col-sm-5 home-address-select">
+				<select id="effectiveDate"
+						aria-label="home-address-effective-date"
+						ng-model="$ctrl.data.selectedEffectiveDate"
+						ng-options="date for date in $ctrl.dateMenuObject"
+						ng-change="$ctrl.changeAddressInfoDate($ctrl.data.selectedEffectiveDate, $ctrl.data.address)">
+				</select>
+
+		</div>
+		<div class="col-sm-5 ">
+			<div class="effective-date-chip">
+				<tn-chip label="{{$ctrl.futureMessage}}" color="$ctrl.chipStyle"
+						ng-if="$ctrl.displayFutureMessage">
+				</tn-chip>
+			</div>
+		</div>
+
+	</div>
+	<div class="row">
+		<div class="col-sm-5 ">
+		<div class="home-address-datepicker">
+			<span class="home-address-lable">
+				*Effective:
+			</span>
+				<tn-date-selector date="$ctrl.data.address.effectiveDate" on-update="$ctrl.update($ctrl.keys.effectiveDate, data)" min-date="$ctrl.minDate" max-date="$ctrl.maxDate" label="effective-address-date" is-required="true" ></tn-date-selector>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<tn-address-input class="col-sm-5"
+						  label="{{'edit-profile-address1' | translate}}"
+						  form-name="$ctrl.formName"
+						  field-name="$ctrl.keys.address1"
+						  field-value="$ctrl.data.address.address1"
+						  is-required="true"
+						  component-id="'profileAdress1Input'"
+						  on-update="$ctrl.update($ctrl.keys.address1, data)">
+		</tn-address-input>
+		<tn-address-input class="col-sm-5 col-sm-offset-2"
+						  label="{{'edit-profile-address2' | translate}}"
+						  form-name="$ctrl.formName"
+						  field-name="address2"
+						  component-id="'profileAdress2Input'"
+						  field-value="$ctrl.data.address.address2"
+						  on-update="$ctrl.update($ctrl.keys.address2, data)">
+		</tn-address-input>
+	</div>
+	<br>
+
+	<div class="row">
+		<tn-city-input class="col-sm-5"
+					   label="{{'edit-profile-city' | translate}}"
+					   form-name="$ctrl.formName"
+					   field-name="city"
+					   component-id="'profileCityInput'"
+					   field-value="$ctrl.data.address.city"
+					   is-required="true"
+					   on-update="$ctrl.update($ctrl.keys.city, data)">
+		</tn-city-input>
+		<tn-city-input class="col-sm-5 col-sm-offset-2"
+					   label="{{'edit-profile-county' | translate}}"
+					   form-name="$ctrl.formName"
+					   field-name="county"
+					   component-id="'profileCountyInput'"
+					   field-value="$ctrl.data.address.county"
+					   is-required="false"
+					   on-update="$ctrl.update($ctrl.keys.county, data)">
+		</tn-city-input>
+	</div>
+	<br>
+   <div class="row">
+	   <tn-select class="col-sm-5"
+				  ng-if="!$ctrl.data.selected.country || $ctrl.data.selected.country.key === 'US'"
+				  label="{{'edit-profile-state' | translate}}"
+				  placeholder="Select a State"
+				  form-name="$ctrl.formName"
+				  component-id="'Select'"
+				  field-name="state"
+				  field-value="$ctrl.data.selected.state"
+				  items="$ctrl.data.dropdown.usStates"
+				  is-required="true"
+				  on-update="$ctrl.update($ctrl.keys.state, data.key)">
+	   </tn-select>
+	   <tn-select class="col-sm-5"
+				  ng-if="$ctrl.data.selected.country.key === 'CA'"
+				  label="{{'edit-profile-province' | translate}}"
+				  placeholder="Select a Province"
+				  form-name="$ctrl.formName"
+				  component-id="'Select'"
+				  field-name="province"
+				  field-value="$ctrl.data.selected.province"
+				  items="$ctrl.data.dropdown.caProvinces"
+				  is-required="true"
+				  on-update="$ctrl.update($ctrl.keys.state, data.key)">
+	   </tn-select>
+	   <tn-select class="col-sm-5 col-sm-offset-2"
+				  label="{{'edit-profile-country' | translate}}"
+				  placeholder="Select a Country"
+				  form-name="$ctrl.formName"
+				  field-name="country"
+				  component-id="'Select'"
+				  field-value="$ctrl.data.selected.country"
+				  items="$ctrl.data.dropdown.countries"
+				  on-update="$ctrl.update($ctrl.keys.country, data.key)">
+	   </tn-select>
+   </div>
+	<br>
+	<div class="row">
+		<tn-zip-input class="col-sm-5"
+					  ng-if="!$ctrl.data.selected.country || $ctrl.data.selected.country.key === 'US'"
+					  label="{{'edit-profile-zip' | translate}}"
+					  form-name="$ctrl.formName"
+					  field-name="zip"
+					  component-id="'zipCodeInput'"
+					  field-value="$ctrl.data.address.postalCode"
+					  is-required="true"
+					  on-update="$ctrl.update($ctrl.keys.postalCode, data)">
+		</tn-zip-input>
+		<tn-postal-input class="col-sm-5"
+					     ng-if="$ctrl.data.selected.country.key === 'CA'"
+					     label="{{'edit-profile-postal' | translate}}"
+					     form-name="$ctrl.formName"
+						 field-name="postal"
+						 component-id="'postalCodeInput'"
+					     field-value="$ctrl.data.address.postalCode"
+					     is-required="true"
+					     on-update="$ctrl.update($ctrl.keys.postalCode, data)">
+		</tn-postal-input>
+	</div>
+	<div class="row">
+		<div class="col-sm-12 text-right">
+			<button type="button" class="delete-home-address" ng-if="$ctrl.data.selectedEffectiveDate !== 'Currently Effective'" ng-click="$ctrl.deleteAddress($ctrl.data.address, $ctrl.data.selectedEffectiveDate)">Delete this Address</button>
+		</div>
+	</div>
+</div>

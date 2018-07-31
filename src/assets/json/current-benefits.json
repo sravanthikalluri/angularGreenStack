@@ -1,0 +1,350 @@
+{
+    "data": {
+        "enrollment": {
+            "basPartic": null,
+            "employee": null,
+            "enrollmentDeadlineData": {
+                "emplId": "00001511070",
+                "emplRcd": 0,
+                "enrollStatus": 0,
+                "schedId": null,
+                "benefitRcd": null,
+                "eventId": null,
+                "benProgram": null,
+                "eventClass": null,
+                "eventDt": "1900-01-01",
+                "eventStatus": null,
+                "covrgBeginDt": "1900-01-01",
+                "enrollBeginDt": "1900-01-01",
+                "enrollEndDt": "1900-01-01",
+                "planYearBeginDt": "1900-01-01",
+                "planYearEndDt": "1900-01-01",
+                "confirmId": null,
+                "confirmDt": "1900-01-01",
+                "isBatched": null,
+                "isLogged": null,
+                "isConfirmed": null,
+                "isEnrolled": null,
+                "isSpc": null,
+                "type": null,
+                "systemDefaultedElection": "N",
+                "currentDate": null
+            },
+            "curBenefits": {
+                "currentBenefits": [
+                    {
+                        "planType": "10",
+                        "planTypeDescr": "Medical",
+                        "planDesc": "UHC Enhanced",
+                        "groupNbr": "0184514",
+                        "coverage": {
+                            "employeeName": "Satyajit Bhattacharya",
+                            "amount": null,
+                            "btax": null,
+                            "atax": null,
+                            "beneficiaries": [
+                                {
+                                    "name": "Bhattacharya,Anish",
+                                    "benefit": null,
+                                    "planType": "10",
+                                    "primary": true
+                                },
+                                {
+                                    "name": "Bhattacharya,Ishita",
+                                    "benefit": null,
+                                    "planType": "10",
+                                    "primary": true
+                                },
+                                {
+                                    "name": "Bhattacharya,Sucheta",
+                                    "benefit": null,
+                                    "planType": "10",
+                                    "primary": true
+                                }
+                            ],
+                            "plantype": "10"
+                        }
+                    },
+                    {
+                        "planType": "11",
+                        "planTypeDescr": "Dental",
+                        "planDesc": "MetLife Enhanced",
+                        "groupNbr": "101125",
+                        "coverage": {
+                            "employeeName": "Satyajit Bhattacharya",
+                            "amount": null,
+                            "btax": null,
+                            "atax": null,
+                            "beneficiaries": [
+                                {
+                                    "name": "Bhattacharya,Anish",
+                                    "benefit": null,
+                                    "planType": "11",
+                                    "primary": true
+                                },
+                                {
+                                    "name": "Bhattacharya,Ishita",
+                                    "benefit": null,
+                                    "planType": "11",
+                                    "primary": true
+                                },
+                                {
+                                    "name": "Bhattacharya,Sucheta",
+                                    "benefit": null,
+                                    "planType": "11",
+                                    "primary": true
+                                }
+                            ],
+                            "plantype": "11"
+                        }
+                    },
+                    {
+                        "planType": "14",
+                        "planTypeDescr": "Vision",
+                        "planDesc": "VSP Vision Standard",
+                        "groupNbr": "30021769",
+                        "coverage": {
+                            "employeeName": "Satyajit Bhattacharya",
+                            "amount": null,
+                            "btax": null,
+                            "atax": null,
+                            "beneficiaries": [
+                                {
+                                    "name": "Bhattacharya,Anish",
+                                    "benefit": null,
+                                    "planType": "14",
+                                    "primary": true
+                                },
+                                {
+                                    "name": "Bhattacharya,Ishita",
+                                    "benefit": null,
+                                    "planType": "14",
+                                    "primary": true
+                                },
+                                {
+                                    "name": "Bhattacharya,Sucheta",
+                                    "benefit": null,
+                                    "planType": "14",
+                                    "primary": true
+                                }
+                            ],
+                            "plantype": "14"
+                        }
+                    },
+                    {
+                        "planType": "23",
+                        "planTypeDescr": "Life and AD and D",
+                        "planDesc": "Basic Life 2x Salary",
+                        "groupNbr": null,
+                        "coverage": {
+                            "employeeName": "Satyajit Bhattacharya",
+                            "amount": {
+                                "valueType": "flat_amount",
+                                "value": 400000
+                            },
+                            "btax": null,
+                            "atax": null,
+                            "beneficiaries": [],
+                            "plantype": "23"
+                        }
+                    },
+                    {
+                        "planType": "30",
+                        "planTypeDescr": "Short-Term Disability",
+                        "planDesc": "Enhanced STD NY",
+                        "groupNbr": null,
+                        "coverage": {
+                            "employeeName": "Satyajit Bhattacharya",
+                            "amount": {
+                                "valueType": "flat_amount",
+                                "value": 6500.00
+                            },
+                            "btax": null,
+                            "atax": null,
+                            "beneficiaries": null,
+                            "plantype": "30"
+                        }
+                    },
+                    {
+                        "planType": "31",
+                        "planTypeDescr": "Long-Term Disability",
+                        "planDesc": "LTD",
+                        "groupNbr": null,
+                        "coverage": {
+                            "employeeName": "Satyajit Bhattacharya",
+                            "amount": {
+                                "valueType": "flat_amount",
+                                "value": 12500.00
+                            },
+                            "btax": null,
+                            "atax": null,
+                            "beneficiaries": null,
+                            "plantype": "31"
+                        }
+                    },
+                    {
+                        "planType": "40",
+                        "planTypeDescr": "401(k)",
+                        "planDesc": "NO MATCH-CL OWN 401K (Invoice)",
+                        "groupNbr": null,
+                        "coverage": {
+                            "employeeName": "Satyajit Bhattacharya",
+                            "amount": null,
+                            "btax": {
+                                "valueType": "flat_amount",
+                                "value": 1000
+                            },
+                            "atax": {
+                                "valueType": "flat_amount",
+                                "value": 0
+                            },
+                            "beneficiaries": null,
+                            "plantype": "40"
+                        }
+                    },
+                    {
+                        "planType": "A4",
+                        "planTypeDescr": "Best Doctors",
+                        "planDesc": "Best Doctors",
+                        "groupNbr": null,
+                        "coverage": {
+                            "employeeName": "Satyajit Bhattacharya",
+                            "amount": null,
+                            "btax": null,
+                            "atax": null,
+                            "beneficiaries": null,
+                            "plantype": "A4"
+                        }
+                    }
+                ],
+                "dependentDetails": [
+                    {
+                        "emplid": "00001511070",
+                        "dependentName": "Bhattacharya,Sucheta",
+                        "address1": "3 YORKTOWN RD",
+                        "address2": " ",
+                        "address3": " ",
+                        "address4": " ",
+                        "city": "MORGANVILLE",
+                        "county": "MONMOUTH",
+                        "state": "NJ",
+                        "postal": "07751-2645",
+                        "country": "USA",
+                        "nationalId": "XXX-XX-5525",
+                        "dependentBeneficiaryType": "Dependent",
+                        "relationship": "Spouse",
+                        "birthdate": "1965-12-05",
+                        "sex": "F",
+                        "maritalStatus": "U",
+                        "student": "N",
+                        "phone": "732-256-4967"
+                    },
+                    {
+                        "emplid": "00001511070",
+                        "dependentName": "Bhattacharya,Ishita",
+                        "address1": "3 YORKTOWN RD",
+                        "address2": " ",
+                        "address3": " ",
+                        "address4": " ",
+                        "city": "MORGANVILLE",
+                        "county": "MONMOUTH",
+                        "state": "NJ",
+                        "postal": "07751-2645",
+                        "country": "USA",
+                        "nationalId": "XXX-XX-2352",
+                        "dependentBeneficiaryType": "Dependent",
+                        "relationship": "Child",
+                        "birthdate": "1995-07-27",
+                        "sex": "F",
+                        "maritalStatus": "U",
+                        "student": "Y",
+                        "phone": " "
+                    },
+                    {
+                        "emplid": "00001511070",
+                        "dependentName": "Bhattacharya,Anish",
+                        "address1": "3 YORKTOWN RD",
+                        "address2": " ",
+                        "address3": " ",
+                        "address4": " ",
+                        "city": "MORGANVILLE",
+                        "county": "MONMOUTH",
+                        "state": "NJ",
+                        "postal": "07751-2645",
+                        "country": "USA",
+                        "nationalId": "XXX-XX-7151",
+                        "dependentBeneficiaryType": "Dependent",
+                        "relationship": "Child",
+                        "birthdate": "2006-11-25",
+                        "sex": "M",
+                        "maritalStatus": "U",
+                        "student": "Y",
+                        "phone": " "
+                    }
+                ]
+            },
+            "uidependents": null,
+            "benefits": null,
+            "options": null,
+            "healthcosts": null,
+            "lifecosts": null,
+            "disabilitycosts": null,
+            "stdWaiveLtdPlans": null,
+            "fsacosts": null,
+            "hsacosts": null,
+            "cureeplans": null,
+            "histeeplans": null,
+            "histdpplans": null,
+            "legends": null,
+            "content": {
+                "company": null,
+                "effDt": null,
+                "benefit_program": null,
+                "company_name": null,
+                "hq_state": null,
+                "hq_country": null,
+                "product_line": null,
+                "company_hsa_contribution": null,
+                "medical_waiver_credit": null,
+                "t2_funding_optn": null,
+                "cobra_eligible": false,
+                "confirm_id": null,
+                "confirm_dt": null,
+                "dp_existence": false,
+                "spouse_existence": false,
+                "event_class": null,
+                "event_dt": null,
+                "supp_life_enrolled": false,
+                "supp_life_flat_dollar": null,
+                "med_waiver_credit": null,
+                "period_end_dt": null,
+                "event_class_descr": null,
+                "timestamp": "2017-07-14T15:14:10-0400",
+                "disability_taxiable": false,
+                "definition": null,
+                "plan_comparison_den": "http://www.hrpassport.com/",
+                "plan_comparison_med": "http://www.hrpassport.com/",
+                "base_url": "http://www.hrpassport.com/"
+            },
+            "selections": null,
+            "ages": null,
+            "providers": null,
+            "curLifeBenPlans": null,
+            "uiErrorMsgs": null,
+            "histexcreditplans": null,
+            "countries": null,
+            "states": null,
+            "authoriaServer": null,
+            "dualCoverage": null
+        },
+        "benefitElectionSubmitted": false
+    },
+    "_meta": {
+        "lastRefreshTime": "2017-07-14 15:14:10",
+        "fromCache": false
+    },
+    "_requestId": "282a61cb-42b9-4443-92a1-9ead21fcb705",
+    "_statusCode": "200",
+    "_statusText": "OK",
+    "_statusMessage": "Success"
+}

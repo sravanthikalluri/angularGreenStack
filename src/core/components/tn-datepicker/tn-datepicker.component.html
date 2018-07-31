@@ -1,0 +1,37 @@
+<div class="tn-datepicker">
+	<h3 tabindex="0" class="tn-datepicker-title">{{$ctrl.title | translate}}</h3>
+	<tn-spinner ng-show="$ctrl.showSpinner"></tn-spinner>
+	<div class="tn-datepicker-calender">
+		<div class="tn-datepicker-nav" ng-hide="$ctrl.showSpinner">
+			<button class="tn-datepicker-nav-button" ng-click="$ctrl.prev()" name="previous" id="{{$ctrl.modalId}}prev1" title="previous" aria-label="previous month"><</button>
+			<span class="tn-datepicker-month-label">{{$ctrl.month.format("MMMM YYYY")}}</span>
+			<button class="tn-datepicker-nav-button" ng-click="$ctrl.next()" name="next" id="{{$ctrl.modalId}}nxt1" title="next" aria-label="next month">></button>
+		</div>
+
+		<div class="tn-datepicker-row" ng-hide="$ctrl.showSpinner">
+			<span class="tn-datepicker-col text-center" ng-repeat="dayLabel in $ctrl.daysInWeek track by $index">
+				<span class="tn-datepicker-day-label">{{dayLabel}}</span>
+			</span>
+		</div>
+
+		<div class="tn-datepicker-row" ng-repeat="week in $ctrl.weeks track by $index" ng-hide="$ctrl.showSpinner">
+			<span class="tn-datepicker-col" ng-repeat="day in week.days track by $index">
+			<div class="tn-datepicker-day" ng-class="$ctrl.getDayCls(day,$ctrl.datesOfInterest)">
+				<span ng-show="$ctrl.getDayCls(day,$ctrl.datesOfInterest) !== 'pay-date-pay-period-end-date' && $ctrl.getDayCls(day,$ctrl.datesOfInterest) !== 'pay-period-end-date' && $ctrl.getDayCls(day,$ctrl.datesOfInterest) !== 'is-pay-date'" >{{day.number}}</span>
+				<span ng-show="$ctrl.getDayCls(day,$ctrl.datesOfInterest) === 'is-pay-date'" tabindex="0" aria-label='{{day.number}}-{{$ctrl.month.format("MMMM YYYY")}}-is-pay-date'>{{day.number}}</span>
+				<span ng-show="$ctrl.getDayCls(day,$ctrl.datesOfInterest) === 'pay-period-end-date'" tabindex="0" aria-label='{{day.number}}-{{$ctrl.month.format("MMMM YYYY")}}-pay-period-end-date'>{{day.number}}</span>
+				<span ng-show="$ctrl.getDayCls(day,$ctrl.datesOfInterest) === 'pay-date-pay-period-end-date'" tabindex="0" aria-label='{{day.number}}-{{$ctrl.month.format("MMMM YYYY")}}-pay-date-and-pay-period-end-date'>{{day.number}}</span>
+			</div>
+			</span>
+		</div>
+	</div>
+	<div class="tn-date-desc">
+		<div class="tn-datepicker-footer"
+			 aria-label="{{footer.paydate}} {{footer.value}}"
+			 ng-repeat="footer in $ctrl.footerData track by $index"  ng-hide="$ctrl.showSpinner">
+			<span class="{{footer.color}}"></span>
+			<span aria-hidden="true">{{footer.value}}</span>
+		</div>
+	</div>
+	<div class="visuallyhidden" id="{{$ctrl.modalId}}dateUpdate" aria-live="polite"></div>
+</div>

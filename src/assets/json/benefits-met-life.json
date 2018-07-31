@@ -1,0 +1,17 @@
+{
+  "data": {
+	"clientId": "1164937",
+	"groupCustomerNumber": "Trinet",
+	"haKeyVersion": "1",
+	"lKey": null,
+	"pKey": null,
+	"sign": "nxN3CnrvKHmcnbg7HYpKgq0elg4RPH2qw3BGqNr4H0IkVcTfNR3vaMnK9U7NP_cwCdzlhOL1MzUoDt6e5K_D--e9w-_jiUrfJLzNfcAM6wuYygLcZ5bOQ8PG5PyjgT1x9Lccr-R2lU52jeWnl8X6uJNDTCCMBYnfIprSO64-dAEdecode",
+	"token": "T3jcArEw1PefxNOhHppoNsziTyiSg2ztJOv3nFl8aXbCHJcOoo0pfO0oyHQft-WpjYAWF7IANEpcUKnWABKKS3vxnK72PPDQBXGA2KiiLxakUG7FnTnJTeXUo2NnIZdbqjWUkh8xFH2fjvxyv5EE4HAvhCtq_wW3JUTuo-8TYpgdecode",
+	"tpKeyVersion": "1",
+	"url": "https://mybenefits.metlife.com/MyBenefits/commonAccess.jsp"
+  },
+  "_requestId": "053d1deb-7ab4-45ee-83fa-b375694799ba",
+  "_statusCode": "200",
+  "_statusText": "OK",
+  "_statusMessage": "Success"
+}

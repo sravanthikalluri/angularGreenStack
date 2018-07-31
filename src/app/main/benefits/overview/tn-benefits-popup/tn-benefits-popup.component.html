@@ -1,0 +1,23 @@
+<tn-card class="tn-benefits-cards-card" loading="$ctrl.showSpinner">
+    <div ng-hide="$ctrl.showSpinner">
+        <div class="provider-logo"><img ng-if="$ctrl.plan.planInfo.providerLogo" alt="{{$ctrl.plan.planInfo.providerName}}" ng-src="{{$ctrl.plan.planInfo.providerLogo}}">
+            <span ng-if="!$ctrl.plan.planInfo.providerLogo">
+			    {{$ctrl.plan.planInfo.providerName}}
+            </span>
+        </div>
+        <div class="provder-description">
+            <span>See UnitedHealthCare website to learn about their services</span>
+            <br/>
+            <br/>
+            <div ng-repeat="info in $ctrl.uhcInfo track by $index">
+                <a href="" ng-click="$ctrl.goToSSO(info.name)">{{info.title}}</a>
+                <br/>
+                <span ng-show="info.description !==''">
+                    <span >{{info.description}}</span>
+                    <br/>
+                </span>
+                <br/>
+            </div>
+        </div>
+    </div>
+</tn-card>

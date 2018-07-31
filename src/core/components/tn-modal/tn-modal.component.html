@@ -1,0 +1,8 @@
+<div id="open-modal" role="dialog" ng-class="{'modal-window': !$ctrl.onShow, 'modal-window target': $ctrl.onShow}">
+	<section ng-show=$ctrl.header>
+		<span ng-click="$ctrl.onClose()" class="modal-close tn-icon icon-close-temp"></span>
+	</section>
+    <div class="content">
+     <ng-transclude></ng-transclude>
+    </div>
+</div>

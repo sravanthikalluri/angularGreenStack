@@ -1,0 +1,180 @@
+<div class="background">
+	<div class="primary-container">
+		<h2 class="page-title">
+			<button ui-sref="app.main.money.overview" class="no-border-button button-focus">
+				{{'money-title' | translate}}
+			</button>
+			<span class="icon-heading icon-icon_forward" aria-hidden="true"></span>
+			<button class="no-border-button button-focus" ng-class="$ctrl.showItem ? 'hand': ''"
+					ng-click="$ctrl.showItem = false" ng-if="$ctrl.taxeForms !== 'taxes'">
+				{{'forms-and-policies' | translate}}
+			</button>
+			<span ng-if="$ctrl.taxeForms === 'taxes'">
+				{{'taxes-title' | translate}}
+			</span>
+		</h2>
+
+		<uib-accordion close-others="true" ng-if="!$ctrl.showItem">
+			<div uib-accordion-group class="tn-accordion" ng-init="status.open = false;" is-open="status.open" ng-repeat="data in $ctrl.formsObj">
+				<uib-accordion-heading>
+					<div class="tn-accordion-button tn-accordion-heading" name="{{data.urlType}}">
+						<p ng-show="data.title">{{data.title}}</p>
+						<p ng-if="$ctrl.countryCode === 'CA'">{{data.text}}</p>
+						<i aria-hidden="true" class="icon-icon_Disclosure_Expand  disclosure-open" ng-if="!status.open"></i>
+						<i aria-hidden="true" class="icon-icon_Disclosure_Collapse  disclosure-open" ng-if="status.open"></i>
+					</div>
+				</uib-accordion-heading>
+
+				<div class="striped" ng-repeat="item in data.pdfs.sub" ng-if="!item.sub"
+					 ng-show="data.title !='State Withholding Forms'">
+					<div class="tn-accordion-body">
+						<div class="innerHeading hand" ng-if="item.label !== 'carrier'">
+							<i class="icon-icon_pdf tn-pdf_icon"></i>
+
+							<div>
+								<a class="tn-anchor" ng-href="{{item.url | contentUrl}}" target="_blank">
+									<span>{{item.label}}</span>
+									<span class="sr-only">{{'pdf'| translate}}</span>
+								</a>
+								<p ng-if="item.description">{{item.description}}</p>
+							</div>
+						</div>
+
+						<div class="innerHeading hand" ng-if="item.label === 'carrier'">
+							For additional information regarding submission of claims, please contact your insurance
+							&nbsp;
+							<a ng-href="{{item.url | contentUrl}}" target="_blank" class="blue">carrier</a>
+							&nbsp;for additional information
+						</div>
+					</div>
+				</div>
+
+				<div class="state-specific-forms-section" ng-if="data.title === 'Payroll Forms'">
+					<a class="tn-anchor" href ng-click="$ctrl.redirectTo(data)" name="stateSpecificForms">
+						{{'stateSpecificForms' | translate}}
+					</a>
+					<i class="icon-icon_forward"></i>
+				</div>
+
+				<div class="striped"
+					 ng-repeat="item in data.pdfs"
+					 ng-if="!data.pdfs.sub"
+					 ng-show="data.title !='State Withholding Forms'">
+					<div class="tn-accordion-body">
+						<div class="innerHeading hand">
+							<i class="{{$ctrl.checkDocUrl(item.url) ? 'icon-icon_word tn-word_icon':'icon-icon_pdf tn-pdf_icon'}}"></i>
+							<a class="tn-anchor" ng-href="{{item.url | contentUrl}}"
+							   target="{{$ctrl.checkDocUrl(item.url) ? '_self': '_blank'}}">
+								{{item.label}}
+								<span class="sr-only">{{'pdf'| translate}}</span>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div ng-show="data.title =='State Withholding Forms'" class="display-all-states-container">
+					<a href="" ng-click="$ctrl.displayAllState(item)" class="tn-anchor">{{$ctrl.displayState ? 'Hide irrelevant states':'Display all States'}}</a>
+				</div>
+				<div class="striped tn-state-forms" ng-repeat="item in data.pdfs.state"
+					 ng-if="data.title =='State Withholding Forms' && !$ctrl.displayState">
+					<div class="tn-accordion-body">
+						<div class="innerHeading hand">
+							<div class="col-md-12">
+								<a href="" class="tn-anchor tn-accordion-link" id="state-specific_{{$index}}"
+								   ng-click="$ctrl.toggle($index,item.label)"
+								   aria-label="{{($ctrl.itemShow === item.label) ? item.label+' link is expanded':item.label+ ' link is collapsed'}}">
+									<span>{{item.label}}</span>
+									<span class="icon-icon_forward"
+										  ng-class=" ($ctrl.itemShow == item.label)? 'icon-icon_back':'icon-icon_forward'"></span>
+								</a>
+								<div class="">
+									<div class="innerHeading margin-top hand" ng-if=" $ctrl.itemShow == item.label "
+										 ng-repeat="innerItem in item.sub">
+										<i class="icon-icon_pdf tn-pdf_icon"></i>
+										<div class="tn-accordion-content">
+											<a ng-href="{{innerItem.url | contentUrl}}" target="_blank"
+											   class="tn-anchor"
+											   ng-if="!$ctrl.showDownloadText(item.label)">
+												{{innerItem.label}}
+												<span class="sr-only">{{'pdf'| translate}}</span>
+											</a>
+											<a ng-href="{{innerItem.url | contentUrl}}" target="_blank"
+											   class="tn-anchor"
+											   ng-if="$ctrl.showDownloadText(item.label)">
+												{{innerItem.label}}
+												<span class="sr-only">{{'pdf'| translate}}</span>
+												<span class="silver download-form">(Downloads the form)</span>
+											</a>
+											<p class="inneritem-description" ng-if="innerItem.description">{{innerItem.description}}</p>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div ng-if="$ctrl.displayState && data.title =='State Withholding Forms'">
+					<div ng-repeat="item in $ctrl.displayAllStates.pdfs.state" class="tn-state-forms stripped">
+						<div class="tn-accordion-body">
+							<div class="innerHeading hand">
+								<div class="col-md-12">
+									<a href=""
+									   id="state-specific_{{$index}}"
+									   class="tn-anchor tn-accordion-link"
+									   aria-label="{{($ctrl.itemShow == item.label) ? item.label+' link is expanded':item.label+ ' link is collapsed'}}"
+									   ng-click="$ctrl.toggle($index,item.label)">
+										{{item.label}}
+										<span class="icon-icon_forward pull-right"
+											  ng-class="($ctrl.itemShow == item.label) ? 'icon-icon_back' : 'icon-icon_forward'"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="tn-accordion-body tn-accordion-states">
+							<div class="striped innerHeading margin-top hand" ng-if=" $ctrl.itemShow == item.label "
+								 ng-repeat="innerItem in item.sub">
+								<i class="icon-icon_pdf tn-pdf_icon"></i>
+								<div class="tn-accordion-content">
+									<a ng-href="{{innerItem.url | contentUrl}}" target="_blank" class="tn-anchor"
+									   ng-if="!$ctrl.showDownloadText(item.label)">
+										{{innerItem.label}}
+										<span class="sr-only">{{'pdf'| translate}}</span>
+									</a>
+									<a ng-href="{{innerItem.url | contentUrl}}" target="_blank" class="tn-anchor"
+									   ng-if="$ctrl.showDownloadText(item.label)">
+										{{innerItem.label}}
+										<span class="sr-only">{{'pdf'| translate}}</span>
+										<span class="silver download-form">(Downloads the form)</span>
+									</a>
+									<p class="inneritem-description" ng-if="innerItem.description">{{innerItem.description}}</p>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="striped"
+					 ng-repeat="item in data.sub"
+					 ng-if="data.sub"
+					 ng-show="$ctrl.countryCode === 'CA'">
+					<div class="tn-accordion-body">
+						<div class="innerHeading hand">
+							<i class="icon-icon_pdf tn-pdf_icon"></i>
+							<a class="tn-anchor" ng-href="{{item.url | contentUrl}}" target="_blank">
+								{{item.label}}
+								<span class="sr-only">{{'pdf'| translate}}</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</uib-accordion>
+		<state-specific-forms ng-if="$ctrl.showPage ==='State Specific Forms' &&  $ctrl.showItem"
+							  state-specific="$ctrl.stateSpecificData"></state-specific-forms>
+	</div>
+
+	<div class="secondary-container"></div>
+</div>

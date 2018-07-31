@@ -1,0 +1,95 @@
+<tn-card-content id="benefits-container" class="onboarding-content-wrapper canada-text-wrapper" ng-if="$ctrl.isCanadian && !$ctrl.isTa">
+	<p class="onboarding-direction">{{::"onboarding-canadian-direction-1-title" | translate}}</p>
+	<p class="onboarding-direction bold">{{::"onboarding-canadian-direction-1-line-1"| translate}}</p>
+	<p class="onboarding-direction bold">{{::"onboarding-canadian-direction-1-line-2"| translate}}</p>
+	<p class="onboarding-direction bold">{{::"onboarding-canadian-direction-1-line-3"| translate}}</p>
+	<p class="onboarding-direction bold">{{::"onboarding-canadian-direction-1-line-4"| translate}}</p>
+
+	<p class="onboarding-direction">{{::"onboarding-canadian-direction-2-title" | translate}}</p>
+	<p class="onboarding-direction bold">{{::"onboarding-canadian-direction-2-line-3"| translate}}
+		<span class="onboarding-direction normal">{{::"onboarding-canadian-direction-2-line-2"| translate}}</span>
+	</p>
+	<p class="onboarding-direction bold">{{::"onboarding-canadian-direction-2-line-4"| translate}}</p>
+</tn-card-content>
+<tn-card-content id="wtpa-container" class="onboarding-content-wrapper" ng-if="$ctrl.data['WTPA']">
+	<tn-card-title>
+		{{"onboarding-wtpa-info-title" | translate}}
+	</tn-card-title>
+	<common-onboarding-content btn-action-text="::'onboarding-action-view' | translate"
+							   btn-complete-text="::'onboarding-complete' | translate"
+							   data="$ctrl.data['WTPA']"
+							   icon="'icon-icon_employee2 onboarding-border'"
+							   message="::'onboarding-wtpa-info-message' | translate"
+							   ng-if="$ctrl.data['WTPA']"
+							   show-buttons="$ctrl.displayStep >= $ctrl.data['WTPA']['displayOrder']"
+							   task-name="'wtpa'"></common-onboarding-content>
+</tn-card-content>
+<tn-card-content id="personal-info-container" class="onboarding-content-wrapper" ng-if="$ctrl.data['PERSONAL_INFORMATION'] || $ctrl.data['EMERGENCY_CONTACT']">
+	<tn-card-title>
+		{{"onboarding-personal-info-title" | translate}}
+	</tn-card-title>
+	<common-onboarding-content btn-action-text="::'onboarding-action' | translate"
+							   btn-complete-text="::'onboarding-complete' | translate"
+							   data="$ctrl.data['PERSONAL_INFORMATION']"
+							   icon="'icon-icon_employee2 onboarding-border'"
+							   message="::'onboarding-personal-info-message' | translate"
+							   ng-if="$ctrl.data['PERSONAL_INFORMATION']"
+							   show-buttons="$ctrl.displayStep >= $ctrl.data['PERSONAL_INFORMATION']['displayOrder']"
+							   task-name="'profile'"></common-onboarding-content>
+	<common-onboarding-content btn-action-text="::'onboarding-action' | translate"
+							   btn-complete-text="::'onboarding-complete' | translate"
+							   data="$ctrl.data['EMERGENCY_CONTACT']"
+							   icon="'icon-icon_phone'"
+							   message="::'onboarding-emergency-message' | translate"
+							   ng-if="$ctrl.data['EMERGENCY_CONTACT']"
+							   show-buttons="$ctrl.displayStep >= $ctrl.data['EMERGENCY_CONTACT']['displayOrder']"
+							   task-name="'emergency'"></common-onboarding-content>
+</tn-card-content>
+<tn-card-content id="tax-payroll-container" class="onboarding-content-wrapper" ng-if="$ctrl.data['DIRECT_DEPOSIT'] || $ctrl.data['UPDATE_TAX_WITHOLDING']">
+	<tn-card-title>
+		{{"onboarding-tax-payroll-title" | translate}}
+	</tn-card-title>
+	<common-onboarding-content btn-action-text="::'onboarding-action' | translate"
+							   btn-complete-text="::'onboarding-complete' | translate"
+							   btn-skip-text="::'onboarding-skip' | translate"
+							   data="$ctrl.data['DIRECT_DEPOSIT']"
+							   icon="'icon-icon_assign'"
+							   message="::'onboarding-direct-deposit-message' | translate"
+							   ng-if="$ctrl.data['DIRECT_DEPOSIT']"
+							   show-buttons="$ctrl.displayStep >= $ctrl.data['DIRECT_DEPOSIT']['displayOrder']"
+							   task-name="'direct-deposit'"></common-onboarding-content>
+	<common-onboarding-content btn-action-text="::'onboarding-action' | translate"
+							   btn-complete-text="::'onboarding-complete' | translate"
+							   data="$ctrl.data['UPDATE_TAX_WITHOLDING']"
+							   icon="'icon-icon_paid'"
+							   message="::'onboarding-tax-withholding-message' | translate"
+							   ng-if="$ctrl.data['UPDATE_TAX_WITHOLDING']"
+							   show-buttons="$ctrl.displayStep >= $ctrl.data['UPDATE_TAX_WITHOLDING']['displayOrder']"
+							   task-name="'tax-withholding'"></common-onboarding-content>
+	<common-onboarding-content btn-action-text="::'onboarding-view' | translate"
+							   icon="'icon-icon_paid'"
+							   message="::'onboarding-canadian-tax-credit' | translate"
+							   ng-if="$ctrl.isCanadian"
+							   show-view="$ctrl.isCanadian"
+							   task-name="'canadian-tax-credit'"></common-onboarding-content>
+</tn-card-content>
+<tn-card-content id="benefits-container" class="onboarding-content-wrapper" ng-if="$ctrl.isCanadian && !$ctrl.isTa">
+	<tn-card-title>
+		{{"onboarding-canadian-benefits-title" | translate}}
+	</tn-card-title>
+	<common-onboarding-content btn-action-text="::'onboarding-view' | translate"
+							   icon="'icon-icon_forms'"
+							   message="::'onboarding-canadian-benefits-1-title' | translate"
+							   show-view="$ctrl.isCanadian"
+							   task-name="'canadian-benefits-1'"></common-onboarding-content>
+	<common-onboarding-content btn-action-text="::'onboarding-view' | translate"
+							   icon="'icon-icon_forms'"
+							   message="::'onboarding-canadian-benefits-2-title' | translate"
+							   show-view="$ctrl.isCanadian"
+							   task-name="'canadian-benefits-2'"></common-onboarding-content>
+	<common-onboarding-content btn-action-text="::'onboarding-view' | translate"
+							   icon="'icon-icon_forms'"
+							   message="::'onboarding-canadian-benefits-3-title' | translate"
+							   show-view="$ctrl.isCanadian"
+							   task-name="'canadian-benefits-3'"></common-onboarding-content>
+</tn-card-content>

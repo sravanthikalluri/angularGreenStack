@@ -1,0 +1,20 @@
+<tn-card class="tn-benefits-help-card"  titles="{{ $ctrl.data.title }}" loading="$ctrl.showSpinner">
+	<tn-card-actions class="tn-benefits-help-card-actions" ng-hide="$ctrl.showSpinner">
+		<button id="guideBook_{{$index}}" ng-if="$ctrl.showPdfLinks" ng-repeat="link in $ctrl.guidebookArray track by $index"
+				ng-click="$ctrl.openPdf(link.url)"
+				tn-link-button
+				class="tn-benefits-help-card-actions-item">
+			<span class="tn-icon tn-link-button-icon icon-icon_forms pull-left"></span>
+			<span class="tn-link-button-text semibold pull-left">{{link.date}} {{link.text}}</span>
+		</button>
+		<div>
+			<a class="tn-benefits-help-card-actions-item-link" ng-if="!$ctrl.showPdfLinks" ng-click="$ctrl.redirectToResource('Benefits Guidebook')">
+				Benefits Guide Book
+			</a>
+			<a class="tn-benefits-help-card-actions-item-link margin-top" ng-if="!$ctrl.showPdfLinks" ng-click="$ctrl.redirectToResource('Benefits Summary')">
+				Benefits Summary
+			</a>
+		</div>
+
+	</tn-card-actions>
+</tn-card>

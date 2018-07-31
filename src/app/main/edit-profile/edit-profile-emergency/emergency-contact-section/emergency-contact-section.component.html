@@ -1,0 +1,230 @@
+<div class="edit-profile-section">
+	<div class="edit-profile-section-title">{{'profile-emergency-contact' | translate}}</div>
+	<br>
+
+	<div class="row">
+		<!-- Contacts created on HRP only send fullName and lastName back.  fullName is used as the
+		Primary Key so we don't want to modify it.  Instead, we'll bind this field to lastName. -->
+
+		<tn-name-input class="col-sm-5"
+					   label="{{'edit-profile-emergency-contact-name' | translate}}"
+					   form-name="$ctrl.formName"
+					   field-name="{{$ctrl.keys.contactName}}"
+					   field-value="$ctrl.contact.name.lastName"
+					   is-disabled="$ctrl.contact.isDisabled"
+					   is-required="true"
+					   component-id="'Input'"
+					   on-update="$ctrl.update($ctrl.keys.contactName, data, 'name')">
+		</tn-name-input>
+		<tn-select class="col-sm-5 col-sm-offset-2"
+				   label="{{'edit-profile-emergency-relationship' | translate}}"
+				   placeholder="Select a Relationship"
+				   form-name="$ctrl.formName"
+				   field-name="{{$ctrl.keys.relationship}}"
+				   field-value="$ctrl.selected.relationship"
+				   items="$ctrl.data.dropdown.relationships"
+				   is-required="true"
+				   component-id="'Select'"
+				   on-update="$ctrl.update($ctrl.keys.relationship, data.key)">
+		</tn-select>
+	</div>
+	<br>
+
+	<div class="row">
+		<tn-phone-input class="col-sm-5"
+					    label="{{'edit-profile-emergency-phone1' | translate}}"
+					    form-name="$ctrl.formName"
+						component-id="'phone'"
+					    field-name="{{$ctrl.keys.phone}}"
+					    field-value="$ctrl.contact.telephoneNumbers.telephoneNumber1"
+					    is-required="true"
+					    on-update="$ctrl.update($ctrl.keys.phone, data, 'telephoneNumbers')">
+		</tn-phone-input>
+		<!--<tn-email-input class="col-sm-5 col-sm-offset-2"
+					    label="{{'edit-profile-emergency-email' | translate}}"
+					    form-name="$ctrl.formName"
+					    field-name="$ctrl.keys.email"
+					    field-value="$ctrl.email.text"
+					    is-disabled="true">
+		</tn-email-input>-->
+		<tn-phone-input class="col-sm-5 col-sm-offset-2"
+						label="{{'edit-profile-emergency-phone2' | translate}}"
+						form-name="$ctrl.formName"
+						field-name="{{$ctrl.keys.phone2}}"
+						component-id="'phone'"
+						field-value="$ctrl.contact.telephoneNumbers.telephoneNumber2"
+						on-update="$ctrl.update($ctrl.keys.phone2, data, 'telephoneNumbers')">
+		</tn-phone-input>
+	</div>
+	<br/>
+	<div class="row">
+		<tn-phone-input class="col-sm-5"
+						label="{{'edit-profile-emergency-phone3' | translate}}"
+						form-name="$ctrl.formName"
+						field-name="{{$ctrl.keys.phone3}}"
+						component-id="'phone'"
+						field-value="$ctrl.contact.telephoneNumbers.telephoneNumber3"
+						on-update="$ctrl.update($ctrl.keys.phone3, data, 'telephoneNumbers')">
+		</tn-phone-input>
+		<tn-phone-input class="col-sm-5 col-sm-offset-2"
+						label="{{'edit-profile-emergency-phone4' | translate}}"
+						form-name="$ctrl.formName"
+						component-id="'phone'"
+						field-name="{{$ctrl.keys.phone4}}"
+						field-value="$ctrl.contact.telephoneNumbers.telephoneNumber4"
+						on-update="$ctrl.update($ctrl.keys.phone4, data, 'telephoneNumbers')">
+		</tn-phone-input>
+	</div>
+	<br><br>
+
+	<div class="row">
+		<div class="col-sm-5">
+			<tn-checkbox-container>
+				<input ng-model="$ctrl.contact.sameAddressPerson"
+					   ng-change="$ctrl.checkAddress()"
+					   ng-true-value="'Y'"
+					   ng-false-value="'N'"
+					   type="checkbox"
+					   id="sameAsAddressCheck_{{$ctrl.contact.id}}"
+					   name="$ctrl.keys.sameAddress">
+				<tn-checkbox-label>
+					<label for="sameAsAddressCheck_{{$ctrl.contact.id}}">{{'edit-profile-emergency-same-as-address' | translate}}</label>
+				</tn-checkbox-label>
+			</tn-checkbox-container>
+		</div>
+		<div class="col-sm-offset-2 col-sm-5">
+			<tn-checkbox-container>
+				<input ng-model="$ctrl.contact.primaryContactFlag"
+					   ng-change="$ctrl.update($ctrl.keys.primaryContact, $ctrl.contact.primaryContactFlag)"
+					   ng-true-value="'Y'"
+					   ng-false-value="'N'"
+					   type="checkbox"
+					   id="emergPrimaryCheck_{{$ctrl.contact.id}}"
+					   name="$ctrl.keys.primaryContact">
+				<tn-checkbox-label>
+					<label for="emergPrimaryCheck_{{$ctrl.contact.id}}">{{'edit-profile-emergency-primary-contact' | translate}}</label>
+				</tn-checkbox-label>
+			</tn-checkbox-container>
+		</div>
+	</div>
+	<br/>
+
+	<div class="row">
+		<tn-address-input class="col-sm-5"
+				          label="{{'edit-profile-address1' | translate}}"
+				          form-name="$ctrl.formName"
+				          field-name="{{$ctrl.keys.address1}}"
+				          field-value="$ctrl.contact.address.address1"
+				          is-required="true"
+						  component-id="'profileEmergAdress1Input'"
+				          is-disabled="$ctrl.contact.sameAddressPerson === 'Y'"
+				          on-update="$ctrl.update($ctrl.keys.address1, data, 'address')">
+		</tn-address-input>
+		<tn-address-input class="col-sm-5 col-sm-offset-2"
+				          label="{{'edit-profile-address2' | translate}}"
+				          form-name="$ctrl.formName"
+				          field-name="{{$ctrl.keys.address2}}"
+						  component-id="'profileEmergAdress2Input'"
+				          field-value="$ctrl.contact.address.address2"
+				          is-disabled="$ctrl.contact.sameAddressPerson === 'Y'"
+				          on-update="$ctrl.update($ctrl.keys.address2, data, 'address')">
+		</tn-address-input>
+	</div>
+	<br>
+
+	<div class="row">
+		<tn-city-input class="col-sm-5"
+				          label="{{'edit-profile-city' | translate}}"
+				          form-name="$ctrl.formName"
+				          field-name="{{$ctrl.keys.city}}"
+				          field-value="$ctrl.contact.address.city"
+				          is-required="true"
+					      component-id="'profileEmergCityInput'"
+				          is-disabled="$ctrl.contact.sameAddressPerson === 'Y'"
+				          on-update="$ctrl.update($ctrl.keys.city, data, 'address')">
+		</tn-city-input>
+		<tn-select class="col-sm-5 col-sm-offset-2"
+				   ng-if="!$ctrl.selected.country || $ctrl.selected.country.key === 'US'"
+			       label="{{'edit-profile-state' | translate}}"
+			       placeholder="Select a State"
+			       form-name="$ctrl.formName"
+			       field-name="state"
+				   component-id="'Select'"
+			       field-value="$ctrl.selected.state"
+			       items="$ctrl.data.dropdown.usStates"
+			       is-required="true"
+			       is-disabled="$ctrl.contact.sameAddressPerson === 'Y'"
+			       on-update="$ctrl.update($ctrl.keys.state, data.key, 'address')">
+		</tn-select>
+		<tn-select class="col-sm-5 col-sm-offset-2"
+				   ng-if="$ctrl.selected.country.key === 'CA'"
+				   label="{{'edit-profile-province' | translate}}"
+				   placeholder="Select a Province"
+				   form-name="$ctrl.formName"
+				   field-name="province"
+				   component-id="'Select'"
+				   field-value="$ctrl.selected.province"
+				   items="$ctrl.data.dropdown.caProvinces"
+				   is-required="true"
+				   is-disabled="$ctrl.contact.sameAddressPerson === 'Y'"
+				   on-update="$ctrl.update($ctrl.keys.state, data.key, 'address')">
+		</tn-select>
+	</div>
+	<br>
+
+	<div class="row">
+		<tn-zip-input class="col-sm-5"
+					  ng-if="!$ctrl.selected.country || $ctrl.selected.country.key === 'US'"
+					  label="{{'edit-profile-zip' | translate}}"
+					  form-name="$ctrl.formName"
+					  field-name="zip"
+					  field-value="$ctrl.contact.address.postalCode"
+					  is-required="true"
+					  component-id="'zipCodeInput'"
+					  is-disabled="$ctrl.contact.sameAddressPerson === 'Y'"
+					  on-update="$ctrl.update($ctrl.keys.postalCode, data)">
+		</tn-zip-input>
+		<tn-postal-input class="col-sm-5"
+					     ng-if="$ctrl.selected.country.key === 'CA'"
+					     label="{{'edit-profile-postal' | translate}}"
+					     form-name="$ctrl.formName"
+					     field-name="postal"
+						 component-id="'postalCodeInput'"
+					     field-value="$ctrl.contact.address.postalCode"
+					     is-required="true"
+					     is-disabled="$ctrl.contact.sameAddressPerson === 'Y'"
+					     on-update="$ctrl.update($ctrl.keys.postalCode, data)">
+		</tn-postal-input>
+		<tn-select class="col-sm-5 col-sm-offset-2"
+			   label="{{'edit-profile-country' | translate}}"
+			   placeholder="Select a Country"
+			   form-name="$ctrl.formName"
+			   field-name="{{$ctrl.keys.country}}"
+			   component-id="'Select'"
+			   field-value="$ctrl.selected.country"
+			   items="$ctrl.data.dropdown.countries"
+			   is-disabled="$ctrl.contact.sameAddressPerson === 'Y'"
+			   on-update="$ctrl.update($ctrl.keys.country, data.key, 'address')">
+		</tn-select>
+	</div>
+	<br>
+
+	<div class="row">
+		<tn-notes-input class="col-sm-5"
+				label="{{'edit-profile-emergency-notes' | translate}}"
+				form-name="$ctrl.formName"
+				field-name="{{$ctrl.keys.notes}}"
+				field-value="$ctrl.contact.notes"
+				is-required="false"
+				component-id="'profileEmergNotesInput'"
+				on-update="$ctrl.update($ctrl.keys.notes, data)">
+		</tn-notes-input>
+	</div>
+</div>
+
+<span class="emergency-contact-delete-link hand"
+	  ng-click="$ctrl.delete()" id="emergContactDelete"
+	  ng-if="$ctrl.contact.primaryContactFlag !== 'Y'">
+	  {{'edit-profile-delete-emergency-contact' | translate}}
+</span>
+<hr>

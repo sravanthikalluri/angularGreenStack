@@ -1,0 +1,21 @@
+{
+   "data":{
+      "address":{
+         "address1":"2211 S. Maryland Ave.",
+         "address2":null,
+         "address3":null,
+         "address4":null,
+         "city":"Springfield",
+         "country":null,
+         "county":"US",
+         "postalCode":"65807",
+         "state":"MO"
+      },
+      "telephone":"3174080969"
+   },
+   "_requestId":"6514b411-8b9f-449b-ab25-b4c845ed3d7e",
+   "_statusCode":"200",
+   "_statusText":"OK",
+   "_statusMessage":"Success"
+}
+

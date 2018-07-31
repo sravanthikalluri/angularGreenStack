@@ -1,0 +1,14 @@
+<div class="background">
+	<tn-error-banner error-data="$ctrl.errorAlert" aria-live="polite"></tn-error-banner>
+	<div class="primary-container">
+		<h2 class="page-title">
+			<tn-title url="'app.main.money.overview'" title="'money-title'"></tn-title>
+			<i class="icon-icon_forward icon-heading"></i> {{'taxes-title'| translate}}
+		</h2>
+			<w4-card></w4-card>
+			<w2-card ng-if="$ctrl.w2CardStatus"></w2-card>
+	</div>
+	<div class="secondary-container">
+		<payroll-schedule-card></payroll-schedule-card>
+	</div>
+</div>

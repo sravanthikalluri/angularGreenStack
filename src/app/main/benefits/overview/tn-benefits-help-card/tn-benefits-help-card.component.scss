@@ -1,0 +1,21 @@
+@import 'main';
+
+.tn-benefits-help-card {
+}
+
+.tn-benefits-help-card-title {
+	text-align: center;
+}
+
+.tn-benefits-help-card-actions {
+	flex-direction: column;
+}
+
+.tn-benefits-help-card-actions-item {
+	padding: 0;
+}
+.tn-benefits-help-card-actions-item-link {
+  padding: 0;
+  display: block;
+  font-weight: 600;
+}

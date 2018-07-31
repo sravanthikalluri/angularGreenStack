@@ -1,0 +1,40 @@
+<div ng-if="$ctrl.yesActive && $ctrl.showSection" class="tn-ale-section yes-section">
+
+
+		<tn-card>
+
+			<div class="card-header-section">
+				<h4 class="semibold">
+					{{'ale-selection.aleAttestation'  | translate}}
+				</h4>
+				<h5>
+					{{'ale-selection.measurementStabilityPeriod.companyIsAle'  | translate }}
+				</h5>
+			</div>
+			<tn-card-content>
+				<h4 class="content-heading">
+					{{ 'ale-selection.measurementStabilityPeriod.heading' | translate }}
+				</h4>
+				<p>
+					{{'ale-selection.measurementStabilityPeriod.employerSharedResponsibility' | translate}}
+				</p>
+				<p>
+					{{'ale-selection.measurementStabilityPeriod.contactAssistanceUpdate' | translate}}
+				</p>
+				<p ng-bind-html="'ale-selection.measurementStabilityPeriod.variableHourEmployee' | translate">
+				</p>
+				<ul class="list-type-decimal">
+					<li ng-bind-html="'ale-selection.measurementStabilityPeriod.measurementPeriod' | translate"></li>
+					<li ng-bind-html="'ale-selection.measurementStabilityPeriod.stabilityPeriod' | translate"></li>
+				</ul>
+
+			</tn-card-content>
+		</tn-card>
+		<div class="footer-button-section">
+			<button tn-button class="tn-view-button" ng-click="$ctrl.showSection = false">
+				{{'ale-selection.previous' | translate}}
+			</button>
+			<button tn-action-button ng-click="$ctrl.submit()">{{'ale-selection.submit' | translate}}
+			</button>
+		</div>
+	</div>

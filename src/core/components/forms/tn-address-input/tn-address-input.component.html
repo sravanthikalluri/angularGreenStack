@@ -1,0 +1,21 @@
+<tn-input-container ng-class="{'is-invalid'  : $ctrl.input.$invalid && ($ctrl.input.$touched || $ctrl.formName.$submitted), 'is-disabled' : $ctrl.isDisabled }">
+	<tn-input-label>
+		<label for="{{$ctrl.componentId}}">{{$ctrl.label}}</label>
+	</tn-input-label>
+	<input ng-model="$ctrl.fieldValue"
+		   ng-change="$ctrl.update($ctrl.fieldValue)"
+		   type="text"
+		   name="{{$ctrl.fieldName}}"
+		   maxlength="55"
+		   id="{{$ctrl.componentId}}"
+		   ng-required="$ctrl.isRequired"
+		   ng-disabled="$ctrl.isDisabled"
+		   aria-label="{{$ctrl.label}}"
+		   validate-address>
+	<div class="tn-input-error"
+		 ng-messages="$ctrl.input.$error"
+		 ng-show="$ctrl.input.$invalid && ($ctrl.input.$touched || $ctrl.formName.$submitted)">
+		<div ng-message="required" aria-live="polite">Required.</div>
+		<div ng-message="address" aria-live="polite">Not a valid address.</div>
+	</div>
+</tn-input-container>

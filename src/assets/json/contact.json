@@ -1,0 +1,20 @@
+{
+  "businessContacts":[
+	{
+	  "contactType":"Sales",
+	  "workPhone":"8888746388",
+	  "displayOrder":1
+	}
+  ],
+  "supportContact":{
+	"contactType":"Employee Solution Center",
+	"phone":"8006380461",
+	"estTimings": {
+		"availDays": "Monday-Friday",
+		"fromTime": "7.30 a.m",
+		"toTime": "12 a.m",
+		"timeZone": "EST"
+	},
+	"email":"employees@trinet.com"
+  }
+}

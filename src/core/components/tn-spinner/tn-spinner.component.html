@@ -1,0 +1,4 @@
+<div class="spinner" ng-if="$ctrl.showSpinner"  >
+    <span class="offscreen" role="alert" aria-live="polite" tabindex="-1">loading</span>
+</div>
+<div ng-if="!$ctrl.showSpinner">{{$ctrl.errorMessage}}</div>

@@ -1,0 +1,84 @@
+<tn-card>
+	<tn-error-banner error-data="$ctrl.data" aria-live="polite" ng-if="$ctrl.data" clicked="$ctrl.closeAlert()"></tn-error-banner>
+	<tn-card-title class="settings-card-title"><h3>{{'preferences-card-title' | translate}}</h3></tn-card-title>
+	<tn-card-content>
+		<tn-spinner ng-show="$ctrl.showSpinner" is-show="$ctrl.showSpinner" error-message="$ctrl.errorMessage"></tn-spinner>
+		<tn-spinner ng-show="$ctrl.showFullSpinner"></tn-spinner>
+		<tn-card-item ng-hide="$ctrl.showSpinner">
+			<div>
+				<p class="semibold preferences-card">{{'preferences-card-email-notices-label' | translate}}</p>
+				<p class="preferences-card-desc">{{$ctrl.isEmailEnabled ? 'preferences-card-email-true-sublabel' : 'preferences-card-email-false-sublabel' | translate}}</p>
+			</div>
+			<tn-toggle reader-value="{{'preferences-card-email-notices-label' | translate}}" id="emailNotices" is-toggled="$ctrl.isEmailEnabled"
+					   on-toggle="$ctrl.onToggle('isEmailEnabled', isToggled)"
+					   true-label="{{'preferences-card-email-toggle-true-label' | translate}}"
+					   false-label="{{'preferences-card-email-toggle-false-label' | translate}}">
+			</tn-toggle>
+		</tn-card-item>
+		<tn-card-item ng-hide="$ctrl.showSpinner">
+			<div>
+				<p class="semibold preferences-card">{{'preferences-card-other-notices-label' | translate}}</p>
+				<p class="preferences-card-desc">{{$ctrl.isOtherNoticesEnabled ? 'preferences-card-paperless-true-sublabel' : 'preferences-card-paperless-false-sublabel' | translate}}</p>
+			</div>
+			<tn-toggle reader-value="{{'preferences-card-other-notices-label' | translate}}"
+					   id="otherNotices" is-toggled="$ctrl.isOtherNoticesEnabled"
+					   on-toggle="$ctrl.onToggle('isOtherNoticesEnabled', isToggled)"
+					   true-label="{{'preferences-card-paperless-toggle-true-label' | translate}}"
+					   false-label="{{'preferences-card-paperless-toggle-false-label' | translate}}">
+			</tn-toggle>
+		</tn-card-item>
+		<tn-card-item ng-hide="$ctrl.showSpinner">
+			<div>
+				<p class="semibold preferences-card">{{$ctrl.w2Label | translate}}</p>
+				<p class="preferences-card-desc">{{$ctrl.isW2Enabled ? 'preferences-card-paperless-true-sublabel' : 'preferences-card-paperless-false-sublabel' | translate}}</p>
+			</div>
+			<tn-toggle reader-value="{{$ctrl.w2Label | translate}}"
+					   id="paperLess" is-toggled="$ctrl.isW2Enabled"
+					   on-toggle="$ctrl.onToggle('isW2Enabled', isToggled)"
+					   true-label="{{'preferences-card-paperless-toggle-true-label' | translate}}"
+					   false-label="{{'preferences-card-paperless-toggle-false-label' | translate}}">
+			</tn-toggle>
+		</tn-card-item>
+		<tn-card-item ng-hide="$ctrl.showSpinner">
+			<div>
+				<p class="semibold preferences-card">{{'preferences-card-workflow-label' | translate}}</p>
+				<p class="preferences-card-desc">{{$ctrl.isWorkflowEnabled ? 'preferences-card-workflow-true-sublabel' : 'preferences-card-workflow-false-sublabel' | translate}}</p>
+			</div>
+			<tn-toggle reader-value="{{'preferences-card-workflow-label' | translate}}"
+					   id="workFlow" is-toggled="$ctrl.isWorkflowEnabled"
+					   on-toggle="$ctrl.onToggle('isWorkflowEnabled', isToggled)"
+					   true-label="{{'preferences-card-email-toggle-true-label' | translate}}"
+					   true-sublabel="{{'preferences-card-paperless-toggle-true-sublabel' | translate}}"
+					   false-label="{{'preferences-card-email-toggle-false-label' | translate}}"
+					   false-sublabel="{{'preferences-card-paperless-toggle-false-sublabel' | translate}}">
+			</tn-toggle>
+		</tn-card-item>
+		<tn-card-item ng-hide="$ctrl.showSpinner">
+			<div>
+				<p class="semibold preferences-card">{{'preferences-card-login-to-beta-label' | translate}}</p>
+				<p class="preferences-card-desc">{{$ctrl.isLoginToBetaEnabled ? 'preferences-card-login-to-beta-true-sublabel' : 'preferences-card-login-to-beta-false-sublabel' | translate}}</p>
+			</div>
+			<tn-toggle reader-value="{{'preferences-card-login-to-beta-label' | translate}}"
+					   id="loginToBeta" is-toggled="$ctrl.isLoginToBetaEnabled"
+					   on-toggle="$ctrl.onToggle('isLoginToBetaEnabled', isToggled)"
+					   true-label="{{'preferences-card-login-to-beta-toggle-true-label' | translate}}"
+					   true-sublabel="{{'preferences-card-login-to-beta-toggle-true-sublabel' | translate}}"
+					   false-label="{{'preferences-card-login-to-beta-toggle-false-label' | translate}}"
+					   false-sublabel="{{'preferences-card-login-to-beta-toggle-false-sublabel' | translate}}">
+			</tn-toggle>
+		</tn-card-item>
+		<tn-card-item ng-if="$ctrl.showViewAdminSettings && $ctrl.betaPref === 'Y'" ng-hide="$ctrl.betaPref === 'N' || $ctrl.showSpinner">
+			<div>
+				<p class="semibold preferences-card">{{'preferences-card-switch-view-label' | translate}}</p>
+				<p class="preferences-card-desc">{{$ctrl.isSwitchViewEnabled ? 'preferences-card-switch-view-true-sublabel' : 'preferences-card-switch-view-false-sublabel' | translate}}</p>
+			</div>
+			<tn-toggle reader-value="{{'preferences-card-switch-view-label' | translate}}"
+					   id="switchView" is-toggled="$ctrl.isSwitchViewEnabled"
+					   on-toggle="$ctrl.onToggle('isSwitchViewEnabled', isToggled)"
+					   true-label="{{'preferences-card-switch-view-toggle-true-label' | translate}}"
+					   false-label="{{'preferences-card-switch-view-toggle-false-label' | translate}}">
+			</tn-toggle>
+		</tn-card-item>
+	</tn-card-content>
+</tn-card>
+

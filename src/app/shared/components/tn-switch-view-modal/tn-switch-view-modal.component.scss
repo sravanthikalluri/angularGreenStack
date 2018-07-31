@@ -1,0 +1,67 @@
+@import 'main';
+
+.switch-view-close-icon{
+  margin:20px;
+  float: right;
+  color: $gray;
+}
+
+.switch-view-divider{
+  border-bottom: 1px solid #C4C8D3;
+  color: #8992a3;
+  margin-top:50px;
+  margin-bottom:30px;
+  margin-left:20px;
+  margin-right:20px;
+
+}
+
+.switch-view-gray {
+  color: $gray;
+}
+
+.switch-view-radio-text {
+  color:$gray;
+  font-weight: 400;
+}
+
+.switch-view-content{
+  padding:40px;
+  height:420px;
+  .switch-view-text{
+	margin-bottom:30px;
+  }
+  .switch-view-title{
+	margin-bottom:50px;
+	font-weight: 600;
+	font-size:18px;
+  }
+  .switch-view-buttons{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+	.switch-view-button {
+	  width:300px;
+	  height:100px;
+	  font-weight: 500;
+	  font-size:20px;
+
+	}
+	.switch-view-selected-button{
+	  background: $blue;
+	  border: $blue;
+	  color: #ffffff;
+	}
+	.switch-view-admin{
+	  margin-left: 25px;
+	}
+  }
+  // radio button color #0077BC
+  .switch-view-toggle-text label{
+	margin-top:10px;
+	font-weight: 100 !important;
+  }
+}
+
+

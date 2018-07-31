@@ -1,0 +1,16 @@
+@import 'main';
+
+.paychecks-card-content {
+	display: flex;
+	align-items: center;
+	padding: 48px 0;
+
+	date-info {
+		flex: 1
+	}
+}
+
+.paychecks-card-divider {
+	height: 150px;
+	border-left: 1px solid #ddd;
+}

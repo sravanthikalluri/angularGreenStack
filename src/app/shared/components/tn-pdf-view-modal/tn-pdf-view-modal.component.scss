@@ -1,0 +1,37 @@
+@import 'main';
+@media only screen and (min-width: 1024px){
+    .modal-dialog{
+        width: 850px !important;
+    }
+    
+    .modal-title{
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .modal-title-body{
+        padding-right: 20px;
+    }
+    .pdf-message{
+        margin: 15px 15px 0px 15px;
+    }
+    .pdf-view{
+        height: 375px;
+        width: 100%;
+    }
+
+    .pdf-view-foot{
+        height: 85px;
+        padding: 10px 35px 10px 35px;
+    }
+
+    .pdf-view-foot button{
+        float: right;
+        margin-left: 20px;
+    }
+
+    .right{
+        float: right;
+    }
+}
+

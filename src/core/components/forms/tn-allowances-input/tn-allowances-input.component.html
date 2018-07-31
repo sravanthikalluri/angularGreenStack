@@ -1,0 +1,22 @@
+<tn-input-container ng-class="{'is-invalid'  : $ctrl.input.$invalid && ($ctrl.input.$touched || $ctrl.formName.$submitted), 'is-disabled' : $ctrl.isDisabled }">
+	<tn-input-label ng-if="$ctrl.label">{{$ctrl.label}}</tn-input-label>
+	<input ng-model="$ctrl.fieldValue"
+		   ng-change="$ctrl.update($ctrl.fieldValue)"
+		   type="text"
+		   inputmode="numeric"
+           pattern="[0-9]*"
+           maxlength="{{$ctrl.maxValue}}"
+           validate="false"
+           clean="true"
+           restrict="reject"
+		   tn-input-restriction numbers-only="true"
+		   name="{{$ctrl.fieldName}}"
+		   ng-required="$ctrl.isRequired"
+		   aria-label="{{$ctrl.labelAria}}"
+		   ng-disabled="$ctrl.isDisabled">
+	<div class="tn-input-error"
+		 ng-messages="$ctrl.input.$error"
+		 ng-show="$ctrl.input.$invalid && ($ctrl.input.$touched || $ctrl.formName.$submitted)">
+		<div ng-message="required" aria-live="polite">Required.</div>
+	</div>
+</tn-input-container>

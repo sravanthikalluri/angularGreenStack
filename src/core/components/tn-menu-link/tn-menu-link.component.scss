@@ -1,0 +1,55 @@
+@import 'main';
+
+.tn-menu-link {
+	display: flex;
+	padding: 0 33px 0 22px;
+	height: 65px;
+	align-items: center;
+
+	color: $white;
+	cursor: pointer;
+
+	.tn-menu-link-icon,
+	.tn-menu-toggle-arrow {
+		width: 24px;
+		height: 24px;
+	}
+
+	&:hover, &:focus {
+		text-decoration: none;
+		color: $white;
+	}
+
+	.tn-menu-text {
+		display: block;
+		white-space: normal;
+		width: 155px;
+	}
+}
+
+.tn-menu-link-is-active {
+	@extend .tn-menu-link;
+
+	background-color: $blue;
+
+	.tn-menu-link-icon {
+		color: $white;
+	}
+
+	.tn-menu-toggle-arrow {
+		color: $white;
+	}
+}
+
+.tn-menu-link-icon {
+	width: 24px;
+	height: 24px;
+	font-size: 24px;
+	margin-right: 20px;
+	color: $menu-deselected-icon-color;
+}
+
+.tn-menu-link-transclude-content {
+	flex-grow: 1;
+	text-align: right;
+}

@@ -1,0 +1,45 @@
+.tn-benefit-card-content {
+	padding: 24px 0;
+}
+
+.tn-benefit-covered-table {
+	display: block;
+	min-width: 290px;
+	width: 290px;
+	margin: auto;
+
+	h5 {
+		color: #30343C !important;
+		text-align: center;
+	}
+
+	.tn-table {
+		box-shadow: none;
+
+		.container-fluid {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+
+	.tn-table-row-data-header {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		font-size: 14px;
+
+		&.last-item {
+			text-align: right;
+		}
+	}
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+     /* IE10+ CSS styles go here */
+     .tn-benefit-covered-table {
+     .tn-table-row-data {
+				&:last-child{
+					-ms-flex:2;
+				}
+			}
+     	}
+}

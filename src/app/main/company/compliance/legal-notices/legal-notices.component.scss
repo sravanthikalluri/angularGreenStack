@@ -1,0 +1,44 @@
+@import 'main';
+.acc-header {
+  font-size: 20px !important;
+  font-weight: 600;
+  margin: 18px 0px;
+}
+.legal-state{
+	.panel-group{
+		margin-bottom:0
+	}
+	.panel-heading{
+		padding:5px 10px;
+	}
+	.tn-accordion{
+		background-color:transparent;
+		box-shadow:none;
+	}
+
+	.tn-accordion-content{
+	  a{
+		  &:hover,&:focus{
+			display:inline-block;
+			}
+			display:inline-block;
+		}
+		.content-text{
+			color:$font-color;
+			font-size:13px;
+			line-height:20px;
+		}
+		.pdf-text{
+			color:$trinet-blue;
+		}
+		.large{
+			font-size:20px;
+		}
+	  p{
+		margin-top: 20px;
+		margin-bottom: 10px;
+	  }
+	}
+
+	.state-developments-accordion { padding: 0 24px; }
+}

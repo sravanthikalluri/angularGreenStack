@@ -1,0 +1,55 @@
+<div class="tn-edit-profile-section">
+	<div class="row">
+		<tn-input-container class="col-sm-5">
+			<tn-input-label>{{'edit-profile-first-name' | translate}}</tn-input-label>
+			<input ng-model="$ctrl.data.names.firstName">
+		</tn-input-container>
+		<tn-input-container class="col-sm-offset-2 col-sm-5">
+			<tn-input-label>{{'edit-profile-last-name' | translate}}</tn-input-label>
+			<input ng-model="$ctrl.data.names.lastName">
+		</tn-input-container>
+	</div>
+	<br>
+
+	<div class="row">
+		<tn-input-container class="col-sm-5">
+			<tn-input-label>{{'profile-email' | translate}}</tn-input-label>
+			<input ng-model="$ctrl.data.work.workEmail">
+		</tn-input-container>
+	</div>
+	<br>
+
+	<div class="row">
+		<tn-input-container class="col-sm-5">
+			<tn-input-label>{{'profile-work-phone' | translate}}</tn-input-label>
+			<input ng-model="$ctrl.data.work.workPhone"
+			       name="workPhone"
+			       type="text"
+			       inputmode="numeric"
+                   placeholder="(999) 999-9999"
+			       mask="(999) 999-9999"
+			       clean="true"
+			       validate-phone>
+			<div ng-messages="editProfileForm.workPhone.$error">
+				<div id="edit-profile-mobile-phone-validations-numeric-text" ng-message="phone" translate-once="tn-input-validation-numeric">Numbers only.</div>
+				<div id="edit-profile-mobile-phone-validations-length-text" ng-message="phoneLength" translate-once="tn-input-validation-phone-length">Must be 10 digits.</div>
+				<div>test</div>
+			</div>
+		</tn-input-container>
+		<tn-input-container class="col-sm-offset-2 col-sm-5">
+			<tn-input-label>{{'profile-mobile-phone' | translate}}</tn-input-label>
+			<input ng-model="$ctrl.data.work.cellPhone"
+			       name="cellPhone"
+			       type="text"
+			       inputmode="numeric"
+                   placeholder="(999) 999-9999"
+			       mask="(999) 999-9999"
+			       clean="true"
+			       validate-phone>
+		</tn-input-container>
+	</div>
+</div>
+
+
+
+

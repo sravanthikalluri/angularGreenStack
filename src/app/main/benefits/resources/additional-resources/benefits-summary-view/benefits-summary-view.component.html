@@ -1,0 +1,158 @@
+<div ng-if="$ctrl.error">{{$ctrl.errorMessage}}</div>
+<tn-spinner ng-show="$ctrl.showSpinner"></tn-spinner>
+<div class="benefits-plan-costs" ng-if="!$ctrl.error"> <!--this is used for plan costs -->
+	<!--Admin View-->
+	<div ng-if="$ctrl.payFrquencyListArray.isAdmin != null  && $ctrl.payFrquencyListArray.stateCode == null">
+		<div>
+			{{'my_benefits.policies.benefit_summary' | translate}}
+			{{$ctrl.fromDate}} to {{$ctrl.toDate}}
+			<div>
+				<p><strong>{{::$ctrl.subHeading}} </strong></p>
+				<div class="linedWithMargin"></div>
+				<div>
+					<div ng-repeat="summaryData1 in $ctrl.filteredBenefitsSummary">
+						<div ng-repeat="summaryData in summaryData1">
+							<links-list summary-data="summaryData"
+										start-date="$ctrl.currentPlanStartDate"
+										end-date="$ctrl.currentPlanEndDate"
+										plan-type="summaryData.type"
+										plan-key="summaryData.key"
+										plan-code="summaryData.PlanCode">
+							</links-list>
+							<span ng-if="summaryData.apply!=''" class="bold trinet-primary-color inline">{{::summaryData.apply}}</span>
+						</div>
+						<div>
+						<!-- <a href="" id="buildmaintain" ng-click="$ctrl.setFromToDate($ctrl.currentPlanStartDate,$ctrl.currentPlanEndDate);$ctrl.openBuildMaintainCustomModal(summaryData1);">
+							{{'my_benefits.policies.customBenefits' | translate}}
+							<span class="tn-tooltip">
+								<i class="icon-icon_UA blue small"></i>
+								<div class="tn-tooltip-content">
+									<h3>{{'my_benefits.policies.building_customized' | translate}}</h3>
+									<p>{{'my_benefits.policies.bds_chart' | translate}}</p>
+									<p>{{'my_benefits.policies.build_link' | translate}}</p>
+									<p>{{'my_benefits.policies.area_states' | translate}}</p>
+									<p>{{'my_benefits.policies.add_del_list' | translate}}</p>
+								</div>
+							</span>
+						</a> -->
+					</div>
+					<div class="linedWithMargin"></div>
+					</div>
+					<div>
+						<p>
+							<a href="" id="cobraId" ng-click="$ctrl.setFromToDate($ctrl.currentPlanStartDate,$ctrl.currentPlanEndDate);$ctrl.openCobraSummaryModal($ctrl.currentPlanStartDate,$ctrl.currentPlanEndDate);">
+								{{'my_benefits.policies.cobraBenefits' | translate}}
+							</a>
+						</p>
+					</div>
+			</div>
+		</div>
+		<div ng-if="$ctrl.futureFromDate != null && $ctrl.futureFromDate != ''">
+			{{ 'my_benefits.policies.benefit_summary' | translate }}
+			{{$ctrl.futureFromDate}} {{'my_benefits.policies.to' | translate}} {{$ctrl.futureToDate}}
+			<div>
+				<p><strong>{{::$ctrl.subHeading}} </strong></p>
+				<div>
+
+					<div ng-repeat="summaryData1 in $ctrl.filteredBenefitsSummary" class="visible">
+						<div ng-repeat="summaryData in summaryData1">
+							<links-list summary-data="summaryData"
+										start-date="$ctrl.futureplanStartDate"
+										end-date="$ctrl.futureplanEndDate"
+										plan-type="summaryData1.type"
+										plan-key="summaryData1.key"
+										plan-code="summaryData1.PlanCode">
+							</links-list>
+							<span ng-if="summaryData.apply!=''">{{::summaryData.apply}}</span>
+						</div>
+						<!-- <a href="" id="buildmaintainfuture" ng-click="$ctrl.setFromToDate($ctrl.currentPlanStartDate,$ctrl.currentPlanEndDate);$ctrl.openBuildMaintainCustomModal(summaryData1);">
+							{{'my_benefits.policies.customBenefits' | translate}}
+							<span class="tn-tooltip">
+								<i class="icon-icon_UA blue small"></i>
+								<div class="tn-tooltip-content">
+									<h3>{{'my_benefits.policies.building_customized' | translate}}</h3>
+									<p>{{'my_benefits.policies.bds_chart' | translate}}</p>
+									<p>{{'my_benefits.policies.build_link' | translate}}</p>
+									<p>{{'my_benefits.policies.area_states' | translate}}</p>
+									<p>{{'my_benefits.policies.add_del_list' | translate}}</p>
+								</div>
+							</span>
+						</a> -->
+					</div>
+					<div>
+						<p>
+							<a href="" id="cobraId1" ng-click="setFromToDate($ctrl.futureplanStartDate,$ctrl.futureplanEndDate);
+										$ctrl.openCobraSummaryModal();">
+								{{'my_benefits.policies.cobraBenefits' | translate}}
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Default view start-->
+	<div ng-if="$ctrl.payFrquencyListArray.isAdmin == null && $ctrl.payFrquencyListArray.stateCode == null">
+		<h1 class="content-main trinet-primary-color"
+			ng-bind="::translation.my_benefits.policies.benefit_summary_heading"></h1>
+		<p ng-if="$ctrl.payFrquencyListArray.showText != null">
+			{{'my_benefits.policies.benefitsPlanCostData' | translate}}
+		</p>
+		<div ng-repeat="summaryData1 in $ctrl.filteredBenefitsSummary">
+			<div ng-repeat="summaryData in summaryData1">
+				<links-list summary-data="summaryData"
+							start-date="$ctrl.currentPlanStartDate"
+							end-date="$ctrl.currentPlanEndDate"
+							plan-type="summaryData.type"
+							plan-key="summaryData.key"
+							plan-code="summaryData.PlanCode">
+				</links-list>
+			</div>
+		</div>
+		<div ng-repeat="summaryData1 in $ctrl.filteredBenefitsSummary" ng-if="bPsBenSumNext != null">
+			<div ng-repeat="summaryData in summaryData1" ng-if="oeDisplay == 'Y' &&  customIndicator == true">
+				<links-list summary-data="summaryData1"
+							start-date="$ctrl.futureplanStartDate"
+							end-date="$ctrl.futureplanEndDate"
+							plan-type="summaryData1.type"
+							plan-key="summaryData1.key"
+							plan-code="summaryData1.PlanCode">
+				</links-list>
+			</div>
+		</div>
+		<div ng-if="!$ctrl.showSpinner">
+			<p class="adj-PlansAndCarrier">
+				<a href="" id="cobraId2" ng-click="setFromToDate($ctrl.currentPlanStartDate,$ctrl.currentPlanEndDate);$ctrl.openCobraSummaryModal();">
+					{{'my_benefits.policies.cobraBenefits' | translate}}
+				</a>
+			</p>
+		</div>
+		<div ng-if="bPsBenSumNext != null">
+			<p ng-if="$ctrl.oeDisplay == 'Y'">
+				<a href="" id="cobraId3" ng-click="setFromToDate($ctrl.futureplanStartDate,$ctrl.futureplanEndDate);$ctrl.openCobraSummaryModal();">
+					{{'my_benefits.policies.cobraBenefits' | translate}}
+				</a>
+			</p>
+		</div>
+	</div>
+	<!--Default view start End-->
+
+	</div>
+	<!-- Canadian users start-->
+	<div ng-if="$ctrl.payFrquencyListArray.stateCode === 'CA'">
+		<h5 class="content-main trinet-primary-color">
+			{{'my_benefits.policies.benfitsSumCA' | translate}}
+		</h5>
+		<div ng-repeat="response in $ctrl.response.textList">
+			<div  class="benefits-forms-item-accordion">
+				<span class="tn-icon-pdf-img"><img alt="PDF-Icon" ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png"></span>
+				<a ng-href="{{response.url | contentUrl}}"
+				   target="_blank"
+				   id="benefitAtGlancePrevYearId{{$index}}">{{response.label}}</a>
+			</div>
+		</div>
+
+
+	</div>
+	<!-- Canadian users End-->
+</div>

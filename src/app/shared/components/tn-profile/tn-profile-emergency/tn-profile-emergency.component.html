@@ -1,0 +1,55 @@
+<tn-card class="profile" loading="!$ctrl.data">
+	<div class="tn-profile-header">
+		<h3 class="text-center semibold tn-profile-header-title">{{'profile-emergency-contact' | translate}}</h3>
+		<div class="tn-edit-button-wrap" ng-if="$ctrl.data.emergencyContacts[0].name.fullName">
+			<button id="profileEmergencyEdit" tn-button class="edit-button" aria-label="Profile-emergency-add-or-edit-button" ng-click="$ctrl.edit()">Add/Edit</button>
+		</div>
+	</div>
+	<br />
+	<div class="row public-profile-table" ng-if="$ctrl.data.emergencyContacts[0].name.fullName">
+		<div class="col-sm-offset-1  col-sm-10  col-sm-offset-1">
+			<div class="row tn-profile-divider  tn-profile-content">
+				<div class="col-sm-1  tn-align-profile-icon">
+					<i class="tn-icon icon-icon_emergency"></i>
+				</div>
+				<div class="col-sm-4 titles">
+					<div class="profile-label">{{'profile-emergency-contact' | translate}}</div>
+				</div>
+				<div class="col-sm-7 tn-right-align-grid-text">
+					<div>{{$ctrl.data.emergencyContacts[0].name.fullName}}</div>
+					<div>{{$ctrl.data.emergencyContacts[0].contactRelationship | contactRelationship}}</div>
+					<div>{{$ctrl.data.emergencyContacts[0].telephoneNumbers.telephoneNumber1 | tel}}</div>
+				</div>
+			</div>
+
+			<div class="row tn-profile-divider tn-profile-content">
+				<div class="col-sm-1  tn-align-profile-icon">
+					<i class="tn-icon icon-icon_dashboard"></i>
+				</div>
+				<div class="col-sm-4  titles">
+					<div class="profile-label">{{'profile-emergency-address' | translate}}</div>
+				</div>
+				<div  class="col-sm-7  tn-right-align-grid-text">
+						<div>{{$ctrl.data.emergencyContacts[0].address.address1}}<br />
+							{{$ctrl.data.emergencyContacts[0].address.city }}, {{$ctrl.data.emergencyContacts[0].address.state}} {{$ctrl.data.emergencyContacts[0].address.postalCode}}</div>
+				</div>
+			</div>
+			
+			<div class="row tn-profile-content">
+				<div class="col-sm-1  tn-align-profile-icon">
+					<i class="tn-icon icon-icon_activity_log"></i>
+				</div>
+				<div class="col-sm-4 titles">
+					<div class="profile-label">{{'profile-emergency-notes' | translate}}</div>
+					<div class="text-pre-wrap">{{$ctrl.data.emergencyContacts[0].notes}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br />
+	<div class="row" ng-if="!$ctrl.data.emergencyContacts[0].name.fullName">
+		<div class="text-center  tn-emergency-empty-state">
+			<button tn-action-button  ng-click="$ctrl.edit()">Add Emergency Contact</button>
+		</div>
+	</div>
+</tn-card>

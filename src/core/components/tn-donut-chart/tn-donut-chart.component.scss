@@ -1,0 +1,18 @@
+@import 'main';
+
+.tn-donut-chart {
+	tspan.amount,
+	tspan.label {
+		alignment-baseline: middle;
+		font-weight: 600;
+	}
+
+	tspan.amount {
+		font-size: 18px;
+	}
+
+	tspan.label {
+		fill: $slate;
+		font-size: 12px;
+	}
+}

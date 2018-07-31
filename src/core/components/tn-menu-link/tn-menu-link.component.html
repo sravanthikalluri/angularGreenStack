@@ -1,0 +1,6 @@
+<a ui-sref="{{$ctrl.menu.url}}"  ui-sref-active="tn-menu-link-is-active"
+		target="{{$ctrl.menu.target}}" class="tn-menu-link" ng-click="$ctrl.select($event);" href="">
+	<span ng-if="$ctrl.menu.icon" class="{{$ctrl.menu.icon}}"></span>
+	<span class="tn-menu-text" id="{{$ctrl.menu.menuId}}">{{$ctrl.menu.text}}</span>
+	<span ng-transclude class="tn-menu-link-transclude-content"></span>
+</a>

@@ -1,0 +1,19 @@
+<div class="personal-data">
+	<h4 align="center">{{'edit-profile-personal-data' | translate}}</h4>
+	<div class="row gender">
+		<div class="col-sm-5">
+			<h6>{{'edit-profile-gender' | translate}}</h6>
+			<tn-combo-box selected-object="$ctrl.data.gender.selectedObject" data=$ctrl.data.gender style=$ctrl.width></tn-combo-box>
+			<h6 class="edit-profile-margin">{{'edit-profile-birthdate' | translate}}</h6>
+			<tn-text-box type="text" value=$ctrl.data.activePersonalDataList[0].birthDate style=$ctrl.width></tn-text-box>
+			<h6 class="edit-profile-margin">{{'edit-profile-ethnicity' | translate}}</h6>
+			<tn-combo-box selected-object="$ctrl.data.ethnicity.selectedObject" data=$ctrl.data.ethnicity style=$ctrl.width></tn-combo-box>
+		</div>
+		<div class="col-sm-offset-2 col-sm-5">
+			<h6>{{'edit-profile-marital-status' | translate}}</h6>
+			<tn-combo-box selected-object="$ctrl.data.marriedStatus.selectedObject" data=$ctrl.data.marriedStatus style=$ctrl.width></tn-combo-box>
+			<h6 class="edit-profile-margin">{{'edit-profile-military-status' | translate}}</h6>
+			<tn-combo-box selected-object="$ctrl.data.militaryStatus.selectedObject" data= $ctrl.data.militaryStatus style=$ctrl.width></tn-combo-box>
+		</div>
+	</div>
+</div>

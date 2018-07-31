@@ -1,0 +1,5 @@
+<div class="tn-card">
+	<tn-card-title><h3 ng-if="$ctrl.titles">{{ $ctrl.titles | translate}}</h3></tn-card-title>
+	<tn-spinner ng-if="$ctrl.loading"></tn-spinner>
+	<ng-transclude ng-if="!$ctrl.loading"></ng-transclude>
+</div>

@@ -1,0 +1,33 @@
+<div class="background">
+	<tn-error-banner error-data="$ctrl.errorAlert"></tn-error-banner>
+	<div class="primary-container">
+		<h2 class="page-title">
+			<button ui-sref="app.main.company.overview" class="no-border-button">
+				{{'company' | translate}}
+			</button>
+			<i class="icon-icon_forward icon-heading"></i>
+			{{'holiday-calendar' | translate}}
+		</h2>
+
+		<tn-card loading="$ctrl.showSpinner">
+			<div class="holiday-calendar">
+				<div>
+					<tn-combo-box   selected-object="$ctrl.selectedObject"
+									on-change="$ctrl.changeYear(year)"
+									data="$ctrl.years"
+									select-label="$ctrl.label"
+									select-style="$ctrl.style">
+					</tn-combo-box>
+				</div>
+				<div ng-if="$ctrl.data.length > 0" aria-label="{{'download-holiday-list' | translate}} for the year of {{$ctrl.selectedYear}}" ng-click="$ctrl.holidayListOpen()">
+					<i id="downloadHolidayCalendar" aria-hidden="true" class="icon-icon_download_2  anchor-blue-icon"></i>
+					<a class="tn-anchor">{{'download-holiday-list' | translate}}</a>
+				</div>
+				<!-- <a id='dwnldLnk' download='holidayList.pdf' style="display:none;" /> -->
+			</div>
+			<p class="holiday-calendar" ng-if="$ctrl.customMessage && $ctrl.customMessage.trim() && ($ctrl.customMessage.trim().length >0)"><span   ng-bind="$ctrl.customMessage"></span></p>
+			<tn-holiday-calendar-table  data="$ctrl.data" error-message="$ctrl.errorMessage" ng-hide="$ctrl.showSpinner"> </tn-holiday-calendar-table>
+		</tn-card>
+	</div>
+	<div class="secondary-container"></div>
+</div>

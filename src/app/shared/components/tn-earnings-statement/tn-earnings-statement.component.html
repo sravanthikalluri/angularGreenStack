@@ -1,0 +1,126 @@
+<div id="main-content" class="check-details-content">
+	<tn-spinner ng-show="$ctrl.showSpinner"></tn-spinner>
+	<div class="headerInfo" ng-hide="$ctrl.showSpinner">
+		<h3  tabindex="0">Earnings Statement</h3>
+		<tn-toggle id="toggleToolTip" is-toggled="$ctrl.enableToolTips"
+				   on-toggle="$ctrl.onToggle('enableToolTips', isToggled)"
+				   true-label="Display Paycheck Help"
+				   reader-value="Display Paycheck Help"
+				   false-label="Display Paycheck Help">
+		</tn-toggle>
+		<span  tabindex="0">{{$ctrl.data.header.checkDt| date:"MMMM dd, yyyy"}}</span>
+	</div>
+
+	<div class="company-details peo-details" ng-hide="$ctrl.showSpinner">
+		<div class="peo-address"  tabindex="0">
+			<img alt="TriNet Logo"  class="peo-logo" ng-src="../../../../assets/images/trinetLogo_white_background0.jpg">
+		</div>
+		<div class="peo-address"  tabindex="0">
+			<p class="address-abbr-name"><span ng-bind="$ctrl.peoAddress[0] + ', ' + $ctrl.peoAddress[1]" ng-if="$ctrl.peoAbbreviateName"></span></p>
+			<p class="address-abbr-name"><span ng-bind="$ctrl.peoAddress[0]" ng-if="!$ctrl.peoAbbreviateName"></span></p>
+			<p class="address-details"><span ng-bind="$ctrl.peoAddress[1]" ng-if="!$ctrl.peoAbbreviateName"></span></p>
+			<p class="address-details"><span ng-bind="$ctrl.peoAddress[2]"></span></p>
+			<p class="address-details"><span ng-bind="$ctrl.peoAddress[3]"></span><span ng-if="!$ctrl.peoAddress[5]" ng-bind="', '+$ctrl.peoAddress[4]"></span></p>
+			<p class="address-details" ng-if="$ctrl.peoAddress[5]"><span ng-bind="$ctrl.peoAddress[4]"></span><span ng-bind="', '+$ctrl.peoAddress[5]"></span></p>
+		</div>
+		<div class="peo-address" tabindex="0">
+			<p class="peo-descr1" ng-bind="$ctrl.peoDesc1"></p>
+			<p class="peo-descr2" ng-bind="$ctrl.peoDesc2"></p>
+		</div>
+	</div>
+	<div class="company-details" ng-hide="$ctrl.showSpinner">
+<!--		<div class="company-img">
+			<img alt="logo" width="150px" ng-src="./assets/images/trinetLogo_white_background.jpg"/>
+		</div>-->
+		<div class="company-address">
+
+			<div ng-if="$ctrl.header.employerName === $ctrl.header.legalName || $ctrl.header.legalName === ''"  tabindex="0">
+				<p class="employer-details" ng-bind="$ctrl.header.employerName"></p>
+			</div>
+			<div ng-if="$ctrl.header.employerName !== $ctrl.header.legalName && $ctrl.header.legalName !== ''"  tabindex="0">
+				<p class="employer-details" ng-bind="$ctrl.header.legalName"></p>
+				<p class="employer-details">dba: {{$ctrl.header.employerName}}</p>
+			</div>
+			<div tabindex="0">
+				<p class="employer-details"><span ng-bind="$ctrl.header.employerAddress1"></span></p>
+				<p class="employer-details"><span ng-bind="$ctrl.header.employerAddress2"></span></p>
+				<p class="employer-details"><span ng-bind="$ctrl.header.employerAddress3"></span></p>
+			</div>
+			<p class="employer-details" tabindex="0"><span ng-bind="$ctrl.header.employerPhone"></span></p>
+			<div ng-if="($ctrl.header.workState === 'or' || $ctrl.header.workState === 'OR') && $ctrl.header.employerId !== '' ">
+				<h4 tabindex="0"><span>Employer ID:</span></h4>
+				<h5 tabindex="0"><span ng-bind="$ctrl.header.employerId"></span></h5>
+			</div>
+		</div>
+		<div class="check-info border-right check-info-payGroup">
+			<p tabindex="0"><span>Pay Group:</span><span ng-bind="$ctrl.header.payGroup"></span></p>
+			<p tabindex="0"><span>Earns Begin Date:</span><span ng-bind="$ctrl.header.earnsBegDt | date: 'MM/dd/yyyy'"></span></p>
+			<p tabindex="0"><span>Earns End Date:</span><span ng-bind="$ctrl.header.earnsEndDt | date: 'MM/dd/yyyy'"></span></p>
+			<p tabindex="0"><span>Pay End Date:</span><span ng-bind="$ctrl.header.payEndDt | date: 'MM/dd/yyyy'"></span></p>
+		</div>
+		<div class="check-info">
+			<p tabindex="0"><span>Advice #:</span><span ng-bind="$ctrl.header.checkNumber"></span></p>
+			<p tabindex="0"><span>Company ID:</span><span ng-bind="$ctrl.header.companyId"></span></p>
+			<p tabindex="0"><span>Advice Date:</span><span ng-bind="$ctrl.header.checkDt | date: 'MM/dd/yyyy'"></span></p>
+		</div>
+	</div>
+	<div class="employee-address" ng-hide="$ctrl.showSpinner" tabindex="0">
+		<p class="employee-address-name" ng-bind="$ctrl.header.name"></p>
+		<p><span ng-bind="$ctrl.header.address1"></span></p>
+		<p><span  ng-bind="$ctrl.header.address2"></span></p>
+		<p><span  ng-bind="$ctrl.header.address3"></span></p>
+	</div>
+	<div class="employee-details" ng-hide="$ctrl.showSpinner">
+		<div class="col-sm-6 border-right">
+			<p tabindex="0"><span>Employee ID:</span><span ng-bind="$ctrl.header.employeeId"></span></p>
+			<p tabindex="0"><span>Department:</span><span ng-bind="$ctrl.header.department"></span></p>
+			<p tabindex="0"><span>Location:</span><span ng-bind="$ctrl.header.location"></span></p>
+			<p tabindex="0"><span>Business Title:</span><span ng-bind="$ctrl.header.businessTitle"></span></p>
+			<p tabindex="0"><span>Pay Rate:</span><span> {{$ctrl.header.payRate | currency}} {{$ctrl.header.payRateDesc}}</span></p>
+		</div>
+		<div class="col-sm-6 tax-allowances" role="grid">
+			<!--<div class="col-sm-5 tax-head">
+                <h5 class="heading" ng-repeat= "titels in $ctrl.taxAllowancesleftTitles">{{titels}}</h5>
+            </div>-->
+			<div role="button" ng-repeat= "data in $ctrl.taxAllowances" tabindex="0">
+				<p class="heading" role="columnheader">{{data.header}}</p>
+				<p role="{{$first ? 'rowheader' : 'gridcell'}}">{{data.section0}}</p>
+				<p role="{{$first ? 'rowheader':'gridcell'}}">{{data.section1}}</p>
+			</div>
+		</div>
+	</div>
+	<div class="net-pay" ng-hide="$ctrl.showSpinner" tabindex="0">
+		<div>
+			<p class="net-pay-amount">{{$ctrl.header.netPay | currency}}</p>
+			<p class="text-capitalize">net pay</p>
+		</div>
+		<button class="btn tn-btn-nonNegotiable">Non-Negotiable</button>
+
+	</div>
+	<div class="check-details-tables" ng-hide="$ctrl.showSpinner">
+		<div class="single">
+			<tn-hours-earnings-table tool-tips-header="'money.earnings_statements.hoursEarnings'" tool-tips-title="'money.earnings_statements.hoursEarnings_toolTip'" enable-tool-tips="$ctrl.enableToolTips" update-headings-background="$ctrl.updateHeadingsBackground(data)" color="#56BD65" class="tn-paycheck-hastoltip" title="Hours and Earnings" data="$ctrl.earnsData" totals="$ctrl.totals"></tn-hours-earnings-table>
+		</div>
+		<div class="single">
+			<!--<tn-taxes-deductions-table tool-tips-header="'money.earnings_statements.taxDeductions'" tool-tips-title="'money.earnings_statements.taxDeductions_tooltip'" tool-tips-title1="'money.earnings_statements.aferTaxDed_tooltip'" enable-tool-tips="$ctrl.enableToolTips" update-headings-background="$ctrl.updateHeadingsBackground(data)" color="#3E97E3" class="tn-paycheck-hastoltip" title="Taxes and Deductions" pre-taxes="$ctrl.taxPre" post-taxes="$ctrl.taxPost" totals="$ctrl.taxTotals"></tn-taxes-deductions-table>-->
+			<tn-table tool-tips-header="'money.earnings_statements.taxWith_holding'" tool-tips-title="'money.earnings_statements.taxWith_holding_tooltip'" enable-tool-tips="$ctrl.enableToolTips" update-headings-background="$ctrl.updateHeadingsBackground(data)" color="#ffc800" class="tn-tax-table has-totals tn-paycheck-hastoltip" title="Taxes" col-titles="$ctrl.witholdingTitles" data="$ctrl.witholdingData"></tn-table>
+		</div>
+		<div class="single">
+			<tn-taxes-deductions-table tool-tips-header="'money.earnings_statements.beforetaxDeductions'" tool-tips-title="'money.earnings_statements.before_taxDeductions_tooltip'" enable-tool-tips="$ctrl.enableToolTips" update-headings-background="$ctrl.updateHeadingsBackground(data)" color="#57baec" class="tn-paycheck-hastoltip" title="Before Tax Deductions" pre-taxes="$ctrl.taxPre" totals="$ctrl.taxTotals"></tn-taxes-deductions-table>
+		</div>
+		<div class="group">
+			<tn-taxes-deductions-table tool-tips-header="'money.earnings_statements.aftertaxDeductions'" tool-tips-title="'money.earnings_statements.after_taxDeductions_tooltip'" enable-tool-tips="$ctrl.enableToolTips" update-headings-background="$ctrl.updateHeadingsBackground(data)" color="#57baec" class="tn-paycheck-hastoltip" title="After Tax Deductions" post-taxes="$ctrl.taxPost" totals="$ctrl.taxTotals"></tn-taxes-deductions-table>
+			<tn-table tool-tips-header="'money.earnings_statements.companyPaidBenefits'" tool-tips-title="'money.earnings_statements.companyPaid_tooltip'" enable-tool-tips="$ctrl.enableToolTips" update-headings-background="$ctrl.updateHeadingsBackground(data)" color="#57baec" class="has-totals tn-paycheck-hastoltip" title="Employer Paid Benefits" col-titles="$ctrl.employerBenefitsTitles" data="$ctrl.employerBenefitsData"></tn-table>
+		</div>
+		<div class="single">
+			<tn-table col-titles="$ctrl.totralGross" update-headings-background="$ctrl.updateHeadingsBackground(data)" color="#242936" class="tn-total-YTD"  data="$ctrl.totalsCurYDT"></tn-table>
+		</div>
+		<div class="group">
+			<tn-table ng-repeat="ptdata in $ctrl.ptosData" tool-tips-header="'money.earnings_statements.timeOff'" tool-tips-title="'money.earnings_statements.timeOff_tooltip'" enable-tool-tips="$ctrl.enableToolTips" update-headings-background="$ctrl.updateHeadingsBackground(data)" ng-if="$ctrl.ptosData.length > 0" class="has-totals tn-paycheck-hastoltip" color="#28ae57" title="{{ptdata.Title}} Hours" col-titles="$ctrl.ptoTitles" data="ptdata"></tn-table>
+			<tn-table tool-tips-header="'money.earnings_statements.net_pay'" tool-tips-title="'money.earnings_statements.currentFederalTax'" enable-tool-tips="$ctrl.enableToolTips" update-headings-background="$ctrl.updateHeadingsBackground(data)" class="tn-next-pay-table has-totals tn-paycheck-hastoltip" color="#28ae57" title="Net Pay Distribution"  data="$ctrl.netPayDistribution"></tn-table>
+		</div>
+		<div class="single">
+			<tn-table  tool-tips-header="'money.earnings_statements.directDep'" tool-tips-title="'money.earnings_statements.directDep_tooltip'" enable-tool-tips="$ctrl.enableToolTips" update-headings-background="$ctrl.updateHeadingsBackground(data)" color="#28ae57" class="has-totals tn-directDepositTable tn-paycheck-hastoltip" title="Direct Deposit" col-titles="$ctrl.direcitDepositTitles" data="$ctrl.directDepositData"></tn-table>
+		</div>
+	</div>
+</div>

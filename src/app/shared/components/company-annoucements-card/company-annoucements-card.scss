@@ -1,0 +1,39 @@
+@import 'main';
+.company_announcements-card {
+	  .important-notices-header {
+		align-items: center;
+	  }
+	  .announcements-card {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		.announcements-card-date {
+		  color: $slate;
+			margin-top: 25px;
+			font-size: 14px;
+		  font-weight: 500;
+			line-height: 1.1;
+			margin-bottom: 10px;
+		}
+		.announcements-card-desc {
+		  color: #30343C;
+		  word-wrap: break-word;
+		  word-break: break-all;
+		}
+	  }
+
+	.announcements-cards-length {
+	  color: $slate;
+		margin-top: 25px;
+		margin-bottom: 10px;
+	}
+	.hand{
+		cursor: pointer;
+		background-color: transparent;
+		border: none;
+
+			&:focus{
+			    outline: 3px solid $tn-focus-border-color;
+			}
+	}
+  }

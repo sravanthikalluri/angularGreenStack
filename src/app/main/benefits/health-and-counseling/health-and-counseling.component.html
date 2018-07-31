@@ -1,0 +1,33 @@
+<div class="background">
+	<div class="primary-container">
+		<h2 class="page-title">
+			<button class="no-border-button" ui-sref="app.main.benefits.overview">{{'benefits-title' | translate}}</button>
+			<i class="icon-icon_forward icon-heading"></i> {{ 'HealthAndCounselingTitle' | translate }}
+		</h2>
+
+		<tn-card>
+			<tn-spinner ng-show="$ctrl.showSpinner"></tn-spinner>
+			<div class="Health_Counseling_Content" ng-bind-html="$ctrl.data.content">
+
+			</div>
+			<div id="collapseOne">
+				<!-- candian user-->
+				<div class="no-pad benefits-summery-links" ng-repeat="pdfdata in $ctrl.data.urls">
+					<span class="tn-icon"><img alt="PDF Icon" ng-src="./assets/images/Adobe_PDF_file_icon_24x24.png"></span>
+					<a id="healthAndCounseling{{$index}}"
+					   ng-href="{{pdfdata.url | contentUrl}} "
+					   target="_blank">
+						<span class="benefit-text " id="bgcandiantext{{$index}}">{{::pdfdata.text}}</span>
+					</a>
+					<!--<span ng-if="pdfdata.date != null" id="bgcandiandate{{$index}}">{{::pdfdata.date}}</span>-->
+				</div>
+			</div>
+			<no-records></no-records>
+		</tn-card>
+
+
+	</div>
+	<div class="secondary-container">
+
+	</div>
+</div>

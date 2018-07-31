@@ -1,0 +1,24 @@
+[tn-button] {
+  height: 50px;
+  padding: 0 44px;
+  border: 2px solid #CAD3DB;
+  border-radius: 4px;
+  color: #30343C;
+  font-size: 14px;
+  background: white;
+  outline: 0;
+  transition: all 0.3s ease 0s;
+  white-space: nowrap;
+
+  &:hover {
+    border: 2px solid #92A0AC;
+  }
+
+  &:active {
+    background: #EEEEEE;
+  }
+  &:focus{
+	background: #EEEEEE;
+	border: 2px solid #92A0AC;
+  }
+}

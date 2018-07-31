@@ -1,0 +1,31 @@
+@import 'main';
+
+.tn-search-box-container { position: relative; }
+
+.tn-search-box-container input { padding-left: 30px;}
+
+.tn-search-box:focus { 
+	border: 1px solid $pewter; 
+	outline: 0;
+}
+
+.tn-search-box {
+	width:  100%;
+	height: 34px;
+	border-radius: 34px;
+	border: 1px solid $silver;
+}
+
+.tn-search-box-search-icon {
+	position: absolute;
+	padding: 10px;
+	pointer-events: none;
+
+	font-weight: 700 !important;
+	color: $silver;
+}
+
+.tn-search-box::-webkit-input-placeholder {
+	color: $silver;
+	font-weight: 400;
+}

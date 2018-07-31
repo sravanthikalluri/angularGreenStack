@@ -1,0 +1,41 @@
+@import "../../../../../../main.component";
+
+.tn-has-tooltip {
+  display: flex;
+  align-items: center;
+  .tn-w4-hastooltip {
+	.tn-tooltip {
+	  right: -5px;
+	  i {
+		font-size: 20px;
+	  }
+	}
+	.tn-tooltip-top {
+	  .tn-tooltip-content {
+		filter: drop-shadow(0px 9px 34px rgba(55, 57, 62, 0.38));
+		-webkit-filter: drop-shadow(15px 0px 34px rgba(55, 57, 62, 0.38));
+		left: auto;
+		right: -50px;
+		width: 230px;
+		top: 25px;
+		&:after {
+		  border: none;
+		}
+		&:before {
+		  border-bottom: 10px solid #fff;
+		  top: -10px;
+		  right: 47px;
+		  border-top: 0;
+		}
+		p {
+		  line-height: 18px;
+		  margin: 10px 0 0 0;
+		  letter-spacing: 0.35px;
+		  white-space: normal;
+		  font-size: 14px;
+		}
+	  }
+	}
+  }
+
+}

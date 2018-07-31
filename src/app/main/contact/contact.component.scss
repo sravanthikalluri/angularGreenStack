@@ -1,0 +1,31 @@
+@import 'main';
+
+.contact-card-title {
+    padding: 32px 0 16px 0;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.contact-card-content{
+  width: 354px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  text-align: center;
+  &.employee-card-content{
+	width: 90%;
+  }
+}
+
+.contact-card-contact-method{
+  width:80%;
+  margin: 0 auto;
+  padding-right: 25px;
+}
+
+.contact-card-gray-label  {
+  color:$gray;
+  margin-top:3px;
+  white-space: nowrap;
+  margin-left:15px;
+}

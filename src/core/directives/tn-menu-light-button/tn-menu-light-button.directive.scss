@@ -1,0 +1,28 @@
+@import '../../../styles/main';
+
+/* button */
+[tn-menu-light-button] {
+	text-align: left;
+	width:180px;
+	height: 50px;
+	margin: 2px 0;
+	border: 0;
+	border-radius: 4px;
+	color: $trinet-dark;
+	font-size: 14px;
+	background: white;
+	z-index: 100;
+	outline: 0;
+	padding-left: 25px;
+	transition: all 0.3s ease 0s;
+
+	&:hover {
+		//border: 2px solid #92A0AC;
+	}
+	&:focus{
+		outline: 1px solid $tn-focus-border-color;
+	}
+	&:active {
+		background: #EEEEEE;
+	}
+}

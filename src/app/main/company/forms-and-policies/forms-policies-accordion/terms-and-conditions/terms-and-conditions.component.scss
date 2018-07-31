@@ -1,0 +1,50 @@
+@import "../../../../../../styles/main";
+
+.terms-acc-body {
+    padding: 16px;
+
+    h5 {
+        font-weight: 600;
+        font-size: 14px;
+    }
+}
+.tn-tcaHeader{
+  p{
+	font-size: 14px;
+	color: $ink;
+	margin: 10px 0;
+  }
+}
+.tn-accordion{
+  .standard-padding {
+	a {
+	  &:hover, &:active {
+		display: inline-block !important;
+	  }
+	}
+  }
+}
+#tacInstructions{
+  font-weight: 400;
+  marign-top:20px
+}
+
+
+  table{
+	border: none;
+	font-size:14px;
+	td{
+	  padding:5px;
+	}
+	b{
+	  font-weight:600 !important;
+	}
+  }
+
+  .heading-k1{
+	div{
+	  div{
+		font-size: 24px;
+	  }
+	}
+  }

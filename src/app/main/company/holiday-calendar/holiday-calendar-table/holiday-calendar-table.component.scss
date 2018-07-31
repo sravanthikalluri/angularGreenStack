@@ -1,0 +1,27 @@
+@import '../../../../../styles/main';
+
+.holiday-calendar-table {
+  margin: 0 15px;
+  .holiday-calendar-text-right {
+	text-align: right;
+  }
+
+  .holiday-calendar-table-chip {
+	margin-left: 19px;
+  }
+
+  &:last-child {
+	margin-bottom: 30px;
+  }
+  [role="columnheader"], [role="gridcell"] {
+	margin: 16px 0;
+	font-size: 12px;
+  }
+}
+
+.error-message {
+  text-align: center;
+  color: #C4C8D3;
+  font-weight: 600;
+  margin: 30px;
+}

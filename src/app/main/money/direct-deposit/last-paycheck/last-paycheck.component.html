@@ -1,0 +1,30 @@
+<div class="last-paycheck" role="presentation">
+	<div class="last-paycheck-section">
+		<tn-card-title-group>
+			<tn-card-title class="account-title">{{'money.direct_deposit.dd_lastPaycheck' | translate}}</tn-card-title>
+		</tn-card-title-group>
+		<tn-card-content class="text-center">
+			<h4 role="presentation">{{$ctrl.lastPayCheckDetails.netPay | currency }}</h4>
+			<h5 role="presentation">{{$ctrl.lastPayCheckDetails.checkIssueDate | date: 'MMM d'}}</h5>
+		</tn-card-content>
+	</div>
+	<div class="next-pay-date-section">
+		<tn-card-title-group>
+			<tn-card-title class="account-title">{{'money.direct_deposit.next_pay_date' | translate}}</tn-card-title>
+		</tn-card-title-group>
+		<tn-card-content class="text-center" ng-if="$ctrl.paychecks.nextCheckIssueDate">
+			<h4 role="presentation">{{$ctrl.paychecks.nextCheckIssueDate | date: 'MMM d'}}</h4>
+			<h5 role="presentation">{{$ctrl.paychecks.nextCheckIssueDate | daysFromNow}}</h5>
+		</tn-card-content>
+		<tn-card-content class="text-center" ng-if="!$ctrl.paychecks.nextCheckIssueDate">
+			<h5 role="presentation">{{ 'not-available' | translate}}</h5>
+		</tn-card-content>
+	</div>
+</div>
+
+
+
+
+
+
+

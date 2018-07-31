@@ -1,0 +1,18 @@
+@import 'main';
+
+.pay{
+	background-color: rgb(245,247,248);
+	border-radius: 4px;
+	.pay-content{
+		margin-top: 30px;
+		span{
+			font-size: 16px;
+			padding-left: 25px;
+			color: $leave-status-other-font-color;
+		}
+		label{
+			font-size: 18px;
+			font-weight: 600;
+		}
+	}
+}

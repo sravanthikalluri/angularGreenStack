@@ -1,0 +1,71 @@
+@import "main";
+
+.proxy-card-body {
+	display: flex;
+	justify-content: space-between;
+}
+
+.proxy-card-button {
+	width: 250px;
+	margin-top: 10px;
+}
+.proxyDetails{
+	margin-bottom: 10px;
+	padding:0;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 1.1;
+	.contactinfo{
+		small{
+			margin-left:10px;
+			color:$font-color-secondary;
+		}
+	}
+	.contactDetails{
+		span{
+			i{
+				margin-right:10px;
+			}
+	&:last-child{
+		i{
+			margin:0 10px;
+		}
+	}
+		}
+	}
+	.effectiveDate{
+		span{
+			margin-right:10px;
+		}
+	}
+	.deleteProxy{
+		color: $red-darker;
+	}
+	p{
+		margin-top:10px !important;
+	}
+}
+.tn-add-proxy-section{
+  margin: 0 16px;
+  .proxies-card-modal{
+		display: block;
+  }
+}
+.proxy_history_section{
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  padding: 15px 0;
+  margin: 10px 0;
+  tn-card-content{
+	border-bottom: none;
+  }
+  .positionDesc {
+	color: $slate;
+  }
+}
+.tn-add-proxy-section{
+  .tn-view-button {
+	width: auto;
+	margin-right: 15px;
+  }
+}

@@ -1,0 +1,13 @@
+
+<div ng-if="$ctrl.summaryData.heading!=''">
+	<strong>
+		
+	{{$ctrl.summaryData.heading}}
+	</strong>
+	<span ng-if="$ctrl.summaryData.subhead!=''">&nbsp;&nbsp;&nbsp;&nbsp;<strong>({{$ctrl.summaryData.subhead}})</strong></span>
+</div>
+<p>
+	<a href="" id="{{$ctrl.summaryData.id}}" class="inline no-float" ng-click="$ctrl.openExecutiveModal();" ng-scope>{{$ctrl.summaryData.label}}</a>
+	&nbsp;
+	<span >{{$ctrl.summaryData.sideLabel}}</span>
+</p>

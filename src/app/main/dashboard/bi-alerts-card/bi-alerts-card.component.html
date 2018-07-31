@@ -1,0 +1,18 @@
+<tn-card class="important-notices-card company_announcements-card tn-bi-alerts">
+	<tn-card-header color="secondary" class="important-notices-header">
+		<i class="icon-icon_company_announcements important-notices-icon"></i>
+		<tn-card-title><h3>Alerts</h3></tn-card-title>
+	</tn-card-header>
+
+	<tn-card-content>
+		<div class="announcements-card" ng-hide="$ctrl.showSpinner" ng-repeat="item in $ctrl.alerts">
+				<span class="legend-item-icon {{item.color }}"></span>
+				<span class="semibold">{{item.count}}</span>
+				<span class="semibold">{{item.title}}</span>
+		</div>
+		<div class="notifications-footer">
+			<button class="tn-view-button" tn-button  ng-click="$ctrl.viewAlerts()">View Alerts</button>
+		</div>
+	</tn-card-content>
+
+</tn-card>

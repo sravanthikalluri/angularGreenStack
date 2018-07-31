@@ -1,0 +1,73 @@
+<div class="background announcement-card">
+	<div class="primary-container">
+		<div class="tn-search-header-bar">
+			<h2>
+				<i class="icon-icon_back icon-heading"></i>
+				<button ui-sref="app.main.dashboard" class="no-border-button">
+					Dashboard
+				</button>
+			</h2>
+		</div>
+		<div class="announcement">
+			<div class="announcement-body">
+				<tn-card ng-repeat="item in $ctrl.anouncementData.current | orderBy:'-effectiveDate'">
+					<h3 class="heading-text">{{item.title}}</h3>
+					<span class="help-text no-marg-top">{{item.effectiveDate | date:'MMM dd, yyyy'}}-{{item.endDate |
+						date:'MMM dd, yyyy'}}</span>
+
+					<div class="content-section">
+						<p>
+							{{item.body}}
+						</p>
+					</div>
+					<!--<div class="col-sm-12 no-pad">
+                        <h5 class="help-text no-marg">Shared with:</h5>
+                        <div class="shared-section">
+                            <span ng-repeat="filter in item.filters">{{filter.value}}</span>
+                        </div>
+                    </div>-->
+				</tn-card>
+
+				<!--future Announcement-->
+				<!--<tn-card ng-repeat="item in $ctrl.anouncementData.future">
+					<h3 class="heading-text">{{item.title}}</h3>
+					<h5 class="help-text no-marg-top">{{item.effectiveDate | date:'MMM dd, yyyy'}} - {{item.endDate |
+						date:'MMM dd, yyyy'}}</h5>
+					<div class="content-section">
+						<p>
+							{{item.body}}
+						</p>
+					</div>
+					&lt;!&ndash;<div class="col-sm-12 no-pad">
+                        <h5 class="help-text no-marg">Shared with:</h5>
+                        <div class="shared-section">
+                            <span ng-repeat="filter in item.filters">{{filter.value}}</span>
+                        </div>
+                    </div>&ndash;&gt;
+				</tn-card>-->
+
+				<!--History Announcement-->
+				<!--<div class="history-section" ng-if="$ctrl.anouncementData.history.length > 0">
+					<h4 class="text-center bold">History</h4>
+					<hr>
+					<tn-card ng-repeat="item in $ctrl.anouncementData.history | orderBy:'-effectiveDate'">
+						<h3 class="heading-text">{{item.title}}</h3>
+						<h5 class="help-text no-marg-top">{{item.effectiveDate | date:'MMM dd, yyyy'}}</h5>
+						<div class="content-section">
+							<p>
+								{{item.body}}
+							</p>
+						</div>
+						&lt;!&ndash;<div class="col-sm-12 no-pad">
+                            <h5 class="help-text no-marg">Shared with:</h5>
+                            <div class="shared-section">
+                                <span ng-repeat="filter in item.filters">{{filter.value}}</span>
+                            </div>
+                        </div>&ndash;&gt;
+					</tn-card>
+				</div>-->
+			</div>
+		</div>
+	</div>
+	<div class="secondary-container"></div>
+</div>

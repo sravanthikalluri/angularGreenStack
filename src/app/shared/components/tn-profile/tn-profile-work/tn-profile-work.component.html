@@ -1,0 +1,97 @@
+<tn-card class="profile" loading="!$ctrl.data">
+	<div class="tn-profile-header">
+		<div class="tn-edit-button-wrap">
+			<button id="profileWorkEdit" aria-label="Profile-work-edit-button" tn-button ng-click="$ctrl.edit()">Edit</button>
+		</div>
+	</div>
+	<br>
+	<br>
+
+	<tn-card-content>
+		<div class="text-center">
+			<!-- TODO: Refactor styling into generic styling/directive -->
+			<tn-profile-icon class-name="tn-profile-avatar"
+							 is-active="$ctrl.isActive"
+							 mime-type="{{$ctrl.mimeType}}"
+							 img-url="{{$ctrl.profileImage}}"
+							 id="UserProfileImageIcon" monogram="{{$ctrl.data.names.initials}}"
+							 fullname="{{$ctrl.data.names.fullName}}">
+			</tn-profile-icon>
+			<h3>{{$ctrl.data.names.fullName}}</h3>
+		</div>
+
+		<div class="text-center">
+			<h4 class="profile-heading  inline-block">{{$ctrl.data.work.businessTitle}}</h4>
+			<h4 class="profile-heading  inline-block" aria-hidden="true" ng-if="$ctrl.data.work.businessTitle && $ctrl.data.work.deptId">&nbsp;&nbsp;|&nbsp;&nbsp;</h4>
+			<h4 class="profile-heading  inline-block">{{$ctrl.data.work.deptId}}<h4>
+		</div>
+
+		<div class="row  public-profile-table">
+			<div class="col-sm-offset-1  col-sm-10  col-sm-offset-1" >
+				<div class="row  tn-profile-divider  tn-profile-content">
+					<div class="col-sm-1  tn-align-profile-icon">
+						<i class="tn-icon  icon-icon_email"></i>
+					</div>
+					<div class="col-sm-4  titles">
+						<div class="profile-label">{{'profile-work-email' | translate}}</div>
+					</div>
+					<div class="col-sm-7  tn-right-align-grid-text">
+						<div class="profile-value">{{$ctrl.data.work.workEmail ? $ctrl.data.work.workEmail : '-'}}</div>
+					</div>
+				</div>
+
+				<div class="row tn-profile-divider tn-profile-content" ng-if="$ctrl.data.work.workPhone">
+					<div class="col-sm-1  tn-align-profile-icon">
+						<i class="tn-icon icon-icon_phone"></i>
+					</div>
+					<div class="col-sm-4 titles">
+						<div class="profile-label">{{'profile-work-phone' | translate}}</div>
+					</div>
+					<div class="col-sm-7  tn-right-align-grid-text">
+						<div class="profile-value">{{$ctrl.data.work.workPhone}}</div>
+					</div>
+				</div>
+
+				<div class="row tn-profile-divider tn-profile-content" ng-if="$ctrl.data.work.employeeId || $ctrl.data.work.alternateId">
+					<div class="col-sm-1  tn-align-profile-icon">
+						<i class="tn-icon icon-icon_employee"></i>
+					</div>
+					<div class="col-sm-4 titles">
+						<div class="profile-label">{{'profile-employee-number' | translate}}</div>
+						<div class="profile-label"  ng-if="$ctrl.data.work.alternateId">{{'profile-employee-alt-id' | translate}}</div>
+					</div>
+					<div class="col-sm-7  tn-right-align-grid-text">
+						<div class="profile-value" ng-if="$ctrl.data.work.employeeId">{{$ctrl.data.work.employeeId}}</div>
+						<div class="profile-value" ng-if="$ctrl.data.work.alternateId">{{$ctrl.data.work.alternateId}}</div>
+					</div>
+				</div>
+
+				<div class="row tn-profile-divider tn-profile-content" ng-if="$ctrl.data.work.supervisorId">
+					<div class="col-sm-1  tn-align-profile-icon">
+						<i class="tn-icon  icon-icon_profile"></i>
+					</div>
+					<div class="col-sm-4  titles">
+						<div class="profile-label">{{'profile-manager' | translate}}</div>
+					</div>
+					<div class="col-sm-7  tn-right-align-grid-text">
+						<div class="profile-value">{{$ctrl.data.work.supervisorId}}</div>
+					</div>
+				</div>
+
+				<div class="row service-date tn-profile-content">
+					<div class="col-sm-1  tn-align-profile-icon">
+						<i class="tn-icon  icon-icon_employee"></i>
+					</div>
+					<div class="col-sm-4  titles">
+						<div class="profile-label">{{'profile-service-date' | translate}}</div>
+					</div>
+					<div class="col-sm-7  tn-right-align-grid-text">
+						<div class="profile-value">{{$ctrl.data.work.serviceDate ? ($ctrl.data.work.serviceDate | serviceDate) : '-'}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</tn-card-content>
+</tn-card>
+
+

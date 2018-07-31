@@ -1,0 +1,270 @@
+@import 'main';
+
+.hand { cursor: pointer; }
+
+.silver { color: $font-color-secondary !important; }
+
+.alternate-colors:nth-child(odd) { background:$off-white; }
+
+.tn-accordion {
+    display: block;
+    position: relative;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(49, 51, 58, 0.2);
+    padding: 0;
+    margin: 0 0 16px 0 !important;
+    background-color: white;
+
+	.tn-inner-accordion{
+		@extend .alternate-colors;
+		padding: 5px 20px;
+		font-size: 16px;
+	}
+
+	.panel-title {
+		a {
+			cursor: default;
+			text-decoration: none;
+			outline: none;
+
+			&:hover,&:active {
+				cursor: default;
+				text-decoration: none;
+				outline: none;
+			}
+
+			&:focus {
+				cursor: default;
+				text-decoration: none;
+				outline: 5px auto -webkit-focus-ring-color !important;
+				outline-offset: -2px !important;
+				display: block;
+			}
+		}
+	}
+
+    .tn-accordion-body {
+		&.tn-accordion-states { flex-direction: column !important; }
+
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		padding: 5px;
+		justify-content: flex-start;
+
+		.tn-pdf_icon {
+            font-size: 25px;
+            color: $red;
+            display: inline-block;
+            padding: 0 0 0 16px !important;
+		}
+
+		.accordion-heading.tn-accordion-content {
+			@extend .alternate-colors;
+			padding-left:36px;
+		}
+
+		p { padding: 0; margin: 0; }
+
+		.inneritem-description {
+			margin-top: 5px;
+			color: $slate;
+			font-size: 12px;
+			line-height: 1.1;
+			margin-bottom: 10px;
+		}
+	}
+
+	.display-all-states { margin: 5px 0px; }
+
+	h5 { margin: 0; }
+
+	.download-form { font-size: 12px; }
+
+	h6 {
+		margin-top: 5px;
+		color: $font-color-secondary;
+	}
+
+	p.subdescription {
+		margin-top: 5px;
+		color: $font-color-secondary;
+	}
+
+	.tn-accordion-item {
+		width: 100%;
+		display: block;
+	}
+
+	.innerHeading {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		justify-content: flex-start;
+	}
+
+	.stripped {
+		@extend .alternate-colors;
+		padding: 5px 0;
+	}
+
+	.striped {
+		@extend .alternate-colors;
+		display: flex;
+		align-items: center;
+		padding: 8px 0;
+		height: 80px;
+	}
+
+	.striped-sm {
+		@extend .striped;
+		align-items: space-between;
+		padding: 8px 36px;
+		height: auto;
+	}
+	.panel-body { padding: 0; }
+
+	.toggle-arrow { margin-top: 0; }
+
+	.toggle-arrow-is-opened:before {
+		margin-top: 0;
+		margin-left: -7px !important;
+	}
+
+	.disputeAccordion { margin: 20px; }
+
+	.item-label { margin-bottom: 0; }
+
+	.item-desciption {
+		margin-top: 5px;
+		color: $slate;
+		font-size: 12px;
+	}
+}
+
+.display-all-title {
+  padding-left: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.tn-accordion-inner { padding: 0; }
+
+.states-specific-accordion.accordion-body {
+	@extend .alternate-colors;
+	padding: 8px 15px;
+
+	a { display:block; }
+
+	.accordion-content {
+		border: 1px solid #ddd;
+		padding: 10px;
+		background: #fff;
+	}
+}
+
+.state-specific-forms-section {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 40px;
+	padding: 0 20px;
+}
+
+.benefits-guide-book {
+	display: block;
+	background: #fff;
+	padding: 15px;
+	box-shadow: 0px 1px 3px rgba(49, 51, 58, 0.2);
+
+	.panel-body-background {
+		div {
+			@extend .alternate-colors;
+			padding:10px 0;
+
+			a {
+				display: block;
+
+				.benefit-text {
+					color: $blue;
+				}
+			}
+
+			.pdf-dissabled-text {
+				color: $font-color-secondary;
+			}
+		}
+	}
+}
+
+button.tn-accordion-button ,.tn-accordion-heading {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	align-content: stretch;
+	outline: none;
+	background: white;
+	border: none;
+	width: 100%;
+
+	p,h4 {
+		font-size: 16px;
+		font-weight: 600;
+		padding: 22px;
+		margin: 0;
+		text-align: left;
+	}
+}
+
+.tn-word_icon {
+	margin: 0 15px;
+	font-size: 25px;
+	color: $blue;
+	display: inline-block;
+	padding-right: 20px;
+}
+
+// .accordion-toggle:focus { border: 2px solid $tn-focus-border-color; }
+
+// .button-focus:focus { outline: 3px solid $tn-focus-border-color; }
+
+i.disclosure-open {
+	font-size: 23px;
+	font-weight: 600;
+	color: $blue;
+	padding-right: 20px;
+
+	&:hover { color: $azure-blue; }
+}
+
+.display-all-states-container {
+	padding: 10px 36px;
+}
+
+.state-withholding-home-state {
+	@extend .alternate-colors;
+	padding-left: 32px;
+}
+
+.state-withholding-list {
+	@extend .alternate-colors;
+	padding: 10px 24px !important;
+	margin: 0;
+}
+.tn-state-forms{
+  &.striped{
+	height: auto;
+	padding: 20px 0;
+  }
+  .tn-accordion-body{
+	width: 100%;
+	.tn-accordion-link{
+	  margin-left: 20px;
+	  margin-right: 20px;
+	  display: flex;
+	  align-items: center;
+	  justify-content: space-between;
+	}
+  }
+
+}

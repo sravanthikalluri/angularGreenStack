@@ -1,0 +1,74 @@
+<div class="background">
+<div class="primary-container">
+	<h2 class="page-title">
+		<button ui-sref="app.main.company.overview" class="no-border-button" ng-bind="'company' | translate"></button>
+		<span class="icon-heading icon-icon_forward"></span>
+		<button ui-sref="app.main.company.forms-and-policies" class="no-border-button" ng-bind="'forms-and-policies' | translate" ng-if="$ctrl.stateSpecific.specificForm !== 'moneyStateSpecificForms'"></button>
+		<button ui-sref="app.main.money.forms-and-policies" class="no-border-button" ng-bind="'forms-and-policies' | translate" ng-if="$ctrl.stateSpecific.specificForm === 'moneyStateSpecificForms'"></button>
+		<span class="icon-heading icon-icon_forward"></span>
+		<button id="specific-form" class="no-border-button" ng-bind="'stateSpecificForms' | translate"></button>
+	</h2>
+
+	<uib-accordion close-others="true">
+	<div role="alert" class="sr-only" aria-live="assertive">
+		State specific forms opened
+	</div>
+	<div 	uib-accordion-group
+			class="tn-accordion states-specific-accordion"
+			ng-init="status.open = false"
+			is-open="status.open"
+			ng-repeat="data in $ctrl.stateSpecific.pdfs.sub"
+			ng-if="data.url === undefined">
+		<uib-accordion-heading id="companyStateSpecificForms_{{$index}}" class="accordion-heading">
+			<button  class="tn-accordion-button" name="companyStateSpecificForms_{{$index}}" tabindex="-1">
+				<p>{{data.label}} ({{data.count}})</p>
+				<i class="icon-icon_Disclosure_Expand  disclosure-open" ng-if="!status.open"></i>
+				<i class="icon-icon_Disclosure_Collapse  disclosure-open" ng-if="status.open"></i>
+			</button>
+		</uib-accordion-heading>
+
+		<div class="accordion-body  display-all-states-container"
+			 ng-if="$ctrl.stateSpecific.formState==='State Specific Forms' || $ctrl.stateSpecific.specificForm === 'moneyStateSpecificForms'"
+			 ng-repeat="items in data.sub">
+			<div class="hand state-specific-detail-forms">
+				<a href="" id="{{$ctrl.stateSpecific.formState ==='State Specific Forms' ? data.label.trim()+$index : data.label.trim()+$index}}" class="toggle-link "
+				   ng-click="$ctrl.tootleLink($index,items)"
+				   aria-label="{{($ctrl.label === items.label)? item.label+' link is expanded':item.label+ ' link is collapsed'}}"
+				>
+					{{items.label | limitTo:150}}
+					<div class=" icon-icon_forward pull-right" ng-class="($ctrl.label === items.label) ? 'icon-icon_back':'icon-icon_forward'"></div>
+				</a>
+			</div>
+
+			<div class="accordion-content" ng-if=" $ctrl.label === items.label">
+				<p class="description">{{items.subdescription}}</p>
+				<div class="stripped  tn-accordion-body" ng-repeat="pdfLinks in items.language" >
+					<a id="compStateSpecificDetailPdf_{{$index}}" href="{{pdfLinks.url | contentUrl}}" class="innerHeading  hand  tn-anchor"  target="_blank">
+						<i class="icon-icon_pdf tn-pdf_icon" aria-hidden="true"></i>
+							<div class="tn-accordion-content">
+							<span>{{pdfLinks.label}}</span>
+							<span class="sr-only">{{'pdf'| translate}}</span>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="accordion-body" ng-if="$ctrl.stateSpecific.formState==='Workers Compensation Forms and Information'" ng-repeat="items in data.sub">
+			<div  class="tn-accordion-body">
+				<div class="innerHeading hand"  ng-click="$ctrl.openPdf(items.url)">
+					<i id="companyFormsPdf_{{$index}}" class="icon-icon_pdf tn-pdf_icon"></i>
+					<div class="tn-accordion-content">
+						<a class="tn-anchor">
+							<span>{{items.label}}</span>
+							<span class="sr-only">PDF</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</uib-accordion>
+</div>
+<div class="secondary-container"></div>
+</div>

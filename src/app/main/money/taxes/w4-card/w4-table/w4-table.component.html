@@ -1,0 +1,32 @@
+<div class="w4-modal-table" >
+	<div class="w4-modal-table-inner" role="grid">
+		<div class="row row-header" role="row">
+			<span role="columnheader" class="w4-modal-table-col-1 w4-table-header inline-block" tabindex="0">Type</span>
+            <span role="columnheader" class="w4-modal-table-col-1 w4-table-header inline-block text-center " tabindex="0">Marital Status</span>
+            <span role="columnheader" class="w4-modal-table-col-1 w4-table-header inline-block text-center " tabindex="0">Form</span>
+            <span role="columnheader" class="w4-modal-table-col-1 w4-table-header inline-block text-center" tabindex="0">Allowances</span>
+            <span role="columnheader" class="w4-modal-table-col-1 w4-table-header inline-block text-center" tabindex="0">Additional Amount</span>
+            <span role="columnheader" class="w4-modal-table-col-1 w4-table-header inline-block text-center" tabindex="0">Exempt</span>
+            <span role="columnheader" class="w4-modal-table-col-1 w4-table-header inline-block text-center" ng-show="$ctrl.federal.data.marriedFileSingle !== null || ($ctrl.state && $ctrl.state.marriedFileSingle !== null)" tabindex="0">Married Filing Single</span>
+            <span role="columnheader" class="w4-modal-table-col-1 w4-table-header inline-block text-center" ng-show="($ctrl.state  && $ctrl.state.percentageGross !== null && $ctrl.state.percentageGross !== 0)" tabindex="0">Percent of Taxable Gross Wage</span>
+            <span role="columnheader" class="w4-modal-table-col-1 w4-table-header inline-block text-center" ng-show="($ctrl.state  && $ctrl.state.dependentAllowances !== null)" tabindex="0">Dependent Allowances</span>
+            <span role="columnheader" class="w4-modal-table-col-1 w4-table-header inline-block text-center" ng-show="($ctrl.state && $ctrl.state.annualExemptionAmount !== null)" tabindex="0">{{'money.tax_With_Holding.annualExemption' | translate}}</span>
+
+		</div>
+		<div class="row row-data vertical-align" role="row" ng-repeat="item in $ctrl.taxForm.items track by $index">
+            <span role="gridcell" class="w4-modal-table-col-1 w4-table-item semibold" tabindex="0">{{item.data | taxWithholdingType}}</span>
+			<tn-chip role="gridcell" class="w4-modal-table-col-1 w4-table-chip text-center" title="{{item.selected.value}}" label="{{item.selected.value | ellipsize}}" tabindex="0"></tn-chip>
+			<w4-pdf-links role="gridcell" pdf-data="item.data.pdfURL" is-pdf-available="item.data.isPDFAvailable"></w4-pdf-links>
+
+			<span role="gridcell" class="w4-modal-table-col-1 w4-table-item semibold text-center" tabindex="0">{{item.data.allowancesRequested}}</span>
+            <span role="gridcell" class="w4-modal-table-col-1 w4-table-item semibold text-center" tabindex="0">{{item.data.addlAmount | currency:'$':2}}</span>
+            <span role="gridcell" class="w4-modal-table-col-1 w4-table-item semibold text-center margin-left" tabindex="0">{{item.data.exempt}}</span>
+            <span role="gridcell" class="w4-modal-table-col-1 w4-table-item semibold text-center margin-left" ng-show="$ctrl.federal.data.marriedFileSingle !== null || ($ctrl.state && $ctrl.state.marriedFileSingle !== null)" tabindex="0">{{item.data.marriedFileSingle | taxWithholdingMarriedFileSingle}}</span>
+            <span role="gridcell" class="w4-modal-table-col-1 w4-table-item semibold text-center margin-left" ng-if="item.data.percentageGross !== null && item.data.percentageGross !== 0" tabindex="0">{{item.data.percentageGross}}</span>
+            <span role="gridcell" class="w4-modal-table-col-1 w4-table-item semibold text-center margin-left" ng-if="item.data.dependentAllowances !== null" tabindex="0">{{item.data.dependentAllowances}}</span>
+            <span role="gridcell" class="w4-modal-table-col-1 w4-table-item semibold text-center margin-left" ng-if="item.data.annualExemptionAmount !== null" tabindex="0">{{item.data.annualExemptionAmount }}</span>
+      	</div>
+
+
+    </div>
+</div>

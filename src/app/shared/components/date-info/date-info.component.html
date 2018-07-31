@@ -1,0 +1,12 @@
+<div class="text-center">
+	<h3 class="date-info-title" ng-class="{'secondary': $ctrl.titleColor === 'secondary'}">{{$ctrl.titles | translate}}</h3>
+	<div ng-if="$ctrl.date">
+		<div id="{{$ctrl.customId}}month" class="date-info-month">{{$ctrl.date | date: 'MMM'  | uppercase}}</div>
+		<div id="{{$ctrl.customId}}date" class="date-info-date">{{$ctrl.date | date: 'd'}}</div>
+		<div id="{{$ctrl.customId}}days" class="date-info-days-ago">{{$ctrl.date | daysFromNow}}</div>
+	</div>
+	<div ng-if="!$ctrl.date">
+		<div class="date-info-month">&nbsp;</div>
+        <div class="date-info-days-ago">{{ 'not-available' | translate}}</div>
+	</div>
+</div>

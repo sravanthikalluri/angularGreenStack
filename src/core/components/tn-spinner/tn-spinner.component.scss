@@ -1,0 +1,23 @@
+.spinner {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  top: 50%;
+  left: 50%;
+  margin-left: -50px;
+  vertical-align: middle;
+  background: url(/assets/images/loading.gif);
+  background-size: 100%;
+  z-index: 100000;
+}
+
+.offscreen{
+  clip-path: inset(100%);
+  clip: rect(1px 1px 1px 1px); /* IE 6/7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; /* added line */
+  width: 1px;
+}

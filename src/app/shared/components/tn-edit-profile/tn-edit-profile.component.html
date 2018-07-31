@@ -1,0 +1,229 @@
+<div class="editProfile">
+	<form class="row" name="editProfileForm" no-validate>
+		<div class="col-sm-offset-1 col-sm-9">
+			<br><br>
+
+			<div class="tn-edit-profile-section">
+				<div class="row">
+					<div class="tn-edit-profile-section">
+						<div class="tn-edit-profile-section-title">{{'edit-profile-home-address' | translate}}</div>
+						<br>
+
+						<div class="row">
+							<tn-input-container class="col-sm-5"
+												ng-class="{'is-invalid': editProfileForm.address1.$invalid && editProfileForm.address1.$touched}">
+								<tn-input-label>{{'edit-profile-address1' | translate}}</tn-input-label>
+								<input ng-model="$ctrl.data.address.address1"
+									   type="text"
+									   name="address1"
+									   maxlength="54"
+									   validate-address
+									   required>
+
+								<div class="tn-input-error" ng-messages="editProfileForm.address1.$error"
+									 ng-show="editProfileForm.address1.$invalid && editProfileForm.address1.$touched">
+									<div ng-message="required" aria-live="polite">Required.</div>
+									<div ng-message="address" aria-live="polite">Not a valid address.</div>
+								</div>
+							</tn-input-container>
+							<tn-input-container class="col-sm-offset-2 col-sm-5"
+												ng-class="{'is-invalid': editProfileForm.address2.$invalid && editProfileForm.address2.$touched}">
+								<tn-input-label>{{'edit-profile-address2' | translate}}</tn-input-label>
+								<input ng-model="$ctrl.data.address.address2"
+									   type="text"
+									   name="address2"
+									   maxlength="54"
+									   validate-address>
+
+								<div class="tn-input-error" ng-messages="editProfileForm.address2.$error"
+									 ng-show="editProfileForm.address2.$invalid && editProfileForm.address2.$touched">
+									<div ng-message="required" aria-live="polite">Required.</div>
+									<div ng-message="address" aria-live="polite">Not a valid address.</div>
+								</div>
+							</tn-input-container>
+						</div>
+						<br>
+
+						<div class="row">
+							<tn-input-container class="col-sm-5"
+												ng-class="{'is-invalid': editProfileForm.city.$invalid && editProfileForm.city.$touched}">
+								<tn-input-label>{{'edit-profile-city' | translate}}</tn-input-label>
+								<input ng-model="$ctrl.data.address.city"
+									   type="text"
+									   name="city"
+									   maxlength="49"
+									   validate-city
+									   required>
+								<div class="tn-input-error" ng-messages="editProfileForm.city.$error"
+									 ng-show="editProfileForm.city.$invalid && editProfileForm.city.$touched">
+									<div ng-message="required" aria-live="polite">Required.</div>
+									<div ng-message="city" aria-live="polite">Letters only</div>
+								</div>
+							</tn-input-container>
+							<tn-input-container class="col-sm-offset-2 col-sm-5">
+								<tn-input-label>{{'edit-profile-state' | translate}}</tn-input-label>
+								<div class="select-style">
+									<select ng-options="state as state.value for state in $ctrl.data.dropdown.usStates track by state.key"
+											ng-model="$ctrl.data.selected.state"
+											ng-change="$ctrl.data.address.state = $ctrl.selected.state.key"
+											name="state"
+											required>
+										<option value="" disabled selected>Select a State</option>
+									</select>
+								</div>
+							</tn-input-container>
+						</div>
+						<br>
+
+						<div class="row">
+							<tn-input-container class="col-sm-5"
+												ng-class="{'is-invalid': editProfileForm.zip.$invalid && editProfileForm.zip.$touched}">
+								<tn-input-label>{{'edit-profile-zip' | translate}}</tn-input-label>
+								<input ng-model="$ctrl.data.address.postalCode"
+									   type="text"
+									   name="zip"
+									   inputmode="numeric"
+									   pattern="[0-9]*"
+									   maxlength="5"
+									   validate-zip
+									   required>
+
+								<div class="tn-input-error" ng-messages="editProfileForm.zip.$error"
+									 ng-show="editProfileForm.zip.$invalid && editProfileForm.zip.$touched">
+									<div ng-message="required" aria-live="polite">Required.</div>
+									<div ng-message="zip" aria-live="polite">Numbers only.</div>
+									<div ng-message="zipLength" aria-live="polite">Must be 5 digits.</div>
+								</div>
+							</tn-input-container>
+							<tn-input-container class="col-sm-offset-2 col-sm-5">
+								<tn-input-label>{{'edit-profile-country' | translate}}</tn-input-label>
+								<div class="select-style">
+									<select ng-options="country as country.value for country in $ctrl.data.dropdown.countries track by country.key"
+											ng-change="onCountryChange()"
+											ng-model="$ctrl.data.selected.country"
+											name="country"
+											required>
+										<option value="" selected disabled>Select a Country</option>
+									</select>
+								</div>
+							</tn-input-container>
+						</div>
+					</div>
+					<hr/>
+					<br>
+
+					<div class="tn-edit-profile-section">
+						<div class="tn-edit-profile-section-title">{{'edit-profile-personal-identification' |
+							translate}}
+						</div>
+						<br>
+
+						<div class="row">
+							<tn-input-container class="col-sm-5">
+								<tn-input-label>{{'edit-profile-date-of-birth' | translate}}</tn-input-label>
+								<input ng-model="$ctrl.data.personalInfo.birthDate"
+									   name="birthDate"
+									   mask="99/99/9999"
+									   restrict="reject"
+									   ng-value="{{$ctrl.data.personalInfo.birthDate | date: 'MM/dd/yyyy'}}"
+									   placeholder="MM/DD/YYYY"
+									   inputmode="text">
+							</tn-input-container>
+							<tn-input-container class="col-sm-offset-2 col-sm-5">
+								<tn-input-label>{{'edit-profile-gender' | translate}}</tn-input-label>
+								<div class="select-style">
+									<select ng-options="gender as gender.value for gender in $ctrl.data.dropdown.genders track by gender.key"
+											ng-change="$ctrl.data.personalInfo.gender = $ctrl.data.selected.gender.key"
+											ng-model="$ctrl.data.selected.gender"
+											name="gender"
+											required>
+										<option value="" selected disabled>Select a Gender</option>
+									</select>
+								</div>
+							</tn-input-container>
+						</div>
+						<br>
+
+						<div class="row">
+							<tn-input-container class="col-sm-5">
+								<tn-input-label>{{'edit-profile-ethnicity' | translate}}</tn-input-label>
+								<div class="select-style">
+									<select ng-options="ethnicity as ethnicity.value for ethnicity in $ctrl.data.dropdown.ethnicities track by ethnicity.key"
+											ng-change="$ctrl.data.personalInfo.ethnicity = $ctrl.data.selected.ethnicity.key"
+											ng-model="$ctrl.data.selected.ethnicity"
+											name="ethnicity"
+											required>
+										<option value="" selected disabled>Select an Ethnicity</option>
+									</select>
+								</div>
+							</tn-input-container>
+							<tn-input-container class="col-sm-offset-2 col-sm-5">
+								<tn-input-label>{{'edit-profile-ssn-number' | translate}}</tn-input-label>
+								<input ng-model="$ctrl.data.personalInfo.ssnId"
+									   name="ssn" disabled>
+							</tn-input-container>
+
+						</div>
+						<br>
+
+					</div>
+					<br>
+
+					<div class="tn-edit-profile-section">
+						<div class="tn-edit-profile-section-title">{{'edit-profile-personal-status' | translate}}</div>
+						<br>
+
+						<div class="row">
+							<tn-input-container class="col-sm-5">
+								<tn-input-label>{{'edit-profile-marital-status' | translate}}</tn-input-label>
+								<div class="select-style">
+									<select ng-options="maritalStatus as maritalStatus.value for maritalStatus in $ctrl.data.dropdown.maritalStatuses track by maritalStatus.key"
+											ng-change="$ctrl.data.personalInfo.maritalStatus = $ctrl.data.selected.maritalStatus.key"
+											ng-model="$ctrl.data.selected.maritalStatus"
+											name="maritalStatus"
+											required>
+										<option value="" selected disabled>Select a Marital Status</option>
+									</select>
+								</div>
+							</tn-input-container>
+							<tn-input-container class="col-sm-offset-2 col-sm-5">
+								<tn-input-label>{{'edit-profile-military-status' | translate}}</tn-input-label>
+								<div class="select-style">
+									<select ng-options="militaryStatus as militaryStatus.value for militaryStatus in $ctrl.data.dropdown.militaryStatuses track by militaryStatus.key"
+											ng-change="$ctrl.data.personalInfo.militaryStatus = $ctrl.data.selected.militaryStatus.key"
+											ng-model="$ctrl.data.selected.militaryStatus"
+											name="militaryStatus"
+											required>
+										<option value="" selected disabled>Select a Military Status</option>
+									</select>
+								</div>
+							</tn-input-container>
+						</div>
+						<br>
+
+						<div class="row">
+							<tn-input-container class="col-sm-5">
+								<tn-input-label>{{'edit-profile-citizenship' | translate}}</tn-input-label>
+								<input ng-model="$ctrl.data.personalInfo.citizenShipStatus"
+									   name="ssn" disabled>
+							</tn-input-container>
+							<tn-input-container class="col-sm-offset-2 col-sm-5">
+								<tn-input-label>{{'edit-profile-disabilityStatus' | translate}}</tn-input-label>
+								<input ng-model="$ctrl.data.personalInfo.disabilityStatus"
+									   name="ssn" disabled>
+							</tn-input-container>
+						</div>
+					</div>
+					<div class="button-group">
+						<button tn-button ui-sref="app.main.profile">{{'edit-profile-cancel' | translate}}</button>
+						<button tn-action-button ng-click="$ctrl.savePersonalSection(editProfileForm)">
+							{{'edit-profile-save-changes' | translate}}
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+

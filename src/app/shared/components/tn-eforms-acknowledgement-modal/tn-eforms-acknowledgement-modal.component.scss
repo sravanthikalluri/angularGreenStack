@@ -1,0 +1,16 @@
+@import 'main';
+
+.eforms-modal-close-icon{
+  margin:20px;
+  float: right;
+  color: $gray;
+}
+.eforms-modal-content{
+  padding: 20px 50px 20px 50px;
+  height:250px;
+  .eforms-text{
+	margin-bottom:40px;
+  }
+}
+
+

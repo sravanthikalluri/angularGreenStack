@@ -1,0 +1,16 @@
+{
+	"data":{
+		"employeeId":"00001002198",
+		"alternateId":null,
+		"workEligibility":{
+			"citizenshipStatus":"A citizen or national of the United States",
+			"effectiveDate":"2001-04-23",
+			"visa":null,
+			"USWorkEligibility":null
+		}
+	},
+	"_requestId":"229fb35f-5dcf-4466-b577-1fb1ece94be0",
+	"_statusCode":"200",
+	"_statusText":"OK",
+	"_statusMessage":"Retrieved Employee CitizenShip Successfully "
+}

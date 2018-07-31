@@ -1,0 +1,19 @@
+<div class="viewHistory">
+	<h6 class="semibold">
+		<a class="hand" ng-click="$ctrl.openViewHistory = !$ctrl.openViewHistory;" ng-show="!$ctrl.openViewHistory">View History</a>
+	</h6>
+	<div class="viewHistoryContent" ng-show="$ctrl.openViewHistory">
+		<div ng-repeat="data in $ctrl.data">
+
+			<!--Proxy View History Start-->
+			<div class="details historyOld" ng-if="$ctrl.sectionType == 'proxy'">
+				<h5 class="semibold contactinfo" data-ng-bind="'{{data.firstName }}' + ' {{data.lastName }}'"><small>{{data.positionDesc}}</small></h5>
+				<h5 class="contactDetails"><span><i class="icon-icon_phone"></i>{{data.workPhone}}</span><span><i class="icon-icon_contact"></i>{{data.url}}</span></h5>
+				<h5 class="effectiveDate"><span>EffectiveDate:</span><span>{{data.endDate}}</span><span>&#45;</span><span>{{data.effectiveDate}}</span></h5>
+			</div>
+			<!--Proxy View History End-->
+
+		</div>
+		<h6 class="semibold"><a class="hand" ng-show="$ctrl.openViewHistory" ng-click="$ctrl.openViewHistory = !$ctrl.openViewHistory;">Close History</a></h6>
+	</div>
+</div>

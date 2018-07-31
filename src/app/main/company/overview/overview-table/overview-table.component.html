@@ -1,0 +1,77 @@
+<h4 align="center" class="semibold  company-information">
+	{{'company-information' | translate}}
+</h4>
+<div class="row  overview-table">
+	<div class="col-sm-offset-1  col-sm-10  col-sm-offset-1">
+		<div class="row  tn-profile-divider  tn-profile-content" ng-if="$ctrl.headquarter.phone">
+			<div class="col-sm-1  tn-align-overview-icon">
+				<i class="tn-icon  icon-icon_phone"></i>
+			</div>
+			<div class="col-sm-4  titles">
+				<p class="overview-label">{{'Phone' | translate}}</p>
+			</div>
+			<div class="col-sm-7  tn-right-align-grid-text">
+				<p id="companyPhone" class="company-info">{{$ctrl.headquarter.phone | telMfaFormat}}</p>
+			</div>
+		</div>
+
+		<div class="row  tn-profile-divider  tn-profile-content" ng-if="$ctrl.headquarter.email">
+			<div class="col-sm-1  tn-align-overview-icon">
+				<i class="tn-icon  icon-icon_email"></i>
+			</div>
+			<div class="col-sm-4  titles">
+				<p class="overview-label">{{'profile-email' | translate}}</p>
+			</div>
+			<div class="col-sm-7  tn-right-align-grid-text ">
+				<p class="company-info"></p>
+			</div>
+		</div>
+
+		<!--<div class="row  tn-profile-divider  tn-profile-content  " ng-if="$ctrl.headquarter.officeHours && $ctrl.headquarter.officeHours.length !== 0">-->
+			<!--<div class="col-sm-1  tn-align-overview-icon">-->
+				<!--<i class="tn-icon  icon-icon_time"></i>-->
+			<!--</div>-->
+			<!--<div class="col-sm-4  titles">-->
+				<!--<h5 class="overview-label">{{'hours-of-operation' | translate}}</h5>-->
+			<!--</div>-->
+			<!--<div class="col-sm-7  tn-right-align-grid-text"-->
+				 <!--ng-if="$ctrl.headquarter.officeHours-->
+						<!--&& $ctrl.headquarter.officeHours.length !== 0">-->
+				<!--<h5 class="company-open-days">{{'monday-thru-friday' | translate}}</h5>-->
+				<!--<h5 class="company-timings" id="companyOfficeHours">{{$ctrl.headquarter.officeHours}}</h5>-->
+				<!--<h5 class="company-closed-days">{{'saturday-thru-sunday' | translate}}</h5>-->
+				<!--<h5 class="company-timings">{{'closed' | translate}}</h5>-->
+			<!--</div>-->
+		<!--</div>-->
+
+		<div ng-class="$ctrl.headquarter.website ? 'row tn-profile-divider tn-profile-content' : 'row tn-profile-content'">
+			<div class="col-sm-1  tn-align-overview-icon">
+				<i class="tn-icon  icon-icon_location"></i>
+			</div>
+			<div class="col-sm-4  titles">
+				<p class="overview-label">{{'corporate-headquarters' | translate}}</p>
+			</div>
+			<div class="col-sm-7  tn-right-align-grid-text"
+				 ng-if="$ctrl.headquarter">
+				<p id="companyAddress1" class="company-info">{{$ctrl.headquarter.address1}}</p>
+				<p id="companyAddress2" class="company-info">{{$ctrl.headquarter.address2}}</p>
+				<p id="companyCityStateCountryPostalCode" class="company-info">
+					{{$ctrl.headquarter.city}},&nbsp; {{$ctrl.headquarter.state}},&nbsp; {{$ctrl.headquarter.country}}
+					&nbsp;{{$ctrl.headquarter.postalCode}}
+				</p>
+			</div>
+		</div>
+
+		<div class="row  service-date  tn-profile-content" ng-if="$ctrl.headquarter.website">
+			<div class="col-sm-1  tn-align-overview-icon">
+				<i class="tn-icon  icon-icon_employee"></i>
+			</div>
+			<div class="col-sm-4  titles">
+				<p class="overview-label">{{'website' | translate}}</p>
+			</div>
+			<div class="col-sm-7  tn-right-align-grid-text">
+				<p class="company-info"></p>
+			</div>
+		</div>
+	</div>
+</div>

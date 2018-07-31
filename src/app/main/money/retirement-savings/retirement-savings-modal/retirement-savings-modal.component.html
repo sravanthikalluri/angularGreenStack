@@ -1,0 +1,135 @@
+<tn-error-banner error-data="$ctrl.errorAlert"></tn-error-banner>
+<div class="modal-background savings-modal-background">
+	<div class="primary-container">
+	 <form class="row" name="editRetirementSavingsForm" novalidate>
+		<tn-card class="savings-modal">
+			<span id="changeGoalClose" ng-click="$ctrl.closeModal()" class="company-modal-close-icon
+													   icon-close-temp hand">
+			</span>
+			<h4 align="center" class="savings-modal-heading">
+				{{'change-annual-goal-amount'| translate}}
+			</h4>
+			<tn-card-content>
+				<div class="savings-modal-content">
+					<div class="savings-modal-icon" ng-click="$ctrl.radioClickFn('goal')">
+						<i id="setGoalAmt" ng-class="$ctrl.selectedType === 'goal' ? 'savings-modal-blue icon-icon_radiobutton_select' : 'savings-modal-gray icon-icon_radiobutton_empty'" class="tn-icon"></i>
+					</div>
+					<div class="savings-modal-amount">
+						<h6 class="savings-modal-sub-heading semibold">
+							{{'set-a-goal-amount'| translate}}
+						</h6>
+						<h6 class="savings-modal-sub-heading semibold
+								   savings-modal-gray">
+							{{'amount-must-not-exceed-the-federal-maximum'
+							   | translate}}
+						</h6>
+
+						<div class="savings-modal-sub-heading" ng-if="$ctrl.selectedType === 'goal'">
+							<tn-input-container ng-class="{'is-invalid': editRetirementSavingsForm.goalAmount.$invalid && editRetirementSavingsForm.goalAmount.$touched}">
+								<input id="setGoalAmtText"
+										name="goalAmount"
+										value="{{$ctrl.goalAmount | currency:'$'}}"
+										ng-model="$ctrl.goalAmount"
+										tn-input-restriction decimals-only="true"
+										data-zero-amount-validation="true"
+										ng-change="$ctrl.goalChangeFn($ctrl.goalAmount)"
+										data-fedral-amount="{{$ctrl.savingsData.federalAmount}}"
+										aria-label="goal ammount"
+									    tn-currency-format="currency"
+										validate-retirement-amount
+										required
+										type="text">
+
+								<div class="tn-input-error" ng-messages="editRetirementSavingsForm.goalAmount.$error"
+									 ng-show="editRetirementSavingsForm.goalAmount.$invalid && editRetirementSavingsForm.goalAmount.$touched">
+									<div ng-message="required" aria-live="polite">Required.</div>
+									<div ng-message="zeroAmountValidation" aria-live="polite">{{'money.retirement_plan.validations.setGoalAmtNotZero' | translate }}</div>
+									<div ng-message="retirementAmountCondition" aria-live="polite">{{'money.retirement_plan.validations.setGoalAmtCondi' | translate}}</div>
+								</div>
+
+							</tn-input-container>
+						</div>
+
+					</div>
+
+				</div>
+				<hr/>
+				<div class="savings-modal-content">
+					<div class="savings-modal-icon" ng-click="$ctrl.radioClickFn('federal')">
+						<i id="useFederalMax" ng-class="$ctrl.selectedType === 'federal' ? 'savings-modal-blue icon-icon_radiobutton_select' : 'savings-modal-gray icon-icon_radiobutton_empty'" class="tn-icon"></i>
+					</div>
+					<div class="savings-modal-amount">
+						<h6 class="savings-modal-sub-heading semibold" >
+							{{'use-federal-amount-maximum' | translate}}
+						</h6>
+						<div class="savings-modal-sub-heading">
+							<tn-input-container>
+								<tn-input-label class="savings-modal-icon">
+									{{'federal-amount-allowed' | translate}}:&nbsp;
+									<!--<span class="tn-tooltip tn-tooltip-top">
+									<i class="icon-icon_UA savings-modal-blue"></i>
+									<div class="tn-tooltip-content">
+										<p>{{'money.retirement_plan.fed_amount_help' | translate}}</p>
+									</div>
+									</span>-->
+								<tn-tooltip role="tooltip" class="tn-retirements-hastooltip" msg="'money.retirement_plan.prior_contribution_help'"></tn-tooltip>
+								</tn-input-label><br/>
+								<span id="federalamount" class="medium">{{$ctrl.savingsData.federalAmount | currencyFilter}}</span>
+							</tn-input-container>
+						</div>
+						<div class="savings-modal-sub-heading" ng-if="$ctrl.selectedType === 'federal'">
+							<tn-input-container ng-class="{'is-invalid': editRetirementSavingsForm.federalAmount.$invalid && editRetirementSavingsForm.federalAmount.$touched}">
+								<tn-input-label class="savings-modal-icon">
+									{{'prior-contribution' | translate}}:&nbsp;
+									<!--<span class="tn-tooltip tn-tooltip-top">
+									<i class="icon-icon_UA savings-modal-blue"></i>
+										<span class="tn-tooltip-content">
+											<span>{{}}</span>
+										</span>
+									</span>-->
+									<tn-tooltip role="tooltip" class="tn-retirements-hastooltip" msg="'money.retirement_plan.prior_contribution_help'"></tn-tooltip>
+
+								</tn-input-label><br/>
+								<span class="savings-modal-span">-</span>
+								<input id="priorContribution"
+										name="federalAmount"
+										data-zero-amount-validation="false"
+										tn-input-restriction decimals-only="true"
+										value="{{$ctrl.savingsData.priorContributions | currency:'$'}}"
+										ng-model="$ctrl.savingsData.priorContributions"
+										ng-change="$ctrl.priorChangeFn($ctrl.savingsData.priorContributions)"
+										data-fedral-amount="{{$ctrl.savingsData.federalAmount}}"
+										aria-label="prior contribution"
+									    tn-currency-format="currency"
+										validate-retirement-amount
+										type="text">
+
+								<div class="tn-input-error" ng-messages="editRetirementSavingsForm.federalAmount.$error"
+									 ng-show="editRetirementSavingsForm.federalAmount.$invalid && editRetirementSavingsForm.federalAmount.$touched">
+									<div ng-message="retirementAmountCondition" aria-live="polite">{{'money.retirement_plan.validations.priorAmountCondi' | translate}}</div>
+								</div>
+
+							</tn-input-container>
+							<h6 class="savings-modal-sub-heading semibold
+								   	   savings-modal-gray">
+									{{'current-year-maximum-contribution' | translate}}
+							</h6>
+							<h5 class="savings-modal-sub-heading semibold">
+								{{$ctrl.maximumContribution | currency:'$'}}
+							</h5>
+						</div>
+					</div>
+				</div>
+
+			</tn-card-content>
+			<tn-card-header class="savings-modal-border"></tn-card-header>
+			<tn-card-footer class="savings-modal-button-group">
+				<button id="changeGoalCancelBtn" tn-button ng-click="$ctrl.closeModal()"> {{'edit-profile-cancel' | translate}}</button>
+				<button id="changeGoalSaveBtn" tn-action-button class="button-save" ng-click="$ctrl.saveMethod(editRetirementSavingsForm)">
+					{{'save' | translate }}
+				</button>
+			</tn-card-footer>
+		</tn-card>
+		</form>
+	</div>
+</div>

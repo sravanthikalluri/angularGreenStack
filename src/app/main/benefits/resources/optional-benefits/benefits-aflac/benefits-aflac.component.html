@@ -1,0 +1,84 @@
+
+<div class="modalPad">
+	<div>
+		<div>
+			<div>
+				<p><b><span>{{'my_benefits.aflacBenefits.aflacTrinetBenf' | translate}} </span></b>
+				</p>
+				<p><b><span> {{'my_benefits.aflacBenefits.benefitEligibility' | translate}}</span></b>
+				</p>
+			</div>
+			<div ng-if="$ctrl.showVoluntaryLinks != true">
+				<table class="table table-striped">
+					<tr>
+						<td width="25%">
+							<strong>{{'my_benefits.policies.accident_insurance' | translate}}</strong>
+						</td>
+						<td width="*%">{{'my_benefits.policies.accident_statement' | translate}}</td>
+					</tr>
+					<tr>
+						<td width="25%">
+							<strong>{{'my_benefits.policies.cancer_insurance' | translate}}</strong>
+						</td>
+						<td width="*%">{{'my_benefits.aflacBenefits.aflacInsuPolicy' | translate}}
+						</td>
+					</tr>
+					<tr>
+						<td width="25%">
+							<strong>{{'my_benefits.policies.dental_insurance' | translate}}</strong>
+						</td>
+						<td width="*%">{{'my_benefits.policies.dental_statement' | translate}}</td>
+					</tr>
+					<tr>
+						<td width="25%">
+							<strong>{{'my_benefits.policies.hospital_confinement' | translate}}</strong>
+						</td>
+						<td width="*%">{{'my_benefits.policies.hospital_statement' | translate}}</td>
+					</tr>
+					<tr>
+						<td width="25%">
+							<strong>{{'my_benefits.policies.hospital_intensive' | translate}}</strong>
+						</td>
+						<td width="*%">{{'my_benefits.policies.hospital_aflac' | translate}}</td>
+					</tr>
+					<tr>
+						<td width="25%">
+							<strong>{{'my_benefits.policies.life_insurance' | translate}}</strong>
+						</td>
+						<td width="*%">{{'my_benefits.policies.aflac_variety' | translate}}</td>
+					</tr>
+					<tr>
+						<td width="25%">
+							<strong>{{'my_benefits.policies.specified_insurance' | translate}}</strong>
+						</td>
+						<td width="*%">{{'my_benefits.policies.aflac_specified' | translate}}</td>
+					</tr>
+					<tr>
+						<td width="25%">
+							<strong>{{'my_benefits.policies.short_disability' | translate}}</strong>
+						</td>
+						<td width="*%">{{'my_benefits.policies.aflac_short_term' | translate}}</td>
+					</tr>
+					<tr>
+						<td width="25%">
+							<strong>{{'my_benefits.policies.vision_insurance' | translate}}</strong>
+						</td>
+						<td width="*%">{{'my_benefits.policies.aflac_insurance' | translate}}</td>
+					</tr>
+				</table>
+			</div>
+			<div ng-if="$ctrl.showVoluntaryLinks">
+				<div ng-repeat="pdf in $ctrl.voluntaryLinks">
+					<a ng-href="{{pdf.url | contentUrl}}" target="_blank">{{pdf.text}}</a>
+				</div>
+				<br>
+			</div>
+			<div class="clearfix">
+				<p><b> {{'my_benefits.aflacBenefits.aflacinfoRegard' | translate}}
+					<a id="aflacAcctLink-{{$ctrl.indexId}}" href="#/ssowidget/aflac"
+					   target="_blank" class="aflacDis"> {{'my_benefits.aflacBenefits.aflacWebsite' | translate}}</a> </b></p>
+				<div class="clearfix">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+</div>

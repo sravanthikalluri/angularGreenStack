@@ -1,0 +1,18 @@
+<tn-input-container ng-class="{'is-invalid'  : $ctrl.input.$invalid && ($ctrl.input.$touched || $ctrl.formName.$submitted), 'is-disabled' : $ctrl.isDisabled }">
+	<tn-input-label>
+		<label for="{{$ctrl.componentId}}">
+			{{$ctrl.label}} (max {{250-$ctrl.fieldValue.length}} characters)
+		</label>
+	</tn-input-label>
+	<textarea rows="4" 
+			  type="text"
+			  name="{{$ctrl.fieldName}}"
+			  ng-model="$ctrl.fieldValue"
+			  ng-change="$ctrl.update($ctrl.fieldValue)"
+			  maxlength="250" 
+			  ng-trim="false"
+			  id="{{$ctrl.componentId}}"
+			  ng-required="$ctrl.isRequired"
+			  ng-disabled="$ctrl.isDisabled"
+			  aria-label="{{$ctrl.label}}">
+</tn-input-container>

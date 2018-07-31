@@ -1,0 +1,9 @@
+<div class="tn-menu-container">
+	<div class="tn-menu"  role="navigation">
+		<tn-spinner ng-show="$ctrl.showSpinner"></tn-spinner>
+		<ng-repeat ng-repeat="menu in $ctrl.menus" ng-hide="$ctrl.showSpinner">
+			<tn-menu-link menu="menu" permission="$ctrl.componentsPermissions" ng-if="menu.type === 'link'" on-select="$ctrl.select($event, isExternal, redirectUrl)" close-slider="$ctrl.onSelect"></tn-menu-link>
+			<tn-menu-toggle menu="menu" ng-if="menu.type === 'toggle'" on-select="$ctrl.select($event, isExternal, redirectUrl)"  is-external="$ctrl.isExternal" redirect-url="$ctrl.redirectUrl" close-slider="$ctrl.onSelect"></tn-menu-toggle>
+		</ng-repeat>
+	</div>
+</div>

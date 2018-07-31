@@ -1,0 +1,53 @@
+@import "main";
+
+.viewHistory{
+	padding: 16px 18px;
+	a{
+		color:$trinet-orange;
+	 }
+	 .viewHistoryContent{
+	 	border:1px solid $secondary-divider;
+	 	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.75);
+        padding: 5px 10px;
+        background:#fff;
+        .details{
+           	margin-top:15px;
+           	padding:5px;
+        	&:first-child{
+        		margin-top:0;
+        	}
+			&:first-child{
+				margin-bottom:15px;
+			}
+			&.historyFeature{
+				border: 2px dotted #3DB7E4!important;
+			}
+			&.historyOld{
+				border: 1px solid #3DB7E4!important;
+			}
+        }
+        .contactinfo{
+        		small{
+        			margin-left:10px;
+        			color:$font-color-secondary;
+        		}
+        	}
+        	.contactDetails{
+        		span{
+        			i{
+        				margin-right:10px;
+        			}
+        	&:last-child{
+        		i{
+        			margin:0 10px;
+        		}
+        	}
+        		}
+        	}
+        	.effectiveDate{
+        		span{
+        			margin-right:10px;
+        		}
+        	}
+	 }
+}

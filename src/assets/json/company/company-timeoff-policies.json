@@ -1,0 +1,216 @@
+{
+  "contentObjects":{
+	"fulltimeEligibilityClass":{
+	  "content":"full-time"
+	},
+	"fulltimeParttimeEligibilityClass":{
+	  "content":"full- and part-time"
+	},
+	"otherPaidTimeOffHeading":{
+	  "content":"Other Paid Time Off"
+	},
+	"paidTimeOff":{
+	  "content":"Paid Time Off"
+	},
+	"vacation":{
+	  "content":"Vacation"
+	},
+	"sickLeave":{
+	  "content":"Sick Leave"
+	},
+	"personalLeave":{
+	  "content":"Personal Leave"
+	},
+	"noLabel":{
+	  "content":" no"
+	},
+	"none":{
+	  "content":"None"
+	},
+	"companyName":{
+	  "content":"{companyName}"
+	},
+	"documentTitle":{
+	  "content":"Paid Time Off Policies"
+	},
+	"companyHolidaysHeading":{
+	  "content":"Holidays:"
+	},
+	"companyOffersHolidays":{
+	  "content":"&nbsp;{companyName} offers {numberOfCompanyHolidays} company holiday(s).",
+	  "rule":"CompanyOffersHolidays"
+	},
+	"companyHolidaysLink":{
+	  "content":"",
+	  "rule":"CompanyOffersHolidays"
+	},
+	"CompanyOffersNoHolidays":{
+	  "content":"",
+	  "rule":"CompanyOffersNoHolidays"
+	},
+	"restrictedFloatingHolidaysCountPart":{
+	  "content":"In addition, we offer {numberOfRestrictedFloatingHolidays} Restricted Floating Holiday(s) during the calendar year to regular {holidayEligibilityClass} employees.",
+	  "rule":"CompanyOffersFloatingHolidays.Restricted"
+	},
+	"restrictedFloatingHolidaysBirthAndAnnPart":{
+	  "content":" Restricted Floating Holiday(s) are available only for birthdays and anniversaries.",
+	  "rule":{
+		"And":[
+		  "CompanyOffersFloatingHolidays.Restricted",
+		  "FloatingHolidaysType.BirthdayAndAnniversary"
+		]
+	  }
+	},
+	"restrictedFloatingHolidaysBirthdayPart":{
+	  "content":" Restricted Floating Holiday will be available only for birthday.",
+	  "rule":{
+		"And":[
+		  "CompanyOffersFloatingHolidays.Restricted",
+		  "FloatingHolidaysType.Birthday"
+		]
+	  }
+	},
+	"restrictedFloatingHolidaysAnniversaryPart":{
+	  "content":" Restricted Floating Holiday will be available only for anniversary.",
+	  "rule":{
+		"And":[
+		  "CompanyOffersFloatingHolidays.Restricted",
+		  "FloatingHolidaysType.Anniversary"
+		]
+	  }
+	},
+	"restrictedFloatingHolidaysTermPart":{
+	  "content":" A Restricted Floating Holiday may be used on the exact date of such events or on any other day within a week of that date, provided (in either case) that the employee obtains advance management approval for the scheduled usage of the Restricted Floating Holiday. In addition, Restricted Floating Holidays are not carried over from one year to the next and therefore must be used within the calendar year, if at all. There is no payment for unused Restricted Floating Holidays upon termination of employment.",
+	  "rule":"CompanyOffersFloatingHolidays.Restricted"
+	},
+	"unrestrictedFloatingHolidays":{
+	  "content":"",
+	  "rule":"CompanyOffersFloatingHolidays.Unrestricted"
+	},
+	"ptoVacationWaitingPeriodInMonths":{
+	  "content":" a {ptoVacationWaitingPeriod} month(s)"
+	},
+	"ptoVacationSection1":{
+	  "content":"",
+	  "rule":"CompanyOffersPaidTimeOffOrVacation"
+	},
+	"ptoVacationSection2":{
+	  "content":"",
+	  "rule":"CompanyOffersPaidTimeOffOrVacation"
+	},
+	"ptoVacationSection3":{
+	  "content":"",
+	  "rule":"CompanyOffersPaidTimeOffOrVacation"
+	},
+	"ptoVacationVacationCoverage":{
+	  "content":"",
+	  "rule":"PaidTimeOffOrVacation.TRINET"
+	},
+	"ptoVacationPTOCoverage":{
+	  "content":"",
+	  "rule":"PaidTimeOffOrVacation.TNPTO"
+	},
+	"ptoVacationWaitingPeriod":{
+	  "content":"",
+	  "rule":"CompanyOffersPaidTimeOffOrVacation"
+	},
+	"ptoVacationApprovalPaymentTerms":{
+	  "content":"",
+	  "rule":"CompanyOffersPaidTimeOffOrVacation"
+	},
+	"sickLeaveDetails":{
+	  "content":"",
+	  "rule":"CompanyOffersSickLeave"
+	},
+	"sickLeaveWaitingPeriodInMonths":{
+	  "content":" a {sickLeaveWaitingPeriod} month(s)"
+	},
+	"sickLeaveWaitingPeriod":{
+	  "content":"",
+	  "rule":"CompanyOffersSickLeave"
+	},
+	"sickLeaveCarryForward":{
+	  "content":"",
+	  "rule":"CompanyOffersSickLeave"
+	},
+	"personalLeaveWaitingPeriodInMonths":{
+	  "content":" a {personalLeaveWaitingPeriod} month(s)"
+	},
+	"personalLeaveSection1":{
+	  "content":"",
+	  "rule":"CompanyOffersPersonalLeave"
+	},
+	"personalLeaveSection2":{
+	  "rule":"CompanyOffersPersonalLeave"
+	},
+	"personalLeaveSection3":{
+	  "content":"",
+	  "rule":"CompanyOffersPersonalLeave"
+	},
+	"personalLeaveSection4":{
+	  "content":"",
+	  "rule":"CompanyOffersPersonalLeave"
+	},
+	"personalLeaveSection5":{
+	  "content":"",
+	  "rule":"CompanyOffersPersonalLeave"
+	},
+	"accruedBalanceInfo":{
+	  "content":"",
+	  "rule":"CompanyOffersPaidTimeOffPlan"
+	},
+	"addionalPaidLeaveHeading":{
+	  "content":"",
+	  "rule":{
+		"Or":[
+		  "CompanyOffersJuryDutyPaidTimeOff",
+		  "CompanyOffersBereavementPaidTimeOff"
+		]
+	  }
+	},
+	"additionalPaidLeaveWaitingPeriodInMonths":{
+	  "content":" a {additionalPaidLeaveWaitingPeriod} month(s)"
+	},
+	"addionalPaidLeave":{
+	  "content":"",
+	  "rule":{
+		"Or":[
+		  "CompanyOffersJuryDutyPaidTimeOff",
+		  "CompanyOffersBereavementPaidTimeOff"
+		]
+	  }
+	},
+	"juryDutyPaidTimeOffHeading":{
+	  "content":"",
+	  "rule":"CompanyOffersJuryDutyPaidTimeOff"
+	},
+	"juryDutyPaidTimeOff":{
+	  "content":"",
+	  "rule":"CompanyOffersJuryDutyPaidTimeOff"
+	},
+	"bereavementPaidTimeOffHeading":{
+	  "content":"",
+	  "rule":"CompanyOffersBereavementPaidTimeOff"
+	},
+	"bereavementPaidTimeOff":{
+	  "content":"",
+	  "rule":"CompanyOffersBereavementPaidTimeOff"
+	},
+	"otherPaindLeaveOrTimeOff":{
+	  "content":"Other paid leave or time off may be available, depending on the applicable laws where you work."
+	},
+	"companyOffersNoPaidTimeOff":{
+	  "content":"TriNet does not manage paid time off policies for {companyName}.",
+	  "rule":"CompanyOffersNoPaidTimeOff"
+	},
+	"paidTimeOffInfoHeading":{
+	  "content":"Paid Time Off:"
+	},
+	"paidTimeOffInfo":{
+	  "content":"Your company's holiday schedule is updated on an annual basis. The holiday details below outline your paid holidays with applicable eligibility requirements:"
+	},
+	"error_SERVICE":{
+	  "content":"System is unable to process your request at this time. Please try again later."
+	}
+  }
+}

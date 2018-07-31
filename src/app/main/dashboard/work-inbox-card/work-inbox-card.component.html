@@ -1,0 +1,38 @@
+<tn-card class="important-notices-card company_announcements-card" loading="$ctrl.showSpinner">
+	<tn-card-header color="secondary" class="important-notices-header">
+		<i class="icon-icon_work_inbox important-notices-icon"></i>
+		<tn-card-title><h3>{{'Work-inbox-title' | translate}}</h3></tn-card-title>
+	</tn-card-header>
+
+	<tn-card-content class="workInbox-assigned-card" ng-if="$ctrl.assignedTasks.length > 0">
+		<h4 class="workInbox-heading">{{'Work-inbox-my-task' | translate}}</h4>
+		<div class="announcements-card" ng-hide="$ctrl.showSpinner" ng-repeat="item in $ctrl.currentworkInboxAssignedItems">
+			<div class="announcements-card-content">
+				<h5 class="workinbox-taskname semibold" >{{item.headerName}}</h5>
+				<h5 class="announcements-card-desc" ng-repeat="obj in item.subHeadings"><span>{{obj.name}}</span></h5>
+
+			</div>
+		</div>
+		<div class="notifications-footer">
+			<button class="tn-view-button" tn-button ng-click="$ctrl.showAssignedItems()">{{'Work-inbox-view-my-task' | translate}}</button>
+		</div>
+	</tn-card-content>
+
+	<tn-card-content class="workInbox-unassigned-card" ng-if="$ctrl.unAssignedTasks.length > 0">
+		<h4 class="workInbox-heading">{{'Work-inbox-unassigned-tasks' | translate}}</h4>
+		<div  class="announcements-card" ng-hide="$ctrl.showSpinner" ng-repeat="item in $ctrl.currentworkInboxUnAssignedItems">
+			<div class="announcements-card-content">
+				<div class="announcements-card-desc" >{{item.name}}</div>
+			</div>
+		</div>
+		<div class="notifications-footer">
+			<button class="tn-view-button" tn-button ng-click="$ctrl.showUnAssignedItems()">{{'Work-inbox-view-unassigned-tasks' | translate}}</button>
+		</div>
+	</tn-card-content>
+	<tn-card-content ng-if="$ctrl.assignedTasks.length <= 0 && $ctrl.unAssignedTasks.length <= 0">
+		<div  class="announcements-card">
+			<span class="announcements-card-date">{{'Work-inbox-no-items-message' | translate}}</span>
+		</div>
+	</tn-card-content>
+
+</tn-card>

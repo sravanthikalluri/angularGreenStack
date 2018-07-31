@@ -1,0 +1,12 @@
+<div ng-click="$ctrl.goToSSOLink()">
+	<img
+		ng-if="$ctrl.logoUrl"
+		alt="{{$ctrl.companyName}}"
+		ng-src="{{$ctrl.logoUrl}}"
+		ng-class="$ctrl.getCompanyLogoClass()">
+	<span
+		ng-if="!$ctrl.logoUrl"
+		class="tn-company-name">
+			{{$ctrl.companyName}}
+	</span>
+</div>

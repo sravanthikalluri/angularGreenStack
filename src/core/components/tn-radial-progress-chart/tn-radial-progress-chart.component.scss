@@ -1,0 +1,27 @@
+@import 'main';
+
+.tn-radial-progress-chart {
+	path.path-fg {
+	    fill: #49A3FC;
+	}
+
+	path.path-fg-alert {
+	    fill: #9E3039;
+	}
+
+	path.path-bg {
+	    fill: #E8E8E8;
+	}
+
+	tspan.amount {
+		font-size: 48px;
+    	font-weight: 600;
+ 		fill: #30343C;
+	}
+
+	tspan.label {
+		fill: $slate;
+		font-size: 14px;
+		font-weight: 400;
+	}
+}

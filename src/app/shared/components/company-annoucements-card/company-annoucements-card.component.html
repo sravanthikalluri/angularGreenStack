@@ -1,0 +1,27 @@
+<tn-card class="important-notices-card company_announcements-card">
+	<tn-card-header color="secondary" class="important-notices-header">
+		<i class="icon-icon_company_announcements important-notices-icon"></i>
+		<tn-card-title><h3>Company Announcements</h3></tn-card-title>
+	</tn-card-header>
+	<tn-card-content>
+		<tn-spinner ng-show="$ctrl.showSpinner"></tn-spinner>
+		<div class="announcements-card" ng-hide="$ctrl.showSpinner" ng-repeat="announcement in $ctrl.setFullCurrentAnnouncements ">
+			<div class="announcements-card-content">
+				<p class="announcements-card-desc" ><span>{{announcement.title}}</span>
+					<a href="" class="hand blue" ng-if="announcement.isShowMore" ng-click="$ctrl.more(announcement, $index)"> more</a>
+					<a href="" class="hand blue" ng-click="$ctrl.less(announcement, $index)" ng-if="announcement.isShowLess"> less</a>
+				</p>
+				<p class="announcements-card-date">Posted: {{announcement.effectiveDate | date:'MMMM dd, yyyy'}}</p>
+			</div>
+			<div class="announcements-card-image">
+				<!--<i class="icon-icon_company_announcements important-notices-icon"></i>-->
+			</div>
+		</div>
+		<div class="announcements-card" ng-if="$ctrl.announcementsLength === 0" >
+			No announcements at this time
+		</div>
+	</tn-card-content>
+	<p ng-hide="$ctrl.showSpinner || $ctrl.announcementsLength === 0" class="announcements-cards-length">Showing {{$ctrl.currentAnnouncementsLength}} of {{$ctrl.announcementsLength}}
+		<button class="hand blue pull-right" ng-click="$ctrl.showAnnouncements()">View Announcements</button>
+	</p>
+</tn-card>

@@ -1,0 +1,29 @@
+{
+	"data":{
+		"activeWorkProfileList":[
+			{
+				"employeeId":"00001002198",
+				"businessTitle":"Director, Engineering",
+				"compensationBasis":"Annual",
+				"compensationRate":"211500",
+				"deptId":"Hardware",
+				"effectiveDate":"2016-01-01",
+				"employeeStatus":"Active",
+				"employeeType":"Full Time",
+				"jobCode":"1.2 First/Mid Lvl Offcls/Mgrs",
+				"locationId":"MarlboroMA",
+				"supervisorId":"Bruce Fishbein",
+				"serviceDate":"2001-04-23",
+				"standardHours":"40",
+				"regularTemporary":"Regular",
+				"workEmail":"james@hubbardston.com",
+				"workPhone":"123:456-7890",
+				"workSupervisor":" "
+			}
+		]
+	},
+	"_requestId":"c12c75d8-7089-4a0c-89b6-8710620d1d44",
+	"_statusCode":"200",
+	"_statusText":"OK",
+	"_statusMessage":"Retrieved Employee Profiles Successfully "
+}

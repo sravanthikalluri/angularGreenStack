@@ -1,0 +1,58 @@
+/**
+ * Import fonts either via @import url (e.g. from Google Fonts)
+ * or via @font-face when font files are stored locally in /app/fonts
+ */
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url(../assets/fonts/proximanova-light-webfont.woff2) format("woff2"),
+  url(../assets/fonts/proximanova-light-webfont.woff) format("woff"),
+  url(../assets/fonts/proximanova-light-webfont.ttf) format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url(../assets/fonts/proximanova-regular-webfont.woff2) format("woff2"),
+  url(../assets/fonts/proximanova-regular-webfont.woff) format("woff"),
+  url(../assets/fonts/proximanova-regular-webfont.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url(../assets/fonts/proximanova-regularitalic-webfont.ttf) format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url(../assets/fonts/proximanova-semibold-webfont.woff2) format("woff2"),
+  url(../assets/fonts/proximanova-semibold-webfont.woff) format("woff"),
+  url(../assets/fonts/proximanova-semibold-webfont.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url(../assets/fonts/proximanova-bold-webfont.woff2) format("woff2"),
+  url(../assets/fonts/proximanova-bold-webfont.woff) format("woff"),
+  url(../assets/fonts/proximanova-bold-webfont.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/**
+ * Font weight variables
+ */
+$font-weight-ultra-light: 100;
+$font-weight-light: 300;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+.semibold {
+  font-weight: $font-weight-semibold;
+}

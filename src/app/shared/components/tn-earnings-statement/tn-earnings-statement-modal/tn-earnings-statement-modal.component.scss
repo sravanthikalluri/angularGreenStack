@@ -1,0 +1,138 @@
+@import '../../../../../styles/main';
+
+#open-earnings-modal{
+
+	.modal-window {
+		position:fixed;
+	  	background-color: rgba(49,56,74,0.9);
+		top:0px;
+		right:0;
+		bottom:0;
+		left:0;
+		z-index:999;
+		opacity:0;
+		pointer-events:none;
+		height: 100vh;
+		-webkit-transition: opacity 300ms;
+		-moz-transition:    opacity 300ms;
+		transition:         opacity 300ms;
+	}
+	.target {
+		opacity:1;
+		pointer-events:auto;
+	}
+	.modal-window>div {
+		margin:0 14vw;
+	  	padding:2rem;
+		color:#444;
+	}
+	.modal-window header {
+		font-weight:bold;
+	}
+	.modal-close {
+		-webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+	    color: $white !important;
+	    right: 0;
+	    text-align: center;
+	    top: 0;
+	    width: 60px !important;
+	    height: 48px !important;
+	    text-decoration: none;
+	    display: -webkit-box;
+	    display: -ms-flexbox;
+	    display: inline;
+	    padding: 0;
+	    -webkit-box-align: center;
+	    -ms-flex-align: center;
+	    align-items: center;
+	    cursor: pointer;
+	    margin: 10px;
+		vertical-align: middle;
+			&:focus{
+				outline: 3px solid rgb(131,191,252);
+			}
+	}
+	.circle{
+	    background: #474747;
+	    border-radius: 40px;
+    }
+	.vr{
+	    border-left: 1px solid white;
+	    padding: 20px 0;
+	    margin: 15px;
+	}
+	.modal-window h1 {
+	  font-size: 150%;
+	  margin: 0 0 15px;
+	}
+	.content{
+		max-height: 100vh;
+	    min-width: 100vw;
+	    position: absolute;
+	    overflow-y: scroll;
+	    padding:0;
+	    section{
+	    	padding-bottom:20px;
+	    	position:fixed;
+	    	top:0;
+	    	left:0;
+	    	right:0;
+	    	z-index:99999;
+	    }
+	}
+	.modal-header{
+		height: 80px;
+		padding: 20px;
+    	border-bottom: none;
+    	display: flex;
+    	margin: auto ;
+	    -webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+		color:#aaa;
+		right:0;
+		text-align:center;
+		top:0;
+		width:100% !important;
+		height: 70px !important;
+		text-decoration:none;
+	    -webkit-box-align: center;
+	    -ms-flex-align: center;
+	    align-items: center;
+	    cursor: pointer;
+        background: rgba(134, 134, 134, 0);
+	    background: -webkit-linear-gradient(black, rgba(134, 134, 134, 0));
+	    background: -o-linear-gradient(black, rgba(134, 134, 134, 0));
+	    background: -moz-linear-gradient(black, rgba(134, 134, 134, 0));
+	    background: linear-gradient(black, rgba(134, 134, 134, 0));
+	    .filename{
+	    	width: 100%;
+    		text-align: left;
+	    }
+	    h6{
+	    	font-family: Proxima Nova;
+	    	font-size: 14px;
+    	    font-weight: 600;
+    	    color:#fff;
+	    }
+	    .earning-statement-download{
+		  height: 40px;
+		  width: auto;
+		  margin-right: 20px;
+		  background: $white;
+		  color: $blue;
+		  white-space: nowrap;
+		  font-weight: 600;
+	  }
+
+	}
+}
+@media screen\0
+{
+  #open-earnings-modal {
+	section {
+	  display: block;
+	  width: 90%;
+	}
+  }
+}

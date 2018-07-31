@@ -1,0 +1,10 @@
+<tn-card titles="{{'triNet-reports-card-title' | translate}}" loading="$ctrl.showSpinner">
+	<tn-card-content>
+		<p class="margin-top">{{'triNet-reports-message' | translate}} </p>
+	</tn-card-content>
+	<tn-card-actions>
+		<p class="date-info-title" ng-if="$ctrl.remainingDays>1"> {{$ctrl.remainingDays}} {{'onboarding-days-left' | translate}}</p>
+		<p class="date-info-title" ng-if="$ctrl.remainingDays==1"> {{$ctrl.remainingDays}} {{'onboarding-day-left' | translate}}</p>
+		<button ng-click="$ctrl.reDirectToReports()" tn-action-button>{{'triNet-reports-button' | translate}}</button>
+	</tn-card-actions>
+</tn-card>

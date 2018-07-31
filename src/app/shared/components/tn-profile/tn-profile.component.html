@@ -1,0 +1,7 @@
+<div>
+	<tn-profile-work data="$ctrl.data"></tn-profile-work>
+	<tn-profile-personal data="$ctrl.data"></tn-profile-personal>
+	<fieldset ng-disabled="canEdit('emergencycontact')" ng-class="canEdit('emergencycontact') ? 'no-pointer' : ''">
+		<div id="emergencycontact"><tn-profile-emergency data="$ctrl.data"></tn-profile-emergency></div>
+	</fieldset>
+</div>

@@ -1,0 +1,24 @@
+
+@media screen {
+    #printSection {
+        display: none;
+    }
+}
+
+@media print {
+  #printSection, #printSection * {
+	visibility:visible;
+  }
+  .menu-container{
+	display: none;
+  }
+  .header-bar{
+	position: relative !important;
+  }
+  a[href]:after { content: none !important; }
+  #printSection {
+	position:absolute;
+	left:0;
+	top:0;
+  }
+}

@@ -1,0 +1,270 @@
+<div>
+	<alert-view></alert-view>
+	<!-- print code commented due to client request -->
+	<!-- <button id="overPrint" class="print pull-right" value="Print" ng-click="printOverview('accordion')"><span
+             class="icon-icon_print_circle"></span>{{translation.print}}
+     </button>-->
+	<div id="header-bar">
+		<h5 class="benefitoptions-heading">
+			{{'my_benefits.benefitOptions.heading' | translate}}
+		</h5>
+	</div>
+	<div id="accordion">
+		<div id="collapseBenefitOptions">
+			<div>
+				<p class="sponserInfo"><b><span ng-bind-html="$ctrl.sponserInfo"></span></b></p>
+				<div class="ng-scope">
+
+				</div>
+				<p><b>{{$ctrl.benefitsCompanyQuote}}</b></p>
+				<h5 class="text-center plan-title" translate="head1" ng-bind-html="$ctrl.benefitsPlanTitle"></h5>
+				<div>
+					<p translate="text2" ng-bind-html="$ctrl.trinetBenefitPlanPhrase"></p>
+					<p translate="text2" ng-bind-html="$ctrl.benefitsElectWaivePhrase"></p>
+
+					<p>
+						<u><b><span ng-bind-html="$ctrl.medical"></span></b></u><br>
+					<p translate="subtext1" ng-bind-html="$ctrl.trinetMedicalCarrierInfo"></p>
+					</p>
+					<p ng-if="$ctrl.trinetMedicalCarrierInfo !=''">
+						<a id="medicalPlansViewLink" href="" ng-click="$ctrl.openStatePlanModal('medicalPlansList');" class="pull-right">
+							{{'my_benefits.benefitOptions.viewPlanState' | translate}}
+						</a></p>
+					<div class="clearfix"></div>
+					<p>
+						<u><b><span ng-bind-html="$ctrl.dental"></span></b></u><br>
+						<span ng-bind-html="$ctrl.trinetDentalCarrierInfo"></span>
+
+					</p>
+					<p ng-if="$ctrl.trinetDentalCarrierInfo !=''">
+						<a id="dentalPlansViewLink" href="" ng-click="$ctrl.openStatePlanModal('dentalPlansList')" class="pull-right">
+							{{'my_benefits.benefitOptions.viewPlanState' | translate }}
+						</a></p>
+					<div class="clearfix"></div>
+					<p><u><b><span ng-bind-html="$ctrl.vision"></span></b></u><br>
+						<span ng-bind-html="$ctrl.trinetVisionCarrierInfo"></span>
+					</p>
+					<p ng-if="$ctrl.trinetVisionCarrierInfo !=''">
+						<a id="visionPlansViewLink" href="" ng-click="$ctrl.openStatePlanModal('visionPlansList')" class="pull-right">
+							{{ 'my_benefits.benefitOptions.viewPlanState' | translate}}
+						</a></p>
+					<div class="clearfix"></div>
+					</p>
+					<p ng-bind-html="$ctrl.benefitsFundingInfo">
+					</p>
+
+					<p ng-bind-html="$ctrl.hsaContribution">
+					</p>
+
+					<p ng-bind-html="$ctrl.hsaContributionNote">
+					</p>
+
+					<table class="table small table-striped">
+						<thead>
+						<tr>
+							<th colspan="2" ng-bind-html="$ctrl.paymentCapTableTitle"></th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr></tr>
+						<tr ng-if="!$ctrl.noMedCaps && $ctrl.benefitsOverview.benefitFundingPayPolicies.a1_medicalEmployeeOnly != undefined">
+							<td><p class="medium marg-left">
+								{{ 'my_benefits.benefitOptions.medicalEmployee' | translate }}
+							</p>
+							</td>
+							<td><p class="marg-left">{{$ctrl.benefitsOverview.benefitFundingPayPolicies.a1_medicalEmployeeOnly
+								| currencyFilter}}</p></td>
+						</tr>
+						<tr class="noborder" ng-if="!$ctrl.noMedCaps && $ctrl.benefitsOverview.benefitFundingPayPolicies.a2_medicalEmployeeSpouse != undefined">
+							<td><p class="medium marg-left">
+								{{ 'my_benefits.benefitOptions.medicalEmpSpous' | translate }}
+							</p>
+							</td>
+							<td><p class="marg-left">
+								{{$ctrl.benefitsOverview.benefitFundingPayPolicies.a2_medicalEmployeeSpouse |
+								currencyFilter}}</p></td>
+						</tr>
+						<tr class="noborder" ng-if="!$ctrl.noMedCaps && $ctrl.benefitsOverview.benefitFundingPayPolicies.a3_medicalEmployeeChildren != undefined">
+							<td><p class="medium marg-left">
+								{{ 'my_benefits.benefitOptions.medicalEmpChild' | translate }}
+							</p>
+							</td>
+							<td><p class="marg-left">
+								{{$ctrl.benefitsOverview.benefitFundingPayPolicies.a3_medicalEmployeeChildren |
+								currencyFilter}}</p></td>
+						</tr>
+						<tr class="noborder" ng-if="!$ctrl.noMedCaps && $ctrl.benefitsOverview.benefitFundingPayPolicies.a4_medicalEmployeeFamily != undefined">
+							<td><p class="medium marg-left">
+								{{ 'my_benefits.benefitOptions.mediclEmpFamily' | translate }}
+							</p>
+							</td>
+							<td><p class="marg-left">
+								{{$ctrl.benefitsOverview.benefitFundingPayPolicies.a4_medicalEmployeeFamily |
+								currencyFilter}}</p></td>
+						</tr>
+						<tr class="noborder" ng-if="$ctrl.benefitsOverview.benefitFundingPayPolicies.b1_groupDentalEmployeeOnly != undefined">
+							<td><p class="medium marg-left">
+								{{ 'my_benefits.benefitOptions.groupDentalEmp' | translate }}
+							</p>
+							</td>
+							<td><p class="marg-left">
+								{{::$ctrl.benefitsOverview.benefitFundingPayPolicies.b1_groupDentalEmployeeOnly |
+								currencyFilter}}</p></td>
+						</tr>
+						<tr class="noborder" ng-if="$ctrl.benefitsOverview.benefitFundingPayPolicies.b2_groupDentalEmployeeSpouse != undefined">
+							<td><p class="medium marg-left">
+								{{ 'my_benefits.benefitOptions.groupDentalEmpSpouse' | translate }}</p>
+							</td>
+							<td><p class="marg-left">
+								{{::$ctrl.benefitsOverview.benefitFundingPayPolicies.b2_groupDentalEmployeeSpouse |
+								currencyFilter}}</p></td>
+						</tr>
+						<tr class="noborder" ng-if="$ctrl.benefitsOverview.benefitFundingPayPolicies.b3_groupDentalEmployeeChildren != undefined">
+							<td><p class="medium marg-left">
+								{{ 'my_benefits.benefitOptions.groupDentalEmpChild' | translate }}</p>
+							</td>
+							<td><p class="marg-left">
+								{{::$ctrl.benefitsOverview.benefitFundingPayPolicies.b3_groupDentalEmployeeChildren |
+								currencyFilter}}</p></td>
+						</tr>
+						<tr class="noborder" ng-if="$ctrl.benefitsOverview.benefitFundingPayPolicies.b4_groupDentalEmployeeFamily != undefined">
+							<td><p class="medium marg-left">
+								{{ 'my_benefits.benefitOptions.groupDentalEmpFamily' | translate }}</p>
+							</td>
+							<td><p class="marg-left">
+								{{::$ctrl.benefitsOverview.benefitFundingPayPolicies.b4_groupDentalEmployeeFamily |
+								currencyFilter}}</p></td>
+						</tr>
+						<tr class="noborder" ng-if="$ctrl.benefitsOverview.benefitFundingPayPolicies.c1_groupVisionEmployeeOnly != undefined">
+							<td><p class="medium marg-left">
+								{{ 'my_benefits.benefitOptions.groupVisionEmp' | translate }}</p>
+							</td>
+							<td><p class="marg-left">
+								{{::$ctrl.benefitsOverview.benefitFundingPayPolicies.c1_groupVisionEmployeeOnly |
+								currencyFilter}}</p></td>
+						</tr>
+						<tr class="noborder" ng-if="$ctrl.benefitsOverview.benefitFundingPayPolicies.c2_groupVisionEmployeeSpouse != undefined">
+							<td><p class="medium marg-left">
+								{{ 'my_benefits.benefitOptions.groupVisionEmpSpouse' | translate }}</p>
+							</td>
+							<td><p class="marg-left">
+								{{::$ctrl.benefitsOverview.benefitFundingPayPolicies.c2_groupVisionEmployeeSpouse |
+								currencyFilter}}</p></td>
+						</tr>
+						<tr class="noborder" ng-if="$ctrl.benefitsOverview.benefitFundingPayPolicies.c3_groupVisionEmployeeChildren != undefined">
+							<td><p class="medium marg-left">
+								{{ 'my_benefits.benefitOptions.groupVisionEmpChild' | translate }}</p>
+							</td>
+							<td><p class="marg-left">
+								{{::$ctrl.benefitsOverview.benefitFundingPayPolicies.c3_groupVisionEmployeeChildren |
+								currencyFilter}}</p></td>
+						</tr>
+						<tr class="noborder" ng-if="$ctrl.benefitsOverview.benefitFundingPayPolicies.c4_groupVisionEmployeeFamily != undefined">
+							<td><p class="medium marg-left">
+								{{ 'my_benefits.benefitOptions.groupVisionEmpFamily' | translate }}</p>
+							</td>
+							<td><p class="marg-left">
+								{{::$ctrl.benefitsOverview.benefitFundingPayPolicies.c4_groupVisionEmployeeFamily |
+								currencyFilter}} </p></td>
+						</tr>
+						</tbody>
+					</table>
+					<br><br>
+					<p class="marg-top" ng-bind-html="$ctrl.employeeContributionInfo"></p>
+					<br>
+					<p ng-bind-html="$ctrl.waiverBenefit"></p>
+					<p><u><b><span ng-bind-html="$ctrl.basicLifeInsuranceHeading"></span></b></u><br>
+						<span ng-bind-html="$ctrl.basicLifeInsuranceCoverage"></span>
+					</p>
+					<p ng-if="$ctrl.basicLifeInsuranceCoverage !=''">
+						<a id="basicInsPlansViewLink" href="" ng-click="$ctrl.openStatePlanModal('lifeDescription')" class="pull-right action" >
+							{{ 'my_benefits.benefitOptions.viewPlanState' | translate }}</a></p>
+					<div class="clearfix"></div>
+					<p><u><b><span ng-bind-html="$ctrl.groupShortTermDisabilityInsuranceHeading"></span></b></u><br>
+
+						<span ng-bind-html="$ctrl.groupShortTermDisabilityInsuranceCoverage"></span>
+					</p>
+					<p><u><b><span ng-bind-html="$ctrl.groupLongTermDisabilityInsuranceHeading"></span></b></u><br>
+						<span ng-bind-html="$ctrl.groupLongTermDisabilityInsuranceCoverage"></span>
+					</p>
+
+				</div>
+
+				<h5 class="text-center plan-title" ng-bind-html="$ctrl.trinetOptionalPlansTitle"></h5>
+				<div>
+					<p ng-if="$ctrl.dentalHeading !== ''"><u><b><span ng-bind-html="$ctrl.dentalHeading"></span></b></u><br>
+						<span ng-bind-html="$ctrl.optionDentalPlan"></span>
+					</p>
+					<p ng-if="ctrl.visionSubTitle !== ''"><u><b><span ng-bind-html="$ctrl.visionSubTitle"></span></b></u><br>
+						<span ng-bind-html="$ctrl.optionalVisionPlan"></span>
+					<p ng-if="ctrl.fsaPlanSubTitle !== ''"><u><b><span ng-bind-html="$ctrl.fsaPlanSubTitle"></span></b></u><br>
+						<span ng-bind-html="$ctrl.fsaPlan"></span>
+					</p>
+					<p ng-if="ctrl.supplementalLifeInsuranceHeading !== ''"><u><b><span ng-bind-html="$ctrl.supplementalLifeInsuranceHeading"></span></b></u><br>
+						<span ng-bind-html="$ctrl.supplementalLifeInsurance"></span>
+					</p>
+					<p ng-if="ctrl.supplementalADAndDInsuranceHeading !== ''"><u><b><span ng-bind-html="$ctrl.supplementalADAndDInsuranceHeading"></span></b></u><br>
+						<span ng-bind-html="$ctrl.supplementalADAndDInsurance"></span>
+					</p>
+					<p ng-if="ctrl.shortTermLongTermDisabilityHeading !== ''"><u><b><span ng-bind-html="$ctrl.shortTermLongTermDisabilityHeading"></span></b></u><br>
+						<span ng-bind-html="$ctrl.shortTermLongTermDisability"></span>
+					</p>
+				</div>
+
+
+				<h5 class="text-center black plan-title" ng-bind-html="$ctrl.trinetBenefitProgramsTitle"></h5>
+				<div>
+					<p><u><b><span ng-bind-html="$ctrl.commuterBenefitSubTitle"></span></b></u><br>
+						<span ng-bind-html="$ctrl.commuterBenefit"></span>
+					</p>
+					<p><a id="visitCommuterLink" ng-href="./#/ssowidget/ww" class="action pull-right" target="_blank">
+						{{ 'my_benefits.benefitOptions.visitCommuter' | translate }}</a>
+					</p>
+					<div class="clearfix"></div>
+					<p><u><b><span ng-bind-html="$ctrl.trinetPerksSubTitle"></span></b></u><br>
+						<span ng-bind-html="$ctrl.trinetPerks"></span>
+					</p>
+					<p><u><b><span ng-bind-html="$ctrl.trinetEmployeeAssistanceProgramSubTitle"></span></b></u><br>
+						<span ng-bind-html="$ctrl.trinetEmployeeAssistanceProgram"></span>
+					</p>
+					<p><a id="visitHealthCounselLink" href="http://www.feieap.com/?s_username=trinet" target="_blank" class="action pull-right">
+						{{ 'my_benefits.benefitOptions.visitHealthCounsel' | translate }}</a></p>
+					<div class="clearfix"></div>
+				</div>
+
+
+				<h5 class="text-center black plan-title" ng-bind-html="$ctrl.companyRetirementPlanTitle"></h5>
+				<div class="alignment2">
+					<p ng-bind-html="$ctrl.companyRetirementPlan">
+
+					</p>
+				</div>
+
+				<h5 class="text-center black plan-title" ng-bind-html="$ctrl.voluntaryInsuranceTitle"></h5>
+				<div class="alignment2">
+					<p><u><b><span ng-bind-html="$ctrl.metLifeVoluntaryInsuranceSubTitle"></span></b></u><br>
+						<span ng-bind-html="$ctrl.metLifeVoluntaryInsurance" class="metlifeVoltService"></span>
+					<p><a id="learnMetLifeLink" href="" ng-click="$ctrl.openOptionalModal('benefits-met-life','benefitsMetLife')" class="pull-right action">
+					{{ 'my_benefits.benefitOptions.learnMetlifePrg' | translate }}</a></p>
+					</p>
+					<div class="clearfix"></div>
+					<div id="alfac" ng-hide="$ctrl.isSOI">
+						<p><u><b><span ng-bind-html="$ctrl.aflacSupplementalInsuranceSubTitle"></span></b></u><br>
+							<span ng-bind-html="$ctrl.aflacSupplementalInsurance"></span>
+						<div class="clearfix"></div>
+						<a id="learnAflacLink" href="" ng-click="$ctrl.openOptionalModal('benefits-aflac','benefitsAflac')" class="pull-right action">
+							{{ 'my_benefits.benefitOptions.learnAflacprod' | translate }}</a>
+						</p>
+					</div>					
+					<div class="clearfix"></div>					
+				</div>
+				<div class="clearfix marg-bottom"></div>
+				<div class="text-center"><p class="black inline plan-period" ng-bind-html="$ctrl.benefitPlanPeriodInfo"></p></div>
+
+			</div>
+
+
+		</div>
+
+	</div>
+</div>

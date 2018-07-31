@@ -1,0 +1,16 @@
+<tn-card class="paychecks-card" titles="paychecks-card-title" loading="$ctrl.showSpinner">
+	<tn-card-content class="paychecks-card-content">
+		<date-info id="prevPaycheckDateInfo"
+				   custom-id="'PrevPaycheckDateInfo'"
+				   titles="paychecks-card-last-paycheck-title" title-color="secondary" date="$ctrl.lastPaycheck"></date-info>
+		<div class="paychecks-card-divider"></div>
+		<date-info id="nextPaycheckDateInfo"
+				   custom-id="'nextPaycheckDateInfo'"
+				   titles="paychecks-card-next-paycheck-title" title-color="secondary" date="$ctrl.nextPaycheck"></date-info>
+	</tn-card-content>
+	<tn-card-actions>
+		<tn-spinner ng-show="$ctrl.showPayChecksSpinner" is-show="$ctrl.showPayChecksSpinner" error-message="$ctrl.errorMessage"></tn-spinner>
+		<button  id="lastPayCheckDetailsBtn" ng-hide = "$ctrl.showPayChecksSpinner" tn-action-button ng-click="$ctrl.btnClick()">{{'paychecks-card-action-button' | translate}}</button>
+		<tn-earnings-statement-modal ng-if="$ctrl.showModal" on-show="$ctrl.showModal" data="$ctrl.checkDetails"></tn-earnings-statement-modal>
+	</tn-card-actions>
+</tn-card>

@@ -1,0 +1,15 @@
+@import "main";
+
+.benefit-plan-description{
+  a{
+	  display: block;
+	  padding: 15px 0;
+	  cursor: pointer;
+	  &:nth-child(odd){
+		background-color: rgb(244, 246, 247);
+	  }
+  }
+}
+.padding-top{
+  padding-top:10px;
+}

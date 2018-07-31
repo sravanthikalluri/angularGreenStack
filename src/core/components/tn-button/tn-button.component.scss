@@ -1,0 +1,43 @@
+@import 'main';
+
+/* Action Button */
+.tn-action-btn {
+  background: linear-gradient( 45deg, #f6594c, #f17c35 );
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 0 44px;
+  height: 50px;
+  color: white;
+  outline: 0;
+  border: 0;
+}
+
+.tn-action-btn:hover {
+  background: linear-gradient( 45deg, #F76F54, #F38A40 );
+}
+
+.tn-action-btn:active {
+  background: linear-gradient(45deg, #DF4D3D, #DB642E );
+}
+
+/* button */
+.tn-btn {
+  width: 204px;
+  height: 50px;
+  border: 2px solid $blue;
+  border-radius: 4px;
+  color: $blue;
+  font-size: 14px;
+  z-index: 100;
+  outline: 0;
+  transition: all 0.3s ease 0s;
+
+  &:hover { 
+    color: $azure-blue;
+    border-color: $azure-blue;
+  }
+}
+
+.tn-btn:active {
+  background: #EEEEEE;
+}

@@ -1,0 +1,11 @@
+<tn-card class="time-off-card" titles="time-off-card-title" ng-hide="$ctrl.hasNoData">
+	<tn-spinner ng-show="$ctrl.showSpinner" is-show="$ctrl.showSpinner" error-message="$ctrl.errorMessage"></tn-spinner>
+  	<tn-card-content class="time-off-card-content" ng-if="$ctrl.leaveTypes">
+  		<time-off-carousel accruals="$ctrl.leaveTypes"></time-off-carousel>
+  		<div ng-show="$ctrl.leaveTypes.length > 0" class="time-off-card-divider"></div>
+	    <time-off-table class="time-off-card-table" requests="$ctrl.requests"> </time-off-table>
+  	</tn-card-content>
+  	<tn-card-actions>
+		<button id="requestTimeOffBtn" tn-action-button ng-if="$ctrl.leaveTypes" ng-click="$ctrl.launchTimeOff()">{{'time-off-card-action-button' | translate}}</button>
+	</tn-card-actions>
+</tn-card>

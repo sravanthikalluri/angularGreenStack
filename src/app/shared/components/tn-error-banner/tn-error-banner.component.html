@@ -1,0 +1,36 @@
+<div id="alertMessage" data-ng-if="$ctrl.errorData && $ctrl.errorData._statusMessage !== ''">
+	<div tn-banner class="tn-error-banner"
+		 ng-if="$ctrl.errorData._statusCode !== '200' && errorData._statusCode !== 'warning' && $ctrl.errorData._statusCode !== '000'">
+		<div class="tn-messages-banner">
+			<button aria-label="close alert"
+				  class="tn-messages-icon icon-icon_Error" ng-click="$ctrl.closeAlert($index)"></button>
+			<p role="alert" aria-live="polite" ng-if="$ctrl.errorData._statusMessage">{{$ctrl.errorData._statusMessage}}</p>
+			<p role="alert" aria-live="polite" ng-if="!$ctrl.errorData._statusMessage">{{$ctrl.errorData._error.message}}</p>
+		</div>
+	</div>
+	<div tn-banner class="tn-warning-banner" ng-if="$ctrl.errorData._statusCode === 'warning'" >
+		<div class="tn-messages-banner">
+			<span aria-hidden="true" class="tn-messages-icon icon-icon_Warning"></span>
+			<p role="alert" aria-live="polite">{{$ctrl.errorData._statusMessage}}</p>
+			<button class="tn-warning-btn" aria-label="close alert" ng-click="$ctrl.closeAlert($index)">OK</button>
+		</div>
+	</div>
+
+	<div tn-banner class="tn-success-banner" ng-if="$ctrl.errorData._statusCode === '200'">
+		<div class="tn-messages-banner">
+			<span aria-hidden="true" class="tn-messages-icon icon-icon_approved"></span>
+			<p role="alert" aria-live="polite">{{$ctrl.errorData._statusMessage}}</p>
+			<button class="icon-close icon-close-temp" id="tn-success-banner"
+					ng-click="$ctrl.closeAlert($index)" aria-label="close alert">
+			</button>
+		</div>
+	</div>
+	<div tn-banner class="tn-warning-banner tn-browser-warning" ng-if="$ctrl.errorData._statusCode === '000'" >
+		<div class="tn-messages-banner">
+			<span aria-hidden="true" class="tn-messages-icon icon-icon_Warning"></span>
+			<p role="alert" aria-live="polite">{{$ctrl.errorData._statusMessage}}</p>
+			<button class="icon-close icon-close-temp" aria-label="close alert"
+					ng-click="$ctrl.closeAlert($index)"></button>
+		</div>
+	</div>
+</div>

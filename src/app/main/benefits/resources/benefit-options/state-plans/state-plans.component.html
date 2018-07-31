@@ -1,0 +1,135 @@
+<span ng-click="$ctrl.closeModal();" class="sso-modal-close-icon icon-close-temp hand"></span>
+<div class="modalPad">
+	<div ng-if="!$ctrl.error">
+		<tn-spinner ng-show="!$ctrl.dataLoaded" disable-timeout="true"></tn-spinner>
+		<div id="statePanPage" ng-show="$ctrl.dataLoaded">
+			<div>
+				<h3>
+					<span ng-bind="$ctrl.companyName"></span><br><span>{{ 'my_benefits.policies.currentBenefitsSummary' | translate }}</span></h3>
+				<p>{{ 'my_benefits.policies.benefitSummarRepresent' | translate }}</p>
+				<h3 class="headlines-md-BluBerry">{{::translation.my_benefits.policies.your}}
+					<span ng-if="$ctrl.payFrequencyType === 'B'">{{ 'money.payrollSchedule.biWeek' | translate }}</span>
+					<span ng-if="$ctrl.payFrequencyType === 'W'">{{ 'money.payrollSchedule.week' | translate }}</span>
+					<span ng-if="$ctrl.payFrequencyType === 'S'">{{ 'money.payrollSchedule.smMonth' | translate }}</span>
+					<span ng-if="$ctrl.payFrequencyType === 'M'">{{ 'money.payrollSchedule.mon' | translate }}</span>
+					Cost</h3>
+				<!-- Medical plans table -->
+				<div id="appLoader" ng-if="$ctrl.loaderSpinner" class="spinning spinner-loader top-post-value"></div>
+				<table ng-if="$ctrl.resolve.modalData.planType === 'medicalPlansList'" class="table small table-striped">
+
+					<thead>
+					<tr ng-if="$ctrl.statesBuildData.medicalPlansList.length > 0">
+						<td width="25%"><strong class="text-capitalize">{{ 'my_benefits.policies.medical' | translate }}</strong></td>
+						<td width="20%">{{ 'my_benefits.policies.empOnly' | translate }}</td>
+						<td width="20%">{{ 'my_benefits.policies.empSpouse' | translate }}</td>
+						<td width="20%">{{ 'my_benefits.policies.empChild' | translate }}</td>
+						<td width="15%">{{ 'my_benefits.policies.family' | translate }}</td>
+					</tr>
+
+					</thead>
+					<tbody>
+					<tr ng-repeat="data in $ctrl.statesBuildData.medicalPlansList">
+						<td width="25%"><strong>{{data.desc}}</strong></td>
+						<td width="20%">{{data.employee | number : 2}}</td>
+						<td width="20%">{{data.spouse | number : 2 }}</td>
+						<td width="20%">{{data.children | number : 2}}</td>
+						<td width="15%">{{data.family | number : 2}}</td>
+					</tr>
+					</tbody>
+				</table>
+				<!-- Dental plans table -->
+				<table ng-if="$ctrl.resolve.modalData.planType === 'dentalPlansList'" class="table small table-striped">
+					<thead>
+					<tr ng-if="$ctrl.statesBuildData.dentalPlansList.length > 0">
+						<td width="25%"><strong>{{ 'my_benefits.policies.dental' | translate }}</strong></td>
+						<td width="20%">{{ 'my_benefits.policies.empOnly' | translate }}</td>
+						<td width="20%">{{ 'my_benefits.policies.empSpouse' | translate }}</td>
+						<td width="20%">{{ 'my_benefits.policies.empChild' | translate }}</td>
+						<td width="15%">{{ 'my_benefits.policies.family' | translate }}</td>
+					</tr>
+					</thead>
+					<tbody>
+					<tr ng-repeat="data in $ctrl.statesBuildData.dentalPlansList">
+						<td width="25%"><strong>{{data.desc}}</strong></td>
+						<td width="20%">{{data.employee | number : 2}}</td>
+						<td width="20%">{{data.spouse | number : 2}}</td>
+						<td width="20%">{{data.children | number : 2}}</td>
+						<td width="15%">{{data.family | number : 2}}</td>
+					</tr>
+					</tbody>
+				</table>
+				<!-- Vision plans table -->
+				<table ng-if="$ctrl.resolve.modalData.planType === 'visionPlansList'" class="table small table-striped">
+					<thead>
+					<tr ng-if="$ctrl.statesBuildData.visionPlansList.length > 0 || $ctrl.statesBuildData.optionalVisionPlansList.length > 0">
+						<td width="25%"><strong>{{ 'my_benefits.policies.vision' | translate }}</strong></td>
+						<td width="20%">{{ 'my_benefits.policies.empOnly' | translate }}</td>
+						<td width="20%">{{ 'my_benefits.policies.empSpouse' | translate }}</td>
+						<td width="20%">{{ 'my_benefits.policies.empChild' | translate }}</td>
+						<td width="15%">{{ 'my_benefits.policies.family' | translate }}</td>
+					</tr>
+					</thead>
+					<tbody>
+					<tr ng-if="$ctrl.statesBuildData.visionPlansList.length > 0" ng-repeat="data in $ctrl.statesBuildData.visionPlansList">
+						<td width="25%"><strong>{{data.desc}}</strong></td>
+						<td width="20%">{{data.employee | number : 2}}</td>
+						<td width="20%">{{data.spouse | number : 2}}</td>
+						<td width="20%">{{data.children | number : 2}}</td>
+						<td width="15%">{{data.family | number : 2}}</td>
+					</tr>
+					<tr ng-if="$$ctrl.statesBuildData.optionalVisionPlansList.length > 0" ng-repeat="data in $ctrl.statesBuildData.optionalVisionPlansList">
+						<td width="25%"><strong>{{data.desc}}</strong></td>
+						<td width="20%">{{data.employee | number : 2}}</td>
+						<td width="20%">{{data.spouse | number : 2}}</td>
+						<td width="20%">{{data.children | number : 2}}</td>
+						<td width="15%">{{data.family | number : 2}}</td>
+					</tr>
+					</tbody>
+				</table>
+
+
+				<table class="table small table-striped"
+					   ng-hide="$ctrl.statesBuildData.otherPlansList==null || $ctrl.statesBuildData.otherPlansList.length==0">
+					<thead>
+					<tr>
+						<td width="25%"><strong>{{ 'my_benefits.policies.optionalOther' | translate }}</strong></td>
+						<td width="20%">{{ 'my_benefits.policies.empOnly' | translate }}</td>
+						<td width="20%">{{ 'my_benefits.policies.empSpouse' | translate }}</td>
+						<td width="20%">{{ 'my_benefits.policies.empChild' | translate }}</td>
+						<td width="15%">{{ 'my_benefits.policies.family' | translate }}</td>
+					</tr>
+
+					</thead>
+					<tbody>
+					<tr ng-repeat="data in $ctrl.statesBuildData.otherPlansList">
+						<td width="36%" class="bold">{{::data.planDescription}}</td>
+						<td>{{'my_benefits.policies.employeePaid' | translate}}</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					</tbody>
+				</table>
+				<div ng-if="$ctrl.resolve.modalData.planType === 'lifeDescription'">
+					<!--table  class="table small table-striped">
+                        <thead>
+                        <tr  >
+                            <td width="25%"><strong>{{ 'my_benefits.policies.groupTermLife' | translate }}</strong></td>
+                            <td width="20%">{{ 'my_benefits.policies.empOnly' | translate }}</td>
+                            <td width="20%">{{ 'my_benefits.policies.empSpouse' | translate }}</td>
+                            <td width="20%">{{ 'my_benefits.policies.empChild' | translate }}</td>
+                            <td width="25%">{{ 'my_benefits.policies.family' | translate }}</td>
+                        </tr>
+                        </thead>
+                    </table-->
+					<div><strong>{{$ctrl.statesBuildData.lifeDescription}}</strong></div>
+					<div>{{$ctrl.statesBuildData.lifePlan}}</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div ng-if="$ctrl.error">
+	{{$ctrl.errorMessage}}
+	</div>
+</div>

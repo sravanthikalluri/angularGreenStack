@@ -1,0 +1,27 @@
+<div class="pdf-view-modal">
+    <div class="modal-header">
+        <div class="modal-title">
+            {{$ctrl.title}}
+            <i role="link" tabindex="0" tn-enter="$ctrl.cancel()" aria-label="Close modal" id="pdfConfirmClose" class="icon-close-temp hand right"
+                ng-click="$ctrl.cancel()"></i>
+        </div>
+        <div class="modal-title-body">{{$ctrl.titleBody}}</div>
+    </div>
+    <div class="pdf-view-body">
+        <iframe class="pdf-view" frameborder="0" id="pdfFrame"  ng-if="$ctrl.pdfPath && $ctrl.browser != 'ie'" ng-src="{{$ctrl.pdfPath}}" scrolling="no">
+            <p>Your web browser doesn't support iframes.</p>
+        </iframe>
+        <div class="pdf-message" ng-if="$ctrl.browser == 'ie'"><!-- Ie has difficulty displaying streaming pdf-->
+            <p>{{$ctrl.IEError}}</p>
+            <a ng-href="{{$ctrl.pdfPath}}" target="_blank">{{$ctrl.IEOpenSavePdf}}</a>
+        </div>
+    </div>
+    <div class="pdf-view-foot" ng-if="$ctrl.cancelText || $ctrl.okText">
+        <button tn-action-button class="sso-modal-continue" id="pdf-view-ok" ng-click="$ctrl.ok()" ng-if="$ctrl.okText">
+            {{$ctrl.okText}}
+        </button>
+        <button class="sso-modal-cancel" id="pdf-view-cancel" ng-if="$ctrl.cancelText" tn-button ng-click="$ctrl.cancel()">
+                {{$ctrl.cancelText}}
+        </button>
+    </div>
+</div>

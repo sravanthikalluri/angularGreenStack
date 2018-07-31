@@ -1,0 +1,37 @@
+<tn-card titles="onboarding-card-title" loading="" ng-if="$ctrl.showOnboardingCard == true || $ctrl.showCompleteCard == true">
+	<p class="onboarding-due-date onboarding-due-now"
+	   ng-if="(($ctrl.data['I_9'] != null && $ctrl.data['I_9']['completionDate'] == null) ||
+			($ctrl.data['WTPA'] != null && $ctrl.data['WTPA']['completionDate'] == null) ||
+			$ctrl.dueDate < 1 && $ctrl.dueDate != null)">
+	   {{"onboarding-due-now" | translate}}
+	</p>
+	<p class="onboarding-due-date {{$ctrl.dueDate > 0 ? 'onboarding-due-later':'onboarding-due-now'}}"
+	   ng-if="($ctrl.dueDate > 0 && $ctrl.dueDate != null &&
+			   ($ctrl.data['I_9'] == null || ($ctrl.data['I_9'] != null && $ctrl.data['I_9']['completionDate'] != null)) &&
+			   ($ctrl.data['WTPA'] == null || ($ctrl.data['WTPA'] != null && $ctrl.data['WTPA']['completionDate'] != null)))">
+	   {{"onboarding-due" | translate}} {{$ctrl.dueDate}} {{"onboarding-days" | translate}}
+	</p>
+	<tn-card-content ng-if="$ctrl.showOnboardingCard">
+		<p class="onboarding-task-info" ng-if="!$ctrl.isTA">{{"onboarding-tasks-info" | translate}}</p>
+		<p class="onboarding-task-info" ng-if="$ctrl.isTA">{{"onboarding-TA-tasks-info" | translate}}</p>
+	</tn-card-content>
+	<tn-error-banner error-data="$ctrl.errorAlert"></tn-error-banner>
+	<div ng-if="$ctrl.data && $ctrl.showOnboardingCard">
+		<i9-onboarding data="$ctrl.data['I_9']" i9-button-clicked="$ctrl.onI9Clicked($event)"></i9-onboarding>
+		<checklist-onboarding data="$ctrl.data" display-step="$ctrl.displayNum" is-canadian="$ctrl.isCanadian" is-ta="$ctrl.isTA"></checklist-onboarding>
+	</div>
+	<div class="app-store-link-container" ng-if="$ctrl.showOnboardingCard">
+		<p>{{"trinet-mobile-app-title" | translate}}</p>
+		<p>{{"trinet-mobile-app-context" | translate}}</p>
+		<div class="images">
+			<label id="googleplay" ng-click="$ctrl.goToAppStore($ctrl.googleStoreAddress)"></label>
+			<label id="applestore" ng-click="$ctrl.goToAppStore($ctrl.appleStoreAddress)"></label>
+		</div>
+	</div>
+	<div class="onboarding-all-task-complete" ng-if="$ctrl.showCompleteCard">
+		<div><label class="icon-icon_Check"></label></div>
+		<div><label class="onboarding-complete-text">{{'onboarding-complete' | translate}}</label></div>
+		<p>{{'onboarding-all-task-complete-text' | translate}}</p>
+		<button tn-action-button class="onboarding-btn" ng-click="$ctrl.completeTasks()">{{'onboarding-done' | translate}}</button>
+	</div>
+</tn-card>

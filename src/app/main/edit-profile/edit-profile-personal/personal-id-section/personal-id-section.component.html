@@ -1,0 +1,70 @@
+<div class="edit-profile-section">
+	<div class="edit-profile-section-title">{{'edit-profile-personal-identification' | translate}}</div>
+	<br>
+
+	<div class="row">
+		<tn-dob-input class="col-sm-5"
+					  label="{{'edit-profile-birthdate' | translate}}"
+					  form-name="$ctrl.formName"
+					  field-name="dob"
+					  component-id="'userDataOfBirthInput'"
+					  field-value="$ctrl.data.personalInfo.birthDate"
+					  is-required="true"
+					  on-update="$ctrl.update($ctrl.keys.dob, data)">
+		</tn-dob-input>
+		<tn-select class="col-sm-5 col-sm-offset-2"
+				   label="{{'edit-profile-gender' | translate}}"
+				   placeholder="Select a Gender"
+				   form-name="$ctrl.formName"
+				   field-name="gender"
+				   component-id="'Select'"
+				   field-value="$ctrl.data.selected.gender"
+				   items="$ctrl.data.dropdown.genders"
+				   is-required="true"
+				   on-update="$ctrl.update($ctrl.keys.gender, data.key)">
+		</tn-select>
+	</div>
+	<br>
+
+	<div class="row">
+		<div class="col-sm-5">
+			<tn-select ng-if="$ctrl.data.countryName !== 'CA'"
+					label="{{'edit-profile-ethnicity' | translate}}"
+					placeholder="Select an Ethnicity"
+					form-name="$ctrl.formName"
+					component-id="'Select'"
+					field-name="ethnicity"
+					field-value="$ctrl.data.selected.ethnicity"
+					items="$ctrl.data.dropdown.ethnicities"
+					is-required="true"
+					is-disabled="$ctrl.ethnicity.isDeclined"
+					on-update="$ctrl.update($ctrl.keys.ethnicity, data.key)">
+			</tn-select>
+		</div>
+		<!--<div class="col-sm-5 col-sm-offset-2">
+			<tn-ssn-input
+					label="{{'edit-profile-ssn-number' | translate}}"
+					form-name="$ctrl.formName"
+					field-name="ssn"
+					component-id="'ssnIdInput'"
+					field-value="$ctrl.data.personalInfo.ssnId"
+					is-disabled="true"
+					on-update="$ctrl.update($ctrl.keys.ssn, data)">
+			</tn-ssn-input>
+		</div>-->
+	</div>
+	<br>
+
+	<div class="row" ng-if="$ctrl.data.countryName !== 'CA'" >
+		<div class="col-sm-5">
+			<tn-checkbox-container>
+				<input ng-model="$ctrl.ethnicity.isDeclined"
+					   ng-change="$ctrl.checkEthnicity()"
+					   aria-label="Decline-to-State-Ethnicity"
+					   type="checkbox" id="DeclineToState">
+				<tn-checkbox-label>Decline to State Ethnicity</tn-checkbox-label>
+			</tn-checkbox-container>
+		</div>
+		<div class="col-sm-5 col-sm-offset-2"></div>
+	</div>
+</div>

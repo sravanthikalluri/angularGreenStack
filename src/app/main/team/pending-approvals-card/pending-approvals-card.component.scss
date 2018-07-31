@@ -1,0 +1,13 @@
+.pending-approvals-table .tn-table {
+	margin: 10px;
+	box-shadow: none;
+	width: 460px;
+
+	h5 { display: none;	}
+}
+
+.pending-approvals-content {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}

@@ -1,0 +1,28 @@
+<tn-input-container ng-class="{'is-invalid': $ctrl.input.$invalid && ($ctrl.input.$touched || $ctrl.formName.$submitted), 'is-disabled' : $ctrl.isDisabled }">
+	<tn-input-label>
+		<label for="{{$ctrl.fieldName}}{{$ctrl.componentId}}">
+			{{$ctrl.label}}
+		</label>
+	</tn-input-label>
+
+	<!-- validate-phone -->
+	<!--<input ng-model="$ctrl.fieldValueCopy"
+		   ng-keyup="$ctrl.update($ctrl.fieldValueCopy)"
+	       name="{{$ctrl.fieldName}}"
+	       type="text"
+		   id="{{$ctrl.fieldName}}{{$ctrl.componentId}}"
+	       inputmode="numeric"
+           placeholder="(999)999-9999"
+	       mask="99 99 9?9999-9999"
+	       restrict="reject"
+	       clean="true"
+	       ng-required="$ctrl.isRequired"
+		   aria-label="{{$ctrl.label}}"
+	       ng-disabled="$ctrl.isDisabled">-->
+	<phone-format id="{{$ctrl.fieldName}}{{$ctrl.componentId}}" placeholder="'999-999-9999'" model='$ctrl.fieldValueCopy' is-required="$ctrl.isRequired" on-change="$ctrl.update($ctrl.fieldValueCopy)"></phone-format>
+	<div class="tn-input-error"
+		 ng-messages="$ctrl.input.$error"
+		 ng-show="$ctrl.input.$invalid && ($ctrl.input.$touched || $ctrl.formName.$submitted)">
+		<div ng-message="required" aria-live="polite">Required.</div>
+	</div>
+</tn-input-container>

@@ -1,0 +1,94 @@
+@import 'main';
+
+.profile{
+	position: relative;
+
+	.designation{
+		margin-bottom: 25px;
+		span{
+        margin-top:$no-margin;
+        padding-left:$padding+20;
+        padding-right: $padding*2;
+        color:$leave-status-other-font-color;
+    	}
+    	span:nth-child(1) {
+        	font-size:16px;
+    	}
+    	span:nth-child(2){
+        	border-left: 1px solid rgb(235,237,239);
+        	font-size:16px;
+    	}
+	}
+}
+
+.public-profile {
+	padding: 46px 0 !important;
+}
+
+.tn-edit-button-wrap {
+	position: absolute;
+	top: 20px;
+	right: 20px
+}
+
+.tn-profile-h5{
+	font-weight:500;
+	margin-top:5px;
+}
+
+.tn-profile-text{
+	margin-bottom:15px;
+	text-align: right;
+}
+
+.tn-profile-header{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: baseline;
+	margin-top: 20px;
+
+	h4{
+	  flex-grow: 1;
+	}
+}
+
+.tn-profile-header-label {
+	font-size: 18px;
+	margin:0px;
+	line-height: inherit;
+}
+
+.tn-profile-content{
+	padding-left:10px;
+	margin-top:15px;
+}
+
+.tn-profile-divider{
+	border-bottom: 1px solid $cloudy;
+}
+
+.tn-profile-titles{
+	padding-left: 0px;
+	@media only screen and (min-width: 1024px) and (max-width: 1307px) {
+		padding-left: 5px;
+	}
+}
+
+.tn-profile-color-blue {
+	color: #2373BA;
+}
+
+.tn-profile-avatar {
+	border-radius:50%;
+	width: 134px;
+	height: 134px;
+	background: $cloudy;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 42px;
+	font-weight:600;
+	margin: 0 auto;
+}

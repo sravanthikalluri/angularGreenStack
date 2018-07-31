@@ -1,0 +1,38 @@
+<tn-card>
+	<tn-card-title class="settings-card-title text-center padding-top padding-bottom">
+		{{'leave-calendar-title' | translate}}
+	</tn-card-title>
+
+	<div class="leave-details">
+		<h5 class="leave-details-date">{{$ctrl.leaveData[$ctrl.currentDate].date | uppercase}}</h5>
+		<div class="details-container">
+			<div class="arrow-pickers icon-icon_back"
+				 ng-class="{disabled: $ctrl.currentDate === 0}"
+				 ng-click="$ctrl.currentDate = ($ctrl.currentDate !== 0 ? $ctrl.currentDate-1 : $ctrl.currentDate)"></div>
+			<div class="team-number-widget">
+				<h1 class="team-number-widget-number">{{$ctrl.leaveData[$ctrl.currentDate].employees.length}}</h1>
+				<h5 class="team-number-widget-text">{{'team-out-today' | translate}}</h5>
+			</div>
+			<div class="vertical-divider"></div>
+			<div class="employee-icon-details"
+				 ng-repeat="employee in $ctrl.leaveData[$ctrl.currentDate].employees | limitTo: 4">
+				 <tn-employee-image
+					img-url="{{employee.url}}"}}
+					employee-name="{{employee.name}}">
+				</tn-employee-image>
+				 <h5 class="employee-name">{{employee.name}}</h5>
+			</div>
+			<div class="arrow-pickers icon-icon_forward"
+				 ng-class="{disabled: $ctrl.currentDate === $ctrl.leaveData.length-1}"
+				 ng-click="$ctrl.currentDate = ($ctrl.currentDate !== $ctrl.leaveData.length-1 ? $ctrl.currentDate+1 : $ctrl.currentDate)">
+			 </div>
+		</div>
+	</div>
+
+	<tn-card-actions>
+		<button tn-button ng-click="$ctrl.btnClick()">
+			{{'calendar-view-action-button' | translate}}
+		</button>
+	</tn-card-actions>
+
+</tn-card>

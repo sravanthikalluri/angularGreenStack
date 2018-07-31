@@ -1,0 +1,10 @@
+<tn-card ng-show="$ctrl.showSpinner">
+	<tn-spinner></tn-spinner>
+</tn-card>
+<div role="tablist" multiselectable="true">
+	<uib-accordion close-others="true" ng-hide="$ctrl.showSpinner">
+		<div ng-repeat="benefit in $ctrl.data.legalNoticesList track by $index" ng-hide="$ctrl.showSpinner">
+			<tn-notice-item data="benefit"></tn-notice-item>
+		</div>
+	</uib-accordion>
+</div>

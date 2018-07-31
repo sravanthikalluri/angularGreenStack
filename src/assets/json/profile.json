@@ -1,0 +1,77 @@
+{
+   "id": "00001013893",
+   "altId": "00001411732",
+   "name":"Smith,Victoria D",
+   "workPhone":"9492637984",
+   "cellPhone": "6503266996",
+   "company": "Hooli",
+   "workEmail":"vsmith@passco.com",
+   "workAddressLine1":"1100 San Leandro Blvd.",
+   "workAddressLine2":"Suite 400",
+   "workCity":"San Leandro",
+   "workState":"CA",
+   "workPostal":"94577",
+   "businessTitle":"VP, Investor Services",
+   "serviceDate":"2004-06-01",
+   "department":"Corp-Property Mgmt",
+   "workLocation":"TriNet Labs, LLC-HQ",
+   "employeeType":"Full Time",
+   "temporaryInd":"Regular",
+   "compensationBasis":"Annual",
+   "compensationRate":90450.00,
+   "standardHours":40.0,
+   "supervisorName":"Jones,Belden ",
+   "lenOfEmployment":"11 years 1 months",
+   "employeeCurrencyCd":"USD",
+   "homeAddressLine1": "1409 Dana Ave.",
+   "homeAddressLine2": "Suite 1100",
+   "homeCity": "Palo Alto",
+   "homeState": "CA",
+   "homeCountry": "United States",
+   "homePostal": "94301",
+   "activePersonalDataList":[
+         {
+			"firstName": "Smith",
+			"lastName": "Victoria",
+            "birthDate":"05-30-1978",
+            "ethnicity":"White (Non Hispanic or Latino)",
+            "gender":"Male",
+            "militaryStatus":null,
+            "maritalStatus":"Single"
+         }
+   ],
+   "emergencyContacts": [
+	  {
+		  "name": {
+			  "firstName": "Julie",
+			  "fullName": "Julie Jomo",
+			  "middleName": null,
+			  "lastName": "Jomo"
+		  },
+		  "address": {
+			  "address1": "1409 Dana Ave.",
+			  "address2": " ",
+			  "address3": " ",
+			  "address4": " ",
+			  "city": "Palo Alto",
+			  "country": "US",
+			  "county": "US",
+			  "state": "CA",
+			  "postalCode": "94301"
+		  },
+		  "telephoneNumbers": {
+			  "telephoneNumber1": "6503266996",
+			  "telephoneNumber2": null,
+			  "telephoneNumber3": null,
+			  "telephoneNumber4": null
+		  },
+		  "contactRelationShip": "Spouse",
+		  "employeeId": "00001013893",
+		  "primaryContactFlag": "N",
+		  "sameAddressPerson": "N",
+              "samePhonePerson": "N",
+              "uniqueId": 3,
+              "notes": " "
+	  }
+   ]
+}

@@ -1,0 +1,127 @@
+<div class="company-directory-table " tn-scroll="$ctrl.showMore();">
+	<tn-search-header-bar title="Company"
+						  sub-title="Company Directory"
+						  placeholder="Search Employees..." search="$ctrl.searchBoxData"
+						  state="app.main.company.overview"
+						  action="$ctrl.searchFilter()" ng-model-options="{debounce:1000}">
+	</tn-search-header-bar>
+
+	<div class="row  company-directory-header">
+		<div class="col-sm-1" ng-hide="true">
+			<tn-toggle is-toggled="$ctrl.isShowingTerminated" on-toggle="$ctrl.toggleTerminated()"></tn-toggle>
+		</div>
+		<div class="col-sm-2" ng-hide="true">
+			<h6 class="semibold">Show Terminated</h6>
+			<h6 class="semibold">Employees</h6>
+		</div>
+		<div class="col-sm-offset-9 col-sm-3 company-directory-total-employees">
+			<p class="semibold  inline-block">Total Employees:&nbsp;</p>
+			<p class="semibold  inline-block" ng-if="$ctrl.unfilteredTotal">{{$ctrl.unfilteredTotal}}</p
+				><br /> <!-- PLEASE DON'T CHANGE! This p tag looks weird, but fixes an unexpected white-space in html -->
+			<p class="semibold  inline-block">Currently Showing:&nbsp;</p>
+			<p class="semibold  inline-block" ng-if="$ctrl.showTotal">{{$ctrl.employeeData.length}}</p>
+		</div>
+	</div>
+
+	<tn-spinner ng-show="$ctrl.showSpinner"></tn-spinner>
+	<div class="company-directory-full-table" tn-off-click="$ctrl.closeFilter()"  role="grid">
+		<div  role="row" class="company-directory-table  row-header" ng-hide="$ctrl.showSpinner">
+			<!-- <h6 ng-mouseleave="$ctrl.locFilter = false;$ctrl.depFilter = false;"  -->
+			<div role="columnheader"
+				class="flex-item-{{title.class}}"
+				ng-repeat="title in $ctrl.column_names track by $index"
+				ng-class="{'first-column': $first}">
+				<span>{{title.name}}</span>
+				<i  id="employeeNameSortZtoA"
+					ng-if="title.arrowDown && !$ctrl.isReversed"
+					class=" icon-icon_filter_up hand  directory-icons"
+					aria-label="click to sort data from Z to A"
+					ng-click="$ctrl.isReversed=true; $ctrl.sortResults('DESC')"></i>
+				<i  id="employeeNameSortAtoZ"
+					ng-if="title.arrowDown && $ctrl.isReversed"
+					class="icon-icon_filter_down hand  directory-icons"
+					aria-label="click to sort data from A to Z"
+					ng-click="$ctrl.isReversed=false; $ctrl.sortResults('')"></i>
+				<div class="tn-filter-section" ng-if="title.depFilter">
+					<i aria-label="Department filter"  aria-expanded="{{!$ctrl.depFilter}}"
+					   id="directoryDeptFilter" class="icon-icon_filter  hand  directory-icons-filter"
+					   ng-click="$ctrl.depFilter = !$ctrl.depFilter"></i>
+					<div class="tn-filter-popup menu" ng-show="$ctrl.depFilter || $ctrl.employeesByDeptLoading" ng-mouseleave="$ctrl.depFilter = false;">
+						<tn-spinner ng-show="$ctrl.employeesByDeptLoading"></tn-spinner>
+						<div class="caret"></div>
+						<div class="tn-filter" ng-show="!$ctrl.employeesByDeptLoading">
+							<div class="clear-filter">
+								<a class="semibold hand blue" href role="link"
+								   ng-hide="$ctrl.filter" ng-click="$ctrl.filterDepartments('deptCleared');">Clear Filters</a>
+							</div>
+							<div class="filter-section">
+								<div class="tn-checkbox-section" ng-repeat="department in $ctrl.departments | orderBy: 'name'">
+									<input  id="directoryDeptFilterCb_{{$index}}"
+											type="checkbox"
+											name="department"
+											value="department.id"
+											ng-model="department.departmentChecked"
+											ng-click="$ctrl.filterDepartments(department, department.departmentChecked);" />
+
+									<label for="directoryDeptFilterCb_{{$index}}">{{department.name}}</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tn-filter-section" ng-if="title.locFilter">
+					<i id="directoryLocFilter" aria-expanded="{{!$ctrl.locFilter}}"  aria-label="Location filter"
+					   class="icon-icon_filter  hand  directory-icons-filter" ng-click="$ctrl.locFilter = !$ctrl.locFilter"></i>
+					<div class="tn-filter-popup menu" ng-show="$ctrl.locFilter || $ctrl.employeesByLocLoading" ng-mouseleave="$ctrl.locFilter = false;">
+						<tn-spinner ng-show="$ctrl.employeesByLocLoading"></tn-spinner>
+						<div class="caret"></div>
+						<div class="tn-filter" ng-show="!$ctrl.employeesByLocLoading">
+							<div class="clear-filter">
+								<a class="semibold hand blue" href role="link"
+								   ng-hide="$ctrl.filter" ng-click="$ctrl.filterLocations('locCleared');">Clear Filters</a>
+							</div>
+							<div class="filter-section">
+								<div class="tn-checkbox-section" ng-repeat="loc in $ctrl.locations | orderBy: 'name'">
+									<input  id="directoryLocFilterCb_{{$index}}"
+											type="checkbox"
+											ng-model="loc.locationChecked"
+											ng-click="$ctrl.filterLocations(loc, loc.locationChecked)" />
+									<label for="directoryLocFilterCb_{{$index}}">{{loc.name}}</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div  role="row" class="company-directory-content hand" tn-scroll="$ctrl.showMore();" ng-hide="$ctrl.showSpinner">
+			<div role="row" id="directoryInfoTable_{{$index}}" class="company-directory-table row-data  hover" tn-scroll="$ctrl.showMore();"
+				ng-repeat="item in $ctrl.employeeData track by $index"
+				ng-click="$ctrl.openModal(item.employeeId)"
+				ng-class="{'company-directory-table-data-last-column': $last}">
+				<div role="gridcell" class="flex-item-employee first-column-data" tn-scroll="$ctrl.showMore();"  ng-if="item.employeeId">
+					<p>{{item.fullName}}</p>
+				</div>
+				<p role="gridcell" class="flex-item-position">{{item.positionDesc}}</p>
+				<!-- <p role="gridcell" class="flex-item-status" ng-if="item.employmentStatus=='A'">Active</p>
+				<p role="gridcell" class="flex-item-status" ng-if="item.employmentStatus=='L'">Leave</p>
+				<p role="gridcell" class="flex-item-status" ng-if="item.employmentStatus=='P'">Leave with Pay</p>
+				<p role="gridcell" class="flex-item-status" ng-if="item.employmentStatus=='U'">Terminated with Pay</p>
+				<p role="gridcell" class="flex-item-status" ng-if="item.employmentStatus=='T'">Terminted</p>
+				<p role="gridcell" class="flex-item-status" ng-if="item.employmentStatus=='V'">Terminated Pension</p> -->
+				<p role="gridcell" class="flex-item-department">{{item.departmentDesc}}</p>
+				<p role="gridcell" class="flex-item-location">{{item.locationDesc}}</p>
+				<!-- <p role="gridcell" class="flex-item-service">{{item.serviceDate | date:'MM/dd/yyyy'}}</p> -->
+				<p role="gridcell" class="flex-item-manager">{{item.directManagerName}}</p>
+			</div>
+		</div>
+	</div>
+
+	<tn-modal on-show="$ctrl.showModal" modal-header="false" ng-if="$ctrl.showModal">
+		<tn-company-directory-modal show="$ctrl.showModal"
+									modal-data="$ctrl.modalData">
+		</tn-company-directory-modal>
+	</tn-modal>
+
+</div>

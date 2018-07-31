@@ -1,0 +1,5 @@
+@import 'main';
+
+select:focus{
+    outline: 3px solid $tn-focus-border-color;   
+}

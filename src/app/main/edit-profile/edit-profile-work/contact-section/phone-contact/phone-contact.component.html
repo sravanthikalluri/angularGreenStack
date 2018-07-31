@@ -1,0 +1,24 @@
+<div class="row contact-row">
+	<tn-select class="col-sm-5"
+			   label="{{'edit-profile-phone-type' | translate}}"
+			   placeholder="Select a Phone Type"
+			   form-name="$ctrl.formName"
+			   component-id="$ctrl.phoneId"
+			   field-name="phoneType"
+			   field-value="$ctrl.selected.accessType"
+			   items="$ctrl.data.dropdown.accessTypes"
+			   is-required="true"
+			   is-focus="$ctrl.isFocus"
+			   on-update="$ctrl.update($ctrl.keys.phoneType, data, 'phone')">
+	</tn-select>
+	<tn-phone-input class="col-sm-5 col-sm-offset-2"
+				    label="{{'edit-profile-phone-number' | translate}}"
+				    form-name="$ctrl.formName"
+					component-id="$ctrl.phoneId"
+				    field-name="phoneNumber"
+				    field-value="$ctrl.phone.telephoneNumber"
+				    is-required="true"
+				    on-update="$ctrl.update($ctrl.keys.phoneNumber, data)">
+	</tn-phone-input>
+	<button type="button" class="icon-close-temp contact-delete-icon hand" aria-label="delete-phone-number" id="phoneDelete_{{$ctrl.phoneId}}" ng-click="$ctrl.delete()" ng-if="!$ctrl.isFirst"></button>
+</div>

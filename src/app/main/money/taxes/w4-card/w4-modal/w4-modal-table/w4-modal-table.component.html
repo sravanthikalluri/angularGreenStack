@@ -1,0 +1,200 @@
+<div class="w4-modal-table">
+ <div class="w4-modal-table-inner">
+
+	<div class="row" ng-repeat="item in $ctrl.items">
+			<div class="vertical-align">
+				<h3 class="semibold">{{item.data.desc | taxWithholdingDesc}}</h3>
+			</div>
+			<div class="vertical-align" ng-if="item.data && item.data.maritalStatus !== null">
+				<h6 class="w4-modal-table-type">Marital Status</h6>
+				<div>
+					<tn-select id="maritalStatus_{{$index}}" class="w4-modal-table-select pull-left"
+							   form-name="$ctrl.formName"
+							   placeholder="Select a Marital Status"
+							   field-name="maritalStatus"
+							   field-value="item.selected"
+							   on-update="$ctrl.update(item, $ctrl.keys.maritalStatus, data.key)"
+							   is-disabled="$ctrl.isDisabled(item,'maritalStatus') || $ctrl.isMaritalStatusDisabled(item) || item.data.marriedFileSingle"
+							   items="item.dropdown"
+							   label-aria="Marital Status"
+							   string-limit="15">
+					</tn-select>
+					<w4-marital-status-tooltip item="item"></w4-marital-status-tooltip>
+				</div>
+
+			</div>
+
+			<div class="vertical-align">
+				<h6 class="w4-modal-table-type">{{'w4-modal-table-exempt-label' | translate}}</h6>
+				<h6 class="w4-modal-table-type" ng-if="item.data.payDedCode =='AL'">{{'W4-modal-table-Alabama-label'|translate}} <span ng-if="item.data.specialIndicator==='A'">{{$ctrl.Resident_Alien}}</span></h6>
+				<div class="w4-modal-radio" ng-if="$ctrl.displayText(item)">{{'w4-modal-exempt-text' | translate}}</div>
+				<div class="w4-modal-radio tn-radio" ng-if="!$ctrl.displayText(item)" ng-class="$ctrl.isExemptDisabled(item) ? 'is-radio-disabled' : ''">
+					<label class="control control--radio" for="exempt_{{$index}}_yes">
+						Yes
+						<input id="exempt_{{$index}}_yes" name="exempt_{{$index}}" ng-model="item.data.exempt"
+						   ng-change="$ctrl.update(item, $ctrl.keys.exempt, item.data.exempt)"
+						   ng-disabled="$ctrl.isExemptDisabled(item)"
+						   ng-value="'Y'"
+						   aria-label="exempt yes"
+						   type="radio">
+						<div class="control__indicator"></div>
+					</label>
+					<label class="control control--radio" for="exempt_{{$index}}_no">No <span ng-if="item.data.specialIndicator==='A'">({{$ctrl.Resident_Alien}})</span>
+						<input id="exempt_{{$index}}_no"  name="exempt_{{$index}}" ng-model="item.data.exempt"
+						   ng-change="$ctrl.update(item, $ctrl.keys.exempt, item.data.exempt)"
+						   ng-disabled="$ctrl.isExemptDisabled(item)"
+						   ng-value="'N'"
+						   aria-label="exempt no"
+						   type="radio">
+						<div class="control__indicator"></div>
+					</label>
+				</div>
+			</div>
+
+			<div class="vertical-align" ng-if="(item.data && item.data.marriedFileSingle !== null)">
+				<h6 class="w4-modal-table-type">{{'w4-modal-table-married-filing-single-label' | translate}}</h6>
+
+				<div class="w4-modal-radio tn-radio" ng-class="$ctrl.isExemptDisabled(item) ? 'is-radio-disabled' : ''">
+					<label class="control control--radio" for="marriedFileSingle-yes">
+						Yes
+						<input id="marriedFileSingle-yes" name="marriedFileSingle" ng-model="item.data.marriedFileSingle"
+						   ng-change="$ctrl.update(item, $ctrl.keys.marriedFileSingle, item.data.marriedFileSingle)"
+						   ng-value="true"
+						   aria-label="Married filling single yes"
+						   type="radio">
+						<div class="control__indicator"></div>
+					</label>
+					<label class="control control--radio" for="marriedFileSingle-no">
+						No
+						<input id="marriedFileSingle-no"  name="marriedFileSingle" ng-model="item.data.marriedFileSingle"
+						   ng-change="$ctrl.update(item, $ctrl.keys.marriedFileSingle, item.data.marriedFileSingle)"
+						   ng-value="false"
+						   aria-label="Married filling single no"
+						   type="radio">
+						<div class="control__indicator"></div>
+					</label>
+				</div>
+
+				<!--<div class="w4-modal-toggle" >
+					<tn-toggle id="marriedFileSingle"
+							   is-toggled="item.data.marriedFileSingle"
+							   on-toggle="$ctrl.update(item, $ctrl.keys.marriedFileSingle, isToggled)"
+							   true-label="Yes"
+							   false-label="No">
+					</tn-toggle>
+				</div>-->
+			</div>
+
+		    <div class="vertical-align" ng-if="item.data && $ctrl.isAllowancesVisible(item)">
+				<h6 class="w4-modal-table-type">{{'w4-modal-allowances-label' | translate}}</h6>
+				<div ng-if="item.data.payDedCode != 'CT'">
+					<tn-allowances-input id="allowance_{{$index}}" class="w4-modal-table-allowances"
+										 label-aria="allowances"
+										 form-name="$ctrl.formName"
+										 field-name="allowances"
+										 field-value="item.data.allowancesRequested"
+										 max-value="item.data.maxValue"
+										 on-update="$ctrl.update(item, $ctrl.keys.allowances, data)"
+										 is-disabled="$ctrl.isDisabled(item,'allowances') || $ctrl.isAllowancesDisabled(item)"
+										 >
+						<!--is-required="!($ctrl.isDisabled(item,'allowances') || $ctrl.isAllowancesDisabled(item))"-->
+					</tn-allowances-input>
+				</div>
+
+				<div ng-if="item.data.payDedCode == 'CT'">
+					<span>{{'w4-modal-notApplicable' | translate}}</span>
+				</div>
+			</div>
+
+			<div class="vertical-align" ng-if="item.data">
+				<h6 class="w4-modal-table-type">{{'w4-modal-additional-amount-label' | translate}}</h6>
+				<tn-addl-amt-input id="additionalAmt_{{$index}}" class="w4-modal-table-addl-amt"
+								   label-aria="additional ammount"
+								   form-name="$ctrl.formName"
+								   field-name="addlAmt"
+								   field-value="item.data.addlAmount"
+								   on-update="$ctrl.update(item, $ctrl.keys.addlAmount, data)"
+								   is-disabled="$ctrl.isDisabled(item,'addlAmt')"
+								   >
+					<!--is-required="!$ctrl.isDisabled(item,'addlAmt')"-->
+				</tn-addl-amt-input>
+			</div>
+
+		<div class="vertical-align" ng-if="item.data && item.data.payDedCode == 'PR'">
+			<h6 class="w4-modal-table-type">{{'w4-modal-other-label' | translate}}</h6>
+			<span>{{'w4-modal-other-desc' | translate}}</span>
+		</div>
+
+		<div class="vertical-align" ng-if="item.data && item.data.annualExemptionAmount !== null && item.data.desc === 'Mississippi State Tax'">
+			<h6 class="w4-modal-table-type" >{{'money.tax_With_Holding.annualExemption' | translate}}</h6>
+			<tn-annual-exemption-amt-input id="annualExemptionAmount{{$index}}" class="w4-modal-table-addl-amt"
+										   label-aria="Annual Exemption Amount"
+										   form-name="$ctrl.formName"
+										   field-name="annualExemptionAmount"
+										   field-value="item.data.annualExemptionAmount"
+										   max-value="10000"
+										   on-update="$ctrl.update(item, $ctrl.keys.annualExemptionAmount, data)"
+										   is-disabled="$ctrl.isDisabled(item,'annualExemptionAmount')"
+										   is-required="!$ctrl.isDisabled(item,'annualExemptionAmount')">
+			</tn-annual-exemption-amt-input>
+		</div>
+
+		<div class="vertical-align" ng-if="(item.data && item.data.percentageGross !== null && item.data.percentageGross !== 0)">
+			<h6 class="w4-modal-table-type">{{'w4-modal-gross-label' | translate}}</h6>
+			<w4-amount-select id="gross_{{$index}}"
+							  form-name="$ctrl.formName"
+							  label="Percent of Taxable Gross Wage"
+							  field-name="taxableGrossSelect"
+							  field-value="item.data.percentageGross"
+							  items="item.data.percentageGrossList"
+							  on-update="$ctrl.update(item, $ctrl.keys.percentageGross, data)">
+			</w4-amount-select>
+		</div>
+
+		<div class="vertical-align" ng-if="(item.data && item.data.showDependantAllowences)">
+			<h6 class="w4-modal-table-type">{{'w4-modal-dependent-allowance-label' | translate}}</h6>
+			<tn-allowances-input id="depAllow_{{$index}}" class="w4-modal-table-allowances pull-left margin-right"
+								 form-name="$ctrl.formName"
+								 label-aria="Dependent Allowances"
+								 field-name="dependentAllowances"
+								 field-value="item.data.dependentAllowances"
+								 max-value="$ctrl.dependentAllowancesMaxValue"
+								 on-update="$ctrl.update(item, $ctrl.keys.dependentAllowances, data)"
+								 is-disabled="false"
+								 is-required="!($ctrl.isRequired(item))">
+			</tn-allowances-input>
+			<span ng-bind="(item.data.payDedCode === 'GA' ? '(GA Form G-4, line 4)' : ' ')" class="help-text"></span>
+		</div>
+
+		<div class="  vertical-align" ng-if="item.data && item.data.maritalStatusAllowance !== null">
+			<h6 class="w4-modal-table-type">{{'w4-modal-marital-allowance-label' | translate}}</h6>
+			<w4-amount-select ng-if="!$ctrl.disableMaritalStatusAllowance(item.data.payDedCode)" id="maritalAllow_{{$index}}" class="w4-modal-table-select pull-left"
+							  form-name="$ctrl.formName"
+							  label="Marital Status Allowance"
+							  field-name="maritalStatusAllowanceSelect"
+							  field-value="item.data.maritalAllowance"
+							  items="item.data.maritalStatusAllowance"
+							  disabled="$ctrl.isMaritalAllowanceDisabled(item)"
+							  on-update="$ctrl.update(item, $ctrl.keys.maritalAllowance, data)">
+			</w4-amount-select>
+			<span ng-if="$ctrl.disableMaritalStatusAllowance(item.data.payDedCode)">{{item.data.maritalAllowance}}</span>
+			<span ng-bind="(item.data.payDedCode === 'GA' ? '(GA Form G-4, line 3)' : ' ')" class="help-text"></span>
+		</div>
+
+
+		<div class="vertical-align" ng-if="item.data && item.data.additionalAllowances !== null">
+			<h6 class="w4-modal-table-type">{{'w4-modal-addl-allowance-label' | translate}}</h6>
+
+			<div class="w4-modal-table-col-desc" >
+				<p>
+					<span>{{'w4-modal-addl-text' | translate}}</span>
+					<span>{{'w4-modal-addl-georgiaEmp' | translate}}</span>
+					<span>{{'w4-modal-addl-Email' | translate}}</span>
+				</p>
+			</div>
+		</div>
+	</div>
+
+  </div>
+</div>
+

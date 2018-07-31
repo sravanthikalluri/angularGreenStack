@@ -1,0 +1,146 @@
+<tn-card>
+	<tn-card-content>
+		<p class="large bold">TRINET</p>
+		<p class="large bold">TERMS AND CONDITIONS AGREEMENT (TCA)</p>
+		<br>
+		<p class="tca-top-content">PLEASE READ THIS TCA CAREFULLY. IT CONTAINS IMPORTANT INFORMATION REGARDING YOUR USE OF THE TRINET PLATFORM AND ONLINE SERVICES, YOUR RELATIONSHIP WITH TRINET, AND THE HANDLING OF ANY DISPUTES ARISING OUT OF YOUR RELATIONSHIP WITH TRINET, YOUR COMPANY, AND RELATED MATTERS.</p>
+		<br>
+		<p>
+			<b>This TCA contains the following sections:</b>
+		</p>
+	</tn-card-content>
+</tn-card>
+
+<div class="tca-acc-trinet" role="tablist">
+	<uib-accordion close-others="true">
+		<div uib-accordion-group class="tn-accordion" is-open="status.open" ng-repeat="item in $ctrl.accordionList">
+			<uib-accordion-heading id="{{item.name |  lowercase}}" class="accordion-heading">
+				<button id="{{item.name}}Id"
+						class="tn-accordion-button"
+						ng-click="$ctrl.accoridon({index:$index,accordion:$ctrl.accordionList});"
+						title="{{item.name}}"
+						aria-selected="{{ item.isOpen}}"
+						aria-expanded="{{item.isOpen}}"
+						role="tab">
+					<h4>{{$index+1}}. <span ng-bind-html="item.name"></span></h4>
+					<i class="icon-icon_Disclosure_Expand  disclosure-open" ng-if="!status.open"></i>
+					<i class="icon-icon_Disclosure_Collapse  disclosure-open" ng-if="status.open"></i>
+				</button>
+			</uib-accordion-heading>
+			<div class="standard-padding" ng-if=" item.id === 1 && item.isOpen">
+				<p>The TriNet family of companies is engaged in the business of providing human resources services through various licensed professional employer organizations (&quot;PEOs&quot;).  In this TCA, &quot;TriNet&quot; includes TriNet Group, Inc., and all its direct and indirect subsidiaries (including, but not limited to your TriNet co-employer, as defined below), whether doing business in their own name or otherwise. </p>
+				<p>Your relationship with TriNet is beginning because the company you work for (&quot;your worksite employer,&quot; &quot;your company&quot; or &quot;my company&quot;) is a TriNet customer. This means that your company has entered into an agreement with a TriNet PEO company to share certain employer responsibilities as co-employers. This means that a TriNet PEO company (the company whose name appears on your wage statements, your &quot;TriNet co-employer&quot;) will be your employer of record for certain administrative purposes and will process payroll based on the information provided by your worksite employer, sponsor and administer benefits, and provide certain human resources services. As your worksite employer, your company retains the responsibilities of directing your day-to-day work and managing its business affairs.  Your worksite employer, not TriNet, has sole responsibility for controlling, or proving input about, your wages, hours, and working conditions.</p>
+
+
+			</div>
+			<div class="standard-padding" ng-if=" item.id === 2 && item.isOpen">
+				<p>The personal information you provide online through the TriNet platform is used to facilitate your online HR and other transactions and to enable your TriNet co-employer to act as your employer of record for certain administrative purposes. You agree not to share with or disclose to anyone else your TriNet Employee ID or password for the TriNet platform. TriNet, in turn, agrees to use your information only as stated above. TriNet will not provide your individually identifiable information to third-party providers or other commercial parties for commercial use except as permitted by you or as required by law.</p>
+				<p>You agree that all information submitted by you to TriNet for employment, payroll and benefits administration purposes is and will be true and correct to the best of your knowledge, and you understand that any misrepresentation may affect both your relationship with TriNet, employment status with your worksite employer, as well as certain insurance or benefits provided to you. You authorize TriNet to enroll you in TriNet sponsored employee benefits, if you are an eligible employee under the terms of the plans, and to make changes to your benefits, payroll, and personal information according to the information you submit to TriNet directly or indirectly. Moreover, you agree to provide to TriNet a functioning email address for you, and to review and accept notices and other documents sent to that email address as well as to review and accept notices and other documents posted on the TriNet platform.</p>
+				<p>With respect to IRS Form W-2, COBRA notices, and any other notice or form for which consent to electronic delivery is required by law, you hereby agree and consent to electronic delivery by email or via such other method as permitted by law for the duration of your employment.  Such documents will also be posted and made available on the TriNet platform.  Further, you agree to make such documents available to your spouse, domestic partner, and/or dependents, as applicable. If you want to request paper copies of such documents in addition to the electronic version, please contact the TriNet Solution Center at 1.800.638.0461, at employees@trinet.com, or at 9000 Town Center Parkway, Bradenton, Florida 34202.  Such a request is not considered a withdrawal of your consent to receive such documents electronically and you will continue to do so.  After your employment with your worksite employer terminates, you will continue to have access to the platform and any Form W-2s issued to you by the worksite employer for the past four calendar years (for those years the worksite employer has been a TriNet customer).  The Form W-2 for the calendar year in which your employment terminates will also be posted to the platform when it's ready.</p>
+				<p>If you want to withdraw your consent to electronic delivery, do so under the &quot;Settings&quot; link on the TriNet platform.  The withdrawal will be effective immediately, and you will receive an e-mail confirmation.  After your consent is withdrawn, you will receive your Form W-2, COBRA notice or other such mandatory documents in paper at no charge.  Any withdrawn consent does not apply to documents previously issued electronically.</p>
+				<p>Further, you may be required to print and attach the Form W-2 to a federal, state, or local income tax return.  You can print or save a copy of your Form W-2 directly from the TriNet platform.  In addition, should you ever need to update your contact information, please do so on the TriNet platform.  TriNet will notify you of any changes to its contact information.</p>
+
+			</div>
+
+			<div class="standard-padding" ng-if=" item.id === 3 && item.isOpen">
+				<p>If you work for one of TriNet's customers, you understand and agree that:</p>
+				<ul>
+					<p>(a) Responsibility for compliance with accurate reporting of hours worked, legally required break periods, overtime, certain time off accrued and taken,
+						and related matters are the responsibility of your company, over which TriNet has no control;</p>
+					<p>(b) TriNet is responsible for processing your payroll as
+						directed
+						by your company and pursuant to the written agreement between your company and
+						TriNet;</p>
+
+					<p>(c) TriNet does not set your rate of pay, determine the hours
+						you
+						work, or determine your exempt/non-exempt status under the law; and</p>
+					<p>(d) TriNet's responsibility for your pay is limited in the
+						following ways:</p>
+					<ul class="list-style-none">
+						<li>(i) If TriNet learns that it paid you an amount not authorized by your company, you agree to repay the amount to TriNet and you consent to TriNet reversing such payment, to the full extent permitted by law;</li>
+
+						<li>(ii) If your company fails to fund its payroll, TriNet will pay you if required by law and, in that situation, only the minimum amounts required by law based on the information available to it regarding your hours worked.</li>
+						In the event your company fails to fund payroll, any requests for payment of wages should be made to your company; and
+
+						<li>(iii)If you believe that your company owes you more than what TriNet remits to you (including payment for time that you have worked, or for commissions and bonuses,
+						time that you have taken or accrued as sick/vacation leave/paid time off, time for any other paid leave of absence or amounts in excess of minimum wage), this will be the sole liability of your worksite employer,
+						and your recourse for collection of such unpaid amounts is against your company and not TriNet.</li>
+						</ul>
+						<p>(e) Your worksite employer is solely responsible for reimbursement of any business expenses you may incur.</p>
+				</ul>
+			</div>
+			<div class="standard-padding" ng-if=" item.id === 4 && item.isOpen">
+				<p>You will be offered certain TriNet employee benefits if such benefits are offered to other similarly situated employees, subject to the terms of the benefits plan document. You acknowledge and agree that if you elect to participate in TriNet cafeteria plan and health and welfare benefits, you must abide by the rules set forth under the applicable plan document. Unless otherwise required by law, you acknowledge and agree that, if you are eligible to elect TriNet benefits but fail to submit a benefits election within the required deadline/timeframe, you must wait until the next open enrollment period to elect new coverage or make changes to your elections unless you experience a life status change event. Please refer to your applicable TriNet Benefits Guidebook and Summary Plan Description for important details regarding the consequences of failing to make a timely election or waiver of coverage.</p>
+				<p>You understand that you have access to an electronic copy of your applicable TriNet Benefits Guidebook and Summary Plan Description posted on the TriNet platform, as well as in PDF format that TriNet can email to you upon request, and as a hardcopy that TriNet can mail to you upon request. You agree to read the Guidebook carefully as it contains important information regarding TriNet cafeteria plan and health and welfare benefits.</p>
+				<p>You understand that, if your company arranges to sponsor a different health plan, you will not be eligible to participate in a health plan sponsored by TriNet. In such case, you also understand and agree that your company may request that TriNet take deductions from your pay for the healthcare premiums associated with your participation in the health plan sponsored by your company. You hereby consent to such deductions, and you understand and agree that they will appear on your pay stub as a deduction amount and will be reported accordingly on your Form W-2.</p>
+				<p>You also understand and agree that certain information about your TriNet benefits enrollment, including but not limited to plan elections and the amounts of your salary deductions (including, if applicable, salary deferrals for a retirement plan, contributions to a health care flexible spending account, dependent day care flexible spending account, and similar arrangements), may be shared with your worksite employer, for the purpose of verifying billing accuracy and/or for any other lawful purpose if and when your worksite employer ceases to do business with TriNet.</p>
+
+			</div>
+			<div class="standard-padding" ng-if=" item.id === 5 && item.isOpen">
+				<p>You are being presented with the TriNet Employee Handbook and any additional policies applicable to your employment as part of your onboarding.  Copies can be found on the TriNet platform or by contacting the TriNet Solution Center at 1.800.638.0461or employees@trinet.com. Please review these documents as soon as possible, as it is your responsibility to read and familiarize yourself with the handbook and any additional policies.</p>
+			</div>
+			<div class="standard-padding" ng-if=" item.id === 6 && item.isOpen">
+				<p>Unless prohibited by law or expressly provided in a written agreement signed by the President of TriNet, your relationship with TriNet, including your TriNet co-employer, is &quot;at-will,&quot; meaning that you and your TriNet co-employer have the right to terminate the relationship at any time, with or without cause, and with or without advance notice.</p>
+			</div>
+			<div class="standard-padding" ng-if=" item.id === 7 && item.isOpen">
+				<p>You understand that the work you perform for your worksite employer is for the direct benefit of that company and not TriNet. You understand that your company, and not TriNet, directs and controls your hiring, compensation, employment duties and responsibilities, work schedule and actual hours worked, performance measurement, and all other terms and conditions of your employment at the worksite.</p>
+				<p>If you are an officer or partner of your company, you understand that the agreement between your company and TriNet does not relieve you of any legal responsibility you may have to employees of the company, taxing authorities or TriNet, should your company fail to meet its payroll obligations.</p>
+			</div>
+			<div class="standard-padding" ng-if=" item.id === 8 && item.isOpen">
+				<p class="inline">You acknowledge and agree that your ese of the TriNet platform is licensed to you subject to the terms and conditions in this TCA and the Terms of Use and Privacy Policy at <a href="www.trinet.com/company/terms" class="tn-anchor  inline" id="termsLink" target="_blank">www.trinet.com/company/terms</a>. You agree that the TriNet platform constitutes confidential, proprietary, intellectual property of TriNet, that your ability to access and use the TriNet platform is revocable by TriNet at any time, and that you will not modify, reverse engineer, decompile or disassemble, or otherwise tamper with the TriNet online platform or create any derivative works or otherwise incorporate TriNet's platform in other programs, without TriNet's prior written consent. Any feedback you provide regarding the TriNet platform will become TriNet information and TriNet will have the royalty-free right to share the feedback and to create and use derivative works based on the feedback.</p>
+				<p>If you fail to protect the confidentiality of your password or if you submit inaccurate information to TriNet, you agree to indemnify and hold TriNet, its parents, subsidiaries, affiliates, officers and employees harmless from any claim, demand, penalty, or damage, including reasonable attorneys' fees and costs, asserted by any third party due to or arising out of (A) your failure to protect the confidentiality of your password or the unauthorized use of the TriNet platform and related online services or (B) the inaccurate information that you submitted to TriNet.  TriNet will notify you within a reasonable period of time of any claim that TriNet seeks indemnification and will afford you the opportunity to participate in the defense of any such claim, provided that your participation does not prejudice TriNet's interests, as determined by TriNet at its sole discretion.</p>
+				<p>Your licensed usage of the TriNet platform is on an &quot;As Is&quot; basis and TriNet disclaims any and all warranties, express or implied, to the full extent permitted by law. For example, and without limitation, TriNet does not warrant that its online services or content will be uninterrupted or error-free, available at all times or in any and all geographic areas, or will meet any particular criteria of performance or quality. TriNet cannot be held liable for any indirect, punitive, incidental, consequential, or other special damages arising out of your use of the TriNet platform or TriNet's online services.</p>
+			</div>
+			<div class="standard-padding" ng-if=" item.id === 9 && item.isOpen">
+				<p class="header-fontsize">a. How The DRP Applies</p>
+				<p>Subject to the limitations in subsection (b), this DRP covers any dispute arising out of or relating to your co-employment with TriNet, including your TriNet co-employer, and/or arising out of or relating to your employment with your company, as well as any dispute with a benefit plan, insurer, employee, officer, or director of TriNet or of a TriNet customer (all of whom, in addition to TriNet customers, are intended to be beneficiaries of this DRP) (&quot;covered dispute&quot;). The Federal Arbitration Act applies to this DRP. Also, any applicable internal procedures for resolving disputes (e.g., procedures in the employee handbook for complaining about, and addressing complaints about, misconduct), as well as the option of mediation, will continue to apply with the goal being to resolve disputes before they are arbitrated. This DRP will survive termination of the employment relationship. With only the exceptions described below, arbitration will replace going before a court for a judge or jury trial, and even in the situations described below, NO JURY TRIAL WILL BE PERMITTED, unless applicable law does not allow enforcement of a pre-dispute jury trial waiver in the particular circumstances presented.</p>
+				<br />
+
+				<p class="header-fontsize">b. Limitations On How The DRP Applies</p>
+				<p>The mandatory arbitration requirement of this DRP does not apply to claims for workers' compensation, state disability insurance or unemployment insurance benefits, nor does it apply to claims against a federal contractor if such claims are not subject to pre-dispute mandatory arbitration agreements, nor to claims properly made pursuant to a collective bargaining agreement's dispute resolution procedure if you are represented by a union and the dispute resolution procedure in the collective bargaining agreement conflicts with this DRP. The mandatory arbitration requirement does not prevent a party from bringing complaints, claims or charges before the Equal Employment Opportunity Commission, the U.S. Department of Labor, the National Labor Relations Board, or the Office of Federal Contract Compliance Program, and does not prevent a party from bringing claims in any forum as provided in Public Laws 111-203, 111-118 &amp; 112-10. Further, claims may be brought before any other administrative agency, provided applicable law does not preclude the right to bring claims there when there is a mandatory arbitration agreement.</p>
+				<p>If at the time of a covered dispute there is an agreement between you and your company governing the resolution of the covered dispute, then to the extent inconsistent with this DRP, that agreement will be controlling as between you and your company (and its employees, officers, and agents). The applicability of this DRP to covered disputes between you and TriNet (and its employees, officers and, agents) will be unaffected by the existence of an agreement between you and your company regarding dispute resolution.</p>
+				<p>This DRP does not excuse a requirement that a party exhaust administrative remedies before initiating the DRP to resolve a covered dispute.</p>
+				<br />
+
+				<p class="header-fontsize">c. Starting Arbitration</p>
+				<p>Before commencement of arbitration, the parties may, upon express written agreement of the parties, submit the dispute to mediation on terms and conditions agreeable to all parties. This DRP does not require mediation before commencing arbitration.</p>
+				<p class="inline">Arbitration begins by bringing a claim under the applicable employment arbitration rules and procedures of the Judicial Arbitration and Mediation Services, Inc. (&quot;JAMS&quot;) or any other dispute resolution provider agreed to by the parties, as then in effect and as modified by any superseding provisions in this DRP. JAMS' Employment Arbitration Rules may be found on the internet at <a href="http://www.jamsadr.com" class="tn-anchor  inline" target="_blank">www.jamsadr.com</a> or by using an internet search engine to locate the &quot;JAMS Employment Arbitration Rules.&quot; All claims in arbitration must be raised within the same time limits (statutes of limitation) that would apply in court. The arbitrator will be selected by mutual agreement of the parties and will be an experienced attorney licensed in the state where the arbitration will be held or retired judicial officer who served in that state as a judge or another qualified individual. If the parties cannot agree on an arbitrator, the applicable JAMS (or, if agreed to by the parties, another dispute resolution provider's) rules will apply to appoint an arbitrator. The arbitration will be conducted no more than 75 miles from the location where you last regularly worked for your worksite employer, unless the parties agree to another location.</p>
+				<br />
+
+				<p class="header-fontsize">d. How Arbitration Proceedings Are Conducted</p>
+				<p>In arbitration, the parties will have the right to file motions challenging the pleadings (e.g. demurrer or motion to dismiss), conduct adequate civil discovery, bring dispositive motions (e.g. summary judgment/adjudication), and present witnesses and evidence to present their cases and defenses. The specific provisions of this DRP and the applicable rules of JAMS (or any other dispute resolution provider agreed to by the parties) will direct the arbitrator in decisions regarding conducting the arbitration. To the extent any applicable arbitration rules are inconsistent with the terms of this DRP, the terms of this DRP will be controlling.</p>
+				<p>
+					<b>
+						There will be no right or authority for any dispute to be brought, heard, or arbitrated as a class, collective, representative, or private attorney general action, or as a member in any purported class, collective, representative, or private attorney general proceeding, including, without limitation, uncertified class actions (&quot;Class Action Waiver&quot;); provided, however, that you may opt out of the Class Action Waiver by clicking this box
+						<input type="checkbox" disabled ng-model="$ctrl.data.clientActWaiver" aria-label="Class Action Waiver" ng-true-value="'Y'" ng-false-value="'N'"/>
+						before you click below to acknowledge this TCA.
+					</b> Disputes regarding the validity and enforceability of the Class Action Waiver may be resolved only by a civil court of competent jurisdiction and not by an arbitrator. In any case in which (1) the dispute is filed as a class, collective, representative, or private attorney general action and (2) a civil court of competent jurisdiction finds all or part of the Class Action Waiver unenforceable, the class, collective, representative, and/or private attorney general action must be litigated in a civil court of competent jurisdiction, but the portion of the Class Action Waiver that is enforceable shall be enforced in arbitration. No employee will be retaliated against, disciplined or threatened with discipline for exercising his or her rights under Section 7 of the National Labor Relations Act (NLRA) by the filing of or participation in a class, collective or representative action, but TriNet (and, if applicable, any TriNet customer or employee(s) of either TriNet or a TriNet customer interested in enforcing this DRP for its/their own benefit) retains the right to enforce this DRP and the Class Action Waiver under the Federal Arbitration Act and to seek dismissal of class, collective or representative actions.
+				</p>
+				<p>During the arbitration, each party will pay his, her, or its own attorneys' fees, subject to any remedies to which that party may later be entitled under applicable law. In all cases where the law requires it, TriNet (and, if applicable, any TriNet customer or employee(s) of either TriNet or a TriNet customer interested in enforcing this DRP for its/their own benefit) will pay the arbitrator's and arbitration fees. In cases in which apportionment of the arbitrator's and arbitration fees is permitted by applicable law, these fees will be divided between the parties as is required by law and determined by the arbitrator.</p>
+				<br />
+
+				<p class="header-fontsize">e. The Arbitration Hearing And Award</p>
+				<p>Within 30 days after the end of the arbitration hearing, any party may file a written brief by providing copies to the arbitrator and the other parties. The arbitrator may award any remedy warranted under applicable law and will include a written opinion providing reasoned explanations for the decision. To the extent, if at all, allowed or required by applicable law, the award may be confirmed, corrected, or vacated by a court of competent jurisdiction, and a court of competent jurisdiction will have the authority to enter judgment based on a final arbitration award.</p>
+				<br />
+
+				<p class="header-fontsize">f. Enforcement Of The DRP</p>
+				<p>Subject to the exceptions provided herein, this DRP is the full and complete agreement for resolution of covered disputes between you and TriNet (and its employees, officers, and agents) and between you and your company (and its employees, officers, and agents). If any portion of this DRP is determined to be unenforceable, the remainder of this DRP will still be enforceable, subject to the specific exception in section (d), above.</p>
+				<br />
+			</div>
+
+			<div class="standard-padding" ng-if=" item.id === 10 && item.isOpen">
+				<div >
+					<p>By clicking below, I am acknowledging that I have read and understand the contents of this Terms
+						and Conditions Agreement
+						(including, but not limited to, the DRP), that I have the responsibility to read and familiarize
+						myself with the TriNet Employee
+						Handbook and Additional Policies for my company and that I agree to abide by the terms and
+						conditions set forth above and the
+						policies and procedures set forth in the Employee Handbook and Additional Policies.</p>
+					<p>I understand and acknowledge that none of the at-will-related language in this TCA, the employee handbook or elsewhere is intended to limit the exercise of rights under Section 7 of the NLRA.</p>
+				</div>
+			</div>
+		</div>
+	</uib-accordion>
+</div>

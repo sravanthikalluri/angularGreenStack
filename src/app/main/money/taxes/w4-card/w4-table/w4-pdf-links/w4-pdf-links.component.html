@@ -1,0 +1,9 @@
+<h6 role="presentation" class="w4-modal-table-col-1">
+	<a  ng-repeat="pdfItem in $ctrl.pdfUrls track by $index" id="pdfForm_{{pdfItem.text | underscroll}}" class="w4-table-link"
+	   ng-class="{'is-disabled': $ctrl.isPdfAvailable === 'false'}"
+	   href="{{pdfItem.url | contentUrl}}"
+	   target="_blank">
+		{{pdfItem.text}}
+	</a>
+</h6>
+

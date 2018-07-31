@@ -1,0 +1,27 @@
+<div id="employeeCard" class="tn-small-employee-card">
+
+	<tn-employee-image ng-if="$ctrl.employeeInfo.employeeDetails.preferredName"
+		img-url="{{$ctrl.employeeInfo.imgUrl}}"
+		employee-name="{{$ctrl.employeeInfo.employeeDetails.preferredName}}">
+	</tn-employee-image>
+
+	<tn-employee-image ng-if="!$ctrl.employeeInfo.employeeDetails.preferredName"
+		img-url="{{$ctrl.employeeInfo.imgUrl}}"
+		employee-name="{{$ctrl.employeeInfo.employeeName}}">
+	</tn-employee-image>
+
+	<h3 class="employee-name" aria-live="polite" ng-if="$ctrl.employeeInfo.employeeDetails.preferredName">{{$ctrl.employeeInfo.employeeName}}</h3>
+	<h3 class="employee-name" aria-live="polite" ng-if="!$ctrl.employeeInfo.employeeDetails.preferredName">{{$ctrl.employeeInfo.employeeName}}</h3>
+	<span>{{$ctrl.employeeInfo.designation}}</span>
+	<span>{{$ctrl.employeeInfo.employeeDetails.department}}</span>
+
+	<button class="direct-reports"
+	     aria-label="{{$ctrl.employeeInfo.teamMemberCount}} Direct Reports to {{$ctrl.employeeInfo.employeeName}}"
+		 ng-if="$ctrl.showDirectReports && $ctrl.employeeInfo.teamMemberCount > 0"
+		 ng-click="$ctrl.directReportsClicked({$event: {employeeId: $ctrl.employeeInfo.employeeId}})"
+		 title="forward icon">
+		{{$ctrl.employeeInfo.teamMemberCount}} Direct Reports
+		<span id="directReportsLink" class="direct-report-icon icon-icon_forward"></span>
+	</button>
+
+</div>

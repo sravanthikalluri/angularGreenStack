@@ -1,0 +1,49 @@
+<div class="edit-profile-section">
+	<section>
+		<h3 class="edit-profile-section-title">{{'profile-title-contact-section' | translate}}</h3>
+	</section>
+	<br>
+	<span role="alert" class="sr-only" ng-if="$ctrl.isEmail" aria-live="assertive" aria-atomic="true">
+		{{$ctrl.messageForEmail}}
+	</span>
+	<email-contact ng-repeat="email in $ctrl.data.contacts | filter:{media:'Email'} track by email.id"
+				   form-name="$ctrl.formName"
+				   data="$ctrl.emailContacts"
+				   email="email"
+				   email-id="$index"
+				   is-focus="$ctrl.isFocusEmail"
+				   on-update="$ctrl.update(email, prop, value)"
+				   on-delete="$ctrl.delete(email)"
+				   is-first="$first">
+	</email-contact>
+
+	<br>
+	<span id="profileAddEmail" role="link" aria-label="Add Email Address "
+		  class="contact-add-link hand" ng-if="($ctrl.data.contacts | filter:{media:'Email'}).length === 0" tn-enter="$ctrl.add('Email')"
+		  ng-click="$ctrl.add('Email')">{{'edit-profile-add-email-address' | translate}}</span>
+	<span id="profileAddEmailMore" role="link" aria-label="Add Email Address " class="contact-add-link hand" tn-enter="$ctrl.add('Email')"
+		  ng-if="($ctrl.data.contacts | filter:{media:'Email'}).length > 0" ng-click="$ctrl.add('Email')">{{'edit-profile-add-email-address' | translate}}</span>
+	<br>
+	<br>
+	<span role="alert" class="sr-only" ng-if="$ctrl.isPhone" aria-live="assertive" aria-atomic="true">
+		{{$ctrl.messageForPhone}}
+	</span>
+	<phone-contact ng-repeat="phone in $ctrl.data.contacts | filter:{media:'!Email'} track by phone.id"
+				   form-name="$ctrl.formName"
+				   data="$ctrl.phoneContacts"
+				   phone="phone"
+				   phone-id="$index"
+				   is-focus="$ctrl.isFocusPhone"
+				   on-update="$ctrl.update(phone, prop, value, type)"
+				   on-delete="$ctrl.delete(phone)"
+				   is-first="$first">
+	</phone-contact>
+
+	<br>
+	<span id="profileAddPhone" role="link" aria-label="Add Phone Number" class="contact-add-link hand" tn-enter="$ctrl.add('Phone')"
+		  ng-if="($ctrl.data.contacts | filter:{media:'!Email'}).length === 0" ng-click="$ctrl.add('Phone')">{{'edit-profile-add-phone-number' | translate}}</span>
+	<span id="profileAddPhoneMore" role="link" aria-label="Add Phone Number" class="contact-add-link hand" tn-enter="$ctrl.add('Phone')"
+		  ng-if="($ctrl.data.contacts | filter:{media:'!Email'}).length > 0" ng-click="$ctrl.add('Phone')">{{'edit-profile-add-phone-number' | translate}}</span>
+	<br>
+	<br>
+</div>

@@ -1,0 +1,55 @@
+<div class="background org-chart">
+	<div class="full-container" ng-if="$ctrl.hideOrgChart">
+		<div class="tn-search-header-bar">
+			<h2 class="page-title">
+				<button ui-sref="app.main.company.overview" class="no-border-button">
+					{{'company' | translate}}
+				</button>
+				<span class="no-border-button">
+					<i class="icon-icon_forward icon-heading"></i>
+					{{'org-chart-title' | translate}}
+				</span>
+			</h2>
+			<button id="searchBtn" tn-button ng-click="$ctrl.openModal();" class="tn-search-button search-button">
+				<span aria-hidden="true" class="tn-search-button-search-icon icon-icon_unified_search"></span>
+				<span>{{'find-employee-card-title' | translate}}</span>
+			</button>
+
+		</div>
+
+		<employee-org-details
+			ng-if="$ctrl.employee !== undefined"
+			employee="$ctrl.employee"
+			managers="$ctrl.manager"
+			manager-clicked="$ctrl.getPageData($event.employeeId)"
+			profile-view="$ctrl.profileView(id)">
+		</employee-org-details>
+
+
+		<div class="org-chart-divider">
+			<span id="orgChartForward" class="divider-icon icon-downward icon-icon_forward hand" title="divider icon"></span>
+		</div>
+
+		<div class="direct-report-container">
+
+			<h3>{{$ctrl.employee.employeeName}} {{'org-chart-direct-reports' | translate}}</h3>
+			<tn-spinner ng-hide="$ctrl.reportsFinished" is-show="$ctrl.showSpinner" error-message="$ctrl.errorMessage"></tn-spinner>
+			<div class="direct-report-grid">
+
+				<tn-small-employee-card
+					ng-repeat="employee in $ctrl.directReports"
+					employee-info="employee"
+					direct-reports-clicked="$ctrl.getPageData($event.employeeId)">
+				</tn-small-employee-card>
+
+			</div>
+		</div>
+
+	</div>
+	<div  class="full-container" ng-if="!$ctrl.hideOrgChart">
+		<tn-card>
+		<h6 class="inline-block">{{$ctrl.errorMessage}}</h6>
+			<button class="hand pull-right tn-btn-close" ng-click="$ctrl.hideOrgChart = true;"><i class="tn-icon icon-close-temp"></i> </button>
+		</tn-card>
+	</div>
+</div>

@@ -1,0 +1,34 @@
+<div role="row" class="edit-reimbursable-container row-header" ng-if="$ctrl.eligibility.fsaeligible || $ctrl.eligibility.apeligible">
+	<p role="gridcell" class="semibold flex-item-{{title.class}} edit-reimbursable-{{title.class}}" ng-repeat="title in $ctrl.titles">
+		{{title.title}}
+	</p>
+</div>
+
+<div role="row" class="edit-reimbursable-container edit-reimbursable-table-data row-data" ng-if="$ctrl.eligibility.fsaeligible">
+	<div role="gridcell" class="semibold flex-item-number">
+		<tn-input-container>
+			<div class="select-style">
+				<select id="fsaAcctTypeList" aria-label="Account Type" ng-change="$ctrl.selectFSAAccount($ctrl.fsaSelected)" ng-model="$ctrl.fsaSelected" ng-options="data.value for data in $ctrl.reimbursements track by data.key">
+
+				</select>
+
+			</div>
+		</tn-input-container>
+	</div>
+	<p role="gridcell" class="semibold flex-item-type">{{'money.direct_deposit.fsa' | translate}}</p>
+</div>
+
+<div role="row" class="edit-reimbursable-container edit-reimbursable-table-data row-data" ng-if="$ctrl.eligibility.apeligible">
+	<div role="gridcell" class="semibold flex-item-number">
+		<tn-input-container>
+			<div class="select-style">
+				<select id="expAcctTypeList" aria-label="Account Type" ng-change="$ctrl.selectAPAccount($ctrl.apSelected)" ng-model="$ctrl.apSelected" ng-options="data.value for data in $ctrl.reimbursements track by data.key">
+
+				</select>
+
+			</div>
+		</tn-input-container>
+	</div>
+	<p role="gridcell" class="semibold flex-item-type">{{'money.direct_deposit.ap' | translate}}</p>
+</div>
+

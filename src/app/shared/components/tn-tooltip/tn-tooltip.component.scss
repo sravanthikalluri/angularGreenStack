@@ -1,0 +1,12 @@
+@import '../../../../styles/main';
+
+.tn-tooltip{
+  .tooltip-message{
+	color: $font-color;
+	display: inline-block;
+	font-weight: normal;
+	letter-spacing: 0.3px;
+	font-size: inherit;
+	line-height: 15px;
+  }
+}

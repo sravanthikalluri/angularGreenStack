@@ -1,0 +1,150 @@
+<form name="taxesForm" class="w4-modal" no-validate>
+
+	<tn-error-banner error-data="$ctrl.errorAlert" tabindex="1" ng-hide="!$ctrl.errorAlert"></tn-error-banner>
+	<div class="w4-modal-header">
+		<button id="taxEditClose" class="tn-modal-close" name="taxEditClose" aria-label="close" ng-click="$ctrl.cancel()">
+			<i class="icon-close-temp" aria-hidden="true"></i>
+		</button>
+	</div>
+
+
+	<h2 class="w4-modal-title">{{'w4-card-edit-label' | translate}} {{'money.tax_With_Holding.title' | translate}}</h2>
+	<div class="w4-modal-subtitle" ng-hide="true">Last updated {{$ctrl.lastUpdated | date: 'MMM dd, yyyy'}}</div>
+
+	<div class="w4-modal-body">
+	<div class="w4-tax-steps">
+			<h2 class="semibold" ng-class="item.class ? item.class : ''" ng-repeat="item in $ctrl.data.uniqueTaxes">
+				<span><i class="icon-icon_approved" aria-hidden="true"></i>{{item.name}}</span>
+			</h2>
+
+	</div>
+	<!--<div class="w4-modal-effective-date-picker">
+		<span class="w4-modal-effective-date-picker-label">
+			Effective:
+		</span>
+		<tn-date-selector id="taxEffDate" date="$ctrl.effectiveDate" min-date="$ctrl.minDate" max-date="$ctrl.maxDate"></tn-date-selector>
+	</div>-->
+
+		<w4-modal-table id="taxDetailsEditTable" form-name="taxesForm"
+							items="$ctrl.selectedTax"
+							on-update="$ctrl.update(item, prop, value)">
+		</w4-modal-table>
+	</div>
+
+<div class="border-top">
+	<div class="w4-modal-confirmation" ng-if="($ctrl.selectedTab && $ctrl.selectedTab.id === ($ctrl.data.uniqueTaxes.length - 1))">
+		<table>
+			<tr>
+				<td>
+					<label for="w4-legal-confirmation"><tn-bind-html content="$ctrl.confirmationMessage"></tn-bind-html></label>
+				</td>
+
+			</tr>
+			<tr id="SPTestDiv" ng-if="!$ctrl.hideSP">
+				<td>
+					<label for="w4-legal-confirmation">
+					<p class="text-center"><b>{{'money.tax_With_Holding.substantial' | translate}}</b>
+					</p>
+					<a class="gridder-navigation" ng-click="$ctrl.hideSPTest()" role="button"> <span class="icon-close-temp"></span></a>
+
+					<p>{{'money.tax_With_Holding.nonResident' | translate}}</p>
+					<p>{{'money.tax_With_Holding.residentTaxPurposes' | translate}}</p>
+						<table width="100%" class="table-bordered">
+							<tbody>
+							<tr>
+								<td></td>
+								<td># {{'money.tax_With_Holding.ofDays' | translate}}</td>
+								<td>{{'money.tax_With_Holding.dividedBy' | translate}}</td>
+								<td> {{'money.tax_With_Holding.total' | translate}}</td>
+							</tr>
+							<tr>
+								<td>{{'money.tax_With_Holding.currentYear' | translate}}</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>{{'money.tax_With_Holding.preceding' | translate}}</td>
+								<td></td>
+								<td align="center">3</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>{{'money.tax_With_Holding.preceding2' | translate}}</td>
+								<td></td>
+								<td align="center">6</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td align="right" >{{'money.tax_With_Holding.total' | translate}} =</td>
+								<td></td>
+							</tr>
+							</tbody>
+						</table>
+					<p>{{'money.tax_With_Holding.taxPurposes' | translate}}</p>
+					<p><tn-bind-html content="'money.tax_With_Holding.irsPublication' | translate"></tn-bind-html></p>
+					</label>
+				</td>
+			</tr>
+		</table>
+		<div class="confirmation-check-box">
+			<div class="tn-custom-checkbox">
+				<input id="w4-legal-confirmation" ng-model="$ctrl.w4LegalConfirmation"
+					   name="w4-legal-confirmation"
+					   ng-true-value="'Y'"
+					   ng-false-value="'N'"
+					   type="checkbox">
+				<label for="w4-legal-confirmation">I Agree</label>
+			</div>
+		</div>
+	</div>
+
+	<div class="w4-modal-footer">
+
+		<div>
+			<div class="w4-modal-effective-date-picker tax-date-picker" ng-if="($ctrl.selectedTab && $ctrl.selectedTab.id === ($ctrl.data.uniqueTaxes.length - 1))">
+				<h6 class="w4-modal-effective-date-picker-label">
+					<label for="taxEffDate">Changes will go into effective on:</label>
+				</h6>
+				<tn-date-selector id="taxEffDate" date="$ctrl.effectiveDate" min-date-msg="'Date cannot be in the past'" min-date="$ctrl.minDate" max-date="$ctrl.maxDate" label="Changes will go into effective on"></tn-date-selector>
+			</div>
+		</div>
+		<div class="actions">
+			<button id="taxCancelBtn" tn-button
+					ng-click="$ctrl.cancel()"
+					type="button">
+				{{'edit-profile-cancel' | translate}}
+			</button>
+			<button tn-button
+					class="margin-left tn-back-button"
+					ng-if="($ctrl.selectedTab && $ctrl.selectedTab.type !== 'Federal tax')"
+					ng-click="$ctrl.previousStep($ctrl.selectedTab.id)"
+					type="button">
+				Back
+			</button>
+
+			<button id="taxNextBtn" tn-action-button
+					class="margin-left"
+					ng-if="($ctrl.selectedTab && $ctrl.selectedTab.id !== ($ctrl.data.uniqueTaxes.length - 1) )"
+					ng-click="$ctrl.nextStep($ctrl.selectedTab.id)"
+					type="button">
+				Next
+			</button>
+
+			<button id="taxSaveChangesBtn" tn-action-button
+					class="margin-left"
+					ng-if="($ctrl.selectedTab && $ctrl.selectedTab.id === ($ctrl.data.uniqueTaxes.length - 1))"
+					ng-click="$ctrl.save(taxesForm)"
+					ng-class="$ctrl.disableSaveButton ? 'disable' : ''"
+					ng-disabled="$ctrl.disableSaveButton"
+					type="submit">
+				{{'edit-profile-save-changes' | translate}}
+			</button>
+		</div>
+	</div>
+</div>
+<div class="visuallyhidden" id="statusUpdate" aria-live="polite"></div>
+</form>
+

@@ -1,0 +1,28 @@
+@import 'main';
+%image-sizing {
+	height: 75px;
+	width:  75px;
+	border-radius: 50%;
+}
+
+.image {
+	@extend %image-sizing;
+	margin-top:  25px;
+}
+
+.image-placeholder {
+	display: block;
+	@extend %image-sizing;
+	margin: 25px auto 0;
+	background-color: #DCE1E6;
+	color: $slate;
+	line-height: 78px;
+	font-size:   33px;
+	font-weight: 100;
+}
+.tn-dept-table{
+    margin: 10px 0 0 -12px;
+    width: 740px;
+    max-height: 400px;
+    overflow-y: auto;
+}

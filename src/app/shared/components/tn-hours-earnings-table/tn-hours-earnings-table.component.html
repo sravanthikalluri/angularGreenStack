@@ -1,0 +1,41 @@
+<div class="tn-table">
+	<h5 ng-style="$ctrl.onUpdateHeadingBg()">
+		<span tabindex="0">{{$ctrl.title | translate}}</span>
+		<span class="tn-tooltip tn-tooltip-top pull-right" ng-if="$ctrl.enableToolTips === true" tabindex="0">
+			<i class="icon-icon_UA"></i>
+			<div class="tn-tooltip-content">
+				<h4>{{$ctrl.toolTipsHeader | translate}}</h4>
+				<p>{{$ctrl.toolTipsTitle | translate}}</p>
+			</div>
+		</span>
+	</h5>
+	<div class="container-fluid">
+
+		<table class="table">
+			<thead>
+			<tr>
+				<th></th>
+				<th colspan="4" class="text-center">Current</th>
+				<th colspan="3" class="text-center">Year To Date</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="item in $ctrl.data track by $index"
+				ng-click="$ctrl.onRowSelected(item, $index);"
+				ng-class="{'tn-table-row_selected': $index === $ctrl.selectedRow}">
+
+				<td ng-repeat="value in item track by $index">
+
+					<p ng-switch="$ctrl.getDataType(value)">
+						<span ng-switch-when="date">{{value | date:"MM/dd/yyyy" }}</span>
+						<span ng-switch-when="number">{{value | decimal  }}</span>
+						<tn-bind-html ng-switch-when="html" content="value"></tn-bind-html>
+						<span ng-switch-default="!$ctrl.isDate(value)">{{value}}</span>
+						<span ng-switch-default="!$ctrl.isDate(value) && !$ctrl.isNumber(value)">{{value}}</span>
+					</p>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

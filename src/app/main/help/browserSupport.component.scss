@@ -1,0 +1,56 @@
+@import '../../../styles/main';
+
+.help {
+  font-family: Proxima Nova, Arial, sans-serif;
+  .tn-card {
+	padding: 16px 30px;
+  }
+  .tn-help-header {
+	color: $slate;
+	letter-spacing: 0.4px;
+	font-size: 18px;
+	margin-bottom: 20px;
+	margin-top: 10px;
+	font-weight: bold;
+  }
+  .info {
+	line-height: 20px;
+	color: $slate;
+	font-size: 14px;
+	margin-bottom: 15px;
+	letter-spacing: 0.3px;
+	span {
+	  color: $black;
+	  font-weight: 600;
+	}
+	a {
+	  display: inline-block;
+	}
+  }
+  .browsers {
+	display: flex;
+	flex-direction: column;
+	p {
+	  display: flex;
+	  padding: 1vw 0.75vw;
+	  justify-content: space-between;
+	  align-items: center;
+	  color: $slate;
+	  margin: 10px 0;
+	  &:first-child {
+		border-bottom: 1px solid $silver;
+		font-size: 14px;
+		padding: 0.75vw;
+		color: $slate;
+		font-weight: 600;
+		letter-spacing: 0.2px;
+	  }
+	  &:nth-child(odd):not(:first-child) {
+		background-color: #f4f6f7;
+		padding: 1.75vw 0.75vw;
+	  }
+	}
+  }
+}
+
+

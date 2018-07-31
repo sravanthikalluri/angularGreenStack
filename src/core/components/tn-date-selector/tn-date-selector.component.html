@@ -1,0 +1,62 @@
+<div class="date-select">
+	<div class="date-input" id="dateSelect"
+		 tn-enter="$ctrl.calFocus = true;$ctrl.isActive = !$ctrl.isActive;$ctrl.showCurrentDate($ctrl.date)"
+		 ng-click="$ctrl.calFocus = true;$ctrl.isActive = !$ctrl.isActive;$ctrl.showCurrentDate($ctrl.date)"
+		 ng-blur="$ctrl.onOffClick_event();$ctrl.calFocus = false;"
+		 tn-off-click="$ctrl.clicked()"
+		 aria-expanded="{{$ctrl.isActive}}" tabindex="0">
+		<input class="input-box" tabindex="-1"
+			   ng-model="$ctrl.date"
+			   ng-required="$ctrl.isDateRequired" aria-label="{{$ctrl.label}}-{{$ctrl.date}}" readonly/>
+		<i class="icon-icon_calendar tn-date-selector-calendar-icon"></i>
+	</div>
+
+	<div class="popup-menu tn-date-selector-popup tn-date-selector-menu" id="tn_calendar"
+		 aria-label="{{'calender-opened' | translate}}" ng-show="$ctrl.isActive" >
+		<div class="menu" tn-off-click="$ctrl.onOffClick_event();"
+		     ng-keydown="$ctrl.closeByEsc($event)">
+			<div class="caret"></div>
+			<div ng-if="$ctrl.errorMessage" role="alert" aria-live="assertive" class="error-message">
+				{{$ctrl.errorMessageString}}
+			</div>
+			<div class="tn-date-selector">
+				<div class="tn-datepicker-title">{{$ctrl.title | translate}}</div>
+				<tn-spinner ng-show="$ctrl.showSpinner"></tn-spinner>
+				<div class="tn-datepicker-calender">
+					<div class="tn-datepicker-nav" ng-hide="$ctrl.showSpinner">
+						<button type="button" class="tn-datepicker-nav-button" ng-click="$ctrl.prev()"
+								aria-label="{{'prev-month' | translate}}"
+								name="previous" id="prev"><
+						</button>
+						<span class="month-label">{{$ctrl.month.format("MMMM YYYY")}}</span>
+						<button type="button" aria-label="{{'next-month' | translate}}" class="tn-datepicker-nav-button"
+								ng-click="$ctrl.next()" name="next" id="nxt"
+						>>
+						</button>
+					</div>
+
+					<div class="tn-datepicker-row" ng-hide="$ctrl.showSpinner">
+						<span class="tn-datepicker-col text-center"
+							  ng-repeat="dayLabel in $ctrl.daysInWeek track by $index">
+							<span class="tn-datepicker-day-label" title="{{dayLabel.title | translate}}">{{dayLabel.day | translate}}</span>
+						</span>
+					</div>
+
+					<div class="tn-datepicker-row" ng-repeat="week in $ctrl.weeks track by $index"
+						 ng-hide="$ctrl.showSpinner">
+						<span class="tn-datepicker-col" ng-repeat="day in week.days track by $index">
+							<div tabindex="-1"
+								 class="tn-datepicker-day"
+								 aria-label="{{$ctrl.month.format('MMMM YYYY')}} {{day.number}} {{$ctrl.day[$index].title}}"
+								 ng-keydown="$parent.$last && $ctrl.goToNextMonth($event); $ctrl.errorMessage = false"
+								 ng-click="$ctrl.onDayClick(day);"
+								 ng-class="$ctrl.getDayCls(day,$ctrl.datesOfInterest)">
+								<button type="button"><span>{{day.number}}</span></button>
+							</div>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

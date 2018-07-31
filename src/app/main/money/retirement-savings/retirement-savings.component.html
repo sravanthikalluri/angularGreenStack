@@ -1,0 +1,127 @@
+<div class="background">
+	<div tn-banner class="tn-warning-banner" ng-if="$ctrl.errorMessage" >
+		<div class="tn-messages-banner">
+			<span class="tn-messages-icon icon-icon_Warning"></span>
+			<p>{{$ctrl.errorMessage}}</p>
+			<button class="tn-warning-btn" ng-click="$ctrl.closeAlert($index)">ok</button>
+		</div>
+	</div>
+	<div class="primary-container">
+		<h2 class="page-title">
+			<tn-title url="'app.main.money.overview'" title="'money-title'"></tn-title>
+			<i class="icon-icon_forward icon-heading"></i>
+			{{'retirement-savings-title' | translate}}
+		</h2>
+		<tn-error-banner error-data="$ctrl.data[0].errorAlert"></tn-error-banner>
+		<tn-card class="retirement-savings">
+			<tn-card-content>
+				<p ng-if="$ctrl.isIra" class="retirement-savings-margin">
+					{{'retirement-savings-ira-first-paragraph' | translate}}
+				</p>
+				<p ng-if="$ctrl.isIra" class="retirement-savings-margin">
+					{{'retirement-savings-second-paragraph' | translate}}
+				</p>
+				<p ng-if="$ctrl.isIra" class="retirement-savings-margin">
+					{{'retirement-savings-ira-third-paragraph' | translate}}
+				</p>
+				<div ng-if="$ctrl.isIra" class="retirement-savings-button">
+					<button id="enrollmentIraLink" tn-action-button  ng-click="$ctrl.reDirect()">
+					{{'Aspire-website' | translate}}</button>
+				</div>
+
+
+				<p ng-if="!$ctrl.isIra && $ctrl.isPASMep === true" class="retirement-savings-margin">
+					{{'SlavicAndPassportMEPplanPara1' | translate}}
+				</p>
+
+				<p ng-if="!$ctrl.isIra && $ctrl.isPASMep === true" class="retirement-savings-margin">
+					{{'SlavicAndPassportMEPplanPara2' | translate}}
+				</p>
+
+				<p ng-if="!$ctrl.isIra && $ctrl.isPASSep === true" class="retirement-savings-margin">
+					{{'PassportSEPplan' | translate}}
+				</p>
+
+				<p ng-if="!$ctrl.isIra && $ctrl.isAMBMep === true" class="retirement-savings-margin">
+					{{'AmbroseMEPplanPara1' | translate}}
+				</p>
+
+				<p ng-if="!$ctrl.isIra && $ctrl.isAMBMep === true" class="retirement-savings-margin">
+					{{'AmbroseMEPplanPara2' | translate}}
+				</p>
+
+				<p ng-if="!$ctrl.isIra && $ctrl.isPASMepEnrolled === true" class="retirement-savings-margin">
+					{{'SlavicPassportMEPplanParaNotEnrolled' | translate}}
+				</p>
+
+				<div  ng-if="!$ctrl.isIra" class="retirement-savings-button">
+					<button id="enrollmentProviderLink" tn-action-button  ng-click="$ctrl.reDirect()"
+							ng-if="!$ctrl.disableButton">{{'provider-website' | translate}}</button>
+				</div>
+
+
+				<div ng-if="$ctrl.data.contributions" aria-labelledby="savingstableHeading" role="grid">
+					<hr/>
+					<h4 id="savingstableHeading" class="heading retirement-savings-margin">
+						{{'current-plan-elections' | translate}}
+					</h4>
+					<div class="retirement-savings-table row-header" role="row">
+						<p role="columnheader" class="semibold flex-item-{{title.class}}"
+							ng-repeat="title in $ctrl.column_names track by $index">
+							{{title.name}}
+								<tn-tooltip ng-if="$ctrl.column_names.length == $index + 1" role="tooltip" class="tn-retirements-hastooltip" msg="'annual-maximum-goal-tooltip'"></tn-tooltip>
+						</p>
+					</div>
+					<div class="retirement-savings-table" ng-repeat="contribution in $ctrl.data.contributions" role="row">
+						<p role="gridcell" class="semibold flex-item-date">
+							{{contribution.details.effectiveDate | date:'MM/dd/yyyy'}}
+						</p>
+						<div role="gridcell" class="flex-item-plan">
+							<p class="semibold">{{contribution.planDesc}}</p>
+						</div>
+
+						<p role="gridcell" class="semibold flex-item-election"
+							ng-if="contribution.details.effectiveType === 'E'">
+								{{'elect' | translate}}
+					    </p>
+
+						<div role="gridcell" class="flex-item-payroll">
+							<p class="semibold" ng-if="contribution.selectedPlan.beforeTaxPercent > 0 &&  contribution.details.percentGrossDeductionPreTax !== 0">
+								{{'pre-tax' | translate}}:&nbsp;
+								{{contribution.details.percentGrossDeductionPreTax}} % {{ 'per-check-issued' | translate }}
+							</p>
+							<p class="semibold" ng-if="contribution.selectedPlan.beforeTaxPercent > 0 && contribution.details.percentGrossDeductionPreTax === 0">
+								{{'pre-tax' | translate}}:&nbsp;
+								{{contribution.details.flatDeductionAmountPreTax | currency:"$"}} {{ 'per-check-issued' | translate }}
+							</p>
+
+							<p class="semibold" ng-if="contribution.selectedPlan.afterTaxPercent > 0 &&  contribution.details.percentGrossDeductionPostTax !== 0">
+								{{'roth' | translate}}:&nbsp;
+								{{contribution.details.percentGrossDeductionPostTax}} % {{ 'per-check-issued' | translate }}
+							</p>
+							<p class="semibold" ng-if="contribution.selectedPlan.afterTaxPercent > 0 &&  contribution.details.percentGrossDeductionPostTax === 0">
+								{{'roth' | translate}}:&nbsp;
+								{{contribution.details.flatDeductionAmountPostTax | currency:"$"}} {{ 'per-check-issued' | translate }}
+							</p>
+
+						</div>
+						<div role="gridcell" class="flex-item-amount-allowed text-center ">
+							<p class="semibold">
+								{{contribution.details.goalAmount | currency:"$"}}
+							</p>
+							<p class="semibold">
+								<a id="goalChangeLink" href="" ng-click="$ctrl.modal(contribution)">{{'change' | translate}}</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</tn-card-content>
+		</tn-card>
+		<tn-modal on-show="$ctrl.showModal" modal-header="false"
+				  ng-if="$ctrl.showModal">
+			<retirement-savings-modal show="$ctrl.showModal" data="$ctrl.data" federal-amount="$ctrl.federalAmount">
+			</retirement-savings-modal>
+		</tn-modal>
+	</div>
+	<div class="secondary-container"></div>
+</div>

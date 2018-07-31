@@ -1,0 +1,71 @@
+@import 'main';
+
+.roles-card-body {
+	display: flex;
+}
+
+.roles-card-button {
+	width: 250px;
+	margin-left: 20px;
+}
+  input[type="radio"]
+  {
+	width: 30px;
+	margin: 0;
+  }
+.tn-roles-card-content{
+	margin:0 16px;
+	.tn-roles-heading{
+	  border-bottom: 1px solid #ddd;
+	  margin: 0;
+	  padding: 20px 0 10px 0;
+	}
+	.tn-roles-content{
+		display: flex;
+		padding: 10px 0;
+		width: 100%;
+		justify-content: flex-start;
+		align-items: flex-start;
+		border-bottom: 1px solid #ddd;
+		
+		&:last-child { border-bottom: none; }
+
+		.roles-content
+		{
+		  margin-top:-10px;
+		  display: flex;
+		  line-height: 30px;
+		  flex-direction: column;
+		  align-items: flex-start;
+		  padding:0 5px;
+		  width:100%;
+		  margin-left: 25px;
+            input[type="radio"]{
+				margin-left:0;
+				top:2px;
+            }
+		  h5{
+			color:$blue;
+			font-size: 15px;
+			margin-bottom: 5px;
+			}
+			.roles-content-details{
+				font-weight: 700;
+    		font-size: 14px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				line-height: 1.1;
+			}
+		  p{
+			line-height: 20px;
+			word-break: break-word;
+			word-wrap:break-word;
+			width:100%;
+		  }
+		}
+	}
+}
+.custom-checkbox{
+  font-size: 20px;
+  color:$blue;
+}

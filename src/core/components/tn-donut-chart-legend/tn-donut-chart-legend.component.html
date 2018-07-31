@@ -1,0 +1,9 @@
+<div class="tn-donut-chart-legend">
+	<div class="legend-item" ng-repeat="item in $ctrl.data">
+		<div class="legend-item-icon-container">
+			<div class="legend-item-icon" ng-style="{'background': $ctrl.colors[$index]}"></div>
+		</div>
+		<span class="legend-item-label">{{item.label}}</span>
+		<div class="legend-item-amount">{{item.amount | currency:'$':2}}</div>
+	</div>
+</div>
